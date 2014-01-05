@@ -1,14 +1,12 @@
 deezer-python
 =============
 
-A friendly wrapper around the `Deezer API`_.
-
-.. _Deezer API: http://developers.deezer.com/api
+A friendly wrapper around the [Deezer API](http://developers.deezer.com/api).
 
 Installation
 ------------
 
-Just download the tarball and use the package locally, I haven't tasted installation using easy_install yet
+Just download the tarball and use the package locally, I haven't tested installation using easy_install yet
 
 Basic Use
 ---------
