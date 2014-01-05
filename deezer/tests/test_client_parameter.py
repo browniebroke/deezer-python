@@ -1,5 +1,4 @@
 import deezer
-# from nose.tools import eq_
 import unittest
 
 
