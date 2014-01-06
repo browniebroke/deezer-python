@@ -1,3 +1,7 @@
+"""
+Module to ease the interaction with the Deezer API
+"""
+
 from urllib2 import urlopen
 import json
 
@@ -46,59 +50,60 @@ class Client(object):
             raise Exception
         return "%s%s%s" % (self.scheme, self.host, request)
 
-    def object_url(self, type, id=None, options = []):
+    def object_url(self, object_t, object_id=None, options=None):
         """
-        Build the url to query to access the object 
+        Build the url to query to access the object
         """
+        options = [options] if options else []
         if self.output is not "json":
             options.append("output=%s" % self.output)
-        if type not in self.objects_types:
-            raise TypeError("%s is not a valid type" % type)
-        base_url = self.url("/" + type + ("/%s" % id if id else ""))
+        if object_t not in self.objects_types:
+            raise TypeError("%s is not a valid type" % object_t)
+        base_url = self.url("/" + object_t + ("/%s" % object_id if object_id else ""))
         return base_url + ("?%s" % "&".join(options) if options else "")
 
-    def get_object(self, type, id=None):
+    def get_object(self, object_t, object_id=None):
         """
         Query Deezer to get the actual object
         """
-        response = urlopen(self.object_url(type, id))
+        response = urlopen(self.object_url(object_t, object_id))
         if self.output is "json":
             return json.load(response)
         else:
             return response.read()
 
-    def get_album(self, id):
+    def get_album(self, object_id):
         """Get the album with the provided id"""
-        return self.get_object("album", id)
+        return self.get_object("album", object_id)
 
-    def get_artist(self, id):
+    def get_artist(self, object_id):
         """Get the artist with the provided id"""
-        return self.get_object("artist", id)
+        return self.get_object("artist", object_id)
 
-    def get_comment(self, id):
+    def get_comment(self, object_id):
         """Get the comment with the provided id"""
-        return self.get_object("comment", id)
+        return self.get_object("comment", object_id)
 
-    def get_genre(self, id=None):
+    def get_genre(self, object_id=None):
         """Get the genre with the provided id
         Returns all genres if id is ommitted"""
-        return self.get_object("genre", id)
+        return self.get_object("genre", object_id)
 
-    def get_playlist(self, id):
+    def get_playlist(self, object_id):
         """Get the playlist with the provided id"""
-        return self.get_object("comment", id)
+        return self.get_object("comment", object_id)
 
-    def get_radio(self, id=None):
+    def get_radio(self, object_id=None):
         """Get the radio with the provided id.
         Returns all radios if id is ommitted"""
-        return self.get_object("radio", id)
+        return self.get_object("radio", object_id)
 
-    def get_track(self, id):
+    def get_track(self, object_id):
         """Get the track with the provided id"""
-        return self.get_object("track", id)
+        return self.get_object("track", object_id)
 
-    def get_user(self, id):
+    def get_user(self, object_id):
         """Get the user with the provided id"""
-        return self.get_object("user", id)
+        return self.get_object("user", object_id)
 
 

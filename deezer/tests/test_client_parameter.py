@@ -28,8 +28,8 @@ class TestClient(unittest.TestCase):
         it should add / to the request if not present
         """
         self.client.url()
-        u = self.client.url('/user')
-        self.assertEqual(u, "https://api.deezer.com/user")
+        user = self.client.url('/user')
+        self.assertEqual(user, "https://api.deezer.com/user")
         self.assertRaises(Exception, self.client.url, 'user')
 
     def test_object_url(self):
@@ -37,8 +37,8 @@ class TestClient(unittest.TestCase):
         of objects"""
         self.client.object_url("album")
         self.client.object_url("album", 12)
-        a = self.client.object_url("album", "12")
-        self.assertEqual(a, "https://api.deezer.com/album/12")
+        album = self.client.object_url("album", "12")
+        self.assertEqual(album, "https://api.deezer.com/album/12")
         self.assertRaises(TypeError, self.client.object_url, 'foo')
 
     def test_get_album(self):
