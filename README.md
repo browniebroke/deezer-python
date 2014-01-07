@@ -16,6 +16,8 @@ So far you can only retrieve the data for the public objects, as json or xml. Se
     >>> client = deezer.Client()
     >>> client.get_album(12)
     {u'available': False, u'rating': 0, u'nb_tracks': 0, u'title': u'Monkey Business', u'tracks': {u'data': []}, u'release_date': u'0000-00-00', u'artist': {u'picture': u'https://api.deezer.com/artist/12/image', u'id': 12, u'name': u'Black Eyed Peas'}, u'cover': u'https://api.deezer.com/album/12/image', u'upc': u'_0602498822289', u'label': u'Universal Music Division Polydor', u'fans': 5, u'link': u'http://www.deezer.com/album/12', u'duration': 0, u'type': u'album', u'id': 12, u'genre_id': 18}
+    
+See the whole API on the [Sphinx](http://sphinx-doc.org/) generated [documentation](http://deezer-python.readthedocs.org/).
 
 Authentication
 --------------
