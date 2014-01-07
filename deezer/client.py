@@ -52,7 +52,8 @@ class Client(object):
 
     def object_url(self, object_t, object_id=None, options=None):
         """
-        Build the url to query to access the object
+        Helper method to build the url to query to access the object
+        passed as parameter
         """
         options = [options] if options else []
         if self.output is not "json":
@@ -64,7 +65,10 @@ class Client(object):
 
     def get_object(self, object_t, object_id=None):
         """
-        Query Deezer to get the actual object
+        Actually query the Deezer API to retrieve the object
+
+        :returns: json dictionnary or raw string if other 
+                  format requested
         """
         response = urlopen(self.object_url(object_t, object_id))
         if self.output is "json":
