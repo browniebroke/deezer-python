@@ -7,12 +7,15 @@ Contents:
    :maxdepth: 2
 
 .. automodule:: deezer
-   :members:
 
-Indices and tables
-==================
+Client
+------
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. automodule:: deezer.client
+    :members:
 
+Resources
+---------
+
+.. automodule:: deezer.resources
+    :members:

@@ -3,3 +3,6 @@
 
 # Sphinx documentation
 docs/build/
+
+#Virtualenv
+ENV

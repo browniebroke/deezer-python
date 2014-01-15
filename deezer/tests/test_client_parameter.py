@@ -6,7 +6,7 @@ class TestClient(unittest.TestCase):
     def setUp(self):
         self.client = deezer.Client(app_id='foo', app_secret='bar')
         self.undef_client = deezer.Client(app_id='foo', app_secret='bar',
-                                             use_ssl=False, output='xml')
+                                          use_ssl=False, output='xml')
 
     def test_kwargs_parsing_valid(self):
         """Test that valid kwargs are stored as properties on the client."""
@@ -30,7 +30,7 @@ class TestClient(unittest.TestCase):
         self.client.url()
         user = self.client.url('/user')
         self.assertEqual(user, "https://api.deezer.com/user")
-        self.assertRaises(Exception, self.client.url, 'user')
+        self.assertRaises(ValueError, self.client.url, 'user')
 
     def test_object_url(self):
         """Test the object_url() method, validates against the allowed types
@@ -42,15 +42,21 @@ class TestClient(unittest.TestCase):
         self.assertRaises(TypeError, self.client.object_url, 'foo')
 
     def test_get_album(self):
-        """Test object() method"""
-        expected = {u'available': False, u'rating': 0, u'nb_tracks': 0, u'title': u'Monkey Business', u'tracks': {u'data': []}, u'release_date': u'0000-00-00', u'artist': {u'picture': u'https://api.deezer.com/artist/12/image', u'id': 12, u'name': u'Black Eyed Peas'}, u'cover': u'https://api.deezer.com/album/12/image', u'upc': u'_0602498822289', u'label': u'Universal Music Division Polydor', u'fans': 5, u'link': u'http://www.deezer.com/album/12', u'duration': 0, u'type': u'album', u'id': 12, u'genre_id': 18}
-        value = self.client.get_album(12)
-        self.assertEqual(value, expected)
+        """Test method to retrieve an album"""
+        album = self.client.get_album(12)
+        self.assertIsInstance(album, deezer.resources.Album)
+        self.assertEqual(album.title, 'Monkey Business')
 
-    def test_get_album_xml(self):
-        expected = '<?xml version="1.0" encoding="utf-8"?><root><id><![CDATA[12]]></id><title><![CDATA[Monkey Business]]></title><upc><![CDATA[_0602498822289]]></upc><link><![CDATA[http://www.deezer.com/album/12]]></link><cover><![CDATA[http://api.deezer.com/album/12/image]]></cover><genre_id><![CDATA[18]]></genre_id><label><![CDATA[Universal Music Division Polydor]]></label><nb_tracks><![CDATA[0]]></nb_tracks><duration><![CDATA[0]]></duration><fans><![CDATA[5]]></fans><rating><![CDATA[0]]></rating><release_date><![CDATA[0000-00-00]]></release_date><available><![CDATA[]]></available><artist><id><![CDATA[12]]></id><name><![CDATA[Black Eyed Peas]]></name><picture><![CDATA[http://api.deezer.com/artist/12/image]]></picture></artist><type><![CDATA[album]]></type><tracks><data></data></tracks></root>'
-        value = self.undef_client.get_album(12)
-        self.assertEqual(value, expected)
+    def test_get_artist(self):
+        """Test methods to get an artist"""
+        artist = self.client.get_artist(12)
+        self.assertIsInstance(artist, deezer.resources.Artist)
+        self.assertEqual(artist.name, 'Black Eyed Peas')
+
+        album = self.client.get_album(12)
+        artist = album.get_artist()
+        self.assertIsInstance(artist, deezer.resources.Artist)
+        self.assertEqual(artist.name, 'Black Eyed Peas')
 
 
 if __name__ == '__main__':
