@@ -1,12 +1,50 @@
 import deezer
 import unittest
 
+from mock import patch
+
+def mocked_get_object(dummy_inst, object_t, object_id=None, dummy_relation=None):
+    """
+    Basic function to mock the get_object Client's method.
+    Returns a json object, either with the id provided, or
+    as list of id's in the data field of a json object.
+    """
+    if object_id:
+        return {
+                    "id" : str(object_id),
+                    "type" : object_t,
+                    "name" : "foo",
+                    "related": {
+                        "id" : "12",
+                        "name" : "bar"
+                    }
+                }
+    else:
+        return {
+                    "data" : [
+                        {
+                            "id" : "1",
+                            "type" : object_t,
+                            "name" : "foo",
+                            "related": {
+                               "id" : "12",
+                               "name" : "bar"
+                            }
+                        }
+                    ]
+                }
+
 
 class TestClient(unittest.TestCase):
     def setUp(self):
+        self.patcher = patch('deezer.Client.get_object', mocked_get_object)
+        self.patcher.start()
         self.client = deezer.Client(app_id='foo', app_secret='bar')
-        self.undef_client = deezer.Client(app_id='foo', app_secret='bar',
-                                          use_ssl=False, output='xml')
+        self.unsec_client = deezer.Client(use_ssl=False)
+
+    def tearDown(self):
+        # pass
+        self.patcher.stop()
 
     def test_kwargs_parsing_valid(self):
         """Test that valid kwargs are stored as properties on the client."""
@@ -16,12 +54,11 @@ class TestClient(unittest.TestCase):
     def test_ssl(self):
         """Test that the ssl parameter provides the right scheme"""
         self.assertEqual(self.client.scheme, 'https://')
-        self.assertEqual(self.undef_client.scheme, 'http://')
+        self.assertEqual(self.unsec_client.scheme, 'http://')
 
     def test_output(self):
         """Test the ouput format requested"""
         self.assertEqual(self.client.output, "json")
-        self.assertEqual(self.undef_client.output, "xml")
 
     def test_url(self):
         """Test the url() method
@@ -45,18 +82,47 @@ class TestClient(unittest.TestCase):
         """Test method to retrieve an album"""
         album = self.client.get_album(12)
         self.assertIsInstance(album, deezer.resources.Album)
-        self.assertEqual(album.title, 'Monkey Business')
 
     def test_get_artist(self):
         """Test methods to get an artist"""
         artist = self.client.get_artist(12)
         self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(artist.name, 'Black Eyed Peas')
 
-        album = self.client.get_album(12)
-        artist = album.get_artist()
-        self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(artist.name, 'Black Eyed Peas')
+    def test_get_comment(self):
+        """Test methods to get a comment"""
+        comment = self.client.get_comment(12)
+        self.assertIsInstance(comment, deezer.resources.Comment)
+
+    def test_get_genre(self):
+        """Test methods to get a genre"""
+        genre = self.client.get_genre(1)
+        self.assertIsInstance(genre, deezer.resources.Genre)
+
+    def test_get_genres(self):
+        """Test methods to get several genres"""
+        genres = self.client.get_genres()
+        self.assertIsInstance(genres, list)
+        self.assertIsInstance(genres[0], deezer.resources.Genre)
+
+    def test_get_playlist(self):
+        """Test methods to get a playlist"""
+        playlist = self.client.get_playlist(1)
+        self.assertIsInstance(playlist, deezer.resources.Playlist)
+
+    def test_get_radio(self):
+        """Test methods to get a radio"""
+        radio = self.client.get_radio(1)
+        self.assertIsInstance(radio, deezer.resources.Radio)
+
+    def test_get_track(self):
+        """Test methods to get a track"""
+        track = self.client.get_track(1)
+        self.assertIsInstance(track, deezer.resources.Track)
+
+    def test_get_user(self):
+        """Test methods to get a user"""
+        user = self.client.get_user(1)
+        self.assertIsInstance(user, deezer.resources.User)
 
 
 if __name__ == '__main__':

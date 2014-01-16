@@ -1,21 +1,11 @@
-Deezer python's documentation
-=============================
+Deezer python's |version| documentation
+=======================================
+
+.. automodule:: deezer
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
 
-.. automodule:: deezer
-
-Client
-------
-
-.. automodule:: deezer.client
-    :members:
-
-Resources
----------
-
-.. automodule:: deezer.resources
-    :members:
+   client
+   resources

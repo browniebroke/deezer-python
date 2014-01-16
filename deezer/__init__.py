@@ -1,14 +1,18 @@
 """Python `Deezer API <http://developers.deezer.com/api>`_ Wrapper.
 
-The point is to implements several classes to interact with
-all types of Deezer objects, do some searches, etc...
+Implements several classes to interact with all types of Deezer objects,
+do some searches, and build application written in Python on top of it
 
-The package is not mature at all at the moment."""
+.. note:: The package is not mature at all at the moment.
+
+"""
 
 __version__ = '0.1'
-__all__ = ['Client', 'Resource', 'Album']
+__all__ = ['Client', 'Resource', 'Album', 'Artist', 'Genre',
+           'Playlist', 'Track', 'User', 'Comment', 'Radio']
 
 USER_AGENT = 'Deezer Python API Wrapper v%s' % __version__
 
 from deezer.client import Client
-from deezer.resources import Album
+from deezer.resources import Album, Resource, Artist, Playlist
+from deezer.resources import Genre, Track, User, Comment, Radio

@@ -1,6 +1,6 @@
 """
 Module to implement the various types of resources that
-can be found in the API. 
+can be found in the API.
 """
 
 class Resource(object):
@@ -26,6 +26,7 @@ class Resource(object):
         a helper method for the child objects.
         """
         # object_t = self.__class__.__name__.lower()
+        # pylint: disable=E1101
         return self.client.get_object(self.type, self.id, relation=relation)
 
 
@@ -37,8 +38,9 @@ class Album(Resource):
 
     def get_artist(self):
         """
-        Return the `Artist <#deezer.resources.Artist>`_ of the album
+        Return the :mod:`Artist <deezer.resources.Artist>` of the album
         """
+        # pylint: disable=E1101
         return self.client.get_artist(self.artist['id'])
 
 
@@ -82,3 +84,10 @@ class Comment(Resource):
 
     def __init__(self, client, json):
         super(Comment, self).__init__(client, json)
+
+
+class Radio(Resource):
+    """To access a radio."""
+
+    def __init__(self, client, json):
+        super(Radio, self).__init__(client, json)
