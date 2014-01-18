@@ -3,8 +3,7 @@ deezer-python
 
 A friendly wrapper around the [Deezer API](http://developers.deezer.com/api).
 
-.. image:: https://travis-ci.org/browniebroke/deezer-python.png?branch=master
-    :target: https://travis-ci.org/browniebroke/deezer-python
+[![Build Status](https://travis-ci.org/browniebroke/deezer-python.png?branch=master)](https://travis-ci.org/browniebroke/deezer-python)
 
 Installation
 ------------
