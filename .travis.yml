@@ -6,9 +6,12 @@ python:
 # command to install dependencies
 install: 
     - pip install sphinx
-    - pip install -r requirements.txt"
+    - pip install -r requirements.txt
+    - pip install coveralls
 # command to run tests
 script:
     - python -m coverage run -m unittest discover
     - cd docs
     - make html
+after_success:
+    - coveralls
