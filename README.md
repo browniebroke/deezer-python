@@ -5,6 +5,8 @@ A friendly wrapper around the [Deezer API](http://developers.deezer.com/api).
 
 [![Build Status](https://travis-ci.org/browniebroke/deezer-python.png?branch=master)](https://travis-ci.org/browniebroke/deezer-python)
 
+[![Coverage Status](https://coveralls.io/repos/browniebroke/deezer-python/badge.png)](https://coveralls.io/r/browniebroke/deezer-python)
+
 Installation
 ------------
 
