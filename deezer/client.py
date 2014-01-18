@@ -3,7 +3,11 @@ Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
 
-from urllib2 import urlopen
+try:
+    from urllib2 import urlopen
+except ImportError:
+    #python 3
+    from urllib.request import urlopen
 import json
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Playlist, Radio, Track, User
