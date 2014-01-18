@@ -12,10 +12,14 @@ for line in open('./deezer/__init__.py'):
         break
 assert version
 
+with open('README.md') as file:
+    long_description = file.read()
+
 setup(
     name='deezer',
     version=version,
     description='A friendly wrapper library for the Deezer API',
+    long_description=long_description,
     author='Bruno Alla',
     author_email='alla.brunoo@gmail.com',
     url='https://github.com/brwoniebroke/deezer-python',
@@ -30,6 +34,7 @@ setup(
     ],
     tests_require=[
         'nose>=1.1.2',
+        'mock>=1.0.1',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',

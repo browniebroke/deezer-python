@@ -1,8 +1,10 @@
 *.pyc
 *.egg-info
+.coverage
 
 # Sphinx documentation
 docs/build/
 
 #Virtualenv
 ENV
+
