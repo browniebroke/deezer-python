@@ -9,7 +9,6 @@
 branch = true
 source = deezer
 omit = 
-    deezer/test/*
     ENV/*
 
 [report]

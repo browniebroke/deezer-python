@@ -9,3 +9,5 @@ docs/build/
 ENV
 ENV3
 
+
+.coveralls.yml
