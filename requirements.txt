@@ -2,3 +2,4 @@ mock>=1.0.1
 nose>=1.1.2
 wsgiref==0.1.2
 coverage>=3.7
+sphinx>=1.2
