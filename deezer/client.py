@@ -98,12 +98,14 @@ class Client(object):
         """
         response = urlopen(self.object_url(object_t, object_id, relation))
         if self.output is "json":
+            resp_str = response.read()
             try:
-                return json.load(response)
+                return json.loads(resp_str)
             except TypeError:
                 #Python 3
                 encoding = response.headers.get_content_charset()
-                return json.loads(response.read().decode(encoding))
+                decoded_str = resp_str.decode(encoding)
+                return json.loads(decoded_str)
         else:
             return response.read()
 
