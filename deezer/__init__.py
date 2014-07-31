@@ -8,10 +8,18 @@ do some searches, and build application written in Python on top of it
 """
 
 __version__ = '0.1'
-__all__ = ['Client', 'Resource', 'Album', 'Artist', 'Genre',
-           'Playlist', 'Track', 'User', 'Comment', 'Radio']
+__all__ = ['AsyncClient', 'Client', 'Resource', 'Album',
+           'Artist', 'Genre', 'Playlist', 'Track', 'User',
+           'Comment', 'Radio']
 
 USER_AGENT = 'Deezer Python API Wrapper v%s' % __version__
+
+try:
+    from deezer.async import AsyncClient
+except ImportError:
+    def AsyncClient(*args, **kwargs):
+        msg = "You need to install Tornado to be able use the async client."
+        raise RuntimeError(msg)
 
 from deezer.client import Client
 from deezer.resources import Album, Resource, Artist, Playlist
