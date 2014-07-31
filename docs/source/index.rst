@@ -7,5 +7,6 @@ Contents:
 
 .. toctree::
 
+   async
    client
    resources

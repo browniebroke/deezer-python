@@ -20,7 +20,23 @@ So far you can only retrieve the data for the public objects, for which no login
     >>> client = deezer.Client()
     >>> client.get_album(12).title
     u'Monkey Business'
-    
+
+You also can use AsyncClient with tornado.
+
+    >>> from tornado.gen import coroutine
+    >>> from tornado.ioloop import IOLoop
+    >>> from deezer import AsyncClient
+    >>>
+    >>>
+    >>> @coroutine
+    ... def main():
+    ...     client = AsyncClient()
+    ...     album = yield client.get_album(12)
+    ...     print(album.title)
+    ...
+    >>> IOLoop.instance().run_sync(main)
+    Monkey Business
+
 See the whole API on the [Sphinx](http://sphinx-doc.org/) generated [documentation](http://deezer-python.readthedocs.org/).
 
 Authentication
