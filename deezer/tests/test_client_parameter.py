@@ -3,36 +3,38 @@ import unittest
 
 from mock import patch
 
-def mocked_get_object(dummy_inst, object_t, object_id=None, dummy_relation=None):
+
+def mocked_get_object(self, object_t, object_id=None, relation=None, **kwargs):
     """
     Basic function to mock the get_object Client's method.
-    Returns a json object, either with the id provided, or
-    as list of id's in the data field of a json object.
+    Returns a :class:`~deezer.resources.Resource` object,
+    or as list of :class:`~deezer.resources.Resource` objects.
     """
     if object_id:
-        return {
-                    "id" : str(object_id),
-                    "type" : object_t,
-                    "name" : "foo",
+        item = {
+            "id": str(object_id),
+            "type": object_t,
+            "name": "foo",
+            "related": {
+                "id": "12",
+                "name": "bar"
+            }
+        }
+    else:
+        item = {
+            "data": [
+                {
+                    "id": "1",
+                    "type": object_t,
+                    "name": "foo",
                     "related": {
-                        "id" : "12",
-                        "name" : "bar"
+                        "id": "12",
+                        "name": "bar"
                     }
                 }
-    else:
-        return {
-                    "data" : [
-                        {
-                            "id" : "1",
-                            "type" : object_t,
-                            "name" : "foo",
-                            "related": {
-                               "id" : "12",
-                               "name" : "bar"
-                            }
-                        }
-                    ]
-                }
+            ]
+        }
+    return self._process_json(item)
 
 
 class TestClient(unittest.TestCase):
@@ -53,8 +55,8 @@ class TestClient(unittest.TestCase):
 
     def test_ssl(self):
         """Test that the ssl parameter provides the right scheme"""
-        self.assertEqual(self.client.scheme, 'https://')
-        self.assertEqual(self.unsec_client.scheme, 'http://')
+        self.assertEqual(self.client.scheme, 'https')
+        self.assertEqual(self.unsec_client.scheme, 'http')
 
     def test_output(self):
         """Test the ouput format requested"""
@@ -67,7 +69,8 @@ class TestClient(unittest.TestCase):
         self.client.url()
         user = self.client.url('/user')
         self.assertEqual(user, "https://api.deezer.com/user")
-        self.assertRaises(ValueError, self.client.url, 'user')
+        user = self.client.url('user')
+        self.assertEqual(user, "https://api.deezer.com/user")
 
     def test_object_url(self):
         """Test the object_url() method, validates against the allowed types
