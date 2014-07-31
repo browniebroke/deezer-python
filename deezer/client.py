@@ -4,13 +4,17 @@ Implements a client class to query the
 """
 
 try:
+    from urllib import urlencode
     from urllib2 import urlopen
 except ImportError:
     #python 3
+    from urllib.parse import urlencode
     from urllib.request import urlopen
 import json
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Playlist, Radio, Track, User
+from deezer.resources import Resource
+
 
 class Client(object):
     """A client to retrieve some basic infos about Deezer resourses.
@@ -29,18 +33,18 @@ class Client(object):
     host = "api.deezer.com"
     output = "json"
 
-    objects_types = (
-        "album",
-        "artist",
-        "comment",
-        "editorial",
-        # "folder", # need identification
-        "genre",
-        "playlist",
-        "radio",
-        "track",
-        "user",
-    )
+    objects_types = {
+        'album': Album,
+        'artist': Artist,
+        'comment': Comment,
+        'editorial': None,
+        # 'folder': None, # need identification
+        'genre': Genre,
+        'playlist': Playlist,
+        'radio': Radio,
+        'track': Track,
+        'user': User,
+    }
 
     def __init__(self, **kwargs):
         super(Client, self).__init__()
@@ -54,49 +58,66 @@ class Client(object):
         self.app_secret = kwargs.get('app_secret')
         self.access_token = kwargs.get('access_token')
 
+    def make_str(self, value):
+        """
+        Convert value to str in python2 and python3 compatible way
+
+        :returns: str instance
+        """
+        try:
+            value = str(value)
+        except UnicodeEncodeError:
+            #python2
+            value = value.encode('utf-8')
+        return value
+
     @property
     def scheme(self):
         """Get the http prefix for the address depending on the
         use_ssl attribute
         """
-        return self.use_ssl and 'https://' or 'http://'
+        return self.use_ssl and 'https' or 'http'
 
     def url(self, request=''):
-        """Build the url with the appended request if provided.
+        """Build the url with the appended request if provided."""
+        if request.startswith('/'):
+            request = request[1:]
+        return "%s://%s/%s" % (self.scheme, self.host, request)
 
-        :raises ValueError: if the request does not start by '/'"""
-        if request and not request.startswith('/'):
-            raise ValueError
-        return "%s%s%s" % (self.scheme, self.host, request)
-
-    def object_url(self, object_t, object_id=None, relation=None, options=None):
+    def object_url(self, object_t, object_id=None, relation=None, **kwargs):
         """
         Helper method to build the url to query to access the object
         passed as parameter
 
         :raises TypeError: if the object type is invalid
         """
-        options = [options] if options else []
-        if self.output is not "json":
-            options.append("output=%s" % self.output)
         if object_t not in self.objects_types:
             raise TypeError("%s is not a valid type" % object_t)
-        request = "/" + object_t
-        if object_id:
-            request += "/%s" % object_id
-            if relation:
-                request += "/%s" % relation
+        request_items = (object_t, object_id, relation)
+        request_items = (item for item in request_items if item is not None)
+        request_items = (str(item) for item in request_items)
+        request = '/'.join(request_items)
         base_url = self.url(request)
-        return base_url + ("?%s" % "&".join(options) if options else "")
+        if self.output is not 'json':
+            kwargs['output'] = self.output
+        if kwargs:
+            for key, value in kwargs.items():
+                if not isinstance(value, str):
+                    kwargs[key] = self.make_str(value)
+            result = '%s?%s' % (base_url, urlencode(kwargs))
+        else:
+            result = base_url
+        return result
 
-    def get_object(self, object_t, object_id=None, relation=None):
+    def get_object(self, object_t, object_id=None, relation=None, **kwargs):
         """
         Actually query the Deezer API to retrieve the object
 
-        :returns: json dictionnary or raw string if other
+        :returns: json dictionary or raw string if other
                   format requested
         """
-        response = urlopen(self.object_url(object_t, object_id, relation))
+        url = self.object_url(object_t, object_id, relation, **kwargs)
+        response = urlopen(url)
         if self.output is "json":
             resp_str = response.read()
             try:
@@ -147,7 +168,6 @@ class Client(object):
             ret.append(Genre(self, genre))
         return ret
 
-
     def get_playlist(self, object_id):
         """Get the playlist with the provided id
 
@@ -176,4 +196,29 @@ class Client(object):
         jsn = self.get_object("user", object_id)
         return User(self, jsn)
 
+    def _process_relation(self, jsn):
+        """
+        Guess resource class and convert json to resource objects
 
+        :returns: list of resource objects
+        """
+        def _process(item):
+            object_t = self.objects_types.get(item['type'], Resource)
+            return object_t(self, item)
+        if 'data' in jsn:
+            return [_process(item) for item in jsn['data']]
+        else:
+            return [_process(jsn)]
+
+    def _get_relation(self, object_t, object_id, relation, **kwargs):
+        """
+        Generic method to load the relation from any resource.
+        Query the client with the object's known parameters
+        and try to retrieve the provided relation type. This
+        is not meant to be used directly by a client, it's more
+        a helper method for the child objects.
+
+        :returns: list of resource objects
+        """
+        jsn = self.get_object(object_t, object_id, relation, **kwargs)
+        return self._process_relation(jsn)
