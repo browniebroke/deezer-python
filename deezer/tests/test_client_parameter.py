@@ -4,12 +4,11 @@ import unittest
 from mock import patch
 
 
-def mocked_get_object(dummy_inst, object_t,
-                      object_id=None, dummy_relation=None):
+def mocked_get_object(self, object_t, object_id=None, relation=None, **kwargs):
     """
     Basic function to mock the get_object Client's method.
-    Returns a json object, either with the id provided, or
-    as list of id's in the data field of a json object.
+    Returns a :class:`~deezer.resources.Resource` object,
+    or as list of :class:`~deezer.resources.Resource` objects.
     """
     if object_id:
         item = {
@@ -35,7 +34,7 @@ def mocked_get_object(dummy_inst, object_t,
                 }
             ]
         }
-    return item
+    return self._process_json(item)
 
 
 class TestClient(unittest.TestCase):

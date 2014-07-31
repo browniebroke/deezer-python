@@ -3,6 +3,7 @@ Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
 
+import json
 try:
     from urllib import urlencode
     from urllib2 import urlopen
@@ -10,7 +11,6 @@ except ImportError:
     #python 3
     from urllib.parse import urlencode
     from urllib.request import urlopen
-import json
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Playlist, Radio, Track, User
 from deezer.resources import Resource
@@ -42,6 +42,7 @@ class Client(object):
         'genre': Genre,
         'playlist': Playlist,
         'radio': Radio,
+        'search': None,
         'track': Track,
         'user': User,
     }
@@ -58,6 +59,31 @@ class Client(object):
         self.app_secret = kwargs.get('app_secret')
         self.access_token = kwargs.get('access_token')
 
+    def _process_item(self, item):
+        """
+        Recursively convert dictionary
+        to :class:`~deezer.resources.Resource` object
+
+        :returns: instance of :class:`~deezer.resources.Resource`
+        """
+        for key, value in item.items():
+            if isinstance(value, dict) and 'type' in value:
+                item[key] = self._process_item(value)
+            elif isinstance(value, dict) and 'data' in value:
+                item[key] = [self._process_item(i) for i in value['data']]
+        object_t = self.objects_types.get(item['type'], Resource)
+        return object_t(self, item)
+
+    def _process_json(self, jsn):
+        """
+        Convert json to a :class:`~deezer.resources.Resource` object,
+        or list of :class:`~deezer.resources.Resource` objects.
+        """
+        if 'data' in jsn:
+            return [self._process_item(item) for item in jsn['data']]
+        else:
+            return self._process_item(jsn)
+
     def make_str(self, value):
         """
         Convert value to str in python2 and python3 compatible way
@@ -73,8 +99,8 @@ class Client(object):
 
     @property
     def scheme(self):
-        """Get the http prefix for the address depending on the
-        use_ssl attribute
+        """
+        Get the http prefix for the address depending on the use_ssl attribute
         """
         return self.use_ssl and 'https' or 'http'
 
@@ -118,107 +144,87 @@ class Client(object):
         """
         url = self.object_url(object_t, object_id, relation, **kwargs)
         response = urlopen(url)
+        resp_str = response.read().decode('utf-8')
         if self.output is "json":
-            resp_str = response.read()
-            try:
-                return json.loads(resp_str)
-            except TypeError:
-                #Python 3
-                encoding = response.headers.get_content_charset()
-                decoded_str = resp_str.decode(encoding)
-                return json.loads(decoded_str)
+            jsn = json.loads(resp_str)
+            return self._process_json(jsn)
         else:
-            return response.read()
+            return resp_str
 
     def get_album(self, object_id):
-        """Get the album with the provided id
+        """
+        Get the album with the provided id
 
-        :returns: an :class:`~deezer.resources.Album` object"""
-        jsn = self.get_object("album", object_id)
-        return Album(self, jsn)
+        :returns: an :class:`~deezer.resources.Album` object
+        """
+        return self.get_object("album", object_id)
 
     def get_artist(self, object_id):
-        """Get the artist with the provided id
+        """
+        Get the artist with the provided id
 
-        :returns: an :class:`~deezer.resources.Artist` object"""
-        jsn = self.get_object("artist", object_id)
-        return Artist(self, jsn)
+        :returns: an :class:`~deezer.resources.Artist` object
+        """
+        return self.get_object("artist", object_id)
 
     def get_comment(self, object_id):
-        """Get the comment with the provided id
+        """
+        Get the comment with the provided id
 
-        :returns: a :class:`~deezer.resources.Comment` object"""
-        jsn = self.get_object("comment", object_id)
-        return Comment(self, jsn)
+        :returns: a :class:`~deezer.resources.Comment` object
+        """
+        return self.get_object("comment", object_id)
 
     def get_genre(self, object_id):
-        """Get the genre with the provided id
+        """
+        Get the genre with the provided id
 
-        :returns: a :class:`~deezer.resources.Genre` object"""
-        jsn = self.get_object("genre", object_id)
-        return Genre(self, jsn)
+        :returns: a :class:`~deezer.resources.Genre` object
+        """
+        return self.get_object("genre", object_id)
 
     def get_genres(self):
         """
-        Returns a list of :class:`~deezer.resources.Genre` objects.
+        :returns: a list of :class:`~deezer.resources.Genre` objects.
         """
-        jsn = self.get_object("genre")
-        ret = []
-        for genre in jsn["data"]:
-            ret.append(Genre(self, genre))
-        return ret
+        return self.get_object("genre")
 
     def get_playlist(self, object_id):
-        """Get the playlist with the provided id
+        """
+        Get the playlist with the provided id
 
-        :returns: a :class:`~deezer.resources.Playlist` object"""
-        jsn = self.get_object("playlist", object_id)
-        return Playlist(self, jsn)
+        :returns: a :class:`~deezer.resources.Playlist` object
+        """
+        return self.get_object("playlist", object_id)
 
     def get_radio(self, object_id=None):
-        """Get the radio with the provided id.
+        """
+        Get the radio with the provided id.
 
-        :returns: a :class:`~deezer.resources.Radio` object"""
-        jsn = self.get_object("radio", object_id)
-        return Radio(self, jsn)
+        :returns: a :class:`~deezer.resources.Radio` object
+        """
+        return self.get_object("radio", object_id)
 
     def get_track(self, object_id):
-        """Get the track with the provided id
+        """
+        Get the track with the provided id
 
-        :returns: a :class:`~deezer.resources.Track` object"""
-        jsn = self.get_object("track", object_id)
-        return Track(self, jsn)
+        :returns: a :class:`~deezer.resources.Track` object
+        """
+        return self.get_object("track", object_id)
 
     def get_user(self, object_id):
-        """Get the user with the provided id
-
-        :returns: a :class:`~deezer.resources.User` object"""
-        jsn = self.get_object("user", object_id)
-        return User(self, jsn)
-
-    def _process_relation(self, jsn):
         """
-        Guess resource class and convert json to resource objects
+        Get the user with the provided id
 
-        :returns: list of resource objects
+        :returns: a :class:`~deezer.resources.User` object
         """
-        def _process(item):
-            object_t = self.objects_types.get(item['type'], Resource)
-            return object_t(self, item)
-        if 'data' in jsn:
-            return [_process(item) for item in jsn['data']]
-        else:
-            return [_process(jsn)]
+        return self.get_object("user", object_id)
 
-    def _get_relation(self, object_t, object_id, relation, **kwargs):
+    def search(self, query, relation='track', **kwargs):
         """
-        Generic method to load the relation from any resource.
-        Query the client with the object's known parameters
-        and try to retrieve the provided relation type. This
-        is not meant to be used directly by a client, it's more
-        a helper method for the child objects.
+        Search track, album, artist or user
 
-        :returns: list of resource objects
+        :returns: a list of :class:`~deezer.resources.Resource` objects.
         """
-        jsn = self.get_object(object_t, object_id, relation, **kwargs)
-        return self._process_relation(jsn)
+        return self.get_object('search', relation, q=query, *kwargs)

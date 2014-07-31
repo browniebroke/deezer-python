@@ -36,7 +36,7 @@ class Resource(object):
         """
         # object_t = self.__class__.__name__.lower()
         # pylint: disable=E1101
-        return self.client._get_relation(self.type, self.id, relation, **kwargs)
+        return self.client.get_object(self.type, self.id, relation, **kwargs)
 
 
 class Album(Resource):
