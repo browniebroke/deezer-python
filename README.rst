@@ -65,9 +65,9 @@ The unit tests are using python unittest framework, just run:
 .. |coverage-status| image:: https://coveralls.io/repos/browniebroke/deezer-python/badge.png
     :target: https://coveralls.io/r/browniebroke/deezer-python
     :alt: Test coverage percentage
-.. |docs| mage:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
+.. |docs| image:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
     :target: https://readthedocs.org/projects/deezer-python/?badge=latest
     :alt: Documentation Status
-.. _`Deezer API`: http://developers.deezer.com/api
-.. _`Sphinx`: http://sphinx-doc.org/
-.. _`documentation`: http://deezer-python.readthedocs.org/
+.. _Deezer API: http://developers.deezer.com/api
+.. _Sphinx: http://sphinx-doc.org/
+.. _documentation: http://deezer-python.readthedocs.org/
