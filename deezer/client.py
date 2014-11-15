@@ -32,7 +32,6 @@ class Client(object):
 
     use_ssl = True
     host = "api.deezer.com"
-    output = "json"
 
     objects_types = {
         'album': Album,
@@ -125,8 +124,6 @@ class Client(object):
         request_items = (str(item) for item in request_items)
         request = '/'.join(request_items)
         base_url = self.url(request)
-        if self.output is not 'json':
-            kwargs['output'] = self.output
         if kwargs:
             for key, value in kwargs.items():
                 if not isinstance(value, str):
@@ -140,18 +137,14 @@ class Client(object):
         """
         Actually query the Deezer API to retrieve the object
 
-        :returns: json dictionary or raw string if other
-                  format requested
+        :returns: json dictionary
         """
         url = self.object_url(object_t, object_id, relation, **kwargs)
         response = urlopen(url)
         resp_str = response.read().decode('utf-8')
         response.close()
-        if self.output is "json":
-            jsn = json.loads(resp_str)
-            return self._process_json(jsn)
-        else:
-            return resp_str
+        jsn = json.loads(resp_str)
+        return self._process_json(jsn)
 
     def get_album(self, object_id):
         """

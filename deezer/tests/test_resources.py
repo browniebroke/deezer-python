@@ -16,5 +16,6 @@ class TestResources(unittest.TestCase):
         client = deezer.Client()
         album = client.get_album(302127)
         self.assertTrue(hasattr(album, 'title'))
+        self.assertEqual(album.__repr__(), '<Album: Discovery>')
         artist = album.get_artist()
-        self.assertTrue(isinstance(artist, deezer.resources.Artist))
+        self.assertIsInstance(artist, deezer.resources.Artist)

@@ -39,9 +39,6 @@ class AsyncClient(Client):
         logging.debug(url)
         response = yield self._async_client.fetch(url)
         resp_str = response.body.decode('utf-8')
-        if self.output is 'json':
-            jsn = json.loads(resp_str)
-            result = self._process_json(jsn)
-        else:
-            result = resp_str
+        jsn = json.loads(resp_str)
+        result = self._process_json(jsn)
         raise Return(result)

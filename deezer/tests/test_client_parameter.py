@@ -1,7 +1,10 @@
 import deezer
 import unittest
 from mock import patch
+from tornado.gen import coroutine
+from tornado.ioloop import IOLoop
 from .mocked_methods import fake_urlopen
+
 
 class TestClient(unittest.TestCase):
     def setUp(self):
@@ -22,10 +25,6 @@ class TestClient(unittest.TestCase):
         """Test that the ssl parameter provides the right scheme"""
         self.assertEqual(self.client.scheme, 'https')
         self.assertEqual(self.unsec_client.scheme, 'http')
-
-    def test_output(self):
-        """Test the ouput format requested"""
-        self.assertEqual(self.client.output, "json")
 
     def test_url(self):
         """Test the url() method
@@ -91,6 +90,16 @@ class TestClient(unittest.TestCase):
         """Test methods to get a user"""
         user = self.client.get_user(359622)
         self.assertIsInstance(user, deezer.resources.User)
+
+class TestAsyncClient(unittest.TestCase):
+    def setUp(self):
+        self.patcher = patch('deezer.client.urlopen', fake_urlopen)
+        self.patcher.start()
+        self.client = deezer.AsyncClient(app_id='foo', app_secret='bar')
+        self.unsec_client = deezer.AsyncClient(use_ssl=False)
+
+    def tearDown(self):
+        self.patcher.stop()
 
 
 if __name__ == '__main__':
