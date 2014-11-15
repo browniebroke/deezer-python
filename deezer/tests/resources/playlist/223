@@ -1,0 +1,64 @@
+{
+  "id": "223",
+  "title": "M",
+  "description": "",
+  "duration": 438,
+  "public": true,
+  "is_loved_track": false,
+  "collaborative": false,
+  "rating": 0,
+  "link": "http://www.deezer.com/playlist/223",
+  "picture": "https://api.deezer.com/playlist/223/image",
+  "checksum": "369d45f162bb62e49cb1afdbae2725d8",
+  "creator": {
+    "id": "63",
+    "type": "user"
+  },
+  "type": "playlist",
+  "tracks": {
+    "data": [
+      {
+        "id": "3129691",
+        "readable": true,
+        "title": "Mama sam",
+        "link": "http://www.deezer.com/track/3129691",
+        "duration": "195",
+        "preview": "http://cdn-preview-e.deezer.com/stream/e3778ff4cc5df224d1f9abaafe10c1e5-1.mp3",
+        "artist": {
+          "id": "867",
+          "name": "M",
+          "link": "http://www.deezer.com/artist/867",
+          "type": "artist"
+        },
+        "album": {
+          "id": "301769",
+          "title": "Je Dis Aime",
+          "cover": "https://api.deezer.com/album/301769/image",
+          "type": "album"
+        },
+        "type": "track"
+      },
+      {
+        "id": "184419",
+        "readable": false,
+        "title": "Je dis aime/Ich sag Liebe (feat. -M-)",
+        "link": "http://www.deezer.com/track/184419",
+        "duration": "243",
+        "preview": "http://cdn-preview-1.deezer.com/stream/1b8655f3ab26b3bb5e65625ad3006b27-0.mp3",
+        "artist": {
+          "id": "5369",
+          "name": "MIA.",
+          "link": "http://www.deezer.com/artist/5369",
+          "type": "artist"
+        },
+        "album": {
+          "id": "17586",
+          "title": "Zirkus",
+          "cover": "https://api.deezer.com/album/17586/image",
+          "type": "album"
+        },
+        "type": "track"
+      }
+    ]
+  }
+}

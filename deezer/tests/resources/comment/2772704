@@ -1,0 +1,17 @@
+{
+  "id": "2772704",
+  "text": "hey! c'est vraiement pas mal comme son ^^ classe!",
+  "date": "2008-12-03 10:35:38",
+  "object": {
+    "id": null,
+    "type": "album"
+  },
+  "author": {
+    "id": "3500485",
+    "name": "noiseofbozzo",
+    "link": "http://www.deezer.com/profile/3500485",
+    "picture": "https://api.deezer.com/user/3500485/image",
+    "type": "user"
+  },
+  "type": "comment"
+}

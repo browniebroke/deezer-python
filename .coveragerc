@@ -10,6 +10,7 @@ branch = true
 source = deezer
 omit = 
     ENV/*
+    deezer/tests/*
 
 [report]
 # Ignore missing source files, i.e. fake template-generated "files"

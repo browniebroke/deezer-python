@@ -9,7 +9,7 @@ class Resource(object):
     Base class for any resource.
 
     It is mainly responsible of passing a reference to the client
-    to this class when instanciated, and transmit the json data into
+    to this class when instantiated, and transmit the json data into
     attributes
     """
 
@@ -29,6 +29,7 @@ class Resource(object):
     def get_relation(self, relation, **kwargs):
         """
         Generic method to load the relation from any resource.
+
         Query the client with the object's known parameters
         and try to retrieve the provided relation type. This
         is not meant to be used directly by a client, it's more
@@ -50,7 +51,7 @@ class Album(Resource):
         Return the :mod:`Artist <deezer.resources.Artist>` of the album
         """
         # pylint: disable=E1101
-        return self.client.get_artist(self.artist['id'])
+        return self.artist
 
 
 class Artist(Resource):

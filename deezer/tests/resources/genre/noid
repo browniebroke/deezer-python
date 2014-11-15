@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": "0",
+      "name": "All",
+      "type": "genre"
+    },
+    {
+      "id": "85",
+      "name": "Alternative",
+      "type": "genre"
+    },
+    {
+      "id": "95",
+      "name": "Children’s Music",
+      "type": "genre"
+    }
+  ]
+}

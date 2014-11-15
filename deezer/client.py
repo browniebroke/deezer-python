@@ -17,7 +17,8 @@ from deezer.resources import Resource
 
 
 class Client(object):
-    """A client to retrieve some basic infos about Deezer resourses.
+    """
+    A client to retrieve some basic infos about Deezer resourses.
 
     Create a client instance with the provided options. Options should
     be passed in to the constructor as kwargs.
@@ -145,6 +146,7 @@ class Client(object):
         url = self.object_url(object_t, object_id, relation, **kwargs)
         response = urlopen(url)
         resp_str = response.read().decode('utf-8')
+        response.close()
         if self.output is "json":
             jsn = json.loads(resp_str)
             return self._process_json(jsn)

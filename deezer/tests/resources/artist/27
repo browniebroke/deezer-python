@@ -1,0 +1,10 @@
+{
+  "id": "27",
+  "name": "Daft Punk",
+  "link": "http://www.deezer.com/artist/27",
+  "picture": "https://api.deezer.com/artist/27/image",
+  "nb_album": 64,
+  "nb_fan": 1243428,
+  "radio": true,
+  "type": "artist"
+}
