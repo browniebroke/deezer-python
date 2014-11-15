@@ -6,8 +6,7 @@
 docs/build/
 
 #Virtualenvs
-ENV
-ENV3
+ENV*
 
 
 .coveralls.yml
