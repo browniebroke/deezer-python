@@ -49,6 +49,8 @@ Running Tests
 
 The unit tests are using python unittest framework, just run:
 
+::
+
     % python -m unittest discover
     ......
     ----------------------------------------------------------------------
