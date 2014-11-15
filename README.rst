@@ -15,7 +15,6 @@ So far you can only retrieve the data for the public objects, for which no login
 The objects are translated to python resources, which are basically python objects encapsulating 
 the json dictionary returned by the API. Search is not yet implemented.
 
-.. code-block:: python
 
     >>> client = deezer.Client()
     >>> client.get_album(12).title
@@ -23,7 +22,6 @@ the json dictionary returned by the API. Search is not yet implemented.
 
 You also can use AsyncClient with tornado.
 
-.. code-block:: python
 
     >>> from tornado.gen import coroutine
     >>> from tornado.ioloop import IOLoop
