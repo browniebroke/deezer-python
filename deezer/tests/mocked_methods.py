@@ -9,4 +9,5 @@ def fake_urlopen(url):
     resource_file = os.path.normpath('deezer/tests/resources%s' % parsed_url.path)
     if os.path.isdir(resource_file):
         resource_file += "/noid"
+    resource_file += ".json"
     return open(resource_file, mode='rb')

@@ -14,13 +14,7 @@ __all__ = ['AsyncClient', 'Client', 'Resource', 'Album',
 
 USER_AGENT = 'Deezer Python API Wrapper v%s' % __version__
 
-try:
-    from deezer.async import AsyncClient
-except ImportError:
-    def AsyncClient(*args, **kwargs):
-        msg = "You need to install Tornado to be able use the async client."
-        raise RuntimeError(msg)
-
+from deezer.async import AsyncClient
 from deezer.client import Client
 from deezer.resources import Album, Resource, Artist, Playlist
 from deezer.resources import Genre, Track, User, Comment, Radio

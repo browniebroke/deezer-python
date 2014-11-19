@@ -216,10 +216,10 @@ class Client(object):
         """
         return self.get_object("user", object_id)
 
-    def search(self, query, relation='track', **kwargs):
+    def search(self, query, relation=None, **kwargs):
         """
         Search track, album, artist or user
 
         :returns: a list of :class:`~deezer.resources.Resource` objects.
         """
-        return self.get_object('search', relation, q=query, *kwargs)
+        return self.get_object(object_t="search", object_id=None, relation=relation, q=query, **kwargs)

@@ -39,10 +39,18 @@ class TestClient(unittest.TestCase):
     def test_object_url(self):
         """Test the object_url() method, validates against the allowed types
         of objects"""
-        self.client.object_url("album")
-        self.client.object_url("album", 12)
-        album = self.client.object_url("album", "12")
-        self.assertEqual(album, "https://api.deezer.com/album/12")
+        self.assertEqual(self.client.object_url("album"),
+                         "https://api.deezer.com/album")
+        self.assertEqual(self.client.object_url("album", 12),
+                         "https://api.deezer.com/album/12")
+        self.assertEqual(self.client.object_url("album", "12"),
+                         "https://api.deezer.com/album/12")
+        self.assertEqual(self.client.object_url("album", "12", "artist"),
+                         "https://api.deezer.com/album/12/artist")
+        self.assertEqual(self.client.object_url("album", "12", limit=1),
+                         "https://api.deezer.com/album/12?limit=1")
+        self.assertEqual(self.client.object_url("album", "12", "artist", limit=1),
+                         "https://api.deezer.com/album/12/artist?limit=1")
         self.assertRaises(TypeError, self.client.object_url, 'foo')
 
     def test_get_album(self):
@@ -90,6 +98,32 @@ class TestClient(unittest.TestCase):
         """Test methods to get a user"""
         user = self.client.get_user(359622)
         self.assertIsInstance(user, deezer.resources.User)
+
+    def test_search(self):
+        """Test search method"""
+        self.assertEqual(self.client.object_url("search", q="Daft Punk"),
+                         "https://api.deezer.com/search?q=Daft+Punk")
+        result = self.client.search("Billy Jean")
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].title, "Billy Jean")
+
+        self.assertEqual(self.client.object_url("search", relation="track", q="Daft Punk"),
+                         "https://api.deezer.com/search/track?q=Daft+Punk")
+        result = self.client.search("Billy Jean", "track")
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].title, "Billy Jean")
+        self.assertIsInstance(result[0], deezer.resources.Track)
+
+    def test_options(self):
+        """Test a query with extra arguments"""
+        result = self.client.search("Billy Jean", limit=2)
+        self.assertIsInstance(result, list)
+        self.assertLessEqual(len(result), 2)
+
+        result = self.client.search("Billy Jean", limit=2, index=1)
+        self.assertIsInstance(result, list)
+        self.assertLessEqual(len(result), 2)
+
 
 class TestAsyncClient(unittest.TestCase):
     def setUp(self):

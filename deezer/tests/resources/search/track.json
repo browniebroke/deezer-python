@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "id": "34671121",
+      "readable": true,
+      "title": "Billy Jean",
+      "link": "http://www.deezer.com/track/34671121",
+      "duration": "289",
+      "rank": "227054",
+      "explicit_lyrics": false,
+      "preview": "http://cdn-preview-1.deezer.com/stream/1e95a632ad4b40099feb3c26b2944bc9-0.mp3",
+      "artist": {
+        "id": "4263989",
+        "name": "Michael Jackson, Silver Pixel feat. Querubyna",
+        "link": "http://www.deezer.com/artist/4263989",
+        "picture": "https://api.deezer.com/artist/4263989/image",
+        "tracklist": "https://api.deezer.com/artist/4263989/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "3356681",
+        "title": "Chill Out Connection Vol. 2",
+        "cover": "https://api.deezer.com/album/3356681/image",
+        "tracklist": "https://api.deezer.com/album/3356681/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    }
+  ]
+}
