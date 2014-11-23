@@ -3,6 +3,7 @@
 .coverage
 
 build
+dist
 
 # Sphinx documentation
 docs/build/

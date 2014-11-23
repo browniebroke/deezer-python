@@ -23,7 +23,7 @@ def find_version(*file_paths):
 version = find_version('deezer/__init__.py')
 
 setup(
-    name='deezer',
+    name='deezer-python',
     version=version,
     description='A friendly wrapper library for the Deezer API',
     long_description=(read('README.rst') + '\n\n' +
