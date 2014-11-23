@@ -1,49 +1,59 @@
+import os
 import re
 
-from distribute_setup import use_setuptools
-use_setuptools()
 from setuptools import setup
 
-version = None
-for line in open('./deezer/__init__.py'):
-    m = re.search('__version__\s*=\s*(.*)', line)
-    if m:
-        version = m.group(1).strip()[1:-1]  # quotes
-        break
-assert version
+def read(*paths):
+    """Build a file path from *paths* and return the contents."""
+    with open(os.path.join(*paths), 'r') as f:
+        return f.read()
 
-with open('README.md') as file:
-    long_description = file.read()
+def find_version(*file_paths):
+    """
+    Build a path from *file_paths* and search for a ``__version__``
+    string inside.
+    """
+    version_file = read(*file_paths)
+    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
+                              version_file, re.M)
+    if version_match:
+        return version_match.group(1)
+    raise RuntimeError("Unable to find version string.")
+
+version = find_version('deezer/__init__.py')
 
 setup(
     name='deezer',
     version=version,
     description='A friendly wrapper library for the Deezer API',
-    long_description=long_description,
+    long_description=(read('README.rst') + '\n\n' +
+                      read('HISTORY.rst') + '\n\n' +
+                      read('AUTHORS.rst')),
     author='Bruno Alla',
     author_email='alla.brunoo@gmail.com',
-    url='https://github.com/brwoniebroke/deezer-python',
-    license='BSD',
+    url='https://github.com/browniebroke/deezer-python',
+    download_url = 'https://github.com/browniebroke/deezer-python/tarball/{}'.format(version),
+    license='MIT',
     packages=['deezer'],
-    include_package_data=True,
-    use_2to3=True,
-    package_data={
-        '': ['README.rst']
-    },
     install_requires=[
+        'tornado'
     ],
     tests_require=[
-        'nose>=1.1.2',
         'mock>=1.0.1',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'Natural Language :: English',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Topic :: Internet',
-        'Topic :: Multimedia :: Sound/Audio',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.2',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]
 )

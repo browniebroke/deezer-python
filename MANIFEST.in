@@ -2,3 +2,10 @@ recursive-include deezer *.py
 include distribute_setup.py
 include *.txt
 include *.rst
+include .coveragerc
+recursive-include deezer *.json
+recursive-include docs *.bat
+recursive-include docs *.placeholder
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile

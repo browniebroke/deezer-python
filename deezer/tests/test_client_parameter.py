@@ -1,8 +1,6 @@
 import deezer
 import unittest
 from mock import patch
-from tornado.gen import coroutine
-from tornado.ioloop import IOLoop
 from .mocked_methods import fake_urlopen
 
 
