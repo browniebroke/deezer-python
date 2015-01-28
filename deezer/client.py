@@ -59,30 +59,22 @@ class Client(object):
         self.app_secret = kwargs.get('app_secret')
         self.access_token = kwargs.get('access_token')
 
-    def _process_item(self, item):
+    def _process_json(self, item):
         """
         Recursively convert dictionary
         to :class:`~deezer.resources.Resource` object
 
         :returns: instance of :class:`~deezer.resources.Resource`
         """
+        if 'data' in item:
+            return [self._process_json(i) for i in item['data']]
+        result = {}
         for key, value in item.items():
-            if isinstance(value, dict) and 'type' in value:
-                item[key] = self._process_item(value)
-            elif isinstance(value, dict) and 'data' in value:
-                item[key] = [self._process_item(i) for i in value['data']]
-        object_t = self.objects_types.get(item['type'], Resource)
-        return object_t(self, item)
-
-    def _process_json(self, jsn):
-        """
-        Convert json to a :class:`~deezer.resources.Resource` object,
-        or list of :class:`~deezer.resources.Resource` objects.
-        """
-        if 'data' in jsn:
-            return [self._process_item(item) for item in jsn['data']]
-        else:
-            return self._process_item(jsn)
+            if isinstance(value, dict) and ('type' in value or 'data' in value):
+                value = self._process_json(value)
+            result[key] = value
+        object_t = self.objects_types.get(result['type'], Resource)
+        return object_t(self, result)
 
     def make_str(self, value):
         """

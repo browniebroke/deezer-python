@@ -14,8 +14,8 @@ class Resource(object):
     """
 
     def __init__(self, client, json):
+        self._fields = tuple(json.keys())
         self.client = client
-        self.json = json
         for key in json:
             setattr(self, key, json[key])
 
@@ -26,6 +26,19 @@ class Resource(object):
                                  self.client.make_str(name))
         return super(Resource, self).__repr__()
 
+    def _asdict(self):
+        result = {}
+        for key in self._fields:
+            value = getattr(self, key)
+            if isinstance(value, list):
+                value = [i._asdict()
+                         if isinstance(i, Resource) else i
+                         for i in value]
+            if isinstance(value, Resource):
+                value = value._asdict()
+            result[key] = value
+        return result
+
     def get_relation(self, relation, **kwargs):
         """
         Generic method to load the relation from any resource.
@@ -35,69 +48,74 @@ class Resource(object):
         is not meant to be used directly by a client, it's more
         a helper method for the child objects.
         """
-        # object_t = self.__class__.__name__.lower()
         # pylint: disable=E1101
         return self.client.get_object(self.type, self.id, relation, **kwargs)
+
+    def get_artist(self):
+        """
+        :returns: the :mod:`Artist <deezer.resources.Artist>` of the resource
+        :raises AssertionError: if the object is not album or track
+        """
+        # pylint: disable=E1101
+        assert isinstance(self, (Album, Track))
+        return self.client.get_artist(self.artist.id)
+
+    def get_album(self):
+        """
+        :returns: the :mod:`Album <deezer.resources.Album>` of the resource
+        :raises AssertionError: if the object is not artist or track
+        """
+        # pylint: disable=E1101
+        assert isinstance(self, (Artist, Track))
+        return self.client.get_album(self.album.id)
+
+    def get_tracks(self):
+        """
+        :returns: list of  :mod:`Track <deezer.resources.Track>` instances
+        :raises AssertionError: if the object is not artist or album
+        """
+        assert isinstance(self, (Artist, Album))
+        if isinstance(self, Artist):
+            return self.get_relation('top')
+        if isinstance(self, Album):
+            return self.get_relation('tracks')
 
 
 class Album(Resource):
     """To access an album resource."""
-
-    def __init__(self, client, json):
-        super(Album, self).__init__(client, json)
-
-    def get_artist(self):
-        """
-        Return the :mod:`Artist <deezer.resources.Artist>` of the album
-        """
-        # pylint: disable=E1101
-        return self.artist
+    pass
 
 
 class Artist(Resource):
     """To access an artist."""
-
-    def __init__(self, client, json):
-        super(Artist, self).__init__(client, json)
+    pass
 
 
 class Genre(Resource):
     """To access a genre."""
-
-    def __init__(self, client, json):
-        super(Genre, self).__init__(client, json)
+    pass
 
 
 class Track(Resource):
     """To access a track."""
-
-    def __init__(self, client, json):
-        super(Track, self).__init__(client, json)
+    pass
 
 
 class User(Resource):
     """To access a user."""
-
-    def __init__(self, client, json):
-        super(User, self).__init__(client, json)
+    pass
 
 
 class Playlist(Resource):
     """To access a playlist."""
-
-    def __init__(self, client, json):
-        super(Playlist, self).__init__(client, json)
+    pass
 
 
 class Comment(Resource):
     """To access a comment."""
-
-    def __init__(self, client, json):
-        super(Comment, self).__init__(client, json)
+    pass
 
 
 class Radio(Resource):
     """To access a radio."""
-
-    def __init__(self, client, json):
-        super(Radio, self).__init__(client, json)
+    pass
