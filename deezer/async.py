@@ -32,7 +32,7 @@ class AsyncClient(Client):
         """
         Actually query the Deezer API to retrieve the object
 
-        :returns: json dictionnary or raw string if other
+        :returns: json dictionary or raw string if other
                   format requested
         """
         url = self.object_url(object_t, object_id, relation, **kwargs)

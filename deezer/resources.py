@@ -27,6 +27,9 @@ class Resource(object):
         return super(Resource, self).__repr__()
 
     def _asdict(self):
+        """
+        Convert resource to dictionary
+        """
         result = {}
         for key in self._fields:
             value = getattr(self, key)
