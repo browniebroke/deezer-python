@@ -60,45 +60,75 @@ class Resource(object):
         assert isinstance(self, (Album, Track))
         return self.client.get_artist(self.artist.id)
 
-    def get_album(self):
-        """
-        :returns: the :mod:`Album <deezer.resources.Album>` of the resource
-        :raises AssertionError: if the object is not artist or track
-        """
-        # pylint: disable=E1101
-        assert isinstance(self, (Artist, Track))
-        return self.client.get_album(self.album.id)
-
-    def get_tracks(self):
-        """
-        :returns: list of  :mod:`Track <deezer.resources.Track>` instances
-        :raises AssertionError: if the object is not artist or album
-        """
-        assert isinstance(self, (Artist, Album))
-        if isinstance(self, Artist):
-            return self.get_relation('top')
-        if isinstance(self, Album):
-            return self.get_relation('tracks')
-
 
 class Album(Resource):
     """To access an album resource."""
-    pass
+
+    def get_tracks(self):
+        """
+        Get a list of album's tracks.
+        :returns: list of :mod:`Track <deezer.resources.Track>` instances
+        """
+        return self.get_relation('tracks')
 
 
 class Artist(Resource):
     """To access an artist."""
-    pass
+
+    def get_top(self):
+        """
+        Get the top 5 tracks of an artist.
+        :returns: list of :mod:`Track <deezer.resources.Track>` instances
+        """
+        return self.get_relation('top')
+
+    def get_related(self):
+        """
+        Get a list of related artists.
+        :returns: list of :mod:`Artist <deezer.resources.Artist>` instances
+        """
+        return self.get_relation('related')
+
+    def get_radio(self):
+        """
+        :returns: list of :mod:`Track <deezer.resources.Track>` instances
+        """
+        return self.get_relation('radio')
+
+    def get_albums(self):
+        """
+        Get a list of artist's albums.
+        :returns: list of :mod:`Album <deezer.resources.Album>` instances
+        """
+        return self.get_relation('albums')
 
 
 class Genre(Resource):
     """To access a genre."""
-    pass
+
+    def get_artists(self):
+        """
+        Get all artists for a genre.
+        :returns: list of :mod:`Artist <deezer.resources.Artist>` instances
+        """
+        return self.get_relation('artists')
+
+    def get_radios(self):
+        """
+        Get all radios for a genre.
+        :returns: list of :mod:`Radio <deezer.resources.Track>` instances
+        """
+        return self.get_relation('radios')
 
 
 class Track(Resource):
     """To access a track."""
-    pass
+
+    def get_album(self):
+        """
+        :returns: the :mod:`Album <deezer.resources.Album>` instance
+        """
+        return self.client.get_album(self.album.id)
 
 
 class User(Resource):
@@ -118,4 +148,10 @@ class Comment(Resource):
 
 class Radio(Resource):
     """To access a radio."""
-    pass
+
+    def get_tracks(self):
+        """
+        Get first 40 tracks in the radio
+        :returns: list of  :mod:`Track <deezer.resources.Track>` instances
+        """
+        return self.get_relation('tracks')
