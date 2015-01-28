@@ -87,6 +87,12 @@ class TestClient(unittest.TestCase):
         radio = self.client.get_radio(23261)
         self.assertIsInstance(radio, deezer.resources.Radio)
 
+    def test_get_radios(self):
+        """Test methods to get a radios"""
+        radios = self.client.get_radios()
+        self.assertIsInstance(radios, list)
+        self.assertIsInstance(radios[0], deezer.resources.Radio)
+
     def test_get_track(self):
         """Test methods to get a track"""
         track = self.client.get_track(3135556)
