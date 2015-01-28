@@ -192,13 +192,13 @@ class Client(object):
         """
         return self.get_object("radio", object_id)
 
-    def get_radios_genres(self):
+    def get_radios(self):
         """
-        Get a list of radio splitted by genre.
+        Get a list of radios.
 
         :returns: a list of :class:`~deezer.resources.Radio` objects
         """
-        return self.get_object("radio", relation="genres")
+        return self.get_object("radio")
 
     def get_radios_top(self):
         """
