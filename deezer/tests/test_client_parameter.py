@@ -1,5 +1,7 @@
 import deezer
 import unittest
+import tornado.gen
+import tornado.ioloop
 from mock import patch
 from .mocked_methods import fake_urlopen
 
@@ -47,7 +49,8 @@ class TestClient(unittest.TestCase):
                          "https://api.deezer.com/album/12/artist")
         self.assertEqual(self.client.object_url("album", "12", limit=1),
                          "https://api.deezer.com/album/12?limit=1")
-        self.assertEqual(self.client.object_url("album", "12", "artist", limit=1),
+        self.assertEqual(self.client.object_url("album", "12", "artist",
+                         limit=1),
                          "https://api.deezer.com/album/12/artist?limit=1")
         self.assertRaises(TypeError, self.client.object_url, 'foo')
 
@@ -111,7 +114,8 @@ class TestClient(unittest.TestCase):
         self.assertIsInstance(result, list)
         self.assertEqual(result[0].title, "Billy Jean")
 
-        self.assertEqual(self.client.object_url("search", relation="track", q="Daft Punk"),
+        self.assertEqual(self.client.object_url("search",
+                         relation="track", q="Daft Punk"),
                          "https://api.deezer.com/search/track?q=Daft+Punk")
         result = self.client.search("Billy Jean", "track")
         self.assertIsInstance(result, list)
@@ -131,13 +135,17 @@ class TestClient(unittest.TestCase):
 
 class TestAsyncClient(unittest.TestCase):
     def setUp(self):
-        self.patcher = patch('deezer.client.urlopen', fake_urlopen)
-        self.patcher.start()
-        self.client = deezer.AsyncClient(app_id='foo', app_secret='bar')
-        self.unsec_client = deezer.AsyncClient(use_ssl=False)
+        self.client = deezer.AsyncClient()
 
-    def tearDown(self):
-        self.patcher.stop()
+    def test_get_object(self):
+        @tornado.gen.coroutine
+        def callback():
+            album = yield self.client.get_album(302127)
+            self.assertIsInstance(album, deezer.resources.Album)
+            tracks = yield album.get_tracks()
+            self.assertTrue(tracks[0].album is album)
+
+        tornado.ioloop.IOLoop.instance().run_sync(callback)
 
 
 if __name__ == '__main__':

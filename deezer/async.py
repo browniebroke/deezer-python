@@ -41,5 +41,5 @@ class AsyncClient(Client):
         response = yield self._async_client.fetch(url)
         resp_str = response.body.decode('utf-8')
         jsn = json.loads(resp_str)
-        result = self._process_json(jsn, **kwargs)
+        result = self._process_json(jsn, parent)
         raise Return(result)
