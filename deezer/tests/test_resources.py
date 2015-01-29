@@ -27,6 +27,15 @@ class TestResources(unittest.TestCase):
         resource = deezer.resources.Resource(client, data)
         self.assertEqual(resource._asdict(), data)
 
+    def test_resource_relation(self):
+        """
+        Test passing parent object when using get_relation
+        """
+        client = deezer.Client()
+        album = client.get_album(302127)
+        tracks = album.get_tracks()
+        self.assertTrue(tracks[0].album is album)
+
     def test_album_attributes(self):
         """
         Test album resource

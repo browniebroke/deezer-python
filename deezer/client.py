@@ -59,7 +59,7 @@ class Client(object):
         self.app_secret = kwargs.get('app_secret')
         self.access_token = kwargs.get('access_token')
 
-    def _process_json(self, item):
+    def _process_json(self, item, parent=None):
         """
         Recursively convert dictionary
         to :class:`~deezer.resources.Resource` object
@@ -67,14 +67,16 @@ class Client(object):
         :returns: instance of :class:`~deezer.resources.Resource`
         """
         if 'data' in item:
-            return [self._process_json(i) for i in item['data']]
+            return [self._process_json(i, parent) for i in item['data']]
         result = {}
         for key, value in item.items():
             if isinstance(value, dict) and ('type' in value or 'data' in value):
-                value = self._process_json(value)
+                value = self._process_json(value, parent)
             result[key] = value
-        object_t = self.objects_types.get(result['type'], Resource)
-        return object_t(self, result)
+        if parent is not None:
+            result[parent.type] = parent
+        object_class = self.objects_types.get(result['type'], Resource)
+        return object_class(self, result)
 
     def make_str(self, value):
         """
@@ -125,7 +127,8 @@ class Client(object):
             result = base_url
         return result
 
-    def get_object(self, object_t, object_id=None, relation=None, **kwargs):
+    def get_object(self, object_t, object_id=None, relation=None, parent=None,
+                   **kwargs):
         """
         Actually query the Deezer API to retrieve the object
 
@@ -136,7 +139,7 @@ class Client(object):
         resp_str = response.read().decode('utf-8')
         response.close()
         jsn = json.loads(resp_str)
-        return self._process_json(jsn)
+        return self._process_json(jsn, parent)
 
     def get_album(self, object_id):
         """

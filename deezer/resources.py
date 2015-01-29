@@ -52,7 +52,8 @@ class Resource(object):
         a helper method for the child objects.
         """
         # pylint: disable=E1101
-        return self.client.get_object(self.type, self.id, relation, **kwargs)
+        return self.client.get_object(self.type, self.id, relation,
+                                      self, **kwargs)
 
     def get_artist(self):
         """

@@ -28,7 +28,8 @@ class AsyncClient(Client):
         self._async_client = AsyncHTTPClient(max_clients=max_clients)
 
     @coroutine
-    def get_object(self, object_t, object_id=None, relation=None, **kwargs):
+    def get_object(self, object_t, object_id=None, relation=None, parent=None,
+                   **kwargs):
         """
         Actually query the Deezer API to retrieve the object
 
@@ -40,5 +41,5 @@ class AsyncClient(Client):
         response = yield self._async_client.fetch(url)
         resp_str = response.body.decode('utf-8')
         jsn = json.loads(resp_str)
-        result = self._process_json(jsn)
+        result = self._process_json(jsn, **kwargs)
         raise Return(result)
