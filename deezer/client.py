@@ -4,11 +4,10 @@ Implements a client class to query the
 """
 
 import json
-try:
+try: # pragma: no cover - python 2
     from urllib import urlencode
     from urllib2 import urlopen
-except ImportError:
-    #python 3
+except ImportError: # pragma: no cover - python 3
     from urllib.parse import urlencode
     from urllib.request import urlopen
 from deezer.resources import Album, Artist, Comment, Genre
@@ -84,10 +83,9 @@ class Client(object):
 
         :returns: str instance
         """
-        try:
+        try: # pragma: no cover - python 3
             value = str(value)
-        except UnicodeEncodeError:
-            #python2
+        except UnicodeEncodeError: # pragma: no cover - python 2
             value = value.encode('utf-8')
         return value
 
