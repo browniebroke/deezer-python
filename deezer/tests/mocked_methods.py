@@ -4,10 +4,14 @@ except ImportError:
     from urllib.parse import urlparse
 import os
 
+
 def fake_urlopen(url):
-    parsed_url = urlparse(url)
-    resource_file = os.path.normpath('deezer/tests/resources%s' % parsed_url.path)
-    if os.path.isdir(resource_file):
-        resource_file += "/noid"
-    resource_file += ".json"
-    return open(resource_file, mode='rb')
+    """
+    Get data from fs
+    """
+    url_path = urlparse(url).path
+    resource = os.path.normpath('deezer/tests/resources%s' % url_path)
+    if os.path.isdir(resource) and not os.path.isfile(resource + ".json"):
+        resource += "/noid"
+    resource += ".json"
+    return open(resource, mode='rb')
