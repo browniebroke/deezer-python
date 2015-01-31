@@ -1,0 +1,60 @@
+{  
+  "data":[  
+    {  
+      "id":30851,
+      "title":"Techno\/House",
+      "picture":"https:\/\/api.deezer.com\/radio\/30851\/image",
+      "tracklist":"https:\/\/api.deezer.com\/radio\/30851\/tracks",
+      "type":"radio"
+    },
+    {  
+      "id":31951,
+      "title":"Easy Listening",
+      "picture":"https:\/\/api.deezer.com\/radio\/31951\/image",
+      "tracklist":"https:\/\/api.deezer.com\/radio\/31951\/tracks",
+      "type":"radio"
+    },
+    {  
+      "id":16661,
+      "title":"Indie Go!",
+      "picture":"https:\/\/api.deezer.com\/radio\/16661\/image",
+      "tracklist":"https:\/\/api.deezer.com\/radio\/16661\/tracks",
+      "type":"radio"
+    },
+    {  
+      "id":30821,
+      "title":"ElectroPop \/ ElectroRock",
+      "picture":"https:\/\/api.deezer.com\/radio\/30821\/image",
+      "tracklist":"https:\/\/api.deezer.com\/radio\/30821\/tracks",
+      "type":"radio"
+    },
+    {  
+      "id":30791,
+      "title":"Electro HipHop",
+      "picture":"https:\/\/api.deezer.com\/radio\/30791\/image",
+      "tracklist":"https:\/\/api.deezer.com\/radio\/30791\/tracks",
+      "type":"radio"
+    },
+    {  
+      "id":30641,
+      "title":"Dubstep",
+      "picture":"https:\/\/api.deezer.com\/radio\/30641\/image",
+      "tracklist":"https:\/\/api.deezer.com\/radio\/30641\/tracks",
+      "type":"radio"
+    },
+    {  
+      "id":30631,
+      "title":"Chill Out \/ Trip Hop \/ Lounge",
+      "picture":"https:\/\/api.deezer.com\/radio\/30631\/image",
+      "tracklist":"https:\/\/api.deezer.com\/radio\/30631\/tracks",
+      "type":"radio"
+    },
+    {  
+      "id":30621,
+      "title":"Electro",
+      "picture":"https:\/\/api.deezer.com\/radio\/30621\/image",
+      "tracklist":"https:\/\/api.deezer.com\/radio\/30621\/tracks",
+      "type":"radio"
+    }
+  ]
+}

@@ -59,30 +59,24 @@ class Client(object):
         self.app_secret = kwargs.get('app_secret')
         self.access_token = kwargs.get('access_token')
 
-    def _process_item(self, item):
+    def _process_json(self, item, parent=None):
         """
         Recursively convert dictionary
         to :class:`~deezer.resources.Resource` object
 
         :returns: instance of :class:`~deezer.resources.Resource`
         """
+        if 'data' in item:
+            return [self._process_json(i, parent) for i in item['data']]
+        result = {}
         for key, value in item.items():
-            if isinstance(value, dict) and 'type' in value:
-                item[key] = self._process_item(value)
-            elif isinstance(value, dict) and 'data' in value:
-                item[key] = [self._process_item(i) for i in value['data']]
-        object_t = self.objects_types.get(item['type'], Resource)
-        return object_t(self, item)
-
-    def _process_json(self, jsn):
-        """
-        Convert json to a :class:`~deezer.resources.Resource` object,
-        or list of :class:`~deezer.resources.Resource` objects.
-        """
-        if 'data' in jsn:
-            return [self._process_item(item) for item in jsn['data']]
-        else:
-            return self._process_item(jsn)
+            if isinstance(value, dict) and ('type' in value or 'data' in value):
+                value = self._process_json(value, parent)
+            result[key] = value
+        if parent is not None:
+            result[parent.type] = parent
+        object_class = self.objects_types.get(result['type'], Resource)
+        return object_class(self, result)
 
     def make_str(self, value):
         """
@@ -133,7 +127,8 @@ class Client(object):
             result = base_url
         return result
 
-    def get_object(self, object_t, object_id=None, relation=None, **kwargs):
+    def get_object(self, object_t, object_id=None, relation=None, parent=None,
+                   **kwargs):
         """
         Actually query the Deezer API to retrieve the object
 
@@ -144,7 +139,7 @@ class Client(object):
         resp_str = response.read().decode('utf-8')
         response.close()
         jsn = json.loads(resp_str)
-        return self._process_json(jsn)
+        return self._process_json(jsn, parent)
 
     def get_album(self, object_id):
         """
@@ -200,6 +195,22 @@ class Client(object):
         """
         return self.get_object("radio", object_id)
 
+    def get_radios(self):
+        """
+        Get a list of radios.
+
+        :returns: a list of :class:`~deezer.resources.Radio` objects
+        """
+        return self.get_object("radio")
+
+    def get_radios_top(self):
+        """
+        Get the top radios (5 radios).
+
+        :returns: a :class:`~deezer.resources.Radio` object
+        """
+        return self.get_object("radio", relation="top")
+
     def get_track(self, object_id):
         """
         Get the track with the provided id
@@ -222,4 +233,4 @@ class Client(object):
 
         :returns: a list of :class:`~deezer.resources.Resource` objects.
         """
-        return self.get_object(object_t="search", object_id=None, relation=relation, q=query, **kwargs)
+        return self.get_object("search", relation=relation, q=query, **kwargs)
