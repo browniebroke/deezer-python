@@ -13,7 +13,7 @@ Basic Use
 
 So far you can only retrieve the data for the public objects, for which no login is required.
 The objects are translated to python resources, which are basically python objects encapsulating 
-the json dictionary returned by the API. Search is not yet implemented.
+the json dictionary returned by the API.
 
 
     >>> client = deezer.Client()
