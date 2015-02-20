@@ -6,7 +6,13 @@ A friendly wrapper around the `Deezer API`_.
 Installation
 ------------
 
-Just download the tarball and use the package locally, I haven't tested installation using easy_install yet
+The package is published on the `Python index <https://pypi.python.org/pypi/deezer-python/>`_ simply run the following:
+
+::
+
+    pip install deezer-python
+    
+And that's it!
 
 Basic Use
 ---------
