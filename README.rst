@@ -74,7 +74,7 @@ The unit tests are using python unittest framework, just run:
     :target: https://coveralls.io/r/browniebroke/deezer-python
     :alt: Test coverage percentage
 .. |docs| image:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
-    :target: http://deezer-python.readthedocs.org/
+    :target: https://readthedocs.org/projects/deezer-python/?badge=latest
     :alt: Documentation Status
 .. |pypi| image:: https://badge.fury.io/py/deezer-python.svg
     :target: http://badge.fury.io/py/deezer-python
