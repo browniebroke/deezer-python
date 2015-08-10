@@ -1,5 +1,5 @@
-deezer-python |build-status| |coverage-status| |docs| |pypi|
-============================================================
+deezer-python |build-status| |coverage-status| |docs| |pypi| |quantified|
+=========================================================================
 
 A friendly wrapper around the `Deezer API`_.
 
@@ -79,6 +79,9 @@ The unit tests are using python unittest framework, just run:
 .. |pypi| image:: https://badge.fury.io/py/deezer-python.svg
     :target: http://badge.fury.io/py/deezer-python
     :alt: PyPi Status
+.. |quantified| image:: http://www.quantifiedcode.com/api/v1/project/de55c920c85746b793e5e3103700c7a8/badge.svg
+    :target: http://www.quantifiedcode.com/app/project/de55c920c85746b793e5e3103700c7a8
+    :alt: Code issues
 .. _Deezer API: http://developers.deezer.com/api
 .. _Sphinx: http://sphinx-doc.org/
 .. _documentation: http://deezer-python.readthedocs.org/
