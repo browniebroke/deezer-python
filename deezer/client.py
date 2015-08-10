@@ -101,7 +101,7 @@ class Client(object):
         """Build the url with the appended request if provided."""
         if request.startswith('/'):
             request = request[1:]
-        return "{}://{}/{}".format(self.scheme, self.host, request)
+        return "{0}://{1}/{2}".format(self.scheme, self.host, request)
 
     def object_url(self, object_t, object_id=None, relation=None, **kwargs):
         """
@@ -111,7 +111,7 @@ class Client(object):
         :raises TypeError: if the object type is invalid
         """
         if object_t not in self.objects_types:
-            raise TypeError("{} is not a valid type".format(object_t))
+            raise TypeError("{0} is not a valid type".format(object_t))
         request_items = (object_t, object_id, relation)
         request_items = (item for item in request_items if item is not None)
         request_items = (str(item) for item in request_items)
@@ -121,7 +121,7 @@ class Client(object):
             for key, value in kwargs.items():
                 if not isinstance(value, str):
                     kwargs[key] = self.make_str(value)
-            result = '{}?{}'.format(base_url, urlencode(kwargs))
+            result = '{0}?{1}'.format(base_url, urlencode(kwargs))
         else:
             result = base_url
         return result

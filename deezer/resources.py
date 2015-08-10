@@ -22,8 +22,8 @@ class Resource(object):
     def __repr__(self):
         name = getattr(self, 'name', getattr(self, 'title', None))
         if name is not None:
-            return '<{}: {}>'.format(self.__class__.__name__,
-                                     self.client.make_str(name))
+            return '<{0}: {1}>'.format(self.__class__.__name__,
+                                       self.client.make_str(name))
         return super(Resource, self).__repr__()
 
     def asdict(self):

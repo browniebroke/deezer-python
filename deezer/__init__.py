@@ -12,7 +12,7 @@ __all__ = ['AsyncClient', 'Client', 'Resource', 'Album',
            'Artist', 'Genre', 'Playlist', 'Track', 'User',
            'Comment', 'Radio']
 
-USER_AGENT = 'Deezer Python API Wrapper v%s' % __version__
+USER_AGENT = 'Deezer Python API Wrapper v{0}'.format(__version__)
 
 from deezer.async import AsyncClient
 from deezer.client import Client
