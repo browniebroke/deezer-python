@@ -25,7 +25,7 @@ class TestResources(unittest.TestCase):
         response.close()
         data = json.loads(resp_str)
         resource = deezer.resources.Resource(client, data)
-        self.assertEqual(resource._asdict(), data)
+        self.assertEqual(resource.asdict(), data)
 
     def test_resource_relation(self):
         """
