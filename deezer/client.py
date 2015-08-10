@@ -4,10 +4,10 @@ Implements a client class to query the
 """
 
 import json
-try: # pragma: no cover - python 2
+try:  # pragma: no cover - python 2
     from urllib import urlencode
     from urllib2 import urlopen
-except ImportError: # pragma: no cover - python 3
+except ImportError:  # pragma: no cover - python 3
     from urllib.parse import urlencode
     from urllib.request import urlopen
 from deezer.resources import Album, Artist, Comment, Genre
@@ -77,15 +77,16 @@ class Client(object):
         object_class = self.objects_types.get(result['type'], Resource)
         return object_class(self, result)
 
-    def make_str(self, value):
+    @staticmethod
+    def make_str(value):
         """
         Convert value to str in python2 and python3 compatible way
 
         :returns: str instance
         """
-        try: # pragma: no cover - python 3
+        try:  # pragma: no cover - python 3
             value = str(value)
-        except UnicodeEncodeError: # pragma: no cover - python 2
+        except UnicodeEncodeError:  # pragma: no cover - python 2
             value = value.encode('utf-8')
         return value
 
@@ -100,7 +101,7 @@ class Client(object):
         """Build the url with the appended request if provided."""
         if request.startswith('/'):
             request = request[1:]
-        return "%s://%s/%s" % (self.scheme, self.host, request)
+        return "{}://{}/{}".format(self.scheme, self.host, request)
 
     def object_url(self, object_t, object_id=None, relation=None, **kwargs):
         """
@@ -110,7 +111,7 @@ class Client(object):
         :raises TypeError: if the object type is invalid
         """
         if object_t not in self.objects_types:
-            raise TypeError("%s is not a valid type" % object_t)
+            raise TypeError("{} is not a valid type".format(object_t))
         request_items = (object_t, object_id, relation)
         request_items = (item for item in request_items if item is not None)
         request_items = (str(item) for item in request_items)
@@ -120,7 +121,7 @@ class Client(object):
             for key, value in kwargs.items():
                 if not isinstance(value, str):
                     kwargs[key] = self.make_str(value)
-            result = '%s?%s' % (base_url, urlencode(kwargs))
+            result = '{}?{}'.format(base_url, urlencode(kwargs))
         else:
             result = base_url
         return result

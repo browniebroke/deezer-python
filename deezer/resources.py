@@ -22,11 +22,11 @@ class Resource(object):
     def __repr__(self):
         name = getattr(self, 'name', getattr(self, 'title', None))
         if name is not None:
-            return '<%s: %s>' % (self.__class__.__name__,
-                                 self.client.make_str(name))
+            return '<{}: {}>'.format(self.__class__.__name__,
+                                     self.client.make_str(name))
         return super(Resource, self).__repr__()
 
-    def _asdict(self):
+    def asdict(self):
         """
         Convert resource to dictionary
         """
@@ -34,11 +34,11 @@ class Resource(object):
         for key in self._fields:
             value = getattr(self, key)
             if isinstance(value, list):
-                value = [i._asdict()
+                value = [i.asdict()
                          if isinstance(i, Resource) else i
                          for i in value]
             if isinstance(value, Resource):
-                value = value._asdict()
+                value = value.asdict()
             result[key] = value
         return result
 
@@ -137,17 +137,14 @@ class Track(Resource):
 
 class User(Resource):
     """To access a user."""
-    pass
 
 
 class Playlist(Resource):
     """To access a playlist."""
-    pass
 
 
 class Comment(Resource):
     """To access a comment."""
-    pass
 
 
 class Radio(Resource):
