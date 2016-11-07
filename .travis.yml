@@ -1,16 +1,26 @@
 language: python
 sudo: false
 python:
-    - "2.7"
-    - "3.3"
-    - "3.4"
-    - "3.5"
+  - '2.7'
+  - '3.3'
+  - '3.4'
+  - '3.5'
 # command to install dependencies
 install:
-    - pip install -r requirements.txt
-    - pip install coveralls
-# command to run tests
+  - pip install -r requirements.txt
+  - pip install coveralls
 script:
-    - python -m coverage run -m unittest discover
+  - python -m coverage run -m unittest discover
 after_success:
-    - coveralls
+  - coveralls
+deploy:
+  provider: pypi
+  user: Bruno.Alla
+  distributions: bdist_wheel sdist
+  on:
+    branch: master
+    repo: browniebroke/deezer-python
+    tags: true
+    condition: "$TRAVIS_PYTHON_VERSION = 2.7"
+  password:
+    secure: gPn7phpAJc0WUAueMM4Drz4Uds/oYghLA8qiyG2GyFP5i2HnJiQDd+ZZVaSsLSVdiAubfR8RPBuKAbpZ3+g1RzHIiACNLh96G0q/rthytlPowxLxrI3c4BfjBTZ7qDdg1GzWcddrSAjKLN1v1OswuZZ7/T4YG7mdT8SMrLJq+8s=
