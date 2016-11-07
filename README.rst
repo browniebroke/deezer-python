@@ -67,6 +67,21 @@ The unit tests are using python unittest framework, just run:
 
     OK
 
+Create a New Release
+--------------------
+
+This project is configured to use `bumpversion
+<https://github.com/peritus/bumpversion>`_, only prerequisite
+is to have it installed. When the tests have passed and you're happy with the code base, just need to run::
+
+  $ bumpversion [major|minor|patch]
+
+Depending on which digit of the version needs to be updated, and then push with tags::
+
+  $ git push --tags
+
+Travis will take care of creating the release, and upload it to PyPi.
+
 
 .. |build-status| image:: https://travis-ci.org/browniebroke/deezer-python.png
     :target: https://travis-ci.org/browniebroke/deezer-python
