@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import unittest
+from types import GeneratorType
 
 import deezer
 from mock import patch
@@ -59,6 +60,7 @@ class TestResources(unittest.TestCase):
         track = tracks[0]
         self.assertIsInstance(track, deezer.resources.Track)
         self.assertEqual(repr(track), '<Track: One More Time>')
+        self.assertEqual(type(album.iter_tracks()), GeneratorType)
 
     def test_artist_attributes(self):
         """
@@ -82,6 +84,7 @@ class TestResources(unittest.TestCase):
         self.assertIsInstance(album, deezer.resources.Album)
         self.assertEqual(repr(album),
                          '<Album: Human After All (Remixes) (Remixes)>')
+        self.assertEqual(type(artist.iter_albums()), GeneratorType)
 
     def test_artist_top(self):
         """
@@ -118,6 +121,7 @@ class TestResources(unittest.TestCase):
         artist = artists[0]
         self.assertIsInstance(artist, deezer.resources.Artist)
         self.assertEqual(repr(artist), '<Artist: Justice>')
+        self.assertEqual(type(artist.iter_related()), GeneratorType)
 
     def test_track_attributes(self):
         """
@@ -156,6 +160,7 @@ class TestResources(unittest.TestCase):
         track = tracks[2]
         self.assertIsInstance(track, deezer.resources.Track)
         self.assertEqual(repr(track), '<Track: Schumann: Kinderszenen, Op.15 - 11. Fürchtenmachen>')
+        self.assertEqual(type(radio.iter_tracks()), GeneratorType)
 
     def test_genre_attributes(self):
         """
@@ -178,6 +183,7 @@ class TestResources(unittest.TestCase):
         artist = artists[0]
         self.assertIsInstance(artist, deezer.resources.Artist)
         self.assertEqual(repr(artist), '<Artist: Calvin Harris>')
+        self.assertEqual(type(genre.iter_artists()), GeneratorType)
 
     def test_genre_radios(self):
         """
@@ -190,3 +196,4 @@ class TestResources(unittest.TestCase):
         radio = radios[0]
         self.assertIsInstance(radio, deezer.resources.Radio)
         self.assertEqual(repr(radio), '<Radio: Techno/House>')
+        self.assertEqual(type(genre.iter_radios()), GeneratorType)
