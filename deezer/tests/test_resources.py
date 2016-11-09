@@ -61,6 +61,8 @@ class TestResources(unittest.TestCase):
         self.assertIsInstance(track, deezer.resources.Track)
         self.assertEqual(repr(track), '<Track: One More Time>')
         self.assertEqual(type(album.iter_tracks()), GeneratorType)
+        track = list(album.iter_tracks())[0]
+        self.assertIsInstance(track, deezer.resources.Track)
 
     def test_artist_attributes(self):
         """
