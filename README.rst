@@ -1,6 +1,6 @@
 deezer-python
 =============
-|build-status| |coverage-status| |docs| |pypi| |quantified| |landscape|
+|build| |coverage| |docs| |pypi| |quantified| |landscape|
 
 A friendly wrapper around the `Deezer API`_.
 
@@ -51,21 +51,31 @@ See the whole API on the `Sphinx`_ generated `documentation`_.
 Authentication
 --------------
 
-Not supported yet, only public API accessible
+Not supported by this package. There are excellent other python modules to
+handle that. There is the excellent `Python Social Auth`_, it doesn't support
+Deezer, but it's very easily extensible to support it, and if you do write a
+back-end for it, I'd encourage you to submit a pull request there.
 
 Running Tests
 -------------
 
-The unit tests are using python unittest framework, just run:
+Tests are run using `Tox`_, that you would need to have installed in
+your environment. Then simply run:
 
 ::
 
-    % python -m unittest discover
-    ......
+    % tox [-e py35]
+    py35 runtests: commands[0] | python -m coverage run -m unittest discover
+    ................................
     ----------------------------------------------------------------------
-    Ran 6 tests in 0.448s
+    Ran 32 tests in 1.319s
 
     OK
+    py35 runtests: commands[1] | python /Users/Bruno/Documents/Workspace/deezer-python/run_coveralls.py
+    _____________ summary _____________
+    py35: commands succeeded
+    congratulations :)
+
 
 Create a New Release
 --------------------
@@ -83,10 +93,10 @@ Depending on which digit of the version needs to be updated, and then push with 
 Travis will take care of creating the release, and upload it to PyPi.
 
 
-.. |build-status| image:: https://travis-ci.org/browniebroke/deezer-python.png
+.. |build| image:: https://travis-ci.org/browniebroke/deezer-python.png
     :target: https://travis-ci.org/browniebroke/deezer-python
     :alt: Build status
-.. |coverage-status| image:: https://coveralls.io/repos/browniebroke/deezer-python/badge.png
+.. |coverage| image:: https://coveralls.io/repos/browniebroke/deezer-python/badge.png
     :target: https://coveralls.io/r/browniebroke/deezer-python
     :alt: Test coverage percentage
 .. |docs| image:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
@@ -104,3 +114,5 @@ Travis will take care of creating the release, and upload it to PyPi.
 .. _Deezer API: http://developers.deezer.com/api
 .. _Sphinx: http://sphinx-doc.org/
 .. _documentation: http://deezer-python.readthedocs.org/
+.. _Tox: http://tox.readthedocs.io/en/stable/index.html
+.. _Python Social Auth: https://github.com/omab/python-social-auth
