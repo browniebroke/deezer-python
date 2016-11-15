@@ -9,7 +9,7 @@ def read(*paths):
     with open(os.path.join(*paths), 'r') as f:
         return f.read()
 
-    
+
 def find_version(*file_paths):
     """
     Build a path from *file_paths* and search for a ``__version__``
@@ -21,6 +21,7 @@ def find_version(*file_paths):
     if version_match:
         return version_match.group(1)
     raise RuntimeError("Unable to find version string.")
+
 
 version = find_version('deezer/__init__.py')
 

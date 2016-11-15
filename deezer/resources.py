@@ -69,7 +69,7 @@ class Resource(object):
         while 1:
             items = self.get_relation(relation, index=index, **kwargs)
             for item in items:
-                yield(item)
+                yield (item)
 
             if len(items) == 0:
                 break
@@ -146,6 +146,7 @@ class Artist(Resource):
         :returns: list of :mod:`Album <deezer.resources.Album>` instances
         """
         return self.iter_relation('albums', **kwargs)
+
 
 class Genre(Resource):
     """To access a genre."""
