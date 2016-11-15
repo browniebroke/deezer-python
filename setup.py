@@ -3,11 +3,13 @@ import re
 
 from setuptools import setup
 
+
 def read(*paths):
     """Build a file path from *paths* and return the contents."""
     with open(os.path.join(*paths), 'r') as f:
         return f.read()
 
+    
 def find_version(*file_paths):
     """
     Build a path from *file_paths* and search for a ``__version__``
@@ -32,7 +34,7 @@ setup(
     author='Bruno Alla',
     author_email='alla.brunoo@gmail.com',
     url='https://github.com/browniebroke/deezer-python',
-    download_url = 'https://github.com/browniebroke/deezer-python/tarball/{}'.format(version),
+    download_url='https://github.com/browniebroke/deezer-python/tarball/{0}'.format(version),
     license='MIT',
     packages=['deezer'],
     install_requires=[
