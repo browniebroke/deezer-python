@@ -93,11 +93,11 @@ Depending on which digit of the version needs to be updated, and then push with 
 Travis will take care of creating the release, and upload it to PyPi.
 
 
-.. |build| image:: https://travis-ci.org/browniebroke/deezer-python.png
+.. |build| image:: https://travis-ci.org/browniebroke/deezer-python.svg
     :target: https://travis-ci.org/browniebroke/deezer-python
     :alt: Build status
-.. |coverage| image:: https://coveralls.io/repos/browniebroke/deezer-python/badge.png
-    :target: https://coveralls.io/r/browniebroke/deezer-python
+.. |coverage| image:: https://codecov.io/gh/browniebroke/deezer-python/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/browniebroke/deezer-python
     :alt: Test coverage percentage
 .. |docs| image:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
     :target: https://readthedocs.org/projects/deezer-python/?badge=latest
@@ -105,9 +105,6 @@ Travis will take care of creating the release, and upload it to PyPi.
 .. |pypi| image:: https://badge.fury.io/py/deezer-python.svg
     :target: http://badge.fury.io/py/deezer-python
     :alt: PyPi Status
-.. |quantified| image:: http://www.quantifiedcode.com/api/v1/project/de55c920c85746b793e5e3103700c7a8/badge.svg
-    :target: http://www.quantifiedcode.com/app/project/de55c920c85746b793e5e3103700c7a8
-    :alt: Code issues
 .. |landscape| image:: https://landscape.io/github/browniebroke/deezer-python/master/landscape.svg?style=flat
    :target: https://landscape.io/github/browniebroke/deezer-python/master
    :alt: Code Health    
