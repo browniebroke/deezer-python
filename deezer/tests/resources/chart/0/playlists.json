@@ -1,0 +1,24 @@
+{
+    "data": [{
+        "id": 1109890291,
+        "title": "Top France",
+        "public": true,
+        "link": "http://www.deezer.com/playlist/1109890291",
+        "picture": "http://api.deezer.com/playlist/1109890291/image",
+        "picture_small": "http://cdn-images.deezer.com/images/playlist/32b79430a7811928a4aaddbf3298a245/56x56-000000-80-0-0.jpg",
+        "picture_medium": "http://cdn-images.deezer.com/images/playlist/32b79430a7811928a4aaddbf3298a245/250x250-000000-80-0-0.jpg",
+        "picture_big": "http://cdn-images.deezer.com/images/playlist/32b79430a7811928a4aaddbf3298a245/500x500-000000-80-0-0.jpg",
+        "picture_xl": "http://cdn-images.deezer.com/images/playlist/32b79430a7811928a4aaddbf3298a245/1000x1000-000000-80-0-0.jpg",
+        "tracklist": "http://api.deezer.com/playlist/1109890291/tracks",
+        "creation_date": "2015-01-08 11:45:11",
+        "user": {
+            "id": 637006841,
+            "name": "Deezer Charts",
+            "tracklist": "http://api.deezer.com/user/637006841/flow",
+            "type": "user"
+        },
+        "type": "playlist"
+    }],
+    "total": 145,
+    "next": "http://api.deezer.com/chart/0/playlists?limit=1&index=1"
+}

@@ -1,0 +1,41 @@
+{
+  "data": [{
+    "id": 136889400,
+    "title": "Starboy",
+    "title_short": "Starboy",
+    "title_version": "",
+    "link": "https:\/\/www.deezer.com\/track\/136889400",
+    "duration": 230,
+    "rank": 970962,
+    "explicit_lyrics": true,
+    "preview": "http:\/\/cdn-preview-3.deezer.com\/stream\/3fb73bfa7a64760b5a7db5da76f068de-3.mp3",
+    "position": 1,
+    "artist": {
+      "id": 4050205,
+      "name": "The Weeknd",
+      "link": "https:\/\/www.deezer.com\/artist\/4050205",
+      "picture": "https:\/\/api.deezer.com\/artist\/4050205\/image",
+      "picture_small": "https:\/\/cdns-images.dzcdn.net\/images\/artist\/f7f0229f30d4455077fec80abba15583\/56x56-000000-80-0-0.jpg",
+      "picture_medium": "https:\/\/cdns-images.dzcdn.net\/images\/artist\/f7f0229f30d4455077fec80abba15583\/250x250-000000-80-0-0.jpg",
+      "picture_big": "https:\/\/cdns-images.dzcdn.net\/images\/artist\/f7f0229f30d4455077fec80abba15583\/500x500-000000-80-0-0.jpg",
+      "picture_xl": "https:\/\/cdns-images.dzcdn.net\/images\/artist\/f7f0229f30d4455077fec80abba15583\/1000x1000-000000-80-0-0.jpg",
+      "radio": true,
+      "tracklist": "https:\/\/api.deezer.com\/artist\/4050205\/top?limit=50",
+      "type": "artist"
+    },
+    "album": {
+      "id": 14652356,
+      "title": "Starboy",
+      "cover": "https:\/\/api.deezer.com\/album\/14652356\/image",
+      "cover_small": "https:\/\/cdns-images.dzcdn.net\/images\/cover\/afa915d88d871b6f929e61ada8aa644f\/56x56-000000-80-0-0.jpg",
+      "cover_medium": "https:\/\/cdns-images.dzcdn.net\/images\/cover\/afa915d88d871b6f929e61ada8aa644f\/250x250-000000-80-0-0.jpg",
+      "cover_big": "https:\/\/cdns-images.dzcdn.net\/images\/cover\/afa915d88d871b6f929e61ada8aa644f\/500x500-000000-80-0-0.jpg",
+      "cover_xl": "https:\/\/cdns-images.dzcdn.net\/images\/cover\/afa915d88d871b6f929e61ada8aa644f\/1000x1000-000000-80-0-0.jpg",
+      "tracklist": "https:\/\/api.deezer.com\/album\/14652356\/tracks",
+      "type": "album"
+    },
+    "type": "track"
+  }],
+  "total": 200,
+  "next": "https:\/\/api.deezer.com\/chart\/0\/tracks?limit=1&index=1"
+}

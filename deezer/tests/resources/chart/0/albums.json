@@ -1,0 +1,31 @@
+{
+    "data": [{
+        "id": 14650244,
+        "title": "Where Is l'album de Gradur",
+        "cover": "https:\/\/api.deezer.com\/album\/14650244\/image",
+        "cover_small": "https:\/\/cdns-images.dzcdn.net\/images\/cover\/fd1700711d8891d1a481c30402553d7b\/56x56-000000-80-0-0.jpg",
+        "cover_medium": "https:\/\/cdns-images.dzcdn.net\/images\/cover\/fd1700711d8891d1a481c30402553d7b\/250x250-000000-80-0-0.jpg",
+        "cover_big": "https:\/\/cdns-images.dzcdn.net\/images\/cover\/fd1700711d8891d1a481c30402553d7b\/500x500-000000-80-0-0.jpg",
+        "cover_xl": "https:\/\/cdns-images.dzcdn.net\/images\/cover\/fd1700711d8891d1a481c30402553d7b\/1000x1000-000000-80-0-0.jpg",
+        "record_type": "album",
+        "tracklist": "https:\/\/api.deezer.com\/album\/14650244\/tracks",
+        "explicit_lyrics": true,
+        "position": 1,
+        "artist": {
+            "id": 5876247,
+            "name": "Gradur",
+            "link": "https:\/\/www.deezer.com\/artist\/5876247",
+            "picture": "https:\/\/api.deezer.com\/artist\/5876247\/image",
+            "picture_small": "https:\/\/cdns-images.dzcdn.net\/images\/artist\/45e6403e07e7deb4efcfe2943e3fb07f\/56x56-000000-80-0-0.jpg",
+            "picture_medium": "https:\/\/cdns-images.dzcdn.net\/images\/artist\/45e6403e07e7deb4efcfe2943e3fb07f\/250x250-000000-80-0-0.jpg",
+            "picture_big": "https:\/\/cdns-images.dzcdn.net\/images\/artist\/45e6403e07e7deb4efcfe2943e3fb07f\/500x500-000000-80-0-0.jpg",
+            "picture_xl": "https:\/\/cdns-images.dzcdn.net\/images\/artist\/45e6403e07e7deb4efcfe2943e3fb07f\/1000x1000-000000-80-0-0.jpg",
+            "radio": true,
+            "tracklist": "https:\/\/api.deezer.com\/artist\/5876247\/top?limit=50",
+            "type": "artist"
+        },
+        "type": "album"
+    }],
+    "total": 193,
+    "next": "https:\/\/api.deezer.com\/chart\/0\/albums?limit=1&index=1"
+}

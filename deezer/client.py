@@ -12,7 +12,7 @@ except ImportError:  # pragma: no cover - python 3
     from urllib.request import urlopen
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Playlist, Radio, Track, User
-from deezer.resources import Resource
+from deezer.resources import Chart, Resource
 
 
 class Client(object):
@@ -44,6 +44,7 @@ class Client(object):
         'search': None,
         'track': Track,
         'user': User,
+        'chart' : Chart
     }
 
     def __init__(self, **kwargs):
@@ -67,6 +68,19 @@ class Client(object):
         """
         if 'data' in item:
             return [self._process_json(i, parent) for i in item['data']]
+
+        if parent == "chart":
+            object_class = self.objects_types.get("chart")
+
+            return object_class(self, {
+                'type'  : parent,
+                'id'    : '0',
+                'tracks' : [self._process_json(i, None) for i in item['tracks']['data']],
+                'albums' : [self._process_json(i, None) for i in item['albums']['data']],
+                'artists' : [self._process_json(i, None) for i in item['artists']['data']],
+                'playlists' : [self._process_json(i, None) for i in item['playlists']['data']]
+            })
+
         result = {}
         for key, value in item.items():
             if isinstance(value, dict) and ('type' in value or 'data' in value):
@@ -140,21 +154,30 @@ class Client(object):
         jsn = json.loads(resp_str)
         return self._process_json(jsn, parent)
 
-    def get_album(self, object_id):
+    def get_chart(self, relation=None, **kwargs):
+        """
+        Get chart
+
+        :returns: a list of :class:`~deezer.resources.Resource` objects.
+        """
+        return self.get_object("chart", object_id='0', relation=relation,
+                               parent=None if relation else "chart", **kwargs)
+
+    def get_album(self, object_id, relation=None, **kwargs):
         """
         Get the album with the provided id
 
         :returns: an :class:`~deezer.resources.Album` object
         """
-        return self.get_object("album", object_id)
+        return self.get_object("album", object_id, relation=relation, **kwargs)
 
-    def get_artist(self, object_id):
+    def get_artist(self, object_id, relation=None, **kwargs):
         """
         Get the artist with the provided id
 
         :returns: an :class:`~deezer.resources.Artist` object
         """
-        return self.get_object("artist", object_id)
+        return self.get_object("artist", object_id, relation=relation, **kwargs)
 
     def get_comment(self, object_id):
         """

@@ -199,3 +199,57 @@ class TestResources(unittest.TestCase):
         self.assertIsInstance(radio, deezer.resources.Radio)
         self.assertEqual(repr(radio), '<Radio: Techno/House>')
         self.assertEqual(type(genre.iter_radios()), GeneratorType)
+
+    def test_chart_tracks(self):
+        """
+        Test tracks method of chart resource
+        """
+        client = deezer.Client()
+        chart = client.get_chart()
+        tracks = chart.get_tracks()
+        self.assertIsInstance(tracks, list)
+        track = tracks[0]
+        self.assertIsInstance(track, deezer.resources.Track)
+        self.assertEqual(repr(track), '<Track: Starboy>')
+        self.assertEqual(type(chart.iter_tracks()), GeneratorType)
+
+    def test_chart_artists(self):
+        """
+        Test artists method of chart resource
+        """
+        client = deezer.Client()
+        chart = client.get_chart()
+        artists = chart.get_artists()
+        self.assertIsInstance(artists, list)
+        artist = artists[0]
+        self.assertIsInstance(artist, deezer.resources.Artist)
+        self.assertEqual(repr(artist), '<Artist: Pnl>')
+        self.assertEqual(type(chart.iter_artists()), GeneratorType)
+
+    def test_chart_albums(self):
+        """
+        Test albums method of chart resource
+        """
+        client = deezer.Client()
+        chart = client.get_chart()
+        albums = chart.get_albums()
+        self.assertIsInstance(albums, list)
+        album = albums[0]
+        self.assertIsInstance(album, deezer.resources.Album)
+        self.assertEqual(repr(album),
+                         "<Album: Where Is l'album de Gradur>")
+        self.assertEqual(type(chart.iter_albums()), GeneratorType)
+
+    def test_chart_playlists(self):
+        """
+        Test playlists method of chart resource
+        """
+        client = deezer.Client()
+        chart = client.get_chart()
+        playlists = chart.get_playlists()
+        self.assertIsInstance(playlists, list)
+        playlist = playlists[0]
+        self.assertIsInstance(playlist, deezer.resources.Playlist)
+        self.assertEqual(repr(playlist),
+                         "<Playlist: Top France>")
+        self.assertEqual(type(chart.iter_playlists()), GeneratorType)
