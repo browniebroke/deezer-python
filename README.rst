@@ -1,6 +1,6 @@
 deezer-python
 =============
-|build| |coverage| |docs| |pypi| |quantified| |landscape|
+|build| |coverage| |docs| |pypi| |landscape|
 
 A friendly wrapper around the `Deezer API`_.
 
