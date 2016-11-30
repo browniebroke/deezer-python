@@ -1,7 +1,10 @@
 language: python
+
 sudo: false
+
 python:
   - '3.5'
+
 env:
   matrix:
     - TOXENV=docs
@@ -9,13 +12,19 @@ env:
     - TOXENV=py33
     - TOXENV=py34
     - TOXENV=py35
-install: pip install -U tox
+
+install:
+  - pip install codecov tox
+
 script:
-  - tox
+  - tox -e $TOXENV
+
+after_success:
+  - codecov -e TOX_ENV
+
 notifications:
-  email:
-    recipients:
-      - alla.brunoo@gmail.com
+  email: false
+
 deploy:
   provider: pypi
   user: Bruno.Alla
