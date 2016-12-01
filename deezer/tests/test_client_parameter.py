@@ -52,6 +52,9 @@ class TestClient(unittest.TestCase):
         self.assertEqual(self.client.object_url("album", "12", "artist",
                          limit=1),
                          "https://api.deezer.com/album/12/artist?limit=1")
+        self.assertEqual(self.client.object_url("artist", "12", "albums",
+                         limit=1),
+                         "https://api.deezer.com/artist/12/albums?limit=1")
         self.assertRaises(TypeError, self.client.object_url, 'foo')
 
     def test_get_album(self):
@@ -121,6 +124,41 @@ class TestClient(unittest.TestCase):
         self.assertIsInstance(result, list)
         self.assertEqual(result[0].title, "Billy Jean")
         self.assertIsInstance(result[0], deezer.resources.Track)
+
+    def test_chart(self):
+        self.assertEqual(self.client.object_url("chart"),
+                         "https://api.deezer.com/chart")
+        result = self.client.get_chart()
+        self.assertIsInstance(result, deezer.resources.Chart)
+
+        self.assertIsInstance(result.tracks[0], deezer.resources.Track)
+        self.assertIsInstance(result.albums[0], deezer.resources.Album)
+        self.assertIsInstance(result.artists[0], deezer.resources.Artist)
+        self.assertIsInstance(result.playlists[0], deezer.resources.Playlist)
+
+    def test_chart_tracks(self):
+        result = self.client.get_chart("tracks")
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].title, "Starboy")
+        self.assertIsInstance(result[0], deezer.resources.Track)
+
+    def test_chart_albums(self):
+        result = self.client.get_chart("albums")
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].title, "Where Is l'album de Gradur")
+        self.assertIsInstance(result[0], deezer.resources.Album)
+
+    def test_chart_artists(self):
+        result = self.client.get_chart("artists")
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].name, "Pnl")
+        self.assertIsInstance(result[0], deezer.resources.Artist)
+
+    def test_chart_playlists(self):
+        result = self.client.get_chart("playlists")
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].title, "Top France")
+        self.assertIsInstance(result[0], deezer.resources.Playlist)
 
     def test_options(self):
         """Test a query with extra arguments"""
