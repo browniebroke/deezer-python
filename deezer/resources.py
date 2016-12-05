@@ -106,12 +106,12 @@ class Album(Resource):
 class Artist(Resource):
     """To access an artist."""
 
-    def get_top(self):
+    def get_top(self, **kwargs):
         """
-        Get the top 5 tracks of an artist.
+        Get the top tracks of an artist.
         :returns: list of :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation('top')
+        return self.get_relation('top', **kwargs)
 
     def get_related(self, **kwargs):
         """
@@ -127,11 +127,11 @@ class Artist(Resource):
         """
         return self.iter_relation('related', **kwargs)
 
-    def get_radio(self):
+    def get_radio(self, **kwargs):
         """
         :returns: list of :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation('radio')
+        return self.get_relation('radio', **kwargs)
 
     def get_albums(self, **kwargs):
         """
@@ -222,6 +222,10 @@ class Radio(Resource):
 
 class Chart(Resource):
     """To access charts."""
+
+    type = "chart"
+
+    id = 0
 
     def get_tracks(self, **kwargs):
         """

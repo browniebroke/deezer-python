@@ -69,26 +69,18 @@ class Client(object):
         if 'data' in item:
             return [self._process_json(i, parent) for i in item['data']]
 
-        if parent == "chart":
-            object_class = self.objects_types.get("chart")
-
-            return object_class(self, {
-                'type'  : parent,
-                'id'    : '0',
-                'tracks' : [self._process_json(i, None) for i in item['tracks']['data']],
-                'albums' : [self._process_json(i, None) for i in item['albums']['data']],
-                'artists' : [self._process_json(i, None) for i in item['artists']['data']],
-                'playlists' : [self._process_json(i, None) for i in item['playlists']['data']]
-            })
-
         result = {}
         for key, value in item.items():
             if isinstance(value, dict) and ('type' in value or 'data' in value):
                 value = self._process_json(value, parent)
             result[key] = value
-        if parent is not None:
+        if parent is not None and hasattr(parent, 'type'):
             result[parent.type] = parent
-        object_class = self.objects_types.get(result['type'], Resource)
+
+        if 'type' in result:
+            object_class = self.objects_types.get(result['type'], Resource)
+        else:
+            object_class = self.objects_types.get(parent, Resource)
         return object_class(self, result)
 
     @staticmethod
@@ -161,7 +153,7 @@ class Client(object):
         :returns: a list of :class:`~deezer.resources.Resource` objects.
         """
         return self.get_object("chart", object_id='0', relation=relation,
-                               parent=None if relation else "chart", **kwargs)
+                               parent="chart", **kwargs)
 
     def get_album(self, object_id, relation=None, **kwargs):
         """
