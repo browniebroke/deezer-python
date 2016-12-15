@@ -16,6 +16,7 @@ matrix:
   allow_failures:
     - python: "3.6-dev"
     - python: "nightly"
+    - python: "pypy3"
 
 install:
   - pip install codecov tox tox-travis
