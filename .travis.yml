@@ -3,22 +3,18 @@ language: python
 sudo: false
 
 python:
-  - '3.5'
-
-env:
-  matrix:
-    - TOXENV=docs
-    - TOXENV=py27
-    - TOXENV=py33
-    - TOXENV=py34
-    - TOXENV=py35
-    - TOXENV=pypy
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.6-dev"
+  - "nightly"
 
 install:
-  - pip install codecov tox
+  - pip install codecov tox tox-travis
 
 script:
-  - tox -e $TOXENV
+  - tox
 
 after_success:
   - codecov -e TOXENV
