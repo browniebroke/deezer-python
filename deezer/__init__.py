@@ -3,8 +3,6 @@
 Implements several classes to interact with all types of Deezer objects,
 do some searches, and build application written in Python on top of it
 
-.. note:: The package is not mature at all at the moment.
-
 """
 from deezer.async import AsyncClient
 from deezer.client import Client

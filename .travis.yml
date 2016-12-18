@@ -38,6 +38,6 @@ deploy:
     branch: master
     repo: browniebroke/deezer-python
     tags: true
-    condition: "$TOXENV = py27"
+    python: 2.7
   password:
     secure: gPn7phpAJc0WUAueMM4Drz4Uds/oYghLA8qiyG2GyFP5i2HnJiQDd+ZZVaSsLSVdiAubfR8RPBuKAbpZ3+g1RzHIiACNLh96G0q/rthytlPowxLxrI3c4BfjBTZ7qDdg1GzWcddrSAjKLN1v1OswuZZ7/T4YG7mdT8SMrLJq+8s=
