@@ -44,7 +44,7 @@ class Client(object):
         'search': None,
         'track': Track,
         'user': User,
-        'chart' : Chart
+        'chart': Chart
     }
 
     def __init__(self, **kwargs):
