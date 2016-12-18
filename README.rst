@@ -65,7 +65,7 @@ back-end for it, I'd encourage you to submit a pull request there.
     :target: https://codecov.io/gh/browniebroke/deezer-python
     :alt: Test coverage percentage
 .. |docs| image:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
-    :target: https://readthedocs.io/projects/deezer-python/?badge=latest
+    :target: https://deezer-python.readthedocs.io
     :alt: Documentation Status
 .. |pypi| image:: https://badge.fury.io/py/deezer-python.svg
     :target: http://badge.fury.io/py/deezer-python
