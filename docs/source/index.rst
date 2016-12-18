@@ -6,7 +6,10 @@ Deezer python's |version| documentation
 Contents:
 
 .. toctree::
+    :maxdepth: 2
 
-   async
-   client
-   resources
+    readme
+    contributing
+    authors
+    api_reference
+    license

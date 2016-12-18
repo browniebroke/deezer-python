@@ -1,0 +1,3 @@
+- [ ] If some code is being changed, the pull request should include tests.
+- [ ] If the pull request adds functionality, the docs should be updated.
+- [ ] The pull request should work for Python 2.7, 3.3, 3.4, 3.5 and for PyPy.
