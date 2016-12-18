@@ -65,7 +65,7 @@ back-end for it, I'd encourage you to submit a pull request there.
     :target: https://codecov.io/gh/browniebroke/deezer-python
     :alt: Test coverage percentage
 .. |docs| image:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
-    :target: https://readthedocs.org/projects/deezer-python/?badge=latest
+    :target: https://readthedocs.io/projects/deezer-python/?badge=latest
     :alt: Documentation Status
 .. |pypi| image:: https://badge.fury.io/py/deezer-python.svg
     :target: http://badge.fury.io/py/deezer-python
@@ -75,5 +75,5 @@ back-end for it, I'd encourage you to submit a pull request there.
    :alt: Code Health    
 .. _Deezer API: http://developers.deezer.com/api
 .. _Sphinx: http://sphinx-doc.org/
-.. _documentation: http://deezer-python.readthedocs.org/
-.. _Python Social Auth: https://github.com/omab/python-social-auth
+.. _documentation: http://deezer-python.readthedocs.io/
+.. _Python Social Auth: https://github.com/python-social-auth
