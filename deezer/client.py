@@ -1,15 +1,13 @@
+# -*- coding: utf-8
 """
 Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
 
-import json
-try:  # pragma: no cover - python 2
-    from urllib import urlencode
-    from urllib2 import urlopen
-except ImportError:  # pragma: no cover - python 3
-    from urllib.parse import urlencode
-    from urllib.request import urlopen
+from __future__ import unicode_literals, absolute_import
+
+import requests
+from six.moves.urllib.parse import urlencode
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Playlist, Radio, Track, User
 from deezer.resources import Chart, Resource
@@ -140,11 +138,8 @@ class Client(object):
         :returns: json dictionary
         """
         url = self.object_url(object_t, object_id, relation, **kwargs)
-        response = urlopen(url)
-        resp_str = response.read().decode('utf-8')
-        response.close()
-        jsn = json.loads(resp_str)
-        return self._process_json(jsn, parent)
+        response = requests.get(url)
+        return self._process_json(response.json(), parent)
 
     def get_chart(self, relation=None, **kwargs):
         """

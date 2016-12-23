@@ -1,33 +1,13 @@
-# -*- coding: utf-8 -*-
-import json
-import unittest
+# -*- coding: utf-8
+from __future__ import unicode_literals, absolute_import
+
 from types import GeneratorType
 
 import deezer
-from mock import patch
-from .mocked_methods import fake_urlopen
+from deezer.tests.base import BaseTestCase
 
 
-class TestResources(unittest.TestCase):
-    def setUp(self):
-        self.patcher = patch('deezer.client.urlopen', fake_urlopen)
-        self.patcher.start()
-
-    def tearDown(self):
-        self.patcher.stop()
-
-    def test_resource_dict(self):
-        """
-        Test that resource can be converted to dict
-        """
-        client = deezer.Client()
-        response = fake_urlopen(client.object_url('track', 3135556))
-        resp_str = response.read().decode('utf-8')
-        response.close()
-        data = json.loads(resp_str)
-        resource = deezer.resources.Resource(client, data)
-        self.assertEqual(resource.asdict(), data)
-
+class TestResources(BaseTestCase):
     def test_resource_relation(self):
         """
         Test passing parent object when using get_relation
