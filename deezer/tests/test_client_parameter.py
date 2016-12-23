@@ -1,20 +1,19 @@
+# -*- coding: utf-8
+from __future__ import unicode_literals, absolute_import
+
 import deezer
 import unittest
 import tornado.gen
 import tornado.ioloop
-from mock import patch
-from .mocked_methods import fake_urlopen
+
+from .base import BaseTestCase
 
 
-class TestClient(unittest.TestCase):
+class TestClient(BaseTestCase):
     def setUp(self):
-        self.patcher = patch('deezer.client.urlopen', fake_urlopen)
-        self.patcher.start()
+        super(TestClient, self).setUp()
         self.client = deezer.Client(app_id='foo', app_secret='bar')
         self.unsec_client = deezer.Client(use_ssl=False)
-
-    def tearDown(self):
-        self.patcher.stop()
 
     def test_kwargs_parsing_valid(self):
         """Test that valid kwargs are stored as properties on the client."""
@@ -50,10 +49,10 @@ class TestClient(unittest.TestCase):
         self.assertEqual(self.client.object_url("album", "12", limit=1),
                          "https://api.deezer.com/album/12?limit=1")
         self.assertEqual(self.client.object_url("album", "12", "artist",
-                         limit=1),
+                                                limit=1),
                          "https://api.deezer.com/album/12/artist?limit=1")
         self.assertEqual(self.client.object_url("artist", "12", "albums",
-                         limit=1),
+                                                limit=1),
                          "https://api.deezer.com/artist/12/albums?limit=1")
         self.assertRaises(TypeError, self.client.object_url, 'foo')
 
@@ -118,7 +117,7 @@ class TestClient(unittest.TestCase):
         self.assertEqual(result[0].title, "Billy Jean")
 
         self.assertEqual(self.client.object_url("search",
-                         relation="track", q="Daft Punk"),
+                                                relation="track", q="Daft Punk"),
                          "https://api.deezer.com/search/track?q=Daft+Punk")
         result = self.client.search("Billy Jean", "track")
         self.assertIsInstance(result, list)
@@ -171,8 +170,9 @@ class TestClient(unittest.TestCase):
         self.assertLessEqual(len(result), 2)
 
 
-class TestAsyncClient(unittest.TestCase):
+class TestAsyncClient(BaseTestCase):
     def setUp(self):
+        super(TestAsyncClient, self).setUp()
         self.client = deezer.AsyncClient()
 
     def test_get_object(self):
