@@ -141,7 +141,6 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(tracks, list)
         track = tracks[2]
         self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), '<Track: Schumann: Kinderszenen, Op.15 - 11. Fürchtenmachen>')
         self.assertEqual(type(radio.iter_tracks()), GeneratorType)
 
     def test_genre_attributes(self):

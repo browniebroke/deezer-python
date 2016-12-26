@@ -4,8 +4,10 @@ Implements an async tornado client class to query the
 """
 import json
 import logging
+
 from tornado.gen import coroutine, Return
 from tornado.httpclient import AsyncHTTPClient
+
 from deezer.client import Client
 
 
@@ -22,6 +24,7 @@ class AsyncClient(Client):
     This client provides several method to retrieve the content of most
     sort of Deezer objects, based on their json structure.
     """
+
     def __init__(self, *args, **kwargs):
         super(AsyncClient, self).__init__(*args, **kwargs)
         max_clients = kwargs.get('max_clients', 2)
