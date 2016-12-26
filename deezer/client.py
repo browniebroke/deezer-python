@@ -8,9 +8,10 @@ from __future__ import unicode_literals, absolute_import
 
 import requests
 from six.moves.urllib.parse import urlencode
+
 from deezer.resources import Album, Artist, Comment, Genre
-from deezer.resources import Playlist, Radio, Track, User
 from deezer.resources import Chart, Resource
+from deezer.resources import Playlist, Radio, Track, User
 
 
 class Client(object):
