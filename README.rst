@@ -1,7 +1,7 @@
 Deezer Python Client
 ====================
 
-|build| |coverage| |docs| |pypi| |landscape|
+|build| |coverage| |docs| |pypi| |landscape| |pyversions| |license|
 
 A friendly wrapper around the `Deezer API`_.
 
@@ -13,14 +13,14 @@ The package is published on the `Python index <https://pypi.python.org/pypi/deez
 ::
 
     pip install deezer-python
-    
+
 And that's it!
 
 Basic Use
 ---------
 
 So far you can only retrieve the data for the public objects, for which no login is required.
-The objects are translated to python resources, which are basically python objects encapsulating 
+The objects are translated to python resources, which are basically python objects encapsulating
 the json dictionary returned by the API.
 
 .. code-block:: python
@@ -71,8 +71,10 @@ back-end for it, I'd encourage you to submit a pull request there.
     :target: http://badge.fury.io/py/deezer-python
     :alt: PyPi Status
 .. |landscape| image:: https://landscape.io/github/browniebroke/deezer-python/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/browniebroke/deezer-python/master
-   :alt: Code Health    
+    :target: https://landscape.io/github/browniebroke/deezer-python/master
+    :alt: Code Health
+.. |pyversions| image:: https://img.shields.io/pypi/pyversions/deezer-python.svg
+.. |license| image:: https://img.shields.io/pypi/l/deezer-python.svg
 .. _Deezer API: http://developers.deezer.com/api
 .. _Sphinx: http://sphinx-doc.org/
 .. _documentation: http://deezer-python.readthedocs.io/
