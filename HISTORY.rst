@@ -6,6 +6,10 @@ History
 Unreleased
 ----------
 
+- Python 3.6 support
+- Remove Python 3.2 classifier, support was dropped since 0.2.3
+- Updated docs and testing setup
+
 0.4.0 (2016-12-08)
 ------------------
 
