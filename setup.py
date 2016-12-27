@@ -9,7 +9,7 @@ def read(*paths):
         return f.read()
 
 
-version = '0.5.0'
+version = '0.6.0'
 
 setup(
     name='deezer-python',
