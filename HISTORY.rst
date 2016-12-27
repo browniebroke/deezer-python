@@ -6,6 +6,16 @@ History
 Unreleased
 ----------
 
+0.6.0 (2016-12-27)
+------------------
+
+- Refactoring to use `requests`_ instead of urllib, mocking using
+  Requests mock instead of manual patching. Use `six`_ for Python
+  2 and 3 compatibility.
+
+.. _requests: http://docs.python-requests.org/
+.. _six: https://pythonhosted.org/six/
+
 0.5.0 (2016-12-26)
 ------------------
 
