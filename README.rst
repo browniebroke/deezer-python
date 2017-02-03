@@ -53,9 +53,8 @@ Authentication
 --------------
 
 Not supported by this package. There are excellent other python modules to
-handle that. There is the excellent `Python Social Auth`_, it doesn't support
-Deezer, but it's very easily extensible to support it, and if you do write a
-back-end for it, I'd encourage you to submit a pull request there.
+handle that. There is the excellent `Python Social Auth`_, which supports
+Deezer authentication.
 
 .. |build| image:: https://travis-ci.org/browniebroke/deezer-python.svg
     :target: https://travis-ci.org/browniebroke/deezer-python
