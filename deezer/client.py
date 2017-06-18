@@ -122,6 +122,8 @@ class Client(object):
         request_items = (str(item) for item in request_items)
         request = '/'.join(request_items)
         base_url = self.url(request)
+        if self.access_token is not None:
+            kwargs['access_token'] = self.make_str(self.access_token)
         if kwargs:
             for key, value in kwargs.items():
                 if not isinstance(value, str):
