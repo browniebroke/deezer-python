@@ -15,6 +15,13 @@ class TestClient(BaseTestCase):
         self.client = deezer.Client(app_id='foo', app_secret='bar')
         self.unsec_client = deezer.Client(use_ssl=False)
 
+    def test_access_token_set(self):
+        """Test that access token is set on the client."""
+        self.client.access_token = 'token'
+        self.assertEqual(self.client.access_token, 'token')
+        self.assertEqual(self.client.object_url("user", "me"),
+                         "https://api.deezer.com/user/me?access_token=token")
+
     def test_kwargs_parsing_valid(self):
         """Test that valid kwargs are stored as properties on the client."""
         self.assertEqual(self.client.app_id, 'foo')
