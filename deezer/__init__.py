@@ -10,7 +10,7 @@ from deezer.resources import Album, Resource, Artist, Playlist
 from deezer.resources import Genre, Track, User, Comment, Radio
 
 
-__version__ = '0.6.0'
+__version__ = '0.6.1'
 __all__ = ['AsyncClient', 'Client', 'Resource', 'Album',
            'Artist', 'Genre', 'Playlist', 'Track', 'User',
            'Comment', 'Radio']
