@@ -3,8 +3,12 @@
 History
 =======
 
-Unreleased
-----------
+0.6.1 (2017-06-19)
+------------------
+
+- Added access token to the request kwargs. Thanks `Nikolay Sheregeda`_ for
+  the patch.
+- Documentation update, thanks `Khamaileon`_ for the correction.
 
 0.6.0 (2016-12-27)
 ------------------
@@ -61,3 +65,5 @@ Unreleased
 .. _Misuzu: https://github.com/misuzu
 .. _Pascal: https://github.com/pfouque
 .. _chart: https://developers.deezer.com/api/chart
+.. _Khamaileon: https://github.com/khamaileon
+.. _Nikolay Sheregeda: https://github.com/sheregeda
