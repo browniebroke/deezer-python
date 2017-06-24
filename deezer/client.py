@@ -51,6 +51,7 @@ class Client(object):
 
         self.use_ssl = kwargs.get('use_ssl', self.use_ssl)
         self.host = kwargs.get('host', self.host)
+        self.session = requests.Session()
         self.options = kwargs
         self._authorize_url = None
 
@@ -141,7 +142,7 @@ class Client(object):
         :returns: json dictionary
         """
         url = self.object_url(object_t, object_id, relation, **kwargs)
-        response = requests.get(url)
+        response = self.session.get(url)
         return self._process_json(response.json(), parent)
 
     def get_chart(self, relation=None, **kwargs):
