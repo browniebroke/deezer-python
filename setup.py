@@ -1,11 +1,12 @@
 import os
 
+from codecs import open
 from setuptools import setup
 
 
 def read(*paths):
     """Build a file path from *paths* and return the contents."""
-    with open(os.path.join(*paths), 'r') as f:
+    with open(os.path.join(*paths), 'r', 'utf-8') as f:
         return f.read()
 
 

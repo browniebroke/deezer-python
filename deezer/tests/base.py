@@ -16,11 +16,11 @@ FILE_EXT = '.json'
 
 # Override a local path -> URL path
 PATH_OVERRIDES = {
-    '/album/302127/tracks14': '/album/302127/tracks?index=14',
-    '/genre/noid': '/genre',
-    '/radio/noid': '/radio',
-    '/search/noid': '/search?q=Billy+Jean',
-    '/search_1/noid': '/search?q=Billy Jean&limit=2&index=2',
+    mkpath('album', '302127', 'tracks14'): 'album/302127/tracks?index=14',
+    mkpath('genre', 'noid'): 'genre',
+    mkpath('radio', 'noid'): 'radio',
+    mkpath('search', 'noid'): 'search?q=Billy+Jean',
+    mkpath('search_1', 'noid'): 'search?q=Billy Jean&limit=2&index=2',
 }
 
 
@@ -68,9 +68,9 @@ def url_from_path(path):
     the '.json' suffix. Anything less obvious should be added
     as explicit override in the `PATH_OVERRIDES` dictionary.
     """
-    http_path = path[len(RESOURCES_ROOT):-len(FILE_EXT)]
+    http_path = path[(len(RESOURCES_ROOT) + 1):-len(FILE_EXT)]
     try:
         url_part = PATH_OVERRIDES[http_path]
     except KeyError:
-        url_part = http_path
+        url_part = http_path.replace('\\', '/')
     return urljoin(HOST_ROOT, url_part)
