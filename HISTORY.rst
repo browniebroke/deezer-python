@@ -3,6 +3,11 @@
 History
 =======
 
+Unreleased
+----------
+
+- Optimisation: the session is now stored internally by the client
+
 0.6.1 (2017-06-19)
 ------------------
 

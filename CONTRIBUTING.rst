@@ -78,10 +78,11 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 
    To get `flake8`_ and `tox`_, just pip install them into your virtualenv.
 
-6. Commit your changes and push your branch to GitHub::
+6. Commit your changes, quoting github issue in the commit message, if applicable
+   and push your branch to GitHub::
 
     $ git add .
-    $ git commit -m "Your detailed description of your changes."
+    $ git commit -m "Fix #XX - My awesome fix"
     $ git push origin name-of-your-bugfix-or-feature
 
 7. Submit a pull request through the GitHub website.
@@ -91,10 +92,13 @@ Pull Request Guidelines
 
 Before you submit a pull request, check that it meets these guidelines:
 
-1. The pull request should include tests.
+1. The pull request should include tests for feature or bug fixes.
 2. If the pull request adds functionality, the docs should be updated.
-3. The pull request should work for Python 2.7, 3.3, 3.4, 3.5 and for PyPy. Check
-   `Travis`_ and make sure that the tests pass for all supported Python versions.
+3. The pull request should work for Python 2.7, 3.3, 3.4, 3.5 and for PyPy.
+   Check `Travis`_ as well as `Appveyor`_ and make sure that the tests
+   pass for all supported Python versions.
+4. If your change is worthwhile a mention in the changelog, update the
+   Unreleased section of HISTORY.rst
 
 Create a New Release
 --------------------
@@ -113,5 +117,6 @@ Depending on which digit of the version needs to be updated, and then push with 
 
 .. _issues page: https://github.com/browniebroke/deezer-python/issues
 .. _Travis: https://travis-ci.org/browniebroke/deezer-python/pull_requests
+.. _Appveyor: https://ci.appveyor.com/project/browniebroke/deezer-python
 .. _tox: http://tox.readthedocs.io/en/stable/index.html
 .. _flake8: http://flake8.pycqa.org/en/latest/
