@@ -1,0 +1,5 @@
+newPRWelcomeComment: >
+  Thanks so much for opening your first PR here! A maintainer will look at this shortly. In the meantime you might want to add yourself to [the list of authors](https://github.com/browniebroke/deezer-python/blob/master/AUTHORS.rst). If you've done it already, great!
+
+firstPRMergeComment: >
+  Congrats on merging your first pull request here! :tada: How awesome!
