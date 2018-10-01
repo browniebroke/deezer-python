@@ -3,6 +3,6 @@ API Reference
 
 .. toctree::
 
-    async
+    asynchronous
     client
     resources
