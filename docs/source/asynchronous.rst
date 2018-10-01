@@ -1,5 +1,5 @@
 Async module
 ------------
 
-.. automodule:: deezer.asyncclient
+.. automodule:: deezer.asynchronous
     :members:
