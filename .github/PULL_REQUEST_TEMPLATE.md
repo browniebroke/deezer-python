@@ -1,4 +1,3 @@
 - [ ] Include tests for bug fix and new functionality
 - [ ] Updated documentation for new feature
-- [ ] The pull request should work for Python 2.7, 3.4, 3.5, 3.6 and for PyPy.
 - [ ] Added an entry at the top of History.rst, under the unreleased section
