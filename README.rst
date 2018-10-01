@@ -1,7 +1,7 @@
 Deezer Python Client
 ====================
 
-|build| |coverage| |docs| |pypi| |landscape| |pyversions| |license|
+|build| |win_build| |coverage| |docs| |pypi| |landscape| |pyversions| |license|
 
 A friendly wrapper around the `Deezer API`_.
 
@@ -58,6 +58,9 @@ Deezer authentication.
 
 .. |build| image:: https://travis-ci.org/browniebroke/deezer-python.svg
     :target: https://travis-ci.org/browniebroke/deezer-python
+    :alt: Build status
+.. |win_build| image:: https://ci.appveyor.com/api/projects/status/l5vb8sl9ey12s3nd?svg=true
+    :target: https://ci.appveyor.com/project/browniebroke/deezer-python
     :alt: Build status
 .. |coverage| image:: https://codecov.io/gh/browniebroke/deezer-python/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/browniebroke/deezer-python
