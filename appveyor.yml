@@ -45,4 +45,4 @@ build_script:
 
 test_script:
   # Run the project tests
-  - "%CMD_IN_ENV% python -m unittest discover"
+  - "%CMD_IN_ENV% pytest"

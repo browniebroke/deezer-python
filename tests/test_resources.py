@@ -4,7 +4,7 @@ from __future__ import unicode_literals, absolute_import
 from types import GeneratorType
 
 import deezer
-from deezer.tests.base import BaseTestCase
+from tests.base import BaseTestCase
 
 
 class TestResources(BaseTestCase):
