@@ -17,12 +17,17 @@ environment:
     - PYTHON: "C:\\Python37-x64"
       TOXENV: py37
 
+init:
+  - SET "PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+
+build: off
+
 install:
   # Upgrade to the latest version of pip to avoid it displaying warnings
   # about it being out of date.
   - pip install -U pip
-  # Install test dependencies
-  - pip install -r requirements-test.txt
+  # Install tox to run tests
+  - pip install tox
 
 test_script:
   # Run the project tests
