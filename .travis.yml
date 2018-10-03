@@ -48,6 +48,7 @@ after_success:
 
 notifications:
   email: false
+  slack: browniebroke:S7HgSxGZIpNFg23NiILhNAvA
 
 deploy:
   provider: pypi
