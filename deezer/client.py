@@ -145,7 +145,7 @@ class Client(object):
         response = self.session.get(url)
         return self._process_json(response.json(), parent)
 
-    def get_chart(self, relation=None, **kwargs):
+    def get_chart(self, relation=None, index=0, limit=10, **kwargs):
         """
         Get chart
 
@@ -240,7 +240,7 @@ class Client(object):
         """
         return self.get_object("user", object_id)
 
-    def search(self, query, relation=None, **kwargs):
+    def search(self, query, relation=None, index=0, limit=25, **kwargs):
         """
         Search track, album, artist or user
 
