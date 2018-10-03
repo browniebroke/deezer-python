@@ -57,6 +57,6 @@ deploy:
     branch: master
     repo: browniebroke/deezer-python
     tags: true
-    python: 3.6
+    condition: $TOXENV = py36
   password:
-    secure: gPn7phpAJc0WUAueMM4Drz4Uds/oYghLA8qiyG2GyFP5i2HnJiQDd+ZZVaSsLSVdiAubfR8RPBuKAbpZ3+g1RzHIiACNLh96G0q/rthytlPowxLxrI3c4BfjBTZ7qDdg1GzWcddrSAjKLN1v1OswuZZ7/T4YG7mdT8SMrLJq+8s=
+    secure: "dkOdaaMIL9OBgwx36Vs/xanu9XTco/mFo5aK+t8rCfFV5Moe7eq2HudIDBw3gnEdxwAz3nxienUoIIMoNb6y7QFgRrNkFPpoGaqt73D4qXInQpJpYHVBlUfE/owFwx4q4Nqam6nd3J3Kyh2xeSGY3c2JlPdUZAv2yv/piNclbyQ="
