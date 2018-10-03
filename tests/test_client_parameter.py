@@ -124,12 +124,16 @@ class TestClient(BaseTestCase):
         self.assertEqual(result[0].title, "Billy Jean")
 
         self.assertEqual(self.client.object_url("search",
-                                                relation="track", q="Daft Punk"),
+                                                relation="track", q="Daft Punk",),
                          "https://api.deezer.com/search/track?q=Daft+Punk")
         result = self.client.search("Billy Jean", "track")
         self.assertIsInstance(result, list)
         self.assertEqual(result[0].title, "Billy Jean")
         self.assertIsInstance(result[0], deezer.resources.Track)
+        result = self.client.search("Billy Jean", "track", "0", "1")
+        self.assertIsInstance(result, list)
+        self.assertEqual(len(result), 1)
+        self.assertNotEqual(result[0], self.client.search("Billy Jean", "track", "1", "1"))
 
     def test_chart(self):
         self.assertEqual(self.client.object_url("chart"),
