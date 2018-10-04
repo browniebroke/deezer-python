@@ -8,6 +8,8 @@ unreleased
 
 - Added index and limit to Client.search & Client.get_charts. Defaults are 
   set to deezer api defaults.
+- Moved tornado to an optional dependency. Install with pip install 
+  deezer-python[async]
 
 0.7.0 (2018-10-03)
 ------------------

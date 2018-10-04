@@ -14,6 +14,12 @@ The package is published on the `Python index <https://pypi.python.org/pypi/deez
 
     pip install deezer-python
 
+to have async support run the following:
+
+::
+
+   pip install deezer-python[async]
+
 And that's it!
 
 Basic Use
