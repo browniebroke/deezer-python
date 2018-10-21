@@ -2,7 +2,6 @@
 from __future__ import unicode_literals, absolute_import
 
 import deezer
-import unittest
 
 from .base import BaseTestCase
 

@@ -2,6 +2,7 @@
 Module to implement the various types of resources that
 can be found in the API.
 """
+from six import text_type
 
 
 class Resource(object):
@@ -23,7 +24,7 @@ class Resource(object):
         name = getattr(self, 'name', getattr(self, 'title', None))
         if name is not None:
             return '<{0}: {1}>'.format(self.__class__.__name__,
-                                       self.client.make_str(name))
+                                       text_type(name))
         return super(Resource, self).__repr__()
 
     def asdict(self):

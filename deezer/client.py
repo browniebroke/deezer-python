@@ -7,6 +7,7 @@ Implements a client class to query the
 from __future__ import unicode_literals, absolute_import
 
 import requests
+from six import text_type, iteritems
 from six.moves.urllib.parse import urlencode
 
 from deezer.resources import Album, Artist, Comment, Genre
@@ -83,19 +84,6 @@ class Client(object):
             object_class = self.objects_types.get(parent, Resource)
         return object_class(self, result)
 
-    @staticmethod
-    def make_str(value):
-        """
-        Convert value to str in python2 and python3 compatible way
-
-        :returns: str instance
-        """
-        try:  # pragma: no cover - python 3
-            value = str(value)
-        except UnicodeEncodeError:  # pragma: no cover - python 2
-            value = value.encode('utf-8')
-        return value
-
     @property
     def scheme(self):
         """
@@ -118,17 +106,19 @@ class Client(object):
         """
         if object_t not in self.objects_types:
             raise TypeError("{0} is not a valid type".format(object_t))
-        request_items = (object_t, object_id, relation)
-        request_items = (item for item in request_items if item is not None)
-        request_items = (str(item) for item in request_items)
+        request_items = (
+            text_type(item)
+            for item in [object_t, object_id, relation]
+            if item is not None
+        )
         request = '/'.join(request_items)
         base_url = self.url(request)
         if self.access_token is not None:
-            kwargs['access_token'] = self.make_str(self.access_token)
+            kwargs['access_token'] = text_type(self.access_token)
         if kwargs:
-            for key, value in kwargs.items():
+            for key, value in iteritems(kwargs):
                 if not isinstance(value, str):
-                    kwargs[key] = self.make_str(value)
+                    kwargs[key] = text_type(value)
             result = '{0}?{1}'.format(base_url, urlencode(kwargs))
         else:
             result = base_url
