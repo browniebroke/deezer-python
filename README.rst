@@ -1,7 +1,9 @@
 Deezer Python Client
 ====================
 
-|build| |win_build| |coverage| |codeclimate| |docs| |pypi| |pyversions| |license|
+|build| |win_build| |coverage| |codeclimate| |black|
+
+|docs| |pypi| |pyversions| |license|
 
 A friendly wrapper around the `Deezer API`_.
 
@@ -70,6 +72,8 @@ Deezer authentication.
 .. |coverage| image:: https://codecov.io/gh/browniebroke/deezer-python/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/browniebroke/deezer-python
     :alt: Test coverage percentage
+.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/ambv/black
 .. |docs| image:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
     :target: https://deezer-python.readthedocs.io
     :alt: Documentation Status

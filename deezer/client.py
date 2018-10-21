@@ -33,32 +33,32 @@ class Client(object):
     host = "api.deezer.com"
 
     objects_types = {
-        'album': Album,
-        'artist': Artist,
-        'comment': Comment,
-        'editorial': None,
+        "album": Album,
+        "artist": Artist,
+        "comment": Comment,
+        "editorial": None,
         # 'folder': None, # need identification
-        'genre': Genre,
-        'playlist': Playlist,
-        'radio': Radio,
-        'search': None,
-        'track': Track,
-        'user': User,
-        'chart': Chart
+        "genre": Genre,
+        "playlist": Playlist,
+        "radio": Radio,
+        "search": None,
+        "track": Track,
+        "user": User,
+        "chart": Chart,
     }
 
     def __init__(self, **kwargs):
         super(Client, self).__init__()
 
-        self.use_ssl = kwargs.get('use_ssl', self.use_ssl)
-        self.host = kwargs.get('host', self.host)
+        self.use_ssl = kwargs.get("use_ssl", self.use_ssl)
+        self.host = kwargs.get("host", self.host)
         self.session = requests.Session()
         self.options = kwargs
         self._authorize_url = None
 
-        self.app_id = kwargs.get('app_id')
-        self.app_secret = kwargs.get('app_secret')
-        self.access_token = kwargs.get('access_token')
+        self.app_id = kwargs.get("app_id")
+        self.app_secret = kwargs.get("app_secret")
+        self.access_token = kwargs.get("access_token")
 
     def _process_json(self, item, parent=None):
         """
@@ -67,19 +67,19 @@ class Client(object):
 
         :returns: instance of :class:`~deezer.resources.Resource`
         """
-        if 'data' in item:
-            return [self._process_json(i, parent) for i in item['data']]
+        if "data" in item:
+            return [self._process_json(i, parent) for i in item["data"]]
 
         result = {}
         for key, value in item.items():
-            if isinstance(value, dict) and ('type' in value or 'data' in value):
+            if isinstance(value, dict) and ("type" in value or "data" in value):
                 value = self._process_json(value, parent)
             result[key] = value
-        if parent is not None and hasattr(parent, 'type'):
+        if parent is not None and hasattr(parent, "type"):
             result[parent.type] = parent
 
-        if 'type' in result:
-            object_class = self.objects_types.get(result['type'], Resource)
+        if "type" in result:
+            object_class = self.objects_types.get(result["type"], Resource)
         else:
             object_class = self.objects_types.get(parent, Resource)
         return object_class(self, result)
@@ -89,11 +89,11 @@ class Client(object):
         """
         Get the http prefix for the address depending on the use_ssl attribute
         """
-        return self.use_ssl and 'https' or 'http'
+        return self.use_ssl and "https" or "http"
 
-    def url(self, request=''):
+    def url(self, request=""):
         """Build the url with the appended request if provided."""
-        if request.startswith('/'):
+        if request.startswith("/"):
             request = request[1:]
         return "{0}://{1}/{2}".format(self.scheme, self.host, request)
 
@@ -111,21 +111,22 @@ class Client(object):
             for item in [object_t, object_id, relation]
             if item is not None
         )
-        request = '/'.join(request_items)
+        request = "/".join(request_items)
         base_url = self.url(request)
         if self.access_token is not None:
-            kwargs['access_token'] = text_type(self.access_token)
+            kwargs["access_token"] = text_type(self.access_token)
         if kwargs:
             for key, value in iteritems(kwargs):
                 if not isinstance(value, str):
                     kwargs[key] = text_type(value)
-            result = '{0}?{1}'.format(base_url, urlencode(kwargs))
+            result = "{0}?{1}".format(base_url, urlencode(kwargs))
         else:
             result = base_url
         return result
 
-    def get_object(self, object_t, object_id=None, relation=None, parent=None,
-                   **kwargs):
+    def get_object(
+        self, object_t, object_id=None, relation=None, parent=None, **kwargs
+    ):
         """
         Actually query the Deezer API to retrieve the object
 
@@ -141,8 +142,9 @@ class Client(object):
 
         :returns: a list of :class:`~deezer.resources.Resource` objects.
         """
-        return self.get_object("chart", object_id='0', relation=relation,
-                               parent="chart", **kwargs)
+        return self.get_object(
+            "chart", object_id="0", relation=relation, parent="chart", **kwargs
+        )
 
     def get_album(self, object_id, relation=None, **kwargs):
         """

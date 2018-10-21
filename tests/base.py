@@ -10,17 +10,17 @@ from os.path import join as mkpath, dirname, abspath
 import requests_mock
 from six.moves.urllib.parse import urljoin
 
-HOST_ROOT = 'https://api.deezer.com/'
-RESOURCES_ROOT = mkpath(abspath(dirname(__file__)), 'resources')
-FILE_EXT = '.json'
+HOST_ROOT = "https://api.deezer.com/"
+RESOURCES_ROOT = mkpath(abspath(dirname(__file__)), "resources")
+FILE_EXT = ".json"
 
 # Override a local path -> URL path
 PATH_OVERRIDES = {
-    mkpath('album', '302127', 'tracks14'): 'album/302127/tracks?index=14',
-    mkpath('genre', 'noid'): 'genre',
-    mkpath('radio', 'noid'): 'radio',
-    mkpath('search', 'noid'): 'search?q=Billy+Jean',
-    mkpath('search_1', 'noid'): 'search?q=Billy Jean&limit=2&index=2',
+    mkpath("album", "302127", "tracks14"): "album/302127/tracks?index=14",
+    mkpath("genre", "noid"): "genre",
+    mkpath("radio", "noid"): "radio",
+    mkpath("search", "noid"): "search?q=Billy+Jean",
+    mkpath("search_1", "noid"): "search?q=Billy Jean&limit=2&index=2",
 }
 
 
@@ -29,7 +29,7 @@ def find_files():
     Simple recursive glob for Python 2, `glob.glob`doesn't
     support recursive argument in Python 2.
     """
-    files_regex = '*' + FILE_EXT
+    files_regex = "*" + FILE_EXT
     for root, dirnames, filenames in os.walk(RESOURCES_ROOT):
         for filename in fnmatch.filter(filenames, files_regex):
             yield mkpath(root, filename)
@@ -68,9 +68,9 @@ def url_from_path(path):
     the '.json' suffix. Anything less obvious should be added
     as explicit override in the `PATH_OVERRIDES` dictionary.
     """
-    http_path = path[(len(RESOURCES_ROOT) + 1):-len(FILE_EXT)]
+    http_path = path[(len(RESOURCES_ROOT) + 1) : -len(FILE_EXT)]
     try:
         url_part = PATH_OVERRIDES[http_path]
     except KeyError:
-        url_part = http_path.replace('\\', '/')
+        url_part = http_path.replace("\\", "/")
     return urljoin(HOST_ROOT, url_part)

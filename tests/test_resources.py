@@ -23,11 +23,11 @@ class TestResources(BaseTestCase):
         """
         client = deezer.Client()
         album = client.get_album(302127)
-        self.assertTrue(hasattr(album, 'title'))
-        self.assertEqual(repr(album), '<Album: Discovery>')
+        self.assertTrue(hasattr(album, "title"))
+        self.assertEqual(repr(album), "<Album: Discovery>")
         artist = album.get_artist()
         self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), '<Artist: Daft Punk>')
+        self.assertEqual(repr(artist), "<Artist: Daft Punk>")
 
     def test_album_tracks(self):
         """
@@ -39,7 +39,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(tracks, list)
         track = tracks[0]
         self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), '<Track: One More Time>')
+        self.assertEqual(repr(track), "<Track: One More Time>")
         self.assertEqual(type(album.iter_tracks()), GeneratorType)
         track = list(album.iter_tracks())[0]
         self.assertIsInstance(track, deezer.resources.Track)
@@ -50,9 +50,9 @@ class TestResources(BaseTestCase):
         """
         client = deezer.Client()
         artist = client.get_artist(27)
-        self.assertTrue(hasattr(artist, 'name'))
+        self.assertTrue(hasattr(artist, "name"))
         self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), '<Artist: Daft Punk>')
+        self.assertEqual(repr(artist), "<Artist: Daft Punk>")
 
     def test_artist_albums(self):
         """
@@ -64,8 +64,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(albums, list)
         album = albums[0]
         self.assertIsInstance(album, deezer.resources.Album)
-        self.assertEqual(repr(album),
-                         '<Album: Human After All (Remixes) (Remixes)>')
+        self.assertEqual(repr(album), "<Album: Human After All (Remixes) (Remixes)>")
         self.assertEqual(type(artist.iter_albums()), GeneratorType)
 
     def test_artist_top(self):
@@ -78,7 +77,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(tracks, list)
         track = tracks[0]
         self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), '<Track: Get Lucky (Radio Edit)>')
+        self.assertEqual(repr(track), "<Track: Get Lucky (Radio Edit)>")
 
     def test_artist_radio(self):
         """
@@ -90,7 +89,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(tracks, list)
         track = tracks[0]
         self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), '<Track: Lose Yourself to Dance>')
+        self.assertEqual(repr(track), "<Track: Lose Yourself to Dance>")
 
     def test_artist_related(self):
         """
@@ -102,7 +101,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(artists, list)
         artist = artists[0]
         self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), '<Artist: Justice>')
+        self.assertEqual(repr(artist), "<Artist: Justice>")
         self.assertEqual(type(artist.iter_related()), GeneratorType)
 
     def test_track_attributes(self):
@@ -113,13 +112,13 @@ class TestResources(BaseTestCase):
         track = client.get_track(3135556)
         artist = track.get_artist()
         album = track.get_album()
-        self.assertTrue(hasattr(track, 'title'))
+        self.assertTrue(hasattr(track, "title"))
         self.assertIsInstance(track, deezer.resources.Track)
         self.assertIsInstance(artist, deezer.resources.Artist)
         self.assertIsInstance(album, deezer.resources.Album)
-        self.assertEqual(repr(track), '<Track: Harder Better Faster Stronger>')
-        self.assertEqual(repr(artist), '<Artist: Daft Punk>')
-        self.assertEqual(repr(album), '<Album: Discovery>')
+        self.assertEqual(repr(track), "<Track: Harder Better Faster Stronger>")
+        self.assertEqual(repr(artist), "<Artist: Daft Punk>")
+        self.assertEqual(repr(album), "<Album: Discovery>")
 
     def test_radio_attributes(self):
         """
@@ -127,9 +126,9 @@ class TestResources(BaseTestCase):
         """
         client = deezer.Client()
         radio = client.get_radio(23261)
-        self.assertTrue(hasattr(radio, 'title'))
+        self.assertTrue(hasattr(radio, "title"))
         self.assertIsInstance(radio, deezer.resources.Radio)
-        self.assertEqual(repr(radio), '<Radio: Telegraph Classical>')
+        self.assertEqual(repr(radio), "<Radio: Telegraph Classical>")
 
     def test_radio_tracks(self):
         """
@@ -149,9 +148,9 @@ class TestResources(BaseTestCase):
         """
         client = deezer.Client()
         genre = client.get_genre(106)
-        self.assertTrue(hasattr(genre, 'name'))
+        self.assertTrue(hasattr(genre, "name"))
         self.assertIsInstance(genre, deezer.resources.Genre)
-        self.assertEqual(repr(genre), '<Genre: Electro>')
+        self.assertEqual(repr(genre), "<Genre: Electro>")
 
     def test_genre_artists(self):
         """
@@ -163,7 +162,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(artists, list)
         artist = artists[0]
         self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), '<Artist: Calvin Harris>')
+        self.assertEqual(repr(artist), "<Artist: Calvin Harris>")
         self.assertEqual(type(genre.iter_artists()), GeneratorType)
 
     def test_genre_radios(self):
@@ -176,7 +175,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(radios, list)
         radio = radios[0]
         self.assertIsInstance(radio, deezer.resources.Radio)
-        self.assertEqual(repr(radio), '<Radio: Techno/House>')
+        self.assertEqual(repr(radio), "<Radio: Techno/House>")
         self.assertEqual(type(genre.iter_radios()), GeneratorType)
 
     def test_chart_tracks(self):
@@ -189,7 +188,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(tracks, list)
         track = tracks[0]
         self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), '<Track: Starboy>')
+        self.assertEqual(repr(track), "<Track: Starboy>")
         self.assertEqual(type(chart.iter_tracks()), GeneratorType)
 
     def test_chart_artists(self):
@@ -202,7 +201,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(artists, list)
         artist = artists[0]
         self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), '<Artist: Pnl>')
+        self.assertEqual(repr(artist), "<Artist: Pnl>")
         self.assertEqual(type(chart.iter_artists()), GeneratorType)
 
     def test_chart_albums(self):
@@ -215,8 +214,7 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(albums, list)
         album = albums[0]
         self.assertIsInstance(album, deezer.resources.Album)
-        self.assertEqual(repr(album),
-                         "<Album: Where Is l'album de Gradur>")
+        self.assertEqual(repr(album), "<Album: Where Is l'album de Gradur>")
         self.assertEqual(type(chart.iter_albums()), GeneratorType)
 
     def test_chart_playlists(self):
@@ -229,6 +227,5 @@ class TestResources(BaseTestCase):
         self.assertIsInstance(playlists, list)
         playlist = playlists[0]
         self.assertIsInstance(playlist, deezer.resources.Playlist)
-        self.assertEqual(repr(playlist),
-                         "<Playlist: Top France>")
+        self.assertEqual(repr(playlist), "<Playlist: Top France>")
         self.assertEqual(type(chart.iter_playlists()), GeneratorType)

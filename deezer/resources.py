@@ -21,10 +21,9 @@ class Resource(object):
             setattr(self, key, json[key])
 
     def __repr__(self):
-        name = getattr(self, 'name', getattr(self, 'title', None))
+        name = getattr(self, "name", getattr(self, "title", None))
         if name is not None:
-            return '<{0}: {1}>'.format(self.__class__.__name__,
-                                       text_type(name))
+            return "<{0}: {1}>".format(self.__class__.__name__, text_type(name))
         return super(Resource, self).__repr__()
 
     def asdict(self):
@@ -35,9 +34,7 @@ class Resource(object):
         for key in self._fields:
             value = getattr(self, key)
             if isinstance(value, list):
-                value = [i.asdict()
-                         if isinstance(i, Resource) else i
-                         for i in value]
+                value = [i.asdict() if isinstance(i, Resource) else i for i in value]
             if isinstance(value, Resource):
                 value = value.asdict()
             result[key] = value
@@ -53,8 +50,7 @@ class Resource(object):
         a helper method for the child objects.
         """
         # pylint: disable=E1101
-        return self.client.get_object(self.type, self.id, relation,
-                                      self, **kwargs)
+        return self.client.get_object(self.type, self.id, relation, self, **kwargs)
 
     def iter_relation(self, relation, **kwargs):
         """
@@ -94,14 +90,14 @@ class Album(Resource):
         Get a list of album's tracks.
         :returns: list of :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation('tracks', **kwargs)
+        return self.get_relation("tracks", **kwargs)
 
     def iter_tracks(self, **kwargs):
         """
         Iterate album's tracks.
         :returns: list of :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.iter_relation('tracks', **kwargs)
+        return self.iter_relation("tracks", **kwargs)
 
 
 class Artist(Resource):
@@ -112,41 +108,41 @@ class Artist(Resource):
         Get the top tracks of an artist.
         :returns: list of :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation('top', **kwargs)
+        return self.get_relation("top", **kwargs)
 
     def get_related(self, **kwargs):
         """
         Get a list of related artists.
         :returns: list of :mod:`Artist <deezer.resources.Artist>` instances
         """
-        return self.get_relation('related', **kwargs)
+        return self.get_relation("related", **kwargs)
 
     def iter_related(self, **kwargs):
         """
         Iterate related artists.
         :returns: list of :mod:`Artist <deezer.resources.Artist>` instances
         """
-        return self.iter_relation('related', **kwargs)
+        return self.iter_relation("related", **kwargs)
 
     def get_radio(self, **kwargs):
         """
         :returns: list of :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation('radio', **kwargs)
+        return self.get_relation("radio", **kwargs)
 
     def get_albums(self, **kwargs):
         """
         Get a list of artist's albums.
         :returns: list of :mod:`Album <deezer.resources.Album>` instances
         """
-        return self.get_relation('albums', **kwargs)
+        return self.get_relation("albums", **kwargs)
 
     def iter_albums(self, **kwargs):
         """
         Iterate artist's albums.
         :returns: list of :mod:`Album <deezer.resources.Album>` instances
         """
-        return self.iter_relation('albums', **kwargs)
+        return self.iter_relation("albums", **kwargs)
 
 
 class Genre(Resource):
@@ -157,28 +153,28 @@ class Genre(Resource):
         Get all artists for a genre.
         :returns: list of :mod:`Artist <deezer.resources.Artist>` instances
         """
-        return self.get_relation('artists', **kwargs)
+        return self.get_relation("artists", **kwargs)
 
     def iter_artists(self, **kwargs):
         """
         Iterate artists for a genre.
         :returns: list of :mod:`Artist <deezer.resources.Artist>` instances
         """
-        return self.iter_relation('artists', **kwargs)
+        return self.iter_relation("artists", **kwargs)
 
     def get_radios(self, **kwargs):
         """
         Get all radios for a genre.
         :returns: list of :mod:`Radio <deezer.resources.Track>` instances
         """
-        return self.get_relation('radios', **kwargs)
+        return self.get_relation("radios", **kwargs)
 
     def iter_radios(self, **kwargs):
         """
         Iterate radios for a genre.
         :returns: list of :mod:`Radio <deezer.resources.Track>` instances
         """
-        return self.iter_relation('radios', **kwargs)
+        return self.iter_relation("radios", **kwargs)
 
 
 class Track(Resource):
@@ -211,14 +207,14 @@ class Radio(Resource):
         Get first 40 tracks in the radio
         :returns: list of  :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation('tracks', **kwargs)
+        return self.get_relation("tracks", **kwargs)
 
     def iter_tracks(self, **kwargs):
         """
         Iterate tracks in the radio
         :returns: list of  :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.iter_relation('tracks', **kwargs)
+        return self.iter_relation("tracks", **kwargs)
 
 
 class Chart(Resource):
@@ -232,50 +228,50 @@ class Chart(Resource):
         """
         :returns: list of  :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation('tracks', **kwargs)
+        return self.get_relation("tracks", **kwargs)
 
     def iter_tracks(self, **kwargs):
         """
         Iterate tracks in the radio
         :returns: list of  :mod:`Track <deezer.resources.Track>` instances
         """
-        return self.iter_relation('tracks', **kwargs)
+        return self.iter_relation("tracks", **kwargs)
 
     def get_albums(self, **kwargs):
         """
         :returns: the :mod:`Album <deezer.resources.Album>` instance
         """
-        return self.get_relation('albums', **kwargs)
+        return self.get_relation("albums", **kwargs)
 
     def iter_albums(self, **kwargs):
         """
         Iterate artist's albums.
         :returns: list of :mod:`Album <deezer.resources.Album>` instances
         """
-        return self.iter_relation('albums', **kwargs)
+        return self.iter_relation("albums", **kwargs)
 
     def get_artists(self, **kwargs):
         """
         :returns: list of :mod:`Artist <deezer.resources.Artist>` instances
         """
-        return self.get_relation('artists', **kwargs)
+        return self.get_relation("artists", **kwargs)
 
     def iter_artists(self, **kwargs):
         """
         Iterate artists for a genre.
         :returns: list of :mod:`Artist <deezer.resources.Artist>` instances
         """
-        return self.iter_relation('artists', **kwargs)
+        return self.iter_relation("artists", **kwargs)
 
     def get_playlists(self, **kwargs):
         """
         :returns: list of :mod:`Playlist <deezer.resources.Playlist>` instances
         """
-        return self.get_relation('playlists', **kwargs)
+        return self.get_relation("playlists", **kwargs)
 
     def iter_playlists(self, **kwargs):
         """
         Iterate playlist for a genre.
         :returns: list of :mod:`Playlist <deezer.resources.Playlist>` instances
         """
-        return self.iter_relation('playlists', **kwargs)
+        return self.iter_relation("playlists", **kwargs)
