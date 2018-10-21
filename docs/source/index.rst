@@ -3,13 +3,14 @@ Deezer python's |version| documentation
 
 .. automodule:: deezer
 
+.. include:: ../../README.rst
+
 Contents:
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
-    readme
+    api_reference/toc
     contributing
     authors
-    api_reference/toc
     license
