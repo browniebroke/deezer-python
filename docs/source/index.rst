@@ -1,5 +1,5 @@
-Deezer python's |version| documentation
-=======================================
+Deezer python's documentation
+=============================
 
 .. automodule:: deezer
 
