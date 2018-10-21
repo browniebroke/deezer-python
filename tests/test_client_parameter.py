@@ -3,8 +3,6 @@ from __future__ import unicode_literals, absolute_import
 
 import deezer
 import unittest
-import tornado.gen
-import tornado.ioloop
 
 from .base import BaseTestCase
 
@@ -181,23 +179,3 @@ class TestClient(BaseTestCase):
         result = self.client.search("Billy Jean", limit=2, index=1)
         self.assertIsInstance(result, list)
         self.assertLessEqual(len(result), 2)
-
-
-class TestAsyncClient(BaseTestCase):
-    def setUp(self):
-        super(TestAsyncClient, self).setUp()
-        self.client = deezer.AsyncClient()
-
-    def test_get_object(self):
-        @tornado.gen.coroutine
-        def callback():
-            album = yield self.client.get_album(302127)
-            self.assertIsInstance(album, deezer.resources.Album)
-            tracks = yield album.get_tracks()
-            self.assertTrue(tracks[0].album is album)
-
-        tornado.ioloop.IOLoop.instance().run_sync(callback)
-
-
-if __name__ == '__main__':
-    unittest.main()

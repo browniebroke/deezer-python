@@ -26,10 +26,12 @@ setup(
     license='MIT',
     packages=['deezer'],
     install_requires=[
-        'tornado',
         'six',
         'requests',
     ],
+    extras_require={
+        'tornado': ['tornado'],
+    },
     tests_require=[
         'requests-mock',
     ],

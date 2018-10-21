@@ -11,5 +11,5 @@ Contents:
     readme
     contributing
     authors
-    api_reference
+    api_reference/toc
     license
