@@ -9,56 +9,67 @@ from .base import BaseTestCase
 class TestClient(BaseTestCase):
     def setUp(self):
         super(TestClient, self).setUp()
-        self.client = deezer.Client(app_id='foo', app_secret='bar')
+        self.client = deezer.Client(app_id="foo", app_secret="bar")
         self.unsec_client = deezer.Client(use_ssl=False)
 
     def test_access_token_set(self):
         """Test that access token is set on the client."""
-        self.client.access_token = 'token'
-        self.assertEqual(self.client.access_token, 'token')
-        self.assertEqual(self.client.object_url("user", "me"),
-                         "https://api.deezer.com/user/me?access_token=token")
+        self.client.access_token = "token"
+        self.assertEqual(self.client.access_token, "token")
+        self.assertEqual(
+            self.client.object_url("user", "me"),
+            "https://api.deezer.com/user/me?access_token=token",
+        )
 
     def test_kwargs_parsing_valid(self):
         """Test that valid kwargs are stored as properties on the client."""
-        self.assertEqual(self.client.app_id, 'foo')
-        self.assertEqual(self.client.app_secret, 'bar')
+        self.assertEqual(self.client.app_id, "foo")
+        self.assertEqual(self.client.app_secret, "bar")
 
     def test_ssl(self):
         """Test that the ssl parameter provides the right scheme"""
-        self.assertEqual(self.client.scheme, 'https')
-        self.assertEqual(self.unsec_client.scheme, 'http')
+        self.assertEqual(self.client.scheme, "https")
+        self.assertEqual(self.unsec_client.scheme, "http")
 
     def test_url(self):
         """Test the url() method
         it should add / to the request if not present
         """
         self.client.url()
-        user = self.client.url('/user')
+        user = self.client.url("/user")
         self.assertEqual(user, "https://api.deezer.com/user")
-        user = self.client.url('user')
+        user = self.client.url("user")
         self.assertEqual(user, "https://api.deezer.com/user")
 
     def test_object_url(self):
         """Test the object_url() method, validates against the allowed types
         of objects"""
-        self.assertEqual(self.client.object_url("album"),
-                         "https://api.deezer.com/album")
-        self.assertEqual(self.client.object_url("album", 12),
-                         "https://api.deezer.com/album/12")
-        self.assertEqual(self.client.object_url("album", "12"),
-                         "https://api.deezer.com/album/12")
-        self.assertEqual(self.client.object_url("album", "12", "artist"),
-                         "https://api.deezer.com/album/12/artist")
-        self.assertEqual(self.client.object_url("album", "12", limit=1),
-                         "https://api.deezer.com/album/12?limit=1")
-        self.assertEqual(self.client.object_url("album", "12", "artist",
-                                                limit=1),
-                         "https://api.deezer.com/album/12/artist?limit=1")
-        self.assertEqual(self.client.object_url("artist", "12", "albums",
-                                                limit=1),
-                         "https://api.deezer.com/artist/12/albums?limit=1")
-        self.assertRaises(TypeError, self.client.object_url, 'foo')
+        self.assertEqual(
+            self.client.object_url("album"), "https://api.deezer.com/album"
+        )
+        self.assertEqual(
+            self.client.object_url("album", 12), "https://api.deezer.com/album/12"
+        )
+        self.assertEqual(
+            self.client.object_url("album", "12"), "https://api.deezer.com/album/12"
+        )
+        self.assertEqual(
+            self.client.object_url("album", "12", "artist"),
+            "https://api.deezer.com/album/12/artist",
+        )
+        self.assertEqual(
+            self.client.object_url("album", "12", limit=1),
+            "https://api.deezer.com/album/12?limit=1",
+        )
+        self.assertEqual(
+            self.client.object_url("album", "12", "artist", limit=1),
+            "https://api.deezer.com/album/12/artist?limit=1",
+        )
+        self.assertEqual(
+            self.client.object_url("artist", "12", "albums", limit=1),
+            "https://api.deezer.com/artist/12/albums?limit=1",
+        )
+        self.assertRaises(TypeError, self.client.object_url, "foo")
 
     def test_get_album(self):
         """Test method to retrieve an album"""
@@ -114,16 +125,18 @@ class TestClient(BaseTestCase):
 
     def test_search(self):
         """Test search method"""
-        self.assertEqual(self.client.object_url("search", q="Daft Punk"),
-                         "https://api.deezer.com/search?q=Daft+Punk")
+        self.assertEqual(
+            self.client.object_url("search", q="Daft Punk"),
+            "https://api.deezer.com/search?q=Daft+Punk",
+        )
         result = self.client.search("Billy Jean")
         self.assertIsInstance(result, list)
         self.assertEqual(result[0].title, "Billy Jean")
 
-        self.assertEqual(self.client.object_url("search",
-                                                relation="track",
-                                                q="Daft Punk"),
-                         "https://api.deezer.com/search/track?q=Daft+Punk")
+        self.assertEqual(
+            self.client.object_url("search", relation="track", q="Daft Punk"),
+            "https://api.deezer.com/search/track?q=Daft+Punk",
+        )
         result = self.client.search("Billy Jean", "track")
         self.assertIsInstance(result, list)
         self.assertEqual(result[0].title, "Billy Jean")
@@ -131,12 +144,14 @@ class TestClient(BaseTestCase):
         result = self.client.search("Billy Jean", "track", "0", "1")
         self.assertIsInstance(result, list)
         self.assertEqual(len(result), 1)
-        self.assertNotEqual(result[0], self.client.search(
-                            "Billy Jean", "track", "1", "1"))
+        self.assertNotEqual(
+            result[0], self.client.search("Billy Jean", "track", "1", "1")
+        )
 
     def test_chart(self):
-        self.assertEqual(self.client.object_url("chart"),
-                         "https://api.deezer.com/chart")
+        self.assertEqual(
+            self.client.object_url("chart"), "https://api.deezer.com/chart"
+        )
         result = self.client.get_chart()
         self.assertIsInstance(result, deezer.resources.Chart)
 

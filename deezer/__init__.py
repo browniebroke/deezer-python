@@ -9,9 +9,18 @@ from deezer.resources import Album, Resource, Artist, Playlist
 from deezer.resources import Genre, Track, User, Comment, Radio
 
 
-__version__ = '0.7.0'
-__all__ = ['Client', 'Resource', 'Album',
-           'Artist', 'Genre', 'Playlist', 'Track', 'User',
-           'Comment', 'Radio']
+__version__ = "0.7.0"
+__all__ = [
+    "Client",
+    "Resource",
+    "Album",
+    "Artist",
+    "Genre",
+    "Playlist",
+    "Track",
+    "User",
+    "Comment",
+    "Radio",
+]
 
-USER_AGENT = 'Deezer Python API Wrapper v{0}'.format(__version__)
+USER_AGENT = "Deezer Python API Wrapper v{0}".format(__version__)
