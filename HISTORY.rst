@@ -6,13 +6,16 @@ History
 unreleased
 ----------
 
-- Added index and limit to Client.search & Client.get_charts. Defaults are 
-  set to deezer api defaults.
+- Added ``index`` and ``limit`` to ``Client.search`` & ``Client.get_charts``.
+  Defaults are set to Deezer API defaults.
+- Changed tornado to be an optional requirement. If you want to use the
+  asynchronous client, you need to install the library as follow
+  ``pip install deezer-python[tornado]``.
 
 0.7.0 (2018-10-03)
 ------------------
 
-- Breaking: the `async` module has been renamed `asynchronous` as it was
+- Breaking: the ``async`` module has been renamed ``asynchronous`` as it was
   breaking under Python 3.7, thanks `Matheus Horstmann`_ for the patch
 - Optimisation: the session is now stored internally by the client
 

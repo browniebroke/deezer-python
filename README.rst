@@ -8,13 +8,11 @@ A friendly wrapper around the `Deezer API`_.
 Installation
 ------------
 
-The package is published on the `Python index <https://pypi.python.org/pypi/deezer-python/>`_ simply run the following:
+The package is published on `PyPI <https://pypi.org/project/deezer-python/>`_ and can be installed by running:
 
 ::
 
     pip install deezer-python
-
-And that's it!
 
 Basic Use
 ---------
@@ -29,13 +27,19 @@ the json dictionary returned by the API.
     >>> client.get_album(12).title
     u'Monkey Business'
 
-You also can use AsyncClient with tornado.
+See the whole API reference on the `Sphinx`_ generated `documentation`_.
+
+Asynchronous client
+```````````````````
+
+You also can use an ``AsyncClient`` with tornado, which requires an optional dependency. You should
+install with ``pip install deezer-python[tornado]``. Then, making requests look like:
 
 .. code-block:: python
 
     >>> from tornado.gen import coroutine
     >>> from tornado.ioloop import IOLoop
-    >>> from deezer import AsyncClient
+    >>> from deezer.contrib.tornado import AsyncClient
     >>>
     >>>
     >>> @coroutine
@@ -46,8 +50,6 @@ You also can use AsyncClient with tornado.
     ...
     >>> IOLoop.instance().run_sync(main)
     Monkey Business
-
-See the whole API on the `Sphinx`_ generated `documentation`_.
 
 Authentication
 --------------

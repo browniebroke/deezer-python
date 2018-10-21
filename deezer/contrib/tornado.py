@@ -2,10 +2,12 @@
 Implements an async tornado client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
+from __future__ import absolute_import, unicode_literals
+
 import json
 import logging
 
-from tornado.gen import coroutine, Return
+from tornado.gen import Return, coroutine
 from tornado.httpclient import AsyncHTTPClient
 
 from deezer.client import Client
@@ -13,13 +15,13 @@ from deezer.client import Client
 
 class AsyncClient(Client):
     """
-    An async client to retrieve some basic infos about Deezer resourses.
+    An async client to retrieve some basic infos about Deezer resources.
 
     Create a client instance with the provided options. Options should
     be passed in to the constructor as kwargs.
 
-        >>> import deezer
-        >>> client = deezer.AsyncClient(app_id='foo', app_secret='bar')
+        >>> from deezer.contrib.tornado import AsyncClient
+        >>> client = AsyncClient(app_id='foo', app_secret='bar')
 
     This client provides several method to retrieve the content of most
     sort of Deezer objects, based on their json structure.
