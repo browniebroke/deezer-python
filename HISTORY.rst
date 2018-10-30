@@ -3,14 +3,18 @@
 History
 =======
 
-unreleased
-----------
+0.8.0 (2018-10-30)
+------------------
 
 - Added ``index`` and ``limit`` to ``Client.search`` & ``Client.get_charts``.
   Defaults are set to Deezer API defaults.
 - Changed tornado to be an optional requirement. If you want to use the
   asynchronous client, you need to install the library as follow
   ``pip install deezer-python[tornado]``.
+- Simplified a couple of things to rely more on `six`_ for Python compatibility.
+- Auto-format code using `black`_.
+
+.. _black: https://github.com/ambv/black
 
 0.7.0 (2018-10-03)
 ------------------
