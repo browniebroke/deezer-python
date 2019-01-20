@@ -3,7 +3,7 @@ Deezer Python Client
 
 |build| |win_build| |coverage| |codeclimate| |black|
 
-|docs| |pypi| |pyversions| |license|
+|docs| |pypi| |pyversions| |license| |loc|
 
 A friendly wrapper around the `Deezer API`_.
 
@@ -80,6 +80,9 @@ Deezer authentication.
 .. |pypi| image:: https://badge.fury.io/py/deezer-python.svg
     :target: http://badge.fury.io/py/deezer-python
     :alt: PyPi Status
+.. |loc| image:: https://tokei.rs/b1/github/browniebroke/deezer-python/
+    :target: https://github.com/browniebroke/deezer-python
+    :alt: LoC
 .. |pyversions| image:: https://img.shields.io/pypi/pyversions/deezer-python.svg
 .. |license| image:: https://img.shields.io/pypi/l/deezer-python.svg
 .. _Deezer API: http://developers.deezer.com/api
