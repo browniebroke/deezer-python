@@ -23,5 +23,7 @@ jobs:
     inputs:
       versionSpec: '$(python.version)'
       architecture: 'x64'
+  - script: pip install -r requirements-test.txt
+    displayName: 'Install test dependencies'
   - script: pytest
     displayName: 'Run tests'
