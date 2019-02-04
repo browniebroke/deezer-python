@@ -46,14 +46,6 @@ cache:
 after_success:
   - codecov -e TOXENV
 
-notifications:
-  email: false
-  slack:
-    rooms:
-      - browniebroke:S7HgSxGZIpNFg23NiILhNAvA
-    on_success: change
-    on_failure: always
-
 deploy:
   provider: pypi
   user: Bruno.Alla
