@@ -63,7 +63,7 @@ Deezer authentication.
 .. |build| image:: https://img.shields.io/travis/browniebroke/deezer-python.svg?style=flat-square&logo=travis
     :target: https://travis-ci.org/browniebroke/deezer-python
     :alt: Build status
-.. |win_build| image:: https://ci.appveyor.com/api/projects/status/l5vb8sl9ey12s3nd?svg=true
+.. |win_build| image:: https://img.shields.io/appveyor/ci/browniebroke/deezer-python.svg?logo=appveyor&style=flat-square
     :target: https://ci.appveyor.com/project/browniebroke/deezer-python
     :alt: Build status
 .. |codeclimate| image:: https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability
