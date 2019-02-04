@@ -60,7 +60,7 @@ Not supported by this package. There are excellent other python modules to
 handle that. There is the excellent `Python Social Auth`_, which supports
 Deezer authentication.
 
-.. |build| image:: https://travis-ci.org/browniebroke/deezer-python.svg
+.. |build| image:: https://img.shields.io/travis/browniebroke/deezer-python.svg?style=flat-square&logo=travis
     :target: https://travis-ci.org/browniebroke/deezer-python
     :alt: Build status
 .. |win_build| image:: https://ci.appveyor.com/api/projects/status/l5vb8sl9ey12s3nd?svg=true
@@ -69,12 +69,12 @@ Deezer authentication.
 .. |codeclimate| image:: https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability
    :target: https://codeclimate.com/github/browniebroke/deezer-python/maintainability
    :alt: Maintainability
-.. |coverage| image:: https://codecov.io/gh/browniebroke/deezer-python/branch/master/graph/badge.svg
+.. |coverage| image:: https://img.shields.io/codecov/c/github/browniebroke/deezer-python.svg?logo=codecov&style=flat-square
     :target: https://codecov.io/gh/browniebroke/deezer-python
     :alt: Test coverage percentage
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/ambv/black
-.. |docs| image:: https://readthedocs.org/projects/deezer-python/badge/?version=latest
+.. |docs| image:: https://img.shields.io/readthedocs/deezer-python.svg?logo=read-the-docs&style=flat-square
     :target: https://deezer-python.readthedocs.io
     :alt: Documentation Status
 .. |pypi| image:: https://badge.fury.io/py/deezer-python.svg
