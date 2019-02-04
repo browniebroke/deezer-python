@@ -83,8 +83,8 @@ Deezer authentication.
 .. |loc| image:: https://tokei.rs/b1/github/browniebroke/deezer-python/
     :target: https://github.com/browniebroke/deezer-python
     :alt: LoC
-.. |pyversions| image:: https://img.shields.io/pypi/pyversions/deezer-python.svg
-.. |license| image:: https://img.shields.io/pypi/l/deezer-python.svg
+.. |pyversions| image:: https://img.shields.io/pypi/pyversions/deezer-python.svg?style=flat-square
+.. |license| image:: https://img.shields.io/pypi/l/deezer-python.svg?style=flat-square
 .. _Deezer API: http://developers.deezer.com/api
 .. _Sphinx: http://sphinx-doc.org/
 .. _documentation: http://deezer-python.readthedocs.io/
