@@ -77,8 +77,8 @@ Deezer authentication.
 .. |docs| image:: https://img.shields.io/readthedocs/deezer-python.svg?logo=read-the-docs&style=flat-square
     :target: https://deezer-python.readthedocs.io
     :alt: Documentation Status
-.. |pypi| image:: https://badge.fury.io/py/deezer-python.svg
-    :target: http://badge.fury.io/py/deezer-python
+.. |pypi| image:: https://img.shields.io/pypi/v/deezer-python.svg?logo=python&logoColor=fff&style=flat-square
+    :target: https://pypi.org/project/deezer-python/
     :alt: PyPi Status
 .. |loc| image:: https://tokei.rs/b1/github/browniebroke/deezer-python/
     :target: https://github.com/browniebroke/deezer-python
