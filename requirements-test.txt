@@ -5,3 +5,4 @@ coverage
 pytest
 pytest-cov
 pytest-sugar
+tox
