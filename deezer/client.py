@@ -242,9 +242,16 @@ class Client(object):
 
     def advanced_search(self, terms, relation=None, index=0, limit=25, **kwargs):
         """
-        Advanced search of track, album or artist
+        Advanced search of track, album or artist.
+
+        See `Search section of Deezer API
+        <https://developers.deezer.com/api/search>`_ for search terms.
 
         :returns: a list of :class:`~deezer.resources.Resource` objects.
+
+        >>> client.advanced_search({"artist": "Daft Punk", "album": "Homework"})
+        >>> client.advanced_search({"artist": "Daft Punk", "album": "Homework"},
+        ...                        relation="track")
         """
         assert isinstance(terms, dict), "terms must be a dict"
         query = " ".join(['{0}:"{1}"'.format(k, v) for (k, v) in terms.items()])
