@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "id": 623719292,
+      "readable": true,
+      "title": "Too much",
+      "title_short": "Too much",
+      "title_version": "",
+      "link": "https://www.deezer.com/track/623719292",
+      "duration": 209,
+      "rank": 829838,
+      "explicit_lyrics": false,
+      "explicit_content_lyrics": 0,
+      "explicit_content_cover": 0,
+      "preview": "https://cdns-preview-0.dzcdn.net/stream/c-062c3f7698bea38986aa01374a2ff1b0-4.mp3",
+      "artist": {
+        "id": 1701297,
+        "name": "Lou Doillon",
+        "link": "https://www.deezer.com/artist/1701297",
+        "picture": "https://api.deezer.com/artist/1701297/image",
+        "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/bb461ed99b3de8c83959069d81af5e17/56x56-000000-80-0-0.jpg",
+        "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/bb461ed99b3de8c83959069d81af5e17/250x250-000000-80-0-0.jpg",
+        "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/bb461ed99b3de8c83959069d81af5e17/500x500-000000-80-0-0.jpg",
+        "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/bb461ed99b3de8c83959069d81af5e17/1000x1000-000000-80-0-0.jpg",
+        "tracklist": "https://api.deezer.com/artist/1701297/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": 85607212,
+        "title": "Soliloquy",
+        "cover": "https://api.deezer.com/album/85607212/image",
+        "cover_small": "https://e-cdns-images.dzcdn.net/images/cover/880c64b16d6984e10a56617c244bf29c/56x56-000000-80-0-0.jpg",
+        "cover_medium": "https://e-cdns-images.dzcdn.net/images/cover/880c64b16d6984e10a56617c244bf29c/250x250-000000-80-0-0.jpg",
+        "cover_big": "https://e-cdns-images.dzcdn.net/images/cover/880c64b16d6984e10a56617c244bf29c/500x500-000000-80-0-0.jpg",
+        "cover_xl": "https://e-cdns-images.dzcdn.net/images/cover/880c64b16d6984e10a56617c244bf29c/1000x1000-000000-80-0-0.jpg",
+        "tracklist": "https://api.deezer.com/album/85607212/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": 623719252,
+      "readable": true,
+      "title": "Brother",
+      "title_short": "Brother",
+      "title_version": "",
+      "link": "https://www.deezer.com/track/623719252",
+      "duration": 214,
+      "rank": 791610,
+      "explicit_lyrics": false,
+      "explicit_content_lyrics": 0,
+      "explicit_content_cover": 0,
+      "preview": "https://cdns-preview-e.dzcdn.net/stream/c-eab98363e30ceccc591521237d615d0b-4.mp3",
+      "artist": {
+        "id": 1701297,
+        "name": "Lou Doillon",
+        "link": "https://www.deezer.com/artist/1701297",
+        "picture": "https://api.deezer.com/artist/1701297/image",
+        "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/bb461ed99b3de8c83959069d81af5e17/56x56-000000-80-0-0.jpg",
+        "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/bb461ed99b3de8c83959069d81af5e17/250x250-000000-80-0-0.jpg",
+        "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/bb461ed99b3de8c83959069d81af5e17/500x500-000000-80-0-0.jpg",
+        "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/bb461ed99b3de8c83959069d81af5e17/1000x1000-000000-80-0-0.jpg",
+        "tracklist": "https://api.deezer.com/artist/1701297/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": 85607212,
+        "title": "Soliloquy",
+        "cover": "https://api.deezer.com/album/85607212/image",
+        "cover_small": "https://e-cdns-images.dzcdn.net/images/cover/880c64b16d6984e10a56617c244bf29c/56x56-000000-80-0-0.jpg",
+        "cover_medium": "https://e-cdns-images.dzcdn.net/images/cover/880c64b16d6984e10a56617c244bf29c/250x250-000000-80-0-0.jpg",
+        "cover_big": "https://e-cdns-images.dzcdn.net/images/cover/880c64b16d6984e10a56617c244bf29c/500x500-000000-80-0-0.jpg",
+        "cover_xl": "https://e-cdns-images.dzcdn.net/images/cover/880c64b16d6984e10a56617c244bf29c/1000x1000-000000-80-0-0.jpg",
+        "tracklist": "https://api.deezer.com/album/85607212/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    }
+  ],
+  "total": 163,
+  "next": "https://api.deezer.com/search?q=artist%3A%22Lou%20Doillon%22&limit=2&index=2"
+}

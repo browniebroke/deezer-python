@@ -148,6 +148,50 @@ class TestClient(BaseTestCase):
             result[0], self.client.search("Billy Jean", "track", "1", "1")
         )
 
+    def test_advanced_search(self):
+        """Test advanced_search method"""
+
+        # Simple case with only one term
+        self.assertEqual(
+            self.client.object_url("search", q="artist:\"Lou Doillon\""),
+            "https://api.deezer.com/search?q=artist%3A%22Lou+Doillon%22"
+        )
+        result = self.client.advanced_search({"artist": "Lou Doillon"})
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].title, "Too much")
+
+        # More complex case with two term
+        self.assertEqual(
+            self.client.object_url(
+                "search",
+                q="artist:\"Lou Doillon\" album:\"Lay Low\""
+            ),
+            ("https://api.deezer.com/search?"
+             "q=artist%3A%22Lou+Doillon%22+album%3A%22Lay+Low%22")
+        )
+        result = self.client.advanced_search(
+            {"artist": "Lou Doillon", "album": "Lay Low"}
+        )
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].title, "Where To Start")
+
+        # Two terms with a relation
+        self.assertEqual(
+            self.client.object_url(
+                "search",
+                relation="track",
+                q="artist:\"Lou Doillon\" track:\"Joke\""
+            ),
+            ("https://api.deezer.com/search/track?"
+             "q=artist%3A%22Lou+Doillon%22+track%3A%22Joke%22")
+        )
+        result = self.client.advanced_search(
+            {"artist": "Lou Doillon", "track": "Joke"}, relation="track"
+        )
+        self.assertIsInstance(result, list)
+        self.assertEqual(result[0].title, "The joke")
+        self.assertIsInstance(result[0], deezer.resources.Track)
+
     def test_chart(self):
         self.assertEqual(
             self.client.object_url("chart"), "https://api.deezer.com/chart"

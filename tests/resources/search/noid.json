@@ -25,34 +25,6 @@
         "type": "album"
       },
       "type": "track"
-    },
-    {
-      "id": "5089295",
-      "readable": true,
-      "title": "Billy Jean (feat. Querubyna)",
-      "link": "http://www.deezer.com/track/5089295",
-      "duration": "288",
-      "rank": "361788",
-      "explicit_lyrics": false,
-      "preview": "http://cdn-preview-a.deezer.com/stream/a9662114d1d94b83960b2f6b171272ec-1.mp3",
-      "artist": {
-        "id": "134813",
-        "name": "Silver Pixel",
-        "link": "http://www.deezer.com/artist/134813",
-        "picture": "https://api.deezer.com/artist/134813/image",
-        "tracklist": "https://api.deezer.com/artist/134813/top?limit=50",
-        "type": "artist"
-      },
-      "album": {
-        "id": "466830",
-        "title": "Revisited Into Lounge Music",
-        "cover": "https://api.deezer.com/album/466830/image",
-        "tracklist": "https://api.deezer.com/album/466830/tracks",
-        "type": "album"
-      },
-      "type": "track"
     }
-  ],
-  "total": 48,
-  "next": "https://api.deezer.com/search?q=Billy Jean&limit=2&index=2"
+  ]
 }

@@ -239,3 +239,13 @@ class Client(object):
         :returns: a list of :class:`~deezer.resources.Resource` objects.
         """
         return self.get_object("search", relation=relation, q=query, **kwargs)
+
+    def advanced_search(self, terms, relation=None, index=0, limit=25, **kwargs):
+        """
+        Advanced search of track, album or artist
+
+        :returns: a list of :class:`~deezer.resources.Resource` objects.
+        """
+        assert isinstance(terms, dict), "terms must be a dict"
+        query = " ".join(['{0}:"{1}"'.format(k, v) for (k, v) in terms.items()])
+        return self.get_object("search", relation=relation, q=query, **kwargs)
