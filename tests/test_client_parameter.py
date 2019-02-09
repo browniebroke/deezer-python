@@ -153,8 +153,8 @@ class TestClient(BaseTestCase):
 
         # Simple case with only one term
         self.assertEqual(
-            self.client.object_url("search", q="artist:\"Lou Doillon\""),
-            "https://api.deezer.com/search?q=artist%3A%22Lou+Doillon%22"
+            self.client.object_url("search", q='artist:"Lou Doillon"'),
+            "https://api.deezer.com/search?q=artist%3A%22Lou+Doillon%22",
         )
         result = self.client.advanced_search({"artist": "Lou Doillon"})
         self.assertIsInstance(result, list)
@@ -162,12 +162,11 @@ class TestClient(BaseTestCase):
 
         # More complex case with two term
         self.assertEqual(
-            self.client.object_url(
-                "search",
-                q="artist:\"Lou Doillon\" album:\"Lay Low\""
+            self.client.object_url("search", q='artist:"Lou Doillon" album:"Lay Low"'),
+            (
+                "https://api.deezer.com/search?"
+                "q=artist%3A%22Lou+Doillon%22+album%3A%22Lay+Low%22"
             ),
-            ("https://api.deezer.com/search?"
-             "q=artist%3A%22Lou+Doillon%22+album%3A%22Lay+Low%22")
         )
         result = self.client.advanced_search(
             {"artist": "Lou Doillon", "album": "Lay Low"}
@@ -178,12 +177,12 @@ class TestClient(BaseTestCase):
         # Two terms with a relation
         self.assertEqual(
             self.client.object_url(
-                "search",
-                relation="track",
-                q="artist:\"Lou Doillon\" track:\"Joke\""
+                "search", relation="track", q='artist:"Lou Doillon" track:"Joke"'
             ),
-            ("https://api.deezer.com/search/track?"
-             "q=artist%3A%22Lou+Doillon%22+track%3A%22Joke%22")
+            (
+                "https://api.deezer.com/search/track?"
+                "q=artist%3A%22Lou+Doillon%22+track%3A%22Joke%22"
+            ),
         )
         result = self.client.advanced_search(
             {"artist": "Lou Doillon", "track": "Joke"}, relation="track"

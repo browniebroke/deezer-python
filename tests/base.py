@@ -23,11 +23,13 @@ PATH_OVERRIDES = {
     mkpath("search", "noid"): "search/track?q=Billy+Jean",
     mkpath("search", "noid-noqs"): "search?q=Billy+Jean",
     mkpath("search_1", "noid"): "search?q=Billy Jean&limit=2&index=2",
-    mkpath("advanced_search", "simple"): "search?q=artist:\"Lou Doillon\"",
-    mkpath("advanced_search", "complex"):
-        "search?q=artist:\"Lou Doillon\" album:\"Lay Low\"",
-    mkpath("advanced_search", "with_relation"):
-        'search/track?q=artist%3A%22Lou+Doillon%22+track%3A%22Joke%22',
+    mkpath("advanced_search", "simple"): 'search?q=artist:"Lou Doillon"',
+    mkpath(
+        "advanced_search", "complex"
+    ): 'search?q=artist:"Lou Doillon" album:"Lay Low"',
+    mkpath(
+        "advanced_search", "with_relation"
+    ): "search/track?q=artist%3A%22Lou+Doillon%22+track%3A%22Joke%22",
 }
 
 
