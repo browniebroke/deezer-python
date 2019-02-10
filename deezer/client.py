@@ -3,8 +3,7 @@ Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
 import requests
-from six import text_type, iteritems
-from six.moves.urllib.parse import urlencode
+from urllib.parse import urlencode
 
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Chart, Resource

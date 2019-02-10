@@ -2,7 +2,6 @@
 Module to implement the various types of resources that
 can be found in the API.
 """
-from six import text_type
 
 
 class Resource:

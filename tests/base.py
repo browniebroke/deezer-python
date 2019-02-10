@@ -3,9 +3,9 @@ import json
 import os
 import unittest
 from os.path import join as mkpath, dirname, abspath
+from urllib.parse import urljoin
 
 import requests_mock
-from six.moves.urllib.parse import urljoin
 
 HOST_ROOT = "https://api.deezer.com/"
 RESOURCES_ROOT = mkpath(abspath(dirname(__file__)), "resources")
