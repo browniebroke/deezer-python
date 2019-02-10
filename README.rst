@@ -27,7 +27,7 @@ the json dictionary returned by the API.
 
     >>> client = deezer.Client()
     >>> client.get_album(12).title
-    u'Monkey Business'
+    'Monkey Business'
 
 See the whole API reference on the `Sphinx`_ generated `documentation`_.
 
