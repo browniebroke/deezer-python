@@ -9,7 +9,7 @@ from deezer.resources import Album, Resource, Artist, Playlist
 from deezer.resources import Genre, Track, User, Comment, Radio
 
 
-__version__ = "0.8.0"
+__version__ = "0.9.0"
 __all__ = [
     "Client",
     "Resource",
