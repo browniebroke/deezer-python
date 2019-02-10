@@ -76,7 +76,7 @@ def url_from_path(path):
 
 class RequestsMock(requests_mock.Mocker):
     def __init__(self, *names):
-        super(RequestsMock, self).__init__()
+        super().__init__()
 
         # Configure the Mocker with the content of resource path
         path = mkpath(*names) + FILE_EXT

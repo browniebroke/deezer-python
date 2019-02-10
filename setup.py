@@ -22,7 +22,7 @@ setup(
     author="Bruno Alla",
     author_email="alla.brunoo@gmail.com",
     url="https://github.com/browniebroke/deezer-python",
-    download_url="https://github.com/browniebroke/deezer-python/tarball/{0}".format(
+    download_url="https://github.com/browniebroke/deezer-python/tarball/{}".format(
         version
     ),
     license="MIT",

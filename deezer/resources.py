@@ -5,7 +5,7 @@ can be found in the API.
 from six import text_type
 
 
-class Resource(object):
+class Resource:
     """
     Base class for any resource.
 
@@ -23,8 +23,8 @@ class Resource(object):
     def __repr__(self):
         name = getattr(self, "name", getattr(self, "title", None))
         if name is not None:
-            return "<{0}: {1}>".format(self.__class__.__name__, text_type(name))
-        return super(Resource, self).__repr__()
+            return "<{}: {}>".format(self.__class__.__name__, str(name))
+        return super().__repr__()
 
     def asdict(self):
         """
