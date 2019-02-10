@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # deezer-python documentation build configuration file, created by
 # sphinx-quickstart on Mon Jan  6 23:58:58 2014.
 #

@@ -1,4 +1,3 @@
-# -*- coding: utf-8
 from types import GeneratorType
 
 import deezer

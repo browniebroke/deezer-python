@@ -1,4 +1,3 @@
-# -*- coding: utf-8
 """
 Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
