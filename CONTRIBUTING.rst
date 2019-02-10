@@ -71,7 +71,7 @@ Ready to contribute? Here's how to set up ``deezer-python`` for local developmen
 
 5. When you're done making changes, check that your changes pass our
    tests and that the doc builds. The easiest way to do that is by running
-   `tox`_ environments:
+   `tox`_ environments::
 
         $ tox -e lint,docs,py36
 

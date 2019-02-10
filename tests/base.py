@@ -19,8 +19,6 @@ PATH_OVERRIDES = {
     mkpath("album", "302127", "tracks14"): "album/302127/tracks?index=14",
     mkpath("genre", "noid"): "genre",
     mkpath("radio", "noid"): "radio",
-    mkpath("search", "noid"): "search?q=Billy+Jean",
-    mkpath("search_1", "noid"): "search?q=Billy Jean&limit=2&index=2",
 }
 
 
@@ -74,3 +72,27 @@ def url_from_path(path):
     except KeyError:
         url_part = http_path.replace("\\", "/")
     return urljoin(HOST_ROOT, url_part)
+
+
+class RequestsMock(requests_mock.Mocker):
+    def __init__(self, *names):
+        super(RequestsMock, self).__init__()
+
+        # Configure the Mocker with the content of resource path
+        path = mkpath(*names) + FILE_EXT
+        full_path = os.path.join(RESOURCES_ROOT, path)
+        with open(full_path) as f:
+            self.get(requests_mock.ANY, text=f.read())
+
+
+def mocker(*names):
+    """Decorator to run the function inside a RequestsMock context."""
+
+    def decorated(func):
+        def wrapper(*args, **kwargs):
+            with RequestsMock(*names):
+                return func(*args, **kwargs)
+
+        return wrapper
+
+    return decorated
