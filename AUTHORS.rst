@@ -9,6 +9,7 @@ Contributors
 
 Other people contributed to this project:
 
+- `Hugo van Kemenade <https://github.com/hugovk>`_
 - `Jonathan Virga <https://github.com/jnth>`_
 - `khamaileon <https://github.com/khamaileon>`_
 - `Kieran Wynne <https://github.com/k33k00>`_
