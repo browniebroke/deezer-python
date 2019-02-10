@@ -102,9 +102,7 @@ class Client:
         if object_t not in self.objects_types:
             raise TypeError("{} is not a valid type".format(object_t))
         request_items = (
-            str(item)
-            for item in [object_t, object_id, relation]
-            if item is not None
+            str(item) for item in [object_t, object_id, relation] if item is not None
         )
         request = "/".join(request_items)
         base_url = self.url(request)
