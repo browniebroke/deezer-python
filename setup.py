@@ -30,6 +30,7 @@ setup(
     install_requires=["requests"],
     extras_require={"tornado": ["tornado"]},
     tests_require=["requests-mock"],
+    python_requires=">=3.4",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
