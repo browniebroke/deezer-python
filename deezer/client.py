@@ -3,9 +3,6 @@
 Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
-
-from __future__ import unicode_literals, absolute_import
-
 import requests
 from six import text_type, iteritems
 from six.moves.urllib.parse import urlencode

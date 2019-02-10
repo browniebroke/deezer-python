@@ -2,8 +2,6 @@
 Implements an async tornado client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
-from __future__ import absolute_import, unicode_literals
-
 import json
 import logging
 
