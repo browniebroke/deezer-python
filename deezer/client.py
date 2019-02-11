@@ -1,21 +1,16 @@
-# -*- coding: utf-8
 """
 Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
-
-from __future__ import unicode_literals, absolute_import
-
 import requests
-from six import text_type, iteritems
-from six.moves.urllib.parse import urlencode
+from urllib.parse import urlencode
 
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Chart, Resource
 from deezer.resources import Playlist, Radio, Track, User
 
 
-class Client(object):
+class Client:
     """
     A client to retrieve some basic infos about Deezer resourses.
 
@@ -48,7 +43,7 @@ class Client(object):
     }
 
     def __init__(self, **kwargs):
-        super(Client, self).__init__()
+        super().__init__()
 
         self.use_ssl = kwargs.get("use_ssl", self.use_ssl)
         self.host = kwargs.get("host", self.host)
@@ -95,7 +90,7 @@ class Client(object):
         """Build the url with the appended request if provided."""
         if request.startswith("/"):
             request = request[1:]
-        return "{0}://{1}/{2}".format(self.scheme, self.host, request)
+        return "{}://{}/{}".format(self.scheme, self.host, request)
 
     def object_url(self, object_t, object_id=None, relation=None, **kwargs):
         """
@@ -105,21 +100,19 @@ class Client(object):
         :raises TypeError: if the object type is invalid
         """
         if object_t not in self.objects_types:
-            raise TypeError("{0} is not a valid type".format(object_t))
+            raise TypeError("{} is not a valid type".format(object_t))
         request_items = (
-            text_type(item)
-            for item in [object_t, object_id, relation]
-            if item is not None
+            str(item) for item in [object_t, object_id, relation] if item is not None
         )
         request = "/".join(request_items)
         base_url = self.url(request)
         if self.access_token is not None:
-            kwargs["access_token"] = text_type(self.access_token)
+            kwargs["access_token"] = str(self.access_token)
         if kwargs:
-            for key, value in iteritems(kwargs):
+            for key, value in kwargs.items():
                 if not isinstance(value, str):
-                    kwargs[key] = text_type(value)
-            result = "{0}?{1}".format(base_url, urlencode(kwargs))
+                    kwargs[key] = str(value)
+            result = "{}?{}".format(base_url, urlencode(kwargs))
         else:
             result = base_url
         return result
@@ -254,5 +247,5 @@ class Client(object):
         ...                        relation="track")
         """
         assert isinstance(terms, dict), "terms must be a dict"
-        query = " ".join(['{0}:"{1}"'.format(k, v) for (k, v) in terms.items()])
+        query = " ".join(['{}:"{}"'.format(k, v) for (k, v) in terms.items()])
         return self.get_object("search", relation=relation, q=query, **kwargs)

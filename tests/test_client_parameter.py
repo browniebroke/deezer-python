@@ -1,6 +1,3 @@
-# -*- coding: utf-8
-from __future__ import unicode_literals, absolute_import
-
 import unittest
 import deezer
 
@@ -9,7 +6,7 @@ from .base import BaseTestCase, mocker
 
 class TestClient(BaseTestCase):
     def setUp(self):
-        super(TestClient, self).setUp()
+        super().setUp()
         self.client = deezer.Client(app_id="foo", app_secret="bar")
         self.unsec_client = deezer.Client(use_ssl=False)
 
@@ -163,7 +160,7 @@ class TestClient(BaseTestCase):
 
 class TestClientSearch(unittest.TestCase):
     def setUp(self):
-        super(TestClientSearch, self).setUp()
+        super().setUp()
         self.client = deezer.Client(app_id="foo", app_secret="bar")
 
     @mocker("search_1", "noid")

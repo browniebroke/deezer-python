@@ -1,14 +1,11 @@
-# -*- coding: utf-8
-from __future__ import unicode_literals, absolute_import
-
 import fnmatch
 import json
 import os
 import unittest
 from os.path import join as mkpath, dirname, abspath
+from urllib.parse import urljoin
 
 import requests_mock
-from six.moves.urllib.parse import urljoin
 
 HOST_ROOT = "https://api.deezer.com/"
 RESOURCES_ROOT = mkpath(abspath(dirname(__file__)), "resources")
@@ -76,7 +73,7 @@ def url_from_path(path):
 
 class RequestsMock(requests_mock.Mocker):
     def __init__(self, *names):
-        super(RequestsMock, self).__init__()
+        super().__init__()
 
         # Configure the Mocker with the content of resource path
         path = mkpath(*names) + FILE_EXT

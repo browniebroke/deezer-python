@@ -95,8 +95,8 @@ following guidelines:
 
 1. It should include tests for feature or bug fixes.
 2. If it adds functionality, the docs should be updated.
-3. It should work for Python 2.7, 3.4, 3.5, 3.6 and for PyPy.
-   Check `Travis`_ as well as `Appveyor`_ and make sure that the tests
+3. It should work for Python 3.4, 3.5, 3.6 and for PyPy3.
+   Check `Travis`_ as well as `AppVeyor`_ and make sure that the tests
    pass for all supported Python versions.
 4. If your change is worthwhile a mention in the changelog, update the
    Unreleased section of ``HISTORY.rst``.
@@ -120,7 +120,7 @@ Then, do a git push, without forgetting about git tags::
 
 .. _issues page: https://github.com/browniebroke/deezer-python/issues
 .. _Travis: https://travis-ci.org/browniebroke/deezer-python/pull_requests
-.. _Appveyor: https://ci.appveyor.com/project/browniebroke/deezer-python
+.. _AppVeyor: https://ci.appveyor.com/project/browniebroke/deezer-python
 .. _tox: http://tox.readthedocs.io/en/stable/index.html
 .. _flake8: http://flake8.pycqa.org/en/latest/
 .. _black: https://github.com/ambv/black

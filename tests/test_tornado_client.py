@@ -1,6 +1,3 @@
-# -*- coding: utf-8
-from __future__ import absolute_import, unicode_literals
-
 import tornado.gen
 import tornado.ioloop
 
@@ -11,7 +8,7 @@ from .base import BaseTestCase
 
 class TestAsyncClient(BaseTestCase):
     def setUp(self):
-        super(TestAsyncClient, self).setUp()
+        super().setUp()
         self.client = AsyncClient()
 
     def test_get_object(self):
