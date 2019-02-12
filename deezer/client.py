@@ -56,7 +56,7 @@ class Client(object):
 
         # Do not compress the response: to be readable in tests (cassettes)
         if kwargs.get("do_not_compress_reponse"):
-            self.session.headers.update({'Accept-Encoding': 'identity'})
+            self.session.headers.update({"Accept-Encoding": "identity"})
 
         self.options = kwargs
         self._authorize_url = None
@@ -243,8 +243,9 @@ class Client(object):
 
         :returns: a list of :class:`~deezer.resources.Resource` objects.
         """
-        return self.get_object("search", relation=relation, q=query, index=index,
-                               limit=limit, **kwargs)
+        return self.get_object(
+            "search", relation=relation, q=query, index=index, limit=limit, **kwargs
+        )
 
     def advanced_search(self, terms, relation=None, index=0, limit=25, **kwargs):
         """
@@ -261,5 +262,6 @@ class Client(object):
         """
         assert isinstance(terms, dict), "terms must be a dict"
         query = " ".join(['{0}:"{1}"'.format(k, v) for (k, v) in terms.items()])
-        return self.get_object("search", relation=relation, q=query, index=index,
-                               limit=limit, **kwargs)
+        return self.get_object(
+            "search", relation=relation, q=query, index=index, limit=limit, **kwargs
+        )

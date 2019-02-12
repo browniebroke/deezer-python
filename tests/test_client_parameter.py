@@ -6,7 +6,6 @@ from .base import BaseTestCaseWithVcr
 
 
 class TestClient(BaseTestCaseWithVcr):
-
     def test_access_token_set(self):
         """Test that access token is set on the client."""
         self.client.access_token = "token"
