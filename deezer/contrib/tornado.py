@@ -2,8 +2,6 @@
 Implements an async tornado client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
-from __future__ import absolute_import, unicode_literals
-
 import json
 import logging
 
@@ -28,7 +26,7 @@ class AsyncClient(Client):
     """
 
     def __init__(self, *args, **kwargs):
-        super(AsyncClient, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         max_clients = kwargs.get("max_clients", 2)
         self._async_client = AsyncHTTPClient(max_clients=max_clients)
 

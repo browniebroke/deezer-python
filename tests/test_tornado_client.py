@@ -1,6 +1,3 @@
-# -*- coding: utf-8
-from __future__ import absolute_import, unicode_literals
-
 import tornado.gen
 import tornado.ioloop
 import vcr_unittest
@@ -11,7 +8,7 @@ from deezer.contrib.tornado import AsyncClient
 
 class TestAsyncClient(vcr_unittest.VCRTestCase):
     def setUp(self):
-        super(TestAsyncClient, self).setUp()
+        super().setUp()
         self.client = AsyncClient(do_not_compress_reponse=False)
 
     def test_get_object(self):
