@@ -1,4 +1,3 @@
-import unittest
 import deezer
 from .base import BaseTestCaseWithVcr
 
