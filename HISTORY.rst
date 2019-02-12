@@ -7,6 +7,7 @@ History
 ------------------
 
 - Breaking: drop support for Python 2.
+- Tests with ``vcrpy`` instead of ``requests_mock``.
 
 0.9.0 (2019-02-10)
 ------------------
