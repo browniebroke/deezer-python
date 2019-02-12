@@ -1,0 +1,25 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: https://api.deezer.com/artist/27
+  response:
+    body: {string: '{"id":27,"name":"Daft Punk","link":"https:\/\/www.deezer.com\/artist\/27","share":"https:\/\/www.deezer.com\/artist\/27?utm_source=deezer&utm_content=artist-27&utm_term=0_1549974227&utm_medium=web","picture":"https:\/\/api.deezer.com\/artist\/27\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/1000x1000-000000-80-0-0.jpg","nb_album":32,"nb_fan":3677952,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/27\/top?limit=50","type":"artist"}'}
+    headers:
+      Content-Length: ['891']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 12 Feb 2019 12:23:47 GMT']
+      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
+          STA"]
+      Server: [Apache]
+      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fr9f8baabe0d53a4b08415b091bda1bd5cfdbad7;
+          expires=Sun, 11-Aug-2019 12:23:47 GMT; Max-Age=15552000; path=/; domain=.deezer.com']
+      Vary: [Accept-Encoding]
+      X-Host: [blm-web-125]
+    status: {code: 200, message: OK}
+version: 1

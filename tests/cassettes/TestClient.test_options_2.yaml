@@ -1,0 +1,31 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: https://api.deezer.com/search?q=Billy+Jean&index=1&limit=2
+  response:
+    body: {string: '{"data":[{"id":378181481,"readable":true,"title":"None Of Us Are
+        Free","title_short":"None Of Us Are Free","title_version":"","link":"https:\/\/www.deezer.com\/track\/378181481","duration":329,"rank":409185,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-2.dzcdn.net\/stream\/c-20c64311acd419cc34c468937749f784-5.mp3","artist":{"id":7856,"name":"Solomon
+        Burke","link":"https:\/\/www.deezer.com\/artist\/7856","picture":"https:\/\/api.deezer.com\/artist\/7856\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/7aa62ccee8659524f6e6759ec089db1c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/7aa62ccee8659524f6e6759ec089db1c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/7aa62ccee8659524f6e6759ec089db1c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/7aa62ccee8659524f6e6759ec089db1c\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/7856\/top?limit=50","type":"artist"},"album":{"id":43835711,"title":"Don''t
+        Give Up On Me","cover":"https:\/\/api.deezer.com\/album\/43835711\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/6fcb10454640cd25777ce09fc6e06697\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/6fcb10454640cd25777ce09fc6e06697\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/6fcb10454640cd25777ce09fc6e06697\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/6fcb10454640cd25777ce09fc6e06697\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/43835711\/tracks","type":"album"},"type":"track"},{"id":378181391,"readable":true,"title":"Don''t
+        Give Up On Me","title_short":"Don''t Give Up On Me","title_version":"","link":"https:\/\/www.deezer.com\/track\/378181391","duration":225,"rank":373171,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-e.dzcdn.net\/stream\/c-e803f4765fb0c46ef6da0db7c0d38b96-4.mp3","artist":{"id":7856,"name":"Solomon
+        Burke","link":"https:\/\/www.deezer.com\/artist\/7856","picture":"https:\/\/api.deezer.com\/artist\/7856\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/7aa62ccee8659524f6e6759ec089db1c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/7aa62ccee8659524f6e6759ec089db1c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/7aa62ccee8659524f6e6759ec089db1c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/7aa62ccee8659524f6e6759ec089db1c\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/7856\/top?limit=50","type":"artist"},"album":{"id":43835711,"title":"Don''t
+        Give Up On Me","cover":"https:\/\/api.deezer.com\/album\/43835711\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/6fcb10454640cd25777ce09fc6e06697\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/6fcb10454640cd25777ce09fc6e06697\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/6fcb10454640cd25777ce09fc6e06697\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/6fcb10454640cd25777ce09fc6e06697\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/43835711\/tracks","type":"album"},"type":"track"}],"total":299,"prev":"https:\/\/api.deezer.com\/search?q=Billy%20Jean&limit=2&index=0","next":"https:\/\/api.deezer.com\/search?q=Billy%20Jean&limit=2&index=3"}'}
+    headers:
+      Content-Length: ['3790']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 12 Feb 2019 13:07:45 GMT']
+      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
+          STA"]
+      Server: [Apache]
+      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fr644cf8ba878f1377d51185c55f05a0e5e4aac9;
+          expires=Sun, 11-Aug-2019 13:07:45 GMT; Max-Age=15552000; path=/; domain=.deezer.com']
+      Vary: [Accept-Encoding]
+      X-Host: [blm-web-67]
+    status: {code: 200, message: OK}
+version: 1

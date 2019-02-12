@@ -3,16 +3,16 @@ from __future__ import absolute_import, unicode_literals
 
 import tornado.gen
 import tornado.ioloop
+import vcr_unittest
 
 from deezer import Album
 from deezer.contrib.tornado import AsyncClient
-from .base import BaseTestCase
 
 
-class TestAsyncClient(BaseTestCase):
+class TestAsyncClient(vcr_unittest.VCRTestCase):
     def setUp(self):
         super(TestAsyncClient, self).setUp()
-        self.client = AsyncClient()
+        self.client = AsyncClient(do_not_compress_reponse=False)
 
     def test_get_object(self):
         @tornado.gen.coroutine

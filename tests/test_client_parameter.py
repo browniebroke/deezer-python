@@ -1,17 +1,11 @@
 # -*- coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
-import unittest
 import deezer
+from .base import BaseTestCaseWithVcr
 
-from .base import BaseTestCase, mocker
 
-
-class TestClient(BaseTestCase):
-    def setUp(self):
-        super(TestClient, self).setUp()
-        self.client = deezer.Client(app_id="foo", app_secret="bar")
-        self.unsec_client = deezer.Client(use_ssl=False)
+class TestClient(BaseTestCaseWithVcr):
 
     def test_access_token_set(self):
         """Test that access token is set on the client."""
@@ -100,7 +94,7 @@ class TestClient(BaseTestCase):
 
     def test_get_playlist(self):
         """Test methods to get a playlist"""
-        playlist = self.client.get_playlist(223)
+        playlist = self.client.get_playlist(908622995)
         self.assertIsInstance(playlist, deezer.resources.Playlist)
 
     def test_get_radio(self):
@@ -139,77 +133,67 @@ class TestClient(BaseTestCase):
     def test_chart_tracks(self):
         result = self.client.get_chart("tracks")
         self.assertIsInstance(result, list)
-        self.assertEqual(result[0].title, "Starboy")
+        self.assertEqual(result[0].title, "Khapta")
         self.assertIsInstance(result[0], deezer.resources.Track)
 
     def test_chart_albums(self):
         result = self.client.get_chart("albums")
         self.assertIsInstance(result, list)
-        self.assertEqual(result[0].title, "Where Is l'album de Gradur")
+        self.assertEqual(result[0].title, "Lacrim")
         self.assertIsInstance(result[0], deezer.resources.Album)
 
     def test_chart_artists(self):
         result = self.client.get_chart("artists")
         self.assertIsInstance(result, list)
-        self.assertEqual(result[0].name, "Pnl")
+        self.assertEqual(result[0].name, "Lacrim")
         self.assertIsInstance(result[0], deezer.resources.Artist)
 
     def test_chart_playlists(self):
         result = self.client.get_chart("playlists")
         self.assertIsInstance(result, list)
-        self.assertEqual(result[0].title, "Top France")
+        self.assertEqual(result[0].title, "Les titres du moment")
         self.assertIsInstance(result[0], deezer.resources.Playlist)
 
-
-class TestClientSearch(unittest.TestCase):
-    def setUp(self):
-        super(TestClientSearch, self).setUp()
-        self.client = deezer.Client(app_id="foo", app_secret="bar")
-
-    @mocker("search_1", "noid")
     def test_options_1(self):
         """Test a query with extra arguments"""
         result = self.client.search("Billy Jean", limit=2)
         self.assertIsInstance(result, list)
         self.assertLessEqual(len(result), 2)
 
-    @mocker("search_1", "noid")
     def test_options_2(self):
         """Test a query with extra arguments"""
         result = self.client.search("Billy Jean", limit=2, index=1)
         self.assertIsInstance(result, list)
         self.assertLessEqual(len(result), 2)
 
-    @mocker("search", "noid")
     def test_search_simple(self):
         """Test search method"""
         self.assertEqual(
-            self.client.object_url("search", q="Daft Punk"),
-            "https://api.deezer.com/search?q=Daft+Punk",
+            self.client.object_url("search", q="Soliloquy"),
+            "https://api.deezer.com/search?q=Soliloquy",
         )
-        result = self.client.search("Billy Jean")
+        result = self.client.search("Soliloquy")
         self.assertIsInstance(result, list)
-        self.assertEqual(result[0].title, "Billy Jean")
+        self.assertEqual(result[0].title, "Too much")
 
-    @mocker("search", "track")
     def test_search_with_relation(self):
         """Test search method with relation"""
         self.assertEqual(
-            self.client.object_url("search", relation="track", q="Daft Punk"),
-            "https://api.deezer.com/search/track?q=Daft+Punk",
+            self.client.object_url("search", relation="album", q="Daft Punk"),
+            "https://api.deezer.com/search/album?q=Daft+Punk",
         )
-        result = self.client.search("Billy Jean", "track")
+        result = self.client.search("Daft Punk", "album")
         self.assertIsInstance(result, list)
-        self.assertEqual(result[0].title, "Billy Jean")
-        self.assertIsInstance(result[0], deezer.resources.Track)
-        result = self.client.search("Billy Jean", "track", "0", "1")
+        self.assertEqual(result[0].title, "Random Access Memories")
+        self.assertIsInstance(result[0], deezer.resources.Album)
+
+        result = self.client.search("Daft Punk", "album", "0", "1")
         self.assertIsInstance(result, list)
         self.assertEqual(len(result), 1)
         self.assertNotEqual(
-            result[0], self.client.search("Billy Jean", "track", "1", "1")
+            result[0], self.client.search("Daft Punk", "album", "1", "1")
         )
 
-    @mocker("advanced_search", "simple")
     def test_advanced_search_simple(self):
         """Test advanced_search method: simple case with one term"""
         self.assertEqual(
@@ -220,7 +204,6 @@ class TestClientSearch(unittest.TestCase):
         self.assertIsInstance(result, list)
         self.assertEqual(result[0].title, "Too much")
 
-    @mocker("advanced_search", "complex")
     def test_advanced_search_complex(self):
         """Test advanced_search method: complex case with two term"""
         self.assertEqual(
@@ -236,7 +219,6 @@ class TestClientSearch(unittest.TestCase):
         self.assertIsInstance(result, list)
         self.assertEqual(result[0].title, "Where To Start")
 
-    @mocker("advanced_search", "with_relation")
     def test_advanced_search_complex_with_relation(self):
         """Test advanced_search method: with relation"""
         # Two terms with a relation

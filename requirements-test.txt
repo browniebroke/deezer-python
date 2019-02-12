@@ -1,8 +1,9 @@
 -r requirements.txt
-requests-mock
 check-manifest
 coverage
 pytest
 pytest-cov
 pytest-sugar
 tox
+vcrpy
+vcrpy-unittest
