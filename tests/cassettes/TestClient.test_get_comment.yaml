@@ -1,0 +1,26 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: https://api.deezer.com/comment/2772704
+  response:
+    body: {string: '{"id":2772704,"text":"hey! c''est vraiement pas mal comme son
+        ^^\r\rclasse!","date":1228300538,"object":{"id":null,"type":"album"},"author":{"id":3500485,"name":"noiseofbozzo","link":"https:\/\/www.deezer.com\/profile\/3500485","picture":"https:\/\/api.deezer.com\/user\/3500485\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/10185bd1331027ece97c5ab0fd825035\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/10185bd1331027ece97c5ab0fd825035\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/10185bd1331027ece97c5ab0fd825035\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/10185bd1331027ece97c5ab0fd825035\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/user\/3500485\/flow","type":"user"},"type":"comment"}'}
+    headers:
+      Content-Length: ['882']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 12 Feb 2019 12:23:48 GMT']
+      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
+          STA"]
+      Server: [Apache]
+      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fr9769ce4cafd1664b7795f70ee9ce465d0dcd9c;
+          expires=Sun, 11-Aug-2019 12:23:48 GMT; Max-Age=15552000; path=/; domain=.deezer.com']
+      Vary: [Accept-Encoding]
+      X-Host: [blm-web-16]
+    status: {code: 200, message: OK}
+version: 1

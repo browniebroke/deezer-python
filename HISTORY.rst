@@ -3,6 +3,11 @@
 History
 =======
 
+Unreleased (2019-02-13)
+-----------------------
+
+- Tests with ``vcr.py`` instead of ``requests_mock``.
+
 1.0.0 (2019-02-11)
 ------------------
 

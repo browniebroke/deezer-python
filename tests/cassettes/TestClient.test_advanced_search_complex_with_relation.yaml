@@ -1,0 +1,29 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: https://api.deezer.com/search/track?index=0&limit=25&q=artist%3A%22Lou+Doillon%22+track%3A%22Joke%22
+  response:
+    body: {string: '{"data":[{"id":623719262,"readable":true,"title":"The joke","title_short":"The
+        joke","title_version":"","link":"https:\/\/www.deezer.com\/track\/623719262","duration":200,"rank":761992,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":0,"preview":"https:\/\/cdns-preview-1.dzcdn.net\/stream\/c-13de758485a7cc167fbc081306d57b3b-4.mp3","artist":{"id":1701297,"name":"Lou
+        Doillon","link":"https:\/\/www.deezer.com\/artist\/1701297","picture":"https:\/\/api.deezer.com\/artist\/1701297\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/bb461ed99b3de8c83959069d81af5e17\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/bb461ed99b3de8c83959069d81af5e17\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/bb461ed99b3de8c83959069d81af5e17\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/bb461ed99b3de8c83959069d81af5e17\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1701297\/top?limit=50","type":"artist"},"album":{"id":85607212,"title":"Soliloquy","cover":"https:\/\/api.deezer.com\/album\/85607212\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/880c64b16d6984e10a56617c244bf29c\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/880c64b16d6984e10a56617c244bf29c\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/880c64b16d6984e10a56617c244bf29c\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/880c64b16d6984e10a56617c244bf29c\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/85607212\/tracks","type":"album"},"type":"track"}],"total":1}'}
+    headers:
+      Content-Length: ['1809']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Wed, 13 Feb 2019 10:35:33 GMT']
+      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
+          STA"]
+      Server: [Apache]
+      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fread9bf25213bcb495877baf725223ab3a07374;
+          expires=Mon, 12-Aug-2019 10:35:33 GMT; Max-Age=15552000; path=/; domain=.deezer.com',
+        'ADRUM_BT=R%3A0%7Cg%3A65f20f8c-dc2f-4093-9211-0633daf704001560%7Cn%3Adeezer_4d9fde9f-5114-49cf-ae7c-978ae57772c1%7Ci%3A342331%7Cd%3A19%7Ce%3A82;
+          expires=Wed, 13-Feb-2019 10:36:03 GMT; Max-Age=30; path=/']
+      Vary: [Accept-Encoding]
+      X-Host: [blm-web-106]
+    status: {code: 200, message: OK}
+version: 1

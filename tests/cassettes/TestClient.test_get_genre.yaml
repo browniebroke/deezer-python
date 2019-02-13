@@ -1,0 +1,25 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: [identity]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: https://api.deezer.com/genre/106
+  response:
+    body: {string: '{"id":106,"name":"Electro","picture":"https:\/\/api.deezer.com\/genre\/106\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/1000x1000-000000-80-0-0.jpg","type":"genre"}'}
+    headers:
+      Content-Length: ['602']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 12 Feb 2019 12:23:48 GMT']
+      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
+          STA"]
+      Server: [Apache]
+      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_frf6a59229fe8f19e7f760aa3051d1fc5e7d014e;
+          expires=Sun, 11-Aug-2019 12:23:48 GMT; Max-Age=15552000; path=/; domain=.deezer.com']
+      Vary: [Accept-Encoding]
+      X-Host: [blm-web-66]
+    status: {code: 200, message: OK}
+version: 1

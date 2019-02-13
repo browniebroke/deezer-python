@@ -5,6 +5,7 @@ Implements a client class to query the
 import requests
 from urllib.parse import urlencode
 
+from deezer.utils import SortedDict
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Chart, Resource
 from deezer.resources import Playlist, Radio, Track, User
@@ -48,6 +49,11 @@ class Client:
         self.use_ssl = kwargs.get("use_ssl", self.use_ssl)
         self.host = kwargs.get("host", self.host)
         self.session = requests.Session()
+
+        # Do not compress the response: to be readable in tests (cassettes)
+        if kwargs.get("do_not_compress_reponse"):
+            self.session.headers.update({"Accept-Encoding": "identity"})
+
         self.options = kwargs
         self._authorize_url = None
 
@@ -112,7 +118,9 @@ class Client:
             for key, value in kwargs.items():
                 if not isinstance(value, str):
                     kwargs[key] = str(value)
-            result = "{}?{}".format(base_url, urlencode(kwargs))
+            # kwargs are sorted (for consistent tests between Python < 3.7 and >= 3.7)
+            sorted_kwargs = SortedDict.from_dict(kwargs)
+            result = "{}?{}".format(base_url, urlencode(sorted_kwargs))
         else:
             result = base_url
         return result
@@ -231,7 +239,9 @@ class Client:
 
         :returns: a list of :class:`~deezer.resources.Resource` objects.
         """
-        return self.get_object("search", relation=relation, q=query, **kwargs)
+        return self.get_object(
+            "search", relation=relation, q=query, index=index, limit=limit, **kwargs
+        )
 
     def advanced_search(self, terms, relation=None, index=0, limit=25, **kwargs):
         """
@@ -247,5 +257,8 @@ class Client:
         ...                        relation="track")
         """
         assert isinstance(terms, dict), "terms must be a dict"
-        query = " ".join(['{}:"{}"'.format(k, v) for (k, v) in terms.items()])
-        return self.get_object("search", relation=relation, q=query, **kwargs)
+        # terms are sorted (for consistent tests between Python < 3.7 and >= 3.7)
+        query = " ".join(sorted(['{}:"{}"'.format(k, v) for (k, v) in terms.items()]))
+        return self.get_object(
+            "search", relation=relation, q=query, index=index, limit=limit, **kwargs
+        )
