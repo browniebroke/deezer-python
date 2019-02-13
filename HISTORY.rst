@@ -7,6 +7,7 @@ Unreleased (2019-02-13)
 -----------------------
 
 - Tests with ``vcr.py`` instead of ``requests_mock``.
+- Sopprt for Python 3.7 & 3.8 is finally offical.
 
 1.0.0 (2019-02-11)
 ------------------
