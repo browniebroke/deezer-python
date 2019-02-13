@@ -5,4 +5,5 @@ API Reference
 
     client
     resources
+    utils
     contrib/tornado
