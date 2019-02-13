@@ -3,7 +3,7 @@
 History
 =======
 
-1.0.0 (unreleased)
+1.0.0 (2019-02-11)
 ------------------
 
 - Breaking: drop support for Python 2.
