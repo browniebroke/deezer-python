@@ -118,6 +118,7 @@ class Client:
             for key, value in kwargs.items():
                 if not isinstance(value, str):
                     kwargs[key] = str(value)
+            # kwargs are sorted (for consistent tests between Python < 3.7 and >= 3.7)
             sorted_kwargs = SortedDict.from_dict(kwargs)
             result = "{}?{}".format(base_url, urlencode(sorted_kwargs))
         else:
@@ -256,6 +257,7 @@ class Client:
         ...                        relation="track")
         """
         assert isinstance(terms, dict), "terms must be a dict"
+        # terms are sorted (for consistent tests between Python < 3.7 and >= 3.7)
         query = " ".join(sorted(['{}:"{}"'.format(k, v) for (k, v) in terms.items()]))
         return self.get_object(
             "search", relation=relation, q=query, index=index, limit=limit, **kwargs
