@@ -5,6 +5,7 @@ Implements a client class to query the
 import requests
 from urllib.parse import urlencode
 
+from deezer.utils import SortedDict
 from deezer.resources import Album, Artist, Comment, Genre
 from deezer.resources import Chart, Resource
 from deezer.resources import Playlist, Radio, Track, User
@@ -117,7 +118,8 @@ class Client:
             for key, value in kwargs.items():
                 if not isinstance(value, str):
                     kwargs[key] = str(value)
-            result = "{}?{}".format(base_url, urlencode(kwargs))
+            sorted_kwargs = SortedDict.from_dict(kwargs)
+            result = "{}?{}".format(base_url, urlencode(sorted_kwargs))
         else:
             result = base_url
         return result
@@ -254,7 +256,7 @@ class Client:
         ...                        relation="track")
         """
         assert isinstance(terms, dict), "terms must be a dict"
-        query = " ".join(['{}:"{}"'.format(k, v) for (k, v) in terms.items()])
+        query = " ".join(sorted(['{}:"{}"'.format(k, v) for (k, v) in terms.items()]))
         return self.get_object(
             "search", relation=relation, q=query, index=index, limit=limit, **kwargs
         )
