@@ -7,7 +7,8 @@ Unreleased (2019-02-13)
 -----------------------
 
 - Tests with ``vcr.py`` instead of ``requests_mock``.
-- Sopprt for Python 3.7 & 3.8 is finally offical.
+- Support for Python 3.7 & 3.8 is finally official.
+- Breaking: drop support for Python 3.4.
 
 1.0.0 (2019-02-11)
 ------------------
