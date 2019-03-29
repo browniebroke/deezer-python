@@ -1,3 +1,3 @@
 - [ ] Include tests for bug fix and new functionality
 - [ ] Updated documentation for new feature
-- [ ] Added an entry at the top of History.rst, under the unreleased section
+- [ ] Added an entry at the top of HISTORY.rst, under the unreleased section
