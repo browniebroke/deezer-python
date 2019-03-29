@@ -95,7 +95,7 @@ following guidelines:
 
 1. It should include tests for feature or bug fixes.
 2. If it adds functionality, the docs should be updated.
-3. It should work for Python 3.4, 3.5, 3.6, 3.7 and for PyPy3.
+3. It should work for Python 3.5, 3.6, 3.7 and for PyPy3.
    Check `Travis`_ as well as `AppVeyor`_ and make sure that the tests
    pass for all supported Python versions.
 4. If your change is worthwhile a mention in the changelog, update the
