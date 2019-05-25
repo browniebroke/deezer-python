@@ -10,7 +10,7 @@ def read(*paths):
         return f.read()
 
 
-version = "1.1.0"
+version = "1.1.1"
 
 setup(
     name="deezer-python",
