@@ -32,7 +32,7 @@ setup(
     tests_require=["requests-mock"],
     python_requires=">=3.5",
     classifiers=[
-        "Development Status :: 5 - Stable",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "Natural Language :: English",
         "License :: OSI Approved :: MIT License",
