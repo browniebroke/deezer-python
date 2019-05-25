@@ -29,7 +29,7 @@ the json dictionary returned by the API.
     >>> client.get_album(12).title
     'Monkey Business'
 
-See the whole API reference on the `Sphinx`_ generated `documentation`_.
+The detailed `API reference`_ is available in the `documentation`_ on the RTD.
 
 Asynchronous client
 ```````````````````
@@ -86,6 +86,6 @@ Deezer authentication.
 .. |pyversions| image:: https://img.shields.io/pypi/pyversions/deezer-python.svg?style=flat-square
 .. |license| image:: https://img.shields.io/pypi/l/deezer-python.svg?style=flat-square
 .. _Deezer API: http://developers.deezer.com/api
-.. _Sphinx: http://sphinx-doc.org/
+.. _API reference: https://deezer-python.readthedocs.io/api_reference/toc.html
 .. _documentation: http://deezer-python.readthedocs.io/
 .. _Python Social Auth: https://github.com/python-social-auth
