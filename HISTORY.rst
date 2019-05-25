@@ -3,8 +3,8 @@
 History
 =======
 
-Unreleased (2019-02-13)
------------------------
+1.1.0 (2019-05-25)
+------------------
 
 - Tests with ``vcr.py`` instead of ``requests_mock``.
 - Support for Python 3.7 & 3.8 is finally official.
