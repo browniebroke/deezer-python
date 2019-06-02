@@ -11,6 +11,89 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/861044?v=4",
       "profile": "https://www.twitter.com/_BrunoAlla",
       "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "maintenance",
+        "platform",
+        "test"
+      ]
+    },
+    {
+      "login": "misuzu",
+      "name": "misuzu",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/248143?v=4",
+      "profile": "https://github.com/misuzu",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "test"
+      ]
+    },
+    {
+      "login": "pfouque",
+      "name": "Pascal",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8300001?v=4",
+      "profile": "https://github.com/pfouque",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "khamaileon",
+      "name": "khamaileon",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1322166?v=4",
+      "profile": "https://github.com/khamaileon",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "sheregeda",
+      "name": "Nikolay Sheregeda",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2856444?v=4",
+      "profile": "https://github.com/sheregeda",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "horstmannmat",
+      "name": "Matheus Horstmann",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11761333?v=4",
+      "profile": "https://github.com/horstmannmat",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "MDCEY",
+      "name": "Kieran Wynne",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3812864?v=4",
+      "profile": "https://github.com/MDCEY",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jnth",
+      "name": "Jonathan Virga",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/7796167?v=4",
+      "profile": "https://github.com/jnth",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "hugovk",
+      "name": "Hugo",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1324225?v=4",
+      "profile": "https://github.com/hugovk",
+      "contributions": [
         "code"
       ]
     }
@@ -18,5 +101,6 @@
   "projectName": "deezer-python",
   "projectOwner": "browniebroke",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "commitConvention": "none"
 }

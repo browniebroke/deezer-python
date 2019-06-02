@@ -11,5 +11,9 @@ docs/build/
 #Virtualenvs
 ENV*
 
-
 .coveralls.yml
+
+# Node stuff from all-contributors
+node_modules
+package.json
+yarn.lock
