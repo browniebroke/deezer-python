@@ -100,8 +100,6 @@ following guidelines:
    pass for all supported Python versions.
 4. If your change is worthwhile a mention in the changelog, update the
    Unreleased section of ``HISTORY.rst``.
-5. If this is your first contribution, don't forget to leave your name in
-   the ``AUTHORS.rst`` file.
 
 Create a New Release
 --------------------
