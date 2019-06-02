@@ -16,9 +16,8 @@ setup(
     name="deezer-python",
     version=version,
     description="A friendly wrapper library for the Deezer API",
-    long_description=(
-        read("README.rst") + "\n\n" + read("HISTORY.rst") + "\n\n" + read("AUTHORS.rst")
-    ),
+    long_description=read("README.md"),
+    long_description_content_type="text/markdown",
     author="Bruno Alla",
     author_email="alla.brunoo@gmail.com",
     url="https://github.com/browniebroke/deezer-python",
