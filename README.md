@@ -43,3 +43,9 @@ Ready for more? The detailed [API
 reference](https://deezer-python.readthedocs.io/api_reference/toc.html)
 is available in the
 [documentation](http://deezer-python.readthedocs.io/) on RTD.
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://allcontributors.org) specification.
+Contributions of any kind are welcome!
