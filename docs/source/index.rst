@@ -100,6 +100,5 @@ Contents:
 
     api_reference/toc
     contributing
-    authors
     changelog
     license
