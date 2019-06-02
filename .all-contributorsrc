@@ -1,6 +1,22 @@
 {
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "contributorsPerLine": 7,
-  "contributors": []
+  "contributors": [
+    {
+      "login": "browniebroke",
+      "name": "Bruno Alla",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/861044?v=4",
+      "profile": "https://www.twitter.com/_BrunoAlla",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "projectName": "deezer-python",
+  "projectOwner": "browniebroke",
+  "repoType": "github",
+  "repoHost": "https://github.com"
 }
