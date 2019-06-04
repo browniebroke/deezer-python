@@ -96,6 +96,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jnt",
+      "name": "jnt",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/259659?v=4",
+      "profile": "https://github.com/jnt",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "projectName": "deezer-python",
