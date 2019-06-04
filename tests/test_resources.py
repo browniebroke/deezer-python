@@ -208,3 +208,53 @@ class TestResources(BaseTestCaseWithVcr):
         self.assertIsInstance(playlist, deezer.resources.Playlist)
         self.assertEqual(repr(playlist), "<Playlist: Les titres du moment>")
         self.assertEqual(type(chart.iter_playlists()), GeneratorType)
+
+    def test_user_albums(self):
+        """
+        Test albums method of user resource
+        """
+        user = self.client.get_user(359622)
+        albums = user.get_albums()
+        self.assertIsInstance(albums, list)
+        album = albums[0]
+        self.assertIsInstance(album, deezer.resources.Album)
+        self.assertEqual(repr(album), "<Album: A Century Of Movie Soundtracks Vol. 2>")
+        self.assertEqual(type(user.iter_albums()), GeneratorType)
+
+    def test_user_artists(self):
+        """
+        Test artists method of user resource
+        """
+        user = self.client.get_user(359622)
+        artists = user.get_artists()
+        self.assertIsInstance(artists, list)
+        artist = artists[0]
+        self.assertIsInstance(artist, deezer.resources.Artist)
+        self.assertEqual(repr(artist), "<Artist: Wax Tailor>")
+        self.assertEqual(type(user.iter_artists()), GeneratorType)
+
+    def test_user_playlists(self):
+        """
+        Test playlists method of user resource
+        """
+        user = self.client.get_user(359622)
+        playlists = user.get_playlists()
+        self.assertIsInstance(playlists, list)
+        playlist = playlists[0]
+        self.assertIsInstance(playlist, deezer.resources.Playlist)
+        self.assertEqual(repr(playlist), "<Playlist: AC/DC>")
+        self.assertEqual(type(user.iter_playlists()), GeneratorType)
+
+    def test_user_tracks(self):
+        """
+        Test tracks method of user resource
+        """
+        user = self.client.get_user(353978015)
+        tracks = user.get_tracks()
+        self.assertIsInstance(tracks, list)
+        track = tracks[0]
+        self.assertIsInstance(track, deezer.resources.Track)
+        self.assertEqual(
+            repr(track), "<Track: Prélude a l'après-midi d'un faune, L. 86>"
+        )
+        self.assertEqual(type(user.iter_tracks()), GeneratorType)
