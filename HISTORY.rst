@@ -3,6 +3,11 @@
 History
 =======
 
+unreleased
+----------
+
+- Add user's favorite albums, artists, tracks and playlists in user resource.
+
 1.1.2 (2019-06-02)
 ------------------
 
