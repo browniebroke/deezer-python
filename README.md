@@ -1,7 +1,7 @@
 Deezer Python Client
 ====================
 
-[![Build status](https://img.shields.io/travis/browniebroke/deezer-python.svg?style=flat-square&logo=travis)](https://travis-ci.org/browniebroke/deezer-python)
+[![Build status](https://img.shields.io/travis/com/browniebroke/deezer-python.svg?style=flat-square&logo=travis)](https://travis-ci.com/browniebroke/deezer-python)
 [![Build status](https://img.shields.io/appveyor/ci/browniebroke/deezer-python.svg?logo=appveyor&style=flat-square)](https://ci.appveyor.com/project/browniebroke/deezer-python)
 [![Test coverage percentage](https://img.shields.io/codecov/c/github/browniebroke/deezer-python.svg?logo=codecov&style=flat-square)](https://codecov.io/gh/browniebroke/deezer-python)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability)](https://codeclimate.com/github/browniebroke/deezer-python/maintainability)
