@@ -1,4 +1,4 @@
-name: Deezer Python SDK
+name: Github Build
 
 on: [push]
 
