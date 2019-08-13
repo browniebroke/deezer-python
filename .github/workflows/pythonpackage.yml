@@ -1,4 +1,4 @@
-name: Github Build
+name: Github Workflow
 
 on: [push]
 
@@ -10,9 +10,9 @@ jobs:
       max-parallel: 4
       matrix:
         python-version:
-          # - 3.5
+          - 3.5
           - 3.6
-          # - 3.7
+          - 3.7
           # - 3.8
         os:
           - ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v1
       with:
         version: ${{ matrix.python-version }}
