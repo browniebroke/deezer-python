@@ -20,8 +20,7 @@ Installation
 ------------
 
 The package is published on
-[PyPI](https://pypi.org/project/deezer-python/) and can be installed by
-running:
+[PyPI](https://pypi.org/project/deezer-python/) and can be installed by running:
 
     pip install deezer-python
 
