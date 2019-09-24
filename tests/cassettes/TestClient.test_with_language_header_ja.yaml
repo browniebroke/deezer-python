@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Accept-Language: [ja]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: https://api.deezer.com/genre/52
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7WS3WrEIBCF38XrjRpdTZtnEYo/k9SyZiUmYLf03au2sC2UvYsyh5GZ44cyH8g7
+        NAp2QosOgEakdk6dqAq26sSr2r7lpqoZWpXfq8Z95+iEorfbvtaLXrctplERRXT02AHcYMX2GhSZ
+        YVlBEcEU8UHPcLe9pKAvlz9m65bUtbaE3a2c8ALbjzEpEnyyigB1IKnumZ2khYlacFzaZ8MHObAz
+        PxeYzEJ2tK3uiXZl47c4/0IHcH4PR7CZoLnEQ7rx8yHPpjSXeIjOh3x4X3i5yr/s7T3WGWmTgD6/
+        ANJmOVCFAgAA
+    headers:
+      Content-Encoding: [gzip]
+      Content-Length: ['237']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 24 Sep 2019 15:20:10 GMT']
+      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
+          STA"]
+      Server: [Apache]
+      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fr90cf8af99ce975a3531b5dcc86a19a3ba2ecab;
+          expires=Sun, 22-Mar-2020 15:20:10 GMT; Max-Age=15552000; path=/; domain=.deezer.com;
+          secure']
+      Vary: [Accept-Encoding]
+      X-Host: [blm-web-115]
+    status: {code: 200, message: OK}
+version: 1

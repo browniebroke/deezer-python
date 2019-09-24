@@ -233,3 +233,19 @@ class TestClient(BaseTestCaseWithVcr):
         self.assertIsInstance(result, list)
         self.assertEqual(result[0].title, "The joke")
         self.assertIsInstance(result[0], deezer.resources.Track)
+
+    def test_with_language_header_fr(self):
+        """Test by adding accept language headers"""
+        genre = self.client_fr.get_genre(52)
+        self.assertIsInstance(genre, deezer.resources.Genre)
+        self.assertEqual(genre.name, "Chanson fran\u00e7aise")
+        self.assertNotEqual(genre.name, "French Chanson")
+
+    def test_with_language_header_ja(self):
+        """Test by adding accept language headers"""
+        genre = self.client_ja.get_genre(52)
+        self.assertIsInstance(genre, deezer.resources.Genre)
+        self.assertEqual(
+            genre.name, "\u30d5\u30ec\u30f3\u30c1\u30fb\u30b7\u30e3\u30f3\u30bd\u30f3"
+        )
+        self.assertNotEqual(genre.name, "French Chanson")
