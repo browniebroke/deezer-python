@@ -23,6 +23,12 @@ class Client:
 
     This client provides several method to retrieve the content of most
     sort of Deezer objects, based on their json structure.
+
+    Headers can be forced by using the ``headers`` kwarg.
+    For example, use ``Accept-Language`` header to force the output language.
+
+        >>> import deezer
+        >>> client = deezer.Client(headers={'Accept-Language': 'fr'})
     """
 
     use_ssl = True
@@ -53,6 +59,10 @@ class Client:
         # Do not compress the response: to be readable in tests (cassettes)
         if kwargs.get("do_not_compress_reponse"):
             self.session.headers.update({"Accept-Encoding": "identity"})
+
+        # Headers
+        if kwargs.get("headers"):
+            self.session.headers.update(kwargs.get("headers"))
 
         self.options = kwargs
         self._authorize_url = None
