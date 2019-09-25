@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.22.0
+    method: GET
+    uri: https://api.deezer.com/genre/-1
+  response:
+    body:
+      string: '{"error":{"type":"ParameterException","message":"Wrong parameter","code":500}}'
+    headers:
+      Content-Length:
+      - '78'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 25 Sep 2019 21:04:30 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr9bff60c8f2d435cf52f5787b759ec66b31db95; expires=Mon,
+        23-Mar-2020 21:04:30 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Host:
+      - blm-web-107
+    status:
+      code: 200
+      message: OK
+version: 1

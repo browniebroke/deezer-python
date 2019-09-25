@@ -145,7 +145,10 @@ class Client:
         """
         url = self.object_url(object_t, object_id, relation, **kwargs)
         response = self.session.get(url)
-        return self._process_json(response.json(), parent)
+        json = response.json()
+        if "error" in json:
+            raise ValueError("Invalid API request for %s %s" % (object_t, object_id))
+        return self._process_json(json, parent)
 
     def get_chart(self, relation=None, index=0, limit=10, **kwargs):
         """

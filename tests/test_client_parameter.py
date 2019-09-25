@@ -1,3 +1,4 @@
+import pytest
 import deezer
 from .base import BaseTestCaseWithVcr
 
@@ -67,20 +68,40 @@ class TestClient(BaseTestCaseWithVcr):
         album = self.client.get_album(302127)
         self.assertIsInstance(album, deezer.resources.Album)
 
+    def test_no_album_raise(self):
+        """Test method get_album for invalid value"""
+        with pytest.raises(ValueError):
+            self.client.get_album(-1)
+
     def test_get_artist(self):
         """Test methods to get an artist"""
         artist = self.client.get_artist(27)
         self.assertIsInstance(artist, deezer.resources.Artist)
+
+    def test_no_artist_raise(self):
+        """Test method get_artist for invalid value"""
+        with pytest.raises(ValueError):
+            self.client.get_artist(-1)
 
     def test_get_comment(self):
         """Test methods to get a comment"""
         comment = self.client.get_comment(2772704)
         self.assertIsInstance(comment, deezer.resources.Comment)
 
+    def test_no_comment_raise(self):
+        """Test method get_comment for invalid value"""
+        with pytest.raises(ValueError):
+            self.client.get_comment(-1)
+
     def test_get_genre(self):
         """Test methods to get a genre"""
         genre = self.client.get_genre(106)
         self.assertIsInstance(genre, deezer.resources.Genre)
+
+    def test_no_genre_raise(self):
+        """Test method get_genre for invalid value"""
+        with pytest.raises(ValueError):
+            self.client.get_genre(-1)
 
     def test_get_genres(self):
         """Test methods to get several genres"""
@@ -93,10 +114,20 @@ class TestClient(BaseTestCaseWithVcr):
         playlist = self.client.get_playlist(908622995)
         self.assertIsInstance(playlist, deezer.resources.Playlist)
 
+    def test_no_playlist_raise(self):
+        """Test method get_playlist for invalid value"""
+        with pytest.raises(ValueError):
+            self.client.get_playlist(-1)
+
     def test_get_radio(self):
         """Test methods to get a radio"""
         radio = self.client.get_radio(23261)
         self.assertIsInstance(radio, deezer.resources.Radio)
+
+    def test_no_radio_raise(self):
+        """Test method get_radio for invalid value"""
+        with pytest.raises(ValueError):
+            self.client.get_radio(-1)
 
     def test_get_radios(self):
         """Test methods to get a radios"""
@@ -109,10 +140,20 @@ class TestClient(BaseTestCaseWithVcr):
         track = self.client.get_track(3135556)
         self.assertIsInstance(track, deezer.resources.Track)
 
+    def test_no_track_raise(self):
+        """Test method get_track for invalid value"""
+        with pytest.raises(ValueError):
+            self.client.get_track(-1)
+
     def test_get_user(self):
         """Test methods to get a user"""
         user = self.client.get_user(359622)
         self.assertIsInstance(user, deezer.resources.User)
+
+    def test_no_user_raise(self):
+        """Test method get_user for invalid value"""
+        with pytest.raises(ValueError):
+            self.client.get_user(-1)
 
     def test_chart(self):
         self.assertEqual(
