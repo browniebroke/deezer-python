@@ -1,6 +1,19 @@
 language: python
 
-matrix:
+install:
+  - pip install codecov tox
+
+script:
+  - tox --recreate
+
+cache:
+  directories:
+    - .tox
+
+after_success:
+  - codecov -e TOXENV
+
+jobs:
   include:
     - python: 3.5
       env: TOXENV=py35
@@ -20,28 +33,16 @@ matrix:
       dist: xenial
     - python: pypy3
       env: TOXENV=pypy3
-
-install:
-  - pip install codecov tox
-
-script:
-  - tox --recreate
-
-cache:
-  directories:
-    - .tox
-
-after_success:
-  - codecov -e TOXENV
-
-deploy:
-  provider: pypi
-  user: Bruno.Alla
-  distributions: bdist_wheel sdist
-  on:
-    branch: master
-    repo: browniebroke/deezer-python
-    tags: true
-    condition: $TOXENV = py36
-  password:
-    secure: "dkOdaaMIL9OBgwx36Vs/xanu9XTco/mFo5aK+t8rCfFV5Moe7eq2HudIDBw3gnEdxwAz3nxienUoIIMoNb6y7QFgRrNkFPpoGaqt73D4qXInQpJpYHVBlUfE/owFwx4q4Nqam6nd3J3Kyh2xeSGY3c2JlPdUZAv2yv/piNclbyQ="
+    - stage: deploy
+      python: 3.6
+      script: skip
+      deploy:
+        provider: pypi
+        user: Bruno.Alla
+        distributions: bdist_wheel sdist
+        on:
+          branch: master
+          repo: browniebroke/deezer-python
+          tags: true
+        password:
+          secure: "dkOdaaMIL9OBgwx36Vs/xanu9XTco/mFo5aK+t8rCfFV5Moe7eq2HudIDBw3gnEdxwAz3nxienUoIIMoNb6y7QFgRrNkFPpoGaqt73D4qXInQpJpYHVBlUfE/owFwx4q4Nqam6nd3J3Kyh2xeSGY3c2JlPdUZAv2yv/piNclbyQ="
