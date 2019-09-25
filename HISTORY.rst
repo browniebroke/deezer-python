@@ -3,8 +3,8 @@
 History
 =======
 
-unreleased
-----------
+1.2.0 (2019-09-25)
+------------------
 
 - Add user's favorite albums, artists, tracks and playlists in user resource.
 - Add ``headers`` kwarg in Client to force session headers.
