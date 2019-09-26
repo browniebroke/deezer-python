@@ -7,7 +7,7 @@ from urllib.parse import urlencode
 
 from deezer.utils import SortedDict
 from deezer.resources import Album, Artist, Comment, Genre
-from deezer.resources import Chart, Resource
+from deezer.resources import Chart
 from deezer.resources import Playlist, Radio, Track, User
 
 
@@ -90,9 +90,9 @@ class Client:
             result[parent.type] = parent
 
         if "type" in result:
-            object_class = self.objects_types.get(result["type"], Resource)
+            object_class = self.objects_types[result["type"]]
         else:
-            object_class = self.objects_types.get(parent, Resource)
+            object_class = self.objects_types[parent]
         return object_class(self, result)
 
     @property
@@ -147,7 +147,9 @@ class Client:
         response = self.session.get(url)
         json = response.json()
         if "error" in json:
-            raise ValueError("Invalid API request for %s %s" % (object_t, object_id))
+            raise ValueError(
+                "API request return error for object: %s id: %s" % (object_t, object_id)
+            )
         return self._process_json(json, parent)
 
     def get_chart(self, relation=None, index=0, limit=10, **kwargs):
