@@ -271,7 +271,8 @@ class Client:
         >>> client.advanced_search({"artist": "Daft Punk", "album": "Homework"},
         ...                        relation="track")
         """
-        assert isinstance(terms, dict), "terms must be a dict"
+        if not isinstance(terms, dict):
+            raise TypeError("terms must be a dict")
         # terms are sorted (for consistent tests between Python < 3.7 and >= 3.7)
         query = " ".join(sorted(['{}:"{}"'.format(k, v) for (k, v) in terms.items()]))
         return self.get_object(
