@@ -74,10 +74,11 @@ class Resource:
     def get_artist(self):
         """
         :returns: the :mod:`Artist <deezer.resources.Artist>` of the resource
-        :raises AssertionError: if the object is not album or track
+        :raises TypeError: if the object is not album or track
         """
         # pylint: disable=E1101
-        assert isinstance(self, (Album, Track))
+        if not isinstance(self, (Album, Track)):
+            raise TypeError("Is neither an Album or a Track")
         return self.client.get_artist(self.artist.id)
 
 
