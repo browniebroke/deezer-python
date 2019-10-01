@@ -34,7 +34,7 @@ returned by the API.
 
 ``` {.python}
 >>> client = deezer.Client()
->>> client.get_album(12).title
+>>> client.get_album(680407).title
 'Monkey Business'
 ```
 
