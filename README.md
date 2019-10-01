@@ -2,6 +2,7 @@ Deezer Python Client
 ====================
 
 [![Build status](https://img.shields.io/travis/com/browniebroke/deezer-python.svg?style=flat-square&logo=travis)](https://travis-ci.com/browniebroke/deezer-python)
+[![Azure DevOps builds](https://img.shields.io/azure-devops/build/BrownieBroke/BrownieBroke/1?logo=azuredevops&style=flat-square)](https://dev.azure.com/BrownieBroke/BrownieBroke/_build?definitionId=1)
 [![Test coverage percentage](https://img.shields.io/codecov/c/github/browniebroke/deezer-python.svg?logo=codecov&style=flat-square)](https://codecov.io/gh/browniebroke/deezer-python)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability)](https://codeclimate.com/github/browniebroke/deezer-python/maintainability)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
