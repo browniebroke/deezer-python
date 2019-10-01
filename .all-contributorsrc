@@ -106,6 +106,17 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "nrebena",
+      "name": "nrebena",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/49879400?v=4",
+      "profile": "https://github.com/nrebena",
+      "contributions": [
+        "bug",
+        "code",
+        "test"
+      ]
     }
   ],
   "projectName": "deezer-python",
