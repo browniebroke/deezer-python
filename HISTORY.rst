@@ -3,6 +3,11 @@
 History
 =======
 
+unreleased
+----------
+
+- Add Python 3.8 support
+
 1.2.0 (2019-09-25)
 ------------------
 
