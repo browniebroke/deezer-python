@@ -106,6 +106,37 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "nrebena",
+      "name": "nrebena",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/49879400?v=4",
+      "profile": "https://github.com/nrebena",
+      "contributions": [
+        "bug",
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "spvkgn",
+      "name": "Pavel",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4147135?v=4",
+      "profile": "https://github.com/spvkgn",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "sgaist",
+      "name": "Samuel Gaist",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/898010?v=4",
+      "profile": "http://www.idiap.ch || www.edeltech.ch",
+      "contributions": [
+        "code",
+        "test",
+        "security"
+      ]
     }
   ],
   "projectName": "deezer-python",
