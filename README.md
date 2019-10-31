@@ -32,7 +32,7 @@ no login is required. The objects are translated to python resources,
 which are basically python objects encapsulating the json dictionary
 returned by the API.
 
-``` {.python}
+``` python
 >>> client = deezer.Client()
 >>> client.get_album(680407).title
 'Monkey Business'
