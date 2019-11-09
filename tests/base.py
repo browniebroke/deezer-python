@@ -1,5 +1,6 @@
-import deezer
 import vcr_unittest
+
+import deezer
 
 
 class BaseTestCaseWithVcr(vcr_unittest.VCRTestCase):
