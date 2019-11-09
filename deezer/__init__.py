@@ -5,9 +5,17 @@ do some searches, and build application written in Python on top of it
 
 """
 from deezer.client import Client
-from deezer.resources import Album, Resource, Artist, Playlist
-from deezer.resources import Genre, Track, User, Comment, Radio
-
+from deezer.resources import (
+    Album,
+    Artist,
+    Comment,
+    Genre,
+    Playlist,
+    Radio,
+    Resource,
+    Track,
+    User,
+)
 
 __version__ = "1.2.0"
 __all__ = [

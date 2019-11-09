@@ -2,13 +2,22 @@
 Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
-import requests
 from urllib.parse import urlencode
 
+import requests
+
+from deezer.resources import (
+    Album,
+    Artist,
+    Chart,
+    Comment,
+    Genre,
+    Playlist,
+    Radio,
+    Track,
+    User,
+)
 from deezer.utils import SortedDict
-from deezer.resources import Album, Artist, Comment, Genre
-from deezer.resources import Chart
-from deezer.resources import Playlist, Radio, Track, User
 
 
 class Client:
