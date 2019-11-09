@@ -1,6 +1,6 @@
 -r requirements.txt
 bandit
-black
+black; python_version > '3.5'
 check-manifest
 coverage
 flake8
