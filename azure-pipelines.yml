@@ -1,31 +1,18 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
+# Test package on multiple python version under multiple OS
+# Templating inspired by https://github.com/hugovk/pypistats
 
 jobs:
-- job: 'Test'
-  pool:
-    vmImage: 'ubuntu-16.04' # other options: 'macOS-10.13', 'vs2017-win2016'
-  strategy:
-    matrix:
-      Python35:
-        python.version: '3.5'
-      Python36:
-        python.version: '3.6'
-      Python37:
-        python.version: '3.7'
-      Python38:
-        python.version: '3.8'
-    maxParallel: 2
+  - template: .azure-pipelines/jobs/test.yml
+    parameters:
+      name: Linux
+      vmImage: "Ubuntu-18.04"
 
-  steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '$(python.version)'
-      architecture: 'x64'
-  - script: pip install -r requirements-test.txt
-    displayName: 'Install test dependencies'
-  - script: pytest
-    displayName: 'Run tests'
+  - template: .azure-pipelines/jobs/test.yml
+    parameters:
+      name: macOS
+      vmImage: "xcode9-macos10.13"
+
+  - template: .azure-pipelines/jobs/test.yml
+    parameters:
+      name: Windows
+      vmImage: "vs2017-win2016"
