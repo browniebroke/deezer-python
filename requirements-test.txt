@@ -1,6 +1,6 @@
 -r requirements.txt
 bandit
-black; python_version > '3.5'
+black; python_version > '3.5' and implementation_name != 'pypy'
 check-manifest
 coverage
 flake8
