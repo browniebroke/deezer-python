@@ -1,17 +1,35 @@
 Deezer Python Client
 ====================
 
-[![Build status](https://img.shields.io/travis/com/browniebroke/deezer-python.svg?style=flat-square&logo=travis)](https://travis-ci.com/browniebroke/deezer-python)
-[![Azure DevOps builds](https://img.shields.io/azure-devops/build/BrownieBroke/BrownieBroke/1?logo=azuredevops&style=flat-square)](https://dev.azure.com/BrownieBroke/BrownieBroke/_build?definitionId=1)
-[![Test coverage percentage](https://img.shields.io/codecov/c/github/browniebroke/deezer-python.svg?logo=codecov&style=flat-square)](https://codecov.io/gh/browniebroke/deezer-python)
-[![Maintainability](https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability)](https://codeclimate.com/github/browniebroke/deezer-python/maintainability)
-[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
-
-[![Documentation Status](https://img.shields.io/readthedocs/deezer-python.svg?logo=read-the-docs&style=flat-square)](https://deezer-python.readthedocs.io)
-[![PyPi Status](https://img.shields.io/pypi/v/deezer-python.svg?logo=python&logoColor=fff&style=flat-square)](https://pypi.org/project/deezer-python/)
-![pyversions](https://img.shields.io/pypi/pyversions/deezer-python.svg?style=flat-square)
-![license](https://img.shields.io/pypi/l/deezer-python.svg?style=flat-square)
-[![LoC](https://tokei.rs/b1/github/browniebroke/deezer-python/)](https://github.com/browniebroke/deezer-python)
+<p align="center">
+  <a href="https://travis-ci.com/browniebroke/deezer-python">
+    <img src="https://img.shields.io/travis/com/browniebroke/deezer-python.svg?style=flat-square&amp;logo=travis" alt="Build status">
+  </a>
+  <a href="https://dev.azure.com/BrownieBroke/BrownieBroke/_build?definitionId=1">
+    <img src="https://img.shields.io/azure-devops/build/BrownieBroke/BrownieBroke/1?logo=azuredevops&amp;style=flat-square" alt="Azure DevOps builds">
+  </a>
+  <a href="https://codecov.io/gh/browniebroke/deezer-python">
+    <img src="https://img.shields.io/codecov/c/github/browniebroke/deezer-python.svg?logo=codecov&amp;style=flat-square" alt="Test coverage percentage">
+  </a>
+  <a href="https://codeclimate.com/github/browniebroke/deezer-python/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability" alt="Maintainability"></a>
+  <a href="https://github.com/ambv/black">
+    <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="black">
+  </a>
+</p>
+<p align="center">
+  <a href="https://deezer-python.readthedocs.io">
+    <img src="https://img.shields.io/readthedocs/deezer-python.svg?logo=read-the-docs&amp;style=flat-square" alt="Documentation Status">
+  </a>
+  <a href="https://pypi.org/project/deezer-python/">
+    <img src="https://img.shields.io/pypi/v/deezer-python.svg?logo=python&amp;logoColor=fff&amp;style=flat-square" alt="PyPi Status">
+  </a>
+  <img src="https://img.shields.io/pypi/pyversions/deezer-python.svg?style=flat-square" alt="pyversions">
+  <img src="https://img.shields.io/pypi/l/deezer-python.svg?style=flat-square" alt="license">
+  <a href="https://github.com/browniebroke/deezer-python">
+    <img src="https://tokei.rs/b1/github/browniebroke/deezer-python/" alt="LoC">
+  </a>
+</p>
 
 A friendly wrapper around the [Deezer
 API](http://developers.deezer.com/api).
