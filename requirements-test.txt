@@ -1,7 +1,11 @@
 -r requirements.txt
 bandit
+black
 check-manifest
 coverage
+flake8
+flake8-isort
+isort
 pytest
 pytest-cov
 pytest-sugar

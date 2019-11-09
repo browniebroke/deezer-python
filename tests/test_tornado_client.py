@@ -1,7 +1,7 @@
 import tornado.gen
 import tornado.ioloop
-import vcr_unittest
 
+import vcr_unittest
 from deezer import Album
 from deezer.contrib.tornado import AsyncClient
 

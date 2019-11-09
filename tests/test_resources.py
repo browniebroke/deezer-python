@@ -1,6 +1,7 @@
 from types import GeneratorType
 
 import deezer
+
 from .base import BaseTestCaseWithVcr
 
 

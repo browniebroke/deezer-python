@@ -1,5 +1,7 @@
 import pytest
+
 import deezer
+
 from .base import BaseTestCaseWithVcr
 
 
