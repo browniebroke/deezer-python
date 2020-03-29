@@ -10,7 +10,7 @@ jobs:
   - template: .azure-pipelines/jobs/test.yml
     parameters:
       name: macOS
-      vmImage: "xcode9-macos10.13"
+      vmImage: "macOS-10.14"
 
   - template: .azure-pipelines/jobs/test.yml
     parameters:
