@@ -8,6 +8,9 @@ Deezer Python Client
   <a href="https://dev.azure.com/BrownieBroke/BrownieBroke/_build?definitionId=1">
     <img src="https://img.shields.io/azure-devops/build/BrownieBroke/BrownieBroke/1?logo=azuredevops&amp;style=flat-square" alt="Azure DevOps builds">
   </a>
+  <a href="https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb">
+    <img src="https://mybinder.org/badge_logo.svg" alt="Launch demo on Binder">
+  </a>
   <a href="https://codecov.io/gh/browniebroke/deezer-python">
     <img src="https://img.shields.io/codecov/c/github/browniebroke/deezer-python.svg?logo=codecov&amp;style=flat-square" alt="Test coverage percentage">
   </a>
@@ -28,9 +31,6 @@ Deezer Python Client
   <img src="https://img.shields.io/pypi/l/deezer-python.svg?style=flat-square" alt="license">
   <a href="https://github.com/browniebroke/deezer-python">
     <img src="https://tokei.rs/b1/github/browniebroke/deezer-python/" alt="LoC">
-  </a>
-  <a href="https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb">
-    <img src="https://mybinder.org/badge_logo.svg" alt="Launch demo on Binder">
   </a>
 </p>
 
