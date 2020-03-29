@@ -29,6 +29,9 @@ Deezer Python Client
   <a href="https://github.com/browniebroke/deezer-python">
     <img src="https://tokei.rs/b1/github/browniebroke/deezer-python/" alt="LoC">
   </a>
+  <a href="https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb">
+    <img src="https://mybinder.org/badge_logo.svg" alt="Launch demo on Binder">
+  </a>
 </p>
 
 A friendly wrapper around the [Deezer
