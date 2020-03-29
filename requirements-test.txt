@@ -8,7 +8,6 @@ flake8-isort
 isort
 pytest
 pytest-cov
-pytest-sugar
 tox
 vcrpy
 vcrpy-unittest
