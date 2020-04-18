@@ -41,13 +41,13 @@
 - Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
 - docs: add allcontributors as a contributor [\#56](https://github.com/browniebroke/deezer-python/pull/56) ([allcontributors[bot]](https://github.com/apps/allcontributors))
 - docs: add jnth as a contributor [\#55](https://github.com/browniebroke/deezer-python/pull/55) ([allcontributors[bot]](https://github.com/apps/allcontributors))
-- Create .all-contributorsrc [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.1.2](https://github.com/browniebroke/deezer-python/tree/1.1.2) (2019-06-02)
 
 **Merged pull requests:**
 
 - docs: add browniebroke as a contributor [\#52](https://github.com/browniebroke/deezer-python/pull/52) ([allcontributors[bot]](https://github.com/apps/allcontributors))
+- Create .all-contributorsrc [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.1.0](https://github.com/browniebroke/deezer-python/tree/1.1.0) (2019-05-25)
 
@@ -81,10 +81,6 @@
 - Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
-**Merged pull requests:**
-
-- Add a CI step for check-manifest [\#30](https://github.com/browniebroke/deezer-python/pull/30) ([browniebroke](https://github.com/browniebroke))
-
 ## [0.7.0](https://github.com/browniebroke/deezer-python/tree/0.7.0) (2018-10-03)
 
 **Breaking changes:**
@@ -97,6 +93,7 @@
 
 **Merged pull requests:**
 
+- Add a CI step for check-manifest [\#30](https://github.com/browniebroke/deezer-python/pull/30) ([browniebroke](https://github.com/browniebroke))
 - Update build matrices [\#29](https://github.com/browniebroke/deezer-python/pull/29) ([browniebroke](https://github.com/browniebroke))
 - Appveyor tests [\#25](https://github.com/browniebroke/deezer-python/pull/25) ([browniebroke](https://github.com/browniebroke))
 
