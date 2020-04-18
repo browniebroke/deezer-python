@@ -41,12 +41,12 @@
 - Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
 - docs: add allcontributors as a contributor [\#56](https://github.com/browniebroke/deezer-python/pull/56) ([allcontributors[bot]](https://github.com/apps/allcontributors))
 - docs: add jnth as a contributor [\#55](https://github.com/browniebroke/deezer-python/pull/55) ([allcontributors[bot]](https://github.com/apps/allcontributors))
-- docs: add browniebroke as a contributor [\#52](https://github.com/browniebroke/deezer-python/pull/52) ([allcontributors[bot]](https://github.com/apps/allcontributors))
 
 ## [1.1.2](https://github.com/browniebroke/deezer-python/tree/1.1.2) (2019-06-02)
 
 **Merged pull requests:**
 
+- docs: add browniebroke as a contributor [\#52](https://github.com/browniebroke/deezer-python/pull/52) ([allcontributors[bot]](https://github.com/apps/allcontributors))
 - Create .all-contributorsrc [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.1.0](https://github.com/browniebroke/deezer-python/tree/1.1.0) (2019-05-25)
@@ -67,6 +67,10 @@
 
 - Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
 
+**Implemented enhancements:**
+
+- Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
+
 ## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
 
 **Implemented enhancements:**
@@ -77,7 +81,6 @@
 
 **Implemented enhancements:**
 
-- Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
 - Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
