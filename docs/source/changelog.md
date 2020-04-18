@@ -25,7 +25,6 @@
 - docs: add sgaist as a contributor [\#68](https://github.com/browniebroke/deezer-python/pull/68) ([allcontributors[bot]](https://github.com/apps/allcontributors))
 - docs: add spvkgn as a contributor [\#67](https://github.com/browniebroke/deezer-python/pull/67) ([allcontributors[bot]](https://github.com/apps/allcontributors))
 - docs: add nrebena as a contributor [\#65](https://github.com/browniebroke/deezer-python/pull/65) ([allcontributors[bot]](https://github.com/apps/allcontributors))
-- Fix bandit related errors [\#63](https://github.com/browniebroke/deezer-python/pull/63) ([sgaist](https://github.com/sgaist))
 - Move deploy step to a separate stage on Travis [\#61](https://github.com/browniebroke/deezer-python/pull/61) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.2.0](https://github.com/browniebroke/deezer-python/tree/1.2.0) (2019-09-25)
@@ -37,6 +36,7 @@
 
 **Merged pull requests:**
 
+- Fix bandit related errors [\#63](https://github.com/browniebroke/deezer-python/pull/63) ([sgaist](https://github.com/sgaist))
 - Create pythonpackage.yml to enable GitHub actions [\#58](https://github.com/browniebroke/deezer-python/pull/58) ([browniebroke](https://github.com/browniebroke))
 - Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
 - docs: add allcontributors as a contributor [\#56](https://github.com/browniebroke/deezer-python/pull/56) ([allcontributors[bot]](https://github.com/apps/allcontributors))
