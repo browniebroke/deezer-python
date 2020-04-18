@@ -6,7 +6,7 @@ Deezer python's documentation
 Deezer Python Client
 ====================
 
-|build| |win_build| |coverage| |codeclimate| |black|
+|build| |azure_build| |my_binder| |coverage| |codeclimate| |black|
 
 |docs| |pypi| |pyversions| |license| |loc|
 
@@ -65,10 +65,13 @@ Deezer authentication.
 
 .. |build| image:: https://img.shields.io/travis/browniebroke/deezer-python.svg?style=flat-square&logo=travis
     :target: https://travis-ci.org/browniebroke/deezer-python
-    :alt: Build status
-.. |win_build| image:: https://img.shields.io/appveyor/ci/browniebroke/deezer-python.svg?logo=appveyor&style=flat-square
-    :target: https://ci.appveyor.com/project/browniebroke/deezer-python
-    :alt: Build status
+    :alt: Travis build status
+.. |azure_build| image:: https://img.shields.io/azure-devops/build/BrownieBroke/BrownieBroke/1?logo=azuredevops&amp;style=flat-square
+    :target: https://dev.azure.com/BrownieBroke/BrownieBroke/_build?definitionId=1
+    :alt: Azure build status
+.. |my_binder| image:: https://mybinder.org/badge_logo.svg
+    :target: https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb
+    :alt: Launch demo on Binder
 .. |codeclimate| image:: https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability
    :target: https://codeclimate.com/github/browniebroke/deezer-python/maintainability
    :alt: Maintainability
