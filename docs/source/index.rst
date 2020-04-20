@@ -5,9 +5,6 @@ Deezer-Python: a friendly wrapper around the `Deezer API`_.
 
 .. _Deezer API: http://developers.deezer.com/api
 
-Installation & usage
---------------------
-
 .. toctree::
     :caption: Installation & Usage
     :maxdepth: 2
@@ -16,18 +13,11 @@ Installation & usage
     usage
     asynchronous
 
-API Reference
--------------
-
 .. toctree::
     :caption: API Reference
     :maxdepth: 2
 
     api_reference/toc
-
-Project Info
-------------
-
 
 .. toctree::
     :caption: Project Info
