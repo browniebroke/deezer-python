@@ -90,16 +90,12 @@ Pull Request Guidelines
 -----------------------
 
 Feel free to open the pull request as soon as possible, but please be explicit
-if it's still a work in progress. To be mergeable, pull requests should follow the
-following guidelines:
+if it's still a work in progress, we recommend draft pull requests. Please try
+to:
 
-1. It should include tests for feature or bug fixes.
-2. If it adds functionality, the docs should be updated.
-3. It should work for Python 3.5, 3.6, 3.7, 3.8 and for PyPy3.
-   Check `Travis`_ as well as `AppVeyor`_ and make sure that the tests
-   pass for all supported Python versions.
-4. If your change is worthwhile a mention in the changelog, update the
-   Unreleased section of ``HISTORY.rst``.
+1. include tests for feature or bug fixes.
+2. update the documentation if for any significant API changes.
+3. ensure tests are passing on continuous integration.
 
 Create a New Release
 --------------------

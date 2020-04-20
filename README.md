@@ -47,21 +47,19 @@ The package is published on
 Basic Use
 ---------
 
-So far, you can only retrieve the data for the public objects, for which
-no login is required. The objects are mapped to python resources,
-which are basically python objects encapsulating the json dictionary
-returned by the API.
+Easily query the Deezer API from you Python code. The data returned by the Deezer
+API is mapped to python resources:
 
-``` python
+```python
 >>> client = deezer.Client()
 >>> client.get_album(680407).title
 'Monkey Business'
 ```
 
-Ready for more? The detailed [API
-reference](https://deezer-python.readthedocs.io/api_reference/toc.html)
-is available in the
-[documentation](http://deezer-python.readthedocs.io/) on RTD.
+Ready for more? Look at our whole [documentation](http://deezer-python.readthedocs.io/) 
+on Read The Docs or have a play in pre-populated Jupyter notebook
+[on Binder](https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb).
+
 
 Contributors
 ------------
