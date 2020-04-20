@@ -51,13 +51,13 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.9.0...1.0.0)
 
-### ⚠️ Breaking Changes:
-
-- Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
-
 ## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
+
+### ⚠️ Breaking Changes:
+
+- Change name files names and docs from async [\#28](https://github.com/browniebroke/deezer-python/pull/28) ([horstmannmat](https://github.com/horstmannmat))
 
 ### 🚀 Enhancements:
 
@@ -70,15 +70,12 @@
 ### 🚀 Enhancements:
 
 - Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
+- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
 ## [0.7.0](https://github.com/browniebroke/deezer-python/tree/0.7.0) (2018-10-03)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.6.1...0.7.0)
-
-### ⚠️ Breaking Changes:
-
-- Change name files names and docs from async [\#28](https://github.com/browniebroke/deezer-python/pull/28) ([horstmannmat](https://github.com/horstmannmat))
 
 ### 🚀 Enhancements:
 
@@ -90,7 +87,6 @@
 
 ### 🚀 Enhancements:
 
-- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Add access token to request kwargs [\#20](https://github.com/browniebroke/deezer-python/pull/20) ([sheregeda](https://github.com/sheregeda))
 
 ### 📖 Documentation updates:
@@ -100,6 +96,10 @@
 ## [0.6.0](https://github.com/browniebroke/deezer-python/tree/0.6.0) (2016-12-27)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.5.0...0.6.0)
+
+### ⚠️ Breaking Changes:
+
+- Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
 
 ### 🚀 Enhancements:
 
