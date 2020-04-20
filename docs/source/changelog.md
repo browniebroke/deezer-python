@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/browniebroke/deezer-python/tree/HEAD)
+
+[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.3.0...HEAD)
+
+### 📖 Documentation updates:
+
+- Documentation reworking and explain usage [\#78](https://github.com/browniebroke/deezer-python/pull/78) ([browniebroke](https://github.com/browniebroke))
+- Auto generate changelog [\#75](https://github.com/browniebroke/deezer-python/pull/75) ([browniebroke](https://github.com/browniebroke))
+
 ## [1.3.0](https://github.com/browniebroke/deezer-python/tree/1.3.0) (2019-11-09)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.2.0...1.3.0)
@@ -61,6 +70,8 @@
 ### 🚀 Enhancements:
 
 - Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
+- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
+- Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
 ## [0.7.0](https://github.com/browniebroke/deezer-python/tree/0.7.0) (2018-10-03)
 
@@ -70,17 +81,13 @@
 
 - Change name files names and docs from async [\#28](https://github.com/browniebroke/deezer-python/pull/28) ([horstmannmat](https://github.com/horstmannmat))
 
-### 🚀 Enhancements:
-
-- Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
-
 ## [0.6.1](https://github.com/browniebroke/deezer-python/tree/0.6.1) (2017-06-19)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.6.0...0.6.1)
 
 ### 🚀 Enhancements:
 
-- Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
+- Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
 - Add access token to request kwargs [\#20](https://github.com/browniebroke/deezer-python/pull/20) ([sheregeda](https://github.com/sheregeda))
 
 ### 📖 Documentation updates:
@@ -109,7 +116,6 @@
 
 ### 🚀 Enhancements:
 
-- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Improve chart integration [\#11](https://github.com/browniebroke/deezer-python/pull/11) ([pfouque](https://github.com/pfouque))
 - Add pypy to the build matrix [\#10](https://github.com/browniebroke/deezer-python/pull/10) ([browniebroke](https://github.com/browniebroke))
 - Implement chart methods [\#8](https://github.com/browniebroke/deezer-python/pull/8) ([pfouque](https://github.com/pfouque))
