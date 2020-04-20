@@ -20,6 +20,7 @@ API Reference
 -------------
 
 .. toctree::
+    :caption: API Reference
     :maxdepth: 2
 
     api_reference/toc
@@ -29,6 +30,7 @@ Project Info
 
 
 .. toctree::
+    :caption: Project Info
     :maxdepth: 2
 
     changelog
