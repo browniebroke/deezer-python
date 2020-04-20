@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Generate changelog content
+    - name: Generate changelog
       uses: browniebroke/action-github-changelog-generator@patch-2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
