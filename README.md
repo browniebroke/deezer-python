@@ -34,8 +34,7 @@ Deezer Python Client
   </a>
 </p>
 
-A friendly wrapper around the [Deezer
-API](http://developers.deezer.com/api).
+A friendly Python wrapper around the [Deezer API](http://developers.deezer.com/api).
 
 Installation
 ------------
@@ -48,8 +47,8 @@ The package is published on
 Basic Use
 ---------
 
-So far you can only retrieve the data for the public objects, for which
-no login is required. The objects are translated to python resources,
+So far, you can only retrieve the data for the public objects, for which
+no login is required. The objects are mapped to python resources,
 which are basically python objects encapsulating the json dictionary
 returned by the API.
 
