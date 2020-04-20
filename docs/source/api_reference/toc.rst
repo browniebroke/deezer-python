@@ -1,5 +1,5 @@
-API Reference
-=============
+Reference
+=========
 
 This is the auto-generated documentation for all the main modules
 in the library.
