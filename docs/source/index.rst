@@ -9,6 +9,7 @@ Installation & usage
 --------------------
 
 .. toctree::
+    :caption: Installation & Usage
     :maxdepth: 2
 
     installation
