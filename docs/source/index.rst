@@ -29,6 +29,5 @@ Project Info
 .. toctree::
     :maxdepth: 2
 
-    contributing
     changelog
-    license
+    contributing
