@@ -28,11 +28,11 @@ jobs:
         excludeTags: 0.2.2,0.2.3,1.1.1,1.1.2
         excludeLabels: tests,automation,nochangelog
         output: docs/source/changelog.md
-        breakingLabel: '### ⚠️ Breaking Changes:'
-        enhancementLabel: '### 🚀 Enhancements:'
-        bugsLabel: '### 🐛 Bug Fixes:'
-        removedLabel: '### 🗑 Removals:'
-        addSections: '{"documentation":{"prefix":"### 📖 Documentation updates:","labels":["documentation"]}}'
+        breakingLabel: '### Breaking Changes:'
+        enhancementLabel: '### Enhancements:'
+        bugsLabel: '### Bug Fixes:'
+        removedLabel: '### Removals:'
+        addSections: '{"documentation":{"prefix":"### Documentation updates:","labels":["documentation"]}}'
 
     - name: Commit changes
       run: |
