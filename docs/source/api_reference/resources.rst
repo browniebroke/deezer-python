@@ -1,3 +1,5 @@
+.. _resources-reference:
+
 Resources module
 ----------------
 

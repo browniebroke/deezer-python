@@ -13,6 +13,7 @@ Installation & usage
 
     installation
     usage
+    asynchronous
 
 API Reference
 -------------
