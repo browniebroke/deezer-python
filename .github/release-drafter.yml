@@ -18,7 +18,7 @@ categories:
 exclude-labels:
   - 'tests'
   - 'automation'
-  - 'nochangelog
+  - 'nochangelog'
 
 name-template: 'v$NEXT_PATCH_VERSION'
 
