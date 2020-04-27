@@ -2,7 +2,6 @@ recursive-include deezer *.py
 include *.txt
 include *.rst
 include *.md
-include .coveragerc
 recursive-include deezer *.json
 recursive-include docs *.bat
 recursive-include docs *.placeholder
