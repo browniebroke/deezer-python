@@ -38,10 +38,14 @@ class Client:
 
         >>> import deezer
         >>> client = deezer.Client(headers={'Accept-Language': 'fr'})
-    """
 
-    use_ssl = True
-    host = "api.deezer.com"
+    :param app_id: appliication ID.
+    :param app_secret: application secret.
+    :param access_token: user access token.
+    :param host: override the default hostname.
+    :param use_ssl: connect using HTTP is set to `False`.
+    :param headers: a dictionary of headers to be used.
+    """
 
     objects_types = {
         "album": Album,
@@ -58,11 +62,21 @@ class Client:
         "chart": Chart,
     }
 
-    def __init__(self, **kwargs):
-        super().__init__()
-
-        self.use_ssl = kwargs.get("use_ssl", self.use_ssl)
-        self.host = kwargs.get("host", self.host)
+    def __init__(
+        self,
+        app_id=None,
+        app_secret=None,
+        access_token=None,
+        host="api.deezer.com",
+        use_ssl=True,
+        headers=None,
+        **kwargs
+    ):
+        self.app_id = app_id
+        self.app_secret = app_secret
+        self.access_token = access_token
+        self.use_ssl = use_ssl
+        self.host = host
         self.session = requests.Session()
 
         # Do not compress the response: to be readable in tests (cassettes)
@@ -70,15 +84,11 @@ class Client:
             self.session.headers.update({"Accept-Encoding": "identity"})
 
         # Headers
-        if kwargs.get("headers"):
-            self.session.headers.update(kwargs.get("headers"))
+        if headers:
+            self.session.headers.update(headers)
 
         self.options = kwargs
         self._authorize_url = None
-
-        self.app_id = kwargs.get("app_id")
-        self.app_secret = kwargs.get("app_secret")
-        self.access_token = kwargs.get("access_token")
 
     def _process_json(self, item, parent=None):
         """
