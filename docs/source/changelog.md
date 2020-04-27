@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.3.0...HEAD)
 
+### 🚀 Enhancements:
+
+- Use explicit kwargs for the Client class [\#79](https://github.com/browniebroke/deezer-python/pull/79) ([browniebroke](https://github.com/browniebroke))
+
 ### 📖 Documentation updates:
 
 - Documentation reworking and explain usage [\#78](https://github.com/browniebroke/deezer-python/pull/78) ([browniebroke](https://github.com/browniebroke))
@@ -51,13 +55,13 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.9.0...1.0.0)
 
+### ⚠️ Breaking Changes:
+
+- Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
+
 ## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
-
-### ⚠️ Breaking Changes:
-
-- Change name files names and docs from async [\#28](https://github.com/browniebroke/deezer-python/pull/28) ([horstmannmat](https://github.com/horstmannmat))
 
 ### 🚀 Enhancements:
 
@@ -76,6 +80,10 @@
 ## [0.7.0](https://github.com/browniebroke/deezer-python/tree/0.7.0) (2018-10-03)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.6.1...0.7.0)
+
+### ⚠️ Breaking Changes:
+
+- Change name files names and docs from async [\#28](https://github.com/browniebroke/deezer-python/pull/28) ([horstmannmat](https://github.com/horstmannmat))
 
 ### 🚀 Enhancements:
 
@@ -96,10 +104,6 @@
 ## [0.6.0](https://github.com/browniebroke/deezer-python/tree/0.6.0) (2016-12-27)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.5.0...0.6.0)
-
-### ⚠️ Breaking Changes:
-
-- Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
 
 ### 🚀 Enhancements:
 
