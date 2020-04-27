@@ -167,7 +167,9 @@ class Client:
         json = response.json()
         if "error" in json:
             raise ValueError(
-                "API request return error for object: %s id: %s" % (object_t, object_id)
+                "API request return error for object: {} id: {}".format(
+                    object_t, object_id
+                )
             )
         return self._process_json(json, parent)
 
