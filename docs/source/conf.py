@@ -31,9 +31,10 @@ sys.path.insert(0, os.path.abspath("../.."))
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
-    "sphinx.ext.doctest",
-    "sphinx.ext.todo",
     "sphinx.ext.coverage",
+    "sphinx.ext.doctest",
+    "sphinx.ext.extlinks",
+    "sphinx.ext.todo",
     "recommonmark",
 ]
 
@@ -273,3 +274,6 @@ texinfo_documents = [
 # texinfo_no_detailmenu = False
 
 suppress_warnings = ["image.nonlocal_uri"]
+
+
+extlinks = {"deezer-api": ("https://developers.deezer.com/api/%s", None)}
