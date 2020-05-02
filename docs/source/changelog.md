@@ -8,6 +8,10 @@
 
 - Use explicit kwargs for the Client class [\#79](https://github.com/browniebroke/deezer-python/pull/79) ([browniebroke](https://github.com/browniebroke))
 
+**Deprecated:**
+
+- Deprecate some arguments from the Client class [\#82](https://github.com/browniebroke/deezer-python/pull/82) ([browniebroke](https://github.com/browniebroke))
+
 ### 📖 Documentation updates:
 
 - Documentation reworking and explain usage [\#78](https://github.com/browniebroke/deezer-python/pull/78) ([browniebroke](https://github.com/browniebroke))
@@ -59,13 +63,13 @@
 
 - Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
 
-### 🚀 Enhancements:
-
-- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
-
 ## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
+
+### 🚀 Enhancements:
+
+- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
 
 ## [0.8.0](https://github.com/browniebroke/deezer-python/tree/0.8.0) (2018-10-30)
 
