@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/browniebroke/deezer-python/tree/HEAD)
+## [1.4.0](https://github.com/browniebroke/deezer-python/tree/1.4.0) (2020-05-02)
 
-[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.3.0...HEAD)
+[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.3.0...1.4.0)
 
 ### 🚀 Enhancements:
 
@@ -51,6 +51,10 @@
 
 - Drop support for EOL Python 3.4 [\#47](https://github.com/browniebroke/deezer-python/pull/47) ([hugovk](https://github.com/hugovk))
 
+### 🚀 Enhancements:
+
+- Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
+
 ### 📖 Documentation updates:
 
 - Update template to match filename [\#48](https://github.com/browniebroke/deezer-python/pull/48) ([hugovk](https://github.com/hugovk))
@@ -77,7 +81,6 @@
 
 ### 🚀 Enhancements:
 
-- Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
 - Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
