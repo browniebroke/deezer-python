@@ -64,8 +64,7 @@ class Resource:
         index = 0
         while 1:
             items = self.get_relation(relation, index=index, **kwargs)
-            for item in items:
-                yield (item)
+            yield from items
 
             if len(items) == 0:
                 break
