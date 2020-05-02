@@ -82,7 +82,11 @@ class Resource:
 
 
 class Album(Resource):
-    """To access an album resource."""
+    """
+    To work with an :deezer-api:`album object <album>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
     def get_tracks(self, **kwargs):
         """
@@ -102,7 +106,11 @@ class Album(Resource):
 
 
 class Artist(Resource):
-    """To access an artist."""
+    """
+    To access an :deezer-api:`artist object <artist>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
     def get_top(self, **kwargs):
         """
@@ -152,7 +160,11 @@ class Artist(Resource):
 
 
 class Genre(Resource):
-    """To access a genre."""
+    """
+    To access an :deezer-api:`genre object <genre>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
     def get_artists(self, **kwargs):
         """
@@ -188,7 +200,11 @@ class Genre(Resource):
 
 
 class Track(Resource):
-    """To access a track."""
+    """
+    To access an :deezer-api:`track object <track>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
     def get_album(self):
         """
@@ -198,7 +214,11 @@ class Track(Resource):
 
 
 class User(Resource):
-    """To access a user."""
+    """
+    To access an :deezer-api:`user object <user>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
     def get_albums(self, **kwargs):
         """
@@ -266,15 +286,27 @@ class User(Resource):
 
 
 class Playlist(Resource):
-    """To access a playlist."""
+    """
+    To access an :deezer-api:`playlist object <playlist>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
 
 class Comment(Resource):
-    """To access a comment."""
+    """
+    To access an :deezer-api:`comment object <comment>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
 
 class Radio(Resource):
-    """To access a radio."""
+    """
+    To access an :deezer-api:`radio object <radio>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
     def get_tracks(self, **kwargs):
         """
@@ -294,7 +326,11 @@ class Radio(Resource):
 
 
 class Chart(Resource):
-    """To access charts."""
+    """
+    To access an :deezer-api:`chart object <chart>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
 
     type = "chart"
 
