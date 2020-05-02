@@ -11,6 +11,7 @@
 ### 📖 Documentation updates:
 
 - Documentation reworking and explain usage [\#78](https://github.com/browniebroke/deezer-python/pull/78) ([browniebroke](https://github.com/browniebroke))
+- Auto generate changelog [\#75](https://github.com/browniebroke/deezer-python/pull/75) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.3.0](https://github.com/browniebroke/deezer-python/tree/1.3.0) (2019-11-09)
 
@@ -48,7 +49,6 @@
 
 ### 📖 Documentation updates:
 
-- Auto generate changelog [\#75](https://github.com/browniebroke/deezer-python/pull/75) ([browniebroke](https://github.com/browniebroke))
 - Update template to match filename [\#48](https://github.com/browniebroke/deezer-python/pull/48) ([hugovk](https://github.com/hugovk))
 
 ## [1.0.0](https://github.com/browniebroke/deezer-python/tree/1.0.0) (2019-02-11)
@@ -59,13 +59,13 @@
 
 - Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
 
-## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
-
-[Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
-
 ### 🚀 Enhancements:
 
 - Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
+
+## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
+
+[Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
 
 ## [0.8.0](https://github.com/browniebroke/deezer-python/tree/0.8.0) (2018-10-30)
 
