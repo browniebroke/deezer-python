@@ -67,13 +67,16 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
 
+### 🚀 Enhancements:
+
+- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
+
 ## [0.8.0](https://github.com/browniebroke/deezer-python/tree/0.8.0) (2018-10-30)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.7.0...0.8.0)
 
 ### 🚀 Enhancements:
 
-- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
 - Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
 - Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
@@ -114,10 +117,6 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.4.0...0.5.0)
 
-### 📖 Documentation updates:
-
-- Docs enhancements [\#13](https://github.com/browniebroke/deezer-python/pull/13) ([browniebroke](https://github.com/browniebroke))
-
 ## [0.4.0](https://github.com/browniebroke/deezer-python/tree/0.4.0) (2016-12-08)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.3.0...0.4.0)
@@ -127,6 +126,10 @@
 - Improve chart integration [\#11](https://github.com/browniebroke/deezer-python/pull/11) ([pfouque](https://github.com/pfouque))
 - Add pypy to the build matrix [\#10](https://github.com/browniebroke/deezer-python/pull/10) ([browniebroke](https://github.com/browniebroke))
 - Implement chart methods [\#8](https://github.com/browniebroke/deezer-python/pull/8) ([pfouque](https://github.com/pfouque))
+
+### 📖 Documentation updates:
+
+- Docs enhancements [\#13](https://github.com/browniebroke/deezer-python/pull/13) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.3.0](https://github.com/browniebroke/deezer-python/tree/0.3.0) (2016-11-09)
 
