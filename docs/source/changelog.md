@@ -8,7 +8,7 @@
 
 - Use explicit kwargs for the Client class [\#79](https://github.com/browniebroke/deezer-python/pull/79) ([browniebroke](https://github.com/browniebroke))
 
-**Deprecated:**
+### 🚨 Deprecated:
 
 - Deprecate some arguments from the Client class [\#82](https://github.com/browniebroke/deezer-python/pull/82) ([browniebroke](https://github.com/browniebroke))
 
@@ -51,10 +51,6 @@
 
 - Drop support for EOL Python 3.4 [\#47](https://github.com/browniebroke/deezer-python/pull/47) ([hugovk](https://github.com/hugovk))
 
-### 🚀 Enhancements:
-
-- Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
-
 ### 📖 Documentation updates:
 
 - Update template to match filename [\#48](https://github.com/browniebroke/deezer-python/pull/48) ([hugovk](https://github.com/hugovk))
@@ -71,16 +67,14 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
 
-### 🚀 Enhancements:
-
-- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
-
 ## [0.8.0](https://github.com/browniebroke/deezer-python/tree/0.8.0) (2018-10-30)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.7.0...0.8.0)
 
 ### 🚀 Enhancements:
 
+- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
+- Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
 - Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
