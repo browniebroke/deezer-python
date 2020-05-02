@@ -2,6 +2,9 @@ categories:
   - title: '⚠️ Breaking Changes'
     labels:
       - 'breaking'
+  - title: '🚨 Deprecated'
+    labels:
+      - 'deprecated'
   - title: '🚀 Enhancements'
     labels:
       - 'enhancement'
