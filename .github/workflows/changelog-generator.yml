@@ -29,6 +29,7 @@ jobs:
         excludeLabels: tests,automation,nochangelog
         output: docs/source/changelog.md
         breakingLabel: '### ⚠️ Breaking Changes:'
+        deprecatedLabel: '### 🚨 Deprecated:'
         enhancementLabel: '### 🚀 Enhancements:'
         bugsLabel: '### 🐛 Bug Fixes:'
         removedLabel: '### 🗑 Removals:'
