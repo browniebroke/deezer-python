@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/browniebroke/deezer-python/tree/HEAD)
+
+[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.4.0...HEAD)
+
+### 📖 Documentation updates:
+
+- Improve documentation for resources [\#84](https://github.com/browniebroke/deezer-python/pull/84) ([browniebroke](https://github.com/browniebroke))
+
 ## [1.4.0](https://github.com/browniebroke/deezer-python/tree/1.4.0) (2020-05-02)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.3.0...1.4.0)
@@ -117,6 +125,10 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.4.0...0.5.0)
 
+### 📖 Documentation updates:
+
+- Docs enhancements [\#13](https://github.com/browniebroke/deezer-python/pull/13) ([browniebroke](https://github.com/browniebroke))
+
 ## [0.4.0](https://github.com/browniebroke/deezer-python/tree/0.4.0) (2016-12-08)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.3.0...0.4.0)
@@ -126,10 +138,6 @@
 - Improve chart integration [\#11](https://github.com/browniebroke/deezer-python/pull/11) ([pfouque](https://github.com/pfouque))
 - Add pypy to the build matrix [\#10](https://github.com/browniebroke/deezer-python/pull/10) ([browniebroke](https://github.com/browniebroke))
 - Implement chart methods [\#8](https://github.com/browniebroke/deezer-python/pull/8) ([pfouque](https://github.com/pfouque))
-
-### 📖 Documentation updates:
-
-- Docs enhancements [\#13](https://github.com/browniebroke/deezer-python/pull/13) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.3.0](https://github.com/browniebroke/deezer-python/tree/0.3.0) (2016-11-09)
 
