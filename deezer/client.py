@@ -2,6 +2,7 @@
 Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
+import warnings
 from urllib.parse import urlencode
 
 import requests
@@ -18,6 +19,11 @@ from deezer.resources import (
     User,
 )
 from deezer.utils import SortedDict
+
+DEPRECATED_ARG_MESSAGE = (
+    "The `{arg_name}` keyword argument is deprecated "
+    "and will be removed in the next major release."
+)
 
 
 class Client:
@@ -42,9 +48,14 @@ class Client:
     :param app_id: appliication ID.
     :param app_secret: application secret.
     :param access_token: user access token.
-    :param host: override the default hostname.
-    :param use_ssl: connect using HTTP is set to `False`.
     :param headers: a dictionary of headers to be used.
+
+    .. deprecated:: 1.4.0
+
+    The following parameters will be removed in the next major version:
+
+        * **host** - override the default hostname.
+        * **use_ssl** - connect using HTTP if set to `False`.
     """
 
     objects_types = {
@@ -63,24 +74,27 @@ class Client:
     }
 
     def __init__(
-        self,
-        app_id=None,
-        app_secret=None,
-        access_token=None,
-        host="api.deezer.com",
-        use_ssl=True,
-        headers=None,
-        **kwargs
+        self, app_id=None, app_secret=None, access_token=None, headers=None, **kwargs
     ):
         self.app_id = app_id
         self.app_secret = app_secret
         self.access_token = access_token
-        self.use_ssl = use_ssl
-        self.host = host
+        self.host = "api.deezer.com"
+        self.use_ssl = True
         self.session = requests.Session()
 
-        # Do not compress the response: to be readable in tests (cassettes)
+        # Deprecated arguments
+        deprecated_kwargs = ["host", "use_ssl"]
+        for arg_name in deprecated_kwargs:
+            arg_value = kwargs.get(arg_name)
+            if arg_value is not None:
+                warnings.warn(DEPRECATED_ARG_MESSAGE.format(arg_name=arg_name))
+                setattr(self, arg_name, arg_value)
+
         if kwargs.get("do_not_compress_reponse"):
+            warnings.warn(
+                DEPRECATED_ARG_MESSAGE.format(arg_name="do_not_compress_reponse")
+            )
             self.session.headers.update({"Accept-Encoding": "identity"})
 
         # Headers
