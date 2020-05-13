@@ -23,8 +23,6 @@ jobs:
       env: TOXENV=docs
     - python: 3.6
       env: TOXENV=lint
-    - python: 3.6
-      env: TOXENV=check-manifest
     - python: 3.7
       env: TOXENV=py37
       dist: xenial
