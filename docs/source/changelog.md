@@ -67,10 +67,6 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.9.0...1.0.0)
 
-### ⚠️ Breaking Changes:
-
-- Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
-
 ## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
@@ -82,6 +78,10 @@
 ## [0.8.0](https://github.com/browniebroke/deezer-python/tree/0.8.0) (2018-10-30)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.7.0...0.8.0)
+
+### ⚠️ Breaking Changes:
+
+- Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
 
 ### 🚀 Enhancements:
 
