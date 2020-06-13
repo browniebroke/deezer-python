@@ -6,6 +6,7 @@
 
 ### 📖 Documentation updates:
 
+- Migrate most of the docs to Markdown with MyST [\#85](https://github.com/browniebroke/deezer-python/pull/85) ([browniebroke](https://github.com/browniebroke))
 - Improve documentation for resources [\#84](https://github.com/browniebroke/deezer-python/pull/84) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.4.0](https://github.com/browniebroke/deezer-python/tree/1.4.0) (2020-05-02)
@@ -97,10 +98,6 @@
 
 - Change name files names and docs from async [\#28](https://github.com/browniebroke/deezer-python/pull/28) ([horstmannmat](https://github.com/horstmannmat))
 
-### 🚀 Enhancements:
-
-- Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
-
 ## [0.6.1](https://github.com/browniebroke/deezer-python/tree/0.6.1) (2017-06-19)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.6.0...0.6.1)
@@ -124,6 +121,10 @@
 ## [0.5.0](https://github.com/browniebroke/deezer-python/tree/0.5.0) (2016-12-26)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.4.0...0.5.0)
+
+### 🚀 Enhancements:
+
+- Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
 
 ### 📖 Documentation updates:
 
