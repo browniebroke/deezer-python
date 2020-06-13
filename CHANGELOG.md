@@ -98,6 +98,10 @@
 
 - Change name files names and docs from async [\#28](https://github.com/browniebroke/deezer-python/pull/28) ([horstmannmat](https://github.com/horstmannmat))
 
+### 🚀 Enhancements:
+
+- Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
+
 ## [0.6.1](https://github.com/browniebroke/deezer-python/tree/0.6.1) (2017-06-19)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.6.0...0.6.1)
@@ -121,10 +125,6 @@
 ## [0.5.0](https://github.com/browniebroke/deezer-python/tree/0.5.0) (2016-12-26)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.4.0...0.5.0)
-
-### 🚀 Enhancements:
-
-- Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
 
 ### 📖 Documentation updates:
 
