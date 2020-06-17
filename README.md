@@ -5,11 +5,8 @@ Deezer Python Client
   <a href="https://github.com/browniebroke/deezer-python/actions?query=workflow%3A&quot;Run+Tests&quot;">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/browniebroke/deezer-python/Run Tests?label=Test&logo=github&style=flat-square">
   </a>
-  <a href="https://dev.azure.com/BrownieBroke/BrownieBroke/_build?definitionId=1">
-    <img src="https://img.shields.io/azure-devops/build/BrownieBroke/BrownieBroke/1?logo=azuredevops&amp;style=flat-square" alt="Azure DevOps builds">
-  </a>
-  <a href="https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb">
-    <img src="https://mybinder.org/badge_logo.svg" alt="Launch demo on Binder">
+  <a href="https://deezer-python.readthedocs.io">
+    <img src="https://img.shields.io/readthedocs/deezer-python.svg?logo=read-the-docs&amp;style=flat-square" alt="Documentation Status">
   </a>
   <a href="https://codecov.io/gh/browniebroke/deezer-python">
     <img src="https://img.shields.io/codecov/c/github/browniebroke/deezer-python.svg?logo=codecov&amp;style=flat-square" alt="Test coverage percentage">
@@ -17,12 +14,12 @@ Deezer Python Client
   <a href="https://codeclimate.com/github/browniebroke/deezer-python/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability" alt="Maintainability"></a>
   <a href="https://github.com/ambv/black">
-    <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="black">
+    <img src="https://img.shields.io/badge/code%20style-black-000000.svg?amp;style=flat-square" alt="black">
   </a>
 </p>
 <p align="center">
-  <a href="https://deezer-python.readthedocs.io">
-    <img src="https://img.shields.io/readthedocs/deezer-python.svg?logo=read-the-docs&amp;style=flat-square" alt="Documentation Status">
+  <a href="https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb">
+    <img src="https://mybinder.org/badge_logo.svg" alt="Launch demo on Binder">
   </a>
   <a href="https://pypi.org/project/deezer-python/">
     <img src="https://img.shields.io/pypi/v/deezer-python.svg?logo=python&amp;logoColor=fff&amp;style=flat-square" alt="PyPi Status">
