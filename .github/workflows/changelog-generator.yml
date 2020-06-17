@@ -26,14 +26,14 @@ jobs:
         prWoLabels: false
         compareLink: true
         excludeTags: 0.2.2,0.2.3,1.1.1,1.1.2
-        excludeLabels: tests,automation,nochangelog
+        excludeLabels: automation,dependencies,nochangelog
         output: CHANGELOG.md
-        breakingLabel: '### ⚠️ Breaking Changes:'
-        deprecatedLabel: '### 🚨 Deprecated:'
+        breakingLabel: '### 💥 Breaking Changes:'
+        deprecatedLabel: '### ⚠️ Deprecations:'
         enhancementLabel: '### 🚀 Enhancements:'
         bugsLabel: '### 🐛 Bug Fixes:'
-        removedLabel: '### 🗑 Removals:'
-        addSections: '{"documentation":{"prefix":"### 📖 Documentation updates:","labels":["documentation"]}}'
+        removedLabel: '### 🔥 Removals:'
+        addSections: '{"documentation":{"prefix":"### 📖 Documentation updates:","labels":["documentation"]},"tests":{"prefix":"### ✅ Testing:","labels":["tests"]}}'
 
     - name: Commit changes
       run: |
