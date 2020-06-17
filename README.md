@@ -2,8 +2,8 @@ Deezer Python Client
 ====================
 
 <p align="center">
-  <a href="https://travis-ci.com/browniebroke/deezer-python">
-    <img src="https://img.shields.io/travis/com/browniebroke/deezer-python.svg?style=flat-square&amp;logo=travis" alt="Build status">
+  <a href="https://github.com/browniebroke/deezer-python/actions?query=workflow%3A&quot;Run+Tests&quot;">
+    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/browniebroke/deezer-python/Run Tests?label=Test&logo=github&style=flat-square">
   </a>
   <a href="https://dev.azure.com/BrownieBroke/BrownieBroke/_build?definitionId=1">
     <img src="https://img.shields.io/azure-devops/build/BrownieBroke/BrownieBroke/1?logo=azuredevops&amp;style=flat-square" alt="Azure DevOps builds">
@@ -56,7 +56,7 @@ API is mapped to python resources:
 'Monkey Business'
 ```
 
-Ready for more? Look at our whole [documentation](http://deezer-python.readthedocs.io/) 
+Ready for more? Look at our whole [documentation](http://deezer-python.readthedocs.io/)
 on Read The Docs or have a play in pre-populated Jupyter notebook
 [on Binder](https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb).
 
