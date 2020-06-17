@@ -8,6 +8,7 @@ flake8-isort
 isort
 pytest
 pytest-cov
+pyupgrade; python_version > '3.5'
 tox
 vcrpy
 vcrpy-unittest
