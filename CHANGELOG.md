@@ -17,10 +17,6 @@
 
 - Use explicit kwargs for the Client class [\#79](https://github.com/browniebroke/deezer-python/pull/79) ([browniebroke](https://github.com/browniebroke))
 
-### 🚨 Deprecated:
-
-- Deprecate some arguments from the Client class [\#82](https://github.com/browniebroke/deezer-python/pull/82) ([browniebroke](https://github.com/browniebroke))
-
 ### 📖 Documentation updates:
 
 - Documentation reworking and explain usage [\#78](https://github.com/browniebroke/deezer-python/pull/78) ([browniebroke](https://github.com/browniebroke))
