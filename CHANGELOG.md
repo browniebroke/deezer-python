@@ -9,6 +9,10 @@
 - Migrate most of the docs to Markdown with MyST [\#85](https://github.com/browniebroke/deezer-python/pull/85) ([browniebroke](https://github.com/browniebroke))
 - Improve documentation for resources [\#84](https://github.com/browniebroke/deezer-python/pull/84) ([browniebroke](https://github.com/browniebroke))
 
+### ✅ Testing:
+
+- 🛠 Move CI to Github actions [\#86](https://github.com/browniebroke/deezer-python/pull/86) ([browniebroke](https://github.com/browniebroke))
+
 ## [1.4.0](https://github.com/browniebroke/deezer-python/tree/1.4.0) (2020-05-02)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.3.0...1.4.0)
@@ -22,6 +26,12 @@
 - Documentation reworking and explain usage [\#78](https://github.com/browniebroke/deezer-python/pull/78) ([browniebroke](https://github.com/browniebroke))
 - Auto generate changelog [\#75](https://github.com/browniebroke/deezer-python/pull/75) ([browniebroke](https://github.com/browniebroke))
 
+### ✅ Testing:
+
+- Clean-up config for coverage [\#80](https://github.com/browniebroke/deezer-python/pull/80) ([browniebroke](https://github.com/browniebroke))
+- Use Python 3.8 on Travis \(drop the -dev\) [\#77](https://github.com/browniebroke/deezer-python/pull/77) ([browniebroke](https://github.com/browniebroke))
+- Update names in Github action & run on Python 3.8 [\#76](https://github.com/browniebroke/deezer-python/pull/76) ([browniebroke](https://github.com/browniebroke))
+
 ## [1.3.0](https://github.com/browniebroke/deezer-python/tree/1.3.0) (2019-11-09)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.2.0...1.3.0)
@@ -33,6 +43,13 @@
 ### 🐛 Bug Fixes:
 
 - Get method error handling [\#64](https://github.com/browniebroke/deezer-python/pull/64) ([nrebena](https://github.com/nrebena))
+
+### ✅ Testing:
+
+- Add isort [\#72](https://github.com/browniebroke/deezer-python/pull/72) ([browniebroke](https://github.com/browniebroke))
+- Remove appveyor.yml [\#70](https://github.com/browniebroke/deezer-python/pull/70) ([browniebroke](https://github.com/browniebroke))
+- Move deploy step to a separate stage on Travis [\#61](https://github.com/browniebroke/deezer-python/pull/61) ([browniebroke](https://github.com/browniebroke))
+- Create pythonpackage.yml to enable GitHub actions [\#58](https://github.com/browniebroke/deezer-python/pull/58) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.2.0](https://github.com/browniebroke/deezer-python/tree/1.2.0) (2019-09-25)
 
@@ -52,7 +69,7 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.0.0...1.1.0)
 
-### ⚠️ Breaking Changes:
+### 💥 Breaking Changes:
 
 - Drop support for EOL Python 3.4 [\#47](https://github.com/browniebroke/deezer-python/pull/47) ([hugovk](https://github.com/hugovk))
 
@@ -60,11 +77,16 @@
 
 - Update template to match filename [\#48](https://github.com/browniebroke/deezer-python/pull/48) ([hugovk](https://github.com/hugovk))
 
+### ✅ Testing:
+
+- Python 3.7+ support [\#44](https://github.com/browniebroke/deezer-python/pull/44) ([browniebroke](https://github.com/browniebroke))
+- Test with `vcrpy` [\#43](https://github.com/browniebroke/deezer-python/pull/43) ([jnth](https://github.com/jnth))
+
 ## [1.0.0](https://github.com/browniebroke/deezer-python/tree/1.0.0) (2019-02-11)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.9.0...1.0.0)
 
-### ⚠️ Breaking Changes:
+### 💥 Breaking Changes:
 
 - Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
 
@@ -90,13 +112,19 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.6.1...0.7.0)
 
-### ⚠️ Breaking Changes:
+### 💥 Breaking Changes:
 
 - Change name files names and docs from async [\#28](https://github.com/browniebroke/deezer-python/pull/28) ([horstmannmat](https://github.com/horstmannmat))
 
 ### 🚀 Enhancements:
 
 - Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
+
+### ✅ Testing:
+
+- Add a CI step for check-manifest [\#30](https://github.com/browniebroke/deezer-python/pull/30) ([browniebroke](https://github.com/browniebroke))
+- Update build matrices [\#29](https://github.com/browniebroke/deezer-python/pull/29) ([browniebroke](https://github.com/browniebroke))
+- Appveyor tests [\#25](https://github.com/browniebroke/deezer-python/pull/25) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.6.1](https://github.com/browniebroke/deezer-python/tree/0.6.1) (2017-06-19)
 
@@ -126,6 +154,11 @@
 
 - Docs enhancements [\#13](https://github.com/browniebroke/deezer-python/pull/13) ([browniebroke](https://github.com/browniebroke))
 
+### ✅ Testing:
+
+- Run Flake8 on Travis [\#14](https://github.com/browniebroke/deezer-python/pull/14) ([browniebroke](https://github.com/browniebroke))
+- Use tox-travis to integrate environments better [\#12](https://github.com/browniebroke/deezer-python/pull/12) ([browniebroke](https://github.com/browniebroke))
+
 ## [0.4.0](https://github.com/browniebroke/deezer-python/tree/0.4.0) (2016-12-08)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.3.0...0.4.0)
@@ -135,6 +168,12 @@
 - Improve chart integration [\#11](https://github.com/browniebroke/deezer-python/pull/11) ([pfouque](https://github.com/pfouque))
 - Add pypy to the build matrix [\#10](https://github.com/browniebroke/deezer-python/pull/10) ([browniebroke](https://github.com/browniebroke))
 - Implement chart methods [\#8](https://github.com/browniebroke/deezer-python/pull/8) ([pfouque](https://github.com/pfouque))
+
+### ✅ Testing:
+
+- Switch from coveralls to codecov [\#9](https://github.com/browniebroke/deezer-python/pull/9) ([browniebroke](https://github.com/browniebroke))
+- Correct a couple of flake8 warning [\#7](https://github.com/browniebroke/deezer-python/pull/7) ([browniebroke](https://github.com/browniebroke))
+- Add basic flake8 config to setup.cfg [\#6](https://github.com/browniebroke/deezer-python/pull/6) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.3.0](https://github.com/browniebroke/deezer-python/tree/0.3.0) (2016-11-09)
 
