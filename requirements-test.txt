@@ -2,6 +2,7 @@
 bandit
 black; python_version > '3.5' and implementation_name != 'pypy'
 check-manifest
+codecov
 coverage
 flake8
 flake8-isort

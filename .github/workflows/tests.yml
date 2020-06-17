@@ -31,3 +31,5 @@ jobs:
         pip install -r requirements-test.txt
     - name: Test with Pytest
       run: pytest
+    - name: Upload coverage
+      run: codecov -t ${{ secrets.CODECOV_TOKEN }}
