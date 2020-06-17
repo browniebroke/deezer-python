@@ -10,5 +10,6 @@ pytest
 pytest-cov
 pyupgrade; python_version > '3.5'
 tox
+twine
 vcrpy
 vcrpy-unittest
