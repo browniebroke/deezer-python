@@ -31,5 +31,10 @@ jobs:
         pip install -r requirements-test.txt
     - name: Test with Pytest
       run: pytest
-    - name: Upload coverage
-      run: codecov -t ${{ secrets.CODECOV_TOKEN }}
+    - name: Upload coverage report
+      run: codecov
+      env:
+        # Note: pull requests from forks don't have access to secrets
+        # The codecov CLI degrades nicely when coming from the environment
+        # It causes an error if using the -t option
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
