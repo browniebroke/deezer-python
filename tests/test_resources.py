@@ -5,7 +5,7 @@ import deezer
 from .base import BaseTestCaseWithVcr
 
 
-class TestResources(BaseTestCaseWithVcr):
+class TestResource(BaseTestCaseWithVcr):
     def test_resource_relation(self):
         """
         Test passing parent object when using get_relation
@@ -14,6 +14,8 @@ class TestResources(BaseTestCaseWithVcr):
         tracks = album.get_tracks()
         self.assertTrue(tracks[0].album is album)
 
+
+class TestAlbum(BaseTestCaseWithVcr):
     def test_album_attributes(self):
         """
         Test album resource
@@ -39,6 +41,8 @@ class TestResources(BaseTestCaseWithVcr):
         track = list(album.iter_tracks())[0]
         self.assertIsInstance(track, deezer.resources.Track)
 
+
+class TestArtist(BaseTestCaseWithVcr):
     def test_artist_attributes(self):
         """
         Test artist resource
@@ -94,6 +98,8 @@ class TestResources(BaseTestCaseWithVcr):
         self.assertEqual(repr(artist), "<Artist: Justice>")
         self.assertEqual(type(artist.iter_related()), GeneratorType)
 
+
+class TestTrack(BaseTestCaseWithVcr):
     def test_track_attributes(self):
         """
         Test track resource
@@ -109,6 +115,8 @@ class TestResources(BaseTestCaseWithVcr):
         self.assertEqual(repr(artist), "<Artist: Daft Punk>")
         self.assertEqual(repr(album), "<Album: Discovery>")
 
+
+class TestRadio(BaseTestCaseWithVcr):
     def test_radio_attributes(self):
         """
         Test radio resource
@@ -129,6 +137,8 @@ class TestResources(BaseTestCaseWithVcr):
         self.assertIsInstance(track, deezer.resources.Track)
         self.assertEqual(type(radio.iter_tracks()), GeneratorType)
 
+
+class TestGenre(BaseTestCaseWithVcr):
     def test_genre_attributes(self):
         """
         Test genre resource
@@ -162,6 +172,8 @@ class TestResources(BaseTestCaseWithVcr):
         self.assertEqual(repr(radio), "<Radio: Electro Swing>")
         self.assertEqual(type(genre.iter_radios()), GeneratorType)
 
+
+class TestChart(BaseTestCaseWithVcr):
     def test_chart_tracks(self):
         """
         Test tracks method of chart resource
@@ -210,6 +222,8 @@ class TestResources(BaseTestCaseWithVcr):
         self.assertEqual(repr(playlist), "<Playlist: Les titres du moment>")
         self.assertEqual(type(chart.iter_playlists()), GeneratorType)
 
+
+class TestUser(BaseTestCaseWithVcr):
     def test_user_albums(self):
         """
         Test albums method of user resource
