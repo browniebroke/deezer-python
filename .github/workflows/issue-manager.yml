@@ -1,0 +1,22 @@
+# Automatically close issues that have a keyword mark (an HTML comment)
+# in the last comment in the issue, by a group of predefined users, after a custom delay.
+# https://github.com/tiangolo/issue-manager
+#
+# Default to 10 days delay and comment:
+# <!-- issue-manager: answered -->
+
+
+name: Issue Manager
+
+on:
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  issue-manager:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: tiangolo/issue-manager@master
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        config: '{"answered": {}}'
