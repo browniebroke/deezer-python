@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.4.0...HEAD)
 
+### 🚀 Enhancements:
+
+- Add `get\_tracks` and `get\_fans` methods to `Playlist` resources [\#90](https://github.com/browniebroke/deezer-python/pull/90) ([browniebroke](https://github.com/browniebroke))
+
 ### 📖 Documentation updates:
 
 - Migrate most of the docs to Markdown with MyST [\#85](https://github.com/browniebroke/deezer-python/pull/85) ([browniebroke](https://github.com/browniebroke))
@@ -51,7 +55,6 @@
 - Add isort [\#72](https://github.com/browniebroke/deezer-python/pull/72) ([browniebroke](https://github.com/browniebroke))
 - Remove appveyor.yml [\#70](https://github.com/browniebroke/deezer-python/pull/70) ([browniebroke](https://github.com/browniebroke))
 - Move deploy step to a separate stage on Travis [\#61](https://github.com/browniebroke/deezer-python/pull/61) ([browniebroke](https://github.com/browniebroke))
-- Create pythonpackage.yml to enable GitHub actions [\#58](https://github.com/browniebroke/deezer-python/pull/58) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.2.0](https://github.com/browniebroke/deezer-python/tree/1.2.0) (2019-09-25)
 
@@ -66,6 +69,10 @@
 
 - Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
 - Create .config for all-contributors bot [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
+
+### ✅ Testing:
+
+- Create pythonpackage.yml to enable GitHub actions [\#58](https://github.com/browniebroke/deezer-python/pull/58) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.1.0](https://github.com/browniebroke/deezer-python/tree/1.1.0) (2019-05-25)
 
