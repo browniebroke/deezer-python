@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Accept-Language:
+      - fr
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/genre/52
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7WSwWrDMAyGX2X4XNuq0zhrrnsNQ3FtJfWoXRM74LXs3eeEHToYvUVCAsH/8yGh
+        B3GW9K3YkaA9kp58XHRIt/A2TDqoGQA77RKSHYnO5HlaJJecY+oVV1xHxyziHSdmbl7xEcOEirdC
+        cef1+GQ7Ja+v1z9mpMaGRFdhYvZeJxYw/1qT4t4lU2VgUYLeCzNIgwMYtI00x3PTyU4cmkPFydJK
+        CmvQd6A12Wccn+AerZv9NnTRQqn1kn9240arA5RaL+Flo7PvK7Es7V96/orLr6wfQb5/AF3HVF5n
+        AgAA
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '231'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 20:58:03 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr841e38ada3b49a16246d33a56ad063c872255c; expires=Mon,
+        28-Dec-2020 20:58:03 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-103
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1
