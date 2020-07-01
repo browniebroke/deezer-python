@@ -8,6 +8,10 @@
 
 - 📦 Move package metadata to setup.cfg [\#91](https://github.com/browniebroke/deezer-python/pull/91) ([browniebroke](https://github.com/browniebroke))
 
+### ✅ Testing:
+
+- ☂️ Increase test coverage to 100% [\#92](https://github.com/browniebroke/deezer-python/pull/92) ([browniebroke](https://github.com/browniebroke))
+
 ## [1.5.0](https://github.com/browniebroke/deezer-python/tree/1.5.0) (2020-07-01)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.4.0...1.5.0)
@@ -76,6 +80,7 @@
 ### 📖 Documentation updates:
 
 - Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
+- Create .config for all-contributors bot [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 
 ### ✅ Testing:
 
@@ -91,7 +96,6 @@
 
 ### 📖 Documentation updates:
 
-- Create .config for all-contributors bot [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 - Update template to match filename [\#48](https://github.com/browniebroke/deezer-python/pull/48) ([hugovk](https://github.com/hugovk))
 
 ### ✅ Testing:
@@ -121,7 +125,6 @@
 
 ### 🚀 Enhancements:
 
-- Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
 - Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
@@ -135,6 +138,7 @@
 
 ### 🚀 Enhancements:
 
+- Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
 - Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
 
 ### ✅ Testing:
