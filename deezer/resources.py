@@ -292,6 +292,38 @@ class Playlist(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
+    def get_tracks(self, **kwargs):
+        """
+        Get tracks from a playlist.
+
+        :returns: list of :mod:`Track <deezer.resources.Track>` instances
+        """
+        return self.get_relation("tracks", **kwargs)
+
+    def iter_tracks(self, **kwargs):
+        """
+        Iterate over a playlist tracks.
+
+        :returns: iterator of :mod:`Track <deezer.resources.Track>` instances
+        """
+        return self.iter_relation("tracks", **kwargs)
+
+    def get_fans(self, **kwargs):
+        """
+        Get fans from a playlist.
+
+        :returns: list of :mod:`User <deezer.resources.User>` instances
+        """
+        return self.get_relation("fans", **kwargs)
+
+    def iter_fans(self, **kwargs):
+        """
+        Iterate over fans of a playlist.
+
+        :returns: iterator of :mod:`User <deezer.resources.User>` instances
+        """
+        return self.iter_relation("tracks", **kwargs)
+
 
 class Comment(Resource):
     """
