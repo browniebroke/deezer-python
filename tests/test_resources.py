@@ -20,6 +20,7 @@ class TestAlbum:
         album = client.get_album(302127)
         assert hasattr(album, "title")
         assert repr(album) == "<Album: Discovery>"
+
         artist = album.get_artist()
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Daft Punk>"
