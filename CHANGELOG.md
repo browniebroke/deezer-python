@@ -11,6 +11,7 @@
 
 ### ✅ Testing:
 
+- Refactor tests to use the pytest style [\#89](https://github.com/browniebroke/deezer-python/pull/89) ([browniebroke](https://github.com/browniebroke))
 - Split resources tests into multiple classes [\#88](https://github.com/browniebroke/deezer-python/pull/88) ([browniebroke](https://github.com/browniebroke))
 - 🛠 Move CI to Github actions [\#86](https://github.com/browniebroke/deezer-python/pull/86) ([browniebroke](https://github.com/browniebroke))
 
@@ -50,6 +51,7 @@
 - Add isort [\#72](https://github.com/browniebroke/deezer-python/pull/72) ([browniebroke](https://github.com/browniebroke))
 - Remove appveyor.yml [\#70](https://github.com/browniebroke/deezer-python/pull/70) ([browniebroke](https://github.com/browniebroke))
 - Move deploy step to a separate stage on Travis [\#61](https://github.com/browniebroke/deezer-python/pull/61) ([browniebroke](https://github.com/browniebroke))
+- Create pythonpackage.yml to enable GitHub actions [\#58](https://github.com/browniebroke/deezer-python/pull/58) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.2.0](https://github.com/browniebroke/deezer-python/tree/1.2.0) (2019-09-25)
 
@@ -65,10 +67,6 @@
 - Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
 - Create .config for all-contributors bot [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 
-### ✅ Testing:
-
-- Create pythonpackage.yml to enable GitHub actions [\#58](https://github.com/browniebroke/deezer-python/pull/58) ([browniebroke](https://github.com/browniebroke))
-
 ## [1.1.0](https://github.com/browniebroke/deezer-python/tree/1.1.0) (2019-05-25)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.0.0...1.1.0)
@@ -76,10 +74,6 @@
 ### 💥 Breaking Changes:
 
 - Drop support for EOL Python 3.4 [\#47](https://github.com/browniebroke/deezer-python/pull/47) ([hugovk](https://github.com/hugovk))
-
-### 🚀 Enhancements:
-
-- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
 
 ### 📖 Documentation updates:
 
@@ -101,6 +95,10 @@
 ## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
+
+### 🚀 Enhancements:
+
+- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
 
 ## [0.8.0](https://github.com/browniebroke/deezer-python/tree/0.8.0) (2018-10-30)
 
