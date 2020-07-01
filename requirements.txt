@@ -11,6 +11,6 @@ pytest-cov
 pytest-vcr
 pyupgrade; python_version > '3.5'
 tox
-twine
+twine; python_version > '3.5'
 vcrpy
 wheel
