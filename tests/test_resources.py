@@ -1,275 +1,250 @@
 from types import GeneratorType
 
+import pytest
+
 import deezer
 
-from .base import BaseTestCaseWithVcr
+pytestmark = pytest.mark.vcr
 
 
-class TestResource(BaseTestCaseWithVcr):
-    def test_resource_relation(self):
-        """
-        Test passing parent object when using get_relation
-        """
-        album = self.client.get_album(302127)
+class TestResource:
+    def test_resource_relation(self, client):
+        """Test passing parent object when using get_relation."""
+        album = client.get_album(302127)
         tracks = album.get_tracks()
-        self.assertTrue(tracks[0].album is album)
+        assert tracks[0].album is album
 
 
-class TestAlbum(BaseTestCaseWithVcr):
-    def test_album_attributes(self):
-        """
-        Test album resource
-        """
-        album = self.client.get_album(302127)
-        self.assertTrue(hasattr(album, "title"))
-        self.assertEqual(repr(album), "<Album: Discovery>")
+class TestAlbum:
+    def test_album_attributes(self, client):
+        album = client.get_album(302127)
+        assert hasattr(album, "title")
+        assert repr(album) == "<Album: Discovery>"
+
         artist = album.get_artist()
-        self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), "<Artist: Daft Punk>")
+        assert isinstance(artist, deezer.resources.Artist)
+        assert repr(artist) == "<Artist: Daft Punk>"
 
-    def test_album_tracks(self):
-        """
-        Test tracks method of album resource
-        """
-        album = self.client.get_album(302127)
+    def test_album_tracks(self, client):
+        album = client.get_album(302127)
         tracks = album.get_tracks()
-        self.assertIsInstance(tracks, list)
+        assert isinstance(tracks, list)
         track = tracks[0]
-        self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), "<Track: One More Time>")
-        self.assertEqual(type(album.iter_tracks()), GeneratorType)
+        assert isinstance(track, deezer.resources.Track)
+        assert repr(track) == "<Track: One More Time>"
+        assert type(album.iter_tracks()) == GeneratorType
         track = list(album.iter_tracks())[0]
-        self.assertIsInstance(track, deezer.resources.Track)
+        assert isinstance(track, deezer.resources.Track)
 
 
-class TestArtist(BaseTestCaseWithVcr):
-    def test_artist_attributes(self):
-        """
-        Test artist resource
-        """
-        artist = self.client.get_artist(27)
-        self.assertTrue(hasattr(artist, "name"))
-        self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), "<Artist: Daft Punk>")
+class TestArtist:
+    def test_artist_attributes(self, client):
+        artist = client.get_artist(27)
+        assert hasattr(artist, "name")
+        assert isinstance(artist, deezer.resources.Artist)
+        assert repr(artist) == "<Artist: Daft Punk>"
 
-    def test_artist_albums(self):
-        """
-        Test albums method of artist resource
-        """
-        artist = self.client.get_artist(27)
+    def test_artist_albums(self, client):
+        artist = client.get_artist(27)
         albums = artist.get_albums()
-        self.assertIsInstance(albums, list)
+        assert isinstance(albums, list)
         album = albums[0]
-        self.assertIsInstance(album, deezer.resources.Album)
-        self.assertEqual(repr(album), "<Album: Random Access Memories>")
-        self.assertEqual(type(artist.iter_albums()), GeneratorType)
+        assert isinstance(album, deezer.resources.Album)
+        assert repr(album) == "<Album: Random Access Memories>"
+        assert type(artist.iter_albums()) == GeneratorType
 
-    def test_artist_top(self):
+    def test_artist_top(self, client):
         """
         Test top method of artist resource
         """
-        artist = self.client.get_artist(27)
+        artist = client.get_artist(27)
         tracks = artist.get_top()
-        self.assertIsInstance(tracks, list)
+        assert isinstance(tracks, list)
         track = tracks[0]
-        self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), "<Track: Instant Crush>")
+        assert isinstance(track, deezer.resources.Track)
+        assert repr(track) == "<Track: Instant Crush>"
 
-    def test_artist_radio(self):
+    def test_artist_radio(self, client):
         """
         Test radio method of artist resource
         """
-        artist = self.client.get_artist(27)
+        artist = client.get_artist(27)
         tracks = artist.get_radio()
-        self.assertIsInstance(tracks, list)
+        assert isinstance(tracks, list)
         track = tracks[0]
-        self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), "<Track: One More Time>")
+        assert isinstance(track, deezer.resources.Track)
+        assert repr(track) == "<Track: One More Time>"
 
-    def test_artist_related(self):
+    def test_artist_related(self, client):
         """
         Test related method of artist resource
         """
-        artist = self.client.get_artist(27)
+        artist = client.get_artist(27)
         artists = artist.get_related()
-        self.assertIsInstance(artists, list)
+        assert isinstance(artists, list)
         artist = artists[0]
-        self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), "<Artist: Justice>")
-        self.assertEqual(type(artist.iter_related()), GeneratorType)
+        assert isinstance(artist, deezer.resources.Artist)
+        assert repr(artist) == "<Artist: Justice>"
+        assert type(artist.iter_related()) == GeneratorType
 
 
-class TestTrack(BaseTestCaseWithVcr):
-    def test_track_attributes(self):
+class TestTrack:
+    def test_track_attributes(self, client):
         """
         Test track resource
         """
-        track = self.client.get_track(3135556)
+        track = client.get_track(3135556)
         artist = track.get_artist()
         album = track.get_album()
-        self.assertTrue(hasattr(track, "title"))
-        self.assertIsInstance(track, deezer.resources.Track)
-        self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertIsInstance(album, deezer.resources.Album)
-        self.assertEqual(repr(track), "<Track: Harder Better Faster Stronger>")
-        self.assertEqual(repr(artist), "<Artist: Daft Punk>")
-        self.assertEqual(repr(album), "<Album: Discovery>")
+        assert hasattr(track, "title")
+        assert isinstance(track, deezer.resources.Track)
+        assert isinstance(artist, deezer.resources.Artist)
+        assert isinstance(album, deezer.resources.Album)
+        assert repr(track) == "<Track: Harder Better Faster Stronger>"
+        assert repr(artist) == "<Artist: Daft Punk>"
+        assert repr(album) == "<Album: Discovery>"
 
 
-class TestRadio(BaseTestCaseWithVcr):
-    def test_radio_attributes(self):
+class TestRadio:
+    def test_radio_attributes(self, client):
         """
         Test radio resource
         """
-        radio = self.client.get_radio(23261)
-        self.assertTrue(hasattr(radio, "title"))
-        self.assertIsInstance(radio, deezer.resources.Radio)
-        self.assertEqual(repr(radio), "<Radio: Telegraph Classical>")
+        radio = client.get_radio(23261)
+        assert hasattr(radio, "title")
+        assert isinstance(radio, deezer.resources.Radio)
+        assert repr(radio) == "<Radio: Telegraph Classical>"
 
-    def test_radio_tracks(self):
+    def test_radio_tracks(self, client):
         """
         Test tracks method of radio resource
         """
-        radio = self.client.get_radio(23261)
+        radio = client.get_radio(23261)
         tracks = radio.get_tracks()
-        self.assertIsInstance(tracks, list)
+        assert isinstance(tracks, list)
         track = tracks[2]
-        self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(type(radio.iter_tracks()), GeneratorType)
+        assert isinstance(track, deezer.resources.Track)
+        assert type(radio.iter_tracks()) == GeneratorType
 
 
-class TestGenre(BaseTestCaseWithVcr):
-    def test_genre_attributes(self):
-        """
-        Test genre resource
-        """
-        genre = self.client.get_genre(106)
-        self.assertTrue(hasattr(genre, "name"))
-        self.assertIsInstance(genre, deezer.resources.Genre)
-        self.assertEqual(repr(genre), "<Genre: Electro>")
+class TestGenre:
+    def test_genre_attributes(self, client):
+        genre = client.get_genre(106)
+        assert hasattr(genre, "name")
+        assert isinstance(genre, deezer.resources.Genre)
+        assert repr(genre) == "<Genre: Electro>"
 
-    def test_genre_artists(self):
-        """
-        Test artists method of genre resource
-        """
-        genre = self.client.get_genre(106)
+    def test_genre_artists(self, client):
+        genre = client.get_genre(106)
         artists = genre.get_artists()
-        self.assertIsInstance(artists, list)
+        assert isinstance(artists, list)
         artist = artists[0]
-        self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), "<Artist: Clean Bandit>")
-        self.assertEqual(type(genre.iter_artists()), GeneratorType)
+        assert isinstance(artist, deezer.resources.Artist)
+        assert repr(artist) == "<Artist: Clean Bandit>"
+        assert type(genre.iter_artists()) == GeneratorType
 
-    def test_genre_radios(self):
-        """
-        Test radios method of genre resource
-        """
-        genre = self.client.get_genre(106)
+    def test_genre_radios(self, client):
+        genre = client.get_genre(106)
         radios = genre.get_radios()
-        self.assertIsInstance(radios, list)
+        assert isinstance(radios, list)
         radio = radios[0]
-        self.assertIsInstance(radio, deezer.resources.Radio)
-        self.assertEqual(repr(radio), "<Radio: Electro Swing>")
-        self.assertEqual(type(genre.iter_radios()), GeneratorType)
+        assert isinstance(radio, deezer.resources.Radio)
+        assert repr(radio) == "<Radio: Electro Swing>"
+        assert type(genre.iter_radios()) == GeneratorType
 
 
-class TestChart(BaseTestCaseWithVcr):
-    def test_chart_tracks(self):
-        """
-        Test tracks method of chart resource
-        """
-        chart = self.client.get_chart()
+class TestChart:
+    def test_chart_tracks(self, client):
+        chart = client.get_chart()
         tracks = chart.get_tracks()
-        self.assertIsInstance(tracks, list)
+        assert isinstance(tracks, list)
         track = tracks[0]
-        self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(repr(track), "<Track: Khapta>")
-        self.assertEqual(type(chart.iter_tracks()), GeneratorType)
+        assert isinstance(track, deezer.resources.Track)
+        assert repr(track) == "<Track: Khapta>"
+        assert type(chart.iter_tracks()) == GeneratorType
 
-    def test_chart_artists(self):
+    def test_chart_artists(self, client):
         """
         Test artists method of chart resource
         """
-        chart = self.client.get_chart()
+        chart = client.get_chart()
         artists = chart.get_artists()
-        self.assertIsInstance(artists, list)
+        assert isinstance(artists, list)
         artist = artists[0]
-        self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), "<Artist: Lacrim>")
-        self.assertEqual(type(chart.iter_artists()), GeneratorType)
+        assert isinstance(artist, deezer.resources.Artist)
+        assert repr(artist) == "<Artist: Lacrim>"
+        assert type(chart.iter_artists()) == GeneratorType
 
-    def test_chart_albums(self):
+    def test_chart_albums(self, client):
         """
         Test albums method of chart resource
         """
-        chart = self.client.get_chart()
+        chart = client.get_chart()
         albums = chart.get_albums()
-        self.assertIsInstance(albums, list)
+        assert isinstance(albums, list)
         album = albums[0]
-        self.assertIsInstance(album, deezer.resources.Album)
-        self.assertEqual(repr(album), "<Album: Lacrim>")
-        self.assertEqual(type(chart.iter_albums()), GeneratorType)
+        assert isinstance(album, deezer.resources.Album)
+        assert repr(album) == "<Album: Lacrim>"
+        assert type(chart.iter_albums()) == GeneratorType
 
-    def test_chart_playlists(self):
+    def test_chart_playlists(self, client):
         """
         Test playlists method of chart resource
         """
-        chart = self.client.get_chart()
+        chart = client.get_chart()
         playlists = chart.get_playlists()
-        self.assertIsInstance(playlists, list)
+        assert isinstance(playlists, list)
         playlist = playlists[0]
-        self.assertIsInstance(playlist, deezer.resources.Playlist)
-        self.assertEqual(repr(playlist), "<Playlist: Les titres du moment>")
-        self.assertEqual(type(chart.iter_playlists()), GeneratorType)
+        assert isinstance(playlist, deezer.resources.Playlist)
+        assert repr(playlist) == "<Playlist: Les titres du moment>"
+        assert type(chart.iter_playlists()) == GeneratorType
 
 
-class TestUser(BaseTestCaseWithVcr):
-    def test_user_albums(self):
+class TestUser:
+    def test_user_albums(self, client):
         """
         Test albums method of user resource
         """
-        user = self.client.get_user(359622)
+        user = client.get_user(359622)
         albums = user.get_albums()
-        self.assertIsInstance(albums, list)
+        assert isinstance(albums, list)
         album = albums[0]
-        self.assertIsInstance(album, deezer.resources.Album)
-        self.assertEqual(repr(album), "<Album: A Century Of Movie Soundtracks Vol. 2>")
-        self.assertEqual(type(user.iter_albums()), GeneratorType)
+        assert isinstance(album, deezer.resources.Album)
+        assert repr(album) == "<Album: A Century Of Movie Soundtracks Vol. 2>"
+        assert type(user.iter_albums()) == GeneratorType
 
-    def test_user_artists(self):
+    def test_user_artists(self, client):
         """
         Test artists method of user resource
         """
-        user = self.client.get_user(359622)
+        user = client.get_user(359622)
         artists = user.get_artists()
-        self.assertIsInstance(artists, list)
+        assert isinstance(artists, list)
         artist = artists[0]
-        self.assertIsInstance(artist, deezer.resources.Artist)
-        self.assertEqual(repr(artist), "<Artist: Wax Tailor>")
-        self.assertEqual(type(user.iter_artists()), GeneratorType)
+        assert isinstance(artist, deezer.resources.Artist)
+        assert repr(artist) == "<Artist: Wax Tailor>"
+        assert type(user.iter_artists()) == GeneratorType
 
-    def test_user_playlists(self):
+    def test_user_playlists(self, client):
         """
         Test playlists method of user resource
         """
-        user = self.client.get_user(359622)
+        user = client.get_user(359622)
         playlists = user.get_playlists()
-        self.assertIsInstance(playlists, list)
+        assert isinstance(playlists, list)
         playlist = playlists[0]
-        self.assertIsInstance(playlist, deezer.resources.Playlist)
-        self.assertEqual(repr(playlist), "<Playlist: AC/DC>")
-        self.assertEqual(type(user.iter_playlists()), GeneratorType)
+        assert isinstance(playlist, deezer.resources.Playlist)
+        assert repr(playlist) == "<Playlist: AC/DC>"
+        assert type(user.iter_playlists()) == GeneratorType
 
-    def test_user_tracks(self):
+    def test_user_tracks(self, client):
         """
         Test tracks method of user resource
         """
-        user = self.client.get_user(353978015)
+        user = client.get_user(353978015)
         tracks = user.get_tracks()
-        self.assertIsInstance(tracks, list)
+        assert isinstance(tracks, list)
         track = tracks[0]
-        self.assertIsInstance(track, deezer.resources.Track)
-        self.assertEqual(
-            repr(track), "<Track: Prélude a l'après-midi d'un faune, L. 86>"
-        )
-        self.assertEqual(type(user.iter_tracks()), GeneratorType)
+        assert isinstance(track, deezer.resources.Track)
+        assert repr(track) == "<Track: Prélude a l'après-midi d'un faune, L. 86>"
+        assert type(user.iter_tracks()) == GeneratorType
