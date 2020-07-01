@@ -14,3 +14,4 @@ pyupgrade; python_version > '3.5'
 tox
 twine
 vcrpy
+wheel
