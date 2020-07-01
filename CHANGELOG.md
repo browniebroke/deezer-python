@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/browniebroke/deezer-python/tree/HEAD)
+
+[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.5.0...HEAD)
+
+### 🚀 Enhancements:
+
+- 📦 Move package metadata to setup.cfg [\#91](https://github.com/browniebroke/deezer-python/pull/91) ([browniebroke](https://github.com/browniebroke))
+
 ## [1.5.0](https://github.com/browniebroke/deezer-python/tree/1.5.0) (2020-07-01)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.4.0...1.5.0)
@@ -68,7 +76,6 @@
 ### 📖 Documentation updates:
 
 - Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
-- Create .config for all-contributors bot [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 
 ### ✅ Testing:
 
@@ -84,6 +91,7 @@
 
 ### 📖 Documentation updates:
 
+- Create .config for all-contributors bot [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 - Update template to match filename [\#48](https://github.com/browniebroke/deezer-python/pull/48) ([hugovk](https://github.com/hugovk))
 
 ### ✅ Testing:
