@@ -1,0 +1,268 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/playlist/12345
+  response:
+    body:
+      string: '{"id":12345,"title":"kid koala","description":"","duration":1471,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":6,"fans":0,"link":"https:\/\/www.deezer.com\/playlist\/12345","share":"https:\/\/www.deezer.com\/playlist\/12345?utm_source=deezer&utm_content=playlist-12345&utm_term=0_1593602308&utm_medium=web","picture":"https:\/\/api.deezer.com\/playlist\/12345\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2-d167d9a9b2f3f49ed72878a00530415b-a9326b9e6cbe4b68b4704bc934adde93-6c6591834fd40903658c7966b6cb0393\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2-d167d9a9b2f3f49ed72878a00530415b-a9326b9e6cbe4b68b4704bc934adde93-6c6591834fd40903658c7966b6cb0393\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2-d167d9a9b2f3f49ed72878a00530415b-a9326b9e6cbe4b68b4704bc934adde93-6c6591834fd40903658c7966b6cb0393\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2-d167d9a9b2f3f49ed72878a00530415b-a9326b9e6cbe4b68b4704bc934adde93-6c6591834fd40903658c7966b6cb0393\/1000x1000-000000-80-0-0.jpg","checksum":"fdba50b82a44d25fc030ea3dc40a39e0","tracklist":"https:\/\/api.deezer.com\/playlist\/12345\/tracks","creation_date":"2013-11-06
+        17:00:00","creator":{"id":7502,"name":"anonymous","tracklist":"https:\/\/api.deezer.com\/user\/7502\/flow","type":"user"},"type":"playlist","tracks":{"data":[{"id":352284,"readable":false,"title":"Skanky
+        Panky","title_short":"Skanky Panky","title_version":"","link":"https:\/\/www.deezer.com\/track\/352284","duration":204,"rank":4,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-4.dzcdn.net\/stream\/c-42cdb1e76407deedcf149ad584aa7901-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":352290,"readable":false,"title":"More
+        Dance Music","title_short":"More Dance Music","title_version":"","link":"https:\/\/www.deezer.com\/track\/352290","duration":279,"rank":0,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-3c0f02237128389ac12ecc45c735dab7-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":352279,"readable":false,"title":"Basin
+        Street Blues","title_short":"Basin Street Blues","title_version":"","link":"https:\/\/www.deezer.com\/track\/352279","duration":287,"rank":3,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-6.dzcdn.net\/stream\/c-664271824def5c60eb3cb82fc8424647-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":4027527,"readable":false,"title":"Celebrity
+        Death Match (feat. Kid Koala)","title_short":"Celebrity Death Match (feat.
+        Kid Koala)","title_version":"","link":"https:\/\/www.deezer.com\/track\/4027527","duration":222,"rank":17,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"","time_add":0,"artist":{"id":3663,"name":"Peeping
+        Tom","link":"https:\/\/www.deezer.com\/artist\/3663","tracklist":"https:\/\/api.deezer.com\/artist\/3663\/top?limit=50","type":"artist"},"album":{"id":375093,"title":"Peeping
+        Tom","cover":"https:\/\/api.deezer.com\/album\/375093\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/375093\/tracks","type":"album"},"type":"track"}],"checksum":"fdba50b82a44d25fc030ea3dc40a39e0"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6559'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 11:18:28 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9; expires=Mon,
+        28-Dec-2020 11:18:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-26
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/playlist/12345/tracks
+  response:
+    body:
+      string: '{"data":[{"id":352284,"readable":false,"title":"Skanky Panky","title_short":"Skanky
+        Panky","title_version":"","link":"https:\/\/www.deezer.com\/track\/352284","duration":204,"rank":4,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-4.dzcdn.net\/stream\/c-42cdb1e76407deedcf149ad584aa7901-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","picture":"https:\/\/api.deezer.com\/artist\/1689\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":352290,"readable":false,"title":"More
+        Dance Music","title_short":"More Dance Music","title_version":"","link":"https:\/\/www.deezer.com\/track\/352290","duration":279,"rank":0,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-3c0f02237128389ac12ecc45c735dab7-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","picture":"https:\/\/api.deezer.com\/artist\/1689\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":352279,"readable":false,"title":"Basin
+        Street Blues","title_short":"Basin Street Blues","title_version":"","link":"https:\/\/www.deezer.com\/track\/352279","duration":287,"rank":3,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-6.dzcdn.net\/stream\/c-664271824def5c60eb3cb82fc8424647-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","picture":"https:\/\/api.deezer.com\/artist\/1689\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":4027527,"readable":false,"title":"Celebrity
+        Death Match (feat. Kid Koala)","title_short":"Celebrity Death Match (feat.
+        Kid Koala)","title_version":"","link":"https:\/\/www.deezer.com\/track\/4027527","duration":222,"rank":17,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"","time_add":0,"artist":{"id":3663,"name":"Peeping
+        Tom","link":"https:\/\/www.deezer.com\/artist\/3663","picture":"https:\/\/api.deezer.com\/artist\/3663\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/3663\/top?limit=50","type":"artist"},"album":{"id":375093,"title":"Peeping
+        Tom","cover":"https:\/\/api.deezer.com\/album\/375093\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/375093\/tracks","type":"album"},"type":"track"}],"checksum":"fdba50b82a44d25fc030ea3dc40a39e0","total":6}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7304'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 11:18:28 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9; expires=Mon,
+        28-Dec-2020 11:18:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-134
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/playlist/12345/tracks?index=0
+  response:
+    body:
+      string: '{"data":[{"id":352284,"readable":false,"title":"Skanky Panky","title_short":"Skanky
+        Panky","title_version":"","link":"https:\/\/www.deezer.com\/track\/352284","duration":204,"rank":4,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-4.dzcdn.net\/stream\/c-42cdb1e76407deedcf149ad584aa7901-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","picture":"https:\/\/api.deezer.com\/artist\/1689\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":352290,"readable":false,"title":"More
+        Dance Music","title_short":"More Dance Music","title_version":"","link":"https:\/\/www.deezer.com\/track\/352290","duration":279,"rank":0,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-3c0f02237128389ac12ecc45c735dab7-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","picture":"https:\/\/api.deezer.com\/artist\/1689\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":352279,"readable":false,"title":"Basin
+        Street Blues","title_short":"Basin Street Blues","title_version":"","link":"https:\/\/www.deezer.com\/track\/352279","duration":287,"rank":3,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-6.dzcdn.net\/stream\/c-664271824def5c60eb3cb82fc8424647-1.mp3","time_add":0,"artist":{"id":1689,"name":"Kid
+        Koala","link":"https:\/\/www.deezer.com\/artist\/1689","picture":"https:\/\/api.deezer.com\/artist\/1689\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/e493500b6a9b26a9030db7774b3ec1a2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1689\/top?limit=50","type":"artist"},"album":{"id":53327,"title":"Some
+        Of My Best Friends Are DJs","cover":"https:\/\/api.deezer.com\/album\/53327\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/040b1610604228adbd949a13184b8fc2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/53327\/tracks","type":"album"},"type":"track"},{"id":4027527,"readable":false,"title":"Celebrity
+        Death Match (feat. Kid Koala)","title_short":"Celebrity Death Match (feat.
+        Kid Koala)","title_version":"","link":"https:\/\/www.deezer.com\/track\/4027527","duration":222,"rank":17,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"","time_add":0,"artist":{"id":3663,"name":"Peeping
+        Tom","link":"https:\/\/www.deezer.com\/artist\/3663","picture":"https:\/\/api.deezer.com\/artist\/3663\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/3663\/top?limit=50","type":"artist"},"album":{"id":375093,"title":"Peeping
+        Tom","cover":"https:\/\/api.deezer.com\/album\/375093\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/375093\/tracks","type":"album"},"type":"track"}],"checksum":"fdba50b82a44d25fc030ea3dc40a39e0","total":6}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7240'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 11:18:28 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9; expires=Mon,
+        28-Dec-2020 11:18:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-21
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/playlist/12345/tracks?index=4
+  response:
+    body:
+      string: '{"data":[{"id":4027527,"readable":false,"title":"Celebrity Death Match
+        (feat. Kid Koala)","title_short":"Celebrity Death Match (feat. Kid Koala)","title_version":"","link":"https:\/\/www.deezer.com\/track\/4027527","duration":222,"rank":17,"explicit_lyrics":false,"explicit_content_lyrics":2,"explicit_content_cover":2,"preview":"","time_add":0,"artist":{"id":3663,"name":"Peeping
+        Tom","link":"https:\/\/www.deezer.com\/artist\/3663","picture":"https:\/\/api.deezer.com\/artist\/3663\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/09a08ac89d16727beea2c70cc33ffcb6\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/3663\/top?limit=50","type":"artist"},"album":{"id":375093,"title":"Peeping
+        Tom","cover":"https:\/\/api.deezer.com\/album\/375093\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a9326b9e6cbe4b68b4704bc934adde93\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/album\/375093\/tracks","type":"album"},"type":"track"}],"checksum":"fdba50b82a44d25fc030ea3dc40a39e0","total":6,"prev":"https:\/\/api.deezer.com\/playlist\/12345\/tracks?index=0"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1906'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 11:18:28 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9; expires=Mon,
+        28-Dec-2020 11:18:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-85
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/playlist/12345/tracks?index=5
+  response:
+    body:
+      string: '{"data":[],"checksum":"fdba50b82a44d25fc030ea3dc40a39e0","total":6,"prev":"https:\/\/api.deezer.com\/playlist\/12345\/tracks?index=0"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '134'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 11:18:28 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr89d461eee13f7e54e5fb57b78dc4d790f418c9; expires=Mon,
+        28-Dec-2020 11:18:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-134
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -248,3 +248,23 @@ class TestUser:
         assert isinstance(track, deezer.resources.Track)
         assert repr(track) == "<Track: Prélude a l'après-midi d'un faune, L. 86>"
         assert type(user.iter_tracks()) == GeneratorType
+
+
+class TestPlaylist:
+    def test_get_tracks(self, client):
+        playlist = client.get_playlist(12345)
+        tracks = playlist.get_tracks()
+        assert len(tracks) == 4
+        for track in tracks:
+            assert isinstance(track, deezer.resources.Track)
+        assert tracks[0].title == "Skanky Panky"
+        assert type(playlist.iter_tracks()) == GeneratorType
+
+    def test_get_fans(self, client):
+        playlist = client.get_playlist(6512)
+        fans = playlist.get_fans()
+        assert len(fans) == 3
+        for fan in fans:
+            assert isinstance(fan, deezer.resources.User)
+        assert fans[0].name == "laurentky"
+        assert type(playlist.iter_fans()) == GeneratorType

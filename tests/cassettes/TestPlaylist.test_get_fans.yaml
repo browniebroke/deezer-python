@@ -1,0 +1,136 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/playlist/6512
+  response:
+    body:
+      string: '{"id":6512,"title":"Christina Aguilera","description":"","duration":0,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":0,"fans":3,"link":"https:\/\/www.deezer.com\/playlist\/6512","share":"https:\/\/www.deezer.com\/playlist\/6512?utm_source=deezer&utm_content=playlist-6512&utm_term=0_1593602308&utm_medium=web","picture":"https:\/\/api.deezer.com\/playlist\/6512\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/\/1000x1000-000000-80-0-0.jpg","checksum":"abd1c782880cc59759f4112fda0b8f98","tracklist":"https:\/\/api.deezer.com\/playlist\/6512\/tracks","creation_date":"2020-07-01
+        12:18:28","creator":{"id":3887,"name":"mounir.ds","tracklist":"https:\/\/api.deezer.com\/user\/3887\/flow","type":"user"},"type":"playlist","tracks":{"data":[],"checksum":"abd1c782880cc59759f4112fda0b8f98"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1118'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 11:18:28 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_frb19f5f5d1adfb492171c43c7b59eca439757c0; expires=Mon,
+        28-Dec-2020 11:18:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-15
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_frb19f5f5d1adfb492171c43c7b59eca439757c0
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/playlist/6512/fans
+  response:
+    body:
+      string: '{"data":[{"id":194928025,"name":"laurentky","link":"https:\/\/www.deezer.com\/profile\/194928025","picture":"https:\/\/api.deezer.com\/user\/194928025\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/user\/194928025\/flow","type":"user"},{"id":338793701,"name":"F\u00e9lix
+        Ollomo","link":"https:\/\/www.deezer.com\/profile\/338793701","picture":"https:\/\/api.deezer.com\/user\/338793701\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/76e9f4f227814282e0929a5080099fad\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/76e9f4f227814282e0929a5080099fad\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/76e9f4f227814282e0929a5080099fad\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/76e9f4f227814282e0929a5080099fad\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/user\/338793701\/flow","type":"user"},{"id":365770935,"name":"mohamed
+        watib","link":"https:\/\/www.deezer.com\/profile\/365770935","picture":"https:\/\/api.deezer.com\/user\/365770935\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/f1e180559e97139faa24ec3a7a609701\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/f1e180559e97139faa24ec3a7a609701\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/f1e180559e97139faa24ec3a7a609701\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/f1e180559e97139faa24ec3a7a609701\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/user\/365770935\/flow","type":"user"}],"total":3}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2097'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 11:18:28 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_frb19f5f5d1adfb492171c43c7b59eca439757c0; expires=Mon,
+        28-Dec-2020 11:18:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-143
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_frb19f5f5d1adfb492171c43c7b59eca439757c0
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://api.deezer.com/playlist/6512/tracks?index=0
+  response:
+    body:
+      string: '{"data":[],"checksum":"abd1c782880cc59759f4112fda0b8f98","total":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '67'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 01 Jul 2020 11:18:28 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_frb19f5f5d1adfb492171c43c7b59eca439757c0; expires=Mon,
+        28-Dec-2020 11:18:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-132
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1
