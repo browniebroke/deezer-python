@@ -36,6 +36,10 @@ class TestAlbum:
         track = list(album.iter_tracks())[0]
         assert isinstance(track, deezer.resources.Track)
 
+    def test_as_dict(self, client):
+        album = client.get_album(302127)
+        assert album.asdict()["id"] == 302127
+
 
 class TestArtist:
     def test_artist_attributes(self, client):

@@ -20,10 +20,11 @@ class Resource:
             setattr(self, key, json[key])
 
     def __repr__(self):
-        name = getattr(self, "name", getattr(self, "title", None))
-        if name is not None:
-            return "<{}: {}>".format(self.__class__.__name__, str(name))
-        return super().__repr__()
+        name = getattr(self, "name", None)
+        title = getattr(self, "title", None)
+        id_ = getattr(self, "id", None)
+        repr_ = str(name or title or id_)
+        return "<{}: {}>".format(self.__class__.__name__, repr_)
 
     def asdict(self):
         """
@@ -70,16 +71,6 @@ class Resource:
                 break
             index += len(items)
 
-    def get_artist(self):
-        """
-        :returns: the :mod:`Artist <deezer.resources.Artist>` of the resource
-        :raises TypeError: if the object is not album or track
-        """
-        # pylint: disable=E1101
-        if not isinstance(self, (Album, Track)):
-            raise TypeError("Is neither an Album or a Track")
-        return self.client.get_artist(self.artist.id)
-
 
 class Album(Resource):
     """
@@ -87,6 +78,14 @@ class Album(Resource):
 
     All the fields documented on Deezer are accessible by as class attributes.
     """
+
+    def get_artist(self):
+        """
+        Get the artist of the Album.
+
+        :returns: the :mod:`Artist <deezer.resources.Artist>` of the Album
+        """
+        return self.client.get_artist(self.artist.id)
 
     def get_tracks(self, **kwargs):
         """
@@ -205,6 +204,14 @@ class Track(Resource):
 
     All the fields documented on Deezer are accessible by as class attributes.
     """
+
+    def get_artist(self):
+        """
+        Get the artist of the Track.
+
+        :returns: the :mod:`Artist <deezer.resources.Artist>` of the Album
+        """
+        return self.client.get_artist(self.artist.id)
 
     def get_album(self):
         """
