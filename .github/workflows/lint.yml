@@ -17,6 +17,8 @@ jobs:
             run: black --check .
           - name: PyUpgrade
             run: pyupgrade --py3-plus `find . -name "*.py"`
+          - name: Bandit
+            run: bandit -r deezer
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -29,4 +31,5 @@ jobs:
         python -m pip install -U pip
         pip install -r requirements-test.txt
     - name: ${{ matrix.linter.name }}
-      run: ${{ matrix.linter.run }}
+      run: |
+        ${{ matrix.linter.run }}
