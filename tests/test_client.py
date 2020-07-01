@@ -15,6 +15,10 @@ class TestClient:
             == "https://api.deezer.com/user/me?access_token=token"
         )
 
+    def test_no_compress_response(self):
+        client = deezer.Client(do_not_compress_reponse=True)
+        assert client.session.headers["Accept-Encoding"] == "identity"
+
     def test_kwargs_parsing_valid(self, client):
         assert client.app_id == "foo"
         assert client.app_secret == "bar"
@@ -128,6 +132,11 @@ class TestClient:
     def test_get_radios(self, client):
         """Test methods to get a radios"""
         radios = client.get_radios()
+        assert isinstance(radios, list)
+        assert isinstance(radios[0], deezer.resources.Radio)
+
+    def test_get_radios_top(self, client):
+        radios = client.get_radios_top()
         assert isinstance(radios, list)
         assert isinstance(radios[0], deezer.resources.Radio)
 
@@ -261,20 +270,21 @@ class TestClient:
         assert result[0].title == "The joke"
         assert isinstance(result[0], deezer.resources.Track)
 
-    def test_with_language_header_fr(self):
-        """Test by adding accept language headers"""
-        client_fr = deezer.Client(headers={"Accept-Language": "fr"})
+    def test_advanced_search_invalid(self, client):
+        with pytest.raises(TypeError):
+            client.advanced_search("Lou Doillon")
+
+    @pytest.mark.parametrize(
+        ("header_value", "expected_name"),
+        [
+            ("fr", "Chanson fran\u00e7aise"),
+            ("ja", "\u30d5\u30ec\u30f3\u30c1\u30fb\u30b7\u30e3\u30f3\u30bd\u30f3"),
+        ],
+        ids=["fr", "ja"],
+    )
+    def test_with_language_header(self, header_value, expected_name):
+        """Get localised content with Accept-Language header."""
+        client_fr = deezer.Client(headers={"Accept-Language": header_value})
         genre = client_fr.get_genre(52)
         assert isinstance(genre, deezer.resources.Genre)
-        assert genre.name == "Chanson fran\u00e7aise"
-        assert genre.name != "French Chanson"
-
-    def test_with_language_header_ja(self):
-        """Test by adding accept language headers"""
-        client_ja = deezer.Client(headers={"Accept-Language": "ja"})
-        genre = client_ja.get_genre(52)
-        assert isinstance(genre, deezer.resources.Genre)
-        assert (
-            genre.name == "\u30d5\u30ec\u30f3\u30c1\u30fb\u30b7\u30e3\u30f3\u30bd\u30f3"
-        )
-        assert genre.name != "French Chanson"
+        assert genre.name == expected_name
