@@ -1,6 +1,6 @@
 version: 2
 
 python:
-  version: 3.6
+  version: 3.6  # Should match version in docs.yml workflow
   install:
     - requirements: docs/requirements.txt
