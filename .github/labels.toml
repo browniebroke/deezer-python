@@ -14,7 +14,7 @@ name = "dependencies"
 description = "Pull requests that update a dependency file"
 
 [documentation]
-color = "0075ca"
+color = "1bc4a5"
 name = "documentation"
 description = "Improvements or additions to documentation"
 
@@ -67,3 +67,8 @@ description = "CI, CD and testing related changes"
 color = "ffffff"
 name = "wontfix"
 description = "This will not be worked on"
+
+[discussion]
+color = "c2e0c6"
+name = "discussion"
+description = "Some discussion around the project"
