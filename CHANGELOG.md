@@ -85,6 +85,7 @@
 ### ✅ Testing:
 
 - Create pythonpackage.yml to enable GitHub actions [\#58](https://github.com/browniebroke/deezer-python/pull/58) ([browniebroke](https://github.com/browniebroke))
+- Test with `vcrpy` [\#43](https://github.com/browniebroke/deezer-python/pull/43) ([jnth](https://github.com/jnth))
 
 ## [1.1.0](https://github.com/browniebroke/deezer-python/tree/1.1.0) (2019-05-25)
 
@@ -101,7 +102,6 @@
 ### ✅ Testing:
 
 - Python 3.7+ support [\#44](https://github.com/browniebroke/deezer-python/pull/44) ([browniebroke](https://github.com/browniebroke))
-- Test with `vcrpy` [\#43](https://github.com/browniebroke/deezer-python/pull/43) ([jnth](https://github.com/jnth))
 
 ## [1.0.0](https://github.com/browniebroke/deezer-python/tree/1.0.0) (2019-02-11)
 
@@ -143,7 +143,6 @@
 
 ### ✅ Testing:
 
-- Add a CI step for check-manifest [\#30](https://github.com/browniebroke/deezer-python/pull/30) ([browniebroke](https://github.com/browniebroke))
 - Update build matrices [\#29](https://github.com/browniebroke/deezer-python/pull/29) ([browniebroke](https://github.com/browniebroke))
 - Appveyor tests [\#25](https://github.com/browniebroke/deezer-python/pull/25) ([browniebroke](https://github.com/browniebroke))
 
@@ -158,6 +157,10 @@
 ### 📖 Documentation updates:
 
 - Update README.rst [\#18](https://github.com/browniebroke/deezer-python/pull/18) ([khamaileon](https://github.com/khamaileon))
+
+### ✅ Testing:
+
+- Add a CI step for check-manifest [\#30](https://github.com/browniebroke/deezer-python/pull/30) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.6.0](https://github.com/browniebroke/deezer-python/tree/0.6.0) (2016-12-27)
 
