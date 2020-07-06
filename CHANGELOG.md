@@ -10,6 +10,7 @@
 
 ### ✅ Testing:
 
+- Pin dependencies in requirements files [\#94](https://github.com/browniebroke/deezer-python/pull/94) ([browniebroke](https://github.com/browniebroke))
 - ☂️ Increase test coverage to 100% [\#92](https://github.com/browniebroke/deezer-python/pull/92) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.5.0](https://github.com/browniebroke/deezer-python/tree/1.5.0) (2020-07-01)
@@ -79,7 +80,6 @@
 
 ### 📖 Documentation updates:
 
-- Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
 - Create .config for all-contributors bot [\#51](https://github.com/browniebroke/deezer-python/pull/51) ([browniebroke](https://github.com/browniebroke))
 
 ### ✅ Testing:
@@ -110,6 +110,10 @@
 ### 💥 Breaking Changes:
 
 - Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
+
+### 📖 Documentation updates:
+
+- Update Travis CI badge: travis.org -\> travis.com [\#57](https://github.com/browniebroke/deezer-python/pull/57) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
 
