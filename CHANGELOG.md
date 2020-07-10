@@ -87,7 +87,6 @@
 ### ✅ Testing:
 
 - Create pythonpackage.yml to enable GitHub actions [\#58](https://github.com/browniebroke/deezer-python/pull/58) ([browniebroke](https://github.com/browniebroke))
-- Python 3.7+ support [\#44](https://github.com/browniebroke/deezer-python/pull/44) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.1.0](https://github.com/browniebroke/deezer-python/tree/1.1.0) (2019-05-25)
 
@@ -103,6 +102,7 @@
 
 ### ✅ Testing:
 
+- Python 3.7+ support [\#44](https://github.com/browniebroke/deezer-python/pull/44) ([browniebroke](https://github.com/browniebroke))
 - Test with `vcrpy` [\#43](https://github.com/browniebroke/deezer-python/pull/43) ([jnth](https://github.com/jnth))
 
 ## [1.0.0](https://github.com/browniebroke/deezer-python/tree/1.0.0) (2019-02-11)
