@@ -40,6 +40,7 @@
 ### 🚀 Enhancements:
 
 - Use explicit kwargs for the Client class [\#79](https://github.com/browniebroke/deezer-python/pull/79) ([browniebroke](https://github.com/browniebroke))
+- Add Python 3.8 support [\#71](https://github.com/browniebroke/deezer-python/pull/71) ([jnth](https://github.com/jnth))
 
 ### 📖 Documentation updates:
 
@@ -55,10 +56,6 @@
 ## [1.3.0](https://github.com/browniebroke/deezer-python/tree/1.3.0) (2019-11-09)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.2.0...1.3.0)
-
-### 🚀 Enhancements:
-
-- Add Python 3.8 support [\#71](https://github.com/browniebroke/deezer-python/pull/71) ([jnth](https://github.com/jnth))
 
 ### 🐛 Bug Fixes:
 
