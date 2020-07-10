@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.3.0
+    rev: v2.7.0
     hooks:
       - id: pyupgrade
         args: [--py3-plus]
@@ -19,7 +19,7 @@ repos:
       - id: check-json
       - id: debug-statements
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.9
+    rev: 3.8.3
     hooks:
       - id: flake8
         args: [--config=setup.cfg]
