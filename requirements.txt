@@ -60,7 +60,7 @@ stevedore==1.32.0         # via bandit
 testfixtures==6.14.1      # via flake8-isort
 tokenize-rt==3.2.0        # via pyupgrade
 toml==0.10.1              # via black, check-manifest, isort, pep517, tox
-tox==3.16.1               # via -r requirements.in
+tox==3.17.0               # via -r requirements.in
 tqdm==4.47.0              # via twine
 twine==3.2.0 ; python_version > "3.5"  # via -r requirements.in
 typed-ast==1.4.1          # via black
