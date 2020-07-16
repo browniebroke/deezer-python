@@ -51,7 +51,6 @@
 - Clean-up config for coverage [\#80](https://github.com/browniebroke/deezer-python/pull/80) ([browniebroke](https://github.com/browniebroke))
 - Use Python 3.8 on Travis \(drop the -dev\) [\#77](https://github.com/browniebroke/deezer-python/pull/77) ([browniebroke](https://github.com/browniebroke))
 - Update names in Github action & run on Python 3.8 [\#76](https://github.com/browniebroke/deezer-python/pull/76) ([browniebroke](https://github.com/browniebroke))
-- Remove appveyor.yml [\#70](https://github.com/browniebroke/deezer-python/pull/70) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.3.0](https://github.com/browniebroke/deezer-python/tree/1.3.0) (2019-11-09)
 
@@ -68,6 +67,7 @@
 ### ✅ Testing:
 
 - Add isort [\#72](https://github.com/browniebroke/deezer-python/pull/72) ([browniebroke](https://github.com/browniebroke))
+- Remove appveyor.yml [\#70](https://github.com/browniebroke/deezer-python/pull/70) ([browniebroke](https://github.com/browniebroke))
 - Move deploy step to a separate stage on Travis [\#61](https://github.com/browniebroke/deezer-python/pull/61) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.2.0](https://github.com/browniebroke/deezer-python/tree/1.2.0) (2019-09-25)
@@ -128,7 +128,6 @@
 ### 🚀 Enhancements:
 
 - Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
-- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
 ## [0.7.0](https://github.com/browniebroke/deezer-python/tree/0.7.0) (2018-10-03)
@@ -141,6 +140,7 @@
 
 ### 🚀 Enhancements:
 
+- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
 
 ### ✅ Testing:
