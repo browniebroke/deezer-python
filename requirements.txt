@@ -46,7 +46,7 @@ pyparsing==2.4.7          # via packaging
 pytest-cov==2.10.0        # via -r requirements.in
 pytest-vcr==1.0.2         # via -r requirements.in
 pytest==5.4.3             # via -r requirements.in, pytest-cov, pytest-vcr
-pyupgrade==2.7.0 ; python_version > "3.5"  # via -r requirements.in
+pyupgrade==2.7.1 ; python_version > "3.5"  # via -r requirements.in
 pyyaml==5.3.1             # via bandit, vcrpy
 readme-renderer==26.0     # via twine
 regex==2020.6.8           # via black
