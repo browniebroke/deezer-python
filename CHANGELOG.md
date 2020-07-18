@@ -13,7 +13,6 @@
 - Use codecov-action to upload coverage report [\#97](https://github.com/browniebroke/deezer-python/pull/97) ([browniebroke](https://github.com/browniebroke))
 - Pin dependencies in requirements files [\#94](https://github.com/browniebroke/deezer-python/pull/94) ([browniebroke](https://github.com/browniebroke))
 - ☂️ Increase test coverage to 100% [\#92](https://github.com/browniebroke/deezer-python/pull/92) ([browniebroke](https://github.com/browniebroke))
-- Split resources tests into multiple classes [\#88](https://github.com/browniebroke/deezer-python/pull/88) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.5.0](https://github.com/browniebroke/deezer-python/tree/1.5.0) (2020-07-01)
 
@@ -31,6 +30,7 @@
 ### ✅ Testing:
 
 - Refactor tests to use the pytest style [\#89](https://github.com/browniebroke/deezer-python/pull/89) ([browniebroke](https://github.com/browniebroke))
+- Split resources tests into multiple classes [\#88](https://github.com/browniebroke/deezer-python/pull/88) ([browniebroke](https://github.com/browniebroke))
 - 🛠 Move CI to Github actions [\#86](https://github.com/browniebroke/deezer-python/pull/86) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.4.0](https://github.com/browniebroke/deezer-python/tree/1.4.0) (2020-05-02)
@@ -161,10 +161,6 @@
 
 - Update README.rst [\#18](https://github.com/browniebroke/deezer-python/pull/18) ([khamaileon](https://github.com/khamaileon))
 
-### ✅ Testing:
-
-- Use tox-travis to integrate environments better [\#12](https://github.com/browniebroke/deezer-python/pull/12) ([browniebroke](https://github.com/browniebroke))
-
 ## [0.6.0](https://github.com/browniebroke/deezer-python/tree/0.6.0) (2016-12-27)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.5.0...0.6.0)
@@ -184,6 +180,7 @@
 ### ✅ Testing:
 
 - Run Flake8 on Travis [\#14](https://github.com/browniebroke/deezer-python/pull/14) ([browniebroke](https://github.com/browniebroke))
+- Use tox-travis to integrate environments better [\#12](https://github.com/browniebroke/deezer-python/pull/12) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.4.0](https://github.com/browniebroke/deezer-python/tree/0.4.0) (2016-12-08)
 
