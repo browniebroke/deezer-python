@@ -66,7 +66,7 @@ tqdm==4.47.0              # via twine
 twine==3.2.0 ; python_version > "3.5"  # via -r requirements.in
 typed-ast==1.4.1          # via black
 urllib3==1.25.9           # via requests
-vcrpy==4.0.2              # via -r requirements.in, pytest-vcr
+vcrpy==4.1.0              # via -r requirements.in, pytest-vcr
 virtualenv==20.0.25       # via tox
 webencodings==0.5.1       # via bleach
 wheel==0.34.2             # via -r requirements.in
