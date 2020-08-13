@@ -4,7 +4,7 @@ check-manifest
 coverage
 flake8
 flake8-isort
-isort<5
+isort
 pytest
 pytest-cov
 pytest-vcr
