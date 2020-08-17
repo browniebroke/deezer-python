@@ -44,7 +44,7 @@ pycparser==2.20           # via cffi
 pyflakes==2.2.0           # via flake8
 pygments==2.6.1           # via readme-renderer
 pyparsing==2.4.7          # via packaging
-pytest-cov==2.10.0        # via -r requirements.in
+pytest-cov==2.10.1        # via -r requirements.in
 pytest-vcr==1.0.2         # via -r requirements.in
 pytest==6.0.1             # via -r requirements.in, pytest-cov, pytest-vcr
 pyupgrade==2.7.2 ; python_version > "3.5"  # via -r requirements.in
