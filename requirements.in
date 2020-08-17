@@ -4,7 +4,7 @@ check-manifest
 coverage
 flake8
 flake8-isort
-isort
+isort; python_version > '3.5'
 pytest
 pytest-cov
 pytest-vcr
