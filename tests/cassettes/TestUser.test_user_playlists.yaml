@@ -2,39 +2,58 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: [identity]
-      Connection: [keep-alive]
-      User-Agent: [python-requests/2.21.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
     method: GET
     uri: https://api.deezer.com/user/359622
   response:
-    body: {string: '{"id":359622,"name":"Bruno Alla","link":"https:\/\/www.deezer.com\/profile\/359622","picture":"https:\/\/api.deezer.com\/user\/359622\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/1000x1000-000000-80-0-0.jpg","country":"DE","tracklist":"https:\/\/api.deezer.com\/user\/359622\/flow","type":"user"}'}
+    body:
+      string: '{"id":359622,"name":"Bruno Alla","link":"https:\/\/www.deezer.com\/profile\/359622","picture":"https:\/\/api.deezer.com\/user\/359622\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/1000x1000-000000-80-0-0.jpg","country":"DE","tracklist":"https:\/\/api.deezer.com\/user\/359622\/flow","type":"user"}'
     headers:
-      Content-Length: ['726']
-      Content-Type: [application/json; charset=utf-8]
-      Date: ['Tue, 04 Jun 2019 20:16:31 GMT']
-      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
-          STA"]
-      Server: [Apache]
-      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fr7cc0959ee8bc6a5658a1ab63195efd75ae5c50;
-          expires=Sun, 01-Dec-2019 20:16:31 GMT; Max-Age=15552000; path=/; domain=.deezer.com;
-          secure']
-      Vary: [Accept-Encoding]
-      X-Host: [blm-web-63]
-    status: {code: 200, message: OK}
+      Content-Length:
+      - '726'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jun 2019 20:16:31 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr7cc0959ee8bc6a5658a1ab63195efd75ae5c50; expires=Sun,
+        01-Dec-2019 20:16:31 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Host:
+      - blm-web-63
+    status:
+      code: 200
+      message: OK
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: [identity]
-      Connection: [keep-alive]
-      Cookie: [dzr_uniq_id=dzr_uniq_id_fr7cc0959ee8bc6a5658a1ab63195efd75ae5c50]
-      User-Agent: [python-requests/2.21.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr7cc0959ee8bc6a5658a1ab63195efd75ae5c50
+      User-Agent:
+      - python-requests/2.21.0
     method: GET
     uri: https://api.deezer.com/user/359622/playlists
   response:
-    body: {string: '{"data":[{"id":716369,"title":"AC\/DC","duration":1502,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":6,"fans":0,"link":"https:\/\/www.deezer.com\/playlist\/716369","picture":"https:\/\/api.deezer.com\/playlist\/716369\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d167d9a9b2f3f49ed72878a00530415b-d0107be8326b716b4d279a2090ca2faf-509b658d5a7cead4927cfa248b92add8-4fb9e74ab5361a891c331c0adf662099\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d167d9a9b2f3f49ed72878a00530415b-d0107be8326b716b4d279a2090ca2faf-509b658d5a7cead4927cfa248b92add8-4fb9e74ab5361a891c331c0adf662099\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d167d9a9b2f3f49ed72878a00530415b-d0107be8326b716b4d279a2090ca2faf-509b658d5a7cead4927cfa248b92add8-4fb9e74ab5361a891c331c0adf662099\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d167d9a9b2f3f49ed72878a00530415b-d0107be8326b716b4d279a2090ca2faf-509b658d5a7cead4927cfa248b92add8-4fb9e74ab5361a891c331c0adf662099\/1000x1000-000000-80-0-0.jpg","checksum":"75fa86472fd65ab74a5e897a1b4d2d79","tracklist":"https:\/\/api.deezer.com\/playlist\/716369\/tracks","creation_date":"2013-11-06
+    body:
+      string: '{"data":[{"id":716369,"title":"AC\/DC","duration":1502,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":6,"fans":0,"link":"https:\/\/www.deezer.com\/playlist\/716369","picture":"https:\/\/api.deezer.com\/playlist\/716369\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d167d9a9b2f3f49ed72878a00530415b-d0107be8326b716b4d279a2090ca2faf-509b658d5a7cead4927cfa248b92add8-4fb9e74ab5361a891c331c0adf662099\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d167d9a9b2f3f49ed72878a00530415b-d0107be8326b716b4d279a2090ca2faf-509b658d5a7cead4927cfa248b92add8-4fb9e74ab5361a891c331c0adf662099\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d167d9a9b2f3f49ed72878a00530415b-d0107be8326b716b4d279a2090ca2faf-509b658d5a7cead4927cfa248b92add8-4fb9e74ab5361a891c331c0adf662099\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d167d9a9b2f3f49ed72878a00530415b-d0107be8326b716b4d279a2090ca2faf-509b658d5a7cead4927cfa248b92add8-4fb9e74ab5361a891c331c0adf662099\/1000x1000-000000-80-0-0.jpg","checksum":"75fa86472fd65ab74a5e897a1b4d2d79","tracklist":"https:\/\/api.deezer.com\/playlist\/716369\/tracks","creation_date":"2013-11-06
         17:00:00","time_add":0,"time_mod":1383757200,"creator":{"id":359622,"name":"Bruno
         Alla","tracklist":"https:\/\/api.deezer.com\/user\/359622\/flow","type":"user"},"type":"playlist"},{"id":1721646,"title":"Merde","duration":3276,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":15,"fans":0,"link":"https:\/\/www.deezer.com\/playlist\/1721646","picture":"https:\/\/api.deezer.com\/playlist\/1721646\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cafda36f44d15143abdb48cd18f604af-d167d9a9b2f3f49ed72878a00530415b-262c325786ae51c55bb0b6fc47f9fed2-712e694cc23d2595f4a1dc64d365296e\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cafda36f44d15143abdb48cd18f604af-d167d9a9b2f3f49ed72878a00530415b-262c325786ae51c55bb0b6fc47f9fed2-712e694cc23d2595f4a1dc64d365296e\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cafda36f44d15143abdb48cd18f604af-d167d9a9b2f3f49ed72878a00530415b-262c325786ae51c55bb0b6fc47f9fed2-712e694cc23d2595f4a1dc64d365296e\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cafda36f44d15143abdb48cd18f604af-d167d9a9b2f3f49ed72878a00530415b-262c325786ae51c55bb0b6fc47f9fed2-712e694cc23d2595f4a1dc64d365296e\/1000x1000-000000-80-0-0.jpg","checksum":"fd8597a9241f1a427fb3aa274a209db4","tracklist":"https:\/\/api.deezer.com\/playlist\/1721646\/tracks","creation_date":"2013-11-06
         17:00:00","time_add":0,"time_mod":1383757200,"creator":{"id":359622,"name":"Bruno
@@ -89,18 +108,256 @@ interactions:
         Alla","tracklist":"https:\/\/api.deezer.com\/user\/359622\/flow","type":"user"},"type":"playlist"},{"id":9200461,"title":"Lounge
         Soir\u00e9e","duration":22928,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":102,"fans":9483,"link":"https:\/\/www.deezer.com\/playlist\/9200461","picture":"https:\/\/api.deezer.com\/playlist\/9200461\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/bdabbfcfb9533c3f03cdaa8ff963917b-f8a3145e31b1ef65b118325d5585a242-eb22fba111d89da93bfa9aed37453334-17d23901bb01a671224836c925465c04\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/bdabbfcfb9533c3f03cdaa8ff963917b-f8a3145e31b1ef65b118325d5585a242-eb22fba111d89da93bfa9aed37453334-17d23901bb01a671224836c925465c04\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/bdabbfcfb9533c3f03cdaa8ff963917b-f8a3145e31b1ef65b118325d5585a242-eb22fba111d89da93bfa9aed37453334-17d23901bb01a671224836c925465c04\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/bdabbfcfb9533c3f03cdaa8ff963917b-f8a3145e31b1ef65b118325d5585a242-eb22fba111d89da93bfa9aed37453334-17d23901bb01a671224836c925465c04\/1000x1000-000000-80-0-0.jpg","checksum":"4b5cf900832a2a6732f2413a6f32821e","tracklist":"https:\/\/api.deezer.com\/playlist\/9200461\/tracks","creation_date":"2013-11-06
         17:00:00","time_add":0,"time_mod":1383757200,"creator":{"id":1006326,"name":"artusamak","tracklist":"https:\/\/api.deezer.com\/user\/1006326\/flow","type":"user"},"type":"playlist"},{"id":65119027,"title":"ju","duration":11344,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":48,"fans":1,"link":"https:\/\/www.deezer.com\/playlist\/65119027","picture":"https:\/\/api.deezer.com\/playlist\/65119027\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/163ca0e0c0e1af244b9c332e50f399ca-5cab833fa2bc39e9ad3bd8aae1a0064a-be6141a332e78283df06131f2010204f-414f87ca461c183d3adaadf51d6789de\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/163ca0e0c0e1af244b9c332e50f399ca-5cab833fa2bc39e9ad3bd8aae1a0064a-be6141a332e78283df06131f2010204f-414f87ca461c183d3adaadf51d6789de\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/163ca0e0c0e1af244b9c332e50f399ca-5cab833fa2bc39e9ad3bd8aae1a0064a-be6141a332e78283df06131f2010204f-414f87ca461c183d3adaadf51d6789de\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/163ca0e0c0e1af244b9c332e50f399ca-5cab833fa2bc39e9ad3bd8aae1a0064a-be6141a332e78283df06131f2010204f-414f87ca461c183d3adaadf51d6789de\/1000x1000-000000-80-0-0.jpg","checksum":"c2a0cd6325dcc02b6a15a491a6bde4b5","tracklist":"https:\/\/api.deezer.com\/playlist\/65119027\/tracks","creation_date":"2013-11-06
-        17:00:00","time_add":1372785326,"time_mod":1383757200,"creator":{"id":3751302,"name":"anonymous","tracklist":"https:\/\/api.deezer.com\/user\/3751302\/flow","type":"user"},"type":"playlist"}],"checksum":"68ecb44feccde1852f4676a42b1bda83d4bc4c38a29da8fa3f87731aa99d3cf5","total":25}'}
+        17:00:00","time_add":1372785326,"time_mod":1383757200,"creator":{"id":3751302,"name":"anonymous","tracklist":"https:\/\/api.deezer.com\/user\/3751302\/flow","type":"user"},"type":"playlist"}],"checksum":"68ecb44feccde1852f4676a42b1bda83d4bc4c38a29da8fa3f87731aa99d3cf5","total":25}'
     headers:
-      Content-Type: [application/json; charset=utf-8]
-      Date: ['Tue, 04 Jun 2019 20:16:31 GMT']
-      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
-          STA"]
-      Server: [Apache]
-      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fr7cc0959ee8bc6a5658a1ab63195efd75ae5c50;
-          expires=Sun, 01-Dec-2019 20:16:31 GMT; Max-Age=15552000; path=/; domain=.deezer.com;
-          secure']
-      Transfer-Encoding: [chunked]
-      Vary: [Accept-Encoding]
-      X-Host: [blm-web-106]
-    status: {code: 200, message: OK}
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jun 2019 20:16:31 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr7cc0959ee8bc6a5658a1ab63195efd75ae5c50; expires=Sun,
+        01-Dec-2019 20:16:31 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure
+      Vary:
+      - Accept-Encoding
+      X-Host:
+      - blm-web-106
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/user/353978015
+  response:
+    body:
+      string: '{"id":353978015,"name":"Yannick - Deezer Classical Editor","link":"https:\/\/www.deezer.com\/profile\/353978015","picture":"https:\/\/api.deezer.com\/user\/353978015\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/user\/cfa8c91213919612b47284aa26db1803\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/user\/cfa8c91213919612b47284aa26db1803\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/user\/cfa8c91213919612b47284aa26db1803\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/user\/cfa8c91213919612b47284aa26db1803\/1000x1000-000000-80-0-0.jpg","country":"FR","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"}'
+    headers:
+      Content-Length:
+      - '761'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 16 Aug 2020 18:42:27 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr87768eda2c21f5cfa2520f8180075632193c51; expires=Fri,
+        12-Feb-2021 18:42:27 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-55
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr87768eda2c21f5cfa2520f8180075632193c51
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/user/353978015/playlists
+  response:
+    body:
+      string: '{"data":[{"id":747148961,"title":"Best Classical Of All Time","duration":18018,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":60,"fans":92064,"link":"https:\/\/www.deezer.com\/playlist\/747148961","picture":"https:\/\/api.deezer.com\/playlist\/747148961\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/8fa5567c141ea19c71a214b9cd4e1f77\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/8fa5567c141ea19c71a214b9cd4e1f77\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/8fa5567c141ea19c71a214b9cd4e1f77\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/8fa5567c141ea19c71a214b9cd4e1f77\/1000x1000-000000-80-0-0.jpg","checksum":"9c2c834cc0256dd685da4a85b121591f","tracklist":"https:\/\/api.deezer.com\/playlist\/747148961\/tracks","creation_date":"2014-01-10
+        16:35:04","time_add":1579800174,"time_mod":1579800371,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":764477711,"title":"Baroque
+        Treasures","duration":6311,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":20079,"link":"https:\/\/www.deezer.com\/playlist\/764477711","picture":"https:\/\/api.deezer.com\/playlist\/764477711\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/ef910fee263fc92133b068636bf60c3c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/ef910fee263fc92133b068636bf60c3c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/ef910fee263fc92133b068636bf60c3c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/ef910fee263fc92133b068636bf60c3c\/1000x1000-000000-80-0-0.jpg","checksum":"f1c6e613b313ea35068445535b32629d","tracklist":"https:\/\/api.deezer.com\/playlist\/764477711\/tracks","creation_date":"2014-01-24
+        11:01:58","time_add":1588153851,"time_mod":1596640534,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":764481841,"title":"Opera
+        Essentials","duration":22744,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":80,"fans":22611,"link":"https:\/\/www.deezer.com\/playlist\/764481841","picture":"https:\/\/api.deezer.com\/playlist\/764481841\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/76ba939bee230c27fc059f7f57e73d6b\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/76ba939bee230c27fc059f7f57e73d6b\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/76ba939bee230c27fc059f7f57e73d6b\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/76ba939bee230c27fc059f7f57e73d6b\/1000x1000-000000-80-0-0.jpg","checksum":"8b2714a21aff9d827503151ecc9f784f","tracklist":"https:\/\/api.deezer.com\/playlist\/764481841\/tracks","creation_date":"2014-01-24
+        11:09:07","time_add":1573572247,"time_mod":1589297292,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1141100041,"title":"Classical
+        Guitar","duration":11231,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":23083,"link":"https:\/\/www.deezer.com\/playlist\/1141100041","picture":"https:\/\/api.deezer.com\/playlist\/1141100041\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/f7be0587de8350c24f3a8e7fc30d7a44\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/f7be0587de8350c24f3a8e7fc30d7a44\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/f7be0587de8350c24f3a8e7fc30d7a44\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/f7be0587de8350c24f3a8e7fc30d7a44\/1000x1000-000000-80-0-0.jpg","checksum":"412e6d62010518a5a7b7244861400bd5","tracklist":"https:\/\/api.deezer.com\/playlist\/1141100041\/tracks","creation_date":"2015-02-06
+        10:30:20","time_add":1587733064,"time_mod":1596557704,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1500943781,"title":"Classical
+        New Releases","duration":12131,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":19368,"link":"https:\/\/www.deezer.com\/playlist\/1500943781","picture":"https:\/\/api.deezer.com\/playlist\/1500943781\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/81c050d12ab645a3dc8ca4b58f642f30\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/81c050d12ab645a3dc8ca4b58f642f30\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/81c050d12ab645a3dc8ca4b58f642f30\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/81c050d12ab645a3dc8ca4b58f642f30\/1000x1000-000000-80-0-0.jpg","checksum":"7b7d7ae4978ac69fe54c80663f033931","tracklist":"https:\/\/api.deezer.com\/playlist\/1500943781\/tracks","creation_date":"2015-12-14
+        09:22:15","time_add":1596204165,"time_mod":1597394881,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1618355015,"title":"Relaxing
+        Classical Music","duration":9388,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":40728,"link":"https:\/\/www.deezer.com\/playlist\/1618355015","picture":"https:\/\/api.deezer.com\/playlist\/1618355015\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/d801c1c32d32872ce9e16a50b2095c46\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/d801c1c32d32872ce9e16a50b2095c46\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/d801c1c32d32872ce9e16a50b2095c46\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/d801c1c32d32872ce9e16a50b2095c46\/1000x1000-000000-80-0-0.jpg","checksum":"414da427cd2c7ba7ff83a55bda5e4775","tracklist":"https:\/\/api.deezer.com\/playlist\/1618355015\/tracks","creation_date":"2016-02-11
+        09:30:22","time_add":1578586846,"time_mod":1594805759,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1673880511,"title":"Classical
+        Focus","duration":15798,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":100,"fans":51833,"link":"https:\/\/www.deezer.com\/playlist\/1673880511","picture":"https:\/\/api.deezer.com\/playlist\/1673880511\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/e0cb1cbe50c37316a621e56c5471e0fd\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/e0cb1cbe50c37316a621e56c5471e0fd\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/e0cb1cbe50c37316a621e56c5471e0fd\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/e0cb1cbe50c37316a621e56c5471e0fd\/1000x1000-000000-80-0-0.jpg","checksum":"2088b923ec7153540854314061be7815","tracklist":"https:\/\/api.deezer.com\/playlist\/1673880511\/tracks","creation_date":"2016-03-16
+        14:30:22","time_add":1583838004,"time_mod":1588169181,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1673882381,"title":"Classical
+        for sleep","duration":18317,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":90,"fans":55279,"link":"https:\/\/www.deezer.com\/playlist\/1673882381","picture":"https:\/\/api.deezer.com\/playlist\/1673882381\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/04e137d200750f1a1c3b5a1da4c0a1d4\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/04e137d200750f1a1c3b5a1da4c0a1d4\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/04e137d200750f1a1c3b5a1da4c0a1d4\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/04e137d200750f1a1c3b5a1da4c0a1d4\/1000x1000-000000-80-0-0.jpg","checksum":"0d4b56c6d845369cab06bb294fd0552c","tracklist":"https:\/\/api.deezer.com\/playlist\/1673882381\/tracks","creation_date":"2016-03-16
+        14:31:33","time_add":1578587561,"time_mod":1588155275,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1696031081,"title":"The
+        Best Orchestras","duration":25901,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":62,"fans":17897,"link":"https:\/\/www.deezer.com\/playlist\/1696031081","picture":"https:\/\/api.deezer.com\/playlist\/1696031081\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/253b7aff50930519e9327e32011ede88\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/253b7aff50930519e9327e32011ede88\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/253b7aff50930519e9327e32011ede88\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/253b7aff50930519e9327e32011ede88\/1000x1000-000000-80-0-0.jpg","checksum":"8cb70b6fd64e5b13b5b2d5db8cc02ee0","tracklist":"https:\/\/api.deezer.com\/playlist\/1696031081\/tracks","creation_date":"2016-03-29
+        10:43:43","time_add":1560876695,"time_mod":1565189281,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1699167521,"title":"Deep
+        Focus","duration":10491,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":49,"fans":66828,"link":"https:\/\/www.deezer.com\/playlist\/1699167521","picture":"https:\/\/api.deezer.com\/playlist\/1699167521\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/771e1195a9e6e7083767b61358b3b27c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/771e1195a9e6e7083767b61358b3b27c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/771e1195a9e6e7083767b61358b3b27c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/771e1195a9e6e7083767b61358b3b27c\/1000x1000-000000-80-0-0.jpg","checksum":"1de104ec9973eb28beafc2fcacea921b","tracklist":"https:\/\/api.deezer.com\/playlist\/1699167521\/tracks","creation_date":"2016-03-31
+        11:42:38","time_add":1579865591,"time_mod":1596644190,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1767122962,"title":"Feel
+        Good Classical","duration":8952,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":22338,"link":"https:\/\/www.deezer.com\/playlist\/1767122962","picture":"https:\/\/api.deezer.com\/playlist\/1767122962\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/5e2cb55e8bd7ec7ee13da2c8ed32a6e4\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/5e2cb55e8bd7ec7ee13da2c8ed32a6e4\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/5e2cb55e8bd7ec7ee13da2c8ed32a6e4\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/5e2cb55e8bd7ec7ee13da2c8ed32a6e4\/1000x1000-000000-80-0-0.jpg","checksum":"f268baddc7cec4679659a18c65a1da15","tracklist":"https:\/\/api.deezer.com\/playlist\/1767122962\/tracks","creation_date":"2016-04-27
+        13:08:29","time_add":1593189136,"time_mod":1596115370,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1787912442,"title":"Calm
+        Piano","duration":16281,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":100,"fans":167573,"link":"https:\/\/www.deezer.com\/playlist\/1787912442","picture":"https:\/\/api.deezer.com\/playlist\/1787912442\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/214503a8296cac7f4c2bcc2973e4dfea\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/214503a8296cac7f4c2bcc2973e4dfea\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/214503a8296cac7f4c2bcc2973e4dfea\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/214503a8296cac7f4c2bcc2973e4dfea\/1000x1000-000000-80-0-0.jpg","checksum":"2412531e3c01058dc925c502e6518da6","tracklist":"https:\/\/api.deezer.com\/playlist\/1787912442\/tracks","creation_date":"2016-05-03
+        17:41:06","time_add":1587724355,"time_mod":1596645066,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":1863944982,"title":"Bittersweet
+        Cello","duration":11409,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":40,"fans":12890,"link":"https:\/\/www.deezer.com\/playlist\/1863944982","picture":"https:\/\/api.deezer.com\/playlist\/1863944982\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/5a0518e32b585a03c157cd5633e9be3e\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/5a0518e32b585a03c157cd5633e9be3e\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/5a0518e32b585a03c157cd5633e9be3e\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/5a0518e32b585a03c157cd5633e9be3e\/1000x1000-000000-80-0-0.jpg","checksum":"ffaf873e61fe8f055c7f1ed04a111346","tracklist":"https:\/\/api.deezer.com\/playlist\/1863944982\/tracks","creation_date":"2016-05-26
+        13:59:18","time_add":1579185692,"time_mod":1581596518,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":2481227764,"title":"Chamber
+        Music Essentials","duration":13946,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":8344,"link":"https:\/\/www.deezer.com\/playlist\/2481227764","picture":"https:\/\/api.deezer.com\/playlist\/2481227764\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/bf4373b75902dbd499b597e8575048b3\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/bf4373b75902dbd499b597e8575048b3\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/bf4373b75902dbd499b597e8575048b3\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/bf4373b75902dbd499b597e8575048b3\/1000x1000-000000-80-0-0.jpg","checksum":"b86c2b262043396dc9c022da4d6e34e5","tracklist":"https:\/\/api.deezer.com\/playlist\/2481227764\/tracks","creation_date":"2016-11-24
+        11:45:45","time_add":1578588167,"time_mod":1588155013,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":2497413064,"title":"Classical
+        Christmas","duration":10528,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":59,"fans":9945,"link":"https:\/\/www.deezer.com\/playlist\/2497413064","picture":"https:\/\/api.deezer.com\/playlist\/2497413064\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/4cb5f2e464514baedb92576e4138ac0f\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/4cb5f2e464514baedb92576e4138ac0f\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/4cb5f2e464514baedb92576e4138ac0f\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/4cb5f2e464514baedb92576e4138ac0f\/1000x1000-000000-80-0-0.jpg","checksum":"de947b59300e3ce0941dc7ece23fc730","tracklist":"https:\/\/api.deezer.com\/playlist\/2497413064\/tracks","creation_date":"2016-11-28
+        16:28:24","time_add":1573638055,"time_mod":1579705522,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":3799157302,"title":"Classical
+        cocktail","duration":12494,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":80,"fans":4799,"link":"https:\/\/www.deezer.com\/playlist\/3799157302","picture":"https:\/\/api.deezer.com\/playlist\/3799157302\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/19373dbc1748abf9613ae547f1567f6d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/19373dbc1748abf9613ae547f1567f6d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/19373dbc1748abf9613ae547f1567f6d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/19373dbc1748abf9613ae547f1567f6d\/1000x1000-000000-80-0-0.jpg","checksum":"6384fe55d20e35ca72a0ae6b50914094","tracklist":"https:\/\/api.deezer.com\/playlist\/3799157302\/tracks","creation_date":"2017-11-13
+        17:41:45","time_add":1576669074,"time_mod":1591123737,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4516934262,"title":"Classical
+        World Music","duration":5398,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":29,"fans":2159,"link":"https:\/\/www.deezer.com\/playlist\/4516934262","picture":"https:\/\/api.deezer.com\/playlist\/4516934262\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/ea054ce7b791aeff478d48a84941b151\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/ea054ce7b791aeff478d48a84941b151\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/ea054ce7b791aeff478d48a84941b151\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/ea054ce7b791aeff478d48a84941b151\/1000x1000-000000-80-0-0.jpg","checksum":"b8fd11846384de2c118001dcb0d46529","tracklist":"https:\/\/api.deezer.com\/playlist\/4516934262\/tracks","creation_date":"2018-05-28
+        14:18:45","time_add":1552476000,"time_mod":1581596341,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4524757244,"title":"Classical
+        goes pop","duration":16908,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":70,"fans":11100,"link":"https:\/\/www.deezer.com\/playlist\/4524757244","picture":"https:\/\/api.deezer.com\/playlist\/4524757244\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/61f5487113142ee3c011f55bd6f42d2c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/61f5487113142ee3c011f55bd6f42d2c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/61f5487113142ee3c011f55bd6f42d2c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/61f5487113142ee3c011f55bd6f42d2c\/1000x1000-000000-80-0-0.jpg","checksum":"ad63565b94367988aa8dc698d794a39c","tracklist":"https:\/\/api.deezer.com\/playlist\/4524757244\/tracks","creation_date":"2018-05-31
+        10:21:39","time_add":1593187338,"time_mod":1594832459,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4590794204,"title":"Classique
+        pour travailler","duration":15798,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":100,"fans":7241,"link":"https:\/\/www.deezer.com\/playlist\/4590794204","picture":"https:\/\/api.deezer.com\/playlist\/4590794204\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/476e0e3b27f508a293b57c585a1640d1\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/476e0e3b27f508a293b57c585a1640d1\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/476e0e3b27f508a293b57c585a1640d1\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/476e0e3b27f508a293b57c585a1640d1\/1000x1000-000000-80-0-0.jpg","checksum":"1494d464ba6f64fb0332d86c99c39f35","tracklist":"https:\/\/api.deezer.com\/playlist\/4590794204\/tracks","creation_date":"2018-06-21
+        10:21:44","time_add":1583842104,"time_mod":1588169207,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4590801764,"title":"Klassische
+        Musik zum Arbeiten","duration":15839,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":100,"fans":3774,"link":"https:\/\/www.deezer.com\/playlist\/4590801764","picture":"https:\/\/api.deezer.com\/playlist\/4590801764\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/d7734ff628459ae9375660276f49ea88\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/d7734ff628459ae9375660276f49ea88\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/d7734ff628459ae9375660276f49ea88\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/d7734ff628459ae9375660276f49ea88\/1000x1000-000000-80-0-0.jpg","checksum":"c53656d8b97186d41de58659592ba2cd","tracklist":"https:\/\/api.deezer.com\/playlist\/4590801764\/tracks","creation_date":"2018-06-21
+        10:25:28","time_add":1563537152,"time_mod":1588154338,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4590803744,"title":"Cl\u00e1ssicas
+        para trabalhar","duration":15839,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":100,"fans":6418,"link":"https:\/\/www.deezer.com\/playlist\/4590803744","picture":"https:\/\/api.deezer.com\/playlist\/4590803744\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/56e6a615110e5070290ffa6733b6af6d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/56e6a615110e5070290ffa6733b6af6d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/56e6a615110e5070290ffa6733b6af6d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/56e6a615110e5070290ffa6733b6af6d\/1000x1000-000000-80-0-0.jpg","checksum":"9c18804f880d31647c35d75d6fb59dbe","tracklist":"https:\/\/api.deezer.com\/playlist\/4590803744\/tracks","creation_date":"2018-06-21
+        10:26:29","time_add":1579273535,"time_mod":1588154305,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4590807924,"title":"Piano
+        au calme","duration":16412,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":100,"fans":51647,"link":"https:\/\/www.deezer.com\/playlist\/4590807924","picture":"https:\/\/api.deezer.com\/playlist\/4590807924\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/c5bab20b466c640881d195b2d9c18b47\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/c5bab20b466c640881d195b2d9c18b47\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/c5bab20b466c640881d195b2d9c18b47\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/c5bab20b466c640881d195b2d9c18b47\/1000x1000-000000-80-0-0.jpg","checksum":"78ef852ae9aaa682ae4a3e2b56b40131","tracklist":"https:\/\/api.deezer.com\/playlist\/4590807924\/tracks","creation_date":"2018-06-21
+        10:28:30","time_add":1587139389,"time_mod":1596474746,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4590810484,"title":"Ruhige
+        Klaviermusik","duration":16412,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":100,"fans":2842,"link":"https:\/\/www.deezer.com\/playlist\/4590810484","picture":"https:\/\/api.deezer.com\/playlist\/4590810484\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/9a68e3bf19af8551ed11e6384cb160f2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/9a68e3bf19af8551ed11e6384cb160f2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/9a68e3bf19af8551ed11e6384cb160f2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/9a68e3bf19af8551ed11e6384cb160f2\/1000x1000-000000-80-0-0.jpg","checksum":"a5469d85f97607b10a06f04f99f79830","tracklist":"https:\/\/api.deezer.com\/playlist\/4590810484\/tracks","creation_date":"2018-06-21
+        10:29:40","time_add":1583855040,"time_mod":1596474783,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4590825924,"title":"Piano
+        calmo","duration":16412,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":100,"fans":13668,"link":"https:\/\/www.deezer.com\/playlist\/4590825924","picture":"https:\/\/api.deezer.com\/playlist\/4590825924\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/4555ea4c3c79c5a5cdb02cf88c7fcb72\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/4555ea4c3c79c5a5cdb02cf88c7fcb72\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/4555ea4c3c79c5a5cdb02cf88c7fcb72\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/4555ea4c3c79c5a5cdb02cf88c7fcb72\/1000x1000-000000-80-0-0.jpg","checksum":"d4b179381c7506dfb9dfcd1424c66514","tracklist":"https:\/\/api.deezer.com\/playlist\/4590825924\/tracks","creation_date":"2018-06-21
+        10:37:18","time_add":1583511251,"time_mod":1596474766,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":4889001324,"title":"Classical
+        in movies","duration":10843,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":35,"fans":10190,"link":"https:\/\/www.deezer.com\/playlist\/4889001324","picture":"https:\/\/api.deezer.com\/playlist\/4889001324\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/037d937cf936ceee408c193036417667\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/037d937cf936ceee408c193036417667\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/037d937cf936ceee408c193036417667\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/playlist\/037d937cf936ceee408c193036417667\/1000x1000-000000-80-0-0.jpg","checksum":"7b8fbb1ea31acac9c2f409de8cd4a2d9","tracklist":"https:\/\/api.deezer.com\/playlist\/4889001324\/tracks","creation_date":"2018-09-19
+        17:19:30","time_add":1562602551,"time_mod":1562602616,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"}],"checksum":"4a17adde0a62902520898874826a59ff734c89d143496bcc6c92a56dc3d5f2c9","total":41,"next":"https:\/\/api.deezer.com\/user\/353978015\/playlists?index=25"}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 16 Aug 2020 18:42:27 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr87768eda2c21f5cfa2520f8180075632193c51; expires=Fri,
+        12-Feb-2021 18:42:27 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-24
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr87768eda2c21f5cfa2520f8180075632193c51
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/user/353978015/playlists?index=25
+  response:
+    body:
+      string: '{"data":[{"id":4891419904,"title":"Calm Choral Music","duration":10041,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":14311,"link":"https:\/\/www.deezer.com\/playlist\/4891419904","picture":"https:\/\/api.deezer.com\/playlist\/4891419904\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/4215de6fa264acf1120f8aa1e1603ef1\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/4215de6fa264acf1120f8aa1e1603ef1\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/4215de6fa264acf1120f8aa1e1603ef1\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/4215de6fa264acf1120f8aa1e1603ef1\/1000x1000-000000-80-0-0.jpg","checksum":"b0f9ca5bf4223cf0206cc33597c2e487","tracklist":"https:\/\/api.deezer.com\/playlist\/4891419904\/tracks","creation_date":"2018-09-20
+        10:25:30","time_add":1572366073,"time_mod":1596644308,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":6090624244,"title":"Le
+        meilleur du classique","duration":18018,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":60,"fans":11772,"link":"https:\/\/www.deezer.com\/playlist\/6090624244","picture":"https:\/\/api.deezer.com\/playlist\/6090624244\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/cc83b796a0160ee18ae528fae9f64556\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/cc83b796a0160ee18ae528fae9f64556\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/cc83b796a0160ee18ae528fae9f64556\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/cc83b796a0160ee18ae528fae9f64556\/1000x1000-000000-80-0-0.jpg","checksum":"eb79af729e232bd0a16b17ad60bd609d","tracklist":"https:\/\/api.deezer.com\/playlist\/6090624244\/tracks","creation_date":"2019-06-19
+        11:28:54","time_add":1579800414,"time_mod":1579800414,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":6090626284,"title":"Pra
+        Sempre M\u00fasica Cl\u00e1ssica","duration":18018,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":60,"fans":7123,"link":"https:\/\/www.deezer.com\/playlist\/6090626284","picture":"https:\/\/api.deezer.com\/playlist\/6090626284\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/ccc9edf82eca13c154ccc2b1537bf413\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/ccc9edf82eca13c154ccc2b1537bf413\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/ccc9edf82eca13c154ccc2b1537bf413\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/ccc9edf82eca13c154ccc2b1537bf413\/1000x1000-000000-80-0-0.jpg","checksum":"3c0c092f22b95a8d9822d46896fa6b8f","tracklist":"https:\/\/api.deezer.com\/playlist\/6090626284\/tracks","creation_date":"2019-06-19
+        11:29:29","time_add":1579800439,"time_mod":1588692963,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":6777052164,"title":"Christmas
+        Calm Piano","duration":11327,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":70,"fans":1095,"link":"https:\/\/www.deezer.com\/playlist\/6777052164","picture":"https:\/\/api.deezer.com\/playlist\/6777052164\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1c35e4eec9cb41110c6102f9c9f0e797\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1c35e4eec9cb41110c6102f9c9f0e797\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1c35e4eec9cb41110c6102f9c9f0e797\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1c35e4eec9cb41110c6102f9c9f0e797\/1000x1000-000000-80-0-0.jpg","checksum":"195e45de243562d3eec293ab2594fb5a","tracklist":"https:\/\/api.deezer.com\/playlist\/6777052164\/tracks","creation_date":"2019-11-05
+        14:14:04","time_add":1576160644,"time_mod":1576161205,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":6883508544,"title":"Best
+        of Calm Piano 2019","duration":6408,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":40,"fans":4764,"link":"https:\/\/www.deezer.com\/playlist\/6883508544","picture":"https:\/\/api.deezer.com\/playlist\/6883508544\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/3d629c8356d04d4ad76bf41637b107b8\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/3d629c8356d04d4ad76bf41637b107b8\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/3d629c8356d04d4ad76bf41637b107b8\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/3d629c8356d04d4ad76bf41637b107b8\/1000x1000-000000-80-0-0.jpg","checksum":"44d1458dccbe5787293ab3a708108871","tracklist":"https:\/\/api.deezer.com\/playlist\/6883508544\/tracks","creation_date":"2019-11-28
+        16:32:58","time_add":1575561462,"time_mod":1589286068,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":7058646664,"title":"Piano
+        Classics","duration":12560,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":3880,"link":"https:\/\/www.deezer.com\/playlist\/7058646664","picture":"https:\/\/api.deezer.com\/playlist\/7058646664\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2273a1ed5e23e706c464d63f150cc47d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2273a1ed5e23e706c464d63f150cc47d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2273a1ed5e23e706c464d63f150cc47d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2273a1ed5e23e706c464d63f150cc47d\/1000x1000-000000-80-0-0.jpg","checksum":"2114735b0ef590b68580460ab6398c37","tracklist":"https:\/\/api.deezer.com\/playlist\/7058646664\/tracks","creation_date":"2020-01-02
+        14:07:26","time_add":1577974046,"time_mod":1594821307,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":7389978484,"title":"Sweet
+        Piano Music","duration":9798,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":4532,"link":"https:\/\/www.deezer.com\/playlist\/7389978484","picture":"https:\/\/api.deezer.com\/playlist\/7389978484\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/c8dd8328963997fcf9015523166a19ce\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/c8dd8328963997fcf9015523166a19ce\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/c8dd8328963997fcf9015523166a19ce\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/c8dd8328963997fcf9015523166a19ce\/1000x1000-000000-80-0-0.jpg","checksum":"45561e083794584ec00e8fbbfe2a0966","tracklist":"https:\/\/api.deezer.com\/playlist\/7389978484\/tracks","creation_date":"2020-03-16
+        11:18:07","time_add":1584376965,"time_mod":1584541943,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":7394566524,"title":"Lullabies","duration":11268,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":50,"fans":1788,"link":"https:\/\/www.deezer.com\/playlist\/7394566524","picture":"https:\/\/api.deezer.com\/playlist\/7394566524\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/407072456ec5aae6e28db72e8bb6ae3a\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/407072456ec5aae6e28db72e8bb6ae3a\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/407072456ec5aae6e28db72e8bb6ae3a\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/407072456ec5aae6e28db72e8bb6ae3a\/1000x1000-000000-80-0-0.jpg","checksum":"2d285044b5589fd87e3a9e989f440b8b","tracklist":"https:\/\/api.deezer.com\/playlist\/7394566524\/tracks","creation_date":"2020-03-17
+        14:33:31","time_add":1584547119,"time_mod":1596558292,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":7496567644,"title":"Ballerina
+        Princess","duration":9240,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":40,"fans":187,"link":"https:\/\/www.deezer.com\/playlist\/7496567644","picture":"https:\/\/api.deezer.com\/playlist\/7496567644\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1037c1a1a5f6ed1eae98d5acf32ac170\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1037c1a1a5f6ed1eae98d5acf32ac170\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1037c1a1a5f6ed1eae98d5acf32ac170\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1037c1a1a5f6ed1eae98d5acf32ac170\/1000x1000-000000-80-0-0.jpg","checksum":"37f66d81c83a57991c91ef5bcef725c5","tracklist":"https:\/\/api.deezer.com\/playlist\/7496567644\/tracks","creation_date":"2020-04-09
+        10:06:03","time_add":1586428091,"time_mod":1587481627,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":7730128522,"title":"Piano
+        lullabies","duration":6004,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":40,"fans":19,"link":"https:\/\/www.deezer.com\/playlist\/7730128522","picture":"https:\/\/api.deezer.com\/playlist\/7730128522\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/54547725c5e1423355c8c3adf8377121\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/54547725c5e1423355c8c3adf8377121\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/54547725c5e1423355c8c3adf8377121\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/54547725c5e1423355c8c3adf8377121\/1000x1000-000000-80-0-0.jpg","checksum":"f6221fcbcd3bacde842ce3a5228b7940","tracklist":"https:\/\/api.deezer.com\/playlist\/7730128522\/tracks","creation_date":"2020-06-04
+        10:10:06","time_add":1591265687,"time_mod":1591265931,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":7863244682,"title":"Black
+        icons of Classical","duration":5309,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":20,"fans":311,"link":"https:\/\/www.deezer.com\/playlist\/7863244682","picture":"https:\/\/api.deezer.com\/playlist\/7863244682\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/f21a1bed29fc10025348dcebf8d3fc89\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/f21a1bed29fc10025348dcebf8d3fc89\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/f21a1bed29fc10025348dcebf8d3fc89\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/f21a1bed29fc10025348dcebf8d3fc89\/1000x1000-000000-80-0-0.jpg","checksum":"c6ffccc9864a5a594d46f15693bf7fb9","tracklist":"https:\/\/api.deezer.com\/playlist\/7863244682\/tracks","creation_date":"2020-07-07
+        11:25:00","time_add":1594632009,"time_mod":1596107073,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"},{"id":600074365,"title":"Loved
+        tracks","duration":385756,"public":true,"is_loved_track":true,"collaborative":false,"nb_tracks":1274,"fans":191,"link":"https:\/\/www.deezer.com\/playlist\/600074365","picture":"https:\/\/api.deezer.com\/playlist\/600074365\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f0604f1104723a8cb0bd1439bc6f6a30\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f0604f1104723a8cb0bd1439bc6f6a30\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f0604f1104723a8cb0bd1439bc6f6a30\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f0604f1104723a8cb0bd1439bc6f6a30\/1000x1000-000000-80-0-0.jpg","checksum":"bf6fb3ed1ba1e7f2a85948db9a58d4ae","tracklist":"https:\/\/api.deezer.com\/playlist\/600074365\/tracks","creation_date":"2017-06-09
+        11:29:39","time_add":1579191043,"time_mod":1596471861,"creator":{"id":353978015,"name":"Yannick
+        - Deezer Classical Editor","tracklist":"https:\/\/api.deezer.com\/user\/353978015\/flow","type":"user"},"type":"playlist"}],"checksum":"4a17adde0a62902520898874826a59ff734c89d143496bcc6c92a56dc3d5f2c9","total":37,"prev":"https:\/\/api.deezer.com\/user\/353978015\/playlists?index=0"}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 16 Aug 2020 18:42:27 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr87768eda2c21f5cfa2520f8180075632193c51; expires=Fri,
+        12-Feb-2021 18:42:27 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-133
+    status:
+      code: 200
+      message: OK
 version: 1

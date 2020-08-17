@@ -206,6 +206,12 @@ class TestClient:
         assert isinstance(result, list)
         assert len(result) <= 2
 
+    def test_options_3(self, client):
+        """Test a query with extra arguments"""
+        result = client.get_playlist(747148961).get_tracks(limit=30)
+        assert isinstance(result, list)
+        assert len(result) == 30
+
     def test_search_simple(self, client):
         """Test search method"""
         assert (

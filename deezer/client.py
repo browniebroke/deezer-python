@@ -185,6 +185,27 @@ class Client:
                     object_t, object_id
                 )
             )
+
+        # fix deezer's truncation of items (e.g. tracks on large playlists)
+        if (
+            (
+                relation == "tracks"
+                or relation == "fans"
+                or relation == "albums"
+                or relation == "artists"
+                or relation == "playlists"
+            )
+            and "next" in json
+            and "limit" not in kwargs
+        ):
+            new_json = json
+            while "next" in new_json:
+                response = self.session.get(new_json["next"])
+                new_json = response.json()
+                json["data"].extend(new_json["data"])
+
+            del json["next"]
+
         return self._process_json(json, parent)
 
     def get_chart(self, relation=None, index=0, limit=10, **kwargs):

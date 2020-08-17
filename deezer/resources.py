@@ -318,6 +318,7 @@ class Playlist(Resource):
     def get_fans(self, **kwargs):
         """
         Get fans from a playlist.
+        The Deezer API currently limits this to 100 fans.
 
         :returns: list of :mod:`User <deezer.resources.User>` instances
         """
@@ -326,6 +327,7 @@ class Playlist(Resource):
     def iter_fans(self, **kwargs):
         """
         Iterate over fans of a playlist.
+        The Deezer API currently limits this to 100 fans.
 
         :returns: iterator of :mod:`User <deezer.resources.User>` instances
         """

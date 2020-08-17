@@ -26,6 +26,10 @@ class TestAlbum:
         assert repr(artist) == "<Artist: Daft Punk>"
 
     def test_album_tracks(self, client):
+        # test for tracks being truncated
+        album_71_tracks = client.get_album(6770790)
+        assert len(album_71_tracks.get_tracks()) == 71
+
         album = client.get_album(302127)
         tracks = album.get_tracks()
         assert isinstance(tracks, list)
@@ -51,6 +55,8 @@ class TestArtist:
     def test_artist_albums(self, client):
         artist = client.get_artist(27)
         albums = artist.get_albums()
+        # test for albums being truncated
+        assert len(albums) == 33
         assert isinstance(albums, list)
         album = albums[0]
         assert isinstance(album, deezer.resources.Album)
@@ -209,6 +215,10 @@ class TestUser:
         """
         Test albums method of user resource
         """
+        # test for albums being truncated
+        user_152_albums = client.get_user(846571671)
+        assert len(user_152_albums.get_albums()) == 152
+
         user = client.get_user(359622)
         albums = user.get_albums()
         assert isinstance(albums, list)
@@ -221,6 +231,10 @@ class TestUser:
         """
         Test artists method of user resource
         """
+        # test for artists being truncated
+        user_133_artists = client.get_user(353978015)
+        assert len(user_133_artists.get_artists()) == 133
+
         user = client.get_user(359622)
         artists = user.get_artists()
         assert isinstance(artists, list)
@@ -233,6 +247,10 @@ class TestUser:
         """
         Test playlists method of user resource
         """
+        # tests for playlists being truncated
+        user_37_playlists = client.get_user(353978015)
+        assert len(user_37_playlists.get_playlists()) == 37
+
         user = client.get_user(359622)
         playlists = user.get_playlists()
         assert isinstance(playlists, list)
@@ -245,6 +263,10 @@ class TestUser:
         """
         Test tracks method of user resource
         """
+        # tests for tracks being truncated
+        user_28_tracks = client.get_user(304158405)
+        assert len(user_28_tracks.get_tracks()) == 28
+
         user = client.get_user(353978015)
         tracks = user.get_tracks()
         assert isinstance(tracks, list)
@@ -256,6 +278,10 @@ class TestUser:
 
 class TestPlaylist:
     def test_get_tracks(self, client):
+        # test for tracks being truncated
+        playlist_60_tracks = client.get_playlist(747148961)
+        assert len(playlist_60_tracks.get_tracks()) == 60
+
         playlist = client.get_playlist(12345)
         tracks = playlist.get_tracks()
         assert len(tracks) == 4
@@ -265,6 +291,11 @@ class TestPlaylist:
         assert type(playlist.iter_tracks()) == GeneratorType
 
     def test_get_fans(self, client):
+        # check that no fans (where possible) are truncated
+        # the api (as of 2020-08-15) seems to limit this at 100
+        playlist_gt_100_fans = client.get_playlist(747148961)
+        assert len(playlist_gt_100_fans.get_fans()) >= 100
+
         playlist = client.get_playlist(6512)
         fans = playlist.get_fans()
         assert len(fans) == 3
