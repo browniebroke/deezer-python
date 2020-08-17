@@ -176,36 +176,58 @@ class Client:
 
         :returns: json dictionary
         """
+        # gets the first (and maybe only) URL to query
         url = self.object_url(object_t, object_id, relation, **kwargs)
-        response = self.session.get(url)
-        json = response.json()
-        if "error" in json:
-            raise ValueError(
-                "API request return error for object: {} id: {}".format(
-                    object_t, object_id
-                )
-            )
 
-        # fix deezer's truncation of items (e.g. tracks on large playlists)
-        if (
-            (
-                relation == "tracks"
-                or relation == "fans"
-                or relation == "albums"
-                or relation == "artists"
-                or relation == "playlists"
-            )
-            and "next" in json
-            and "limit" not in kwargs
-        ):
-            new_json = json
-            while "next" in new_json:
-                response = self.session.get(new_json["next"])
-                new_json = response.json()
+        # set some variables for use in the while loop below:
+        # `new_url` is the new URL to follow at each iteration of the loop
+        # `json` will be the final JSON data (at the end, passed to _process_json)
+        new_url = url
+        json = None
+
+        # `relations_follow_next_url` is a list of relations
+        # for which any provided `next` URL will be followed
+        relations_follow_next_url = ["tracks", "fans", "albums", "artists", "playlists"]
+
+        # looping until there is no new URL to follow
+        while new_url is not None:
+            # fetch the data, save it to `new_json`
+            response = self.session.get(new_url)
+            new_json = response.json()
+
+            # if there was an error fetching the data, raise an exception
+            if "error" in new_json:
+                raise ValueError(
+                    "API request return error for object: {} id: {}".format(
+                        object_t, object_id
+                    )
+                )
+
+            # if there is no JSON data at all,
+            # save the fetched data to the `json` variable.
+            # otherwise, add the new data onto the existing data
+            if json is None:
+                json = new_json
+            else:
                 json["data"].extend(new_json["data"])
 
-            del json["next"]
+            # If the URL just followed is different from the first URL followed
+            #   (which would mean at least one `next` URL has already been followed,
+            #   and that the below criteria has already been validated),
+            # or there is (a) no manual limit specified, and (b) the relation is in
+            #   the list of relations for which `next` URLs will be followed,
+            # AND there is a `next` URL to follow,
+            # set the new URL to follow to the specified `next` URL.
+            # Otherwise, set the new URL to None (which will cause the loop to end)
+            if (
+                new_url != url
+                or ("limit" not in kwargs and relation in relations_follow_next_url)
+            ) and "next" in new_json:
+                new_url = new_json["next"]
+            else:
+                new_url = None
 
+        # Process the (now complete) JSON data and return
         return self._process_json(json, parent)
 
     def get_chart(self, relation=None, index=0, limit=10, **kwargs):
