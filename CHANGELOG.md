@@ -117,13 +117,16 @@
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
 
+### 🚀 Enhancements:
+
+- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
+
 ## [0.8.0](https://github.com/browniebroke/deezer-python/tree/0.8.0) (2018-10-30)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.7.0...0.8.0)
 
 ### 🚀 Enhancements:
 
-- Add advanced search method [\#37](https://github.com/browniebroke/deezer-python/pull/37) ([jnth](https://github.com/jnth))
 - Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
 - Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
@@ -153,7 +156,6 @@
 ### 🚀 Enhancements:
 
 - Add access token to request kwargs [\#20](https://github.com/browniebroke/deezer-python/pull/20) ([sheregeda](https://github.com/sheregeda))
-- Implement chart methods [\#8](https://github.com/browniebroke/deezer-python/pull/8) ([pfouque](https://github.com/pfouque))
 
 ### 📖 Documentation updates:
 
@@ -188,6 +190,7 @@
 
 - Improve chart integration [\#11](https://github.com/browniebroke/deezer-python/pull/11) ([pfouque](https://github.com/pfouque))
 - Add pypy to the build matrix [\#10](https://github.com/browniebroke/deezer-python/pull/10) ([browniebroke](https://github.com/browniebroke))
+- Implement chart methods [\#8](https://github.com/browniebroke/deezer-python/pull/8) ([pfouque](https://github.com/pfouque))
 
 ### ✅ Testing:
 
