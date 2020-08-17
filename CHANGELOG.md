@@ -41,6 +41,10 @@
 
 - Use explicit kwargs for the Client class [\#79](https://github.com/browniebroke/deezer-python/pull/79) ([browniebroke](https://github.com/browniebroke))
 
+### 🐛 Bug Fixes:
+
+- Get method error handling [\#64](https://github.com/browniebroke/deezer-python/pull/64) ([nrebena](https://github.com/nrebena))
+
 ### 📖 Documentation updates:
 
 - Documentation reworking and explain usage [\#78](https://github.com/browniebroke/deezer-python/pull/78) ([browniebroke](https://github.com/browniebroke))
@@ -59,10 +63,6 @@
 ### 🚀 Enhancements:
 
 - Add Python 3.8 support [\#71](https://github.com/browniebroke/deezer-python/pull/71) ([jnth](https://github.com/jnth))
-
-### 🐛 Bug Fixes:
-
-- Get method error handling [\#64](https://github.com/browniebroke/deezer-python/pull/64) ([nrebena](https://github.com/nrebena))
 
 ### ✅ Testing:
 
