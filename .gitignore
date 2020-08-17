@@ -18,6 +18,3 @@ ENV*
 node_modules
 package.json
 yarn.lock
-
-# Visual Studio Code
-.vscode
