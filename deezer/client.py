@@ -16,6 +16,7 @@ from deezer.resources import (
     Playlist,
     Podcast,
     Radio,
+    Resource,
     Track,
     User,
 )
@@ -125,7 +126,11 @@ class Client:
             result[parent.type] = parent
 
         if "type" in result:
-            object_class = self.objects_types[result["type"]]
+            if result["type"] in self.objects_types:
+                object_class = self.objects_types[result["type"]]
+            else:
+                # in case any new types are introduced by the API
+                object_class = Resource
         else:
             object_class = self.objects_types[parent]
         return object_class(self, result)
