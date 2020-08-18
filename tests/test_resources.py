@@ -164,7 +164,7 @@ class TestChart:
         assert isinstance(tracks, list)
         track = tracks[0]
         assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: Khapta>"
+        assert repr(track) == "<Track: Head & Heart (feat. MNEK)>"
         assert type(chart.iter_tracks()) == GeneratorType
 
     def test_chart_artists(self, client):
@@ -176,7 +176,7 @@ class TestChart:
         assert isinstance(artists, list)
         artist = artists[0]
         assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Lacrim>"
+        assert repr(artist) == "<Artist: Juice Wrld>"
         assert type(chart.iter_artists()) == GeneratorType
 
     def test_chart_albums(self, client):
@@ -188,7 +188,10 @@ class TestChart:
         assert isinstance(albums, list)
         album = albums[0]
         assert isinstance(album, deezer.resources.Album)
-        assert repr(album) == "<Album: Lacrim>"
+        assert (
+            repr(album)
+            == "<Album: The Dark Side Of The Moon [Remastered] (Remastered Version)>"
+        )
         assert type(chart.iter_albums()) == GeneratorType
 
     def test_chart_playlists(self, client):
@@ -200,7 +203,7 @@ class TestChart:
         assert isinstance(playlists, list)
         playlist = playlists[0]
         assert isinstance(playlist, deezer.resources.Playlist)
-        assert repr(playlist) == "<Playlist: Les titres du moment>"
+        assert repr(playlist) == "<Playlist: Deezer Hits UK>"
         assert type(chart.iter_playlists()) == GeneratorType
 
 

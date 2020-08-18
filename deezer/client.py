@@ -14,6 +14,7 @@ from deezer.resources import (
     Comment,
     Genre,
     Playlist,
+    Podcast,
     Radio,
     Track,
     User,
@@ -66,6 +67,7 @@ class Client:
         # 'folder': None, # need identification
         "genre": Genre,
         "playlist": Playlist,
+        "podcast": Podcast,
         "radio": Radio,
         "search": None,
         "track": Track,
