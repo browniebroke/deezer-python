@@ -329,7 +329,7 @@ class Playlist(Resource):
 
         :returns: iterator of :mod:`User <deezer.resources.User>` instances
         """
-        return self.iter_relation("tracks", **kwargs)
+        return self.iter_relation("fans", **kwargs)
 
 
 class Comment(Resource):
