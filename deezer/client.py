@@ -12,6 +12,7 @@ from deezer.resources import (
     Artist,
     Chart,
     Comment,
+    Episode,
     Genre,
     Playlist,
     Podcast,
@@ -65,6 +66,7 @@ class Client:
         "artist": Artist,
         "comment": Comment,
         "editorial": None,
+        "episode": Episode,
         # 'folder': None, # need identification
         "genre": Genre,
         "playlist": Playlist,
@@ -249,6 +251,14 @@ class Client:
         :returns: a :class:`~deezer.resources.Playlist` object
         """
         return self.get_object("playlist", object_id)
+
+    def get_podcast(self, object_id):
+        """
+        Get the podcast with the provided id
+
+        :returns: a :class:`~deezer.resources.Podcast` object
+        """
+        return self.get_object("podcast", object_id)
 
     def get_radio(self, object_id=None):
         """

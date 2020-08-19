@@ -275,3 +275,18 @@ class TestPlaylist:
             assert isinstance(fan, deezer.resources.User)
         assert fans[0].name == "laurentky"
         assert type(playlist.iter_fans()) == GeneratorType
+
+
+class TestPodcast:
+    def test_get_episodes(self, client):
+        """
+        Test episodes method of podcast resource
+        """
+        podcast = client.get_podcast(699612)
+        episodes = podcast.get_episodes()
+        assert isinstance(episodes, list)
+        assert len(episodes) == 12
+        for episode in episodes:
+            assert isinstance(episode, deezer.resources.Episode)
+        assert episodes[0].title == "Episode 9: Follow the money"
+        assert type(podcast.iter_episodes()) == GeneratorType
