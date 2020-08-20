@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/podcast/-1
+  response:
+    body:
+      string: '{"error":{"type":"Exception","message":"An error has occured"}}'
+    headers:
+      Content-Length:
+      - '63'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 20 Aug 2020 09:27:04 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr6d1ba4e79fef242c32077dfb30454763c64dd0; expires=Tue,
+        16-Feb-2021 09:27:04 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-139
+    status:
+      code: 200
+      message: OK
+version: 1

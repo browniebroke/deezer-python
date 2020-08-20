@@ -1,0 +1,194 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/podcast/699612
+  response:
+    body:
+      string: '{"id":699612,"title":"The Missing Cryptoqueen","description":"Dr Ruja
+        Ignatova persuaded millions to join her financial revolution. Then she disappeared.
+        Why? Jamie Bartlett presents a story of greed, deceit and herd madness.","available":true,"rating":0,"fans":158,"link":"https:\/\/www.deezer.com\/show\/699612","share":"https:\/\/www.deezer.com\/show\/699612?utm_source=deezer&utm_content=show-699612&utm_term=0_1597835986&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/1000x1000-000000-80-0-0.jpg","type":"podcast"}'
+    headers:
+      Content-Length:
+      - '1084'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 Aug 2020 11:19:46 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr1bb3d600ae29c3891a137101a654e6399b17b6; expires=Mon,
+        15-Feb-2021 11:19:46 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-113
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr1bb3d600ae29c3891a137101a654e6399b17b6
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/podcast/699612/episodes
+  response:
+    body:
+      string: '{"data":[{"id":238455362,"title":"Episode 9: Follow the money","release_date":"2020-08-06
+        09:00:00","duration":2755,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":236605992,"title":"A
+        message for listeners","release_date":"2020-07-29 09:00:00","duration":131,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288732,"title":"Episode
+        8:  The technology and the dream","release_date":"2019-11-04 19:50:00","duration":3667,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288752,"title":"Episode
+        7: In Plain Sight","release_date":"2019-10-28 04:00:00","duration":2663,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288762,"title":"A
+        message from the airport","release_date":"2019-10-24 12:00:00","duration":138,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288782,"title":"Episode
+        6: The \u00dcberflieger","release_date":"2019-10-17 03:00:00","duration":2387,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288802,"title":"Episode
+        5: What dreams may come","release_date":"2019-10-10 06:00:00","duration":3736,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288812,"title":"Episode
+        4: Miss OneLife","release_date":"2019-10-03 06:00:00","duration":2331,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288822,"title":"Episode
+        3:  More than just a coin","release_date":"2019-09-26 17:07:00","duration":2456,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288832,"title":"Episode
+        2:  The Bitcoin Killer","release_date":"2019-09-19 13:30:00","duration":2176,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288842,"title":"Episode
+        1:  Dr Ruja","release_date":"2019-09-19 13:23:00","duration":1420,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288852,"title":"Introducing
+        The Missing Cryptoqueen","release_date":"2019-09-17 11:37:00","duration":155,"picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"}],"total":12}'
+    headers:
+      Content-Length:
+      - '2955'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 Aug 2020 11:19:46 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr1bb3d600ae29c3891a137101a654e6399b17b6; expires=Mon,
+        15-Feb-2021 11:19:46 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-110
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr1bb3d600ae29c3891a137101a654e6399b17b6
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/podcast/699612/episodes?index=0
+  response:
+    body:
+      string: '{"data":[{"id":238455362,"title":"Episode 9: Follow the money","release_date":"2020-08-06
+        09:00:00","duration":2755,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":236605992,"title":"A
+        message for listeners","release_date":"2020-07-29 09:00:00","duration":131,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288732,"title":"Episode
+        8:  The technology and the dream","release_date":"2019-11-04 19:50:00","duration":3667,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288752,"title":"Episode
+        7: In Plain Sight","release_date":"2019-10-28 04:00:00","duration":2663,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288762,"title":"A
+        message from the airport","release_date":"2019-10-24 12:00:00","duration":138,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288782,"title":"Episode
+        6: The \u00dcberflieger","release_date":"2019-10-17 03:00:00","duration":2387,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288802,"title":"Episode
+        5: What dreams may come","release_date":"2019-10-10 06:00:00","duration":3736,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288812,"title":"Episode
+        4: Miss OneLife","release_date":"2019-10-03 06:00:00","duration":2331,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288822,"title":"Episode
+        3:  More than just a coin","release_date":"2019-09-26 17:07:00","duration":2456,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288832,"title":"Episode
+        2:  The Bitcoin Killer","release_date":"2019-09-19 13:30:00","duration":2176,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288842,"title":"Episode
+        1:  Dr Ruja","release_date":"2019-09-19 13:23:00","duration":1420,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"},{"id":67288852,"title":"Introducing
+        The Missing Cryptoqueen","release_date":"2019-09-17 11:37:00","duration":155,"picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","type":"episode"}],"total":12}'
+    headers:
+      Content-Length:
+      - '2979'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 Aug 2020 11:53:23 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr1bb3d600ae29c3891a137101a654e6399b17b6; expires=Mon,
+        15-Feb-2021 11:53:23 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-147
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr1bb3d600ae29c3891a137101a654e6399b17b6
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/podcast/699612/episodes?index=12
+  response:
+    body:
+      string: '{"data":[],"total":12,"prev":"https:\/\/api.deezer.com\/podcast\/699612\/episodes?index=0"}'
+    headers:
+      Content-Length:
+      - '91'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 Aug 2020 11:53:23 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr1bb3d600ae29c3891a137101a654e6399b17b6; expires=Mon,
+        15-Feb-2021 11:53:23 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-91
+    status:
+      code: 200
+      message: OK
+version: 1

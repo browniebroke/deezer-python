@@ -83,6 +83,40 @@ class TestClient:
         with pytest.raises(ValueError):
             client.get_artist(-1)
 
+    def test_chart(self, client):
+        assert client.object_url("chart") == "https://api.deezer.com/chart"
+        result = client.get_chart()
+        assert isinstance(result, deezer.resources.Chart)
+
+        assert isinstance(result.tracks[0], deezer.resources.Track)
+        assert isinstance(result.albums[0], deezer.resources.Album)
+        assert isinstance(result.artists[0], deezer.resources.Artist)
+        assert isinstance(result.playlists[0], deezer.resources.Playlist)
+
+    def test_chart_tracks(self, client):
+        result = client.get_chart("tracks")
+        assert isinstance(result, list)
+        assert result[0].title == "Khapta"
+        assert isinstance(result[0], deezer.resources.Track)
+
+    def test_chart_albums(self, client):
+        result = client.get_chart("albums")
+        assert isinstance(result, list)
+        assert result[0].title == "Lacrim"
+        assert isinstance(result[0], deezer.resources.Album)
+
+    def test_chart_artists(self, client):
+        result = client.get_chart("artists")
+        assert isinstance(result, list)
+        assert result[0].name == "Lacrim"
+        assert isinstance(result[0], deezer.resources.Artist)
+
+    def test_chart_playlists(self, client):
+        result = client.get_chart("playlists")
+        assert isinstance(result, list)
+        assert result[0].title == "Les titres du moment"
+        assert isinstance(result[0], deezer.resources.Playlist)
+
     def test_get_comment(self, client):
         """Test methods to get a comment"""
         comment = client.get_comment(2772704)
@@ -92,6 +126,16 @@ class TestClient:
         """Test method get_comment for invalid value"""
         with pytest.raises(ValueError):
             client.get_comment(-1)
+
+    def test_get_episode(self, client):
+        """Test methods to get an episode"""
+        episode = client.get_episode(238455362)
+        assert isinstance(episode, deezer.resources.Episode)
+
+    def test_no_episode_raise(self, client):
+        """Test method get_episode for invalid value"""
+        with pytest.raises(ValueError):
+            client.get_episode(-1)
 
     def test_get_genre(self, client):
         """Test methods to get a genre"""
@@ -118,6 +162,16 @@ class TestClient:
         """Test method get_playlist for invalid value"""
         with pytest.raises(ValueError):
             client.get_playlist(-1)
+
+    def test_get_podcast(self, client):
+        """Test methods to get a podcast"""
+        podcast = client.get_podcast(699612)
+        assert isinstance(podcast, deezer.resources.Podcast)
+
+    def test_no_podcast_raise(self, client):
+        """Test method get_podcast for invalid value"""
+        with pytest.raises(ValueError):
+            client.get_podcast(-1)
 
     def test_get_radio(self, client):
         """Test methods to get a radio"""
@@ -159,40 +213,6 @@ class TestClient:
         """Test method get_user for invalid value"""
         with pytest.raises(ValueError):
             client.get_user(-1)
-
-    def test_chart(self, client):
-        assert client.object_url("chart") == "https://api.deezer.com/chart"
-        result = client.get_chart()
-        assert isinstance(result, deezer.resources.Chart)
-
-        assert isinstance(result.tracks[0], deezer.resources.Track)
-        assert isinstance(result.albums[0], deezer.resources.Album)
-        assert isinstance(result.artists[0], deezer.resources.Artist)
-        assert isinstance(result.playlists[0], deezer.resources.Playlist)
-
-    def test_chart_tracks(self, client):
-        result = client.get_chart("tracks")
-        assert isinstance(result, list)
-        assert result[0].title == "Khapta"
-        assert isinstance(result[0], deezer.resources.Track)
-
-    def test_chart_albums(self, client):
-        result = client.get_chart("albums")
-        assert isinstance(result, list)
-        assert result[0].title == "Lacrim"
-        assert isinstance(result[0], deezer.resources.Album)
-
-    def test_chart_artists(self, client):
-        result = client.get_chart("artists")
-        assert isinstance(result, list)
-        assert result[0].name == "Lacrim"
-        assert isinstance(result[0], deezer.resources.Artist)
-
-    def test_chart_playlists(self, client):
-        result = client.get_chart("playlists")
-        assert isinstance(result, list)
-        assert result[0].title == "Les titres du moment"
-        assert isinstance(result[0], deezer.resources.Playlist)
 
     def test_options_1(self, client):
         """Test a query with extra arguments"""
@@ -288,3 +308,37 @@ class TestClient:
         genre = client_fr.get_genre(52)
         assert isinstance(genre, deezer.resources.Genre)
         assert genre.name == expected_name
+
+    @pytest.mark.parametrize(
+        ("json", "expected_type"),
+        [
+            ({"name": "Unknown", "type": "unknown-type"}, deezer.resources.Resource,),
+            ({"title": "Album", "type": "album"}, deezer.resources.Album,),
+            ({"name": "Artist", "type": "artist"}, deezer.resources.Artist,),
+            ({"text": "Comment", "type": "comment"}, deezer.resources.Comment,),
+            ({"title": "Episode", "type": "episode"}, deezer.resources.Episode,),
+            ({"name": "Genre", "type": "genre"}, deezer.resources.Genre,),
+            ({"title": "Playlist", "type": "playlist"}, deezer.resources.Playlist,),
+            ({"title": "Podcast", "type": "podcast"}, deezer.resources.Podcast,),
+            ({"title": "Radio", "type": "radio"}, deezer.resources.Radio,),
+            ({"title": "Track", "type": "track"}, deezer.resources.Track,),
+            ({"name": "User", "type": "user"}, deezer.resources.User,),
+        ],
+        ids=[
+            "unknown",
+            "album",
+            "artist",
+            # chart not tested here as isn't returned with "type":"chart"
+            "comment",
+            "episode",
+            "genre",
+            "playlist",
+            "podcast",
+            "radio",
+            "track",
+            "user",
+        ],
+    )
+    def test_process_json_types(self, client, json, expected_type):
+        result = client._process_json(json)
+        assert type(result) == expected_type

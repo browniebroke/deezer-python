@@ -430,3 +430,35 @@ class Chart(Resource):
         :returns: list of :mod:`Playlist <deezer.resources.Playlist>` instances
         """
         return self.iter_relation("playlists", **kwargs)
+
+
+class Podcast(Resource):
+    """
+    To access an :deezer-api:`podcast object <podcast>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """
+
+    def get_episodes(self, **kwargs):
+        """
+        Get episodes from a podcast
+
+        :returns: list of :mod:`Episode <deezer.resources.Episode>` instances
+        """
+        return self.get_relation("episodes", **kwargs)
+
+    def iter_episodes(self, **kwargs):
+        """
+        Iterate over episodes of a podcast
+
+        :returns: list of :mod:`Episode <deezer.resources.Episode>` instances
+        """
+        return self.iter_relation("episodes", **kwargs)
+
+
+class Episode(Resource):
+    """
+    To access an :deezer-api:`episode object <episode>`.
+
+    All the fields documented on Deezer are accessible by as class attributes.
+    """

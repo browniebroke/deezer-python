@@ -12,9 +12,12 @@ from deezer.resources import (
     Artist,
     Chart,
     Comment,
+    Episode,
     Genre,
     Playlist,
+    Podcast,
     Radio,
+    Resource,
     Track,
     User,
 )
@@ -61,16 +64,18 @@ class Client:
     objects_types = {
         "album": Album,
         "artist": Artist,
+        "chart": Chart,
         "comment": Comment,
         "editorial": None,
+        "episode": Episode,
         # 'folder': None, # need identification
         "genre": Genre,
         "playlist": Playlist,
+        "podcast": Podcast,
         "radio": Radio,
         "search": None,
         "track": Track,
         "user": User,
-        "chart": Chart,
     }
 
     def __init__(
@@ -123,7 +128,11 @@ class Client:
             result[parent.type] = parent
 
         if "type" in result:
-            object_class = self.objects_types[result["type"]]
+            if result["type"] in self.objects_types:
+                object_class = self.objects_types[result["type"]]
+            else:
+                # in case any new types are introduced by the API
+                object_class = Resource
         else:
             object_class = self.objects_types[parent]
         return object_class(self, result)
@@ -187,16 +196,6 @@ class Client:
             )
         return self._process_json(json, parent)
 
-    def get_chart(self, relation=None, index=0, limit=10, **kwargs):
-        """
-        Get chart
-
-        :returns: a list of :class:`~deezer.resources.Resource` objects.
-        """
-        return self.get_object(
-            "chart", object_id="0", relation=relation, parent="chart", **kwargs
-        )
-
     def get_album(self, object_id, relation=None, **kwargs):
         """
         Get the album with the provided id
@@ -213,6 +212,16 @@ class Client:
         """
         return self.get_object("artist", object_id, relation=relation, **kwargs)
 
+    def get_chart(self, relation=None, index=0, limit=10, **kwargs):
+        """
+        Get chart
+
+        :returns: a list of :class:`~deezer.resources.Resource` objects.
+        """
+        return self.get_object(
+            "chart", object_id="0", relation=relation, parent="chart", **kwargs
+        )
+
     def get_comment(self, object_id):
         """
         Get the comment with the provided id
@@ -220,6 +229,14 @@ class Client:
         :returns: a :class:`~deezer.resources.Comment` object
         """
         return self.get_object("comment", object_id)
+
+    def get_episode(self, object_id):
+        """
+        Get the episode with the provided id
+
+        :returns: a :class:`~deezer.resources.Episode` object
+        """
+        return self.get_object("episode", object_id)
 
     def get_genre(self, object_id):
         """
@@ -242,6 +259,14 @@ class Client:
         :returns: a :class:`~deezer.resources.Playlist` object
         """
         return self.get_object("playlist", object_id)
+
+    def get_podcast(self, object_id):
+        """
+        Get the podcast with the provided id
+
+        :returns: a :class:`~deezer.resources.Podcast` object
+        """
+        return self.get_object("podcast", object_id)
 
     def get_radio(self, object_id=None):
         """
