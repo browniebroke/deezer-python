@@ -308,3 +308,37 @@ class TestClient:
         genre = client_fr.get_genre(52)
         assert isinstance(genre, deezer.resources.Genre)
         assert genre.name == expected_name
+
+    @pytest.mark.parametrize(
+        ("json", "expected_type"),
+        [
+            ({"name": "Unknown", "type": "unknown-type"}, deezer.resources.Resource,),
+            ({"title": "Album", "type": "album"}, deezer.resources.Album,),
+            ({"name": "Artist", "type": "artist"}, deezer.resources.Artist,),
+            ({"text": "Comment", "type": "comment"}, deezer.resources.Comment,),
+            ({"title": "Episode", "type": "episode"}, deezer.resources.Episode,),
+            ({"name": "Genre", "type": "genre"}, deezer.resources.Genre,),
+            ({"title": "Playlist", "type": "playlist"}, deezer.resources.Playlist,),
+            ({"title": "Podcast", "type": "podcast"}, deezer.resources.Podcast,),
+            ({"title": "Radio", "type": "radio"}, deezer.resources.Radio,),
+            ({"title": "Track", "type": "track"}, deezer.resources.Track,),
+            ({"name": "User", "type": "user"}, deezer.resources.User,),
+        ],
+        ids=[
+            "unknown",
+            "album",
+            "artist",
+            # chart not tested here as isn't returned with "type":"chart"
+            "comment",
+            "episode",
+            "genre",
+            "playlist",
+            "podcast",
+            "radio",
+            "track",
+            "user",
+        ],
+    )
+    def test_process_json_types(self, client, json, expected_type):
+        result = client._process_json(json)
+        assert type(result) == expected_type
