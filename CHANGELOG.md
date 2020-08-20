@@ -133,6 +133,7 @@
 ### 🚀 Enhancements:
 
 - Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
+- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
 ## [0.7.0](https://github.com/browniebroke/deezer-python/tree/0.7.0) (2018-10-03)
@@ -145,7 +146,6 @@
 
 ### 🚀 Enhancements:
 
-- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Store the session in the client [\#24](https://github.com/browniebroke/deezer-python/pull/24) ([sheregeda](https://github.com/sheregeda))
 
 ### ✅ Testing:
@@ -200,6 +200,7 @@
 ### ✅ Testing:
 
 - Switch from coveralls to codecov [\#9](https://github.com/browniebroke/deezer-python/pull/9) ([browniebroke](https://github.com/browniebroke))
+- Correct a couple of flake8 warning [\#7](https://github.com/browniebroke/deezer-python/pull/7) ([browniebroke](https://github.com/browniebroke))
 - Add basic flake8 config to setup.cfg [\#6](https://github.com/browniebroke/deezer-python/pull/6) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.3.0](https://github.com/browniebroke/deezer-python/tree/0.3.0) (2016-11-09)
@@ -217,10 +218,6 @@
 ### 🚀 Enhancements:
 
 - Run tests against Python 3.5 [\#3](https://github.com/browniebroke/deezer-python/pull/3) ([browniebroke](https://github.com/browniebroke))
-
-### ✅ Testing:
-
-- Correct a couple of flake8 warning [\#7](https://github.com/browniebroke/deezer-python/pull/7) ([browniebroke](https://github.com/browniebroke))
 
 ## [0.2](https://github.com/browniebroke/deezer-python/tree/0.2) (2015-01-31)
 
