@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/browniebroke/deezer-python/tree/HEAD)
+## [1.6.0](https://github.com/browniebroke/deezer-python/tree/1.6.0) (2020-08-20)
 
-[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.5.0...HEAD)
+[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.5.0...1.6.0)
 
 ### 🚀 Enhancements:
 
