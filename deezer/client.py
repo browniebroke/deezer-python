@@ -64,6 +64,7 @@ class Client:
     objects_types = {
         "album": Album,
         "artist": Artist,
+        "chart": Chart,
         "comment": Comment,
         "editorial": None,
         "episode": Episode,
@@ -75,7 +76,6 @@ class Client:
         "search": None,
         "track": Track,
         "user": User,
-        "chart": Chart,
     }
 
     def __init__(
@@ -196,16 +196,6 @@ class Client:
             )
         return self._process_json(json, parent)
 
-    def get_chart(self, relation=None, index=0, limit=10, **kwargs):
-        """
-        Get chart
-
-        :returns: a list of :class:`~deezer.resources.Resource` objects.
-        """
-        return self.get_object(
-            "chart", object_id="0", relation=relation, parent="chart", **kwargs
-        )
-
     def get_album(self, object_id, relation=None, **kwargs):
         """
         Get the album with the provided id
@@ -221,6 +211,16 @@ class Client:
         :returns: an :class:`~deezer.resources.Artist` object
         """
         return self.get_object("artist", object_id, relation=relation, **kwargs)
+
+    def get_chart(self, relation=None, index=0, limit=10, **kwargs):
+        """
+        Get chart
+
+        :returns: a list of :class:`~deezer.resources.Resource` objects.
+        """
+        return self.get_object(
+            "chart", object_id="0", relation=relation, parent="chart", **kwargs
+        )
 
     def get_comment(self, object_id):
         """

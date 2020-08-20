@@ -83,6 +83,40 @@ class TestClient:
         with pytest.raises(ValueError):
             client.get_artist(-1)
 
+    def test_chart(self, client):
+        assert client.object_url("chart") == "https://api.deezer.com/chart"
+        result = client.get_chart()
+        assert isinstance(result, deezer.resources.Chart)
+
+        assert isinstance(result.tracks[0], deezer.resources.Track)
+        assert isinstance(result.albums[0], deezer.resources.Album)
+        assert isinstance(result.artists[0], deezer.resources.Artist)
+        assert isinstance(result.playlists[0], deezer.resources.Playlist)
+
+    def test_chart_tracks(self, client):
+        result = client.get_chart("tracks")
+        assert isinstance(result, list)
+        assert result[0].title == "Khapta"
+        assert isinstance(result[0], deezer.resources.Track)
+
+    def test_chart_albums(self, client):
+        result = client.get_chart("albums")
+        assert isinstance(result, list)
+        assert result[0].title == "Lacrim"
+        assert isinstance(result[0], deezer.resources.Album)
+
+    def test_chart_artists(self, client):
+        result = client.get_chart("artists")
+        assert isinstance(result, list)
+        assert result[0].name == "Lacrim"
+        assert isinstance(result[0], deezer.resources.Artist)
+
+    def test_chart_playlists(self, client):
+        result = client.get_chart("playlists")
+        assert isinstance(result, list)
+        assert result[0].title == "Les titres du moment"
+        assert isinstance(result[0], deezer.resources.Playlist)
+
     def test_get_comment(self, client):
         """Test methods to get a comment"""
         comment = client.get_comment(2772704)
@@ -159,40 +193,6 @@ class TestClient:
         """Test method get_user for invalid value"""
         with pytest.raises(ValueError):
             client.get_user(-1)
-
-    def test_chart(self, client):
-        assert client.object_url("chart") == "https://api.deezer.com/chart"
-        result = client.get_chart()
-        assert isinstance(result, deezer.resources.Chart)
-
-        assert isinstance(result.tracks[0], deezer.resources.Track)
-        assert isinstance(result.albums[0], deezer.resources.Album)
-        assert isinstance(result.artists[0], deezer.resources.Artist)
-        assert isinstance(result.playlists[0], deezer.resources.Playlist)
-
-    def test_chart_tracks(self, client):
-        result = client.get_chart("tracks")
-        assert isinstance(result, list)
-        assert result[0].title == "Khapta"
-        assert isinstance(result[0], deezer.resources.Track)
-
-    def test_chart_albums(self, client):
-        result = client.get_chart("albums")
-        assert isinstance(result, list)
-        assert result[0].title == "Lacrim"
-        assert isinstance(result[0], deezer.resources.Album)
-
-    def test_chart_artists(self, client):
-        result = client.get_chart("artists")
-        assert isinstance(result, list)
-        assert result[0].name == "Lacrim"
-        assert isinstance(result[0], deezer.resources.Artist)
-
-    def test_chart_playlists(self, client):
-        result = client.get_chart("playlists")
-        assert isinstance(result, list)
-        assert result[0].title == "Les titres du moment"
-        assert isinstance(result[0], deezer.resources.Playlist)
 
     def test_options_1(self, client):
         """Test a query with extra arguments"""
