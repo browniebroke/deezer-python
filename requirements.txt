@@ -9,6 +9,7 @@ attrs==19.3.0             # via black, pytest
 bandit==1.6.2             # via -r requirements.in
 black==19.10b0 ; python_version > "3.5" and implementation_name != "pypy"  # via -r requirements.in
 bleach==3.1.5             # via readme-renderer
+bump2version==1.0.0       # via -r requirements.in
 certifi==2020.6.20        # via requests
 cffi==1.14.0              # via cryptography
 chardet==3.0.4            # via requests
