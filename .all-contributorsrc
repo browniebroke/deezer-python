@@ -137,11 +137,23 @@
         "test",
         "security"
       ]
+    },
+    {
+      "login": "hithomasmorelli",
+      "name": "Thomas Morelli",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/22722644?v=4",
+      "profile": "https://github.com/hithomasmorelli",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas"
+      ]
     }
   ],
   "projectName": "deezer-python",
   "projectOwner": "browniebroke",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "commitConvention": "none"
+  "commitConvention": "none",
+  "skipCi": true
 }
