@@ -6,6 +6,7 @@
 
 ### 🚀 Enhancements:
 
+- Stop the program crashing at podcasts \(or at any new API item\), add Podcast & Episode classes [\#134](https://github.com/browniebroke/deezer-python/pull/134) ([hithomasmorelli](https://github.com/hithomasmorelli))
 - 📦 Move package metadata to setup.cfg [\#91](https://github.com/browniebroke/deezer-python/pull/91) ([browniebroke](https://github.com/browniebroke))
 
 ### ✅ Testing:
@@ -191,7 +192,6 @@
 - Improve chart integration [\#11](https://github.com/browniebroke/deezer-python/pull/11) ([pfouque](https://github.com/pfouque))
 - Add pypy to the build matrix [\#10](https://github.com/browniebroke/deezer-python/pull/10) ([browniebroke](https://github.com/browniebroke))
 - Implement chart methods [\#8](https://github.com/browniebroke/deezer-python/pull/8) ([pfouque](https://github.com/pfouque))
-- Methods for resources [\#2](https://github.com/browniebroke/deezer-python/pull/2) ([misuzu](https://github.com/misuzu))
 
 ### ✅ Testing:
 
@@ -218,6 +218,10 @@
 ## [0.2](https://github.com/browniebroke/deezer-python/tree/0.2) (2015-01-31)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.1...0.2)
+
+### 🚀 Enhancements:
+
+- Methods for resources [\#2](https://github.com/browniebroke/deezer-python/pull/2) ([misuzu](https://github.com/misuzu))
 
 ## [0.1](https://github.com/browniebroke/deezer-python/tree/0.1) (2014-11-23)
 
