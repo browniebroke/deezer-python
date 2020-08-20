@@ -11,7 +11,7 @@
 
 ### 📖 Documentation updates:
 
-- docs: add hithomasmorelli as a contributor [\#138](https://github.com/browniebroke/deezer-python/pull/138) ([allcontributors[bot]](https://github.com/apps/allcontributors))
+- Add hithomasmorelli as a contributor [\#138](https://github.com/browniebroke/deezer-python/pull/138) ([allcontributors[bot]](https://github.com/apps/allcontributors))
 
 ### ✅ Testing:
 
