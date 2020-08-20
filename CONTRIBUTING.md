@@ -103,7 +103,7 @@ requests. Please try to:
 A reminder for maintainers on how to publish a new version to PyPI. 
 Before starting, make sure all builds are completed. 
 
-Trigger the `release` workflow with the version part you want to bump 
+Trigger the `Publish` workflow with the version part you want to bump 
 as argument (major, minor or patch). This will:
 
 -   Update the version in the code, create the git tag and push it.
