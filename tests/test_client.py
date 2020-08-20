@@ -127,6 +127,16 @@ class TestClient:
         with pytest.raises(ValueError):
             client.get_comment(-1)
 
+    def test_get_episode(self, client):
+        """Test methods to get an episode"""
+        episode = client.get_episode(238455362)
+        assert isinstance(episode, deezer.resources.Episode)
+
+    def test_no_episode_raise(self, client):
+        """Test method get_episode for invalid value"""
+        with pytest.raises(ValueError):
+            client.get_episode(-1)
+
     def test_get_genre(self, client):
         """Test methods to get a genre"""
         genre = client.get_genre(106)
@@ -152,6 +162,16 @@ class TestClient:
         """Test method get_playlist for invalid value"""
         with pytest.raises(ValueError):
             client.get_playlist(-1)
+
+    def test_get_podcast(self, client):
+        """Test methods to get a podcast"""
+        podcast = client.get_podcast(699612)
+        assert isinstance(podcast, deezer.resources.Podcast)
+
+    def test_no_podcast_raise(self, client):
+        """Test method get_podcast for invalid value"""
+        with pytest.raises(ValueError):
+            client.get_podcast(-1)
 
     def test_get_radio(self, client):
         """Test methods to get a radio"""
