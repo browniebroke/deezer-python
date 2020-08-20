@@ -230,6 +230,14 @@ class Client:
         """
         return self.get_object("comment", object_id)
 
+    def get_episode(self, object_id):
+        """
+        Get the episode with the provided id
+
+        :returns: a :class:`~deezer.resources.Episode` object
+        """
+        return self.get_object("episode", object_id)
+
     def get_genre(self, object_id):
         """
         Get the genre with the provided id
