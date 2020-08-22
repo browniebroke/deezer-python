@@ -18,13 +18,13 @@ reporting a bug, please include:
 
 ### Fix Bugs
 
-Look through the GitHub issues for bugs. Anything tagged with \"bug\" is
+Look through the GitHub issues for bugs. Anything tagged with "bug" is
 open to whoever wants to implement it.
 
 ### Implement Features
 
 Look through the GitHub issues for features. Anything tagged with
-\"feature\" is open to whoever wants to implement it.
+"feature" is open to whoever wants to implement it.
 
 ### Write Documentation
 
@@ -67,7 +67,7 @@ development.
 
     Now you can make your changes locally.
 
-5.  When you\'re done making changes, check that your changes pass our
+5.  When you're done making changes, check that your changes pass our
     tests and that the doc builds. The easiest way to do that is by
     running [tox](http://tox.readthedocs.io/en/stable/index.html)
     environments:
@@ -91,7 +91,7 @@ development.
 ## Pull Request Guidelines
 
 Feel free to open the pull request as soon as possible, but please be
-explicit if it\'s still a work in progress, we recommend draft pull
+explicit if it's still a work in progress, we recommend draft pull
 requests. Please try to:
 
 1.  include tests for feature or bug fixes.
@@ -100,17 +100,13 @@ requests. Please try to:
 
 ## Create a New Release
 
-This project is configured to use
-[bumpversion](https://github.com/peritus/bumpversion), only prerequisite
-is to have it installed. When the tests have passed and you\'re happy
-with the code base, you can bump the version everywhere needed, commit
-and create a git tag by running:
+A reminder for maintainers on how to publish a new version to PyPI. 
+Before starting, make sure all builds are completed. 
 
-    $ bumpversion [major|minor|patch]
+Trigger the `Publish` workflow with the version part you want to bump 
+as argument (major, minor or patch). This will:
 
-Then, do a git push, without forgetting about git tags:
+-   Update the version in the code, create the git tag and push it.
+-   Create a release in GitHub for the tag that was just created.
+-   Build the wheel and source distribution and publish them to PyPI.
 
-    $ git push --tags
-
-[Travis](https://travis-ci.org/browniebroke/deezer-python/pull_requests)
-will take care of creating the release, and upload it to PyPI.

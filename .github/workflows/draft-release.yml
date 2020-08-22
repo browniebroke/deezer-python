@@ -1,7 +1,7 @@
 # This workflow will draft Github release from pull requests
 # See more at: https://github.com/release-drafter/release-drafter
 
-name: Release Drafter
+name: Draft Release
 
 on:
   push:

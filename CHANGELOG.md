@@ -1,12 +1,17 @@
 # Changelog
 
-## [Unreleased](https://github.com/browniebroke/deezer-python/tree/HEAD)
+## [1.6.0](https://github.com/browniebroke/deezer-python/tree/1.6.0) (2020-08-20)
 
-[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.5.0...HEAD)
+[Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.5.0...1.6.0)
 
 ### 🚀 Enhancements:
 
+- Fix crash for unknown resource, add Podcast & Episode resources [\#134](https://github.com/browniebroke/deezer-python/pull/134) ([hithomasmorelli](https://github.com/hithomasmorelli))
 - 📦 Move package metadata to setup.cfg [\#91](https://github.com/browniebroke/deezer-python/pull/91) ([browniebroke](https://github.com/browniebroke))
+
+### 📖 Documentation updates:
+
+- Add hithomasmorelli as a contributor [\#138](https://github.com/browniebroke/deezer-python/pull/138) ([allcontributors[bot]](https://github.com/apps/allcontributors))
 
 ### ✅ Testing:
 
@@ -51,7 +56,6 @@
 - Clean-up config for coverage [\#80](https://github.com/browniebroke/deezer-python/pull/80) ([browniebroke](https://github.com/browniebroke))
 - Use Python 3.8 on Travis \(drop the -dev\) [\#77](https://github.com/browniebroke/deezer-python/pull/77) ([browniebroke](https://github.com/browniebroke))
 - Update names in Github action & run on Python 3.8 [\#76](https://github.com/browniebroke/deezer-python/pull/76) ([browniebroke](https://github.com/browniebroke))
-- Add isort [\#72](https://github.com/browniebroke/deezer-python/pull/72) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.3.0](https://github.com/browniebroke/deezer-python/tree/1.3.0) (2019-11-09)
 
@@ -67,6 +71,7 @@
 
 ### ✅ Testing:
 
+- Add isort [\#72](https://github.com/browniebroke/deezer-python/pull/72) ([browniebroke](https://github.com/browniebroke))
 - Remove appveyor.yml [\#70](https://github.com/browniebroke/deezer-python/pull/70) ([browniebroke](https://github.com/browniebroke))
 - Move deploy step to a separate stage on Travis [\#61](https://github.com/browniebroke/deezer-python/pull/61) ([browniebroke](https://github.com/browniebroke))
 

@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/episode/238455362
+  response:
+    body:
+      string: '{"id":238455362,"title":"Episode 9: Follow the money","description":"The
+        search for Dr Ruja is back on. A lot has happened since Episode 8.  Original
+        music and sound design: Phil Channell Original Music and vocals: Dessislava
+        Stefanova and the London Bulgarian Choir  This audio was updated on 12\/08\/2020
+        to reflect additional correspondence with Chelgate.","available":true,"release_date":"2020-08-06
+        09:00:00","duration":2755,"link":"https:\/\/www.deezer.com\/episode\/238455362","share":"https:\/\/www.deezer.com\/episode\/238455362?utm_source=deezer&utm_content=episode-238455362&utm_term=0_1597915623&utm_medium=web","picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/1000x1000-000000-80-0-0.jpg","podcast":{"id":699612,"title":"The
+        Missing Cryptoqueen","link":"https:\/\/www.deezer.com\/show\/699612","picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/1000x1000-000000-80-0-0.jpg","type":"podcast"},"type":"episode"}'
+    headers:
+      Content-Length:
+      - '1994'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 20 Aug 2020 09:27:03 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_frf4ec25bbbe333607bc2293723d55ce03f709c4; expires=Tue,
+        16-Feb-2021 09:27:03 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-143
+    status:
+      code: 200
+      message: OK
+version: 1

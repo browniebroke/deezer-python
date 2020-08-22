@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/podcast/699612
+  response:
+    body:
+      string: '{"id":699612,"title":"The Missing Cryptoqueen","description":"Dr Ruja
+        Ignatova persuaded millions to join her financial revolution. Then she disappeared.
+        Why? Jamie Bartlett presents a story of greed, deceit and herd madness.","available":true,"rating":0,"fans":159,"link":"https:\/\/www.deezer.com\/show\/699612","share":"https:\/\/www.deezer.com\/show\/699612?utm_source=deezer&utm_content=show-699612&utm_term=0_1597915624&utm_medium=web","picture":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/talk\/34df19abb7d60668cf967d1d866943b3\/1000x1000-000000-80-0-0.jpg","type":"podcast"}'
+    headers:
+      Content-Length:
+      - '1074'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 20 Aug 2020 09:27:04 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr4352bb520686d0df8a87224e972c04b235cade; expires=Tue,
+        16-Feb-2021 09:27:04 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-148
+    status:
+      code: 200
+      message: OK
+version: 1
