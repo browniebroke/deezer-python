@@ -82,7 +82,6 @@
 ### 🚀 Enhancements:
 
 - Add a header kwarg in Client to force session headers [\#60](https://github.com/browniebroke/deezer-python/pull/60) ([jnth](https://github.com/jnth))
-- Add user's favorite albums, artists, tracks and playlists in user resource. [\#53](https://github.com/browniebroke/deezer-python/pull/53) ([jnth](https://github.com/jnth))
 
 ### 📖 Documentation updates:
 
@@ -100,6 +99,10 @@
 ### 💥 Breaking Changes:
 
 - Drop support for EOL Python 3.4 [\#47](https://github.com/browniebroke/deezer-python/pull/47) ([hugovk](https://github.com/hugovk))
+
+### 🚀 Enhancements:
+
+- Add user's favorite albums, artists, tracks and playlists in user resource. [\#53](https://github.com/browniebroke/deezer-python/pull/53) ([jnth](https://github.com/jnth))
 
 ### 📖 Documentation updates:
 
@@ -196,6 +199,7 @@
 - Improve chart integration [\#11](https://github.com/browniebroke/deezer-python/pull/11) ([pfouque](https://github.com/pfouque))
 - Add pypy to the build matrix [\#10](https://github.com/browniebroke/deezer-python/pull/10) ([browniebroke](https://github.com/browniebroke))
 - Implement chart methods [\#8](https://github.com/browniebroke/deezer-python/pull/8) ([pfouque](https://github.com/pfouque))
+- add resource parameters and iterators [\#5](https://github.com/browniebroke/deezer-python/pull/5) ([pfouque](https://github.com/pfouque))
 
 ### ✅ Testing:
 
@@ -206,10 +210,6 @@
 ## [0.3.0](https://github.com/browniebroke/deezer-python/tree/0.3.0) (2016-11-09)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.2.3...0.3.0)
-
-### 🚀 Enhancements:
-
-- add resource parameters and iterators [\#5](https://github.com/browniebroke/deezer-python/pull/5) ([pfouque](https://github.com/pfouque))
 
 ## [0.2.1](https://github.com/browniebroke/deezer-python/tree/0.2.1) (2015-09-14)
 
