@@ -411,27 +411,21 @@ class TestPlaylist:
         tracks = playlist.get_tracks()
         assert isinstance(tracks, list)
         assert len(tracks) == 4
-        for track in tracks:
-            assert isinstance(track, deezer.resources.Track)
+        assert all(isinstance(track, deezer.resources.Track) for track in tracks)
         assert tracks[0].title == "Skanky Panky"
 
         # tests generator
         tracks_generator = playlist.iter_tracks()
         assert type(tracks_generator) == GeneratorType
-        track = next(tracks_generator)
-        assert track.title == "Skanky Panky"
-        count = 1
-        while 1:
-            assert isinstance(track, deezer.resources.Track)
-            try:
-                track = next(tracks_generator)
-                count += 1
-            except StopIteration:
-                break
-        # this is weird (the count being different), it seems there's a sort of
+        playlist_tracks = list(tracks_generator)
+        # this is weird (the length being different), it seems there's a sort of
         # partially-hidden track that only shows up when using the method in
         # iter_tracks
-        assert count == 5
+        assert len(playlist_tracks) == 5
+        assert all(
+            isinstance(track, deezer.resources.Track) for track in playlist_tracks
+        )
+        assert playlist_tracks[0].title == "Skanky Panky"
 
     def test_get_fans(self, client):
         """
