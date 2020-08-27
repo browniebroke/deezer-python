@@ -2,38 +2,58 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: [identity]
-      Connection: [keep-alive]
-      User-Agent: [python-requests/2.21.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
     method: GET
     uri: https://api.deezer.com/genre/106
   response:
-    body: {string: '{"id":106,"name":"Electro","picture":"https:\/\/api.deezer.com\/genre\/106\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/1000x1000-000000-80-0-0.jpg","type":"genre"}'}
+    body:
+      string: '{"id":106,"name":"Electro","picture":"https:\/\/api.deezer.com\/genre\/106\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/1000x1000-000000-80-0-0.jpg","type":"genre"}'
     headers:
-      Content-Length: ['602']
-      Content-Type: [application/json; charset=utf-8]
-      Date: ['Tue, 12 Feb 2019 12:39:46 GMT']
-      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
-          STA"]
-      Server: [Apache]
-      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fr45bd8cfaee27a1a9717b7fa2941261443010ca;
-          expires=Sun, 11-Aug-2019 12:39:46 GMT; Max-Age=15552000; path=/; domain=.deezer.com']
-      Vary: [Accept-Encoding]
-      X-Host: [blm-web-37]
-    status: {code: 200, message: OK}
+      Content-Length:
+      - '602'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 12 Feb 2019 12:39:46 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr45bd8cfaee27a1a9717b7fa2941261443010ca; expires=Sun,
+        11-Aug-2019 12:39:46 GMT; Max-Age=15552000; path=/; domain=.deezer.com
+      Vary:
+      - Accept-Encoding
+      X-Host:
+      - blm-web-37
+    status:
+      code: 200
+      message: OK
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: [identity]
-      Connection: [keep-alive]
-      Cookie: [dzr_uniq_id=dzr_uniq_id_fr45bd8cfaee27a1a9717b7fa2941261443010ca]
-      User-Agent: [python-requests/2.21.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr45bd8cfaee27a1a9717b7fa2941261443010ca
+      User-Agent:
+      - python-requests/2.21.0
     method: GET
     uri: https://api.deezer.com/genre/106/radios
   response:
-    body: {string: '{"data":[{"id":37635,"title":"Electro Swing","picture":"https:\/\/api.deezer.com\/radio\/37635\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/762e50c15b341c24a32ab96958444b3b\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/762e50c15b341c24a32ab96958444b3b\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/762e50c15b341c24a32ab96958444b3b\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/762e50c15b341c24a32ab96958444b3b\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/37635\/tracks","type":"radio"},{"id":38215,"title":"Dubstep","picture":"https:\/\/api.deezer.com\/radio\/38215\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a9fd18823a1f9ab362f102f425603ba\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a9fd18823a1f9ab362f102f425603ba\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a9fd18823a1f9ab362f102f425603ba\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a9fd18823a1f9ab362f102f425603ba\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/38215\/tracks","type":"radio"},{"id":38225,"title":"Concentration","picture":"https:\/\/api.deezer.com\/radio\/38225\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6c09e2fa6d48e8599c425267641f2690\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6c09e2fa6d48e8599c425267641f2690\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6c09e2fa6d48e8599c425267641f2690\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6c09e2fa6d48e8599c425267641f2690\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/38225\/tracks","type":"radio"},{"id":30851,"title":"Techno","picture":"https:\/\/api.deezer.com\/radio\/30851\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/30851\/tracks","type":"radio"},{"id":30621,"title":"Electronic","picture":"https:\/\/api.deezer.com\/radio\/30621\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/30621\/tracks","type":"radio"},{"id":37071,"title":"Minimal","picture":"https:\/\/api.deezer.com\/radio\/37071\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6d57baf1f30556f7cb861839ab404391\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6d57baf1f30556f7cb861839ab404391\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6d57baf1f30556f7cb861839ab404391\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6d57baf1f30556f7cb861839ab404391\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/37071\/tracks","type":"radio"},{"id":42102,"title":"Electronic","picture":"https:\/\/api.deezer.com\/radio\/42102\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/42102\/tracks","type":"radio"},{"id":42162,"title":"Techno","picture":"https:\/\/api.deezer.com\/radio\/42162\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/42162\/tracks","type":"radio"},{"id":38425,"title":"St\u00e9r\u00e9okids
+    body:
+      string: '{"data":[{"id":37635,"title":"Electro Swing","picture":"https:\/\/api.deezer.com\/radio\/37635\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/762e50c15b341c24a32ab96958444b3b\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/762e50c15b341c24a32ab96958444b3b\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/762e50c15b341c24a32ab96958444b3b\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/762e50c15b341c24a32ab96958444b3b\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/37635\/tracks","type":"radio"},{"id":38215,"title":"Dubstep","picture":"https:\/\/api.deezer.com\/radio\/38215\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a9fd18823a1f9ab362f102f425603ba\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a9fd18823a1f9ab362f102f425603ba\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a9fd18823a1f9ab362f102f425603ba\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a9fd18823a1f9ab362f102f425603ba\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/38215\/tracks","type":"radio"},{"id":38225,"title":"Concentration","picture":"https:\/\/api.deezer.com\/radio\/38225\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6c09e2fa6d48e8599c425267641f2690\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6c09e2fa6d48e8599c425267641f2690\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6c09e2fa6d48e8599c425267641f2690\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6c09e2fa6d48e8599c425267641f2690\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/38225\/tracks","type":"radio"},{"id":30851,"title":"Techno","picture":"https:\/\/api.deezer.com\/radio\/30851\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/30851\/tracks","type":"radio"},{"id":30621,"title":"Electronic","picture":"https:\/\/api.deezer.com\/radio\/30621\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/30621\/tracks","type":"radio"},{"id":37071,"title":"Minimal","picture":"https:\/\/api.deezer.com\/radio\/37071\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6d57baf1f30556f7cb861839ab404391\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6d57baf1f30556f7cb861839ab404391\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6d57baf1f30556f7cb861839ab404391\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/6d57baf1f30556f7cb861839ab404391\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/37071\/tracks","type":"radio"},{"id":42102,"title":"Electronic","picture":"https:\/\/api.deezer.com\/radio\/42102\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/0bcdad431c494d5fca88306c7721b7ba\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/42102\/tracks","type":"radio"},{"id":42162,"title":"Techno","picture":"https:\/\/api.deezer.com\/radio\/42162\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/aa25ba23ee2076850b615d0673f8b176\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/42162\/tracks","type":"radio"},{"id":38425,"title":"St\u00e9r\u00e9okids
         ","picture":"https:\/\/api.deezer.com\/radio\/38425\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/7f7b3ef954baf40b3eb3c7c075948075\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/7f7b3ef954baf40b3eb3c7c075948075\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/7f7b3ef954baf40b3eb3c7c075948075\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/7f7b3ef954baf40b3eb3c7c075948075\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/38425\/tracks","type":"radio"},{"id":44824,"title":"Test
         Webradio","picture":"https:\/\/api.deezer.com\/radio\/44824\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/c2b024d7e638eab9c6ce1a114a1f3151\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/c2b024d7e638eab9c6ce1a114a1f3151\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/c2b024d7e638eab9c6ce1a114a1f3151\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/c2b024d7e638eab9c6ce1a114a1f3151\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/44824\/tracks","type":"radio"},{"id":130,"title":"Nuits
         Sonores ","picture":"https:\/\/api.deezer.com\/radio\/130\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/a532c3b711b671ce721d99b278900bed\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/a532c3b711b671ce721d99b278900bed\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/a532c3b711b671ce721d99b278900bed\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/a532c3b711b671ce721d99b278900bed\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/130\/tracks","type":"radio"},{"id":2341,"title":"MTV
@@ -53,17 +73,66 @@ interactions:
         Music Festival Paris","picture":"https:\/\/api.deezer.com\/radio\/35851\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8ae49fe30a5847a7c7c3e2818f8a941d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8ae49fe30a5847a7c7c3e2818f8a941d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8ae49fe30a5847a7c7c3e2818f8a941d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8ae49fe30a5847a7c7c3e2818f8a941d\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/35851\/tracks","type":"radio"},{"id":143,"title":"Festival
         Marsatac 2015","picture":"https:\/\/api.deezer.com\/radio\/143\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/36ba201847d4676a7474b6294491e3d3\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/36ba201847d4676a7474b6294491e3d3\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/36ba201847d4676a7474b6294491e3d3\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/36ba201847d4676a7474b6294491e3d3\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/143\/tracks","type":"radio"},{"id":23851,"title":"Festival
         Les Inrocks Philips","picture":"https:\/\/api.deezer.com\/radio\/23851\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/c3c1524fb3ee11925c669d72294c2874\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/c3c1524fb3ee11925c669d72294c2874\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/c3c1524fb3ee11925c669d72294c2874\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/c3c1524fb3ee11925c669d72294c2874\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/23851\/tracks","type":"radio"},{"id":35255,"title":"Techno
-        Parade 2014","picture":"https:\/\/api.deezer.com\/radio\/35255\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8c5d26d91b52ab593355cbf836dafc7c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8c5d26d91b52ab593355cbf836dafc7c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8c5d26d91b52ab593355cbf836dafc7c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8c5d26d91b52ab593355cbf836dafc7c\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/35255\/tracks","type":"radio"},{"id":20205,"title":"Scopitone","picture":"https:\/\/api.deezer.com\/radio\/20205\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cd587f3ad6c8bb51f81220174420ee57\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cd587f3ad6c8bb51f81220174420ee57\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cd587f3ad6c8bb51f81220174420ee57\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cd587f3ad6c8bb51f81220174420ee57\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/20205\/tracks","type":"radio"}]}'}
+        Parade 2014","picture":"https:\/\/api.deezer.com\/radio\/35255\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8c5d26d91b52ab593355cbf836dafc7c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8c5d26d91b52ab593355cbf836dafc7c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8c5d26d91b52ab593355cbf836dafc7c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8c5d26d91b52ab593355cbf836dafc7c\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/35255\/tracks","type":"radio"},{"id":20205,"title":"Scopitone","picture":"https:\/\/api.deezer.com\/radio\/20205\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cd587f3ad6c8bb51f81220174420ee57\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cd587f3ad6c8bb51f81220174420ee57\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cd587f3ad6c8bb51f81220174420ee57\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cd587f3ad6c8bb51f81220174420ee57\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/20205\/tracks","type":"radio"}]}'
     headers:
-      Content-Type: [application/json; charset=utf-8]
-      Date: ['Tue, 12 Feb 2019 12:39:46 GMT']
-      P3P: [policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM
-          STA"]
-      Server: [Apache]
-      Set-Cookie: ['dzr_uniq_id=dzr_uniq_id_fr45bd8cfaee27a1a9717b7fa2941261443010ca;
-          expires=Sun, 11-Aug-2019 12:39:46 GMT; Max-Age=15552000; path=/; domain=.deezer.com']
-      Transfer-Encoding: [chunked]
-      Vary: [Accept-Encoding]
-      X-Host: [blm-web-05]
-    status: {code: 200, message: OK}
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 12 Feb 2019 12:39:46 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr45bd8cfaee27a1a9717b7fa2941261443010ca; expires=Sun,
+        11-Aug-2019 12:39:46 GMT; Max-Age=15552000; path=/; domain=.deezer.com
+      Vary:
+      - Accept-Encoding
+      X-Host:
+      - blm-web-05
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr45bd8cfaee27a1a9717b7fa2941261443010ca
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/genre/106/radios?index=0
+  response:
+    body:
+      string: '{"data":[{"id":37635,"title":"Electro Swing","picture":"https:\/\/api.deezer.com\/radio\/37635\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/34ad00fadcf9ac34c202dd9c9d1005f1\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/34ad00fadcf9ac34c202dd9c9d1005f1\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/34ad00fadcf9ac34c202dd9c9d1005f1\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/34ad00fadcf9ac34c202dd9c9d1005f1\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/37635\/tracks","type":"radio"},{"id":38215,"title":"Dubstep","picture":"https:\/\/api.deezer.com\/radio\/38215\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/9ff28eccff7ce6739276ea88d3f9a3c2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/9ff28eccff7ce6739276ea88d3f9a3c2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/9ff28eccff7ce6739276ea88d3f9a3c2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/9ff28eccff7ce6739276ea88d3f9a3c2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/38215\/tracks","type":"radio"},{"id":38225,"title":"Focus","picture":"https:\/\/api.deezer.com\/radio\/38225\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a7edbfe3beb4f96b4c00965f367e898\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a7edbfe3beb4f96b4c00965f367e898\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a7edbfe3beb4f96b4c00965f367e898\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/8a7edbfe3beb4f96b4c00965f367e898\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/38225\/tracks","type":"radio"},{"id":30851,"title":"Techno","picture":"https:\/\/api.deezer.com\/radio\/30851\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cc1e1ce068b4888fcf5c562ec167dd07\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cc1e1ce068b4888fcf5c562ec167dd07\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cc1e1ce068b4888fcf5c562ec167dd07\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cc1e1ce068b4888fcf5c562ec167dd07\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/30851\/tracks","type":"radio"},{"id":30621,"title":"Electronic","picture":"https:\/\/api.deezer.com\/radio\/30621\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/43cea4429365c02fac5e4cbc9bfc47ec\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/43cea4429365c02fac5e4cbc9bfc47ec\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/43cea4429365c02fac5e4cbc9bfc47ec\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/43cea4429365c02fac5e4cbc9bfc47ec\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/30621\/tracks","type":"radio"},{"id":37071,"title":"Minimal","picture":"https:\/\/api.deezer.com\/radio\/37071\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/13ca1f78104115ce47033e27aafc370a\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/13ca1f78104115ce47033e27aafc370a\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/13ca1f78104115ce47033e27aafc370a\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/13ca1f78104115ce47033e27aafc370a\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/37071\/tracks","type":"radio"},{"id":42162,"title":"Techno","picture":"https:\/\/api.deezer.com\/radio\/42162\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cc1e1ce068b4888fcf5c562ec167dd07\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cc1e1ce068b4888fcf5c562ec167dd07\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cc1e1ce068b4888fcf5c562ec167dd07\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/cc1e1ce068b4888fcf5c562ec167dd07\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/42162\/tracks","type":"radio"},{"id":42102,"title":"Electronic","picture":"https:\/\/api.deezer.com\/radio\/42102\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/43cea4429365c02fac5e4cbc9bfc47ec\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/43cea4429365c02fac5e4cbc9bfc47ec\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/43cea4429365c02fac5e4cbc9bfc47ec\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/43cea4429365c02fac5e4cbc9bfc47ec\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/radio\/42102\/tracks","type":"radio"}]}'
+    headers:
+      Content-Length:
+      - '5370'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 Aug 2020 11:53:16 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr45bd8cfaee27a1a9717b7fa2941261443010ca; expires=Mon,
+        15-Feb-2021 11:53:16 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-140
+    status:
+      code: 200
+      message: OK
 version: 1

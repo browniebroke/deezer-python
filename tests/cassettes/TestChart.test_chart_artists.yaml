@@ -138,8 +138,6 @@ interactions:
       - dzr_uniq_id=dzr_uniq_id_fr59a76208f800c09404361e9b022a32c1bb7304; expires=Sun,
         14-Feb-2021 16:19:49 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
         secure; HttpOnly
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Accept-Encoding
       X-Content-Type-Options:
@@ -195,6 +193,55 @@ interactions:
       - nosniff
       X-Host:
       - blm-web-68
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr59a76208f800c09404361e9b022a32c1bb7304
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.deezer.com/chart/0/artists?index=0
+  response:
+    body:
+      string: '{"data":[{"id":14456487,"name":"Juice Wrld","link":"https:\/\/www.deezer.com\/artist\/14456487","picture":"https:\/\/api.deezer.com\/artist\/14456487\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/32458864045f1087652738e10bcdf74b\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/32458864045f1087652738e10bcdf74b\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/32458864045f1087652738e10bcdf74b\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/32458864045f1087652738e10bcdf74b\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/14456487\/top?limit=50","position":1,"type":"artist"},{"id":13,"name":"Eminem","link":"https:\/\/www.deezer.com\/artist\/13","picture":"https:\/\/api.deezer.com\/artist\/13\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/0707267475580b1b82f4da20a1b295c6\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/0707267475580b1b82f4da20a1b295c6\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/0707267475580b1b82f4da20a1b295c6\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/0707267475580b1b82f4da20a1b295c6\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/13\/top?limit=50","position":2,"type":"artist"},{"id":246791,"name":"Drake","link":"https:\/\/www.deezer.com\/artist\/246791","picture":"https:\/\/api.deezer.com\/artist\/246791\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/5d2fa7f140a6bdc2c864c3465a61fc71\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/5d2fa7f140a6bdc2c864c3465a61fc71\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/5d2fa7f140a6bdc2c864c3465a61fc71\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/5d2fa7f140a6bdc2c864c3465a61fc71\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/246791\/top?limit=50","position":3,"type":"artist"},{"id":384236,"name":"Ed
+        Sheeran","link":"https:\/\/www.deezer.com\/artist\/384236","picture":"https:\/\/api.deezer.com\/artist\/384236\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2a03fcb312d1fe3825f81a94c5d70741\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2a03fcb312d1fe3825f81a94c5d70741\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2a03fcb312d1fe3825f81a94c5d70741\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2a03fcb312d1fe3825f81a94c5d70741\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/384236\/top?limit=50","position":4,"type":"artist"},{"id":12246,"name":"Taylor
+        Swift","link":"https:\/\/www.deezer.com\/artist\/12246","picture":"https:\/\/api.deezer.com\/artist\/12246\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c4097f698a0456c37bb920821fcb06ac\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c4097f698a0456c37bb920821fcb06ac\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c4097f698a0456c37bb920821fcb06ac\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c4097f698a0456c37bb920821fcb06ac\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/12246\/top?limit=50","position":5,"type":"artist"},{"id":58447102,"name":"Pop
+        Smoke","link":"https:\/\/www.deezer.com\/artist\/58447102","picture":"https:\/\/api.deezer.com\/artist\/58447102\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/32f4ef8b4a9ab106fbe45a5da6a699f7\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/32f4ef8b4a9ab106fbe45a5da6a699f7\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/32f4ef8b4a9ab106fbe45a5da6a699f7\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/32f4ef8b4a9ab106fbe45a5da6a699f7\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/58447102\/top?limit=50","position":6,"type":"artist"},{"id":8706544,"name":"Dua
+        Lipa","link":"https:\/\/www.deezer.com\/artist\/8706544","picture":"https:\/\/api.deezer.com\/artist\/8706544\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e6a04d735093a46dcc8be197681d1199\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e6a04d735093a46dcc8be197681d1199\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e6a04d735093a46dcc8be197681d1199\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e6a04d735093a46dcc8be197681d1199\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/8706544\/top?limit=50","position":7,"type":"artist"},{"id":4050205,"name":"The
+        Weeknd","link":"https:\/\/www.deezer.com\/artist\/4050205","picture":"https:\/\/api.deezer.com\/artist\/4050205\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c3cbc4309cf09aec8914784270f194e4\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c3cbc4309cf09aec8914784270f194e4\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c3cbc4309cf09aec8914784270f194e4\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c3cbc4309cf09aec8914784270f194e4\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/4050205\/top?limit=50","position":8,"type":"artist"},{"id":1562681,"name":"Ariana
+        Grande","link":"https:\/\/www.deezer.com\/artist\/1562681","picture":"https:\/\/api.deezer.com\/artist\/1562681\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/4cc3458fe057273bc0033a1b338f1748\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/4cc3458fe057273bc0033a1b338f1748\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/4cc3458fe057273bc0033a1b338f1748\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/4cc3458fe057273bc0033a1b338f1748\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/1562681\/top?limit=50","position":9,"type":"artist"},{"id":249599,"name":"Jason
+        Derulo","link":"https:\/\/www.deezer.com\/artist\/249599","picture":"https:\/\/api.deezer.com\/artist\/249599\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/955a40075bfd5d5501f266bd0cc79381\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/955a40075bfd5d5501f266bd0cc79381\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/955a40075bfd5d5501f266bd0cc79381\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/955a40075bfd5d5501f266bd0cc79381\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/249599\/top?limit=50","position":10,"type":"artist"}],"total":10}'
+    headers:
+      Content-Length:
+      - '7695'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 Aug 2020 11:53:18 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr59a76208f800c09404361e9b022a32c1bb7304; expires=Mon,
+        15-Feb-2021 11:53:18 GMT; Max-Age=15552000; path=/;SameSite=None; domain=.deezer.com;
+        secure; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-82
     status:
       code: 200
       message: OK
