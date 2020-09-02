@@ -126,10 +126,6 @@
 
 - Drop Python 2 support [\#41](https://github.com/browniebroke/deezer-python/pull/41) ([hugovk](https://github.com/hugovk))
 
-### 🚀 Enhancements:
-
-- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
-
 ## [0.9.0](https://github.com/browniebroke/deezer-python/tree/0.9.0) (2019-02-10)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/0.8.0...0.9.0)
@@ -145,6 +141,7 @@
 ### 🚀 Enhancements:
 
 - Auto-format code using black [\#35](https://github.com/browniebroke/deezer-python/pull/35) ([browniebroke](https://github.com/browniebroke))
+- Make tornado an optional requirements [\#34](https://github.com/browniebroke/deezer-python/pull/34) ([browniebroke](https://github.com/browniebroke))
 - Pagination feature [\#32](https://github.com/browniebroke/deezer-python/pull/32) ([MDCEY](https://github.com/MDCEY))
 
 ## [0.7.0](https://github.com/browniebroke/deezer-python/tree/0.7.0) (2018-10-03)
