@@ -44,7 +44,6 @@
 
 - Refactor tests to use the pytest style [\#89](https://github.com/browniebroke/deezer-python/pull/89) ([browniebroke](https://github.com/browniebroke))
 - Split resources tests into multiple classes [\#88](https://github.com/browniebroke/deezer-python/pull/88) ([browniebroke](https://github.com/browniebroke))
-- 🛠 Move CI to Github actions [\#86](https://github.com/browniebroke/deezer-python/pull/86) ([browniebroke](https://github.com/browniebroke))
 
 ## [1.4.0](https://github.com/browniebroke/deezer-python/tree/1.4.0) (2020-05-02)
 
@@ -61,6 +60,7 @@
 
 ### ✅ Testing:
 
+- 🛠 Move CI to Github actions [\#86](https://github.com/browniebroke/deezer-python/pull/86) ([browniebroke](https://github.com/browniebroke))
 - Clean-up config for coverage [\#80](https://github.com/browniebroke/deezer-python/pull/80) ([browniebroke](https://github.com/browniebroke))
 - Use Python 3.8 on Travis \(drop the -dev\) [\#77](https://github.com/browniebroke/deezer-python/pull/77) ([browniebroke](https://github.com/browniebroke))
 - Update names in Github action & run on Python 3.8 [\#76](https://github.com/browniebroke/deezer-python/pull/76) ([browniebroke](https://github.com/browniebroke))
@@ -68,6 +68,10 @@
 ## [1.3.0](https://github.com/browniebroke/deezer-python/tree/1.3.0) (2019-11-09)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.2.0...1.3.0)
+
+### 🚀 Enhancements:
+
+- Add Python 3.8 support [\#71](https://github.com/browniebroke/deezer-python/pull/71) ([jnth](https://github.com/jnth))
 
 ### 🐛 Bug Fixes:
 
@@ -85,7 +89,6 @@
 
 ### 🚀 Enhancements:
 
-- Add Python 3.8 support [\#71](https://github.com/browniebroke/deezer-python/pull/71) ([jnth](https://github.com/jnth))
 - Add a header kwarg in Client to force session headers [\#60](https://github.com/browniebroke/deezer-python/pull/60) ([jnth](https://github.com/jnth))
 - Add user's favorite albums, artists, tracks and playlists in user resource. [\#53](https://github.com/browniebroke/deezer-python/pull/53) ([jnth](https://github.com/jnth))
 
