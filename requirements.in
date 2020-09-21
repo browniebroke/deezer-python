@@ -3,7 +3,7 @@ black; python_version > '3.5' and implementation_name != 'pypy'
 check-manifest
 coverage
 flake8
-flake8-isort
+flake8-isort; python_version > '3.5'
 isort; python_version > '3.5'
 pytest
 pytest-cov
