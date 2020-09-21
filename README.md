@@ -16,6 +16,9 @@ Deezer Python Client
   <a href="https://github.com/ambv/black">
     <img src="https://img.shields.io/badge/code%20style-black-000000.svg?amp;style=flat-square" alt="black">
   </a>
+  <a href="https://github.com/pre-commit/pre-commit">
+    <img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flat-square" alt="pre-commit">
+  </a>
 </p>
 <p align="center">
   <a href="https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb">
