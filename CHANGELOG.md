@@ -218,6 +218,7 @@
 ### 🚀 Enhancements:
 
 - add resource parameters and iterators [\#5](https://github.com/browniebroke/deezer-python/pull/5) ([pfouque](https://github.com/pfouque))
+- Async client for Tornado, search [\#1](https://github.com/browniebroke/deezer-python/pull/1) ([misuzu](https://github.com/misuzu))
 
 ## [0.2.1](https://github.com/browniebroke/deezer-python/tree/0.2.1) (2015-09-14)
 
@@ -238,10 +239,6 @@
 ## [0.1](https://github.com/browniebroke/deezer-python/tree/0.1) (2014-11-23)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/e87692f7aeb80bc0ed858ccdf6165f0ac8f9c2ec...0.1)
-
-### 🚀 Enhancements:
-
-- Async client for Tornado, search [\#1](https://github.com/browniebroke/deezer-python/pull/1) ([misuzu](https://github.com/misuzu))
 
 
 
