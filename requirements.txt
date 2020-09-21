@@ -8,73 +8,52 @@ appdirs==1.4.4            # via black, virtualenv
 attrs==19.3.0             # via pytest
 bandit==1.6.2             # via -r requirements.in
 black==20.8b1 ; python_version > "3.5" and implementation_name != "pypy"  # via -r requirements.in
-bleach==3.1.5             # via readme-renderer
-bump2version==1.0.0       # via -r requirements.in
-certifi==2020.6.20        # via requests
-cffi==1.14.0              # via cryptography
-chardet==3.0.4            # via requests
 check-manifest==0.42      # via -r requirements.in
 click==7.1.2              # via black
-colorama==0.4.3           # via twine
 coverage==5.3             # via -r requirements.in, pytest-cov
-cryptography==2.9.2       # via secretstorage
 distlib==0.3.1            # via virtualenv
-docutils==0.16            # via readme-renderer
 filelock==3.0.12          # via tox, virtualenv
 flake8-isort==4.0.0       # via -r requirements.in
 flake8==3.8.3             # via -r requirements.in, flake8-isort
 gitdb==4.0.5              # via gitpython
 gitpython==3.1.3          # via bandit
-idna==2.10                # via requests, yarl
+idna==2.10                # via yarl
+importlib-metadata==1.7.0  # via flake8, pep517, pluggy, pytest, tox, virtualenv
 iniconfig==1.0.0          # via pytest
 isort==5.5.3 ; python_version > "3.5"  # via -r requirements.in, flake8-isort
-jeepney==0.4.3            # via secretstorage
-keyring==20.0.1           # via twine
 mccabe==0.6.1             # via flake8
 more-itertools==8.4.0     # via pytest
 multidict==4.7.6          # via yarl
 mypy-extensions==0.4.3    # via black
-packaging==20.4           # via bleach, pytest, tox
+packaging==20.4           # via pytest, tox
 pathspec==0.8.0           # via black
 pbr==5.4.5                # via stevedore
 pep517==0.8.2             # via check-manifest
-pkginfo==1.5.0.1          # via twine
 pluggy==0.13.1            # via pytest, tox
 py==1.9.0                 # via pytest, tox
 pycodestyle==2.6.0        # via flake8
-pycparser==2.20           # via cffi
 pyflakes==2.2.0           # via flake8
-pygments==2.6.1           # via readme-renderer
 pyparsing==2.4.7          # via packaging
 pytest-cov==2.10.1        # via -r requirements.in
 pytest-vcr==1.0.2         # via -r requirements.in
 pytest==6.0.2             # via -r requirements.in, pytest-cov, pytest-vcr
 pyupgrade==2.7.2 ; python_version > "3.5"  # via -r requirements.in
 pyyaml==5.3.1             # via bandit, vcrpy
-readme-renderer==26.0     # via twine
 regex==2020.6.8           # via black
-requests-toolbelt==0.9.1  # via twine
-requests==2.24.0          # via requests-toolbelt, twine
-rfc3986==1.4.0            # via twine
-secretstorage==3.1.2      # via keyring
-six==1.15.0               # via bandit, bleach, cryptography, packaging, readme-renderer, stevedore, tox, vcrpy, virtualenv
+six==1.15.0               # via bandit, packaging, stevedore, tox, vcrpy, virtualenv
 smmap==3.0.4              # via gitdb
 stevedore==1.32.0         # via bandit
 testfixtures==6.14.1      # via flake8-isort
 tokenize-rt==3.2.0        # via pyupgrade
 toml==0.10.1              # via black, check-manifest, pep517, pytest, tox
 tox==3.20.0               # via -r requirements.in
-tqdm==4.47.0              # via twine
-twine==3.2.0 ; python_version > "3.5"  # via -r requirements.in
 typed-ast==1.4.1          # via black
 typing-extensions==3.7.4.3  # via black
-urllib3==1.25.9           # via requests
 vcrpy==4.1.0              # via -r requirements.in, pytest-vcr
 virtualenv==20.0.25       # via tox
-webencodings==0.5.1       # via bleach
-wheel==0.35.1             # via -r requirements.in
 wrapt==1.12.1             # via vcrpy
 yarl==1.3.0               # via vcrpy
+zipp==3.1.0               # via importlib-metadata, pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

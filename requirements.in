@@ -1,6 +1,5 @@
 bandit
 black; python_version > '3.5' and implementation_name != 'pypy'
-bump2version
 check-manifest
 coverage
 flake8
@@ -11,6 +10,4 @@ pytest-cov
 pytest-vcr
 pyupgrade; python_version > '3.5'
 tox
-twine; python_version > '3.5'
 vcrpy
-wheel
