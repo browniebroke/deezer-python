@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v1.6.2 (2020-09-21)
+### Fix
+* Remove universal wheel option ([`5f31f14`](https://github.com/browniebroke/deezer-python/commit/5f31f14ce77f9363b33ba42130ad190cbd4fe4ce))
+* Fix missing requirements when running tests ([`cb7d421`](https://github.com/browniebroke/deezer-python/commit/cb7d421ddaa166f168dcaff42c2944fd3334437a))
+* Fix configuration for python-semantic-release ([`dd446d2`](https://github.com/browniebroke/deezer-python/commit/dd446d2d438c6045ea2640776f80d7ee7ce29e66))
+
 ## [1.6.1](https://github.com/browniebroke/deezer-python/tree/1.6.1) (2020-08-27)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.6.0...1.6.1)
