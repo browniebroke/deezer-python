@@ -1,0 +1,25 @@
+name: Semantic Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.3.2
+      with:
+        fetch-depth: 0
+
+    # Run semantic release:
+    # - Update CHANGELOG.md
+    # - Update version in code
+    # - Create git tag
+    # - Create Github release
+    # - Publish to PyPI
+    - name: Python Semantic Release
+      uses: browniebroke/python-semantic-release@feat/changelog-md-file
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pypi_token: ${{ secrets.PYPI_TOKEN }}

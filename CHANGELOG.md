@@ -1,5 +1,7 @@
 # Changelog
 
+<!--next-version-placeholder-->
+
 ## [1.6.1](https://github.com/browniebroke/deezer-python/tree/1.6.1) (2020-08-27)
 
 [Full Changelog](https://github.com/browniebroke/deezer-python/compare/1.6.0...1.6.1)

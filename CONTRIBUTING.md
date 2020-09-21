@@ -45,7 +45,7 @@ proposing a feature:
 
 ## Get Started!
 
-Ready to contribute? Here\'s how to set up `deezer-python` for local
+Ready to contribute? Here's how to set up `deezer-python` for local
 development.
 
 1.  Fork the repo on GitHub.
@@ -83,10 +83,17 @@ development.
     applicable, and push your branch to GitHub:
 
         $ git add .
-        $ git commit -m "Fix #XX - My awesome fix"
+        $ git commit -m "feat(something): your detailed description of your changes"
         $ git push origin name-of-your-bugfix-or-feature
+    
+    Note: the commit message should follow [the conventional commits guidelines][1],
+    this is to enable the automation of releases. We run [`commitlint` on CI][2] 
+    which will validate the commit messages.
 
 7.  Submit a pull request on GitHub.
+
+[1]: https://www.conventionalcommits.org
+[2]: https://github.com/marketplace/actions/commit-linter
 
 ## Pull Request Guidelines
 
@@ -94,19 +101,15 @@ Feel free to open the pull request as soon as possible, but please be
 explicit if it's still a work in progress, we recommend draft pull
 requests. Please try to:
 
-1.  include tests for feature or bug fixes.
-2.  update the documentation if for any significant API changes.
-3.  ensure tests are passing on continuous integration.
+1.  Include tests for feature or bug fixes.
+2.  Update the documentation if for any significant API changes.
+3.  Ensure tests are passing on continuous integration.
 
 ## Create a New Release
 
-A reminder for maintainers on how to publish a new version to PyPI. 
-Before starting, make sure all builds are completed. 
+The deployment should be automated and can be triggered from the Semantic Release 
+workflow in Github. The next version will be based on [the commit logs][3]. 
+This is done by [python-semantic-release][4] via a Github action.
 
-Trigger the `Publish` workflow with the version part you want to bump 
-as argument (major, minor or patch). This will:
-
--   Update the version in the code, create the git tag and push it.
--   Create a release in GitHub for the tag that was just created.
--   Build the wheel and source distribution and publish them to PyPI.
-
+[3]: https://python-semantic-release.readthedocs.io/en/latest/commit-log-parsing.html#commit-log-parsing
+[4]: https://python-semantic-release.readthedocs.io/en/latest/index.html
