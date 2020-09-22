@@ -7,4 +7,5 @@ recursive-include docs *.bat
 recursive-include docs *.placeholder
 recursive-include docs *.py
 recursive-include docs *.rst
+recursive-include docs *.md
 recursive-include docs Makefile
