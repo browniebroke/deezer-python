@@ -2,11 +2,11 @@ bandit
 black; implementation_name != 'pypy'
 coverage
 flake8
-flake8-isort;
-isort;
+flake8-isort
+isort
 pytest
 pytest-cov
 pytest-vcr
-pyupgrade;
+pyupgrade
 tox
 vcrpy
