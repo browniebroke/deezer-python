@@ -20,7 +20,6 @@ idna==2.10                # via yarl
 iniconfig==1.0.0          # via pytest
 isort==5.5.4              # via -r requirements.in, flake8-isort
 mccabe==0.6.1             # via flake8
-more-itertools==8.4.0     # via pytest
 multidict==4.7.6          # via yarl
 mypy-extensions==0.4.3    # via black
 packaging==20.4           # via pytest, tox
@@ -33,7 +32,7 @@ pyflakes==2.2.0           # via flake8
 pyparsing==2.4.7          # via packaging
 pytest-cov==2.10.1        # via -r requirements.in
 pytest-vcr==1.0.2         # via -r requirements.in
-pytest==6.0.2             # via -r requirements.in, pytest-cov, pytest-vcr
+pytest==6.1.0             # via -r requirements.in, pytest-cov, pytest-vcr
 pyupgrade==2.7.2          # via -r requirements.in
 pyyaml==5.3.1             # via bandit, vcrpy
 regex==2020.9.27          # via black
