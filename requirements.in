@@ -1,12 +1,12 @@
 bandit
-black; python_version > '3.5' and implementation_name != 'pypy'
+black; implementation_name != 'pypy'
 coverage
 flake8
-flake8-isort; python_version > '3.5'
-isort; python_version > '3.5'
+flake8-isort;
+isort;
 pytest
 pytest-cov
 pytest-vcr
-pyupgrade; python_version > '3.5'
+pyupgrade;
 tox
 vcrpy
