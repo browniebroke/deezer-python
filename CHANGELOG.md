@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v2.0.0 (2020-10-01)
+### Feature
+* Drop support for Python 3.5 ([`20d999b`](https://github.com/browniebroke/deezer-python/commit/20d999ba370cf0bc643434d8257cfd9821ef26de))
+
+### Fix
+* Include docs/*.md files in package ([`5fcc38d`](https://github.com/browniebroke/deezer-python/commit/5fcc38df6e9137fd9d4d362141e428727a632565))
+
+### Breaking
+* dropping EOL Python version ([`20d999b`](https://github.com/browniebroke/deezer-python/commit/20d999ba370cf0bc643434d8257cfd9821ef26de))
+
 ## v1.6.2 (2020-09-21)
 ### Fix
 * Remove universal wheel option ([`5f31f14`](https://github.com/browniebroke/deezer-python/commit/5f31f14ce77f9363b33ba42130ad190cbd4fe4ce))
