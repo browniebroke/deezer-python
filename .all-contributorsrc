@@ -148,6 +148,16 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "naveen521kk",
+      "name": "Naveen M K",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/49693820?v=4",
+      "profile": "https://naveen.syrusdark.website",
+      "contributions": [
+        "code",
+        "infra"
+      ]
     }
   ],
   "projectName": "deezer-python",
