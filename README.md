@@ -86,6 +86,9 @@ Contributors
     <td align="center"><a href="http://www.idiap.ch || www.edeltech.ch"><img src="https://avatars0.githubusercontent.com/u/898010?v=4" width="100px;" alt=""/><br /><sub><b>Samuel Gaist</b></sub></a><br /><a href="https://github.com/browniebroke/deezer-python/commits?author=sgaist" title="Code">💻</a> <a href="https://github.com/browniebroke/deezer-python/commits?author=sgaist" title="Tests">⚠️</a> <a href="#security-sgaist" title="Security">🛡️</a></td>
     <td align="center"><a href="https://github.com/hithomasmorelli"><img src="https://avatars0.githubusercontent.com/u/22722644?v=4" width="100px;" alt=""/><br /><sub><b>Thomas Morelli</b></sub></a><br /><a href="https://github.com/browniebroke/deezer-python/issues?q=author%3Ahithomasmorelli" title="Bug reports">🐛</a> <a href="https://github.com/browniebroke/deezer-python/commits?author=hithomasmorelli" title="Code">💻</a> <a href="#ideas-hithomasmorelli" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://naveen.syrusdark.website"><img src="https://avatars1.githubusercontent.com/u/49693820?v=4" width="100px;" alt=""/><br /><sub><b>Naveen M K</b></sub></a><br /><a href="https://github.com/browniebroke/deezer-python/commits?author=naveen521kk" title="Code">💻</a> <a href="#infra-naveen521kk" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
