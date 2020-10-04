@@ -2,8 +2,8 @@ Deezer Python Client
 ====================
 
 <p align="center">
-  <a href="https://github.com/browniebroke/deezer-python/actions?query=workflow%3A&quot;Run+Tests&quot;">
-    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/browniebroke/deezer-python/Run Tests?label=Test&logo=github&style=flat-square">
+  <a href="https://github.com/browniebroke/deezer-python/actions?query=workflow%3ACI">
+    <img alt="CI Status" src="https://img.shields.io/github/workflow/status/browniebroke/deezer-python/CI?label=CI&logo=github&style=flat-square">
   </a>
   <a href="https://deezer-python.readthedocs.io">
     <img src="https://img.shields.io/readthedocs/deezer-python.svg?logo=read-the-docs&amp;style=flat-square" alt="Documentation Status">
