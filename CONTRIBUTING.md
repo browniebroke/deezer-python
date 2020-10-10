@@ -72,7 +72,7 @@ development.
     running [tox](http://tox.readthedocs.io/en/stable/index.html)
     environments:
 
-        $ tox -e lint,docs,py36
+        $ tox -e lint,docs,py38
 
     It will run our linters
     ([flake8](http://flake8.pycqa.org/en/latest/) and
