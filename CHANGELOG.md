@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v2.1.0 (2020-10-10)
+### Feature
+* Add support for python 3.9 ([`b4669ee`](https://github.com/browniebroke/deezer-python/commit/b4669ee0e1f698529b78a37c64d6daf210d8970a))
+
+### Documentation
+* Add naveen521kk as a contributor (#171) ([`0df16d3`](https://github.com/browniebroke/deezer-python/commit/0df16d34c1005ade3751f6f762e06387440894a8))
+
 ## v2.0.0 (2020-10-01)
 ### Feature
 * Drop support for Python 3.5 ([`20d999b`](https://github.com/browniebroke/deezer-python/commit/20d999ba370cf0bc643434d8257cfd9821ef26de))
