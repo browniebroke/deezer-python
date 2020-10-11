@@ -18,7 +18,7 @@ gitdb==4.0.5              # via gitpython
 gitpython==3.1.9          # via bandit
 idna==2.10                # via yarl
 iniconfig==1.0.1          # via pytest
-isort==5.6.1              # via -r requirements.in, flake8-isort
+isort==5.6.3              # via -r requirements.in, flake8-isort
 mccabe==0.6.1             # via flake8
 multidict==4.7.6          # via yarl
 mypy-extensions==0.4.3    # via black
