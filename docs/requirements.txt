@@ -18,7 +18,7 @@ markdown-it-py==0.5.5     # via myst-parser
 markupsafe==1.1.1         # via jinja2
 myst-parser[sphinx]==0.12.10  # via -r docs/requirements.in
 packaging==20.4           # via sphinx
-pygments==2.6.1           # via sphinx
+pygments==2.7.1           # via sphinx
 pyparsing==2.4.7          # via packaging
 pytz==2020.1              # via babel
 pyyaml==5.3.1             # via myst-parser
