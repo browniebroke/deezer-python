@@ -35,7 +35,7 @@ pytest-vcr==1.0.2         # via -r requirements.in
 pytest==6.1.1             # via -r requirements.in, pytest-cov, pytest-vcr
 pyupgrade==2.7.2          # via -r requirements.in
 pyyaml==5.3.1             # via bandit, vcrpy
-regex==2020.9.27          # via black
+regex==2020.10.11          # via black
 six==1.15.0               # via bandit, packaging, stevedore, tox, vcrpy, virtualenv
 smmap==3.0.4              # via gitdb
 stevedore==1.32.0         # via bandit
