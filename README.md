@@ -21,7 +21,7 @@ Deezer Python Client
   </a>
 </p>
 <p align="center">
-  <a href="https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb">
+  <a href="https://mybinder.org/v2/gh/browniebroke/deezer-python/main?filepath=demo.ipynb">
     <img src="https://mybinder.org/badge_logo.svg" alt="Launch demo on Binder">
   </a>
   <a href="https://pypi.org/project/deezer-python/">
@@ -58,7 +58,7 @@ API is mapped to python resources:
 
 Ready for more? Look at our whole [documentation](http://deezer-python.readthedocs.io/)
 on Read The Docs or have a play in pre-populated Jupyter notebook
-[on Binder](https://mybinder.org/v2/gh/browniebroke/deezer-python/master?filepath=demo.ipynb).
+[on Binder](https://mybinder.org/v2/gh/browniebroke/deezer-python/main?filepath=demo.ipynb).
 
 
 Contributors
