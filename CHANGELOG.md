@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v2.2.0 (2020-10-13)
+### Feature
+* Switch to Poetry (#196) ([`92030dd`](https://github.com/browniebroke/deezer-python/commit/92030dd9409ba906716cea3f7f49e30a9a5a8cf7))
+
+### Fix
+* Build command for PSR ([`c76b8ea`](https://github.com/browniebroke/deezer-python/commit/c76b8ea5f396586ab9eddf4bdd265438d0410351))
+
 ## v2.1.0 (2020-10-10)
 ### Feature
 * Add support for python 3.9 ([`b4669ee`](https://github.com/browniebroke/deezer-python/commit/b4669ee0e1f698529b78a37c64d6daf210d8970a))
