@@ -1,6 +1,9 @@
 version: 2
 
 python:
-  version: 3.7  # Should match version in docs.yml workflow
+  version: 3.7  # Should match version in ci.yml workflow (docs job)
   install:
-    - requirements: docs/requirements.txt
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
