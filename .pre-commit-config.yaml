@@ -32,7 +32,6 @@ repos:
     rev: 3.8.4
     hooks:
       - id: flake8
-        args: [--config=setup.cfg]
   - repo: https://github.com/PyCQA/bandit
     rev: 1.6.2
     hooks:

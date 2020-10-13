@@ -1,0 +1,79 @@
+[tool.poetry]
+name = "deezer-python"
+version = "2.1.0"
+description = "A friendly wrapper library for the Deezer API"
+authors = ["Bruno Alla <alla.brunoo@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["deezer", "sdk", "client", "requests"]
+repository = "https://github.com/browniebroke/deezer-python"
+documentation = "https://deezer-python.readthedocs.io"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+packages = [
+    { include = "deezer" },
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/browniebroke/deezer-python/issues"
+"Changelog" = "https://deezer-python.readthedocs.io/en/latest/changelog.html"
+
+[tool.poetry.dependencies]
+python = "^3.6.1"
+requests = "^2.18"
+tornado = {version = "^6.0.4", optional = true, extras = ["tornado"]}
+
+# Docs deps:
+myst-parser = {version = "^0.12", optional = true, extras = ["docs"]}
+sphinx = {version = "^3", optional = true, extras = ["docs"]}
+sphinx-autobuild = {version = "^2020.9.1", optional = true, extras = ["docs"]}
+sphinx-rtd-theme = {version = "^0.5", optional = true, extras = ["docs"]}
+
+[tool.poetry.extras]
+tornado = ["tornado"]
+docs = ["myst-parser", "sphinx", "sphinx-autobuild", "sphinx-rtd-theme"]
+
+[tool.poetry.dev-dependencies]
+bandit = "^1.6.2"
+black = "^20.8b1"
+coverage = "^5.3"
+flake8 = "^3.8.4"
+flake8-isort = "^4.0.0"
+isort = "^5.6.3"
+pytest = "^6.1.1"
+pytest-cov = "^2.10.1"
+pytest-vcr = "^1.0.2"
+pyupgrade = "^2.7.2"
+tox = "^3.20.1"
+vcrpy = "^4.1.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest]
+addopts = "-v -Wdefault --cov=deezer"
+
+[tool.semantic_release]
+version_variable = [
+    "deezer/__init__.py:__version__",
+    "pyproject.toml:version"
+]
+branch = "main"
+build_command = "pip install -m poetry && poetry build"
+
+[tool.isort]
+profile = "black"
+known_first_party = "deezer"
+
+[tool.coverage.run]
+branch = true
+source = "deezer"
+
+[tool.coverage.report]
+ignore_errors = true
