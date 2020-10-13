@@ -65,7 +65,7 @@ version_variable = [
     "pyproject.toml:version"
 ]
 branch = "main"
-build_command = "pip install -m poetry && poetry build"
+build_command = "pip install poetry && poetry build"
 
 [tool.isort]
 profile = "black"
