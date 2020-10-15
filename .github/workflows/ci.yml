@@ -23,9 +23,9 @@ jobs:
           # - macOS-latest
 
     steps:
-    - uses: actions/checkout@v2.3.3
+    - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2.1.4
+      uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
     - uses: abatilo/actions-poetry@v2.1.0
@@ -39,9 +39,9 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.3.3
+    - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2.1.4
+      uses: actions/setup-python@v2
       with:
         python-version: 3.7  # Should match version in .readthedocs.yml
     - uses: abatilo/actions-poetry@v2.1.0
@@ -54,7 +54,7 @@ jobs:
   commitlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - uses: wagoid/commitlint-github-action@v2.1.0
@@ -74,9 +74,9 @@ jobs:
             run: bandit -r deezer
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.3.3
+    - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2.1.4
+      uses: actions/setup-python@v2
       with:
         python-version: 3.8
     - uses: abatilo/actions-poetry@v2.1.0
