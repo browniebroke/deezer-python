@@ -34,7 +34,7 @@ jobs:
     - name: Test with Pytest
       run: poetry run pytest
     - name: Upload coverage report
-      uses: codecov/codecov-action@v1.0.13
+      uses: codecov/codecov-action@v1.0.14
 
   docs:
     runs-on: ubuntu-latest
