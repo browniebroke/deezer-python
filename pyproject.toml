@@ -24,7 +24,7 @@ packages = [
 "Changelog" = "https://deezer-python.readthedocs.io/en/latest/changelog.html"
 
 [tool.poetry.dependencies]
-python = "^3.6.1"
+python = "^3.6"
 requests = "^2.18"
 tornado = {version = "^6.0.4", optional = true}
 
@@ -53,7 +53,7 @@ isort = "^5.6.3"
 pytest = "^6.1.1"
 pytest-cov = "^2.10.1"
 pytest-vcr = "^1.0.2"
-pyupgrade = "^2.7.3"
+pyupgrade = { version = "^2.7.3", python = "^3.6.1" }
 tox = "^3.20.1"
 vcrpy = "^4.1.1"
 
