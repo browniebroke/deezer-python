@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v2.2.1 (2020-10-23)
+### Fix
+* Set minimum python version to 3.6 ([`4ff223d`](https://github.com/browniebroke/deezer-python/commit/4ff223df0e144ecddcd0eb2918b2ed161776490a))
+* Poetry extras ([`cc36e0f`](https://github.com/browniebroke/deezer-python/commit/cc36e0ffa70267efee6aeeff169d7dd186a73ea6))
+
 ## v2.2.0 (2020-10-13)
 ### Feature
 * Switch to Poetry (#196) ([`92030dd`](https://github.com/browniebroke/deezer-python/commit/92030dd9409ba906716cea3f7f49e30a9a5a8cf7))
