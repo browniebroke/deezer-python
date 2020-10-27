@@ -11,9 +11,6 @@ Deezer Python Client
   <a href="https://codecov.io/gh/browniebroke/deezer-python">
     <img src="https://img.shields.io/codecov/c/github/browniebroke/deezer-python.svg?logo=codecov&style=flat-square" alt="Test coverage percentage">
   </a>
-  <a href="https://codeclimate.com/github/browniebroke/deezer-python/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/bfbf562a06742972c694/maintainability" alt="Maintainability">
-  </a>
 </p>
 <p align="center">
   <a href="https://python-poetry.org/">
