@@ -61,7 +61,7 @@ vcrpy = "^4.1.1"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.pytest]
+[tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=deezer"
 
 [tool.semantic_release]
@@ -78,7 +78,7 @@ known_first_party = "deezer"
 
 [tool.coverage.run]
 branch = true
-source = "deezer"
+source = ["deezer"]
 
 [tool.coverage.report]
 ignore_errors = true
