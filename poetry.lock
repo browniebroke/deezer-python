@@ -514,7 +514,7 @@ python-versions = "*"
 
 [[package]]
 name = "pyupgrade"
-version = "2.7.3"
+version = "2.7.4"
 description = "A tool to automatically upgrade syntax for newer versions."
 category = "dev"
 optional = false
@@ -887,7 +887,7 @@ tornado = ["tornado"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "63aa1832eb090daa841f3ca1836f3e5468510eedd5d2b852e9a71679341d8ae6"
+content-hash = "a8d8561b06c28f6286bff84f3690c23a0e28328228a8959b8ceeca79d0533bc3"
 
 [metadata.files]
 alabaster = [
@@ -1171,8 +1171,8 @@ pytz = [
     {file = "pytz-2020.1.tar.gz", hash = "sha256:c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"},
 ]
 pyupgrade = [
-    {file = "pyupgrade-2.7.3-py2.py3-none-any.whl", hash = "sha256:071fec15248b7885381657d6701cc38ecf20d6c9ade5a58499c9456e0657de98"},
-    {file = "pyupgrade-2.7.3.tar.gz", hash = "sha256:69440d4805455159d3c5a44e03a64cd3699a2b1fbd78965d1122a4c37af44f93"},
+    {file = "pyupgrade-2.7.4-py2.py3-none-any.whl", hash = "sha256:ab2f47377e977bec8dd41db634fde35bce78fedd2be0e8b189fe687f23fb1d85"},
+    {file = "pyupgrade-2.7.4.tar.gz", hash = "sha256:e57057ccef3fd8e8fad5ba9f365c1288a076271a222ccb502d865c0d8fe16c3a"},
 ]
 pyyaml = [
     {file = "PyYAML-5.3.1-cp27-cp27m-win32.whl", hash = "sha256:74809a57b329d6cc0fdccee6318f44b9b8649961fa73144a98735b0aaf029f1f"},
