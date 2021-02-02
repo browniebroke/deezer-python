@@ -65,10 +65,8 @@ build-backend = "poetry.core.masonry.api"
 addopts = "-v -Wdefault --cov=deezer"
 
 [tool.semantic_release]
-version_variable = [
-    "deezer/__init__.py:__version__",
-    "pyproject.toml:version"
-]
+version_toml = "pyproject.toml:tool.poetry.version"
+version_variable = "deezer/__init__.py:__version__"
 branch = "main"
 build_command = "pip install poetry && poetry build"
 
