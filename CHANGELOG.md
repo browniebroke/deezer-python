@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v2.2.2 (2021-04-06)
+### Fix
+* Release in a separate environment ([`4d987d0`](https://github.com/browniebroke/deezer-python/commit/4d987d0076c2e763424eeadd9c6cbbbf71706498))
+* **deps:** Update dependency sphinx-autobuild to v2021 ([`f70a1bd`](https://github.com/browniebroke/deezer-python/commit/f70a1bda9c28e1cf2d1d1140a0fbf482ae0bc6cb))
+* **deps:** Update dependency myst-parser to ^0.13 ([`73255fb`](https://github.com/browniebroke/deezer-python/commit/73255fb3c79f28155744ff7ff37511761e17abd6))
+
 ## v2.2.1 (2020-10-23)
 ### Fix
 * Set minimum python version to 3.6 ([`4ff223d`](https://github.com/browniebroke/deezer-python/commit/4ff223df0e144ecddcd0eb2918b2ed161776490a))
