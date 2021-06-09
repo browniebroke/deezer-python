@@ -57,10 +57,6 @@ pyupgrade = { version = "^2.7.4", python = "^3.6.1" }
 tox = "^3.20.1"
 vcrpy = "^4.1.1"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=deezer"
 
@@ -80,3 +76,7 @@ source = ["deezer"]
 
 [tool.coverage.report]
 ignore_errors = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
