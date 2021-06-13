@@ -11,7 +11,7 @@ from deezer.resources import (
     User,
 )
 
-__version__ = "2.2.3"
+__version__ = "2.2.4"
 __all__ = [
     "Client",
     "Resource",

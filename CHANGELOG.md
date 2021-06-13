@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v2.2.4 (2021-06-13)
+### Fix
+* **deps:** Update dependency myst-parser to ^0.15 ([`81ed3d8`](https://github.com/browniebroke/deezer-python/commit/81ed3d88389a321d4fb2d980d1154a055060e8c8))
+
 ## v2.2.3 (2021-05-04)
 ### Fix
 * **deps:** Update dependency myst-parser to ^0.14 ([`9fbc55a`](https://github.com/browniebroke/deezer-python/commit/9fbc55a7371dd6c2bba1d9dd2d9b9f6650c37df2))
