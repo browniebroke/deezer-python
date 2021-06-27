@@ -166,16 +166,14 @@ class Client:
         base_url = self.url(request)
         if self.access_token is not None:
             kwargs["access_token"] = str(self.access_token)
-        if kwargs:
-            for key, value in kwargs.items():
-                if not isinstance(value, str):
-                    kwargs[key] = str(value)
-            # kwargs are sorted (for consistent tests between Python < 3.7 and >= 3.7)
-            sorted_kwargs = SortedDict.from_dict(kwargs)
-            result = "{}?{}".format(base_url, urlencode(sorted_kwargs))
-        else:
-            result = base_url
-        return result
+        if not kwargs:
+            return base_url
+        for key, value in kwargs.items():
+            if not isinstance(value, str):
+                kwargs[key] = str(value)
+        # kwargs are sorted (for consistent tests between Python < 3.7 and >= 3.7)
+        sorted_kwargs = SortedDict.from_dict(kwargs)
+        return "{}?{}".format(base_url, urlencode(sorted_kwargs))
 
     def get_object(
         self, object_t, object_id=None, relation=None, parent=None, **kwargs
