@@ -148,7 +148,7 @@ class Client:
         """Build the url with the appended request if provided."""
         if request.startswith("/"):
             request = request[1:]
-        return "{}://{}/{}".format(self.scheme, self.host, request)
+        return f"{self.scheme}://{self.host}/{request}"
 
     def object_url(self, object_t, object_id=None, relation=None, **kwargs):
         """
@@ -158,7 +158,7 @@ class Client:
         :raises TypeError: if the object type is invalid
         """
         if object_t not in self.objects_types:
-            raise TypeError("{} is not a valid type".format(object_t))
+            raise TypeError(f"{object_t} is not a valid type")
         request_items = (
             str(item) for item in [object_t, object_id, relation] if item is not None
         )
@@ -173,7 +173,7 @@ class Client:
                 kwargs[key] = str(value)
         # kwargs are sorted (for consistent tests between Python < 3.7 and >= 3.7)
         sorted_kwargs = SortedDict.from_dict(kwargs)
-        return "{}?{}".format(base_url, urlencode(sorted_kwargs))
+        return f"{base_url}?{urlencode(sorted_kwargs)}"
 
     def get_object(
         self, object_t, object_id=None, relation=None, parent=None, **kwargs
@@ -332,7 +332,7 @@ class Client:
         if not isinstance(terms, dict):
             raise TypeError("terms must be a dict")
         # terms are sorted (for consistent tests between Python < 3.7 and >= 3.7)
-        query = " ".join(sorted('{}:"{}"'.format(k, v) for (k, v) in terms.items()))
+        query = " ".join(sorted(f'{k}:"{v}"' for (k, v) in terms.items()))
         return self.get_object(
             "search", relation=relation, q=query, index=index, limit=limit, **kwargs
         )

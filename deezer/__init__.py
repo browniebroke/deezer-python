@@ -25,4 +25,4 @@ __all__ = [
     "Radio",
 ]
 
-USER_AGENT = "Deezer Python API Wrapper v{}".format(__version__)
+USER_AGENT = f"Deezer Python API Wrapper v{__version__}"

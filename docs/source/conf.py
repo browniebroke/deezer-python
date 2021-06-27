@@ -54,7 +54,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "deezer-python"
-copyright = "{}, Bruno Alla".format(date.today().year)
+copyright = f"{date.today().year}, Bruno Alla"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
