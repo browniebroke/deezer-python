@@ -69,7 +69,7 @@ jobs:
           - name: Black
             run: black --check .
           - name: PyUpgrade
-            run: pyupgrade --py3-plus `find . -name "*.py"`
+            run: pyupgrade --py36-plus `find . -name "*.py"`
           - name: Bandit
             run: bandit -r deezer
     runs-on: ubuntu-latest

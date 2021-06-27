@@ -25,7 +25,7 @@ class Resource:
         title = getattr(self, "title", None)
         id_ = getattr(self, "id", None)
         repr_ = str(name or title or id_)
-        return "<{}: {}>".format(self.__class__.__name__, repr_)
+        return f"<{self.__class__.__name__}: {repr_}>"
 
     def asdict(self):  # pragma: no cover
         """
