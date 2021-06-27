@@ -55,10 +55,10 @@ class Client:
 
     .. deprecated:: 1.4.0
 
-    The following parameters will be removed in the next major version:
+        The following parameters will be removed in the next major version:
 
-        * **host** - override the default hostname.
-        * **use_ssl** - connect using HTTP if set to `False`.
+            * **host** - override the default hostname.
+            * **use_ssl** - connect using HTTP if set to `False`.
     """
 
     objects_types = {
@@ -334,7 +334,7 @@ class Client:
         if not isinstance(terms, dict):
             raise TypeError("terms must be a dict")
         # terms are sorted (for consistent tests between Python < 3.7 and >= 3.7)
-        query = " ".join(sorted(['{}:"{}"'.format(k, v) for (k, v) in terms.items()]))
+        query = " ".join(sorted('{}:"{}"'.format(k, v) for (k, v) in terms.items()))
         return self.get_object(
             "search", relation=relation, q=query, index=index, limit=limit, **kwargs
         )
