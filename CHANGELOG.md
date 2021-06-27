@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v2.3.0 (2021-06-27)
+### Feature
+* Deprecate the `asdict` method from the `Resource` class ([`412b954`](https://github.com/browniebroke/deezer-python/commit/412b954791f9759028ad8320528f56347cc89d1b))
+
 ## v2.2.4 (2021-06-13)
 ### Fix
 * **deps:** Update dependency myst-parser to ^0.15 ([`81ed3d8`](https://github.com/browniebroke/deezer-python/commit/81ed3d88389a321d4fb2d980d1154a055060e8c8))
