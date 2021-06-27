@@ -53,7 +53,7 @@ class TestAlbum:
         Test resource conversion to dict
         """
         album = client.get_album(302127)
-        assert album.asdict()["id"] == 302127
+        assert album.as_dict()["id"] == 302127
 
 
 class TestArtist:
