@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given.
+Contributions are welcome, and they are greatly appreciated! Every little helps, and credit will always be given.
 
 You can contribute in many ways:
 
@@ -27,8 +27,7 @@ This module could always use more documentation, whether as part of the official
 
 ### Submit Feedback
 
-The best way to send feedback is to file an ticket on the [issues page]. If you are
-proposing a feature:
+The best way to send feedback is to file a ticket on the [issues page]. If you are proposing a feature:
 
 -   Explain how it would work.
 -   Keep the scope as narrow as possible, to make it easier to implement.
@@ -81,7 +80,7 @@ Feel free to open the pull request as soon as possible, but please be explicit i
 
 ## Create a New Release
 
-The deployment should be automated and can be triggered from the Semantic Release workflow in Github. The next version will be based on [the commit logs][commit-log]. This is done by [python-semantic-release] via a Github action.
+The deployment should be automated and can be triggered from the Semantic Release workflow in GitHub. The next version will be based on [the commit logs][commit-log]. This is done by [python-semantic-release] via a GitHub action.
 
 [issues page]: https://github.com/browniebroke/deezer-python/issues
 [Poetry]: https://python-poetry.org/
