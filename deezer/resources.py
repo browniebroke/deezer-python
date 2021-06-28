@@ -2,7 +2,6 @@
 Module to implement the various types of resources that
 can be found in the API.
 """
-import warnings
 
 
 class Resource:
@@ -26,21 +25,6 @@ class Resource:
         id_ = getattr(self, "id", None)
         repr_ = str(name or title or id_)
         return f"<{self.__class__.__name__}: {repr_}>"
-
-    def asdict(self):  # pragma: no cover
-        """
-        Convert resource to dictionary
-
-        .. deprecated:: 2.3.0
-
-            This method is deprecated and will be removed in the next major version.
-            Please use :class:`~deezer.resources.Resource.as_dict` instead.
-        """
-        warnings.warn(
-            "The Resource.asdict() method is deprecated, "
-            "please use Resource.as_dict() instead."
-        )
-        return self.as_dict()
 
     def as_dict(self):
         """
