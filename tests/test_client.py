@@ -19,20 +19,9 @@ class TestClient:
             params={"access_token": "token"},
         )
 
-    def test_no_compress_response(self):
-        client = deezer.Client(do_not_compress_reponse=True)
-        assert client.session.headers["Accept-Encoding"] == "identity"
-
     def test_kwargs_parsing_valid(self, client):
         assert client.app_id == "foo"
         assert client.app_secret == "bar"
-
-    def test_ssl_enabled(self, client):
-        assert client.scheme == "https"
-
-    def test_unsecure_client(self):
-        non_secure_client = deezer.Client(use_ssl=False)
-        assert non_secure_client.scheme == "http"
 
     def test_url(self, client):
         client.url()
