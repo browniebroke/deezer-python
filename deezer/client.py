@@ -77,9 +77,6 @@ class Client:
         if headers:
             self.session.headers.update(headers)
 
-        self.options = kwargs
-        self._authorize_url = None
-
     def _process_json(self, item, parent=None):
         """
         Recursively convert dictionary
