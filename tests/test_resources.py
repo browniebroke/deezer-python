@@ -16,44 +16,34 @@ class TestResource:
 
 
 class TestAlbum:
-    def test_album_attributes(self, client):
-        """
-        Test album resource
-        """
-        album = client.get_album(302127)
+    @pytest.fixture()
+    def album(self, client):
+        return client.get_album(302127)
+
+    def test_title_repr(self, album):
         assert hasattr(album, "title")
         assert repr(album) == "<Album: Discovery>"
 
-        artist = album.get_artist()
-        assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Daft Punk>"
-
-    def test_album_tracks(self, client):
-        """
-        Test tracks method of album resource
-        """
-        album = client.get_album(302127)
-
-        # tests list
-        tracks = album.get_tracks()
-        assert isinstance(tracks, list)
-        track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: One More Time>"
-
-        # tests generator
-        tracks_generator = album.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        track = next(tracks_generator)
-        assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: One More Time>"
-
-    def test_as_dict(self, client):
-        """
-        Test resource conversion to dict
-        """
-        album = client.get_album(302127)
+    def test_as_dict(self, album):
         assert album.as_dict()["id"] == 302127
+
+    def test_artist(self, album):
+        assert isinstance(album.artist, deezer.resources.Artist)
+        assert repr(album.artist) == "<Artist: Daft Punk>"
+
+    def test_tracks(self, album):
+        tracks = album.tracks
+        assert isinstance(tracks, list)
+        assert len(tracks) == 14
+        assert all(isinstance(track, deezer.resources.Track) for track in tracks)
+        assert repr(tracks[0]) == "<Track: One More Time>"
+
+    def test_genres(self, album):
+        genres = album.genres
+        assert isinstance(genres, list)
+        assert len(genres) == 1
+        assert all(isinstance(genre, deezer.resources.Genre) for genre in genres)
+        assert repr(genres[0]) == "<Genre: Dance>"
 
 
 class TestArtist:

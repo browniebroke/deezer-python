@@ -13,11 +13,11 @@ class Resource:
     attributes
     """
 
-    def __init__(self, client, json):
-        self._fields = tuple(json.keys())
+    def __init__(self, client, json_data):
+        self._fields = tuple(json_data.keys())
         self.client = client
-        for key in json:
-            setattr(self, key, json[key])
+        for key in json_data:
+            setattr(self, key, json_data[key])
 
     def __repr__(self):
         name = getattr(self, "name", None)
@@ -79,29 +79,17 @@ class Album(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
-    def get_artist(self):
-        """
-        Get the artist of the Album.
-
-        :returns: the :mod:`Artist <deezer.resources.Artist>` of the Album
-        """
-        return self.client.get_artist(self.artist.id)
-
-    def get_tracks(self, **kwargs):
-        """
-        Get a list of album's tracks.
-
-        :returns: list of :mod:`Track <deezer.resources.Track>` instances
-        """
-        return self.get_relation("tracks", **kwargs)
-
-    def iter_tracks(self, **kwargs):
-        """
-        Iterate album's tracks.
-
-        :returns: iterator of :mod:`Track <deezer.resources.Track>` instances
-        """
-        return self.iter_relation("tracks", **kwargs)
+    def __init__(self, client, json_data):
+        super().__init__(client, json_data)
+        self.artist = Artist(client=client, json_data=json_data["artist"])
+        self.tracks = [
+            Track(client=client, json_data=track_data)
+            for track_data in json_data["tracks"]["data"]
+        ]
+        self.genres = [
+            Genre(client=client, json_data=track_data)
+            for track_data in json_data["genres"]["data"]
+        ]
 
 
 class Artist(Resource):

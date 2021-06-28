@@ -105,6 +105,16 @@ class Client:
             object_class = self.objects_types[parent]
         return object_class(self, result)
 
+    def request(self, method, path, params=None, **kwargs):
+        """Wrapper around requests.Session.request."""
+        url = f"https://api.deezer.com/{path}"
+        params = params or {}
+        if self.access_token is not None:
+            params["access_token"] = str(self.access_token)
+        response = self.session.request(method, url, params=params, **kwargs)
+        response.raise_for_status()
+        return response.json()
+
     @staticmethod
     def url(request=""):
         """Build the url with the appended request if provided."""
@@ -156,21 +166,35 @@ class Client:
             )
         return self._process_json(json, parent)
 
-    def get_album(self, object_id, relation=None, **kwargs):
+    def get_album(self, album_id):
         """
         Get the album with the provided id
 
         :returns: an :class:`~deezer.resources.Album` object
         """
-        return self.get_object("album", object_id, relation=relation, **kwargs)
+        album_data = self.request("GET", f"album/{album_id}")
+        return Album(client=self, json_data=album_data)
 
-    def get_artist(self, object_id, relation=None, **kwargs):
+    def get_artist(self, artist_id):
         """
-        Get the artist with the provided id
+        Get the artist with the given ID.
 
         :returns: an :class:`~deezer.resources.Artist` object
         """
-        return self.get_object("artist", object_id, relation=relation, **kwargs)
+        artist_data = self.request("GET", f"artist/{artist_id}")
+        return Artist(client=self, json_data=artist_data)
+
+    def get_related_artist(self, artist_id):
+        """
+        Get related artists from the one with the given ID.
+
+        :returns: a list of :class:`~deezer.resources.Artist` objects
+        """
+        related_artists_data = self.request("GET", f"artist/{artist_id}/related")
+        return [
+            Artist(client=self, json_data=artist_data)
+            for artist_data in related_artists_data
+        ]
 
     def get_chart(self, relation=None, index=0, limit=10, **kwargs):
         """
