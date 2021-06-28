@@ -1,6 +1,6 @@
 """
 Implements a client class to query the
-`Deezer API <http://developers.deezer.com/api>`_
+`Deezer API <https://developers.deezer.com/api>`_
 """
 from urllib.parse import urlencode
 
