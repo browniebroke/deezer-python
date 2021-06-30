@@ -188,9 +188,7 @@ class Client:
         json = response.json()
         if "error" in json:
             raise ValueError(
-                "API request return error for object: {} id: {}".format(
-                    object_t, object_id
-                )
+                f"API request return error for object: {object_t} id: {object_id}"
             )
         return self._process_json(json, parent)
 
@@ -326,8 +324,10 @@ class Client:
         :returns: a list of :class:`~deezer.resources.Resource` objects.
 
         >>> client.advanced_search({"artist": "Daft Punk", "album": "Homework"})
-        >>> client.advanced_search({"artist": "Daft Punk", "album": "Homework"},
-        ...                        relation="track")
+        >>> client.advanced_search(
+        ...     {"artist": "Daft Punk", "album": "Homework"},
+        ...     relation="track",
+        ... )
         """
         if not isinstance(terms, dict):
             raise TypeError("terms must be a dict")
