@@ -185,12 +185,12 @@ class Client:
         """
         url = self.object_url(object_t, object_id, relation, **kwargs)
         response = self.session.get(url)
-        json = response.json()
-        if "error" in json:
+        json_data = response.json()
+        if "error" in json_data:
             raise ValueError(
                 f"API request return error for object: {object_t} id: {object_id}"
             )
-        return self._process_json(json, parent)
+        return self._process_json(json_data, parent)
 
     def get_album(self, object_id, relation=None, **kwargs):
         """
