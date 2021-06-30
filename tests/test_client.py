@@ -1,4 +1,5 @@
 import pytest
+import requests
 
 import deezer
 
@@ -6,13 +7,16 @@ pytestmark = pytest.mark.vcr
 
 
 class TestClient:
-    def test_access_token_set(self, client):
+    def test_access_token_set(self, client, mocker):
         """Test that access token is set on the client."""
+        session_get = mocker.spy(requests.Session, "get")
         client.access_token = "token"
         assert client.access_token, "token"
-        assert (
-            client.object_url("user", "me")
-            == "https://api.deezer.com/user/me?access_token=token"
+        client.get_object("user", "me")
+        session_get.assert_called_with(
+            mocker.ANY,
+            "https://api.deezer.com/user/me",
+            params={"access_token": "token"},
         )
 
     def test_no_compress_response(self):
@@ -31,33 +35,22 @@ class TestClient:
         assert non_secure_client.scheme == "http"
 
     def test_url(self, client):
-        """Test the url() method
-        it should add / to the request if not present
-        """
         client.url()
-        user = client.url("/user")
-        assert user == "https://api.deezer.com/user"
         user = client.url("user")
         assert user == "https://api.deezer.com/user"
 
     @pytest.mark.parametrize(
-        ("args", "kwargs", "expected_output"),
+        ("args", "expected_output"),
         [
-            (("album",), {}, "https://api.deezer.com/album"),
-            (("album", 12), {}, "https://api.deezer.com/album/12"),
-            (("album", "12"), {}, "https://api.deezer.com/album/12"),
-            (("album", "12", "artist"), {}, "https://api.deezer.com/album/12/artist"),
-            (("album", "12", "artist"), {}, "https://api.deezer.com/album/12/artist"),
-            (("album", "12"), {"limit": 1}, "https://api.deezer.com/album/12?limit=1"),
-            (
-                ("artist", "12", "albums"),
-                {"limit": 1},
-                "https://api.deezer.com/artist/12/albums?limit=1",
-            ),
+            (("album",), "https://api.deezer.com/album"),
+            (("album", 12), "https://api.deezer.com/album/12"),
+            (("album", "12"), "https://api.deezer.com/album/12"),
+            (("album", "12", "artist"), "https://api.deezer.com/album/12/artist"),
+            (("artist", "12", "albums"), "https://api.deezer.com/artist/12/albums"),
         ],
     )
-    def test_object_url(self, client, args, kwargs, expected_output):
-        assert client.object_url(*args, **kwargs) == expected_output
+    def test_object_url(self, client, args, expected_output):
+        assert client.object_url(*args) == expected_output
 
     def test_object_url_invalid_type(self, client):
         with pytest.raises(TypeError):
@@ -228,20 +221,12 @@ class TestClient:
 
     def test_search_simple(self, client):
         """Test search method"""
-        assert (
-            client.object_url("search", q="Soliloquy")
-            == "https://api.deezer.com/search?q=Soliloquy"
-        )
         result = client.search("Soliloquy")
         assert isinstance(result, list)
         assert result[0].title == "Too much"
 
     def test_search_with_relation(self, client):
         """Test search method with relation"""
-        assert (
-            client.object_url("search", relation="album", q="Daft Punk")
-            == "https://api.deezer.com/search/album?q=Daft+Punk"
-        )
         result = client.search("Daft Punk", "album")
         assert isinstance(result, list)
         assert result[0].title == "Random Access Memories"
@@ -254,22 +239,12 @@ class TestClient:
 
     def test_advanced_search_simple(self, client):
         """Test advanced_search method: simple case with one term"""
-        assert (
-            client.object_url("search", q='artist:"Lou Doillon"')
-            == "https://api.deezer.com/search?q=artist%3A%22Lou+Doillon%22"
-        )
         result = client.advanced_search({"artist": "Lou Doillon"})
         assert isinstance(result, list)
         assert result[0].title == "Too much"
 
     def test_advanced_search_complex(self, client):
         """Test advanced_search method: complex case with two term"""
-        assert client.object_url(
-            "search", q='artist:"Lou Doillon" album:"Lay Low"'
-        ) == (
-            "https://api.deezer.com/search?"
-            "q=artist%3A%22Lou+Doillon%22+album%3A%22Lay+Low%22"
-        )
         result = client.advanced_search({"artist": "Lou Doillon", "album": "Lay Low"})
         assert isinstance(result, list)
         assert result[0].title == "Where To Start"
@@ -277,12 +252,6 @@ class TestClient:
     def test_advanced_search_complex_with_relation(self, client):
         """Test advanced_search method: with relation"""
         # Two terms with a relation
-        assert client.object_url(
-            "search", relation="track", q='artist:"Lou Doillon" track:"Joke"'
-        ) == (
-            "https://api.deezer.com/search/track?"
-            "q=artist%3A%22Lou+Doillon%22+track%3A%22Joke%22"
-        )
         result = client.advanced_search(
             {"artist": "Lou Doillon", "track": "Joke"}, relation="track"
         )
