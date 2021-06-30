@@ -184,7 +184,7 @@ class Client:
         artist_data = self.request("GET", f"artist/{artist_id}")
         return Artist(client=self, json_data=artist_data)
 
-    def get_related_artist(self, artist_id):
+    def get_related_artists(self, artist_id):
         """
         Get related artists from the one with the given ID.
 

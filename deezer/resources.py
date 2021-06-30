@@ -2,6 +2,10 @@
 Module to implement the various types of resources that
 can be found in the API.
 """
+import datetime as dt
+from typing import Any, Dict, List, Optional
+
+from deezer.utils import format_date, parse_date
 
 
 class Resource:
@@ -13,9 +17,8 @@ class Resource:
     attributes
     """
 
-    def __init__(self, client, json_data):
-        self._fields = tuple(json_data.keys())
-        self.client = client
+    def __init__(self, client, json_data: Dict[str, Any]):
+        self._client = client
         for key in json_data:
             setattr(self, key, json_data[key])
 
@@ -31,8 +34,12 @@ class Resource:
         Convert resource to dictionary
         """
         result = {}
-        for key in self._fields:
+        for key in self.__dict__:
+            if key.startswith("_"):
+                continue
             value = getattr(self, key)
+            if isinstance(value, dt.date):
+                value = format_date(value)
             if isinstance(value, list):
                 value = [i.as_dict() if isinstance(i, Resource) else i for i in value]
             if isinstance(value, Resource):
@@ -79,17 +86,55 @@ class Album(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
+    id: int
+    title: str
+    upc: str
+    link: str
+    share: str
+    cover: str
+    cover_small: str
+    cover_medium: str
+    cover_big: str
+    cover_xl: str
+    md5_image: str
+    genre_id: int
+    genres: List["Genre"]
+    label: str
+    nb_tracks: int
+    duration: int
+    fans: int
+    rating: int
+    release_date: dt.date
+    record_type: str
+    available: bool
+    alternative: Optional["Album"]
+    tracklist: str
+    explicit_lyrics: bool
+    explicit_content_lyrics: int
+    explicit_content_cover: int
+    artist: "Artist"
+    contributors: List["Artist"]
+    tracks: List["Track"]
+
     def __init__(self, client, json_data):
-        super().__init__(client, json_data)
-        self.artist = Artist(client=client, json_data=json_data["artist"])
+        self.artist = Artist(client=client, json_data=json_data.pop("artist"))
+        self.contributors = [
+            Artist(client=client, json_data=contributors_data)
+            for contributors_data in json_data.pop("contributors")
+        ]
         self.tracks = [
             Track(client=client, json_data=track_data)
-            for track_data in json_data["tracks"]["data"]
+            for track_data in json_data.pop("tracks")["data"]
         ]
         self.genres = [
             Genre(client=client, json_data=track_data)
-            for track_data in json_data["genres"]["data"]
+            for track_data in json_data.pop("genres")["data"]
         ]
+        self.release_date = parse_date(json_data.pop("release_date"))
+        super().__init__(client, json_data)
+
+    def get_tracks(self):
+        return self._client.get_album_tracks(self.id)
 
 
 class Artist(Resource):
@@ -99,13 +144,21 @@ class Artist(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
-    def get_top(self, **kwargs):
+    def get_top_tracks(self, **kwargs):
         """
         Get the top tracks of an artist.
 
         :returns: list of :mod:`Track <deezer.resources.Track>` instances
         """
         return self.get_relation("top", **kwargs)
+
+    def get_top(self, **kwargs):
+        """
+        Get the top tracks of an artist.
+
+        :returns: list of :mod:`Track <deezer.resources.Track>` instances
+        """
+        return self.get_top_tracks(**kwargs)
 
     def get_related(self, **kwargs):
         """

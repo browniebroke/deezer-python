@@ -1,6 +1,8 @@
 """Utils."""
-
+import datetime as dt
 from collections import OrderedDict
+
+DATE_FORMAT = "%Y-%m-%d"
 
 
 class SortedDict(OrderedDict):
@@ -18,3 +20,11 @@ class SortedDict(OrderedDict):
         for key in sorted(dct.keys()):
             odict[key] = dct[key]
         return odict
+
+
+def parse_date(date_str: str) -> dt.date:
+    return dt.datetime.strptime(date_str, DATE_FORMAT).date()
+
+
+def format_date(date: dt.date) -> str:
+    return date.strftime(DATE_FORMAT)
