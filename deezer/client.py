@@ -3,7 +3,6 @@ Implements a client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
 import warnings
-from urllib.parse import urlencode
 
 import requests
 
@@ -21,7 +20,6 @@ from deezer.resources import (
     Track,
     User,
 )
-from deezer.utils import SortedDict
 
 DEPRECATED_ARG_MESSAGE = (
     "The `{arg_name}` keyword argument is deprecated "
@@ -144,13 +142,11 @@ class Client:
         """
         return self.use_ssl and "https" or "http"
 
-    def url(self, request=""):
+    def url(self, request_path=""):
         """Build the url with the appended request if provided."""
-        if request.startswith("/"):
-            request = request[1:]
-        return f"{self.scheme}://{self.host}/{request}"
+        return f"{self.scheme}://{self.host}/{request_path}"
 
-    def object_url(self, object_t, object_id=None, relation=None, **kwargs):
+    def object_url(self, object_t, object_id=None, relation=None):
         """
         Helper method to build the url to query to access the object
         passed as parameter
@@ -162,29 +158,22 @@ class Client:
         request_items = (
             str(item) for item in [object_t, object_id, relation] if item is not None
         )
-        request = "/".join(request_items)
-        base_url = self.url(request)
-        if self.access_token is not None:
-            kwargs["access_token"] = str(self.access_token)
-        if not kwargs:
-            return base_url
-        for key, value in kwargs.items():
-            if not isinstance(value, str):
-                kwargs[key] = str(value)
-        # kwargs are sorted (for consistent tests between Python < 3.7 and >= 3.7)
-        sorted_kwargs = SortedDict.from_dict(kwargs)
-        return f"{base_url}?{urlencode(sorted_kwargs)}"
+        request_path = "/".join(request_items)
+        return self.url(request_path)
 
     def get_object(
-        self, object_t, object_id=None, relation=None, parent=None, **kwargs
+        self, object_t, object_id=None, relation=None, parent=None, **params
     ):
         """
         Actually query the Deezer API to retrieve the object.
 
         :returns: an :class:`~deezer.resources.Resource` or subclass.
         """
-        url = self.object_url(object_t, object_id, relation, **kwargs)
-        response = self.session.get(url)
+        url = self.object_url(object_t, object_id, relation)
+        params = params or {}
+        if self.access_token is not None:
+            params["access_token"] = str(self.access_token)
+        response = self.session.get(url, params=params)
         json_data = response.json()
         if "error" in json_data:
             raise ValueError(
