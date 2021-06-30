@@ -179,9 +179,9 @@ class Client:
         self, object_t, object_id=None, relation=None, parent=None, **kwargs
     ):
         """
-        Actually query the Deezer API to retrieve the object
+        Actually query the Deezer API to retrieve the object.
 
-        :returns: json dictionary
+        :returns: an :class:`~deezer.resources.Resource` or subclass.
         """
         url = self.object_url(object_t, object_id, relation, **kwargs)
         response = self.session.get(url)
@@ -194,7 +194,7 @@ class Client:
 
     def get_album(self, object_id, relation=None, **kwargs):
         """
-        Get the album with the provided id
+        Get the album with the provided ID.
 
         :returns: an :class:`~deezer.resources.Album` object
         """
@@ -202,7 +202,7 @@ class Client:
 
     def get_artist(self, object_id, relation=None, **kwargs):
         """
-        Get the artist with the provided id
+        Get the artist with the provided ID.
 
         :returns: an :class:`~deezer.resources.Artist` object
         """
