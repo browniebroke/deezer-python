@@ -32,7 +32,7 @@ repos:
       - id: bandit
         args: [-x, tests]
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.17.11
+    rev: v2.17.12
     hooks:
       - id: commitizen
         stages: [commit-msg]
