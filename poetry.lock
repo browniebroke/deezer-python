@@ -86,10 +86,7 @@ platformdirs = ">=2"
 regex = ">=2020.1.8"
 tomli = ">=0.2.6,<2.0.0"
 typed-ast = {version = ">=1.4.2", markers = "python_version < \"3.8\""}
-typing-extensions = [
-    {version = ">=3.10.0.0", markers = "python_version < \"3.10\""},
-    {version = "!=3.10.0.1", markers = "python_version >= \"3.10\""},
-]
+typing-extensions = {version = ">=3.10.0.0", markers = "python_version < \"3.10\""}
 
 [package.extras]
 colorama = ["colorama (>=0.4.3)"]
@@ -970,7 +967,7 @@ tornado = ["tornado"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "99b11c388db6398f45c08db9fa4b90c3472e61292615083438ce51524b311a12"
+content-hash = "0e8076c39849163e99cbca05d2aae88e818638e33921ff4368307046e2baa2c1"
 
 [metadata.files]
 alabaster = [
