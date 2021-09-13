@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v2.3.1 (2021-09-13)
+### Fix
+* **deps:** Update dependency sphinx-rtd-theme to v1 ([`af43757`](https://github.com/browniebroke/deezer-python/commit/af43757238760ca8fa23ff67cafa11cd8dd74eea))
+
+### Documentation
+* Fix docstrings ([`0e87749`](https://github.com/browniebroke/deezer-python/commit/0e87749c182f59b40341f85b61dbb73578ed6567))
+
 ## v2.3.0 (2021-06-27)
 ### Feature
 * Deprecate the `asdict` method from the `Resource` class ([`412b954`](https://github.com/browniebroke/deezer-python/commit/412b954791f9759028ad8320528f56347cc89d1b))
