@@ -51,7 +51,7 @@ flake8 = "^3.8.4"
 flake8-isort = "^4.0.0"
 isort = "^5.6.3"
 pytest = "^6.1.2"
-pytest-cov = "^2.10.1"
+pytest-cov = "^3.0.0"
 pytest-vcr = "^1.0.2"
 pyupgrade = { version = "^2.7.4", python = "^3.6.1" }
 tox = "^3.20.1"
