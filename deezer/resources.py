@@ -23,8 +23,7 @@ class Resource:
         name = getattr(self, "name", None)
         title = getattr(self, "title", None)
         id_ = getattr(self, "id", None)
-        repr_ = str(name or title or id_)
-        return f"<{self.__class__.__name__}: {repr_}>"
+        return f'<{self.__class__.__name__}: {name or title or id_}>'
 
     def as_dict(self):
         """
