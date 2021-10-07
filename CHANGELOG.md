@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v2.4.0 (2021-10-07)
+### Feature
+* Add official python 3.10 support ([`b29b0cb`](https://github.com/browniebroke/deezer-python/commit/b29b0cb87e025bc52663c8d81d0f1dd94277badc))
+
 ## v2.3.1 (2021-09-13)
 ### Fix
 * **deps:** Update dependency sphinx-rtd-theme to v1 ([`af43757`](https://github.com/browniebroke/deezer-python/commit/af43757238760ca8fa23ff67cafa11cd8dd74eea))
