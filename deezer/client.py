@@ -4,6 +4,7 @@ Implements a client class to query the
 """
 import requests
 
+from deezer.exceptions import DeezerErrorResponse, DeezerHTTPError
 from deezer.resources import (
     Album,
     Artist,
@@ -61,6 +62,7 @@ class Client:
         "track": Track,
         "user": User,
     }
+    base_url = "https://api.deezer.com"
 
     def __init__(
         self, app_id=None, app_secret=None, access_token=None, headers=None, **kwargs
@@ -121,6 +123,33 @@ class Client:
         )
         request_path = "/".join(request_items)
         return self.url(request_path)
+
+    def request(self, method: str, path: str, **params):
+        """
+        Make a request to the API and parse the response.
+
+        :param method: HTTP verb to use: GET, POST< DELETE, ...
+        :param path: The path to make the API call to (e.g. 'artist/1234')
+        :param params: Query parameters to add the the request
+        :return:
+        """
+        if self.access_token is not None:
+            params["access_token"] = str(self.access_token)
+        response = self.session.request(
+            method,
+            f"{self.base_url}/{path}",
+            params=params,
+        )
+        try:
+            response.raise_for_status()
+        except requests.HTTPError as exc:
+            raise DeezerHTTPError.from_http_error(exc) from exc
+        json_data = response.json()
+        if not isinstance(json_data, dict):
+            return json_data
+        if "error" in json_data:
+            raise DeezerErrorResponse(json_data)
+        return self._process_json(json_data)
 
     def get_object(
         self, object_t, object_id=None, relation=None, parent=None, **params

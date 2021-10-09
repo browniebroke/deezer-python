@@ -11,3 +11,9 @@ def client():
         # This is to get human readable response output in VCR cassettes
         headers={"Accept-Encoding": "identity"},
     )
+
+
+@pytest.fixture()
+def client_token(client):
+    client.access_token = "dummy"
+    return client
