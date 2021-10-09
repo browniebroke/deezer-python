@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v3.0.0 (2021-10-09)
+### Breaking
+* remove deprecated `asdict` method on `Resource` class  ([`daeee61`](https://github.com/browniebroke/deezer-python/commit/daeee6131d249106a2233e432a179aba40cdbbc8))
+* remove deprecated `host` and `use_ssl` arguments for `Client`  ([`2bd2c39`](https://github.com/browniebroke/deezer-python/commit/2bd2c39988066999d3ae34995e1e98c31d6c5a17))
+
+### Documentation
+* Use https in link ([`f7eb114`](https://github.com/browniebroke/deezer-python/commit/f7eb114e4d1d0dba9e8a65f25cb2ce842270036e))
+
 ## v2.4.0 (2021-10-07)
 ### Feature
 * Add official python 3.10 support ([`b29b0cb`](https://github.com/browniebroke/deezer-python/commit/b29b0cb87e025bc52663c8d81d0f1dd94277badc))
