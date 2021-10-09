@@ -323,6 +323,34 @@ class Client:
         """
         return self.request("DELETE", "user/me/albums", album_id=album_id)
 
+    def get_user_artists(self, user_id: Optional[int] = None) -> List[Artist]:
+        """
+        Get the favourites artists for the given user_id if provided or current user if not.
+
+        :param user_id: the user ID to get favourites artists.
+        :return: a list of :class:`~deezer.resources.Artist` instances.
+        """
+        user_id_str = str(user_id) if user_id else "me"
+        return self.request("GET", f"user/{user_id_str}/artists")
+
+    def add_user_artist(self, artist_id: int) -> bool:
+        """
+        Add an artist to the user's library
+
+        :param artist_id: the ID of the artist to add.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("POST", "user/me/artists", artist_id=artist_id)
+
+    def remove_user_artist(self, artist_id: int) -> bool:
+        """
+        Remove an artist from the user's library
+
+        :param artist_id: the ID of the artist to remove.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("DELETE", "user/me/artists", artist_id=artist_id)
+
     def search(self, query, relation=None, index=0, limit=25, **kwargs):
         """
         Search track, album, artist or user

@@ -1,0 +1,63 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/user/359622/artists?access_token=dummy
+  response:
+    body:
+      string: '{"data":[{"id":243,"name":"Wax Tailor","link":"https:\/\/www.deezer.com\/artist\/243","picture":"https:\/\/api.deezer.com\/artist\/243\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5f88782f666ff52a234a1dafc7c640e6\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5f88782f666ff52a234a1dafc7c640e6\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5f88782f666ff52a234a1dafc7c640e6\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5f88782f666ff52a234a1dafc7c640e6\/1000x1000-000000-80-0-0.jpg","nb_album":24,"nb_fan":224408,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/243\/top?limit=50","time_add":1258243200,"type":"artist"},{"id":641,"name":"Vitalic","link":"https:\/\/www.deezer.com\/artist\/641","picture":"https:\/\/api.deezer.com\/artist\/641\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5e970ce2f5c52fe2b036f088eb4a7bef\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5e970ce2f5c52fe2b036f088eb4a7bef\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5e970ce2f5c52fe2b036f088eb4a7bef\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5e970ce2f5c52fe2b036f088eb4a7bef\/1000x1000-000000-80-0-0.jpg","nb_album":22,"nb_fan":280646,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/641\/top?limit=50","time_add":1254700800,"type":"artist"},{"id":901,"name":"Morcheeba","link":"https:\/\/www.deezer.com\/artist\/901","picture":"https:\/\/api.deezer.com\/artist\/901\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/190c679b4e5d665339e8f60857917a6f\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/190c679b4e5d665339e8f60857917a6f\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/190c679b4e5d665339e8f60857917a6f\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/190c679b4e5d665339e8f60857917a6f\/1000x1000-000000-80-0-0.jpg","nb_album":66,"nb_fan":310559,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/901\/top?limit=50","time_add":1265846400,"type":"artist"},{"id":93914,"name":"Tribute
+        Stars","link":"https:\/\/www.deezer.com\/artist\/93914","picture":"https:\/\/api.deezer.com\/artist\/93914\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/dc825c91bf2fcbda8b964be1102d4e71\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/dc825c91bf2fcbda8b964be1102d4e71\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/dc825c91bf2fcbda8b964be1102d4e71\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/dc825c91bf2fcbda8b964be1102d4e71\/1000x1000-000000-80-0-0.jpg","nb_album":359,"nb_fan":539,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/93914\/top?limit=50","time_add":1265241600,"type":"artist"}],"checksum":"5230dd6b9680d69aaaed5671ed5e120f","total":4}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5623'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 09 Oct 2021 17:38:22 GMT
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr0b3ccc63f1fef6367026159c8d82996a3d3048; expires=Thu,
+        07-Apr-2022 17:38:22 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-135
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1
