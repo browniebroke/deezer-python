@@ -9,7 +9,7 @@ on:
     - cron: "0 13 1 11 *"
 
 jobs:
-  example:
+  label:
     runs-on: ubuntu-latest
 
     steps:
