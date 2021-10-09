@@ -351,6 +351,34 @@ class Client:
         """
         return self.request("DELETE", "user/me/artists", artist_id=artist_id)
 
+    def get_user_tracks(self, user_id: Optional[int] = None) -> List[Track]:
+        """
+        Get the favourites tracks for the given user_id if provided or current user if not.
+
+        :param user_id: the user ID to get favourites tracks.
+        :return: a list of :class:`~deezer.resources.Track` instances.
+        """
+        user_id_str = str(user_id) if user_id else "me"
+        return self.request("GET", f"user/{user_id_str}/tracks")
+
+    def add_user_track(self, track_id: int) -> bool:
+        """
+        Add a track to the user's library
+
+        :param track_id: the ID of the track to add.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("POST", "user/me/tracks", track_id=track_id)
+
+    def remove_user_track(self, track_id: int) -> bool:
+        """
+        Remove a track from the user's library
+
+        :param track_id: the ID of the track to remove.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("DELETE", "user/me/tracks", track_id=track_id)
+
     def search(self, query, relation=None, index=0, limit=25, **kwargs):
         """
         Search track, album, artist or user
