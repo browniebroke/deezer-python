@@ -179,6 +179,16 @@ class Client:
         """
         return self.get_object("album", object_id, relation=relation, **kwargs)
 
+    def rate_album(self, album_id: str, note: int) -> bool:
+        """
+        Rate the album of the given ID with the given note.
+
+        The note should be and integer between 1 and 5.
+
+        :returns: boolean
+        """
+        return self.request("POST", f"album/{album_id}", note=note)
+
     def get_artist(self, object_id, relation=None, **kwargs):
         """
         Get the artist with the provided ID.
