@@ -2,6 +2,15 @@
 
 <!--next-version-placeholder-->
 
+## v3.1.0 (2021-10-09)
+### Feature
+* Ability to manage tracks from the user's library ([`59b0f57`](https://github.com/browniebroke/deezer-python/commit/59b0f578127a99622632f51359ba88cc23dcaa1b))
+* Ability to manage artists from the user's library ([`10f2967`](https://github.com/browniebroke/deezer-python/commit/10f29678c262be6349703ed093f0dbb96eea256a))
+* Ability to manage albums from the user's library ([`45f9bba`](https://github.com/browniebroke/deezer-python/commit/45f9bbac416a359a06cc7c2b270161dff8119a8d))
+* Add support to rate an album ([`c8dc771`](https://github.com/browniebroke/deezer-python/commit/c8dc771b6c11c927cd599dc88563b9ec6db2f994))
+* Add support to rate an album ([`1c72557`](https://github.com/browniebroke/deezer-python/commit/1c725572fa66839ddc1f7ed3b1f7a529a8d0572d))
+* Basic structure to support POST method ([`9da4e81`](https://github.com/browniebroke/deezer-python/commit/9da4e81ed80c516d806502eed4b1671eb944b75c))
+
 ## v3.0.0 (2021-10-09)
 ### Breaking
 * remove deprecated `asdict` method on `Resource` class  ([`daeee61`](https://github.com/browniebroke/deezer-python/commit/daeee6131d249106a2233e432a179aba40cdbbc8))
