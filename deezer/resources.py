@@ -241,7 +241,7 @@ class User(Resource):
 
         :returns: list of :mod:`Album <deezer.resources.Album>` instances
         """
-        return self.get_relation("albums", **kwargs)
+        return self.client.get_user_albums(self.id)
 
     def iter_albums(self, **kwargs):
         """
