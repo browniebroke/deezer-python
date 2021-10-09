@@ -197,6 +197,28 @@ class TestClient:
         with pytest.raises(ValueError):
             client.get_user(-1)
 
+    @pytest.mark.parametrize(
+        "args",
+        [
+            (),
+            (359622,),
+        ],
+    )
+    def test_get_user_albums(self, client_token, args):
+        user_albums = client_token.get_user_albums(*args)
+        assert len(user_albums) == 2
+        assert all(isinstance(a, deezer.resources.Album) for a in user_albums)
+        assert user_albums[0].title == "OK Cowboy"
+        assert user_albums[1].title == "Tank (Remastered)"
+
+    def test_add_user_album(self, client_token):
+        result = client_token.add_user_album(302127)
+        assert result is True
+
+    def test_remove_user_album(self, client_token):
+        result = client_token.remove_user_album(302127)
+        assert result is True
+
     def test_options_1(self, client):
         """Test a query with extra arguments"""
         result = client.search("Billy Jean", limit=2)

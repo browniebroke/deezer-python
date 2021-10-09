@@ -2,6 +2,8 @@
 Implements a client class to query the
 `Deezer API <https://developers.deezer.com/api>`_
 """
+from typing import List, Optional
+
 import requests
 
 from deezer.exceptions import DeezerErrorResponse, DeezerHTTPError
@@ -185,7 +187,7 @@ class Client:
 
         The note should be and integer between 1 and 5.
 
-        :returns: boolean
+        :returns: boolean whether rating was applied
         """
         return self.request("POST", f"album/{album_id}", note=note)
 
@@ -292,6 +294,34 @@ class Client:
         :returns: a :class:`~deezer.resources.User` object
         """
         return self.get_object("user", object_id)
+
+    def get_user_albums(self, user_id: Optional[int] = None) -> List[Album]:
+        """
+        Get the favourites albums for the given user_id if provided or current user if not.
+
+        :param user_id: the user ID to get favourites albums.
+        :return: a list of :class:`~deezer.resources.Album` instances.
+        """
+        user_id_str = str(user_id) if user_id else "me"
+        return self.request("GET", f"user/{user_id_str}/albums")
+
+    def add_user_album(self, album_id: int) -> bool:
+        """
+        Add an album to the user's library
+
+        :param album_id: the ID of the album to add.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("POST", "user/me/albums", album_id=album_id)
+
+    def remove_user_album(self, album_id: int) -> bool:
+        """
+        Remove an album from the user's library
+
+        :param album_id: the ID of the album to remove.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("DELETE", "user/me/albums", album_id=album_id)
 
     def search(self, query, relation=None, index=0, limit=25, **kwargs):
         """
