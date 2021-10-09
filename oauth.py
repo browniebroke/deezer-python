@@ -30,7 +30,14 @@ class OAuthDancer:
             {
                 "app_id": self.app_id,
                 "redirect_uri": self.redirect_url,
-                "perms": "basic_access,email",
+                "perms": ",".join(
+                    [
+                        "basic_access",
+                        "email",
+                        "manage_library",
+                        "delete_library",
+                    ]
+                ),
             }
         )
         return f"{self.base_url}/oauth/auth.php?{query}"
