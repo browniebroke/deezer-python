@@ -102,6 +102,15 @@ class Album(Resource):
         """
         return self.iter_relation("tracks", **kwargs)
 
+    def rate(self, note: int) -> bool:
+        """
+        Rate the album with the given note.
+
+        :param note: rating to give.
+        :return: boolean, whether the album was rated
+        """
+        return self.client.rate_album(album_id=self.id, note=note)
+
 
 class Artist(Resource):
     """
