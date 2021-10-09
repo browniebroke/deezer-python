@@ -219,6 +219,32 @@ class TestClient:
         result = client_token.remove_user_album(302127)
         assert result is True
 
+    @pytest.mark.parametrize(
+        "args",
+        [
+            (),
+            (359622,),
+        ],
+    )
+    def test_get_user_artists(self, client_token, args):
+        user_artists = client_token.get_user_artists(*args)
+        assert len(user_artists) == 4
+        assert all(isinstance(a, deezer.resources.Artist) for a in user_artists)
+        assert [a.name for a in user_artists] == [
+            "Wax Tailor",
+            "Vitalic",
+            "Morcheeba",
+            "Tribute Stars",
+        ]
+
+    def test_add_user_artist(self, client_token):
+        result = client_token.add_user_artist(243)
+        assert result is True
+
+    def test_remove_user_artist(self, client_token):
+        result = client_token.remove_user_artist(243)
+        assert result is True
+
     def test_options_1(self, client):
         """Test a query with extra arguments"""
         result = client.search("Billy Jean", limit=2)
