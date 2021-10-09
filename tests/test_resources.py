@@ -55,6 +55,11 @@ class TestAlbum:
         album = client.get_album(302127)
         assert album.as_dict()["id"] == 302127
 
+    def test_rate(self, client_token):
+        album = deezer.resources.Album(client_token, {"id": 302127})
+        result = album.rate(3)
+        assert result is True
+
 
 class TestArtist:
     def test_artist_attributes(self, client):
