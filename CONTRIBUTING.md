@@ -10,8 +10,8 @@ You can contribute in many ways:
 
 Report bugs on the [issues page]. If you are reporting a bug, please include:
 
--   Any details about your local setup that might be helpful in troubleshooting.
--   Detailed steps to reproduce the bug.
+- Any details about your local setup that might be helpful in troubleshooting.
+- Detailed steps to reproduce the bug.
 
 ### Fix Bugs
 
@@ -29,54 +29,77 @@ This module could always use more documentation, whether as part of the official
 
 The best way to send feedback is to file a ticket on the [issues page]. If you are proposing a feature:
 
--   Explain how it would work.
--   Keep the scope as narrow as possible, to make it easier to implement.
--   Remember that this is a volunteer-driven project, and that contributions are welcome 🙂
+- Explain how it would work.
+- Keep the scope as narrow as possible, to make it easier to implement.
+- Remember that this is a volunteer-driven project, and that contributions are welcome 🙂
 
 ## Get Started!
 
 Ready to contribute? Here's how to set up `deezer-python` for local development.
 
-1.  Fork the repo on GitHub.
+1. Fork the repo on GitHub.
 
-2.  Clone your fork locally:
+2. Clone your fork locally:
 
-        $ git clone git@github.com:your_name_here/deezer-python.git
+   ```bash
+   $ git clone git@github.com:your_name_here/deezer-python.git
+   ```
 
-3.  Install the dependencies with [Poetry]
+3. Install the dependencies with [Poetry]
 
-        $ poetry install -E tornado -E docs
+   ```bash
+   $ poetry install -E tornado -E docs
+   ```
 
-4.  Create a branch for local development:
+4. Create a branch for local development:
 
-        $ git checkout -b name-of-your-bugfix-or-feature
+   ```bash
+   $ git checkout -b name-of-your-bugfix-or-feature
+   ```
 
-    Now you can make your changes locally.
+   Now you can make your changes locally.
 
-5.  When you're done making changes, check that your changes pass our tests and that the doc builds. The easiest way to do that is by running [tox] environments:
+5. When you're done making changes, check that your changes pass our tests and that the doc builds. The easiest way to do that is by running [tox] environments:
 
-        $ poetry run tox -e lint,docs,py38
+   ```bash
+   $ poetry run tox -e lint,docs,py38
+   ```
 
-    It will run our linters ([flake8] and [black]), build the docs and run the tests
+   It will run our linters ([flake8] and [black]), build the docs and run the tests
 
-6.  Commit your changes, quoting GitHub issue in the commit message, if
-    applicable, and push your branch to GitHub:
+6. Commit your changes, quoting GitHub issue in the commit message, if applicable, and push your branch to GitHub:
 
-        $ git add .
-        $ git commit -m "feat(something): your detailed description of your changes"
-        $ git push origin name-of-your-bugfix-or-feature
+   ```bash
+   $ git add .
+   $ git commit -m "feat(something): your detailed description of your changes"
+   $ git push origin name-of-your-bugfix-or-feature
+   ```
 
-    Note: the commit message should follow [the conventional commits][conventional-commits] specs, this is to enable the automation of releases. We run [`commitlint` on CI][commitlint] which will validate the commit messages.
+   Note: the commit message should follow [the conventional commits][conventional-commits] specs, this is to enable the automation of releases. We run [`commitlint` on CI][commitlint] which will validate the commit messages.
 
-7.  Submit a pull request on GitHub.
+7. Submit a pull request on GitHub.
+
+## Obtain an API token
+
+If you want to work on a feature that requires authentication, you'll need to obtain an API token to perform authenticated requests using the `oauth.py` script. The script will take you through the OAuth flow and display the API token at the end.
+
+First, you'll need to have a dedicated app in the [Deezer developer portal][deezer-developers-myapps], create one with the following redirect URL after authentication: `http://localhost:8080/oauth/return`.
+
+Once created, get the application ID as well as the secret key and call the script with them:
+
+```bash
+$ python oauth.py --app-id APP_ID --app-secret SECRET_KEY
+```
+
+Authorise the app in your browser and keep the API token displayed at the end. Copy the `.env.example` file to `.env` and set the API token there. This way, it won't be committed to source control.
 
 ## Pull Request Guidelines
 
 Feel free to open the pull request as soon as possible, but please be explicit if it's still a work in progress, we recommend draft pull requests. Please try to:
 
-1.  Include tests for feature or bug fixes.
-2.  Update the documentation if for any significant API changes.
-3.  Ensure tests are passing on continuous integration.
+1. Include tests for feature or bug fixes.
+2. Update the documentation if for any significant API changes.
+3. Ensure tests are passing on continuous integration.
 
 ## Create a New Release
 
@@ -89,5 +112,6 @@ The deployment should be automated and can be triggered from the Semantic Releas
 [black]: https://github.com/ambv/black
 [conventional-commits]: https://www.conventionalcommits.org
 [commitlint]: https://github.com/marketplace/actions/commit-linter
+[deezer-developers-myapps]: https://developers.deezer.com/myapps
 [commit-log]: https://python-semantic-release.readthedocs.io/en/latest/commit-log-parsing.html#commit-log-parsing
 [python-semantic-release]: https://python-semantic-release.readthedocs.io/en/latest/index.html
