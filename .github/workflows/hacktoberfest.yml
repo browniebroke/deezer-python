@@ -1,6 +1,7 @@
 name: Hacktoberfest
 
 on:
+  workflow_dispatch:
   schedule:
     # Run every day in October
     - cron: "0 0 * 10 *"
