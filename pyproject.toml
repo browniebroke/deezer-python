@@ -45,7 +45,7 @@ docs = [
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.6.2"
-black = { version = "^21.9b0", python = "^3.6.2" }
+black = {version = "^21.9b0", extras = ["jupyter"], python = "^3.6.2"}
 coverage = "^5.4"
 flake8 = "^3.8.4"
 flake8-isort = "^4.0.0"
