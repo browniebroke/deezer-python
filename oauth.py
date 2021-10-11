@@ -88,6 +88,14 @@ class MyServer(BaseHTTPRequestHandler):
             f"<br>"
             f"Expires = {token_data['expires']}"
         )
+
+        """Write token to .env file"""
+        with open(".env", "w+") as file:
+            file.writelines(["API_TOKEN="+token_data['access_token']+'\n'])
+            print ("Token written to .env file") 
+
+        file.close()
+
         raise SystemExit("All Done")
 
     def _render_content(self, content: str):
