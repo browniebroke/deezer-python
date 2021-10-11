@@ -13,11 +13,11 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
-          - 3.6
-          - 3.7
-          - 3.8
-          - 3.9
-          - '3.10'
+          - "3.6"
+          - "3.7"
+          - "3.8"
+          - "3.9"
+          - "3.10"
         os:
           - ubuntu-latest
           - windows-latest
@@ -73,6 +73,8 @@ jobs:
             run: black --check .
           - name: PyUpgrade
             run: pyupgrade --py36-plus `find . -name "*.py"`
+          - name: isort
+            run: isort -c -v .
           - name: Bandit
             run: bandit -r deezer
     runs-on: ubuntu-latest
