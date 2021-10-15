@@ -2,6 +2,15 @@
 
 <!--next-version-placeholder-->
 
+## v3.2.0 (2021-10-15)
+### Feature
+* Get current user's listening history ([`43ea8ca`](https://github.com/browniebroke/deezer-python/commit/43ea8cab43a2b1b778f478d9dc8df1a478454bf9))
+
+### Documentation
+* Update contributing guide with recent simplifications ([`0181cda`](https://github.com/browniebroke/deezer-python/commit/0181cda9cf420dbdffbcfadd731e3a8069eb199e))
+* Add Carababusha as a contributor for code ([#390](https://github.com/browniebroke/deezer-python/issues/390)) ([`257a48f`](https://github.com/browniebroke/deezer-python/commit/257a48fedb2f068fac42e6d9bde7709d24846bb4))
+* Update contributing guide to avoid leaking API tokens ([`784146e`](https://github.com/browniebroke/deezer-python/commit/784146e759db6750d415ba6611aea443137b275b))
+
 ## v3.1.0 (2021-10-09)
 ### Feature
 * Ability to manage tracks from the user's library ([`59b0f57`](https://github.com/browniebroke/deezer-python/commit/59b0f578127a99622632f51359ba88cc23dcaa1b))
