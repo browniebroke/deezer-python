@@ -265,13 +265,13 @@ class Client:
         """
         return self.request("GET", f"radio/{radio_id}")
 
-    def get_radios(self):
+    def list_radios(self) -> List[Radio]:
         """
-        Get a list of radios.
+        List radios.
 
         :returns: a list of :class:`~deezer.resources.Radio` objects
         """
-        return self.get_object("radio")
+        return self.request("GET", "radio")
 
     def get_radios_top(self):
         """
