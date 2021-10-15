@@ -57,18 +57,13 @@ class TestClient:
 
     def test_no_album_raise(self, client):
         """Test method get_album for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_album(-1)
 
     def test_get_artist(self, client):
         """Test methods to get an artist"""
         artist = client.get_artist(27)
         assert isinstance(artist, deezer.resources.Artist)
-
-    def test_no_artist_raise(self, client):
-        """Test method get_artist for invalid value"""
-        with pytest.raises(ValueError):
-            client.get_artist(-1)
 
     def test_chart(self, client):
         assert client.object_url("chart") == "https://api.deezer.com/chart"
@@ -111,7 +106,7 @@ class TestClient:
 
     def test_no_comment_raise(self, client):
         """Test method get_comment for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_comment(-1)
 
     def test_get_episode(self, client):
@@ -121,7 +116,7 @@ class TestClient:
 
     def test_no_episode_raise(self, client):
         """Test method get_episode for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_episode(-1)
 
     def test_get_genre(self, client):
@@ -131,7 +126,7 @@ class TestClient:
 
     def test_no_genre_raise(self, client):
         """Test method get_genre for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_genre(-1)
 
     def test_get_genres(self, client):
@@ -147,7 +142,7 @@ class TestClient:
 
     def test_no_playlist_raise(self, client):
         """Test method get_playlist for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_playlist(-1)
 
     def test_get_podcast(self, client):
@@ -157,7 +152,7 @@ class TestClient:
 
     def test_no_podcast_raise(self, client):
         """Test method get_podcast for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_podcast(-1)
 
     def test_get_radio(self, client):
@@ -167,7 +162,7 @@ class TestClient:
 
     def test_no_radio_raise(self, client):
         """Test method get_radio for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_radio(-1)
 
     def test_get_radios(self, client):
@@ -188,7 +183,7 @@ class TestClient:
 
     def test_no_track_raise(self, client):
         """Test method get_track for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_track(-1)
 
     def test_get_user(self, client):
@@ -198,7 +193,7 @@ class TestClient:
 
     def test_no_user_raise(self, client):
         """Test method get_user for invalid value"""
-        with pytest.raises(ValueError):
+        with pytest.raises(DeezerErrorResponse):
             client.get_user(-1)
 
     @pytest.mark.parametrize(

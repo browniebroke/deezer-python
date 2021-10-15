@@ -27,7 +27,7 @@ class Client:
     """
     A client to retrieve some basic infos about Deezer resourses.
 
-    Create a client instance with the provided options. Options should
+    Create a client instance with the given options. Options should
     be passed in to the constructor as kwargs.
 
         >>> import deezer
@@ -173,15 +173,15 @@ class Client:
             )
         return self._process_json(json_data, parent)
 
-    def get_album(self, object_id, relation=None, **kwargs):
+    def get_album(self, album_id: int) -> Album:
         """
-        Get the album with the provided ID.
+        Get the album with the given ID.
 
         :returns: an :class:`~deezer.resources.Album` object
         """
-        return self.get_object("album", object_id, relation=relation, **kwargs)
+        return self.request("GET", f"album/{album_id}")
 
-    def rate_album(self, album_id: str, note: int) -> bool:
+    def rate_album(self, album_id: int, note: int) -> bool:
         """
         Rate the album of the given ID with the given note.
 
@@ -191,13 +191,13 @@ class Client:
         """
         return self.request("POST", f"album/{album_id}", note=note)
 
-    def get_artist(self, object_id, relation=None, **kwargs):
+    def get_artist(self, artist_id: int) -> Artist:
         """
-        Get the artist with the provided ID.
+        Get the artist with the given ID.
 
         :returns: an :class:`~deezer.resources.Artist` object
         """
-        return self.get_object("artist", object_id, relation=relation, **kwargs)
+        return self.request("GET", f"artist/{artist_id}")
 
     def get_chart(self, relation=None, index=0, limit=10, **kwargs):
         """
@@ -209,29 +209,29 @@ class Client:
             "chart", object_id="0", relation=relation, parent="chart", **kwargs
         )
 
-    def get_comment(self, object_id):
+    def get_comment(self, comment_id: int) -> Comment:
         """
-        Get the comment with the provided id
+        Get the comment with the given ID.
 
         :returns: a :class:`~deezer.resources.Comment` object
         """
-        return self.get_object("comment", object_id)
+        return self.request("GET", f"comment/{comment_id}")
 
-    def get_episode(self, object_id):
+    def get_episode(self, episode_id: int) -> Episode:
         """
-        Get the episode with the provided id
+        Get the episode with the given ID.
 
         :returns: a :class:`~deezer.resources.Episode` object
         """
-        return self.get_object("episode", object_id)
+        return self.request("GET", f"episode/{episode_id}")
 
-    def get_genre(self, object_id):
+    def get_genre(self, genre_id: int) -> Genre:
         """
-        Get the genre with the provided id
+        Get the genre with the given ID
 
         :returns: a :class:`~deezer.resources.Genre` object
         """
-        return self.get_object("genre", object_id)
+        return self.request("GET", f"genre/{genre_id}")
 
     def get_genres(self):
         """
@@ -239,29 +239,29 @@ class Client:
         """
         return self.get_object("genre")
 
-    def get_playlist(self, object_id):
+    def get_playlist(self, playlist_id: int) -> Playlist:
         """
-        Get the playlist with the provided id
+        Get the playlist with the given ID.
 
         :returns: a :class:`~deezer.resources.Playlist` object
         """
-        return self.get_object("playlist", object_id)
+        return self.request("GET", f"playlist/{playlist_id}")
 
-    def get_podcast(self, object_id):
+    def get_podcast(self, podcast_id: int) -> Podcast:
         """
-        Get the podcast with the provided id
+        Get the podcast with the given ID.
 
         :returns: a :class:`~deezer.resources.Podcast` object
         """
-        return self.get_object("podcast", object_id)
+        return self.request("GET", f"podcast/{podcast_id}")
 
-    def get_radio(self, object_id=None):
+    def get_radio(self, radio_id: int) -> Radio:
         """
-        Get the radio with the provided id.
+        Get the radio with the given ID..
 
         :returns: a :class:`~deezer.resources.Radio` object
         """
-        return self.get_object("radio", object_id)
+        return self.request("GET", f"radio/{radio_id}")
 
     def get_radios(self):
         """
@@ -279,21 +279,21 @@ class Client:
         """
         return self.get_object("radio", relation="top")
 
-    def get_track(self, object_id):
+    def get_track(self, track_id: int) -> Track:
         """
-        Get the track with the provided id
+        Get the track with the given ID.
 
         :returns: a :class:`~deezer.resources.Track` object
         """
-        return self.get_object("track", object_id)
+        return self.request("GET", f"track/{track_id}")
 
-    def get_user(self, object_id):
+    def get_user(self, user_id: int) -> User:
         """
-        Get the user with the provided id
+        Get the user with the given ID.
 
         :returns: a :class:`~deezer.resources.User` object
         """
-        return self.get_object("user", object_id)
+        return self.request("GET", f"user/{user_id}")
 
     def get_user_albums(self, user_id: Optional[int] = None) -> List[Album]:
         """
