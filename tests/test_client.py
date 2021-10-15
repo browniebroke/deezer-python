@@ -129,9 +129,9 @@ class TestClient:
         with pytest.raises(DeezerErrorResponse):
             client.get_genre(-1)
 
-    def test_get_genres(self, client):
-        """Test methods to get several genres"""
-        genres = client.get_genres()
+    def test_list_genres(self, client):
+        """Test methods to list several genres"""
+        genres = client.list_genres()
         assert isinstance(genres, list)
         assert isinstance(genres[0], deezer.resources.Genre)
 

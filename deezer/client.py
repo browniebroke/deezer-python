@@ -233,11 +233,13 @@ class Client:
         """
         return self.request("GET", f"genre/{genre_id}")
 
-    def get_genres(self):
+    def list_genres(self) -> List[Genre]:
         """
+        List musical genres.
+
         :returns: a list of :class:`~deezer.resources.Genre` objects.
         """
-        return self.get_object("genre")
+        return self.request("GET", "genre")
 
     def get_playlist(self, playlist_id: int) -> Playlist:
         """
