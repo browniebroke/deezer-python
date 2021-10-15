@@ -351,6 +351,14 @@ class Client:
         """
         return self.request("DELETE", "user/me/artists", artist_id=artist_id)
 
+    def get_user_history(self) -> List[Track]:
+        """
+        Returns a list of the recently played tracks for the current user.
+
+        :return: a list of :class:`~deezer.resources.Track` instances.
+        """
+        return self.request("GET", "user/me/history")
+
     def get_user_tracks(self, user_id: Optional[int] = None) -> List[Track]:
         """
         Get the favourites tracks for the given user_id if provided or current user if not.
