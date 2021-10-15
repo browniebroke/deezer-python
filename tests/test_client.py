@@ -249,6 +249,16 @@ class TestClient:
         result = client_token.remove_user_artist(243)
         assert result is True
 
+    def test_get_user_history(self, client_token):
+        user_history = client_token.get_user_history()
+        assert len(user_history) == 3
+        assert all(isinstance(t, deezer.resources.Track) for t in user_history)
+        assert [t.title for t in user_history] == [
+            "Loverini",
+            "Superchérie",
+            "Run Away",
+        ]
+
     @pytest.mark.parametrize(
         "args",
         [
