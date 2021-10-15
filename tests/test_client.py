@@ -165,9 +165,9 @@ class TestClient:
         with pytest.raises(DeezerErrorResponse):
             client.get_radio(-1)
 
-    def test_get_radios(self, client):
-        """Test methods to get a radios"""
-        radios = client.get_radios()
+    def test_list_radios(self, client):
+        """Test methods to list radios"""
+        radios = client.list_radios()
         assert isinstance(radios, list)
         assert isinstance(radios[0], deezer.resources.Radio)
 
