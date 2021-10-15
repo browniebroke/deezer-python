@@ -2,7 +2,7 @@ import pytest
 import requests
 
 import deezer
-from deezer.exceptions import DeezerErrorResponse
+from deezer.exceptions import DeezerErrorResponse, DeezerNotFoundError
 
 pytestmark = pytest.mark.vcr
 
@@ -45,6 +45,10 @@ class TestClient:
     def test_object_url_invalid_type(self, client):
         with pytest.raises(TypeError):
             client.object_url("foo")
+
+    def test_request_404(self, client):
+        with pytest.raises(DeezerNotFoundError):
+            client.request("GET", "does-not-exists")
 
     def test_get_album(self, client):
         """Test method to retrieve an album"""
