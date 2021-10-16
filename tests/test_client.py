@@ -274,45 +274,34 @@ class TestClient:
         """Test search method"""
         result = client.search("Soliloquy")
         assert isinstance(result, list)
-        assert result[0].title == "Too much"
+        assert all(isinstance(r, deezer.resources.Track) for r in result)
+        assert result[0].title == "Soliloquy"
 
-    def test_search_with_relation(self, client):
-        """Test search method with relation"""
-        result = client.search("Daft Punk", "album")
-        assert isinstance(result, list)
-        assert result[0].title == "Random Access Memories"
-        assert isinstance(result[0], deezer.resources.Album)
-
-        result = client.search("Daft Punk", "album", "0", "1")
-        assert isinstance(result, list)
-        assert len(result) == 1
-        assert result[0] != client.search("Daft Punk", "album", "1", "1")
-
-    def test_advanced_search_simple(self, client):
-        """Test advanced_search method: simple case with one term"""
-        result = client.advanced_search({"artist": "Lou Doillon"})
+    def test_search_advanced_simple(self, client):
+        """Test advanced search with one term"""
+        result = client.search(artist="Lou Doillon")
         assert isinstance(result, list)
         assert result[0].title == "Too much"
 
-    def test_advanced_search_complex(self, client):
-        """Test advanced_search method: complex case with two term"""
-        result = client.advanced_search({"artist": "Lou Doillon", "album": "Lay Low"})
+    def test_search_advanced_multiple(self, client):
+        """Test advanced search with two term"""
+        result = client.search(artist="Lou Doillon", album="Lay Low")
         assert isinstance(result, list)
         assert result[0].title == "Where To Start"
 
-    def test_advanced_search_complex_with_relation(self, client):
-        """Test advanced_search method: with relation"""
-        # Two terms with a relation
-        result = client.advanced_search(
-            {"artist": "Lou Doillon", "track": "Joke"}, relation="track"
-        )
+    def test_search_albums(self, client):
+        """Test search for albums"""
+        result = client.search_albums("Daft Punk")
         assert isinstance(result, list)
-        assert result[0].title == "The joke"
-        assert isinstance(result[0], deezer.resources.Track)
+        assert all(isinstance(r, deezer.resources.Album) for r in result)
+        assert result[0].title == "Discovery"
 
-    def test_advanced_search_invalid(self, client):
-        with pytest.raises(TypeError):
-            client.advanced_search("Lou Doillon")
+    def test_search_artists(self, client):
+        """Test search for artists"""
+        result = client.search_artists("Daft Punk")
+        assert isinstance(result, list)
+        assert all(isinstance(r, deezer.resources.Artist) for r in result)
+        assert result[0].name == "Daft Punk"
 
     @pytest.mark.parametrize(
         ("header_value", "expected_name"),

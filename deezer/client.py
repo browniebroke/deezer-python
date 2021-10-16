@@ -2,7 +2,7 @@
 Implements a client class to query the
 `Deezer API <https://developers.deezer.com/api>`_
 """
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 import requests
 
@@ -391,35 +391,142 @@ class Client:
         """
         return self.request("DELETE", "user/me/tracks", track_id=track_id)
 
-    def search(self, query, relation=None, index=0, limit=25, **kwargs):
-        """
-        Search track, album, artist or user
-
-        :returns: a list of :class:`~deezer.resources.Resource` objects.
-        """
-        return self.get_object(
-            "search", relation=relation, q=query, index=index, limit=limit, **kwargs
+    def _search(
+        self,
+        path: str,
+        query: str = "",
+        strict: Optional[bool] = None,
+        ordering: Optional[str] = None,
+        index: Optional[int] = None,
+        limit: Optional[int] = None,
+        **advanced_params: Optional[Union[str, int]],
+    ):
+        optional_params = {}
+        if strict is True:
+            optional_params["strict"] = "on"
+        if ordering:
+            optional_params["ordering"] = ordering
+        if index:
+            optional_params["index"] = index
+        if limit:
+            optional_params["limit"] = limit
+        query_parts = []
+        if query:
+            query_parts.append(query)
+        for param_name, param_value in advanced_params.items():
+            if param_value:
+                query_parts.append(f'{param_name}:"{param_value}"')
+        return self.request(
+            "GET",
+            f"search/{path}" if path else "search",
+            q=" ".join(query_parts),
+            **optional_params,
         )
 
-    def advanced_search(self, terms, relation=None, index=0, limit=25, **kwargs):
+    def search(
+        self,
+        query: str = "",
+        strict: Optional[bool] = None,
+        ordering: Optional[str] = None,
+        artist: Optional[str] = None,
+        album: Optional[str] = None,
+        track: Optional[str] = None,
+        label: Optional[str] = None,
+        dur_min: Optional[int] = None,
+        dur_max: Optional[int] = None,
+        bpm_min: Optional[int] = None,
+        bpm_max: Optional[int] = None,
+        index: Optional[int] = None,
+        limit: Optional[int] = None,
+    ):
         """
-        Advanced search of track, album or artist.
+        Search tracks.
 
-        See `Search section of Deezer API
-        <https://developers.deezer.com/api/search>`_ for search terms.
+        Advanced search is available by either formatting the query yourself or
+        by using the dedicated keywords arguments.
 
-        :returns: a list of :class:`~deezer.resources.Resource` objects.
-
-        >>> client.advanced_search({"artist": "Daft Punk", "album": "Homework"})
-        >>> client.advanced_search(
-        ...     {"artist": "Daft Punk", "album": "Homework"},
-        ...     relation="track",
-        ... )
+        :param query: the query to search for, this is directly passed as q query.
+        :param strict: whether to disable fuzzy search and enable strict mode.
+        :param ordering: see Deezer's API docs for possible values.
+        :param artist: parameter for the advanced search feature.
+        :param album: parameter for the advanced search feature.
+        :param track: parameter for the advanced search feature.
+        :param label: parameter for the advanced search feature.
+        :param dur_min: parameter for the advanced search feature.
+        :param dur_max: parameter for the advanced search feature.
+        :param bpm_min: parameter for the advanced search feature.
+        :param bpm_max: parameter for the advanced search feature.
+        :param index: the offset of the first object you want to get.
+        :param limit: the maximum number of objects to return.
+        :returns: a list of :class:`~deezer.resources.Track` instances.
         """
-        if not isinstance(terms, dict):
-            raise TypeError("terms must be a dict")
-        # terms are sorted (for consistent tests between Python < 3.7 and >= 3.7)
-        query = " ".join(sorted(f'{k}:"{v}"' for (k, v) in terms.items()))
-        return self.get_object(
-            "search", relation=relation, q=query, index=index, limit=limit, **kwargs
+        return self._search(
+            "",
+            query=query,
+            strict=strict,
+            ordering=ordering,
+            artist=artist,
+            album=album,
+            track=track,
+            label=label,
+            dur_min=dur_min,
+            dur_max=dur_max,
+            bpm_min=bpm_min,
+            bpm_max=bpm_max,
+            index=index,
+            limit=limit,
+        )
+
+    def search_albums(
+        self,
+        query: str = "",
+        strict: Optional[bool] = None,
+        ordering: Optional[str] = None,
+        index: Optional[int] = None,
+        limit: Optional[int] = None,
+    ) -> List[Album]:
+        """
+        Search albums matching the given query.
+
+        :param query: the query to search for, this is directly passed as q query.
+        :param strict: whether to disable fuzzy search and enable strict mode.
+        :param ordering: see Deezer's API docs for possible values.
+        :param index: the offset of the first object you want to get.
+        :param limit: the maximum number of objects to return.
+        :return: list of :class:`~deezer.resources.Album` instances.
+        """
+        return self._search(
+            path="album",
+            query=query,
+            strict=strict,
+            ordering=ordering,
+            index=index,
+            limit=limit,
+        )
+
+    def search_artists(
+        self,
+        query: str = "",
+        strict: Optional[bool] = None,
+        ordering: Optional[str] = None,
+        index: Optional[int] = None,
+        limit: Optional[int] = None,
+    ) -> List[Artist]:
+        """
+        Search artists matching the given query.
+
+        :param query: the query to search for, this is directly passed as q query.
+        :param strict: whether to disable fuzzy search and enable strict mode.
+        :param ordering: see Deezer's API docs for possible values.
+        :param index: the offset of the first object you want to get.
+        :param limit: the maximum number of objects to return.
+        :return: list of :class:`~deezer.resources.Album` instances.
+        """
+        return self._search(
+            path="artist",
+            query=query,
+            strict=strict,
+            ordering=ordering,
+            index=index,
+            limit=limit,
         )
