@@ -9,42 +9,16 @@ pytestmark = pytest.mark.vcr
 
 class TestClient:
     def test_access_token_set(self, client, mocker):
-        """Test that access token is set on the client."""
-        session_get = mocker.spy(requests.Session, "get")
+        """Test that access token is set when making the request."""
+        session_get = mocker.patch.object(requests.Session, "request")
         client.access_token = "token"
         assert client.access_token, "token"
-        client.get_object("user", "me")
+        client.request("GET", "user/me")
         session_get.assert_called_with(
-            mocker.ANY,
+            "GET",
             "https://api.deezer.com/user/me",
             params={"access_token": "token"},
         )
-
-    def test_kwargs_parsing_valid(self, client):
-        assert client.app_id == "foo"
-        assert client.app_secret == "bar"
-
-    def test_url(self, client):
-        client.url()
-        user = client.url("user")
-        assert user == "https://api.deezer.com/user"
-
-    @pytest.mark.parametrize(
-        ("args", "expected_output"),
-        [
-            (("album",), "https://api.deezer.com/album"),
-            (("album", 12), "https://api.deezer.com/album/12"),
-            (("album", "12"), "https://api.deezer.com/album/12"),
-            (("album", "12", "artist"), "https://api.deezer.com/album/12/artist"),
-            (("artist", "12", "albums"), "https://api.deezer.com/artist/12/albums"),
-        ],
-    )
-    def test_object_url(self, client, args, expected_output):
-        assert client.object_url(*args) == expected_output
-
-    def test_object_url_invalid_type(self, client):
-        with pytest.raises(TypeError):
-            client.object_url("foo")
 
     def test_request_404(self, client):
         with pytest.raises(DeezerNotFoundError):
