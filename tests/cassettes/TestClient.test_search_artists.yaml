@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/search/artist?q=Daft+Punk
+  response:
+    body:
+      string: '{"data":[{"id":27,"name":"Daft Punk","link":"https:\/\/www.deezer.com\/artist\/27","picture":"https:\/\/api.deezer.com\/artist\/27\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/1000x1000-000000-80-0-0.jpg","nb_album":32,"nb_fan":4117751,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/27\/top?limit=50","type":"artist"},{"id":1477045,"name":"Daft
+        Punk - Stardust","link":"https:\/\/www.deezer.com\/artist\/1477045","picture":"https:\/\/api.deezer.com\/artist\/1477045\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/1000x1000-000000-80-0-0.jpg","nb_album":0,"nb_fan":4046,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/1477045\/top?limit=50","type":"artist"},{"id":4721090,"name":"Tribute
+        to Daft Punk","link":"https:\/\/www.deezer.com\/artist\/4721090","picture":"https:\/\/api.deezer.com\/artist\/4721090\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/9401856c276542f9c17a095dc5e0e6d0\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/9401856c276542f9c17a095dc5e0e6d0\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/9401856c276542f9c17a095dc5e0e6d0\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/9401856c276542f9c17a095dc5e0e6d0\/1000x1000-000000-80-0-0.jpg","nb_album":1,"nb_fan":440,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/4721090\/top?limit=50","type":"artist"},{"id":4189975,"name":"Made
+        famous by Daft Punk","link":"https:\/\/www.deezer.com\/artist\/4189975","picture":"https:\/\/api.deezer.com\/artist\/4189975\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/1000x1000-000000-80-0-0.jpg","nb_album":0,"nb_fan":236,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/4189975\/top?limit=50","type":"artist"},{"id":1199887,"name":"Daft
+        Punk''s Karaoke Band","link":"https:\/\/www.deezer.com\/artist\/1199887","picture":"https:\/\/api.deezer.com\/artist\/1199887\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/1000x1000-000000-80-0-0.jpg","nb_album":0,"nb_fan":163,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/1199887\/top?limit=50","type":"artist"}],"total":5}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3589'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-149
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

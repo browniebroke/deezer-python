@@ -7,7 +7,7 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.21.0]
     method: GET
-    uri: https://api.deezer.com/search?q=artist%3A%22Lou+Doillon%22&index=0&limit=25
+    uri: https://api.deezer.com/search?q=artist%3A%22Lou+Doillon%22
   response:
     body: {string: '{"data":[{"id":623719292,"readable":true,"title":"Too much","title_short":"Too
         much","title_version":"","link":"https:\/\/www.deezer.com\/track\/623719292","duration":209,"rank":768908,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":0,"preview":"https:\/\/cdns-preview-0.dzcdn.net\/stream\/c-062c3f7698bea38986aa01374a2ff1b0-4.mp3","artist":{"id":1701297,"name":"Lou
