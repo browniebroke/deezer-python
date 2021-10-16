@@ -281,7 +281,7 @@ class Client:
 
         :returns: a :class:`~deezer.resources.Radio` object
         """
-        return self.get_object("radio", relation="top")
+        return self.request("GET", "radio/top")
 
     def get_track(self, track_id: int) -> Track:
         """
