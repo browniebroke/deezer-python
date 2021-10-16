@@ -106,26 +106,6 @@ class Client:
             object_class = self.objects_types[parent]
         return object_class(self, result)
 
-    @staticmethod
-    def url(request_path=""):
-        """Build the url with the appended request if provided."""
-        return f"https://api.deezer.com/{request_path}"
-
-    def object_url(self, object_t, object_id=None, relation=None):
-        """
-        Helper method to build the url to query to access the object
-        passed as parameter
-
-        :raises TypeError: if the object type is invalid
-        """
-        if object_t not in self.objects_types:
-            raise TypeError(f"{object_t} is not a valid type")
-        request_items = (
-            str(item) for item in [object_t, object_id, relation] if item is not None
-        )
-        request_path = "/".join(request_items)
-        return self.url(request_path)
-
     def request(self, method: str, path: str, **params):
         """
         Make a request to the API and parse the response.
@@ -151,26 +131,6 @@ class Client:
         if "error" in json_data:
             raise DeezerErrorResponse(json_data)
         return self._process_json(json_data)
-
-    def get_object(
-        self, object_t, object_id=None, relation=None, parent=None, **params
-    ):
-        """
-        Actually query the Deezer API to retrieve the object.
-
-        :returns: an :class:`~deezer.resources.Resource` or subclass.
-        """
-        url = self.object_url(object_t, object_id, relation)
-        params = params or {}
-        if self.access_token is not None:
-            params["access_token"] = str(self.access_token)
-        response = self.session.get(url, params=params)
-        json_data = response.json()
-        if "error" in json_data:
-            raise ValueError(
-                f"API request return error for object: {object_t} id: {object_id}"
-            )
-        return self._process_json(json_data, parent)
 
     def get_album(self, album_id: int) -> Album:
         """
