@@ -4,6 +4,7 @@ Implements an async tornado client class to query the
 """
 import json
 import logging
+from urllib.parse import urlencode
 
 from tornado.gen import Return, coroutine
 from tornado.httpclient import AsyncHTTPClient
@@ -46,4 +47,26 @@ class AsyncClient(Client):
         resp_str = response.body.decode("utf-8")
         jsn = json.loads(resp_str)
         result = self._process_json(jsn, parent)
+        raise Return(result)
+
+    @coroutine
+    def request(self, method: str, path: str, **params):
+        """
+        Make a request to the API and parse the response.
+
+        :param method: HTTP verb to use: GET, POST< DELETE, ...
+        :param path: The path to make the API call to (e.g. 'artist/1234')
+        :param params: Query parameters to add the the request
+        """
+        if self.access_token is not None:
+            params["access_token"] = str(self.access_token)
+
+        url = f"{self.base_url}/{path}"
+        if params:
+            url = f"{url}?{urlencode(params)}"
+
+        response = yield self._async_client.fetch(url, method=method)
+        resp_str = response.body.decode("utf-8")
+        json_data = json.loads(resp_str)
+        result = self._process_json(json_data)
         raise Return(result)

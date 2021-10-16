@@ -133,7 +133,6 @@ class Client:
         :param method: HTTP verb to use: GET, POST< DELETE, ...
         :param path: The path to make the API call to (e.g. 'artist/1234')
         :param params: Query parameters to add the the request
-        :return:
         """
         if self.access_token is not None:
             params["access_token"] = str(self.access_token)
