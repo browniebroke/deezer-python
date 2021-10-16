@@ -1,0 +1,100 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/chart/0/podcasts
+  response:
+    body:
+      string: '{"data":[{"id":1161732,"title":"Rob Beckett and Josh Widdicombe''s
+        Parenting Hell","description":"Parenting....just not as you know it...","available":true,"link":"https:\/\/www.deezer.com\/show\/1161732","share":"https:\/\/www.deezer.com\/show\/1161732?utm_source=deezer&utm_content=show-1161732&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f92436bdf863afbd40094f8f0e3cabcb\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f92436bdf863afbd40094f8f0e3cabcb\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f92436bdf863afbd40094f8f0e3cabcb\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f92436bdf863afbd40094f8f0e3cabcb\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f92436bdf863afbd40094f8f0e3cabcb\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":398302,"title":"Sh**ged
+        Married Annoyed","description":"The only way Rosie and Chris Ramsey can have
+        a conversation without being interrupted by a toddler or ending up staring
+        at their phones is by doing a podcast. They\u2019ll be chatting all about
+        life, relationships, arguments, annoyances, parenting, growing up and everything
+        in between. Each week they will answer questions from the public and a secret
+        celebrity.","available":true,"link":"https:\/\/www.deezer.com\/show\/398302","share":"https:\/\/www.deezer.com\/show\/398302?utm_source=deezer&utm_content=show-398302&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/971007ff7f883f7322b3094596178243\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/971007ff7f883f7322b3094596178243\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/971007ff7f883f7322b3094596178243\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/971007ff7f883f7322b3094596178243\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/971007ff7f883f7322b3094596178243\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":83,"title":"No
+        Such Thing As A Fish","description":"Award-winning podcast from the QI offices
+        in which the writers of the hit BBC show discuss the best things they''ve
+        found out this week.\u00a0  Hosted by Dan Schreiber (@schreiberland) with
+        James Harkin (@jamesharkin), Andrew Hunter Murray (@andrewhunterm), and Anna
+        Ptaszynski (#GetAnnaOnTwitter)","available":true,"link":"https:\/\/www.deezer.com\/show\/83","share":"https:\/\/www.deezer.com\/show\/83?utm_source=deezer&utm_content=show-83&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4bb892100936317a873ecec946b73415\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4bb892100936317a873ecec946b73415\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4bb892100936317a873ecec946b73415\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4bb892100936317a873ecec946b73415\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4bb892100936317a873ecec946b73415\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":65362,"title":"Off
+        Menu with Ed Gamble and James Acaster","description":"Comedians Ed Gamble
+        and James Acaster invite special guests into their magical restaurant to each
+        choose their favourite starter, main course, side dish, dessert and drink.
+        Ever wanted to eat your dream meal? It''s time to order Off Menu.","available":true,"link":"https:\/\/www.deezer.com\/show\/65362","share":"https:\/\/www.deezer.com\/show\/65362?utm_source=deezer&utm_content=show-65362&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/718cbae264af93cdae217dd73fb5083d\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/718cbae264af93cdae217dd73fb5083d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/718cbae264af93cdae217dd73fb5083d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/718cbae264af93cdae217dd73fb5083d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/718cbae264af93cdae217dd73fb5083d\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":52861,"title":"Casefile
+        True Crime","description":"Fact is scarier than fiction.","available":true,"link":"https:\/\/www.deezer.com\/show\/52861","share":"https:\/\/www.deezer.com\/show\/52861?utm_source=deezer&utm_content=show-52861&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f8762c574884da4698a9f15a8a2396fd\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f8762c574884da4698a9f15a8a2396fd\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f8762c574884da4698a9f15a8a2396fd\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f8762c574884da4698a9f15a8a2396fd\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/f8762c574884da4698a9f15a8a2396fd\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":1520212,"title":"Morbid:
+        A True Crime Podcast","description":"It\u2019s a lighthearted nightmare in
+        here, weirdos! Morbid is a true crime, creepy history and all things spooky
+        podcast hosted by an autopsy technician and a hairstylist. Join us for a heavy
+        dose of research with a dash of comedy thrown in for flavor.","available":true,"link":"https:\/\/www.deezer.com\/show\/1520212","share":"https:\/\/www.deezer.com\/show\/1520212?utm_source=deezer&utm_content=show-1520212&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9188cec9ed619d6dc920a6468a71e8c7\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9188cec9ed619d6dc920a6468a71e8c7\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9188cec9ed619d6dc920a6468a71e8c7\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9188cec9ed619d6dc920a6468a71e8c7\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9188cec9ed619d6dc920a6468a71e8c7\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":679102,"title":"Crime
+        Junkie","description":"If you can never get enough true crime... Congratulations,
+        you\u2019ve found your people.","available":true,"link":"https:\/\/www.deezer.com\/show\/679102","share":"https:\/\/www.deezer.com\/show\/679102?utm_source=deezer&utm_content=show-679102&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/e69314f6c5c4745a81d4ed8c7adb9926\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/e69314f6c5c4745a81d4ed8c7adb9926\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/e69314f6c5c4745a81d4ed8c7adb9926\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/e69314f6c5c4745a81d4ed8c7adb9926\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/e69314f6c5c4745a81d4ed8c7adb9926\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":496882,"title":"Darknet
+        Diaries","description":"Explore true stories of the dark side of the Internet
+        with host Jack Rhysider as he takes you on a journey through the chilling
+        world of hacking, data breaches, and cyber crime.","available":true,"link":"https:\/\/www.deezer.com\/show\/496882","share":"https:\/\/www.deezer.com\/show\/496882?utm_source=deezer&utm_content=show-496882&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/6f2e47a626f751e75d99985db5f208f7\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/6f2e47a626f751e75d99985db5f208f7\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/6f2e47a626f751e75d99985db5f208f7\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/6f2e47a626f751e75d99985db5f208f7\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/6f2e47a626f751e75d99985db5f208f7\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":438752,"title":"Over
+        My Dead Body","description":"Over My Dead Body is an anthology series about
+        people who are pushed beyond their limits and do unspeakable things.Season
+        3: Fox Lake - A small town cop is gunned down in a swamp in the summer of
+        2015. He quickly became a martyr in the national media, until a dogged investigator
+        uncovered the officer''s bizarre and dark past. When the truth comes out,
+        the townspeople must reconcile betrayal, corruption and the secrets of an
+        American hero.Season 2: Joe Exotic - Joe Exotic is a man who devoted his life
+        to raising and breeding exotic animals, but throughout his career, he''s made
+        a lot of enemies. Most notably Carol Baskin. The feud between them gets messy,
+        vicious, and outrageous -- until both of them are pushed far beyond their
+        limits.\u00a0Season 1: Tally - When this \u201cperfect\u201d couple\u2019s
+        relationship falls apart, it leads to a bad breakup, a worse divorce, and
+        a murder case involving a menagerie of high-priced lawyers and unexpected
+        co-conspirators.","available":true,"link":"https:\/\/www.deezer.com\/show\/438752","share":"https:\/\/www.deezer.com\/show\/438752?utm_source=deezer&utm_content=show-438752&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/c0b13f47f7b59dcdc053a33290c7acd6\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/c0b13f47f7b59dcdc053a33290c7acd6\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/c0b13f47f7b59dcdc053a33290c7acd6\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/c0b13f47f7b59dcdc053a33290c7acd6\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/c0b13f47f7b59dcdc053a33290c7acd6\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":1362612,"title":"Real
+        Dictators","description":"Real Dictators is the new podcast series hosted
+        by Paul McGann that explores the hidden lives of history\u2019s tyrants. New
+        episodes every Wednesday. Follow Noiser Podcasts on Twitter for updates on
+        our shows.","available":true,"link":"https:\/\/www.deezer.com\/show\/1362612","share":"https:\/\/www.deezer.com\/show\/1362612?utm_source=deezer&utm_content=show-1362612&utm_term=0_1634393756&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/ed7b325f47ea8429a362186b6443a0f7\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/ed7b325f47ea8429a362186b6443a0f7\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/ed7b325f47ea8429a362186b6443a0f7\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/ed7b325f47ea8429a362186b6443a0f7\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/ed7b325f47ea8429a362186b6443a0f7\/1000x1000-000000-80-0-0.jpg","type":"podcast"}],"total":10}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11686'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 16 Oct 2021 14:15:56 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr087a446d2bc15105c0f38c6f87319903037895; expires=Thu,
+        14-Apr-2022 14:15:56 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-160
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

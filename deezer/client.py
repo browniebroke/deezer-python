@@ -2,7 +2,7 @@
 Implements a client class to query the
 `Deezer API <https://developers.deezer.com/api>`_
 """
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 import requests
 
@@ -78,11 +78,13 @@ class Client:
         if headers:
             self.session.headers.update(headers)
 
-    def _process_json(self, item, parent=None):
+    def _process_json(self, item: Dict[str, Any], parent: Optional[str] = None):
         """
         Recursively convert dictionary
         to :class:`~deezer.resources.Resource` object
 
+        :param item: the JSON response as dict.
+        :param parent: explicitly provide the type of resource to give as root.
         :returns: instance of :class:`~deezer.resources.Resource`
         """
         if "data" in item:
@@ -106,12 +108,13 @@ class Client:
             object_class = self.objects_types[parent]
         return object_class(self, result)
 
-    def request(self, method: str, path: str, **params):
+    def request(self, method: str, path: str, parent: Optional[str] = None, **params):
         """
         Make a request to the API and parse the response.
 
         :param method: HTTP verb to use: GET, POST< DELETE, ...
         :param path: The path to make the API call to (e.g. 'artist/1234')
+        :param parent: The name of the root resource (e.g. "chart"))
         :param params: Query parameters to add the the request
         """
         if self.access_token is not None:
@@ -130,7 +133,7 @@ class Client:
             return json_data
         if "error" in json_data:
             raise DeezerErrorResponse(json_data)
-        return self._process_json(json_data)
+        return self._process_json(json_data, parent=parent)
 
     def get_album(self, album_id: int) -> Album:
         """
@@ -158,15 +161,55 @@ class Client:
         """
         return self.request("GET", f"artist/{artist_id}")
 
-    def get_chart(self, relation=None, index=0, limit=10, **kwargs):
+    def get_chart(self) -> Chart:
         """
-        Get chart
+        Get overall charts for tracks, albums, artists and playlists.
 
-        :returns: a list of :class:`~deezer.resources.Resource` objects.
+        Combines charts of several resources in one endpoint.
+
+        :returns: a :class:`~deezer.resources.Chart` instance.
         """
-        return self.get_object(
-            "chart", object_id="0", relation=relation, parent="chart", **kwargs
-        )
+        return self.request("GET", "chart", parent="chart")
+
+    def get_tracks_chart(self) -> List[Track]:
+        """
+        Get top tracks.
+
+        :return: a list of :class:`~deezer.resources.Track` instances.
+        """
+        return self.request("GET", "chart/0/tracks")
+
+    def get_albums_chart(self) -> List[Album]:
+        """
+        Get top albums.
+
+        :return: a list of :class:`~deezer.resources.Album` instances.
+        """
+        return self.request("GET", "chart/0/albums")
+
+    def get_artists_chart(self) -> List[Artist]:
+        """
+        Get top artists.
+
+        :return: a list of :class:`~deezer.resources.Artist` instances.
+        """
+        return self.request("GET", "chart/0/artists")
+
+    def get_playlists_chart(self) -> List[Playlist]:
+        """
+        Get top playlists.
+
+        :return: a list of :class:`~deezer.resources.Playlist` instances.
+        """
+        return self.request("GET", "chart/0/playlists")
+
+    def get_podcasts_chart(self) -> List[Podcast]:
+        """
+        Get top podcasts.
+
+        :return: a list of :class:`~deezer.resources.Podcasts` instances.
+        """
+        return self.request("GET", "chart/0/podcasts")
 
     def get_comment(self, comment_id: int) -> Comment:
         """
