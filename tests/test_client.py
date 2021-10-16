@@ -40,7 +40,6 @@ class TestClient:
         assert isinstance(artist, deezer.resources.Artist)
 
     def test_chart(self, client):
-        assert client.object_url("chart") == "https://api.deezer.com/chart"
         result = client.get_chart()
         assert isinstance(result, deezer.resources.Chart)
 
@@ -49,29 +48,35 @@ class TestClient:
         assert isinstance(result.artists[0], deezer.resources.Artist)
         assert isinstance(result.playlists[0], deezer.resources.Playlist)
 
-    def test_chart_tracks(self, client):
-        result = client.get_chart("tracks")
+    def test_tracks_chart(self, client):
+        result = client.get_tracks_chart()
         assert isinstance(result, list)
         assert result[0].title == "Khapta"
         assert isinstance(result[0], deezer.resources.Track)
 
-    def test_chart_albums(self, client):
-        result = client.get_chart("albums")
+    def test_albums_chart(self, client):
+        result = client.get_albums_chart()
         assert isinstance(result, list)
         assert result[0].title == "Lacrim"
         assert isinstance(result[0], deezer.resources.Album)
 
-    def test_chart_artists(self, client):
-        result = client.get_chart("artists")
+    def test_artists_chart(self, client):
+        result = client.get_artists_chart()
         assert isinstance(result, list)
         assert result[0].name == "Lacrim"
         assert isinstance(result[0], deezer.resources.Artist)
 
-    def test_chart_playlists(self, client):
-        result = client.get_chart("playlists")
+    def test_playlists_chart(self, client):
+        result = client.get_playlists_chart()
         assert isinstance(result, list)
         assert result[0].title == "Les titres du moment"
         assert isinstance(result[0], deezer.resources.Playlist)
+
+    def test_podcasts_chart(self, client):
+        result = client.get_podcasts_chart()
+        assert isinstance(result, list)
+        assert result[0].title == "Rob Beckett and Josh Widdicombe's Parenting Hell"
+        assert isinstance(result[0], deezer.resources.Podcast)
 
     def test_get_comment(self, client):
         """Test methods to get a comment"""
