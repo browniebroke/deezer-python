@@ -48,8 +48,12 @@ class Resource:
         is not meant to be used directly by a client, it's more
         a helper method for the child objects.
         """
-        # pylint: disable=E1101
-        return self.client.get_object(self.type, self.id, relation, self, **kwargs)
+        return self.client.request(
+            "GET",
+            f"{self.type}/{self.id}/{relation}",
+            parent=self,
+            **kwargs,
+        )
 
     def iter_relation(self, relation, **kwargs):
         """
@@ -60,7 +64,6 @@ class Resource:
         is not meant to be used directly by a client, it's more
         a helper method for the child objects.
         """
-        # pylint: disable=E1101
         index = 0
         while 1:
             items = self.get_relation(relation, index=index, **kwargs)
