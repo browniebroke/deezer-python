@@ -2,6 +2,22 @@
 
 <!--next-version-placeholder-->
 
+## v4.0.0 (2021-10-17)
+### Feature
+* Port `Client`'s `request` method to `AsyncClient` ([`bd9edb2`](https://github.com/browniebroke/deezer-python/commit/bd9edb2bff0fb450ed7c438b13df40eed0a970f0))
+* Refactor existing methods to use newer request ([`0ddc5c2`](https://github.com/browniebroke/deezer-python/commit/0ddc5c21cec62d06e38ba42e4e82df8ff35bd73d))
+
+### Fix
+* Remove `Comment` resource as it's no longer in the Deezer API ([`6bb0647`](https://github.com/browniebroke/deezer-python/commit/6bb064734e8104d0cb23b666143f010be421982f))
+* Make `Resource.get_relation` work with Tornado client ([`0980055`](https://github.com/browniebroke/deezer-python/commit/0980055d7754c53e5cc437b187b74329a9cffc95))
+
+### Breaking
+* the `advanced_search` method no longer exists and has been merged into the regular `search` method.  ([`46cf5f1`](https://github.com/browniebroke/deezer-python/commit/46cf5f1453692e1ee61c15e1fd87093ea99b636f))
+* The `get_object`, `object_url` and `url` methods have been removed from the `Client` and `AsyncClient` classes  ([`3b7c167`](https://github.com/browniebroke/deezer-python/commit/3b7c16725114e3aea25584014617b298b8483e31))
+* The `Client.get_radios` method has been removed and replaced by `Client.list_radios`  ([`b7d940f`](https://github.com/browniebroke/deezer-python/commit/b7d940fcf16450a804adfb8552a1cba6ab97a8c6))
+* The `Client.get_genres` method has been removed and replaced by `Client.list_genres`  ([`2e284af`](https://github.com/browniebroke/deezer-python/commit/2e284af9d15941ac842fdb24e74eaa8ae3abb5d3))
+* A `DeezerErrorResponse` is now raised in case of error, instead of `ValueError`  ([`0ddc5c2`](https://github.com/browniebroke/deezer-python/commit/0ddc5c21cec62d06e38ba42e4e82df8ff35bd73d))
+
 ## v3.2.0 (2021-10-15)
 ### Feature
 * Get current user's listening history ([`43ea8ca`](https://github.com/browniebroke/deezer-python/commit/43ea8cab43a2b1b778f478d9dc8df1a478454bf9))
