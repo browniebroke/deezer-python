@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.deezer.com/user/me?access_token=dummy
+  response:
+    body:
+      string: '{"id":359622,"name":"Bruno Alla","lastname":"Alla","firstname":"Bruno","email":"bruno.alla@example.com","status":0,"birthday":"0000-00-00","inscription_date":"2007-08-26","gender":"","link":"https:\/\/www.deezer.com\/profile\/359622","picture":"https:\/\/api.deezer.com\/user\/359622\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/1000x1000-000000-80-0-0.jpg","country":"GB","lang":"fr","is_kid":false,"explicit_content_level":"explicit_display","explicit_content_levels_available":["explicit_display","explicit_no_recommendation","explicit_hide"],"tracklist":"https:\/\/api.deezer.com\/user\/359622\/flow","type":"user"}'
+    headers:
+    - !!python/tuple
+      - Server
+      - - Apache
+    - !!python/tuple
+      - Access-Control-Allow-Headers
+      - - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+    - !!python/tuple
+      - Access-Control-Allow-Methods
+      - - POST, GET, OPTIONS, DELETE, PUT
+    - !!python/tuple
+      - Access-Control-Allow-Credentials
+      - - 'true'
+    - !!python/tuple
+      - Access-Control-Expose-Headers
+      - - Location
+    - !!python/tuple
+      - Access-Control-Max-Age
+      - - '86400'
+    - !!python/tuple
+      - P3p
+      - - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+    - !!python/tuple
+      - Expires
+      - - Thu, 19 Nov 1981 08:52:00 GMT
+    - !!python/tuple
+      - Cache-Control
+      - - no-store, no-cache, must-revalidate
+    - !!python/tuple
+      - Pragma
+      - - no-cache
+    - !!python/tuple
+      - X-Host
+      - - blm-web-144
+    - !!python/tuple
+      - X-Content-Type-Options
+      - - nosniff
+    - !!python/tuple
+      - Content-Length
+      - - '424'
+    - !!python/tuple
+      - Content-Type
+      - - application/json; charset=utf-8
+    - !!python/tuple
+      - Connection
+      - - close
+    - !!python/tuple
+      - Vary
+      - - Accept-Encoding
+    - !!python/tuple
+      - X-Org
+      - - FR
+    - !!python/tuple
+      - X-Consumed-Content-Encoding
+      - - gzip
+    status:
+      code: 200
+      message: OK
+    url: https://api.deezer.com/user/me?access_token=dummy
+version: 1
