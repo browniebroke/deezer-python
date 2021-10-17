@@ -12,7 +12,9 @@ docs/build/
 #Virtualenvs
 ENV*
 
+# Coverage
 .coveralls.yml
+htmlcov
 
 # Node stuff from all-contributors
 node_modules
