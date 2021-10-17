@@ -15,7 +15,6 @@ from deezer.resources import (
     Album,
     Artist,
     Chart,
-    Comment,
     Episode,
     Genre,
     Playlist,
@@ -56,7 +55,6 @@ class Client:
         "album": Album,
         "artist": Artist,
         "chart": Chart,
-        "comment": Comment,
         "editorial": None,
         "episode": Episode,
         # 'folder': None, # need identification
@@ -230,14 +228,6 @@ class Client:
         :return: a list of :class:`~deezer.resources.Podcasts` instances.
         """
         return self.request("GET", "chart/0/podcasts")
-
-    def get_comment(self, comment_id: int) -> Comment:
-        """
-        Get the comment with the given ID.
-
-        :returns: a :class:`~deezer.resources.Comment` object
-        """
-        return self.request("GET", f"comment/{comment_id}")
 
     def get_episode(self, episode_id: int) -> Episode:
         """
