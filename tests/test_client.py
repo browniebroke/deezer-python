@@ -2,7 +2,11 @@ import pytest
 import requests
 
 import deezer
-from deezer.exceptions import DeezerErrorResponse, DeezerNotFoundError
+from deezer.exceptions import (
+    DeezerErrorResponse,
+    DeezerNotFoundError,
+    DeezerUnknownResource,
+)
 
 pytestmark = pytest.mark.vcr
 
@@ -23,6 +27,10 @@ class TestClient:
     def test_request_404(self, client):
         with pytest.raises(DeezerNotFoundError):
             client.request("GET", "does-not-exists")
+
+    def test_request_unknown_resource(self, client):
+        with pytest.raises(DeezerUnknownResource):
+            client.request("GET", "chart")
 
     def test_get_album(self, client):
         """Test method to retrieve an album"""

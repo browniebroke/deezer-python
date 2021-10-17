@@ -2,11 +2,15 @@
 Implements a client class to query the
 `Deezer API <https://developers.deezer.com/api>`_
 """
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional, Type, Union
 
 import requests
 
-from deezer.exceptions import DeezerErrorResponse, DeezerHTTPError
+from deezer.exceptions import (
+    DeezerErrorResponse,
+    DeezerHTTPError,
+    DeezerUnknownResource,
+)
 from deezer.resources import (
     Album,
     Artist,
@@ -78,13 +82,19 @@ class Client:
         if headers:
             self.session.headers.update(headers)
 
-    def _process_json(self, item: Dict[str, Any], parent: Optional[str] = None):
+    def _process_json(
+        self,
+        item: Dict[str, Any],
+        parent: Optional[Resource] = None,
+        resource_type: Optional[Type[Resource]] = None,
+    ):
         """
         Recursively convert dictionary
         to :class:`~deezer.resources.Resource` object
 
         :param item: the JSON response as dict.
-        :param parent: explicitly provide the type of resource to give as root.
+        :param parent: A reference to the parent resource, to avoid fetching again.
+        :param resource_type: The resource class to use as top level.
         :returns: instance of :class:`~deezer.resources.Resource`
         """
         if "data" in item:
@@ -95,7 +105,7 @@ class Client:
             if isinstance(value, dict) and ("type" in value or "data" in value):
                 value = self._process_json(value, parent)
             result[key] = value
-        if parent is not None and hasattr(parent, "type"):
+        if parent is not None:
             result[parent.type] = parent
 
         if "type" in result:
@@ -104,17 +114,27 @@ class Client:
             else:
                 # in case any new types are introduced by the API
                 object_class = Resource
+        elif resource_type:
+            object_class = resource_type
         else:
-            object_class = self.objects_types[parent]
+            raise DeezerUnknownResource(f"Unable to find resource type for {result!r}")
         return object_class(self, result)
 
-    def request(self, method: str, path: str, parent: Optional[str] = None, **params):
+    def request(
+        self,
+        method: str,
+        path: str,
+        parent: Optional[Resource] = None,
+        resource_type: Optional[Type[Resource]] = None,
+        **params,
+    ):
         """
         Make a request to the API and parse the response.
 
         :param method: HTTP verb to use: GET, POST< DELETE, ...
-        :param path: The path to make the API call to (e.g. 'artist/1234')
-        :param parent: The name of the root resource (e.g. "chart"))
+        :param path: The path to make the API call to (e.g. 'artist/1234').
+        :param parent: A reference to the parent resource, to avoid fetching again.
+        :param resource_type: The resource class to use as top level.
         :param params: Query parameters to add the the request
         """
         if self.access_token is not None:
@@ -133,7 +153,7 @@ class Client:
             return json_data
         if "error" in json_data:
             raise DeezerErrorResponse(json_data)
-        return self._process_json(json_data, parent=parent)
+        return self._process_json(json_data, parent=parent, resource_type=resource_type)
 
     def get_album(self, album_id: int) -> Album:
         """
@@ -169,7 +189,7 @@ class Client:
 
         :returns: a :class:`~deezer.resources.Chart` instance.
         """
-        return self.request("GET", "chart", parent="chart")
+        return self.request("GET", "chart", resource_type=Chart)
 
     def get_tracks_chart(self) -> List[Track]:
         """
