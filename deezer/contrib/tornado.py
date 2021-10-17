@@ -3,11 +3,13 @@ Implements an async tornado client class to query the
 `Deezer API <http://developers.deezer.com/api>`_
 """
 import json
+from typing import Optional, Type
 from urllib.parse import urlencode
 
 from tornado.gen import Return, coroutine
 from tornado.httpclient import AsyncHTTPClient
 
+from deezer import Resource
 from deezer.client import Client
 
 
@@ -31,12 +33,21 @@ class AsyncClient(Client):
         self._async_client = AsyncHTTPClient(max_clients=max_clients)
 
     @coroutine
-    def request(self, method: str, path: str, **params):
+    def request(
+        self,
+        method: str,
+        path: str,
+        parent: Optional[Resource] = None,
+        resource_type: Optional[Type[Resource]] = None,
+        **params,
+    ):
         """
         Make a request to the API and parse the response.
 
         :param method: HTTP verb to use: GET, POST< DELETE, ...
-        :param path: The path to make the API call to (e.g. 'artist/1234')
+        :param path: The path to make the API call to (e.g. 'artist/1234').
+        :param parent: A reference to the parent resource, to avoid fetching again.
+        :param resource_type: The resource class to use as top level.
         :param params: Query parameters to add the the request
         """
         if self.access_token is not None:
@@ -49,5 +60,9 @@ class AsyncClient(Client):
         response = yield self._async_client.fetch(url, method=method)
         resp_str = response.body.decode("utf-8")
         json_data = json.loads(resp_str)
-        result = self._process_json(json_data)
+        result = self._process_json(
+            json_data,
+            parent=parent,
+            resource_type=resource_type,
+        )
         raise Return(result)
