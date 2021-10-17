@@ -241,86 +241,65 @@ class TestGenre:
 
 
 class TestChart:
-    def test_chart_tracks(self, client):
-        """
-        Test tracks method of chart resource
-        """
-        chart = client.get_chart()
+    @pytest.fixture()
+    def chart(self, client):
+        return deezer.resources.Chart(client, {})
 
-        # tests list
+    def test_get_tracks(self, chart):
         tracks = chart.get_tracks()
         assert isinstance(tracks, list)
         track = tracks[0]
         assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: Head & Heart (feat. MNEK)>"
+        assert repr(track) == "<Track: Bad Habits>"
 
-        # tests generator
+    def test_iter_tracks(self, chart):
         tracks_generator = chart.iter_tracks()
         assert type(tracks_generator) == GeneratorType
         track = next(tracks_generator)
         assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: Head & Heart (feat. MNEK)>"
+        assert repr(track) == "<Track: Bad Habits>"
 
-    def test_chart_artists(self, client):
-        """
-        Test artists method of chart resource
-        """
-        chart = client.get_chart()
-
-        # tests list
+    def test_get_artists(self, chart):
         artists = chart.get_artists()
         assert isinstance(artists, list)
         artist = artists[0]
         assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Juice Wrld>"
-        assert type(chart.iter_artists()) == GeneratorType
+        assert repr(artist) == "<Artist: Kanye West>"
 
-        # tests generator
+    def test_iter_artists(self, chart):
         artists_generator = chart.iter_artists()
         assert type(artists_generator) == GeneratorType
         artist = next(artists_generator)
         assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Juice Wrld>"
+        assert repr(artist) == "<Artist: Kanye West>"
 
-    def test_chart_albums(self, client):
-        """
-        Test albums method of chart resource
-        """
-        chart = client.get_chart()
-
-        # tests list
+    def test_get_albums(self, chart):
         albums = chart.get_albums()
         assert isinstance(albums, list)
         album = albums[0]
         assert isinstance(album, deezer.resources.Album)
-        assert repr(album) == "<Album: folklore>"
+        assert repr(album) == "<Album: Music Of The Spheres>"
 
-        # tests generator
+    def test_iter_albums(self, chart):
         albums_generator = chart.iter_albums()
         assert type(albums_generator) == GeneratorType
         album = next(albums_generator)
         assert isinstance(album, deezer.resources.Album)
-        assert repr(album) == "<Album: folklore>"
+        assert repr(album) == "<Album: Music Of The Spheres>"
 
-    def test_chart_playlists(self, client):
-        """
-        Test playlists method of chart resource
-        """
-        chart = client.get_chart()
-
-        # tests list
+    def test_get_playlists(self, chart):
         playlists = chart.get_playlists()
         assert isinstance(playlists, list)
         playlist = playlists[0]
         assert isinstance(playlist, deezer.resources.Playlist)
-        assert repr(playlist) == "<Playlist: Deezer Hits UK>"
+        assert repr(playlist) == "<Playlist: Brand New UK>"
 
-        # tests generator
+    def test_iter_playlists(self, chart):
         playlists_generator = chart.iter_playlists()
         assert type(playlists_generator) == GeneratorType
         playlist = next(playlists_generator)
         assert isinstance(playlist, deezer.resources.Playlist)
-        assert repr(playlist) == "<Playlist: Deezer Hits UK>"
+        assert repr(playlist) == "<Playlist: Brand New UK>"
 
 
 class TestUser:
