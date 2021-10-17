@@ -266,24 +266,25 @@ class TestClient:
         result = client_token.remove_user_track(1374789602)
         assert result is True
 
-    def test_options_1(self, client):
-        """Test a query with extra arguments"""
-        result = client.search("Billy Jean", limit=2)
-        assert isinstance(result, list)
-        assert len(result) <= 2
-
-    def test_options_2(self, client):
-        """Test a query with extra arguments"""
-        result = client.search("Billy Jean", limit=2, index=1)
-        assert isinstance(result, list)
-        assert len(result) <= 2
-
     def test_search_simple(self, client):
         """Test search method"""
         result = client.search("Soliloquy")
         assert isinstance(result, list)
         assert all(isinstance(r, deezer.resources.Track) for r in result)
         assert result[0].title == "Soliloquy"
+
+    @pytest.mark.parametrize(
+        ("params", "expected_length"),
+        [
+            ({"limit": 2}, 2),
+            ({"limit": 3}, 3),
+            ({"limit": 4, "index": 1}, 4),
+        ],
+    )
+    def test_search_pagination(self, client, params, expected_length):
+        result = client.search("Billy Jean", **params)
+        assert isinstance(result, list)
+        assert len(result) <= expected_length
 
     def test_search_advanced_simple(self, client):
         """Test advanced search with one term"""

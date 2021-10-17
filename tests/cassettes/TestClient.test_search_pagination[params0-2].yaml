@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/search?limit=2&q=Billy+Jean
+  response:
+    body:
+      string: '{"data":[{"id":4603408,"readable":true,"title":"Billie Jean","title_short":"Billie
+        Jean","title_version":"","link":"https:\/\/www.deezer.com\/track\/4603408","duration":293,"rank":966417,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":0,"preview":"https:\/\/cdns-preview-1.dzcdn.net\/stream\/c-136c90241aa34cbe924159289df20d65-4.mp3","md5_image":"ebeac32e9207c60877228ddc5bb37233","artist":{"id":259,"name":"Michael
+        Jackson","link":"https:\/\/www.deezer.com\/artist\/259","picture":"https:\/\/api.deezer.com\/artist\/259\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/86b13342a65ffe06fa151ce353a7b278\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/86b13342a65ffe06fa151ce353a7b278\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/86b13342a65ffe06fa151ce353a7b278\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/86b13342a65ffe06fa151ce353a7b278\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/259\/top?limit=50","type":"artist"},"album":{"id":423368,"title":"Michael
+        Jackson''s This Is It","cover":"https:\/\/api.deezer.com\/album\/423368\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/ebeac32e9207c60877228ddc5bb37233\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/ebeac32e9207c60877228ddc5bb37233\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/ebeac32e9207c60877228ddc5bb37233\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/ebeac32e9207c60877228ddc5bb37233\/1000x1000-000000-80-0-0.jpg","md5_image":"ebeac32e9207c60877228ddc5bb37233","tracklist":"https:\/\/api.deezer.com\/album\/423368\/tracks","type":"album"},"type":"track"},{"id":1516986202,"readable":true,"title":"Billie
+        Jean","title_short":"Billie Jean","title_version":"","link":"https:\/\/www.deezer.com\/track\/1516986202","duration":168,"rank":100000,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":0,"preview":"https:\/\/cdns-preview-4.dzcdn.net\/stream\/c-44e58003f07c8d41c3eba9a17d3ff85d-3.mp3","md5_image":"dfef66fc0ceac985394cb354ed0b1259","artist":{"id":4397046,"name":"Anthony
+        Touma","link":"https:\/\/www.deezer.com\/artist\/4397046","picture":"https:\/\/api.deezer.com\/artist\/4397046\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2c4f139b6d8a754cea1b050bf005be7a\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2c4f139b6d8a754cea1b050bf005be7a\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2c4f139b6d8a754cea1b050bf005be7a\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2c4f139b6d8a754cea1b050bf005be7a\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/4397046\/top?limit=50","type":"artist"},"album":{"id":264451832,"title":"La
+        Voix des stars","cover":"https:\/\/api.deezer.com\/album\/264451832\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/dfef66fc0ceac985394cb354ed0b1259\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/dfef66fc0ceac985394cb354ed0b1259\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/dfef66fc0ceac985394cb354ed0b1259\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/dfef66fc0ceac985394cb354ed0b1259\/1000x1000-000000-80-0-0.jpg","md5_image":"dfef66fc0ceac985394cb354ed0b1259","tracklist":"https:\/\/api.deezer.com\/album\/264451832\/tracks","type":"album"},"type":"track"}],"total":298,"next":"https:\/\/api.deezer.com\/search?q=Billy%20Jean&limit=2&index=2"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3917'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-113
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1
