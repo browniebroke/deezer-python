@@ -1,0 +1,76 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/chart/0/playlists?index=0
+  response:
+    body:
+      string: '{"data":[{"id":63141574,"title":"Brand New UK","public":true,"nb_tracks":60,"link":"https:\/\/www.deezer.com\/playlist\/63141574","picture":"https:\/\/api.deezer.com\/playlist\/63141574\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/8271e13fceb9fb3051be5d112a5bddd9\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/8271e13fceb9fb3051be5d112a5bddd9\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/8271e13fceb9fb3051be5d112a5bddd9\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/8271e13fceb9fb3051be5d112a5bddd9\/1000x1000-000000-80-0-0.jpg","checksum":"d34ec162962ae55638df44f6cf76bb40","tracklist":"https:\/\/api.deezer.com\/playlist\/63141574\/tracks","creation_date":"2017-05-19
+        07:56:10","md5_image":"8271e13fceb9fb3051be5d112a5bddd9","picture_type":"playlist","user":{"id":304158405,"name":"Adam
+        - Deezer UK & Ireland Editor","tracklist":"https:\/\/api.deezer.com\/user\/304158405\/flow","type":"user"},"type":"playlist"},{"id":915487765,"title":"Deezer
+        Hits UK","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/915487765","picture":"https:\/\/api.deezer.com\/playlist\/915487765\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1681fb316346f1b9cc43cb160c16bef1\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1681fb316346f1b9cc43cb160c16bef1\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1681fb316346f1b9cc43cb160c16bef1\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/1681fb316346f1b9cc43cb160c16bef1\/1000x1000-000000-80-0-0.jpg","checksum":"5acd45e2467f7de6f46193b7dd414fe0","tracklist":"https:\/\/api.deezer.com\/playlist\/915487765\/tracks","creation_date":"2014-06-30
+        16:02:04","md5_image":"1681fb316346f1b9cc43cb160c16bef1","picture_type":"playlist","user":{"id":304158405,"name":"Adam
+        - Deezer UK & Ireland Editor","tracklist":"https:\/\/api.deezer.com\/user\/304158405\/flow","type":"user"},"type":"playlist"},{"id":7237234924,"title":"UK
+        Hot 40","public":true,"nb_tracks":40,"link":"https:\/\/www.deezer.com\/playlist\/7237234924","picture":"https:\/\/api.deezer.com\/playlist\/7237234924\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/4ea2b637cd2820667143516fcb29e9b1\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/4ea2b637cd2820667143516fcb29e9b1\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/4ea2b637cd2820667143516fcb29e9b1\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/4ea2b637cd2820667143516fcb29e9b1\/1000x1000-000000-80-0-0.jpg","checksum":"67d562960d93060daba37885b52d06b4","tracklist":"https:\/\/api.deezer.com\/playlist\/7237234924\/tracks","creation_date":"2020-02-10
+        12:29:04","md5_image":"4ea2b637cd2820667143516fcb29e9b1","picture_type":"playlist","user":{"id":304158405,"name":"Adam
+        - Deezer UK & Ireland Editor","tracklist":"https:\/\/api.deezer.com\/user\/304158405\/flow","type":"user"},"type":"playlist"},{"id":4503899902,"title":"Dance
+        Anthems","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/4503899902","picture":"https:\/\/api.deezer.com\/playlist\/4503899902\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/43bb07d603160a0eb9cc8c9156b85c5b\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/43bb07d603160a0eb9cc8c9156b85c5b\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/43bb07d603160a0eb9cc8c9156b85c5b\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/43bb07d603160a0eb9cc8c9156b85c5b\/1000x1000-000000-80-0-0.jpg","checksum":"01fd600a13ee34ed8336b494e2e20476","tracklist":"https:\/\/api.deezer.com\/playlist\/4503899902\/tracks","creation_date":"2018-05-24
+        10:18:03","md5_image":"43bb07d603160a0eb9cc8c9156b85c5b","picture_type":"playlist","user":{"id":304158405,"name":"Adam
+        - Deezer UK & Ireland Editor","tracklist":"https:\/\/api.deezer.com\/user\/304158405\/flow","type":"user"},"type":"playlist"},{"id":7062175504,"title":"Rain
+        Sounds - Sleep Sounds - White Noise","public":true,"nb_tracks":382,"link":"https:\/\/www.deezer.com\/playlist\/7062175504","picture":"https:\/\/api.deezer.com\/playlist\/7062175504\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e8a4232529cbb48663d720bf8621ebc2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e8a4232529cbb48663d720bf8621ebc2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e8a4232529cbb48663d720bf8621ebc2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e8a4232529cbb48663d720bf8621ebc2\/1000x1000-000000-80-0-0.jpg","checksum":"ad16d1024ba51c2b2de5f5774f6255b7","tracklist":"https:\/\/api.deezer.com\/playlist\/7062175504\/tracks","creation_date":"2020-01-03
+        06:53:41","md5_image":"e8a4232529cbb48663d720bf8621ebc2","picture_type":"playlist","user":{"id":1721738026,"name":"edmsauce","tracklist":"https:\/\/api.deezer.com\/user\/1721738026\/flow","type":"user"},"type":"playlist"},{"id":2389444482,"title":"It''s
+        Lit","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/2389444482","picture":"https:\/\/api.deezer.com\/playlist\/2389444482\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/9a8f1e572b71a587cb72c9d4eca7b62c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/9a8f1e572b71a587cb72c9d4eca7b62c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/9a8f1e572b71a587cb72c9d4eca7b62c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/9a8f1e572b71a587cb72c9d4eca7b62c\/1000x1000-000000-80-0-0.jpg","checksum":"c84c51a1f039b0970756a07f48c934f4","tracklist":"https:\/\/api.deezer.com\/playlist\/2389444482\/tracks","creation_date":"2016-10-30
+        09:14:47","md5_image":"9a8f1e572b71a587cb72c9d4eca7b62c","picture_type":"playlist","user":{"id":304158405,"name":"Adam
+        - Deezer UK & Ireland Editor","tracklist":"https:\/\/api.deezer.com\/user\/304158405\/flow","type":"user"},"type":"playlist"},{"id":4460913144,"title":"Smooth
+        Hits","public":true,"nb_tracks":80,"link":"https:\/\/www.deezer.com\/playlist\/4460913144","picture":"https:\/\/api.deezer.com\/playlist\/4460913144\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/a4202517f98474c26badd75be894cfa9\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/a4202517f98474c26badd75be894cfa9\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/a4202517f98474c26badd75be894cfa9\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/a4202517f98474c26badd75be894cfa9\/1000x1000-000000-80-0-0.jpg","checksum":"a114d2c399f2e9bbab8d2d188f39805c","tracklist":"https:\/\/api.deezer.com\/playlist\/4460913144\/tracks","creation_date":"2018-05-11
+        12:02:58","md5_image":"a4202517f98474c26badd75be894cfa9","picture_type":"playlist","user":{"id":304158405,"name":"Adam
+        - Deezer UK & Ireland Editor","tracklist":"https:\/\/api.deezer.com\/user\/304158405\/flow","type":"user"},"type":"playlist"},{"id":1291471565,"title":"Dance
+        Party","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/1291471565","picture":"https:\/\/api.deezer.com\/playlist\/1291471565\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/ab8a1555d9b2b3987e88ad36ffd2c8b5\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/ab8a1555d9b2b3987e88ad36ffd2c8b5\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/ab8a1555d9b2b3987e88ad36ffd2c8b5\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/ab8a1555d9b2b3987e88ad36ffd2c8b5\/1000x1000-000000-80-0-0.jpg","checksum":"e0f843f920de6390f8bf5905329cea84","tracklist":"https:\/\/api.deezer.com\/playlist\/1291471565\/tracks","creation_date":"2015-07-03
+        14:25:41","md5_image":"ab8a1555d9b2b3987e88ad36ffd2c8b5","picture_type":"playlist","user":{"id":2834392844,"name":"Antoine
+        - Deezer Dance & EDM Editor","tracklist":"https:\/\/api.deezer.com\/user\/2834392844\/flow","type":"user"},"type":"playlist"},{"id":8282573142,"title":"2010s
+        Pop","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/8282573142","picture":"https:\/\/api.deezer.com\/playlist\/8282573142\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/7d2f4d6c5e714e68e84bda727d69fb1d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/7d2f4d6c5e714e68e84bda727d69fb1d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/7d2f4d6c5e714e68e84bda727d69fb1d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/7d2f4d6c5e714e68e84bda727d69fb1d\/1000x1000-000000-80-0-0.jpg","checksum":"1a08903a9cddc205831fdee8f88d238f","tracklist":"https:\/\/api.deezer.com\/playlist\/8282573142\/tracks","creation_date":"2020-10-26
+        16:23:40","md5_image":"7d2f4d6c5e714e68e84bda727d69fb1d","picture_type":"playlist","user":{"id":753546365,"name":"F\u00e1bio
+        - Deezer Pop Editor","tracklist":"https:\/\/api.deezer.com\/user\/753546365\/flow","type":"user"},"type":"playlist"},{"id":6399367984,"title":"lofi
+        hip hop - beats to relax\/study by Lofi Girl","public":true,"nb_tracks":300,"link":"https:\/\/www.deezer.com\/playlist\/6399367984","picture":"https:\/\/api.deezer.com\/playlist\/6399367984\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e7eb745d7e8fe06dc2a356cb080ef6ea\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e7eb745d7e8fe06dc2a356cb080ef6ea\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e7eb745d7e8fe06dc2a356cb080ef6ea\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e7eb745d7e8fe06dc2a356cb080ef6ea\/1000x1000-000000-80-0-0.jpg","checksum":"0a83c931e9879bb8545ec34b3f11e854","tracklist":"https:\/\/api.deezer.com\/playlist\/6399367984\/tracks","creation_date":"2019-08-17
+        20:45:45","md5_image":"e7eb745d7e8fe06dc2a356cb080ef6ea","picture_type":"playlist","user":{"id":2741487522,"name":"Lofi
+        Girl","tracklist":"https:\/\/api.deezer.com\/user\/2741487522\/flow","type":"user"},"type":"playlist"}],"total":10}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11013'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-61
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

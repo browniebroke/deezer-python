@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/chart/0/artists
+  response:
+    body:
+      string: '{"data":[{"id":230,"name":"Kanye West","link":"https:\/\/www.deezer.com\/artist\/230","picture":"https:\/\/api.deezer.com\/artist\/230\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/bb76c2ee3b068726ab4c37b0aabdb57a\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/bb76c2ee3b068726ab4c37b0aabdb57a\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/bb76c2ee3b068726ab4c37b0aabdb57a\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/bb76c2ee3b068726ab4c37b0aabdb57a\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/230\/top?limit=50","position":1,"type":"artist"},{"id":384236,"name":"Ed
+        Sheeran","link":"https:\/\/www.deezer.com\/artist\/384236","picture":"https:\/\/api.deezer.com\/artist\/384236\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3a58adf62c522732a6d3a7f8806de0c3\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3a58adf62c522732a6d3a7f8806de0c3\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3a58adf62c522732a6d3a7f8806de0c3\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3a58adf62c522732a6d3a7f8806de0c3\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/384236\/top?limit=50","position":2,"type":"artist"},{"id":542,"name":"David
+        Guetta","link":"https:\/\/www.deezer.com\/artist\/542","picture":"https:\/\/api.deezer.com\/artist\/542\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e21bc6e42211c589982c2d7994cd53f4\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e21bc6e42211c589982c2d7994cd53f4\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e21bc6e42211c589982c2d7994cd53f4\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e21bc6e42211c589982c2d7994cd53f4\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/542\/top?limit=50","position":3,"type":"artist"},{"id":4050205,"name":"The
+        Weeknd","link":"https:\/\/www.deezer.com\/artist\/4050205","picture":"https:\/\/api.deezer.com\/artist\/4050205\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/bd3f01a27e692074ed40bf8755b06afe\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/bd3f01a27e692074ed40bf8755b06afe\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/bd3f01a27e692074ed40bf8755b06afe\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/bd3f01a27e692074ed40bf8755b06afe\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/4050205\/top?limit=50","position":4,"type":"artist"},{"id":13,"name":"Eminem","link":"https:\/\/www.deezer.com\/artist\/13","picture":"https:\/\/api.deezer.com\/artist\/13\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/19cc38f9d69b352f718782e7a22f9c32\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/19cc38f9d69b352f718782e7a22f9c32\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/19cc38f9d69b352f718782e7a22f9c32\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/19cc38f9d69b352f718782e7a22f9c32\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/13\/top?limit=50","position":5,"type":"artist"},{"id":288166,"name":"Justin
+        Bieber","link":"https:\/\/www.deezer.com\/artist\/288166","picture":"https:\/\/api.deezer.com\/artist\/288166\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/22dd86b628a03d8dad3c7dfb33320a91\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/22dd86b628a03d8dad3c7dfb33320a91\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/22dd86b628a03d8dad3c7dfb33320a91\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/22dd86b628a03d8dad3c7dfb33320a91\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/288166\/top?limit=50","position":6,"type":"artist"},{"id":1538640,"name":"Little
+        Mix","link":"https:\/\/www.deezer.com\/artist\/1538640","picture":"https:\/\/api.deezer.com\/artist\/1538640\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/1bd8ca24d1f47901dcfba27572d1444f\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/1bd8ca24d1f47901dcfba27572d1444f\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/1bd8ca24d1f47901dcfba27572d1444f\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/1bd8ca24d1f47901dcfba27572d1444f\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/1538640\/top?limit=50","position":7,"type":"artist"},{"id":5578942,"name":"Doja
+        Cat","link":"https:\/\/www.deezer.com\/artist\/5578942","picture":"https:\/\/api.deezer.com\/artist\/5578942\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/19fbc81561040ff686f4f0df247342f0\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/19fbc81561040ff686f4f0df247342f0\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/19fbc81561040ff686f4f0df247342f0\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/19fbc81561040ff686f4f0df247342f0\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/5578942\/top?limit=50","position":8,"type":"artist"},{"id":9635624,"name":"Billie
+        Eilish","link":"https:\/\/www.deezer.com\/artist\/9635624","picture":"https:\/\/api.deezer.com\/artist\/9635624\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/8b6e535e08ad7c5cb312102a5ede6c1e\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/8b6e535e08ad7c5cb312102a5ede6c1e\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/8b6e535e08ad7c5cb312102a5ede6c1e\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/8b6e535e08ad7c5cb312102a5ede6c1e\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/9635624\/top?limit=50","position":9,"type":"artist"},{"id":8706544,"name":"Dua
+        Lipa","link":"https:\/\/www.deezer.com\/artist\/8706544","picture":"https:\/\/api.deezer.com\/artist\/8706544\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e6a04d735093a46dcc8be197681d1199\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e6a04d735093a46dcc8be197681d1199\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e6a04d735093a46dcc8be197681d1199\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/e6a04d735093a46dcc8be197681d1199\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/8706544\/top?limit=50","position":10,"type":"artist"}],"total":10}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7672'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-36
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1
