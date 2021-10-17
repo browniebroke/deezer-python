@@ -51,3 +51,7 @@ class DeezerErrorResponse(DeezerAPIException):
 
     def __init__(self, json_data: Dict[str, str]) -> None:
         self.json_data = json_data
+
+
+class DeezerUnknownResource(DeezerAPIException):
+    """The resource type couldn't be determined."""
