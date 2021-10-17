@@ -343,14 +343,6 @@ class Playlist(Resource):
         return self.iter_relation("fans", **kwargs)
 
 
-class Comment(Resource):
-    """
-    To access an :deezer-api:`comment object <comment>`.
-
-    All the fields documented on Deezer are accessible by as class attributes.
-    """
-
-
 class Radio(Resource):
     """
     To access an :deezer-api:`radio object <radio>`.

@@ -2,7 +2,6 @@ from deezer.client import Client
 from deezer.resources import (
     Album,
     Artist,
-    Comment,
     Genre,
     Playlist,
     Radio,
@@ -21,7 +20,6 @@ __all__ = [
     "Playlist",
     "Track",
     "User",
-    "Comment",
     "Radio",
 ]
 

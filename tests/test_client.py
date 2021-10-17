@@ -86,16 +86,6 @@ class TestClient:
         assert result[0].title == "Rob Beckett and Josh Widdicombe's Parenting Hell"
         assert isinstance(result[0], deezer.resources.Podcast)
 
-    def test_get_comment(self, client):
-        """Test methods to get a comment"""
-        comment = client.get_comment(2772704)
-        assert isinstance(comment, deezer.resources.Comment)
-
-    def test_no_comment_raise(self, client):
-        """Test method get_comment for invalid value"""
-        with pytest.raises(DeezerErrorResponse):
-            client.get_comment(-1)
-
     def test_get_episode(self, client):
         """Test methods to get an episode"""
         episode = client.get_episode(238455362)
@@ -361,7 +351,6 @@ class TestClient:
             ({"name": "Unknown", "type": "unknown-type"}, deezer.resources.Resource),
             ({"title": "Album", "type": "album"}, deezer.resources.Album),
             ({"name": "Artist", "type": "artist"}, deezer.resources.Artist),
-            ({"text": "Comment", "type": "comment"}, deezer.resources.Comment),
             ({"title": "Episode", "type": "episode"}, deezer.resources.Episode),
             ({"name": "Genre", "type": "genre"}, deezer.resources.Genre),
             ({"title": "Playlist", "type": "playlist"}, deezer.resources.Playlist),
@@ -375,7 +364,6 @@ class TestClient:
             "album",
             "artist",
             # chart not tested here as isn't returned with "type":"chart"
-            "comment",
             "episode",
             "genre",
             "playlist",
