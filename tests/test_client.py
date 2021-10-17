@@ -286,6 +286,34 @@ class TestClient:
         assert isinstance(result, list)
         assert len(result) <= expected_length
 
+    def test_search_strict(self, client):
+        result = client.search("Soliloquy", strict=True)
+        assert isinstance(result, list)
+        assert all(isinstance(r, deezer.resources.Track) for r in result)
+        assert result[0].title == "Soliloquy"
+
+    @pytest.mark.parametrize(
+        "ordering",
+        [
+            "RANKING",
+            "TRACK_ASC",
+            "TRACK_DESC",
+            "ARTIST_ASC",
+            "ARTIST_DESC",
+            "ALBUM_ASC",
+            "ALBUM_DESC",
+            "RATING_ASC",
+            "RATING_DESC",
+            "DURATION_ASC",
+            "DURATION_DESC",
+        ],
+    )
+    def test_search_results_ordering(self, client, ordering):
+        result = client.search("Soliloquy", ordering=ordering)
+        assert isinstance(result, list)
+        assert all(isinstance(r, deezer.resources.Track) for r in result)
+        assert result[0].title == "Soliloquy"
+
     def test_search_advanced_simple(self, client):
         """Test advanced search with one term"""
         result = client.search(artist="Lou Doillon")
