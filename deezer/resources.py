@@ -2,6 +2,10 @@
 Module to implement the various types of resources that
 can be found in the API.
 """
+import datetime as dt
+from typing import List, Optional
+
+from deezer.dates import parse_date, parse_datetime
 
 
 class Resource:
@@ -13,7 +17,21 @@ class Resource:
     attributes
     """
 
+    id: int
+    type: str
+
+    _date_fields = set()
+    _datetime_fields = set()
+
     def __init__(self, client, json):
+        # Parse data and datetime fields
+        for fields_list, parse_func in [
+            (self._date_fields, parse_date),
+            (self._datetime_fields, parse_datetime),
+        ]:
+            for field_name in fields_list:
+                if field_name in json:
+                    json[field_name] = parse_func(json[field_name])
         self._fields = tuple(json.keys())
         self.client = client
         for key in json:
@@ -81,6 +99,35 @@ class Album(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
+    title: str
+    upc: str
+    link: str
+    share: str
+    cover: str
+    cover_small: str
+    cover_medium: str
+    cover_big: str
+    cover_xl: str
+    md5_image: str
+    genre_id: int
+    genres: List["Genre"]
+    label: str
+    nb_tracks: int
+    duration: int
+    fans: int
+    release_date: dt.date
+    record_type: str
+    available: bool
+    alternative: object
+    tracklist: str
+    explicit_lyrics: bool
+    explicit_content_lyrics: int
+    explicit_content_cover: int
+    contributors: List["Artist"]
+    artist: "Artist"
+
+    _date_fields = {"release_date"}
+
     def get_artist(self):
         """
         Get the artist of the Album.
@@ -121,6 +168,19 @@ class Artist(Resource):
 
     All the fields documented on Deezer are accessible by as class attributes.
     """
+
+    name: str
+    link: str
+    share: str
+    picture: str
+    picture_small: str
+    picture_medium: str
+    picture_big: str
+    picture_xl: str
+    nb_album: int
+    nb_fan: int
+    radio: bool
+    tracklist: str
 
     def get_top(self, **kwargs):
         """
@@ -176,6 +236,13 @@ class Genre(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
+    name: str
+    picture: str
+    picture_small: str
+    picture_medium: str
+    picture_big: str
+    picture_xl: str
+
     def get_artists(self, **kwargs):
         """
         Get all artists for a genre.
@@ -216,6 +283,34 @@ class Track(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
+    readable: bool
+    title: str
+    title_short: str
+    title_version: str
+    unseen: bool
+    isrc: str
+    link: str
+    share: str
+    duration: int
+    track_position: int
+    disk_number: int
+    rank: int
+    release_date: dt.date
+    explicit_lyrics: bool
+    explicit_content_lyrics: int
+    explicit_content_cover: int
+    preview: str
+    bpm: float
+    gain: float
+    available_countries: List[str]
+    alternative: "Track"
+    contributors: List["Artist"]
+    md5_image: str
+    artist: "Artist"
+    album: "Album"
+
+    _date_fields = {"release_date"}
+
     def get_artist(self):
         """
         Get the artist of the Track.
@@ -237,6 +332,29 @@ class User(Resource):
 
     All the fields documented on Deezer are accessible by as class attributes.
     """
+
+    name: str
+    lastname: Optional[str]
+    firstname: Optional[str]
+    email: Optional[str]
+    status: Optional[int]
+    birthday: Optional[dt.date]
+    inscription_date: dt.date
+    gender: Optional[str]
+    link: str
+    picture: str
+    picture_small: str
+    picture_medium: str
+    picture_big: str
+    picture_xl: str
+    country: str
+    lang: Optional[str]
+    is_kid: Optional[bool]
+    explicit_content_level: Optional[str]
+    explicit_content_levels_available: Optional[List[str]]
+    tracklist: str
+
+    _date_fields = {"birthday", "inscription_date"}
 
     def get_albums(self, **kwargs):
         """
@@ -310,6 +428,25 @@ class Playlist(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
+    title: str
+    description: str
+    duration: int
+    public: bool
+    is_loved_track: bool
+    collaborative: bool
+    nb_tracks: int
+    unseen_track_count: int
+    fans: int
+    link: str
+    share: str
+    picture: str
+    picture_small: str
+    picture_medium: str
+    picture_big: str
+    picture_xl: str
+    checksum: str
+    creator: User
+
     def get_tracks(self, **kwargs):
         """
         Get tracks from a playlist.
@@ -350,6 +487,17 @@ class Radio(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
+    title: str
+    description: str
+    share: str
+    picture: str
+    picture_small: str
+    picture_medium: str
+    picture_big: str
+    picture_xl: str
+    tracklist: str
+    md5_image: str
+
     def get_tracks(self, **kwargs):
         """
         Get first 40 tracks in the radio
@@ -377,6 +525,11 @@ class Chart(Resource):
     type = "chart"
 
     id = 0
+    tracks: List["Track"]
+    albums: List["Album"]
+    artists: List["Artist"]
+    playlists: List["Playlist"]
+    podcasts: List["Podcast"]
 
     def get_tracks(self, **kwargs):
         """
@@ -442,6 +595,18 @@ class Podcast(Resource):
     All the fields documented on Deezer are accessible by as class attributes.
     """
 
+    title: str
+    description: str
+    available: bool
+    fans: int
+    link: str
+    share: str
+    picture: str
+    picture_small: str
+    picture_medium: str
+    picture_big: str
+    picture_xl: str
+
     def get_episodes(self, **kwargs):
         """
         Get episodes from a podcast
@@ -465,3 +630,19 @@ class Episode(Resource):
 
     All the fields documented on Deezer are accessible by as class attributes.
     """
+
+    title: str
+    description: str
+    available: bool
+    release_date: dt.datetime
+    duration: int
+    link: str
+    share: str
+    picture: str
+    picture_small: str
+    picture_medium: str
+    picture_big: str
+    picture_xl: str
+    podcast: Podcast
+
+    _datetime_fields = {"release_date"}
