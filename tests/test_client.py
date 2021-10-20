@@ -168,6 +168,11 @@ class TestClient:
         user = client.get_user(359622)
         assert isinstance(user, deezer.resources.User)
 
+    def test_get_current_user(self, client_token):
+        """Test methods to get the current user"""
+        user = client_token.get_user()
+        assert isinstance(user, deezer.resources.User)
+
     def test_no_user_raise(self, client):
         """Test method get_user for invalid value"""
         with pytest.raises(DeezerErrorResponse):

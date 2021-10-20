@@ -301,13 +301,14 @@ class Client:
         """
         return self.request("GET", f"track/{track_id}")
 
-    def get_user(self, user_id: int) -> User:
+    def get_user(self, user_id: Optional[int] = None) -> User:
         """
         Get the user with the given ID.
 
         :returns: a :class:`~deezer.resources.User` object
         """
-        return self.request("GET", f"user/{user_id}")
+        user_id_str = str(user_id) if user_id else "me"
+        return self.request("GET", f"user/{user_id_str}")
 
     def get_user_albums(self, user_id: Optional[int] = None) -> List[Album]:
         """
