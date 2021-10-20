@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v4.1.0 (2021-10-20)
+### Feature
+* Add all documented fields to resources and type annotate them ([`9b093b2`](https://github.com/browniebroke/deezer-python/commit/9b093b26590e00f3b0a956cc4f4c54e9c24a43a7))
+* Add support for getting the current user ([`5e9b56e`](https://github.com/browniebroke/deezer-python/commit/5e9b56ea8f13845c81f18f7442e89a2afe28babd))
+
 ## v4.0.0 (2021-10-17)
 ### Feature
 * Port `Client`'s `request` method to `AsyncClient` ([`bd9edb2`](https://github.com/browniebroke/deezer-python/commit/bd9edb2bff0fb450ed7c438b13df40eed0a970f0))
