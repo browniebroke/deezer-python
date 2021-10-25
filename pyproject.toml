@@ -46,7 +46,7 @@ docs = [
 [tool.poetry.dev-dependencies]
 bandit = "^1.6.2"
 black = {version = "^21.9b0", extras = ["jupyter"], python = "^3.6.2"}
-coverage = "^5.4"
+coverage = "^6.0"
 environs = "^9.3.4"
 flake8 = "^4.0.0"
 isort = "^5.6.3"
