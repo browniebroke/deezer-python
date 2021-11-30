@@ -1,7 +1,7 @@
 version: 2
 
 python:
-  version: 3.7  # Should match version in ci.yml workflow (docs job)
+  version: 3.7 # Should match version in ci.yml workflow (docs job)
   install:
     - method: pip
       path: .
