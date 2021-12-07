@@ -5,18 +5,17 @@
 # Default to 10 days delay and comment:
 # <!-- issue-manager: answered -->
 
-
 name: Issue Manager
 
 on:
   schedule:
-  - cron: "0 0 * * *"
+    - cron: "0 0 * * *"
 
 jobs:
   issue-manager:
     runs-on: ubuntu-latest
     steps:
-    - uses: tiangolo/issue-manager@0.4.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        config: '{"answered": {}}'
+      - uses: tiangolo/issue-manager@0.4.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config: '{"answered": {}}'

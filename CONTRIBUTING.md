@@ -106,7 +106,7 @@ Feel free to open the pull request as soon as possible, but please be explicit i
 The deployment should be automated and can be triggered from the Semantic Release workflow in GitHub. The next version will be based on [the commit logs][commit-log]. This is done by [python-semantic-release] via a GitHub action.
 
 [issues page]: https://github.com/browniebroke/deezer-python/issues
-[Poetry]: https://python-poetry.org/
+[poetry]: https://python-poetry.org/
 [tox]: http://tox.readthedocs.io/en/stable/index.html
 [flake8]: http://flake8.pycqa.org/en/latest/
 [black]: https://github.com/ambv/black

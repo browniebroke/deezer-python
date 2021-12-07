@@ -1,5 +1,4 @@
-Deezer Python Client
-====================
+# Deezer Python Client
 
 <p align="center">
   <a href="https://github.com/browniebroke/deezer-python/actions?query=workflow%3ACI">
@@ -39,16 +38,14 @@ Deezer Python Client
 
 A friendly Python wrapper around the [Deezer API](http://developers.deezer.com/api).
 
-Installation
-------------
+## Installation
 
 The package is published on
 [PyPI](https://pypi.org/project/deezer-python/) and can be installed by running:
 
     pip install deezer-python
 
-Basic Use
----------
+## Basic Use
 
 Easily query the Deezer API from you Python code. The data returned by the Deezer
 API is mapped to python resources:
@@ -63,9 +60,7 @@ Ready for more? Look at our whole [documentation](http://deezer-python.readthedo
 on Read The Docs or have a play in pre-populated Jupyter notebook
 [on Binder](https://mybinder.org/v2/gh/browniebroke/deezer-python/main?filepath=demo.ipynb).
 
-
-Contributors
-------------
+## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
