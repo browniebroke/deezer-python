@@ -12,7 +12,7 @@ class Resource:
     """
     Base class for any resource.
 
-    It is mainly responsible of passing a reference to the client
+    It is mainly responsible for passing a reference to the client
     to this class when instantiated, and transmit the json data into
     attributes
     """
@@ -44,17 +44,17 @@ class Resource:
         return f"<{self.__class__.__name__}: {name or title or id_}>"
 
     def as_dict(self):
-        """
-        Convert resource to dictionary
-        """
+        """Convert resource to dictionary."""
         result = {}
         for key in self._fields:
             value = getattr(self, key)
             if isinstance(value, list):
                 value = [i.as_dict() if isinstance(i, Resource) else i for i in value]
-            if isinstance(value, Resource):
+            elif isinstance(value, Resource):
                 value = value.as_dict()
-            if isinstance(value, dt.date):
+            elif isinstance(value, dt.datetime):
+                value = f"{value:%Y-%m-%d %H:%M:%S}"
+            elif isinstance(value, dt.date):
                 value = value.isoformat()
             result[key] = value
         return result
