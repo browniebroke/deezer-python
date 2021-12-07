@@ -53,7 +53,9 @@ class TestAlbum:
         Test resource conversion to dict
         """
         album = client.get_album(302127)
-        assert album.as_dict()["id"] == 302127
+        album_dict = album.as_dict()
+        assert album_dict["id"] == 302127
+        assert album_dict["release_date"] == "2001-03-07"
 
     def test_rate(self, client_token):
         album = deezer.resources.Album(client_token, {"id": 302127})
