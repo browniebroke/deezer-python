@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v4.2.0 (2021-12-07)
+### Feature
+* Deserialize date in `Resource.as_dict()` method ([#399](https://github.com/browniebroke/deezer-python/issues/399)) ([`6337967`](https://github.com/browniebroke/deezer-python/commit/6337967a370bfb6a4fb057f84fe94f0b932fa421))
+
+### Fix
+* Follow Deezer's format when deserializing datetime ([#411](https://github.com/browniebroke/deezer-python/issues/411)) ([`3be65e4`](https://github.com/browniebroke/deezer-python/commit/3be65e4242343dbf9014d76f3c46d1d424975be6))
+
+### Documentation
+* Add bjacquin as a contributor for code ([#410](https://github.com/browniebroke/deezer-python/issues/410)) ([`138d317`](https://github.com/browniebroke/deezer-python/commit/138d317f026e6ce00f4040cd873bf30f89a21b9a))
+
 ## v4.1.0 (2021-10-20)
 ### Feature
 * Add all documented fields to resources and type annotate them ([`9b093b2`](https://github.com/browniebroke/deezer-python/commit/9b093b26590e00f3b0a956cc4f4c54e9c24a43a7))
