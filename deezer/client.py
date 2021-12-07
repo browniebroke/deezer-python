@@ -45,7 +45,7 @@ class Client:
         >>> import deezer
         >>> client = deezer.Client(headers={'Accept-Language': 'fr'})
 
-    :param app_id: appliication ID.
+    :param app_id: application ID.
     :param app_secret: application secret.
     :param access_token: user access token.
     :param headers: a dictionary of headers to be used.

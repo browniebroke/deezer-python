@@ -54,6 +54,8 @@ class Resource:
                 value = [i.as_dict() if isinstance(i, Resource) else i for i in value]
             if isinstance(value, Resource):
                 value = value.as_dict()
+            if isinstance(value, dt.date):
+                value = value.isoformat()
             result[key] = value
         return result
 
