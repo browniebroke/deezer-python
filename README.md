@@ -87,6 +87,7 @@ on Read The Docs or have a play in pre-populated Jupyter notebook
   <tr>
     <td align="center"><a href="https://naveen.syrusdark.website"><img src="https://avatars1.githubusercontent.com/u/49693820?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Naveen M K</b></sub></a><br /><a href="https://github.com/browniebroke/deezer-python/commits?author=naveen521kk" title="Code">💻</a> <a href="#infra-naveen521kk" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://github.com/Carababusha"><img src="https://avatars.githubusercontent.com/u/64437819?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Carababusha</b></sub></a><br /><a href="https://github.com/browniebroke/deezer-python/commits?author=Carababusha" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/bjacquin"><img src="https://avatars.githubusercontent.com/u/5293357?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bertrand Jacquin</b></sub></a><br /><a href="https://github.com/browniebroke/deezer-python/commits?author=bjacquin" title="Code">💻</a></td>
   </tr>
 </table>
 
