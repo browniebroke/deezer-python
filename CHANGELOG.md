@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v4.2.1 (2021-12-11)
+### Fix
+* **deps:** Update dependency myst-parser to ^0.16 ([`2fe0e71`](https://github.com/browniebroke/deezer-python/commit/2fe0e714aa9e35db2a3aa89911ae086b54cf58e7))
+
 ## v4.2.0 (2021-12-07)
 ### Feature
 * Deserialize date in `Resource.as_dict()` method ([#399](https://github.com/browniebroke/deezer-python/issues/399)) ([`6337967`](https://github.com/browniebroke/deezer-python/commit/6337967a370bfb6a4fb057f84fe94f0b932fa421))
