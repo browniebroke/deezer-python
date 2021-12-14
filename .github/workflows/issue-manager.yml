@@ -21,4 +21,12 @@ jobs:
       - uses: tiangolo/issue-manager@0.4.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          config: '{"answered": {}}'
+          config: >
+            {
+              "answered": {
+                "message": "Assuming the original issue was solved, it will be automatically closed now."
+              },
+              "waiting": {
+                "message": "Automatically closing. To re-open, please provide the additional information requested."
+              }
+            }

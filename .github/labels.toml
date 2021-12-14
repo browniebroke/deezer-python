@@ -87,3 +87,8 @@ description = "Good issues for Hacktoberfest"
 color = "0ee2b6"
 name = "answered"
 description = "Automatically closes as answered after a delay"
+
+[waiting]
+color = "5f7972"
+name = "waiting"
+description = "Automatically closes if no answer after a delay"
