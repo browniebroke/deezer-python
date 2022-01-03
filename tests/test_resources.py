@@ -161,6 +161,14 @@ class TestTrack:
         assert repr(artist) == "<Artist: Daft Punk>"
         assert repr(album) == "<Album: Discovery>"
 
+    def test_contributors(self, client):
+        track = client.get_track(1425844092)
+        contributors = track.contributors
+        assert isinstance(contributors, list)
+        assert len(contributors) == 2
+        assert all(isinstance(c, deezer.resources.Artist) for c in contributors)
+        assert [c.id for c in contributors] == [51204222, 288166]
+
 
 class TestRadio:
     def test_radio_attributes(self, client):
