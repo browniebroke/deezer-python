@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v4.3.0 (2022-01-03)
+### Feature
+* Parse track contributors ([`719e42a`](https://github.com/browniebroke/deezer-python/commit/719e42aff6f0c21bd92aaa063bf94076021f1a42))
+* Parse album contributors ([`bd02ec4`](https://github.com/browniebroke/deezer-python/commit/bd02ec41c20ddbff2cc399f496f64b8f095c4854))
+
 ## v4.2.1 (2021-12-11)
 ### Fix
 * **deps:** Update dependency myst-parser to ^0.16 ([`2fe0e71`](https://github.com/browniebroke/deezer-python/commit/2fe0e714aa9e35db2a3aa89911ae086b54cf58e7))
