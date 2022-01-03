@@ -20,20 +20,10 @@ class Resource:
     id: int
     type: str
 
-    _date_fields = set()
-    _datetime_fields = set()
     _fields_parsers = {}
 
     def __init__(self, client, json):
         self.client = client
-        # Parse data and datetime fields
-        for fields_list, parse_func in [
-            (self._date_fields, parse_date),
-            (self._datetime_fields, parse_datetime),
-        ]:
-            for field_name in fields_list:
-                if field_name in json:
-                    json[field_name] = parse_func(json[field_name])
         for field_name in json.keys():
             parse_func = getattr(self, f"_parse_{field_name}", None)
             if callable(parse_func):
@@ -133,7 +123,7 @@ class Album(Resource):
     contributors: List["Artist"]
     artist: "Artist"
 
-    _date_fields = {"release_date"}
+    _parse_release_date = staticmethod(parse_date)
 
     def _parse_contributors(self, raw_value):
         return [Artist(client=self.client, json=val) for val in raw_value]
@@ -319,7 +309,7 @@ class Track(Resource):
     artist: "Artist"
     album: "Album"
 
-    _date_fields = {"release_date"}
+    _parse_release_date = staticmethod(parse_date)
 
     def get_artist(self):
         """
@@ -364,7 +354,8 @@ class User(Resource):
     explicit_content_levels_available: Optional[List[str]]
     tracklist: str
 
-    _date_fields = {"birthday", "inscription_date"}
+    _parse_birthday = staticmethod(parse_date)
+    _parse_inscription_date = staticmethod(parse_date)
 
     def get_albums(self, **kwargs):
         """
@@ -655,4 +646,4 @@ class Episode(Resource):
     picture_xl: str
     podcast: Podcast
 
-    _datetime_fields = {"release_date"}
+    _parse_release_date = staticmethod(parse_datetime)
