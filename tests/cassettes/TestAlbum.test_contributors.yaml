@@ -1,0 +1,79 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/album/302128
+  response:
+    body:
+      string: '{"id":302128,"title":"Tributo Al Cuarteto Patria","upc":"724384963552","link":"https:\/\/www.deezer.com\/album\/302128","share":"https:\/\/www.deezer.com\/album\/302128?utm_source=deezer&utm_content=album-302128&utm_term=0_1641250356&utm_medium=web","cover":"https:\/\/api.deezer.com\/album\/302128\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cabf70079c74cdc4a119db7c8def4e8a\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cabf70079c74cdc4a119db7c8def4e8a\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cabf70079c74cdc4a119db7c8def4e8a\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cabf70079c74cdc4a119db7c8def4e8a\/1000x1000-000000-80-0-0.jpg","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","genre_id":132,"genres":{"data":[{"id":132,"name":"Pop","picture":"https:\/\/api.deezer.com\/genre\/132\/image","type":"genre"}]},"label":"Parlophone
+        Spain","nb_tracks":13,"duration":3779,"fans":419,"release_date":"2000-01-01","record_type":"album","available":true,"tracklist":"https:\/\/api.deezer.com\/album\/302128\/tracks","explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"contributors":[{"id":123021,"name":"Eliades
+        Ochoa","link":"https:\/\/www.deezer.com\/artist\/123021","share":"https:\/\/www.deezer.com\/artist\/123021?utm_source=deezer&utm_content=artist-123021&utm_term=0_1641250356&utm_medium=web","picture":"https:\/\/api.deezer.com\/artist\/123021\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b99514779dd4be254b8b3c2234770d62\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b99514779dd4be254b8b3c2234770d62\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b99514779dd4be254b8b3c2234770d62\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b99514779dd4be254b8b3c2234770d62\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist","role":"Main"},{"id":6159602,"name":"El
+        Cuarteto Patria","link":"https:\/\/www.deezer.com\/artist\/6159602","share":"https:\/\/www.deezer.com\/artist\/6159602?utm_source=deezer&utm_content=artist-6159602&utm_term=0_1641250356&utm_medium=web","picture":"https:\/\/api.deezer.com\/artist\/6159602\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/5d72e8a482cf964478507d68f288839c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/5d72e8a482cf964478507d68f288839c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/5d72e8a482cf964478507d68f288839c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/5d72e8a482cf964478507d68f288839c\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/6159602\/top?limit=50","type":"artist","role":"Main"}],"artist":{"id":123021,"name":"Eliades
+        Ochoa","picture":"https:\/\/api.deezer.com\/artist\/123021\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b99514779dd4be254b8b3c2234770d62\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b99514779dd4be254b8b3c2234770d62\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b99514779dd4be254b8b3c2234770d62\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/b99514779dd4be254b8b3c2234770d62\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"album","tracks":{"data":[{"id":3135567,"readable":true,"title":"Son
+        a la casa de la trova","title_short":"Son a la casa de la trova","title_version":"","link":"https:\/\/www.deezer.com\/track\/3135567","duration":300,"rank":79661,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-8.dzcdn.net\/stream\/c-89e72d96112a26409434520b91de4547-5.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135568,"readable":true,"title":"No
+        quiero celos","title_short":"No quiero celos","title_version":"","link":"https:\/\/www.deezer.com\/track\/3135568","duration":254,"rank":103066,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-0.dzcdn.net\/stream\/c-046bcd5e3a7fce7b2c9d9123aca1b426-4.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135569,"readable":true,"title":"Yiri
+        Yiri Bon (son)","title_short":"Yiri Yiri Bon (son)","title_version":"","link":"https:\/\/www.deezer.com\/track\/3135569","duration":300,"rank":295642,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-8.dzcdn.net\/stream\/c-8685b5521c65a78c255346731a6405a6-8.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135570,"readable":true,"title":"Si
+        Sabes Bailar Mi Son","title_short":"Si Sabes Bailar Mi Son","title_version":"","link":"https:\/\/www.deezer.com\/track\/3135570","duration":278,"rank":181141,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-b.dzcdn.net\/stream\/c-b49cff0046d77f2f60c8bcb5ca9f6038-4.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135571,"readable":true,"title":"Tiempo
+        Entero (bolero son)","title_short":"Tiempo Entero","title_version":"(bolero
+        son)","link":"https:\/\/www.deezer.com\/track\/3135571","duration":434,"rank":65963,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-4.dzcdn.net\/stream\/c-45800f0c97b30344f919cbaf86a45ec1-5.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135572,"readable":true,"title":"Por
+        Culpa De Las Mujeres (son)","title_short":"Por Culpa De Las Mujeres (son)","title_version":"","link":"https:\/\/www.deezer.com\/track\/3135572","duration":360,"rank":69603,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-a.dzcdn.net\/stream\/c-a7e40524e9550a80a0f3fce50bdaf0ae-3.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135573,"readable":true,"title":"Que
+        Murmuren (bolero)","title_short":"Que Murmuren","title_version":"(bolero)","link":"https:\/\/www.deezer.com\/track\/3135573","duration":191,"rank":128700,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-6.dzcdn.net\/stream\/c-64d80e3e0a35a110e06d8624b292e5f2-5.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135574,"readable":true,"title":"Me
+        Voy Pa Sibanicu (Son)","title_short":"Me Voy Pa Sibanicu (Son)","title_version":"","link":"https:\/\/www.deezer.com\/track\/3135574","duration":356,"rank":84711,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-7.dzcdn.net\/stream\/c-77796652fafd80d751ed02a52ab79128-4.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135575,"readable":true,"title":"Si
+        En Un Final (bolero)","title_short":"Si En Un Final","title_version":"(bolero)","link":"https:\/\/www.deezer.com\/track\/3135575","duration":213,"rank":116436,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-b.dzcdn.net\/stream\/c-b786dd6225ab9772739866e7b8a01352-6.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135576,"readable":true,"title":"Calderito
+        De Tostar Caf\u00e9 (son)","title_short":"Calderito De Tostar Caf\u00e9 (son)","title_version":"","link":"https:\/\/www.deezer.com\/track\/3135576","duration":290,"rank":52721,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-3a4e6b7e92684d27b882f95d1a1feaac-4.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135577,"readable":true,"title":"Cuando
+        Ya No Me Quieras (bolero)","title_short":"Cuando Ya No Me Quieras","title_version":"(bolero)","link":"https:\/\/www.deezer.com\/track\/3135577","duration":173,"rank":87125,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-36be7bfc81ab1f1c039477270bc759f1-6.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135578,"readable":true,"title":"Que
+        Sabroseao (guaracha)","title_short":"Que Sabroseao","title_version":"(guaracha)","link":"https:\/\/www.deezer.com\/track\/3135578","duration":230,"rank":33858,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-b.dzcdn.net\/stream\/c-bb949162f8b9607a46f1cc248ee97991-4.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"},{"id":3135579,"readable":true,"title":"Clara
+        Bella (bolero son)","title_short":"Clara Bella","title_version":"(bolero son)","link":"https:\/\/www.deezer.com\/track\/3135579","duration":400,"rank":50482,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-e.dzcdn.net\/stream\/c-ec46c507df4cd865898f82fc39997f84-7.mp3","md5_image":"cabf70079c74cdc4a119db7c8def4e8a","artist":{"id":123021,"name":"Eliades
+        Ochoa","tracklist":"https:\/\/api.deezer.com\/artist\/123021\/top?limit=50","type":"artist"},"type":"track"}]}}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11297'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-142
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

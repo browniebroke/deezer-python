@@ -22,8 +22,10 @@ class Resource:
 
     _date_fields = set()
     _datetime_fields = set()
+    _fields_parsers = {}
 
     def __init__(self, client, json):
+        self.client = client
         # Parse data and datetime fields
         for fields_list, parse_func in [
             (self._date_fields, parse_date),
@@ -32,8 +34,11 @@ class Resource:
             for field_name in fields_list:
                 if field_name in json:
                     json[field_name] = parse_func(json[field_name])
+        for field_name in json.keys():
+            parse_func = getattr(self, f"_parse_{field_name}", None)
+            if callable(parse_func):
+                json[field_name] = parse_func(json[field_name])
         self._fields = tuple(json.keys())
-        self.client = client
         for key in json:
             setattr(self, key, json[key])
 
@@ -129,6 +134,9 @@ class Album(Resource):
     artist: "Artist"
 
     _date_fields = {"release_date"}
+
+    def _parse_contributors(self, raw_value):
+        return [Artist(client=self.client, json=val) for val in raw_value]
 
     def get_artist(self):
         """
