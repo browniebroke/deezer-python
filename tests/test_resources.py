@@ -48,6 +48,15 @@ class TestAlbum:
         assert isinstance(track, deezer.resources.Track)
         assert repr(track) == "<Track: One More Time>"
 
+    def test_contributors(self, client):
+        album = client.get_album(302128)
+
+        contributors = album.contributors
+        assert isinstance(contributors, list)
+        assert len(contributors) == 2
+        assert all(isinstance(c, deezer.resources.Artist) for c in contributors)
+        assert [c.id for c in contributors] == [123021, 6159602]
+
     def test_as_dict(self, client):
         """
         Test resource conversion to dict
