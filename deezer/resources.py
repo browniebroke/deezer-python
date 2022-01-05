@@ -1,7 +1,8 @@
 import datetime as dt
-from typing import List, Optional
+from typing import List, Optional, Type
 
 from deezer.dates import parse_date, parse_datetime
+from deezer.pagination import PaginatedList
 
 
 class Resource:
@@ -83,6 +84,19 @@ class Resource:
             if len(items) == 0:
                 break
             index += len(items)
+
+    def get_paginated_list(
+        self,
+        relation: str,
+        resource_class: Type["Resource"],
+        **kwargs,
+    ):
+        return PaginatedList(
+            container=self,
+            resource_class=resource_class,
+            base_path=f"{self.type}/{self.id}/{relation}",
+            **kwargs,
+        )
 
 
 class Album(Resource):

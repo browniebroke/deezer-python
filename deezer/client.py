@@ -95,7 +95,7 @@ class Client:
         :returns: instance of :class:`~deezer.resources.Resource`
         """
         if "data" in item:
-            return [self._process_json(i, parent) for i in item["data"]]
+            item["data"] = [self._process_json(i, parent) for i in item["data"]]
 
         result = {}
         for key, value in item.items():
