@@ -16,10 +16,8 @@ class TestResource:
 
 
 class TestAlbum:
-    def test_album_attributes(self, client):
-        """
-        Test album resource
-        """
+    def test_basic(self, client):
+        """Test basic Album resource."""
         album = client.get_album(302127)
         assert hasattr(album, "title")
         assert repr(album) == "<Album: Discovery>"
@@ -28,23 +26,13 @@ class TestAlbum:
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Daft Punk>"
 
-    def test_album_tracks(self, client):
-        """
-        Test tracks method of album resource
-        """
+    def test_get_tracks(self, client):
         album = client.get_album(302127)
 
-        # tests list
+        # tests pagination
         tracks = album.get_tracks()
-        assert isinstance(tracks, list)
-        track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: One More Time>"
-
-        # tests generator
-        tracks_generator = album.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        track = next(tracks_generator)
+        assert isinstance(tracks, deezer.pagination.PaginatedList)
+        track = next(iter(tracks))
         assert isinstance(track, deezer.resources.Track)
         assert repr(track) == "<Track: One More Time>"
 
@@ -58,9 +46,6 @@ class TestAlbum:
         assert [c.id for c in contributors] == [123021, 6159602]
 
     def test_as_dict(self, client):
-        """
-        Test resource conversion to dict
-        """
         album = client.get_album(302127)
         album_dict = album.as_dict()
         assert album_dict["id"] == 302127

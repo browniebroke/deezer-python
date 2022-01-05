@@ -84,6 +84,7 @@ class Client:
         item: Dict[str, Any],
         parent: Optional[Resource] = None,
         resource_type: Optional[Type[Resource]] = None,
+        paginate_list=False,
     ):
         """
         Recursively convert dictionary
@@ -92,10 +93,17 @@ class Client:
         :param item: the JSON response as dict.
         :param parent: A reference to the parent resource, to avoid fetching again.
         :param resource_type: The resource class to use as top level.
+        :param paginate_list: Whether to wrap list into a pagination object.
         :returns: instance of :class:`~deezer.resources.Resource`
         """
         if "data" in item:
-            item["data"] = [self._process_json(i, parent) for i in item["data"]]
+            parsed_data = [
+                self._process_json(i, parent, paginate_list=False) for i in item["data"]
+            ]
+            if not paginate_list:
+                return parsed_data
+            item["data"] = parsed_data
+            return item
 
         result = {}
         for key, value in item.items():
@@ -123,6 +131,7 @@ class Client:
         path: str,
         parent: Optional[Resource] = None,
         resource_type: Optional[Type[Resource]] = None,
+        paginate_list=False,
         **params,
     ):
         """
@@ -132,6 +141,7 @@ class Client:
         :param path: The path to make the API call to (e.g. 'artist/1234').
         :param parent: A reference to the parent resource, to avoid fetching again.
         :param resource_type: The resource class to use as top level.
+        :param paginate_list: Whether to wrap list into a pagination object.
         :param params: Query parameters to add to the request
         """
         if self.access_token is not None:
@@ -150,7 +160,12 @@ class Client:
             return json_data
         if "error" in json_data:
             raise DeezerErrorResponse(json_data)
-        return self._process_json(json_data, parent=parent, resource_type=resource_type)
+        return self._process_json(
+            json_data,
+            parent=parent,
+            resource_type=resource_type,
+            paginate_list=paginate_list,
+        )
 
     def get_album(self, album_id: int) -> Album:
         """

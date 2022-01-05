@@ -1,5 +1,5 @@
 import datetime as dt
-from typing import List, Optional, Type
+from typing import List, Optional
 
 from deezer.dates import parse_date, parse_datetime
 from deezer.pagination import PaginatedList
@@ -88,12 +88,10 @@ class Resource:
     def get_paginated_list(
         self,
         relation: str,
-        resource_class: Type["Resource"],
         **kwargs,
     ):
         return PaginatedList(
             container=self,
-            resource_class=resource_class,
             base_path=f"{self.type}/{self.id}/{relation}",
             **kwargs,
         )
@@ -158,15 +156,7 @@ class Album(Resource):
 
         :returns: list of :class:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation("tracks", **kwargs)
-
-    def iter_tracks(self, **kwargs):
-        """
-        Iterate album's tracks.
-
-        :returns: iterator of :class:`Track <deezer.resources.Track>` instances
-        """
-        return self.iter_relation("tracks", **kwargs)
+        return self.get_paginated_list("tracks", **kwargs)
 
     def rate(self, note: int) -> bool:
         """

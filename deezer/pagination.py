@@ -1,4 +1,4 @@
-from typing import List, Type
+from typing import List
 
 import deezer
 
@@ -35,14 +35,12 @@ class PaginatedList:
     def __init__(
         self,
         container: "deezer.Resource",
-        resource_class: Type["deezer.Resource"],
         base_path: str,
         **params,
     ):
         self.__elements: List["deezer.Resource"] = []
         self.__container = container
         self.__client = container.client
-        self.__resource_class = resource_class
         self.__base_path = base_path
         self.__params = params
         self.__next_path = base_path
@@ -66,6 +64,7 @@ class PaginatedList:
             "GET",
             self.__next_path,
             parent=self.__container,
+            paginate_list=True,
             **self.__params,
         )
         data = response_payload["data"]
@@ -87,6 +86,7 @@ class PaginatedList:
                 "GET",
                 self.__base_path,
                 parent=self.__container,
+                paginate_list=True,
                 **params,
             )
             self.__total = response_payload["total"]
