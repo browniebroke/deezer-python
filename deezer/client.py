@@ -76,9 +76,8 @@ class Client:
         self.access_token = access_token
         self.session = requests.Session()
 
-        # Headers
-        if headers:
-            self.session.headers.update(headers)
+        headers = headers or {}
+        self.session.headers.update(headers)
 
     def _process_json(
         self,
