@@ -121,10 +121,10 @@ You can tell the difference, though: attributes access are using the data from t
 
 At some point, you might want to get the resources exported as Python dictionaries to store them somewhere else or transform them further.
 
-Each resource has a `asdict()` method to export its content as dictionary:
+Each resource has a `as_dict()` method to export its content as dictionary:
 
 ```python
->>> instant_crush.asdict()
+>>> instant_crush.as_dict()
 {'id': 67238732,
  'readable': True,
  'title': 'Instant Crush',
