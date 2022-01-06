@@ -1,7 +1,6 @@
-# Deezer Python\'s documentation
+# Deezer Python documentation
 
-Deezer-Python: a friendly wrapper around the [Deezer
-API](http://developers.deezer.com/api).
+Deezer-Python: a friendly wrapper around the [Deezer API](http://developers.deezer.com/api).
 
 ```{toctree}
 :caption: Installation & Usage

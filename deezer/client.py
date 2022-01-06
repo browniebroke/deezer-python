@@ -133,7 +133,7 @@ class Client:
         :param path: The path to make the API call to (e.g. 'artist/1234').
         :param parent: A reference to the parent resource, to avoid fetching again.
         :param resource_type: The resource class to use as top level.
-        :param params: Query parameters to add the the request
+        :param params: Query parameters to add to the request
         """
         if self.access_token is not None:
             params["access_token"] = str(self.access_token)
@@ -183,7 +183,7 @@ class Client:
         """
         Get overall charts for tracks, albums, artists and playlists.
 
-        Combines charts of several resources in one endpoint.
+        Combine charts of several resources in one endpoint.
 
         :returns: a :class:`~deezer.resources.Chart` instance.
         """
@@ -271,7 +271,7 @@ class Client:
 
     def get_radio(self, radio_id: int) -> Radio:
         """
-        Get the radio with the given ID..
+        Get the radio with the given ID.
 
         :returns: a :class:`~deezer.resources.Radio` object
         """
@@ -458,7 +458,7 @@ class Client:
 
         :param query: the query to search for, this is directly passed as q query.
         :param strict: whether to disable fuzzy search and enable strict mode.
-        :param ordering: see Deezer's API docs for possible values.
+        :param ordering: see Deezer API docs for possible values.
         :param artist: parameter for the advanced search feature.
         :param album: parameter for the advanced search feature.
         :param track: parameter for the advanced search feature.
@@ -501,7 +501,7 @@ class Client:
 
         :param query: the query to search for, this is directly passed as q query.
         :param strict: whether to disable fuzzy search and enable strict mode.
-        :param ordering: see Deezer's API docs for possible values.
+        :param ordering: see Deezer API docs for possible values.
         :param index: the offset of the first object you want to get.
         :param limit: the maximum number of objects to return.
         :return: list of :class:`~deezer.resources.Album` instances.
@@ -528,7 +528,7 @@ class Client:
 
         :param query: the query to search for, this is directly passed as q query.
         :param strict: whether to disable fuzzy search and enable strict mode.
-        :param ordering: see Deezer's API docs for possible values.
+        :param ordering: see Deezer API docs for possible values.
         :param index: the offset of the first object you want to get.
         :param limit: the maximum number of objects to return.
         :return: list of :class:`~deezer.resources.Album` instances.
