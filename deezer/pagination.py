@@ -5,20 +5,7 @@ import deezer
 
 
 class PaginatedList:
-    """
-    This class abstracts paginated list from the API.
-
-    You can simply enumerate through instances of this class::
-        for album in artist.get_albums():
-            print(album.title)
-
-    If you want to know the total number of items in the list::
-        print(artist.get_albums().total)
-        len(artist.get_albums())
-
-    You can also index them::
-        second_album = artist.get_albums()[1]
-    """
+    """Abstract paginated response from the API and make them more Pythonic."""
 
     # Lifted and adapted from PyGithub:
     # https://github.com/PyGithub/PyGithub/blob/master/github/PaginatedList.py
@@ -85,6 +72,7 @@ class PaginatedList:
 
     @property
     def total(self) -> int:
+        """The total number of items in the list, mirroring what Deezer returns."""
         if self.__total is None:
             params = self.__base_params.copy()
             params["limit"] = 1
