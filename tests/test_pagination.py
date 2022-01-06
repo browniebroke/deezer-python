@@ -32,7 +32,7 @@ class TestPaginatedList:
     @pytest.mark.parametrize(
         ("index", "title"),
         [
-            (2, "TRON: Legacy Reconfigured"),
+            (4, "Alive 2007"),
             (30, "One More Time"),
         ],
     )
