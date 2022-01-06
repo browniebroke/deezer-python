@@ -1,6 +1,6 @@
 """
 Implements an async tornado client class to query the
-`Deezer API <http://developers.deezer.com/api>`_
+`Deezer API <https://developers.deezer.com/api>`_
 """
 import json
 from typing import Optional, Type
@@ -48,7 +48,7 @@ class AsyncClient(Client):
         :param path: The path to make the API call to (e.g. 'artist/1234').
         :param parent: A reference to the parent resource, to avoid fetching again.
         :param resource_type: The resource class to use as top level.
-        :param params: Query parameters to add the the request
+        :param params: Query parameters to add to the request
         """
         if self.access_token is not None:
             params["access_token"] = str(self.access_token)

@@ -1,9 +1,8 @@
 # Asynchronous client
 
-You also can use an
-{class}`AsyncClient <deezer.contrib.tornado.AsyncClient>` with tornado, which requires an optional dependency. You should install with `pip install deezer-python[tornado]`.
+You also can use an {class}`AsyncClient <deezer.contrib.tornado.AsyncClient>` with tornado, which requires an optional dependency. You should install with `pip install deezer-python[tornado]`.
 
-Then, making a request would look like this:
+Then, doing a request would look like this:
 
 ```python
 >>> from tornado.gen import coroutine
@@ -21,6 +20,4 @@ Then, making a request would look like this:
 Monkey Business
 ```
 
-The {class}`AsyncClient <deezer.contrib.tornado.AsyncClient>` implements the same methods as the main
-{class}`Client <deezer.client.Client>` class
-and would return the same resources.
+The {class}`AsyncClient <deezer.contrib.tornado.AsyncClient>` implements the same methods as the main {class}`Client <deezer.client.Client>` class and would return the same resources.
