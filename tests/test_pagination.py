@@ -19,6 +19,7 @@ class TestPaginatedList:
 
     def test_total(self, daft_punk_albums):
         assert daft_punk_albums.total == 32
+        assert len(daft_punk_albums) == 32
 
     def test_iterate(self, daft_punk_albums):
         iter_count = 0

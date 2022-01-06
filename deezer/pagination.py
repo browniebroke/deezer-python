@@ -14,6 +14,7 @@ class PaginatedList:
 
     If you want to know the total number of items in the list::
         print(artist.get_albums().total)
+        len(artist.get_albums())
 
     You can also index them::
         second_album = artist.get_albums()[1]
@@ -46,6 +47,9 @@ class PaginatedList:
         yield from self.__elements
         while self._could_grow():
             yield from self._grow()
+
+    def __len__(self):
+        return self.total
 
     def _could_grow(self):
         return self.__next_path is not None
