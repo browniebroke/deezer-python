@@ -1,4 +1,5 @@
 from typing import List
+from urllib.parse import parse_qs, urlparse
 
 import deezer
 
@@ -13,24 +14,13 @@ class PaginatedList:
 
     If you want to know the total number of items in the list::
         print(artist.get_albums().total)
+
+    You can also index them::
+        second_album = artist.get_albums()[1]
     """
 
     # Lifted and adapted from PyGithub:
     # https://github.com/PyGithub/PyGithub/blob/master/github/PaginatedList.py
-
-    # TODO: check if possible with REST API:
-    #
-    # You can also index them or take slices::
-    #     second_album = artist.get_albums()[1]
-    #     first_ten_albums = artist.get_albums()[:10]
-    #
-    # If you want to iterate in reversed order, just do::
-    #     for album in artist.get_albums().reversed:
-    #         print(album.title)
-    #
-    # And if you really need it, you can explicitly access a specific page::
-    #     some_albums = artist.get_albums().get_page(0)
-    #     some_other_albums = user.get_albums().get_page(3)
 
     def __init__(
         self,
@@ -42,9 +32,14 @@ class PaginatedList:
         self.__container = container
         self.__client = container.client
         self.__base_path = base_path
-        self.__params = params
+        self.__base_params = params
         self.__next_path = base_path
+        self.__next_params = params
         self.__total = None
+
+    def __getitem__(self, index: int) -> "deezer.Resource":
+        self._fetch_to_index(index)
+        return self.__elements[index]
 
     def __iter__(self):
         yield from self.__elements
@@ -65,22 +60,27 @@ class PaginatedList:
             self.__next_path,
             parent=self.__container,
             paginate_list=True,
-            **self.__params,
+            **self.__next_params,
         )
         data = response_payload["data"]
         self.__next_path = None
 
         if data:
             next_url = response_payload.get("next", None)
-            self.__next_path = (
-                next_url.replace(f"{self.__client.base_url}/", "") if next_url else None
-            )
+            if next_url:
+                url_bits = urlparse(next_url)
+                self.__next_path = url_bits.path.lstrip("/")
+                self.__next_params = parse_qs(url_bits.query)
         return data
+
+    def _fetch_to_index(self, index: int):
+        while len(self.__elements) <= index and self._could_grow():
+            self._grow()
 
     @property
     def total(self) -> int:
         if self.__total is None:
-            params = self.__params.copy()
+            params = self.__base_params.copy()
             params["limit"] = 1
             response_payload = self.__client.request(
                 "GET",
