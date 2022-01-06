@@ -26,7 +26,6 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.6"
 requests = "^2.18"
-tornado = {version = "^6.0.4", optional = true}
 
 # Docs deps:
 myst-parser = {version = "^0.16", optional = true}
@@ -35,7 +34,6 @@ sphinx-autobuild = {version = "^2021.0.0", optional = true}
 sphinx-rtd-theme = {version = "^1.0", optional = true}
 
 [tool.poetry.extras]
-tornado = ["tornado"]
 docs = [
     "myst-parser",
     "sphinx",
@@ -57,7 +55,6 @@ pytest-vcr = "^1.0.2"
 pyupgrade = { version = "^2.7.4", python = "^3.6.1" }
 tox = "^3.20.1"
 vcrpy = "^4.1.1"
-pytest-tornado = "^0.8.1"
 
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=deezer"

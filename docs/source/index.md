@@ -8,7 +8,6 @@ Deezer-Python: a friendly wrapper around the [Deezer API](http://developers.deez
 
 installation
 usage
-asynchronous
 ```
 
 ```{toctree}
