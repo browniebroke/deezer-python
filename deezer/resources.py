@@ -91,8 +91,9 @@ class Resource:
         **kwargs,
     ):
         return PaginatedList(
-            container=self,
+            client=self.client,
             base_path=f"{self.type}/{self.id}/{relation}",
+            parent=self,
             **kwargs,
         )
 
