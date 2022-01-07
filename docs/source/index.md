@@ -13,7 +13,7 @@ asynchronous
 
 ```{toctree}
 :caption: API Reference
-:maxdepth: 2
+:maxdepth: 3
 
 api_reference/toc
 ```

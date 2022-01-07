@@ -201,5 +201,11 @@ man_pages = [
 
 suppress_warnings = ["image.nonlocal_uri"]
 
+extlinks = {
+    "deezer-api": ("https://developers.deezer.com/api/%s", None),
+}
 
-extlinks = {"deezer-api": ("https://developers.deezer.com/api/%s", None)}
+# Autodoc options
+autodoc_member_order = "bysource"
+
+autodoc_typehints = "description"
