@@ -54,17 +54,14 @@ class PaginatedList:
             paginate_list=True,
             **self.__next_params,
         )
-        data = response_payload["data"]
         self.__next_path = None
-
-        if data:
-            self.__total = response_payload.get("total")
-            next_url = response_payload.get("next", None)
-            if next_url:
-                url_bits = urlparse(next_url)
-                self.__next_path = url_bits.path.lstrip("/")
-                self.__next_params = parse_qs(url_bits.query)
-        return data
+        self.__total = response_payload.get("total")
+        next_url = response_payload.get("next", None)
+        if next_url:
+            url_bits = urlparse(next_url)
+            self.__next_path = url_bits.path.lstrip("/")
+            self.__next_params = parse_qs(url_bits.query)
+        return response_payload["data"]
 
     def _fetch_to_index(self, index: int):
         while len(self.__elements) <= index and self._could_grow():
