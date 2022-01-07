@@ -87,11 +87,13 @@ class Resource:
 
 class Album(Resource):
     """
-    To work with an :deezer-api:`album object <album>`.
+    To work with an album object.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <album>`
+    for more details about each field.
     """
 
+    id: int
     title: str
     upc: str
     link: str
@@ -102,6 +104,7 @@ class Album(Resource):
     cover_big: str
     cover_xl: str
     md5_image: str
+
     genre_id: int
     genres: List["Genre"]
     label: str
@@ -111,12 +114,15 @@ class Album(Resource):
     release_date: dt.date
     record_type: str
     available: bool
-    alternative: object
+
+    alternative: "Album"
     tracklist: str
     explicit_lyrics: bool
+
     explicit_content_lyrics: int
     explicit_content_cover: int
     contributors: List["Artist"]
+
     artist: "Artist"
 
     _parse_release_date = staticmethod(parse_date)
@@ -160,11 +166,13 @@ class Album(Resource):
 
 class Artist(Resource):
     """
-    To access an :deezer-api:`artist object <artist>`.
+    To work with Deezer artist objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <artist>`
+    for more details about each field.
     """
 
+    id: int
     name: str
     link: str
     share: str
@@ -227,11 +235,13 @@ class Artist(Resource):
 
 class Genre(Resource):
     """
-    To access an :deezer-api:`genre object <genre>`.
+    To work with Deezer genre objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <genre>`
+    for more details about each field.
     """
 
+    id: int
     name: str
     picture: str
     picture_small: str
@@ -274,11 +284,13 @@ class Genre(Resource):
 
 class Track(Resource):
     """
-    To access an :deezer-api:`track object <track>`.
+    To work with Deezer track objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <track>`
+    for more details about each field.
     """
 
+    id: int
     readable: bool
     title: str
     title_short: str
@@ -327,11 +339,13 @@ class Track(Resource):
 
 class User(Resource):
     """
-    To access an :deezer-api:`user object <user>`.
+    To work with Deezer user objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <user>`
+    for more details about each field.
     """
 
+    id: int
     name: str
     lastname: Optional[str]
     firstname: Optional[str]
@@ -423,11 +437,13 @@ class User(Resource):
 
 class Playlist(Resource):
     """
-    To access an :deezer-api:`playlist object <playlist>`.
+    To work with Deezer playlist objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <playlist>`
+    for more details about each field.
     """
 
+    id: int
     title: str
     description: str
     duration: int
@@ -482,11 +498,13 @@ class Playlist(Resource):
 
 class Radio(Resource):
     """
-    To access an :deezer-api:`radio object <radio>`.
+    To work with Deezer radio objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <radio>`
+    for more details about each field.
     """
 
+    id: int
     title: str
     description: str
     share: str
@@ -517,9 +535,10 @@ class Radio(Resource):
 
 class Chart(Resource):
     """
-    To access an :deezer-api:`chart object <chart>`.
+    To work with Deezer chart objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <chart>`
+    for more details about each field.
     """
 
     type = "chart"
@@ -590,11 +609,13 @@ class Chart(Resource):
 
 class Podcast(Resource):
     """
-    To access an :deezer-api:`podcast object <podcast>`.
+    To work with Deezer podcast objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <podcast>`
+    for more details about each field.
     """
 
+    id: int
     title: str
     description: str
     available: bool
@@ -626,11 +647,13 @@ class Podcast(Resource):
 
 class Episode(Resource):
     """
-    To access an :deezer-api:`episode object <episode>`.
+    To work with Deezer episode objects.
 
-    All the fields documented on Deezer are accessible by as class attributes.
+    Check the :deezer-api:`Deezer documentation <episode>`
+    for more details about each field.
     """
 
+    id: int
     title: str
     description: str
     available: bool
