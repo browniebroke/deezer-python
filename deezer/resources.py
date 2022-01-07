@@ -155,7 +155,8 @@ class Album(Resource):
         """
         Get a list of album's tracks.
 
-        :returns: list of :class:`Track <deezer.resources.Track>` instances
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Track <deezer.resources.Track>`.
         """
         return self.get_paginated_list("tracks", **kwargs)
 
