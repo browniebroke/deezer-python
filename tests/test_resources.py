@@ -159,53 +159,26 @@ class TestRadio:
 
 
 class TestGenre:
-    def test_genre_attributes(self, client):
-        """
-        Test genre resource
-        """
-        genre = client.get_genre(106)
-        assert hasattr(genre, "name")
-        assert isinstance(genre, deezer.resources.Genre)
-        assert repr(genre) == "<Genre: Electro>"
+    @pytest.fixture
+    def electro(self, client):
+        return client.get_genre(106)
 
-    def test_genre_artists(self, client):
-        """
-        Test artists method of genre resource
-        """
-        genre = client.get_genre(106)
+    def test_attributes(self, electro):
+        assert hasattr(electro, "name")
+        assert isinstance(electro, deezer.resources.Genre)
+        assert repr(electro) == "<Genre: Electro>"
 
-        # tests list
-        artists = genre.get_artists()
-        assert isinstance(artists, list)
+    def test_get_artists(self, electro):
+        artists = electro.get_artists()
+        assert isinstance(artists, deezer.pagination.PaginatedList)
         artist = artists[0]
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Major Lazer>"
 
-        # tests generator
-        artists_generator = genre.iter_artists()
-        assert type(artists_generator) == GeneratorType
-        artist = next(artists_generator)
-        assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Major Lazer>"
-
-    def test_genre_radios(self, client):
-        """
-        Test radios method of genre resource
-        """
-        genre = client.get_genre(106)
-
-        # tests list
-        radios = genre.get_radios()
-        assert isinstance(radios, list)
+    def test_get_radios(self, electro):
+        radios = electro.get_radios()
+        assert isinstance(radios, deezer.pagination.PaginatedList)
         radio = radios[0]
-        assert isinstance(radio, deezer.resources.Radio)
-        assert repr(radio) == "<Radio: Electro Swing>"
-        assert type(genre.iter_radios()) == GeneratorType
-
-        # tests generator
-        radios_generator = genre.iter_radios()
-        assert type(radios_generator) == GeneratorType
-        radio = next(radios_generator)
         assert isinstance(radio, deezer.resources.Radio)
         assert repr(radio) == "<Radio: Electro Swing>"
 
