@@ -328,60 +328,26 @@ class TestUser:
 
 
 class TestPlaylist:
-    def test_get_tracks(self, client):
-        """
-        Test tracks method of playlist resource
-        """
-        playlist = client.get_playlist(12345)
+    @pytest.fixture
+    def playlist(self, client):
+        return client.get_playlist(9200461)
 
-        # tests list
+    def test_attributes(self, playlist):
+        assert playlist.title == "Lounge Soirée"
+
+    def test_get_tracks(self, playlist):
         tracks = playlist.get_tracks()
-        assert isinstance(tracks, list)
-        assert len(tracks) == 4
-        assert all(isinstance(track, deezer.resources.Track) for track in tracks)
-        assert tracks[0].title == "Skanky Panky"
+        assert isinstance(tracks, deezer.pagination.PaginatedList)
+        first_track = tracks[0]
+        assert isinstance(first_track, deezer.resources.Track)
+        assert first_track.title == "Otherwise"
 
-        # tests generator
-        tracks_generator = playlist.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        playlist_tracks = list(tracks_generator)
-        # this is weird (the length being different), it seems there's a sort of
-        # partially-hidden track that only shows up when using the method in
-        # iter_tracks
-        assert len(playlist_tracks) == 5
-        assert all(
-            isinstance(track, deezer.resources.Track) for track in playlist_tracks
-        )
-        assert playlist_tracks[0].title == "Skanky Panky"
-
-    def test_get_fans(self, client):
-        """
-        Test fans method of playlist resource
-        """
-        playlist = client.get_playlist(6512)
-
-        # tests list
+    def test_get_fans(self, playlist):
         fans = playlist.get_fans()
-        assert isinstance(fans, list)
-        assert len(fans) == 3
-        for fan in fans:
-            assert isinstance(fan, deezer.resources.User)
-        assert fans[0].name == "laurentky"
-
-        # tests generator
-        fans_generator = playlist.iter_fans()
-        assert type(fans_generator) == GeneratorType
-        fan = next(fans_generator)
-        assert fan.name == "laurentky"
-        count = 1
-        while 1:
-            assert isinstance(fan, deezer.resources.User)
-            try:
-                fan = next(fans_generator)
-                count += 1
-            except StopIteration:
-                break
-        assert count == 3
+        assert isinstance(fans, deezer.pagination.PaginatedList)
+        first_fan = fans[0]
+        assert isinstance(first_fan, deezer.resources.User)
+        assert first_fan.name == "Fay22"
 
 
 class TestPodcast:
