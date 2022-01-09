@@ -414,7 +414,7 @@ class Playlist(Resource):
     checksum: str
     creator: User
 
-    def get_tracks(self, **kwargs):
+    def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
         Get tracks from a playlist.
 
@@ -423,7 +423,7 @@ class Playlist(Resource):
         """
         return self.get_paginated_list("tracks", **kwargs)
 
-    def get_fans(self, **kwargs):
+    def get_fans(self, **kwargs) -> PaginatedList[User]:
         """
         Get fans from a playlist.
 
