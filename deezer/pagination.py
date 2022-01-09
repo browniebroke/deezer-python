@@ -1,10 +1,12 @@
-from typing import List, Optional
+from typing import Generator, Generic, List, Optional, TypeVar
 from urllib.parse import parse_qs, urlparse
 
 import deezer
 
+ResourceType = TypeVar("ResourceType")
 
-class PaginatedList:
+
+class PaginatedList(Generic[ResourceType]):
     """Abstract paginated response from the API and make them more Pythonic."""
 
     # Lifted and adapted from PyGithub:
@@ -17,7 +19,7 @@ class PaginatedList:
         parent: Optional["deezer.Resource"] = None,
         **params,
     ):
-        self.__elements: List["deezer.Resource"] = []
+        self.__elements: List[ResourceType] = []
         self.__client = client
         self.__base_path = base_path
         self.__base_params = params
@@ -26,27 +28,27 @@ class PaginatedList:
         self.__parent = parent
         self.__total = None
 
-    def __getitem__(self, index: int) -> "deezer.Resource":
+    def __getitem__(self, index: int) -> ResourceType:
         self._fetch_to_index(index)
         return self.__elements[index]
 
-    def __iter__(self):
+    def __iter__(self) -> Generator[ResourceType, None, None]:
         yield from self.__elements
         while self._could_grow():
             yield from self._grow()
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.total
 
-    def _could_grow(self):
+    def _could_grow(self) -> bool:
         return self.__next_path is not None
 
-    def _grow(self):
+    def _grow(self) -> List[ResourceType]:
         new_elements = self._fetch_next_page()
         self.__elements.extend(new_elements)
         return new_elements
 
-    def _fetch_next_page(self):
+    def _fetch_next_page(self) -> List[ResourceType]:
         response_payload = self.__client.request(
             "GET",
             self.__next_path,
