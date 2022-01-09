@@ -11,6 +11,7 @@ from deezer.exceptions import (
     DeezerHTTPError,
     DeezerUnknownResource,
 )
+from deezer.pagination import PaginatedList
 from deezer.resources import (
     Album,
     Artist,
@@ -166,6 +167,9 @@ class Client:
             resource_type=resource_type,
             paginate_list=paginate_list,
         )
+
+    def _get_paginated_list(self, path):
+        return PaginatedList(client=self, base_path=path)
 
     def get_album(self, album_id: int) -> Album:
         """
@@ -324,7 +328,7 @@ class Client:
         user_id_str = str(user_id) if user_id else "me"
         return self.request("GET", f"user/{user_id_str}")
 
-    def get_user_albums(self, user_id: Optional[int] = None) -> List[Album]:
+    def get_user_albums(self, user_id: Optional[int] = None) -> PaginatedList:
         """
         Get the favourites albums for the given user_id if provided or current user if not.
 
@@ -332,7 +336,7 @@ class Client:
         :return: a list of :class:`~deezer.resources.Album` instances.
         """
         user_id_str = str(user_id) if user_id else "me"
-        return self.request("GET", f"user/{user_id_str}/albums")
+        return self._get_paginated_list(f"user/{user_id_str}/albums")
 
     def add_user_album(self, album_id: int) -> bool:
         """

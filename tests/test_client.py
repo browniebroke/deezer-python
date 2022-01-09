@@ -187,8 +187,8 @@ class TestClient:
     )
     def test_get_user_albums(self, client_token, args):
         user_albums = client_token.get_user_albums(*args)
-        assert len(user_albums) == 2
         assert all(isinstance(a, deezer.resources.Album) for a in user_albums)
+        assert len(user_albums) == 2
         assert user_albums[0].title == "OK Cowboy"
         assert user_albums[1].title == "Tank (Remastered)"
 
