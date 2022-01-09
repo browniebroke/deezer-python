@@ -483,59 +483,31 @@ class Chart(Resource):
 
     def get_tracks(self, **kwargs):
         """
-        :returns: list of :class:`Track <deezer.resources.Track>` instances
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Track <deezer.resources.Track>` instances
         """
-        return self.get_relation("tracks", **kwargs)
-
-    def iter_tracks(self, **kwargs):
-        """
-        Iterate tracks in the radio
-
-        :returns: iterator of :class:`Track <deezer.resources.Track>` instances
-        """
-        return self.iter_relation("tracks", **kwargs)
+        return self.get_paginated_list("tracks", **kwargs)
 
     def get_albums(self, **kwargs):
         """
-        :returns: list of :class:`Album <deezer.resources.Album>` instances
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Album <deezer.resources.Album>` instances
         """
-        return self.get_relation("albums", **kwargs)
-
-    def iter_albums(self, **kwargs):
-        """
-        Iterate artist's albums.
-
-        :returns: iterator of :class:`Album <deezer.resources.Album>` instances
-        """
-        return self.iter_relation("albums", **kwargs)
+        return self.get_paginated_list("albums", **kwargs)
 
     def get_artists(self, **kwargs):
         """
-        :returns: list of :class:`Artist <deezer.resources.Artist>` instances
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Artist <deezer.resources.Artist>` instances
         """
-        return self.get_relation("artists", **kwargs)
-
-    def iter_artists(self, **kwargs):
-        """
-        Iterate artists for a genre.
-
-        :returns: iterator of :class:`Artist <deezer.resources.Artist>` instances
-        """
-        return self.iter_relation("artists", **kwargs)
+        return self.get_paginated_list("artists", **kwargs)
 
     def get_playlists(self, **kwargs):
         """
-        :returns: list of :class:`Playlist <deezer.resources.Playlist>` instances
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Playlist <deezer.resources.Playlist>` instances
         """
-        return self.get_relation("playlists", **kwargs)
-
-    def iter_playlists(self, **kwargs):
-        """
-        Iterate playlist for a genre.
-
-        :returns: iterator of :class:`Playlist <deezer.resources.Playlist>` instances
-        """
-        return self.iter_relation("playlists", **kwargs)
+        return self.get_paginated_list("playlists", **kwargs)
 
 
 class Podcast(Resource):
@@ -563,17 +535,10 @@ class Podcast(Resource):
         """
         Get episodes from a podcast
 
-        :returns: list of :class:`Episode <deezer.resources.Episode>` instances
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Episode <deezer.resources.Episode>` instances
         """
-        return self.get_relation("episodes", **kwargs)
-
-    def iter_episodes(self, **kwargs):
-        """
-        Iterate over episodes of a podcast
-
-        :returns: list of :class:`Episode <deezer.resources.Episode>` instances
-        """
-        return self.iter_relation("episodes", **kwargs)
+        return self.get_paginated_list("episodes", **kwargs)
 
 
 class Episode(Resource):

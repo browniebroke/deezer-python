@@ -1,5 +1,3 @@
-from types import GeneratorType
-
 import pytest
 
 import deezer
@@ -174,57 +172,29 @@ class TestChart:
 
     def test_get_tracks(self, chart):
         tracks = chart.get_tracks()
-        assert isinstance(tracks, list)
+        assert isinstance(tracks, deezer.pagination.PaginatedList)
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: Bad Habits>"
-
-    def test_iter_tracks(self, chart):
-        tracks_generator = chart.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        track = next(tracks_generator)
         assert isinstance(track, deezer.resources.Track)
         assert repr(track) == "<Track: Bad Habits>"
 
     def test_get_artists(self, chart):
         artists = chart.get_artists()
-        assert isinstance(artists, list)
+        assert isinstance(artists, deezer.pagination.PaginatedList)
         artist = artists[0]
-        assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Kanye West>"
-
-    def test_iter_artists(self, chart):
-        artists_generator = chart.iter_artists()
-        assert type(artists_generator) == GeneratorType
-        artist = next(artists_generator)
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Kanye West>"
 
     def test_get_albums(self, chart):
         albums = chart.get_albums()
-        assert isinstance(albums, list)
+        assert isinstance(albums, deezer.pagination.PaginatedList)
         album = albums[0]
-        assert isinstance(album, deezer.resources.Album)
-        assert repr(album) == "<Album: Music Of The Spheres>"
-
-    def test_iter_albums(self, chart):
-        albums_generator = chart.iter_albums()
-        assert type(albums_generator) == GeneratorType
-        album = next(albums_generator)
         assert isinstance(album, deezer.resources.Album)
         assert repr(album) == "<Album: Music Of The Spheres>"
 
     def test_get_playlists(self, chart):
         playlists = chart.get_playlists()
-        assert isinstance(playlists, list)
+        assert isinstance(playlists, deezer.pagination.PaginatedList)
         playlist = playlists[0]
-        assert isinstance(playlist, deezer.resources.Playlist)
-        assert repr(playlist) == "<Playlist: Brand New UK>"
-
-    def test_iter_playlists(self, chart):
-        playlists_generator = chart.iter_playlists()
-        assert type(playlists_generator) == GeneratorType
-        playlist = next(playlists_generator)
         assert isinstance(playlist, deezer.resources.Playlist)
         assert repr(playlist) == "<Playlist: Brand New UK>"
 
@@ -288,33 +258,14 @@ class TestPlaylist:
 
 class TestPodcast:
     def test_get_episodes(self, client):
-        """
-        Test episodes method of podcast resource
-        """
         podcast = client.get_podcast(699612)
 
-        # tests list
         episodes = podcast.get_episodes()
-        assert isinstance(episodes, list)
-        assert len(episodes) == 12
-        for episode in episodes:
-            assert isinstance(episode, deezer.resources.Episode)
-        assert episodes[0].title == "Episode 9: Follow the money"
-
-        # tests generator
-        episodes_generator = podcast.iter_episodes()
-        assert type(episodes_generator) == GeneratorType
-        episode = next(episodes_generator)
+        assert isinstance(episodes, deezer.pagination.PaginatedList)
+        episode = episodes[0]
+        assert isinstance(episode, deezer.resources.Episode)
         assert episode.title == "Episode 9: Follow the money"
-        count = 1
-        while 1:
-            assert isinstance(episode, deezer.resources.Episode)
-            try:
-                episode = next(episodes_generator)
-                count += 1
-            except StopIteration:
-                break
-        assert count == 12
+        assert len(episodes) == 12
 
 
 class TestEpisode:
