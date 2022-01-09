@@ -453,21 +453,15 @@ class Radio(Resource):
     tracklist: str
     md5_image: str
 
-    def get_tracks(self, **kwargs):
+    def get_tracks(self) -> List[Track]:
         """
-        Get first 40 tracks in the radio
+        Get first 40 tracks in the radio.
 
-        :returns: list of :class:`Track <deezer.resources.Track>` instances
-        """
-        return self.get_relation("tracks", **kwargs)
+        Note that this endpoint is NOT paginated.
 
-    def iter_tracks(self, **kwargs):
+        :returns: a list of :class:`Track <deezer.resources.Track>` instances.
         """
-        Iterate tracks in the radio
-
-        :returns: iterator of :class:`Track <deezer.resources.Track>` instances
-        """
-        return self.iter_relation("tracks", **kwargs)
+        return self.get_relation("tracks")
 
 
 class Chart(Resource):
