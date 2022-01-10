@@ -263,13 +263,14 @@ class Client:
         """
         return self.request("GET", f"genre/{genre_id}")
 
-    def list_genres(self) -> List[Genre]:
+    def list_genres(self) -> PaginatedList[Genre]:
         """
         List musical genres.
 
-        :returns: a list of :class:`~deezer.resources.Genre` objects.
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.resources.Genre` objects.
         """
-        return self.request("GET", "genre")
+        return self._get_paginated_list("genre")
 
     def get_playlist(self, playlist_id: int) -> Playlist:
         """
@@ -295,21 +296,23 @@ class Client:
         """
         return self.request("GET", f"radio/{radio_id}")
 
-    def list_radios(self) -> List[Radio]:
+    def list_radios(self) -> PaginatedList[Radio]:
         """
         List radios.
 
-        :returns: a list of :class:`~deezer.resources.Radio` objects
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.resources.Radio` objects.
         """
-        return self.request("GET", "radio")
+        return self._get_paginated_list("radio")
 
-    def get_radios_top(self):
+    def get_radios_top(self) -> PaginatedList[Radio]:
         """
-        Get the top radios (5 radios).
+        Get the top radios.
 
-        :returns: a :class:`~deezer.resources.Radio` object
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.resources.Radio` objects.
         """
-        return self.request("GET", "radio/top")
+        return self._get_paginated_list("radio/top")
 
     def get_track(self, track_id: int) -> Track:
         """
@@ -356,15 +359,16 @@ class Client:
         """
         return self.request("DELETE", "user/me/albums", album_id=album_id)
 
-    def get_user_artists(self, user_id: Optional[int] = None) -> List[Artist]:
+    def get_user_artists(self, user_id: Optional[int] = None) -> PaginatedList[Artist]:
         """
         Get the favourites artists for the given user_id if provided or current user if not.
 
         :param user_id: the user ID to get favourites artists.
-        :return: a list of :class:`~deezer.resources.Artist` instances.
+        :return: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.resources.Artist` instances.
         """
         user_id_str = str(user_id) if user_id else "me"
-        return self.request("GET", f"user/{user_id_str}/artists")
+        return self._get_paginated_list(f"user/{user_id_str}/artists")
 
     def add_user_artist(self, artist_id: int) -> bool:
         """
@@ -384,23 +388,25 @@ class Client:
         """
         return self.request("DELETE", "user/me/artists", artist_id=artist_id)
 
-    def get_user_history(self) -> List[Track]:
+    def get_user_history(self) -> PaginatedList[Track]:
         """
         Returns a list of the recently played tracks for the current user.
 
-        :return: a list of :class:`~deezer.resources.Track` instances.
+        :return: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.resources.Track` instances.
         """
-        return self.request("GET", "user/me/history")
+        return self._get_paginated_list("user/me/history")
 
-    def get_user_tracks(self, user_id: Optional[int] = None) -> List[Track]:
+    def get_user_tracks(self, user_id: Optional[int] = None) -> PaginatedList[Track]:
         """
         Get the favourites tracks for the given user_id if provided or current user if not.
 
         :param user_id: the user ID to get favourites tracks.
-        :return: a list of :class:`~deezer.resources.Track` instances.
+        :return: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.resources.Track` instances.
         """
         user_id_str = str(user_id) if user_id else "me"
-        return self.request("GET", f"user/{user_id_str}/tracks")
+        return self._get_paginated_list(f"user/{user_id_str}/tracks")
 
     def add_user_track(self, track_id: int) -> bool:
         """

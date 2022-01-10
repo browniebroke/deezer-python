@@ -109,7 +109,7 @@ class TestClient:
     def test_list_genres(self, client):
         """Test methods to list several genres"""
         genres = client.list_genres()
-        assert isinstance(genres, list)
+        assert isinstance(genres, deezer.pagination.PaginatedList)
         assert isinstance(genres[0], deezer.resources.Genre)
 
     def test_get_playlist(self, client):
@@ -145,12 +145,12 @@ class TestClient:
     def test_list_radios(self, client):
         """Test methods to list radios"""
         radios = client.list_radios()
-        assert isinstance(radios, list)
+        assert isinstance(radios, deezer.pagination.PaginatedList)
         assert isinstance(radios[0], deezer.resources.Radio)
 
     def test_get_radios_top(self, client):
         radios = client.get_radios_top()
-        assert isinstance(radios, list)
+        assert isinstance(radios, deezer.pagination.PaginatedList)
         assert isinstance(radios[0], deezer.resources.Radio)
 
     def test_get_track(self, client):
@@ -187,6 +187,7 @@ class TestClient:
     )
     def test_get_user_albums(self, client_token, args):
         user_albums = client_token.get_user_albums(*args)
+        assert isinstance(user_albums, deezer.pagination.PaginatedList)
         assert all(isinstance(a, deezer.resources.Album) for a in user_albums)
         assert len(user_albums) == 2
         assert user_albums[0].title == "OK Cowboy"
@@ -209,8 +210,9 @@ class TestClient:
     )
     def test_get_user_artists(self, client_token, args):
         user_artists = client_token.get_user_artists(*args)
-        assert len(user_artists) == 4
+        assert isinstance(user_artists, deezer.pagination.PaginatedList)
         assert all(isinstance(a, deezer.resources.Artist) for a in user_artists)
+        assert len(user_artists) == 4
         assert [a.name for a in user_artists] == [
             "Wax Tailor",
             "Vitalic",
@@ -228,8 +230,9 @@ class TestClient:
 
     def test_get_user_history(self, client_token):
         user_history = client_token.get_user_history()
-        assert len(user_history) == 3
+        assert isinstance(user_history, deezer.pagination.PaginatedList)
         assert all(isinstance(t, deezer.resources.Track) for t in user_history)
+        assert len(user_history) == 3
         assert [t.title for t in user_history] == [
             "Loverini",
             "Superchérie",
@@ -245,8 +248,9 @@ class TestClient:
     )
     def test_get_user_tracks(self, client_token, args):
         user_tracks = client_token.get_user_tracks(*args)
-        assert len(user_tracks) == 3
+        assert isinstance(user_tracks, deezer.pagination.PaginatedList)
         assert all(isinstance(a, deezer.resources.Track) for a in user_tracks)
+        assert len(user_tracks) == 3
         assert [t.title for t in user_tracks] == [
             "Flyover",
             "Poney Pt. I",
