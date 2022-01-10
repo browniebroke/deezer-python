@@ -67,24 +67,6 @@ class Resource:
             **kwargs,
         )
 
-    def iter_relation(self, relation, **kwargs):
-        """
-        Generic method to iterate relation from any resource.
-
-        Query the client with the object's known parameters
-        and try to retrieve the provided relation type. This
-        is not meant to be used directly by a client, it's more
-        a helper method for the child objects.
-        """
-        index = 0
-        while 1:
-            items = self.get_relation(relation, index=index, **kwargs)
-            yield from items
-
-            if len(items) == 0:
-                break
-            index += len(items)
-
     def get_paginated_list(
         self,
         relation: str,
