@@ -481,28 +481,28 @@ class Chart(Resource):
     playlists: List["Playlist"]
     podcasts: List["Podcast"]
 
-    def get_tracks(self, **kwargs):
+    def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
         :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
                   of :class:`Track <deezer.resources.Track>` instances
         """
         return self.get_paginated_list("tracks", **kwargs)
 
-    def get_albums(self, **kwargs):
+    def get_albums(self, **kwargs) -> PaginatedList[Album]:
         """
         :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
                   of :class:`Album <deezer.resources.Album>` instances
         """
         return self.get_paginated_list("albums", **kwargs)
 
-    def get_artists(self, **kwargs):
+    def get_artists(self, **kwargs) -> PaginatedList[Artist]:
         """
         :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
                   of :class:`Artist <deezer.resources.Artist>` instances
         """
         return self.get_paginated_list("artists", **kwargs)
 
-    def get_playlists(self, **kwargs):
+    def get_playlists(self, **kwargs) -> PaginatedList[Playlist]:
         """
         :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
                   of :class:`Playlist <deezer.resources.Playlist>` instances
@@ -531,7 +531,7 @@ class Podcast(Resource):
     picture_big: str
     picture_xl: str
 
-    def get_episodes(self, **kwargs):
+    def get_episodes(self, **kwargs) -> PaginatedList["Episode"]:
         """
         Get episodes from a podcast
 
