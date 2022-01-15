@@ -168,8 +168,8 @@ class Client:
             paginate_list=paginate_list,
         )
 
-    def _get_paginated_list(self, path):
-        return PaginatedList(client=self, base_path=path)
+    def _get_paginated_list(self, path, **params):
+        return PaginatedList(client=self, base_path=path, **params)
 
     def get_album(self, album_id: int) -> Album:
         """
@@ -432,8 +432,6 @@ class Client:
         query: str = "",
         strict: Optional[bool] = None,
         ordering: Optional[str] = None,
-        index: Optional[int] = None,
-        limit: Optional[int] = None,
         **advanced_params: Optional[Union[str, int]],
     ):
         optional_params = {}
@@ -441,19 +439,14 @@ class Client:
             optional_params["strict"] = "on"
         if ordering:
             optional_params["ordering"] = ordering
-        if index:
-            optional_params["index"] = index
-        if limit:
-            optional_params["limit"] = limit
         query_parts = []
         if query:
             query_parts.append(query)
         for param_name, param_value in advanced_params.items():
             if param_value:
                 query_parts.append(f'{param_name}:"{param_value}"')
-        return self.request(
-            "GET",
-            f"search/{path}" if path else "search",
+        return self._get_paginated_list(
+            path=f"search/{path}" if path else "search",
             q=" ".join(query_parts),
             **optional_params,
         )
@@ -471,8 +464,6 @@ class Client:
         dur_max: Optional[int] = None,
         bpm_min: Optional[int] = None,
         bpm_max: Optional[int] = None,
-        index: Optional[int] = None,
-        limit: Optional[int] = None,
     ):
         """
         Search tracks.
@@ -491,8 +482,6 @@ class Client:
         :param dur_max: parameter for the advanced search feature.
         :param bpm_min: parameter for the advanced search feature.
         :param bpm_max: parameter for the advanced search feature.
-        :param index: the offset of the first object you want to get.
-        :param limit: the maximum number of objects to return.
         :returns: a list of :class:`~deezer.resources.Track` instances.
         """
         return self._search(
@@ -508,8 +497,6 @@ class Client:
             dur_max=dur_max,
             bpm_min=bpm_min,
             bpm_max=bpm_max,
-            index=index,
-            limit=limit,
         )
 
     def search_albums(
@@ -517,17 +504,13 @@ class Client:
         query: str = "",
         strict: Optional[bool] = None,
         ordering: Optional[str] = None,
-        index: Optional[int] = None,
-        limit: Optional[int] = None,
-    ) -> List[Album]:
+    ) -> PaginatedList[Album]:
         """
         Search albums matching the given query.
 
         :param query: the query to search for, this is directly passed as q query.
         :param strict: whether to disable fuzzy search and enable strict mode.
         :param ordering: see Deezer API docs for possible values.
-        :param index: the offset of the first object you want to get.
-        :param limit: the maximum number of objects to return.
         :return: list of :class:`~deezer.resources.Album` instances.
         """
         return self._search(
@@ -535,8 +518,6 @@ class Client:
             query=query,
             strict=strict,
             ordering=ordering,
-            index=index,
-            limit=limit,
         )
 
     def search_artists(
@@ -544,17 +525,13 @@ class Client:
         query: str = "",
         strict: Optional[bool] = None,
         ordering: Optional[str] = None,
-        index: Optional[int] = None,
-        limit: Optional[int] = None,
-    ) -> List[Artist]:
+    ) -> PaginatedList[Artist]:
         """
         Search artists matching the given query.
 
         :param query: the query to search for, this is directly passed as q query.
         :param strict: whether to disable fuzzy search and enable strict mode.
         :param ordering: see Deezer API docs for possible values.
-        :param index: the offset of the first object you want to get.
-        :param limit: the maximum number of objects to return.
         :return: list of :class:`~deezer.resources.Album` instances.
         """
         return self._search(
@@ -562,6 +539,4 @@ class Client:
             query=query,
             strict=strict,
             ordering=ordering,
-            index=index,
-            limit=limit,
         )
