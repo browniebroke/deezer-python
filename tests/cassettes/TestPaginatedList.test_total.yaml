@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/artist/27/albums?limit=1
+  response:
+    body:
+      string: '{"data":[{"id":8244118,"title":"Human After All (Remixes)","link":"https:\/\/www.deezer.com\/album\/8244118","cover":"https:\/\/api.deezer.com\/album\/8244118\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f6a4dbf47cb8828c281ed4e63364f99e\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f6a4dbf47cb8828c281ed4e63364f99e\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f6a4dbf47cb8828c281ed4e63364f99e\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f6a4dbf47cb8828c281ed4e63364f99e\/1000x1000-000000-80-0-0.jpg","md5_image":"f6a4dbf47cb8828c281ed4e63364f99e","genre_id":113,"fans":29723,"release_date":"2005-03-20","record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/8244118\/tracks","explicit_lyrics":false,"type":"album"}],"total":32,"next":"https:\/\/api.deezer.com\/artist\/27\/albums?limit=1&index=1"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '977'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-64
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

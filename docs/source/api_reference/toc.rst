@@ -10,4 +10,5 @@ This is the auto-generated documentation for all the main modules in the library
     :maxdepth: 2
 
     client
+    pagination
     resources

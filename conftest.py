@@ -12,7 +12,7 @@ def client():
     return deezer.Client(  # nosec
         app_id="foo",
         app_secret="bar",
-        # This is to get human readable response output in VCR cassettes
+        # This is to get human-readable response output in VCR cassettes
         headers={"Accept-Encoding": "identity"},
     )
 
@@ -24,7 +24,7 @@ def client_token(client):
 
 
 def clean_response(response):
-    """Remove a few info from the response before writing cassettes."""
+    """Remove some info from the response before writing cassettes."""
     remove_headers = {"Set-Cookie", "Date", "P3P"}
     if isinstance(response["headers"], dict):
         # Normal client stores headers as dict

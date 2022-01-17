@@ -109,7 +109,7 @@ class TestClient:
     def test_list_genres(self, client):
         """Test methods to list several genres"""
         genres = client.list_genres()
-        assert isinstance(genres, list)
+        assert isinstance(genres, deezer.pagination.PaginatedList)
         assert isinstance(genres[0], deezer.resources.Genre)
 
     def test_get_playlist(self, client):
@@ -145,12 +145,12 @@ class TestClient:
     def test_list_radios(self, client):
         """Test methods to list radios"""
         radios = client.list_radios()
-        assert isinstance(radios, list)
+        assert isinstance(radios, deezer.pagination.PaginatedList)
         assert isinstance(radios[0], deezer.resources.Radio)
 
     def test_get_radios_top(self, client):
         radios = client.get_radios_top()
-        assert isinstance(radios, list)
+        assert isinstance(radios, deezer.pagination.PaginatedList)
         assert isinstance(radios[0], deezer.resources.Radio)
 
     def test_get_track(self, client):
@@ -187,8 +187,9 @@ class TestClient:
     )
     def test_get_user_albums(self, client_token, args):
         user_albums = client_token.get_user_albums(*args)
-        assert len(user_albums) == 2
+        assert isinstance(user_albums, deezer.pagination.PaginatedList)
         assert all(isinstance(a, deezer.resources.Album) for a in user_albums)
+        assert len(user_albums) == 2
         assert user_albums[0].title == "OK Cowboy"
         assert user_albums[1].title == "Tank (Remastered)"
 
@@ -209,8 +210,9 @@ class TestClient:
     )
     def test_get_user_artists(self, client_token, args):
         user_artists = client_token.get_user_artists(*args)
-        assert len(user_artists) == 4
+        assert isinstance(user_artists, deezer.pagination.PaginatedList)
         assert all(isinstance(a, deezer.resources.Artist) for a in user_artists)
+        assert len(user_artists) == 4
         assert [a.name for a in user_artists] == [
             "Wax Tailor",
             "Vitalic",
@@ -228,8 +230,9 @@ class TestClient:
 
     def test_get_user_history(self, client_token):
         user_history = client_token.get_user_history()
-        assert len(user_history) == 3
+        assert isinstance(user_history, deezer.pagination.PaginatedList)
         assert all(isinstance(t, deezer.resources.Track) for t in user_history)
+        assert len(user_history) == 3
         assert [t.title for t in user_history] == [
             "Loverini",
             "Superchérie",
@@ -245,8 +248,9 @@ class TestClient:
     )
     def test_get_user_tracks(self, client_token, args):
         user_tracks = client_token.get_user_tracks(*args)
-        assert len(user_tracks) == 3
+        assert isinstance(user_tracks, deezer.pagination.PaginatedList)
         assert all(isinstance(a, deezer.resources.Track) for a in user_tracks)
+        assert len(user_tracks) == 3
         assert [t.title for t in user_tracks] == [
             "Flyover",
             "Poney Pt. I",
@@ -264,28 +268,17 @@ class TestClient:
     def test_search_simple(self, client):
         """Test search method"""
         result = client.search("Soliloquy")
-        assert isinstance(result, list)
-        assert all(isinstance(r, deezer.resources.Track) for r in result)
-        assert result[0].title == "Soliloquy"
-
-    @pytest.mark.parametrize(
-        ("params", "expected_length"),
-        [
-            ({"limit": 2}, 2),
-            ({"limit": 3}, 3),
-            ({"limit": 4, "index": 1}, 4),
-        ],
-    )
-    def test_search_pagination(self, client, params, expected_length):
-        result = client.search("Billy Jean", **params)
-        assert isinstance(result, list)
-        assert len(result) <= expected_length
+        assert isinstance(result, deezer.PaginatedList)
+        first = result[0]
+        assert isinstance(first, deezer.Track)
+        assert first.title == "Soliloquy"
 
     def test_search_strict(self, client):
         result = client.search("Soliloquy", strict=True)
-        assert isinstance(result, list)
-        assert all(isinstance(r, deezer.resources.Track) for r in result)
-        assert result[0].title == "Soliloquy"
+        assert isinstance(result, deezer.PaginatedList)
+        first = result[0]
+        assert isinstance(first, deezer.Track)
+        assert first.title == "Soliloquy"
 
     @pytest.mark.parametrize(
         "ordering",
@@ -305,35 +298,38 @@ class TestClient:
     )
     def test_search_results_ordering(self, client, ordering):
         result = client.search("Soliloquy", ordering=ordering)
-        assert isinstance(result, list)
-        assert all(isinstance(r, deezer.resources.Track) for r in result)
-        assert result[0].title == "Soliloquy"
+        assert isinstance(result, deezer.PaginatedList)
+        first = result[0]
+        assert isinstance(first, deezer.Track)
+        assert first.title == "Soliloquy"
 
     def test_search_advanced_simple(self, client):
         """Test advanced search with one term"""
         result = client.search(artist="Lou Doillon")
-        assert isinstance(result, list)
+        assert isinstance(result, deezer.PaginatedList)
         assert result[0].title == "Too much"
 
     def test_search_advanced_multiple(self, client):
         """Test advanced search with two term"""
         result = client.search(artist="Lou Doillon", album="Lay Low")
-        assert isinstance(result, list)
+        assert isinstance(result, deezer.PaginatedList)
         assert result[0].title == "Where To Start"
 
     def test_search_albums(self, client):
         """Test search for albums"""
         result = client.search_albums("Daft Punk")
-        assert isinstance(result, list)
-        assert all(isinstance(r, deezer.resources.Album) for r in result)
-        assert result[0].title == "Discovery"
+        assert isinstance(result, deezer.PaginatedList)
+        first = result[0]
+        assert isinstance(first, deezer.resources.Album)
+        assert first.title == "Discovery"
 
     def test_search_artists(self, client):
         """Test search for artists"""
         result = client.search_artists("Daft Punk")
-        assert isinstance(result, list)
-        assert all(isinstance(r, deezer.resources.Artist) for r in result)
-        assert result[0].name == "Daft Punk"
+        assert isinstance(result, deezer.PaginatedList)
+        first = result[0]
+        assert isinstance(first, deezer.resources.Artist)
+        assert first.name == "Daft Punk"
 
     @pytest.mark.parametrize(
         ("header_value", "expected_name"),

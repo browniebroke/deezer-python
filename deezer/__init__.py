@@ -1,4 +1,5 @@
 from deezer.client import Client
+from deezer.pagination import PaginatedList
 from deezer.resources import (
     Album,
     Artist,
@@ -13,6 +14,7 @@ from deezer.resources import (
 __version__ = "4.3.0"
 __all__ = [
     "Client",
+    "PaginatedList",
     "Resource",
     "Album",
     "Artist",

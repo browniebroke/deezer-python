@@ -1,5 +1,3 @@
-from types import GeneratorType
-
 import pytest
 
 import deezer
@@ -16,10 +14,8 @@ class TestResource:
 
 
 class TestAlbum:
-    def test_album_attributes(self, client):
-        """
-        Test album resource
-        """
+    def test_basic(self, client):
+        """Test basic Album resource."""
         album = client.get_album(302127)
         assert hasattr(album, "title")
         assert repr(album) == "<Album: Discovery>"
@@ -28,23 +24,13 @@ class TestAlbum:
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Daft Punk>"
 
-    def test_album_tracks(self, client):
-        """
-        Test tracks method of album resource
-        """
+    def test_get_tracks(self, client):
         album = client.get_album(302127)
 
-        # tests list
+        # tests pagination
         tracks = album.get_tracks()
-        assert isinstance(tracks, list)
+        assert isinstance(tracks, deezer.pagination.PaginatedList)
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: One More Time>"
-
-        # tests generator
-        tracks_generator = album.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        track = next(tracks_generator)
         assert isinstance(track, deezer.resources.Track)
         assert repr(track) == "<Track: One More Time>"
 
@@ -58,9 +44,6 @@ class TestAlbum:
         assert [c.id for c in contributors] == [123021, 6159602]
 
     def test_as_dict(self, client):
-        """
-        Test resource conversion to dict
-        """
         album = client.get_album(302127)
         album_dict = album.as_dict()
         assert album_dict["id"] == 302127
@@ -73,74 +56,40 @@ class TestAlbum:
 
 
 class TestArtist:
-    def test_artist_attributes(self, client):
-        """
-        Test artist resource
-        """
-        artist = client.get_artist(27)
-        assert hasattr(artist, "name")
-        assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Daft Punk>"
+    @pytest.fixture()
+    def daft_punk(self, client):
+        return client.get_artist(27)
 
-    def test_artist_albums(self, client):
-        """
-        Test albums method of artist resource
-        """
-        artist = client.get_artist(27)
+    def test_attributes(self, daft_punk):
+        assert hasattr(daft_punk, "name")
+        assert isinstance(daft_punk, deezer.resources.Artist)
+        assert repr(daft_punk) == "<Artist: Daft Punk>"
 
-        # tests list
-        albums = artist.get_albums()
-        assert isinstance(albums, list)
+    def test_get_albums(self, daft_punk):
+        albums = daft_punk.get_albums()
+        assert isinstance(albums, deezer.pagination.PaginatedList)
         album = albums[0]
         assert isinstance(album, deezer.resources.Album)
         assert repr(album) == "<Album: Random Access Memories>"
 
-        # tests generator
-        albums_generator = artist.iter_albums()
-        assert type(albums_generator) == GeneratorType
-        album = next(albums_generator)
-        assert isinstance(album, deezer.resources.Album)
-        assert repr(album) == "<Album: Random Access Memories>"
-
-    def test_artist_top(self, client):
-        """
-        Test top method of artist resource
-        """
-        artist = client.get_artist(27)
-        tracks = artist.get_top()
-        assert isinstance(tracks, list)
+    def test_get_top(self, daft_punk):
+        tracks = daft_punk.get_top()
+        assert isinstance(tracks, deezer.pagination.PaginatedList)
         track = tracks[0]
         assert isinstance(track, deezer.resources.Track)
         assert repr(track) == "<Track: Instant Crush>"
 
-    def test_artist_radio(self, client):
-        """
-        Test radio method of artist resource
-        """
-        artist = client.get_artist(27)
-        tracks = artist.get_radio()
+    def test_get_radio(self, daft_punk):
+        tracks = daft_punk.get_radio()
         assert isinstance(tracks, list)
         track = tracks[0]
         assert isinstance(track, deezer.resources.Track)
         assert repr(track) == "<Track: One More Time>"
 
-    def test_artist_related(self, client):
-        """
-        Test related method of artist resource
-        """
-        artist = client.get_artist(27)
-
-        # tests list
-        related_artists = artist.get_related()
-        assert isinstance(related_artists, list)
+    def test_get_related(self, daft_punk):
+        related_artists = daft_punk.get_related()
+        assert isinstance(related_artists, deezer.pagination.PaginatedList)
         related_artist = related_artists[0]
-        assert isinstance(related_artist, deezer.resources.Artist)
-        assert repr(related_artist) == "<Artist: Justice>"
-
-        # tests generator
-        related_artists_generator = artist.iter_related()
-        assert type(related_artists_generator) == GeneratorType
-        related_artist = next(related_artists_generator)
         assert isinstance(related_artist, deezer.resources.Artist)
         assert repr(related_artist) == "<Artist: Justice>"
 
@@ -171,22 +120,16 @@ class TestTrack:
 
 
 class TestRadio:
-    def test_radio_attributes(self, client):
-        """
-        Test radio resource
-        """
-        radio = client.get_radio(23261)
+    @pytest.fixture
+    def radio(self, client):
+        return client.get_radio(23261)
+
+    def test_attributes(self, radio):
         assert hasattr(radio, "title")
         assert isinstance(radio, deezer.resources.Radio)
         assert repr(radio) == "<Radio: Telegraph Classical>"
 
-    def test_radio_tracks(self, client):
-        """
-        Test tracks method of radio resource
-        """
-        radio = client.get_radio(23261)
-
-        # tests list
+    def test_get_tracks(self, radio):
         tracks = radio.get_tracks()
         assert isinstance(tracks, list)
         track = tracks[0]
@@ -196,65 +139,28 @@ class TestRadio:
             == '<Track: Mozart: Piano Concerto No. 9 in E-Flat Major, K. 271 "Jeunehomme": I. Allegro>'
         )
 
-        # tests generator
-        tracks_generator = radio.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        track = next(tracks_generator)
-        assert isinstance(track, deezer.resources.Track)
-        assert (
-            repr(track)
-            == '<Track: Mozart: Piano Concerto No. 9 in E-Flat Major, K. 271 "Jeunehomme": I. Allegro>'
-        )
-
 
 class TestGenre:
-    def test_genre_attributes(self, client):
-        """
-        Test genre resource
-        """
-        genre = client.get_genre(106)
-        assert hasattr(genre, "name")
-        assert isinstance(genre, deezer.resources.Genre)
-        assert repr(genre) == "<Genre: Electro>"
+    @pytest.fixture
+    def electro(self, client):
+        return client.get_genre(106)
 
-    def test_genre_artists(self, client):
-        """
-        Test artists method of genre resource
-        """
-        genre = client.get_genre(106)
+    def test_attributes(self, electro):
+        assert hasattr(electro, "name")
+        assert isinstance(electro, deezer.resources.Genre)
+        assert repr(electro) == "<Genre: Electro>"
 
-        # tests list
-        artists = genre.get_artists()
-        assert isinstance(artists, list)
+    def test_get_artists(self, electro):
+        artists = electro.get_artists()
+        assert isinstance(artists, deezer.pagination.PaginatedList)
         artist = artists[0]
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Major Lazer>"
 
-        # tests generator
-        artists_generator = genre.iter_artists()
-        assert type(artists_generator) == GeneratorType
-        artist = next(artists_generator)
-        assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Major Lazer>"
-
-    def test_genre_radios(self, client):
-        """
-        Test radios method of genre resource
-        """
-        genre = client.get_genre(106)
-
-        # tests list
-        radios = genre.get_radios()
-        assert isinstance(radios, list)
+    def test_get_radios(self, electro):
+        radios = electro.get_radios()
+        assert isinstance(radios, deezer.pagination.PaginatedList)
         radio = radios[0]
-        assert isinstance(radio, deezer.resources.Radio)
-        assert repr(radio) == "<Radio: Electro Swing>"
-        assert type(genre.iter_radios()) == GeneratorType
-
-        # tests generator
-        radios_generator = genre.iter_radios()
-        assert type(radios_generator) == GeneratorType
-        radio = next(radios_generator)
         assert isinstance(radio, deezer.resources.Radio)
         assert repr(radio) == "<Radio: Electro Swing>"
 
@@ -266,229 +172,100 @@ class TestChart:
 
     def test_get_tracks(self, chart):
         tracks = chart.get_tracks()
-        assert isinstance(tracks, list)
+        assert isinstance(tracks, deezer.pagination.PaginatedList)
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: Bad Habits>"
-
-    def test_iter_tracks(self, chart):
-        tracks_generator = chart.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        track = next(tracks_generator)
         assert isinstance(track, deezer.resources.Track)
         assert repr(track) == "<Track: Bad Habits>"
 
     def test_get_artists(self, chart):
         artists = chart.get_artists()
-        assert isinstance(artists, list)
+        assert isinstance(artists, deezer.pagination.PaginatedList)
         artist = artists[0]
-        assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Kanye West>"
-
-    def test_iter_artists(self, chart):
-        artists_generator = chart.iter_artists()
-        assert type(artists_generator) == GeneratorType
-        artist = next(artists_generator)
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Kanye West>"
 
     def test_get_albums(self, chart):
         albums = chart.get_albums()
-        assert isinstance(albums, list)
+        assert isinstance(albums, deezer.pagination.PaginatedList)
         album = albums[0]
-        assert isinstance(album, deezer.resources.Album)
-        assert repr(album) == "<Album: Music Of The Spheres>"
-
-    def test_iter_albums(self, chart):
-        albums_generator = chart.iter_albums()
-        assert type(albums_generator) == GeneratorType
-        album = next(albums_generator)
         assert isinstance(album, deezer.resources.Album)
         assert repr(album) == "<Album: Music Of The Spheres>"
 
     def test_get_playlists(self, chart):
         playlists = chart.get_playlists()
-        assert isinstance(playlists, list)
+        assert isinstance(playlists, deezer.pagination.PaginatedList)
         playlist = playlists[0]
-        assert isinstance(playlist, deezer.resources.Playlist)
-        assert repr(playlist) == "<Playlist: Brand New UK>"
-
-    def test_iter_playlists(self, chart):
-        playlists_generator = chart.iter_playlists()
-        assert type(playlists_generator) == GeneratorType
-        playlist = next(playlists_generator)
         assert isinstance(playlist, deezer.resources.Playlist)
         assert repr(playlist) == "<Playlist: Brand New UK>"
 
 
 class TestUser:
-    def test_user_albums(self, client):
-        """
-        Test albums method of user resource
-        """
-        user = client.get_user(359622)
+    @pytest.fixture
+    def user(self, client):
+        return client.get_user(359622)
 
-        # tests list
+    def test_get_albums(self, user):
         albums = user.get_albums()
-        assert isinstance(albums, list)
+        assert isinstance(albums, deezer.resources.PaginatedList)
         album = albums[0]
         assert isinstance(album, deezer.resources.Album)
         assert repr(album) == "<Album: A Century Of Movie Soundtracks Vol. 2>"
 
-        # tests generator
-        albums_generator = user.iter_albums()
-        assert type(albums_generator) == GeneratorType
-        album = next(albums_generator)
-        assert isinstance(album, deezer.resources.Album)
-        assert repr(album) == "<Album: A Century Of Movie Soundtracks Vol. 2>"
-
-    def test_user_artists(self, client):
-        """
-        Test artists method of user resource
-        """
-        user = client.get_user(359622)
-
-        # tests list
+    def test_get_artists(self, user):
         artists = user.get_artists()
-        assert isinstance(artists, list)
+        assert isinstance(artists, deezer.pagination.PaginatedList)
         artist = artists[0]
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Wax Tailor>"
 
-        # tests generator
-        artists_generator = user.iter_artists()
-        assert type(artists_generator) == GeneratorType
-        artist = next(artists_generator)
-        assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Wax Tailor>"
-
-    def test_user_playlists(self, client):
-        """
-        Test playlists method of user resource
-        """
-        user = client.get_user(359622)
-
-        # tests list
+    def test_get_playlists(self, user):
         playlists = user.get_playlists()
-        assert isinstance(playlists, list)
+        assert isinstance(playlists, deezer.pagination.PaginatedList)
         playlist = playlists[0]
         assert isinstance(playlist, deezer.resources.Playlist)
         assert repr(playlist) == "<Playlist: AC/DC>"
 
-        # tests generator
-        playlists_generator = user.iter_playlists()
-        assert type(playlists_generator) == GeneratorType
-        playlist = next(playlists_generator)
-        assert isinstance(playlist, deezer.resources.Playlist)
-        assert repr(playlist) == "<Playlist: AC/DC>"
-
-    def test_user_tracks(self, client):
-        """
-        Test tracks method of user resource
-        """
-        user = client.get_user(353978015)
-
-        # tests list
+    def test_get_tracks(self, user):
         tracks = user.get_tracks()
-        assert isinstance(tracks, list)
+        assert isinstance(tracks, deezer.pagination.PaginatedList)
         track = tracks[0]
         assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: Prélude a l'après-midi d'un faune, L. 86>"
-
-        # tests generator
-        tracks_generator = user.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        track = next(tracks_generator)
-        assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: Prélude a l'après-midi d'un faune, L. 86>"
+        assert repr(track) == "<Track: Poney Pt. I>"
 
 
 class TestPlaylist:
-    def test_get_tracks(self, client):
-        """
-        Test tracks method of playlist resource
-        """
-        playlist = client.get_playlist(12345)
+    @pytest.fixture
+    def playlist(self, client):
+        return client.get_playlist(9200461)
 
-        # tests list
+    def test_attributes(self, playlist):
+        assert playlist.title == "Lounge Soirée"
+
+    def test_get_tracks(self, playlist):
         tracks = playlist.get_tracks()
-        assert isinstance(tracks, list)
-        assert len(tracks) == 4
-        assert all(isinstance(track, deezer.resources.Track) for track in tracks)
-        assert tracks[0].title == "Skanky Panky"
+        assert isinstance(tracks, deezer.pagination.PaginatedList)
+        first_track = tracks[0]
+        assert isinstance(first_track, deezer.resources.Track)
+        assert first_track.title == "Otherwise"
 
-        # tests generator
-        tracks_generator = playlist.iter_tracks()
-        assert type(tracks_generator) == GeneratorType
-        playlist_tracks = list(tracks_generator)
-        # this is weird (the length being different), it seems there's a sort of
-        # partially-hidden track that only shows up when using the method in
-        # iter_tracks
-        assert len(playlist_tracks) == 5
-        assert all(
-            isinstance(track, deezer.resources.Track) for track in playlist_tracks
-        )
-        assert playlist_tracks[0].title == "Skanky Panky"
-
-    def test_get_fans(self, client):
-        """
-        Test fans method of playlist resource
-        """
-        playlist = client.get_playlist(6512)
-
-        # tests list
+    def test_get_fans(self, playlist):
         fans = playlist.get_fans()
-        assert isinstance(fans, list)
-        assert len(fans) == 3
-        for fan in fans:
-            assert isinstance(fan, deezer.resources.User)
-        assert fans[0].name == "laurentky"
-
-        # tests generator
-        fans_generator = playlist.iter_fans()
-        assert type(fans_generator) == GeneratorType
-        fan = next(fans_generator)
-        assert fan.name == "laurentky"
-        count = 1
-        while 1:
-            assert isinstance(fan, deezer.resources.User)
-            try:
-                fan = next(fans_generator)
-                count += 1
-            except StopIteration:
-                break
-        assert count == 3
+        assert isinstance(fans, deezer.pagination.PaginatedList)
+        first_fan = fans[0]
+        assert isinstance(first_fan, deezer.resources.User)
+        assert first_fan.name == "Fay22"
 
 
 class TestPodcast:
     def test_get_episodes(self, client):
-        """
-        Test episodes method of podcast resource
-        """
         podcast = client.get_podcast(699612)
 
-        # tests list
         episodes = podcast.get_episodes()
-        assert isinstance(episodes, list)
-        assert len(episodes) == 12
-        for episode in episodes:
-            assert isinstance(episode, deezer.resources.Episode)
-        assert episodes[0].title == "Episode 9: Follow the money"
-
-        # tests generator
-        episodes_generator = podcast.iter_episodes()
-        assert type(episodes_generator) == GeneratorType
-        episode = next(episodes_generator)
+        assert isinstance(episodes, deezer.pagination.PaginatedList)
+        episode = episodes[0]
+        assert isinstance(episode, deezer.resources.Episode)
         assert episode.title == "Episode 9: Follow the money"
-        count = 1
-        while 1:
-            assert isinstance(episode, deezer.resources.Episode)
-            try:
-                episode = next(episodes_generator)
-                count += 1
-            except StopIteration:
-                break
-        assert count == 12
+        assert len(episodes) == 12
 
 
 class TestEpisode:

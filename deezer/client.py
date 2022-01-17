@@ -11,6 +11,7 @@ from deezer.exceptions import (
     DeezerHTTPError,
     DeezerUnknownResource,
 )
+from deezer.pagination import PaginatedList
 from deezer.resources import (
     Album,
     Artist,
@@ -84,6 +85,7 @@ class Client:
         item: Dict[str, Any],
         parent: Optional[Resource] = None,
         resource_type: Optional[Type[Resource]] = None,
+        paginate_list=False,
     ):
         """
         Recursively convert dictionary
@@ -92,10 +94,17 @@ class Client:
         :param item: the JSON response as dict.
         :param parent: A reference to the parent resource, to avoid fetching again.
         :param resource_type: The resource class to use as top level.
+        :param paginate_list: Whether to wrap list into a pagination object.
         :returns: instance of :class:`~deezer.resources.Resource`
         """
         if "data" in item:
-            return [self._process_json(i, parent) for i in item["data"]]
+            parsed_data = [
+                self._process_json(i, parent, paginate_list=False) for i in item["data"]
+            ]
+            if not paginate_list:
+                return parsed_data
+            item["data"] = parsed_data
+            return item
 
         result = {}
         for key, value in item.items():
@@ -123,6 +132,7 @@ class Client:
         path: str,
         parent: Optional[Resource] = None,
         resource_type: Optional[Type[Resource]] = None,
+        paginate_list=False,
         **params,
     ):
         """
@@ -132,6 +142,7 @@ class Client:
         :param path: The path to make the API call to (e.g. 'artist/1234').
         :param parent: A reference to the parent resource, to avoid fetching again.
         :param resource_type: The resource class to use as top level.
+        :param paginate_list: Whether to wrap list into a pagination object.
         :param params: Query parameters to add to the request
         """
         if self.access_token is not None:
@@ -150,7 +161,15 @@ class Client:
             return json_data
         if "error" in json_data:
             raise DeezerErrorResponse(json_data)
-        return self._process_json(json_data, parent=parent, resource_type=resource_type)
+        return self._process_json(
+            json_data,
+            parent=parent,
+            resource_type=resource_type,
+            paginate_list=paginate_list,
+        )
+
+    def _get_paginated_list(self, path, **params):
+        return PaginatedList(client=self, base_path=path, **params)
 
     def get_album(self, album_id: int) -> Album:
         """
@@ -244,13 +263,14 @@ class Client:
         """
         return self.request("GET", f"genre/{genre_id}")
 
-    def list_genres(self) -> List[Genre]:
+    def list_genres(self) -> PaginatedList[Genre]:
         """
         List musical genres.
 
-        :returns: a list of :class:`~deezer.resources.Genre` objects.
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.resources.Genre` objects.
         """
-        return self.request("GET", "genre")
+        return self._get_paginated_list("genre")
 
     def get_playlist(self, playlist_id: int) -> Playlist:
         """
@@ -276,21 +296,23 @@ class Client:
         """
         return self.request("GET", f"radio/{radio_id}")
 
-    def list_radios(self) -> List[Radio]:
+    def list_radios(self) -> PaginatedList[Radio]:
         """
         List radios.
 
-        :returns: a list of :class:`~deezer.resources.Radio` objects
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.resources.Radio` objects.
         """
-        return self.request("GET", "radio")
+        return self._get_paginated_list("radio")
 
-    def get_radios_top(self):
+    def get_radios_top(self) -> PaginatedList[Radio]:
         """
-        Get the top radios (5 radios).
+        Get the top radios.
 
-        :returns: a :class:`~deezer.resources.Radio` object
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.resources.Radio` objects.
         """
-        return self.request("GET", "radio/top")
+        return self._get_paginated_list("radio/top")
 
     def get_track(self, track_id: int) -> Track:
         """
@@ -309,7 +331,7 @@ class Client:
         user_id_str = str(user_id) if user_id else "me"
         return self.request("GET", f"user/{user_id_str}")
 
-    def get_user_albums(self, user_id: Optional[int] = None) -> List[Album]:
+    def get_user_albums(self, user_id: Optional[int] = None) -> PaginatedList:
         """
         Get the favourites albums for the given user_id if provided or current user if not.
 
@@ -317,7 +339,7 @@ class Client:
         :return: a list of :class:`~deezer.resources.Album` instances.
         """
         user_id_str = str(user_id) if user_id else "me"
-        return self.request("GET", f"user/{user_id_str}/albums")
+        return self._get_paginated_list(f"user/{user_id_str}/albums")
 
     def add_user_album(self, album_id: int) -> bool:
         """
@@ -337,15 +359,16 @@ class Client:
         """
         return self.request("DELETE", "user/me/albums", album_id=album_id)
 
-    def get_user_artists(self, user_id: Optional[int] = None) -> List[Artist]:
+    def get_user_artists(self, user_id: Optional[int] = None) -> PaginatedList[Artist]:
         """
         Get the favourites artists for the given user_id if provided or current user if not.
 
         :param user_id: the user ID to get favourites artists.
-        :return: a list of :class:`~deezer.resources.Artist` instances.
+        :return: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.resources.Artist` instances.
         """
         user_id_str = str(user_id) if user_id else "me"
-        return self.request("GET", f"user/{user_id_str}/artists")
+        return self._get_paginated_list(f"user/{user_id_str}/artists")
 
     def add_user_artist(self, artist_id: int) -> bool:
         """
@@ -365,23 +388,25 @@ class Client:
         """
         return self.request("DELETE", "user/me/artists", artist_id=artist_id)
 
-    def get_user_history(self) -> List[Track]:
+    def get_user_history(self) -> PaginatedList[Track]:
         """
         Returns a list of the recently played tracks for the current user.
 
-        :return: a list of :class:`~deezer.resources.Track` instances.
+        :return: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.resources.Track` instances.
         """
-        return self.request("GET", "user/me/history")
+        return self._get_paginated_list("user/me/history")
 
-    def get_user_tracks(self, user_id: Optional[int] = None) -> List[Track]:
+    def get_user_tracks(self, user_id: Optional[int] = None) -> PaginatedList[Track]:
         """
         Get the favourites tracks for the given user_id if provided or current user if not.
 
         :param user_id: the user ID to get favourites tracks.
-        :return: a list of :class:`~deezer.resources.Track` instances.
+        :return: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.resources.Track` instances.
         """
         user_id_str = str(user_id) if user_id else "me"
-        return self.request("GET", f"user/{user_id_str}/tracks")
+        return self._get_paginated_list(f"user/{user_id_str}/tracks")
 
     def add_user_track(self, track_id: int) -> bool:
         """
@@ -407,8 +432,6 @@ class Client:
         query: str = "",
         strict: Optional[bool] = None,
         ordering: Optional[str] = None,
-        index: Optional[int] = None,
-        limit: Optional[int] = None,
         **advanced_params: Optional[Union[str, int]],
     ):
         optional_params = {}
@@ -416,19 +439,14 @@ class Client:
             optional_params["strict"] = "on"
         if ordering:
             optional_params["ordering"] = ordering
-        if index:
-            optional_params["index"] = index
-        if limit:
-            optional_params["limit"] = limit
         query_parts = []
         if query:
             query_parts.append(query)
         for param_name, param_value in advanced_params.items():
             if param_value:
                 query_parts.append(f'{param_name}:"{param_value}"')
-        return self.request(
-            "GET",
-            f"search/{path}" if path else "search",
+        return self._get_paginated_list(
+            path=f"search/{path}" if path else "search",
             q=" ".join(query_parts),
             **optional_params,
         )
@@ -446,8 +464,6 @@ class Client:
         dur_max: Optional[int] = None,
         bpm_min: Optional[int] = None,
         bpm_max: Optional[int] = None,
-        index: Optional[int] = None,
-        limit: Optional[int] = None,
     ):
         """
         Search tracks.
@@ -466,8 +482,6 @@ class Client:
         :param dur_max: parameter for the advanced search feature.
         :param bpm_min: parameter for the advanced search feature.
         :param bpm_max: parameter for the advanced search feature.
-        :param index: the offset of the first object you want to get.
-        :param limit: the maximum number of objects to return.
         :returns: a list of :class:`~deezer.resources.Track` instances.
         """
         return self._search(
@@ -483,8 +497,6 @@ class Client:
             dur_max=dur_max,
             bpm_min=bpm_min,
             bpm_max=bpm_max,
-            index=index,
-            limit=limit,
         )
 
     def search_albums(
@@ -492,17 +504,13 @@ class Client:
         query: str = "",
         strict: Optional[bool] = None,
         ordering: Optional[str] = None,
-        index: Optional[int] = None,
-        limit: Optional[int] = None,
-    ) -> List[Album]:
+    ) -> PaginatedList[Album]:
         """
         Search albums matching the given query.
 
         :param query: the query to search for, this is directly passed as q query.
         :param strict: whether to disable fuzzy search and enable strict mode.
         :param ordering: see Deezer API docs for possible values.
-        :param index: the offset of the first object you want to get.
-        :param limit: the maximum number of objects to return.
         :return: list of :class:`~deezer.resources.Album` instances.
         """
         return self._search(
@@ -510,8 +518,6 @@ class Client:
             query=query,
             strict=strict,
             ordering=ordering,
-            index=index,
-            limit=limit,
         )
 
     def search_artists(
@@ -519,17 +525,13 @@ class Client:
         query: str = "",
         strict: Optional[bool] = None,
         ordering: Optional[str] = None,
-        index: Optional[int] = None,
-        limit: Optional[int] = None,
-    ) -> List[Artist]:
+    ) -> PaginatedList[Artist]:
         """
         Search artists matching the given query.
 
         :param query: the query to search for, this is directly passed as q query.
         :param strict: whether to disable fuzzy search and enable strict mode.
         :param ordering: see Deezer API docs for possible values.
-        :param index: the offset of the first object you want to get.
-        :param limit: the maximum number of objects to return.
         :return: list of :class:`~deezer.resources.Album` instances.
         """
         return self._search(
@@ -537,6 +539,4 @@ class Client:
             query=query,
             strict=strict,
             ordering=ordering,
-            index=index,
-            limit=limit,
         )
