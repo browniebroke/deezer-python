@@ -25,13 +25,13 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
-requests = "^2.18"
+requests = ">=2.18"
 
 # Docs deps:
-myst-parser = {version = "^0.16", optional = true}
-sphinx = {version = "^4", optional = true}
-sphinx-autobuild = {version = "^2021.0.0", optional = true}
-sphinx-rtd-theme = {version = "^1.0", optional = true}
+myst-parser = {version = ">=0.16", optional = true}
+sphinx = {version = ">=4.0", optional = true}
+sphinx-autobuild = {version = ">=2021.0", optional = true}
+sphinx-rtd-theme = {version = ">=1.0", optional = true}
 
 [tool.poetry.extras]
 docs = [
@@ -42,19 +42,19 @@ docs = [
 ]
 
 [tool.poetry.dev-dependencies]
-bandit = "^1.6.2"
+bandit = "^1.6"
 black = {version = "^21.9b0", extras = ["jupyter"]}
 coverage = "^6.0"
-environs = "^9.3.4"
-flake8 = "^4.0.0"
-isort = "^5.6.3"
-pytest = "^6.1.2"
-pytest-cov = "^3.0.0"
-pytest-mock = "^3.6.1"
-pytest-vcr = "^1.0.2"
-pyupgrade = "^2.7.4"
-tox = "^3.20.1"
-vcrpy = "^4.1.1"
+environs = "^9.3"
+flake8 = "^4.0"
+isort = "^5.6"
+pytest = "^6.1"
+pytest-cov = "^3.0"
+pytest-mock = "^3.6"
+pytest-vcr = "^1.0"
+pyupgrade = "^2.7"
+tox = "^3.20"
+vcrpy = "^4.1"
 
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=deezer"
