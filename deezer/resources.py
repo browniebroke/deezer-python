@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from deezer.dates import parse_date, parse_datetime
 from deezer.pagination import PaginatedList
@@ -37,7 +37,7 @@ class Resource:
         id_ = getattr(self, "id", None)
         return f"<{self.__class__.__name__}: {name or title or id_}>"
 
-    def as_dict(self) -> Dict[str, Any]:
+    def as_dict(self) -> dict[str, Any]:
         """Convert resource to dictionary."""
         result = {}
         for key in self._fields:
@@ -103,7 +103,7 @@ class Album(Resource):
     md5_image: str
 
     genre_id: int
-    genres: List["Genre"]
+    genres: list[Genre]
     label: str
     nb_tracks: int
     duration: int
@@ -112,22 +112,22 @@ class Album(Resource):
     record_type: str
     available: bool
 
-    alternative: "Album"
+    alternative: Album
     tracklist: str
     explicit_lyrics: bool
 
     explicit_content_lyrics: int
     explicit_content_cover: int
-    contributors: List["Artist"]
+    contributors: list[Artist]
 
-    artist: "Artist"
+    artist: Artist
 
     _parse_release_date = staticmethod(parse_date)
 
     def _parse_contributors(self, raw_value):
         return [Artist(client=self.client, json=val) for val in raw_value]
 
-    def get_artist(self) -> "Artist":
+    def get_artist(self) -> Artist:
         """
         Get the artist of the Album.
 
@@ -135,7 +135,7 @@ class Album(Resource):
         """
         return self.client.get_artist(self.artist.id)
 
-    def get_tracks(self, **kwargs) -> PaginatedList["Track"]:
+    def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
         Get a list of album's tracks.
 
@@ -176,7 +176,7 @@ class Artist(Resource):
     radio: bool
     tracklist: str
 
-    def get_top(self, **kwargs) -> PaginatedList["Track"]:
+    def get_top(self, **kwargs) -> PaginatedList[Track]:
         """
         Get the top tracks of an artist.
 
@@ -185,7 +185,7 @@ class Artist(Resource):
         """
         return self.get_paginated_list("top", **kwargs)
 
-    def get_related(self, **kwargs) -> PaginatedList["Artist"]:
+    def get_related(self, **kwargs) -> PaginatedList[Artist]:
         """
         Get a list of related artists.
 
@@ -194,7 +194,7 @@ class Artist(Resource):
         """
         return self.get_paginated_list("related", **kwargs)
 
-    def get_radio(self, **kwargs) -> PaginatedList["Radio"]:
+    def get_radio(self, **kwargs) -> PaginatedList[Radio]:
         """
         :returns: list of :class:`Track <deezer.resources.Track>` instances
         """
@@ -235,7 +235,7 @@ class Genre(Resource):
         """
         return self.get_paginated_list("artists", **kwargs)
 
-    def get_radios(self, **kwargs) -> PaginatedList["Radio"]:
+    def get_radios(self, **kwargs) -> PaginatedList[Radio]:
         """
         Get all radios for a genre.
 
@@ -273,12 +273,12 @@ class Track(Resource):
     preview: str
     bpm: float
     gain: float
-    available_countries: List[str]
-    alternative: "Track"
-    contributors: List["Artist"]
+    available_countries: list[str]
+    alternative: Track
+    contributors: list[Artist]
     md5_image: str
-    artist: "Artist"
-    album: "Album"
+    artist: Artist
+    album: Album
 
     _parse_release_date = staticmethod(parse_date)
 
@@ -310,13 +310,13 @@ class User(Resource):
 
     id: int
     name: str
-    lastname: Optional[str]
-    firstname: Optional[str]
-    email: Optional[str]
-    status: Optional[int]
-    birthday: Optional[dt.date]
+    lastname: str | None
+    firstname: str | None
+    email: str | None
+    status: int | None
+    birthday: dt.date | None
     inscription_date: dt.date
-    gender: Optional[str]
+    gender: str | None
     link: str
     picture: str
     picture_small: str
@@ -324,10 +324,10 @@ class User(Resource):
     picture_big: str
     picture_xl: str
     country: str
-    lang: Optional[str]
-    is_kid: Optional[bool]
-    explicit_content_level: Optional[str]
-    explicit_content_levels_available: Optional[List[str]]
+    lang: str | None
+    is_kid: bool | None
+    explicit_content_level: str | None
+    explicit_content_levels_available: list[str] | None
     tracklist: str
 
     _parse_birthday = staticmethod(parse_date)
@@ -360,7 +360,7 @@ class User(Resource):
         """
         return self.get_paginated_list("artists", **kwargs)
 
-    def get_playlists(self, **kwargs) -> PaginatedList["Playlist"]:
+    def get_playlists(self, **kwargs) -> PaginatedList[Playlist]:
         """
         Get user's public playlists.
 
@@ -437,7 +437,7 @@ class Radio(Resource):
     tracklist: str
     md5_image: str
 
-    def get_tracks(self) -> List[Track]:
+    def get_tracks(self) -> list[Track]:
         """
         Get first 40 tracks in the radio.
 
@@ -459,11 +459,11 @@ class Chart(Resource):
     type = "chart"
 
     id = 0
-    tracks: List["Track"]
-    albums: List["Album"]
-    artists: List["Artist"]
-    playlists: List["Playlist"]
-    podcasts: List["Podcast"]
+    tracks: list[Track]
+    albums: list[Album]
+    artists: list[Artist]
+    playlists: list[Playlist]
+    podcasts: list[Podcast]
 
     def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
@@ -515,7 +515,7 @@ class Podcast(Resource):
     picture_big: str
     picture_xl: str
 
-    def get_episodes(self, **kwargs) -> PaginatedList["Episode"]:
+    def get_episodes(self, **kwargs) -> PaginatedList[Episode]:
         """
         Get episodes from a podcast
 

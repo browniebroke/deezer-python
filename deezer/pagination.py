@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Generator, Generic, List, Optional, TypeVar, Union, overload
+from typing import Generator, Generic, TypeVar, overload
 from urllib.parse import parse_qs, urlparse
 
 import deezer
@@ -16,12 +16,12 @@ class PaginatedList(Generic[ResourceType]):
 
     def __init__(
         self,
-        client: "deezer.Client",
+        client: deezer.Client,
         base_path: str,
-        parent: Optional["deezer.Resource"] = None,
+        parent: deezer.Resource | None = None,
         **params,
     ):
-        self.__elements: List[ResourceType] = []
+        self.__elements: list[ResourceType] = []
         self.__client = client
         self.__base_path = base_path
         self.__base_params = params
@@ -36,13 +36,13 @@ class PaginatedList(Generic[ResourceType]):
         ...
 
     @overload
-    def __getitem__(self, index: slice) -> List[ResourceType]:
+    def __getitem__(self, index: slice) -> list[ResourceType]:
         ...
 
     def __getitem__(
         self,
-        index: Union[int, slice],
-    ) -> Union[ResourceType, List[ResourceType]]:
+        index: int | slice,
+    ) -> ResourceType | list[ResourceType]:
         if isinstance(index, int):
             self._fetch_to_index(index)
             return self.__elements[index]
@@ -67,12 +67,12 @@ class PaginatedList(Generic[ResourceType]):
     def _could_grow(self) -> bool:
         return self.__next_path is not None
 
-    def _grow(self) -> List[ResourceType]:
+    def _grow(self) -> list[ResourceType]:
         new_elements = self._fetch_next_page()
         self.__elements.extend(new_elements)
         return new_elements
 
-    def _fetch_next_page(self) -> List[ResourceType]:
+    def _fetch_next_page(self) -> list[ResourceType]:
         response_payload = self.__client.request(
             "GET",
             self.__next_path,
