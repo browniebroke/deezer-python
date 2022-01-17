@@ -715,18 +715,6 @@ pytest = ">=5.0"
 dev = ["pre-commit", "tox", "pytest-asyncio"]
 
 [[package]]
-name = "pytest-tornado"
-version = "0.8.1"
-description = "A py.test plugin providing fixtures and markers to simplify testing of asynchronous tornado applications."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-pytest = ">=3.6"
-tornado = ">=4.1"
-
-[[package]]
 name = "pytest-vcr"
 version = "1.0.2"
 description = "Plugin for managing VCR.py cassettes"
@@ -992,7 +980,7 @@ name = "tornado"
 version = "6.1"
 description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
 category = "main"
-optional = false
+optional = true
 python-versions = ">= 3.5"
 
 [[package]]
@@ -1141,12 +1129,11 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 
 [extras]
 docs = ["myst-parser", "sphinx", "sphinx-autobuild", "sphinx-rtd-theme"]
-tornado = ["tornado"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "03f71ee9d75f9552e93ca941853651e012e77b1fec05ec59bed5d07c4b1b50df"
+content-hash = "50a69eea4ad5a973b71259da97f8e3c04e7f7d87241514437b77254d2023fa3d"
 
 [metadata.files]
 alabaster = [
@@ -1555,10 +1542,6 @@ pytest-cov = [
 pytest-mock = [
     {file = "pytest-mock-3.6.1.tar.gz", hash = "sha256:40217a058c52a63f1042f0784f62009e976ba824c418cced42e88d5f40ab0e62"},
     {file = "pytest_mock-3.6.1-py3-none-any.whl", hash = "sha256:30c2f2cc9759e76eee674b81ea28c9f0b94f8f0445a1b87762cadf774f0df7e3"},
-]
-pytest-tornado = [
-    {file = "pytest-tornado-0.8.1.tar.gz", hash = "sha256:b9fa1930c333b9dfe29bde90f9f42e6643278b5d0c95528a8302a7454fd3f1b1"},
-    {file = "pytest_tornado-0.8.1-py2.py3-none-any.whl", hash = "sha256:8d43f400c64fabc85af58891096d4f93f05e9f9baae2c751e039932a0f62d0b5"},
 ]
 pytest-vcr = [
     {file = "pytest-vcr-1.0.2.tar.gz", hash = "sha256:23ee51b75abbcc43d926272773aae4f39f93aceb75ed56852d0bf618f92e1896"},

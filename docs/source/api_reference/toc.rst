@@ -11,4 +11,3 @@ This is the auto-generated documentation for all the main modules in the library
 
     client
     resources
-    contrib/tornado
