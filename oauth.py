@@ -1,4 +1,6 @@
 """Simple script to obtain an API token via OAuth."""
+from __future__ import annotations
+
 import webbrowser
 from argparse import ArgumentParser
 from http.server import BaseHTTPRequestHandler, HTTPServer

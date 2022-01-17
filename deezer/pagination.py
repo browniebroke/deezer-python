@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import Generator, Generic, List, Optional, TypeVar, Union, overload
 from urllib.parse import parse_qs, urlparse
 
