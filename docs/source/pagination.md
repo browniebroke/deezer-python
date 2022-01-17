@@ -66,4 +66,20 @@ In case the index is too big, an `IndexError` will be raised, as if it were a li
 
 ## Slicing
 
-Slicing (`artist_albums[2:5]`) is not supported at this point, it might be added later.
+Slicing is also supported, you may take a slice with or without a start or end, and also provide a custom step number, like with a regular list:
+
+```python
+# With start & end
+artist_albums[2:5]
+
+# Without start
+artist_albums[:5]
+
+# Without end
+artist_albums[5:]
+
+# With start, end & step
+artist_albums[2:10:2]
+```
+
+As with the rest, not providing an end, or providing a large value as end may produce extra network calls to the Deezer API.

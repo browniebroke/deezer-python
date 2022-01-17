@@ -1,4 +1,4 @@
-from typing import Generator, Generic, List, Optional, TypeVar
+from typing import Generator, Generic, List, Optional, TypeVar, Union, overload
 from urllib.parse import parse_qs, urlparse
 
 import deezer
@@ -29,8 +29,26 @@ class PaginatedList(Generic[ResourceType]):
         self.__total = None
         self.__iter = iter(self)
 
+    @overload
     def __getitem__(self, index: int) -> ResourceType:
-        self._fetch_to_index(index)
+        ...
+
+    @overload
+    def __getitem__(self, index: slice) -> List[ResourceType]:
+        ...
+
+    def __getitem__(
+        self,
+        index: Union[int, slice],
+    ) -> Union[ResourceType, List[ResourceType]]:
+        if isinstance(index, int):
+            self._fetch_to_index(index)
+            return self.__elements[index]
+        if index.stop is not None:
+            self._fetch_to_index(index.stop)
+        else:
+            while self._could_grow():
+                self._grow()
         return self.__elements[index]
 
     def __iter__(self) -> Generator[ResourceType, None, None]:

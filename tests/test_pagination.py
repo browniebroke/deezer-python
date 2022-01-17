@@ -54,6 +54,41 @@ class TestPaginatedList:
         with pytest.raises(IndexError):
             daft_punk_albums[40]
 
+    def test_slicing_simple(self, daft_punk_albums):
+        albums = daft_punk_albums[5:8]
+        assert [a.title for a in albums] == [
+            "Musique, Vol. 1",
+            "Human After All",
+            "Daft Club",
+        ]
+
+    def test_slicing_no_start(self, daft_punk_albums):
+        albums = daft_punk_albums[:3]
+        assert [a.title for a in albums] == [
+            "Human After All (Remixes)",
+            "Random Access Memories",
+            "TRON: Legacy Reconfigured",
+        ]
+
+    def test_slicing_no_end(self, daft_punk_albums):
+        albums = daft_punk_albums[27:]
+        assert [a.title for a in albums] == [
+            "Something About Us (Love Theme from Interstella)",
+            "Digital Love",
+            "Aerodynamic",
+            "One More Time",
+            "Da Funk",
+        ]
+
+    def test_slicing_with_step(self, daft_punk_albums):
+        albums = daft_punk_albums[2:10:2]
+        assert [a.title for a in albums] == [
+            "TRON: Legacy Reconfigured",
+            "Alive 2007",
+            "Human After All",
+            "Alive 1997",
+        ]
+
     def test_authenticated_requests(self, client_token):
         user_tracks = PaginatedList(
             client=client_token,
