@@ -29,6 +29,15 @@ class TestPaginatedList:
         # This shouldn't do another API call
         assert daft_punk_albums.total == 32
 
+    def test_iterator(self, daft_punk_albums):
+        a1 = next(daft_punk_albums)
+        a2 = next(daft_punk_albums)
+        a3 = next(daft_punk_albums)
+
+        assert a1.title == "Human After All (Remixes)"
+        assert a2.title == "Random Access Memories"
+        assert a3.title == "TRON: Legacy Reconfigured"
+
     @pytest.mark.parametrize(
         ("index", "title"),
         [

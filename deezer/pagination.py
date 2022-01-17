@@ -27,6 +27,7 @@ class PaginatedList(Generic[ResourceType]):
         self.__next_params = params
         self.__parent = parent
         self.__total = None
+        self.__iter = iter(self)
 
     def __getitem__(self, index: int) -> ResourceType:
         self._fetch_to_index(index)
@@ -36,6 +37,9 @@ class PaginatedList(Generic[ResourceType]):
         yield from self.__elements
         while self._could_grow():
             yield from self._grow()
+
+    def __next__(self) -> ResourceType:
+        return next(self.__iter)
 
     def __len__(self) -> int:
         return self.total
