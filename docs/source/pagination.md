@@ -62,7 +62,7 @@ Beware that accessing a large index may produce some extra network calls to the 
 artist_albums[110]
 ```
 
-In case the index is too big, an `IndexError` will be raised, as if it were a list.
+In case the index is too big, an `IndexError` will be raised, as if it were a list. Unlike list, this feature doesn't support negative values at the time.
 
 ## Slicing
 
@@ -82,4 +82,4 @@ artist_albums[5:]
 artist_albums[2:10:2]
 ```
 
-As with the rest, not providing an end, or providing a large value as end may produce extra network calls to the Deezer API.
+As with the rest, not providing an end, or providing a large value as end may produce extra network calls to the Deezer API. Like indexing, negative values aren't supported at the moment.

@@ -54,6 +54,10 @@ class TestPaginatedList:
         with pytest.raises(IndexError):
             daft_punk_albums[40]
 
+    def test_get_element_negative_value(self, daft_punk_albums):
+        with pytest.raises(IndexError):
+            daft_punk_albums[-1]
+
     def test_slicing_simple(self, daft_punk_albums):
         albums = daft_punk_albums[5:8]
         assert [a.title for a in albums] == [
