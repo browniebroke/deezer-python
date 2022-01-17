@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 
 from deezer import Album, Artist, PaginatedList
