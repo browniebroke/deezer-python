@@ -5,7 +5,7 @@
 ## v5.0.0 (2022-01-17)
 ### Feature
 * Add `PaginationList` to improve how we deal with pagination ([#425](https://github.com/browniebroke/deezer-python/issues/425)) ([`6a4ccf2`](https://github.com/browniebroke/deezer-python/commit/6a4ccf2f3c2a50109a6aaded2510b16d64e354ac))
-* Remove the tornado-based AsyncClient ([#427](https://github.com/browniebroke/deezer-python/issues/427)) ([`96df7b8`](https://github.com/browniebroke/deezer-python/commit/96df7b861881732f313bd19e53c7b5a27fcb84bb))
+* Remove the tornado-based `AsyncClient` ([#427](https://github.com/browniebroke/deezer-python/issues/427)) ([`96df7b8`](https://github.com/browniebroke/deezer-python/commit/96df7b861881732f313bd19e53c7b5a27fcb84bb))
 
 ### Breaking
 * support for Python 3.6 is dropped  ([`6562a4c`](https://github.com/browniebroke/deezer-python/commit/6562a4c53810c283a9682931408160aa542f4de2))
@@ -15,7 +15,7 @@
 ### Documentation
 * Show resources attributes and their type ([`383ffa3`](https://github.com/browniebroke/deezer-python/commit/383ffa312d71cc1036ba7a57adb27947a487a671))
 * Split documentation for resources into multiple pages ([`4e96f75`](https://github.com/browniebroke/deezer-python/commit/4e96f75f1b3dc93651e07bcc4e2d2d4df89d42d8))
-* Fix mention of as_dict ([`0bfb849`](https://github.com/browniebroke/deezer-python/commit/0bfb849d5ab4bcd90ea913f849bd2c70e3226ac9))
+* Fix mention of `as_dict()` method ([`0bfb849`](https://github.com/browniebroke/deezer-python/commit/0bfb849d5ab4bcd90ea913f849bd2c70e3226ac9))
 * Fix a few typos and reformat files ([`91b8f5c`](https://github.com/browniebroke/deezer-python/commit/91b8f5c938b367b736c65252d04eee72e668aea3))
 * Reword section about authentication ([`1e7b9e3`](https://github.com/browniebroke/deezer-python/commit/1e7b9e3b75622f930398240a2c6b45d07dd45c3d))
 
