@@ -4,7 +4,7 @@ Implements a client class to query the
 """
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional, Type, Union
+from typing import Any
 
 import requests
 
@@ -84,9 +84,9 @@ class Client:
 
     def _process_json(
         self,
-        item: Dict[str, Any],
-        parent: Optional[Resource] = None,
-        resource_type: Optional[Type[Resource]] = None,
+        item: dict[str, Any],
+        parent: Resource | None = None,
+        resource_type: type[Resource] | None = None,
         paginate_list=False,
     ):
         """
@@ -132,8 +132,8 @@ class Client:
         self,
         method: str,
         path: str,
-        parent: Optional[Resource] = None,
-        resource_type: Optional[Type[Resource]] = None,
+        parent: Resource | None = None,
+        resource_type: type[Resource] | None = None,
         paginate_list=False,
         **params,
     ):
@@ -209,7 +209,7 @@ class Client:
         """
         return self.request("GET", "chart", resource_type=Chart)
 
-    def get_tracks_chart(self) -> List[Track]:
+    def get_tracks_chart(self) -> list[Track]:
         """
         Get top tracks.
 
@@ -217,7 +217,7 @@ class Client:
         """
         return self.request("GET", "chart/0/tracks")
 
-    def get_albums_chart(self) -> List[Album]:
+    def get_albums_chart(self) -> list[Album]:
         """
         Get top albums.
 
@@ -225,7 +225,7 @@ class Client:
         """
         return self.request("GET", "chart/0/albums")
 
-    def get_artists_chart(self) -> List[Artist]:
+    def get_artists_chart(self) -> list[Artist]:
         """
         Get top artists.
 
@@ -233,7 +233,7 @@ class Client:
         """
         return self.request("GET", "chart/0/artists")
 
-    def get_playlists_chart(self) -> List[Playlist]:
+    def get_playlists_chart(self) -> list[Playlist]:
         """
         Get top playlists.
 
@@ -241,7 +241,7 @@ class Client:
         """
         return self.request("GET", "chart/0/playlists")
 
-    def get_podcasts_chart(self) -> List[Podcast]:
+    def get_podcasts_chart(self) -> list[Podcast]:
         """
         Get top podcasts.
 
@@ -324,7 +324,7 @@ class Client:
         """
         return self.request("GET", f"track/{track_id}")
 
-    def get_user(self, user_id: Optional[int] = None) -> User:
+    def get_user(self, user_id: int | None = None) -> User:
         """
         Get the user with the given ID.
 
@@ -333,7 +333,7 @@ class Client:
         user_id_str = str(user_id) if user_id else "me"
         return self.request("GET", f"user/{user_id_str}")
 
-    def get_user_albums(self, user_id: Optional[int] = None) -> PaginatedList:
+    def get_user_albums(self, user_id: int | None = None) -> PaginatedList:
         """
         Get the favourites albums for the given user_id if provided or current user if not.
 
@@ -361,7 +361,7 @@ class Client:
         """
         return self.request("DELETE", "user/me/albums", album_id=album_id)
 
-    def get_user_artists(self, user_id: Optional[int] = None) -> PaginatedList[Artist]:
+    def get_user_artists(self, user_id: int | None = None) -> PaginatedList[Artist]:
         """
         Get the favourites artists for the given user_id if provided or current user if not.
 
@@ -399,7 +399,7 @@ class Client:
         """
         return self._get_paginated_list("user/me/history")
 
-    def get_user_tracks(self, user_id: Optional[int] = None) -> PaginatedList[Track]:
+    def get_user_tracks(self, user_id: int | None = None) -> PaginatedList[Track]:
         """
         Get the favourites tracks for the given user_id if provided or current user if not.
 
@@ -432,9 +432,9 @@ class Client:
         self,
         path: str,
         query: str = "",
-        strict: Optional[bool] = None,
-        ordering: Optional[str] = None,
-        **advanced_params: Optional[Union[str, int]],
+        strict: bool | None = None,
+        ordering: str | None = None,
+        **advanced_params: str | int | None,
     ):
         optional_params = {}
         if strict is True:
@@ -456,16 +456,16 @@ class Client:
     def search(
         self,
         query: str = "",
-        strict: Optional[bool] = None,
-        ordering: Optional[str] = None,
-        artist: Optional[str] = None,
-        album: Optional[str] = None,
-        track: Optional[str] = None,
-        label: Optional[str] = None,
-        dur_min: Optional[int] = None,
-        dur_max: Optional[int] = None,
-        bpm_min: Optional[int] = None,
-        bpm_max: Optional[int] = None,
+        strict: bool | None = None,
+        ordering: str | None = None,
+        artist: str | None = None,
+        album: str | None = None,
+        track: str | None = None,
+        label: str | None = None,
+        dur_min: int | None = None,
+        dur_max: int | None = None,
+        bpm_min: int | None = None,
+        bpm_max: int | None = None,
     ):
         """
         Search tracks.
@@ -504,8 +504,8 @@ class Client:
     def search_albums(
         self,
         query: str = "",
-        strict: Optional[bool] = None,
-        ordering: Optional[str] = None,
+        strict: bool | None = None,
+        ordering: str | None = None,
     ) -> PaginatedList[Album]:
         """
         Search albums matching the given query.
@@ -525,8 +525,8 @@ class Client:
     def search_artists(
         self,
         query: str = "",
-        strict: Optional[bool] = None,
-        ordering: Optional[str] = None,
+        strict: bool | None = None,
+        ordering: str | None = None,
     ) -> PaginatedList[Artist]:
         """
         Search artists matching the given query.

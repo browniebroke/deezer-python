@@ -4,7 +4,6 @@ from __future__ import annotations
 import webbrowser
 from argparse import ArgumentParser
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from typing import Dict
 from urllib.parse import urlencode
 
 import requests
@@ -45,7 +44,7 @@ class OAuthDancer:
         )
         return f"{self.base_url}/oauth/auth.php?{query}"
 
-    def get_token(self, code: str) -> Dict[str, str]:
+    def get_token(self, code: str) -> dict[str, str]:
         """Make the API call to obtain the token."""
         query = urlencode(
             {

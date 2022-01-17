@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import Dict
-
 import requests
 
 
@@ -26,7 +24,7 @@ class DeezerHTTPError(DeezerAPIException):
             super().__init__(http_exception, *args)
 
     @classmethod
-    def from_http_error(cls, exc: requests.HTTPError) -> "DeezerHTTPError":
+    def from_http_error(cls, exc: requests.HTTPError) -> DeezerHTTPError:
         if exc.response.status_code in {502, 503, 504}:
             return DeezerRetryableHTTPError(exc)
         if exc.response.status_code == 403:
@@ -51,7 +49,7 @@ class DeezerNotFoundError(DeezerHTTPError):
 class DeezerErrorResponse(DeezerAPIException):
     """A functional error when the API doesn't accept the request."""
 
-    def __init__(self, json_data: Dict[str, str]) -> None:
+    def __init__(self, json_data: dict[str, str]) -> None:
         self.json_data = json_data
 
 
