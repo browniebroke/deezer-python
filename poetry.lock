@@ -708,6 +708,20 @@ pytest = ">=5.0"
 dev = ["pre-commit", "tox", "pytest-asyncio"]
 
 [[package]]
+name = "pytest-srcpaths"
+version = "1.2.1"
+description = "Add paths to sys.path"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+pytest = ">=6.2.0"
+
+[package.extras]
+test = ["tox"]
+
+[[package]]
 name = "pytest-vcr"
 version = "1.0.2"
 description = "Plugin for managing VCR.py cassettes"
@@ -1146,7 +1160,7 @@ docs = ["myst-parser", "sphinx", "sphinx-autobuild", "sphinx-rtd-theme"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "342d9b12eddddc0aface861d79abd30e5931e89666fbc50399e92a309564c9ab"
+content-hash = "d3ebe273f5a79126e69a9d17ec8cffa425607027640c253d9428b41167c93329"
 
 [metadata.files]
 alabaster = [
@@ -1565,6 +1579,10 @@ pytest-cov = [
 pytest-mock = [
     {file = "pytest-mock-3.6.1.tar.gz", hash = "sha256:40217a058c52a63f1042f0784f62009e976ba824c418cced42e88d5f40ab0e62"},
     {file = "pytest_mock-3.6.1-py3-none-any.whl", hash = "sha256:30c2f2cc9759e76eee674b81ea28c9f0b94f8f0445a1b87762cadf774f0df7e3"},
+]
+pytest-srcpaths = [
+    {file = "pytest-srcpaths-1.2.1.tar.gz", hash = "sha256:78d71b9a2ece6839654421400c4ec78b6b1c1c101cdeda958acb08f1c6847216"},
+    {file = "pytest_srcpaths-1.2.1-py3-none-any.whl", hash = "sha256:222b68659e4bd401034b45b38b81f4103afb12807128460e19b6fb82b0e227e7"},
 ]
 pytest-vcr = [
     {file = "pytest-vcr-1.0.2.tar.gz", hash = "sha256:23ee51b75abbcc43d926272773aae4f39f93aceb75ed56852d0bf618f92e1896"},
