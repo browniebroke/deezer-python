@@ -81,14 +81,12 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 
 ## Obtain an API token
 
-If you want to work on a feature that requires authentication, you'll need to obtain an API token to perform authenticated requests using the `oauth.py` script. The script will take you through the OAuth flow, display and save the API token at the end.
+If you want to work on a feature that requires authentication, you'll need to obtain an API token to perform authenticated requests. You can do so using the [`deezer-oauth-cli`](https://pypi.org/project/deezer-oauth-cli/) package. It's a development dependency, so if you ran `poetry install`, you should already have it.
 
-First, you'll need to have a dedicated app in the [Deezer developer portal][deezer-developers-myapps], create one with the following redirect URL after authentication: `http://localhost:8080/oauth/return`.
-
-Once created, get the application ID as well as the secret key and call the script with them:
+You'll need to have a dedicated app in the [Deezer developer portal][deezer-developers-myapps], create one with the following redirect URL after authentication: `http://localhost:8080/oauth/return`. Once created, grab the application ID and the secret key and call the CLI tool with them:
 
 ```bash
-$ python oauth.py --app-id APP_ID --app-secret SECRET_KEY
+$ deezer-oauth APP_ID SECRET_KEY
 ```
 
 Authorise the app in your browser. You should then should be redirected to a simple HTML page with your API token. The script also save the API token locally in the `.env` file. This is convenient to generate cassettes when writing new tests locally.
