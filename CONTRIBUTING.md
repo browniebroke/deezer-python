@@ -48,7 +48,7 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 3. Install the dependencies with [Poetry]
 
    ```bash
-   $ poetry install -E tornado -E docs
+   $ poetry install -E docs
    ```
 
 4. Create a branch for local development:
