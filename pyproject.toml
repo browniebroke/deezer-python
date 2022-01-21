@@ -16,7 +16,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
 packages = [
-    { include = "deezer" },
+    { include = "deezer", from = "src" },
 ]
 
 [tool.poetry.urls]
@@ -56,19 +56,17 @@ pyupgrade = "^2.7"
 tox = "^3.20"
 vcrpy = "^4.1"
 deezer-oauth-cli = "^0.1"
-
-[tool.pytest.ini_options]
-addopts = "-v -Wdefault --cov=deezer"
+pytest-srcpaths = "^1.2"
 
 [tool.semantic_release]
 version_toml = "pyproject.toml:tool.poetry.version"
-version_variable = "deezer/__init__.py:__version__"
+version_variable = "src/deezer/__init__.py:__version__"
 branch = "main"
 build_command = "pip install poetry && poetry build"
 
-[tool.isort]
-profile = "black"
-known_first_party = "deezer"
+[tool.pytest.ini_options]
+addopts = "-v -Wdefault --cov=deezer"
+pythonpath = ["src"]
 
 [tool.coverage.run]
 branch = true
@@ -80,6 +78,10 @@ exclude_lines = [
     "pragma: no cover",
     "@overload",
 ]
+
+[tool.isort]
+profile = "black"
+known_first_party = "deezer"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
