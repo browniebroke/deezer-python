@@ -8,7 +8,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs on the [issues page]. If you are reporting a bug, please include:
+Report bugs on [our issues page][gh-issues]. If you are reporting a bug, please include:
 
 - Any details about your local setup that might be helpful in troubleshooting.
 - Detailed steps to reproduce the bug.
@@ -27,7 +27,7 @@ This module could always use more documentation, whether as part of the official
 
 ### Submit Feedback
 
-The best way to send feedback is to file a ticket on the [issues page]. If you are proposing a feature:
+The best way to send feedback is to file a ticket on [our issues page][gh-issues]. If you are proposing a feature:
 
 - Explain how it would work.
 - Keep the scope as narrow as possible, to make it easier to implement.
@@ -45,7 +45,7 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
    $ git clone git@github.com:your_name_here/deezer-python.git
    ```
 
-3. Install the dependencies with [Poetry]
+3. Install the dependencies with [Poetry](https://python-poetry.org)
 
    ```shell
    $ poetry install -E docs
@@ -65,13 +65,17 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
    $ poetry run pytest
    ```
 
-6. Linting is done through [pre-commit][pre-commit]. Provided you have the tool installed globally, you can run:
+6. Linting is done through [pre-commit](https://pre-commit.com). Provided you have the tool installed globally, you can run them all as one-off:
 
    ```shell
    $ pre-commit run -a
    ```
 
-   This would be done automatically each time you commit if you install the hooks: `pre-commit install`
+   Or better, install the hooks once and have them run automatically each time you commit:
+
+   ```shell
+   $ pre-commit install
+   ```
 
 7. Commit your changes, quoting GitHub issue in the commit message, if applicable, and push your branch to GitHub:
 
@@ -81,7 +85,7 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
    $ git push origin name-of-your-bugfix-or-feature
    ```
 
-   Note: the commit message should follow [the conventional commits][conventional-commits] specs, this is to enable the automation of releases. We run [`commitlint` on CI][commitlint] which will validate the commit messages. If you've installed pre-commit hooks at the previous step, the message will be checked at commit time.
+   Note: the commit message should follow [the conventional commits](https://www.conventionalcommits.org). We run [`commitlint` on CI](https://github.com/marketplace/actions/commit-linter) to validate it, and if you've installed pre-commit hooks at the previous step, the message will be checked at commit time.
 
 8. Submit a pull request on GitHub.
 
@@ -89,7 +93,7 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 
 If you want to work on a feature that requires authentication, you'll need to obtain an API token to perform authenticated requests. You can do so using the [`deezer-oauth-cli`](https://pypi.org/project/deezer-oauth-cli/) package. It's a development dependency, so if you ran `poetry install`, you should already have it.
 
-You'll need to have a dedicated app in the [Deezer developer portal][deezer-developers-myapps], create one with the following redirect URL after authentication: `http://localhost:8080/oauth/return`. Once created, grab the application ID and the secret key and call the CLI tool with them:
+You'll need to have a dedicated app in the [Deezer developer portal](https://developers.deezer.com/myapps), create one with the following redirect URL after authentication: `http://localhost:8080/oauth/return`. Once created, grab the application ID and the secret key and call the CLI tool with them:
 
 ```shell
 $ deezer-oauth APP_ID SECRET_KEY
@@ -107,13 +111,6 @@ Feel free to open the pull request as soon as possible, but please be explicit i
 
 ## Create a New Release
 
-The deployment should be automated and can be triggered from the Semantic Release workflow in GitHub. The next version will be based on [the commit logs][commit-log]. This is done by [python-semantic-release] via a GitHub action.
+The deployment should be automated and can be triggered from the Semantic Release workflow in GitHub. The next version will be based on [the commit logs](https://python-semantic-release.readthedocs.io/en/latest/commit-log-parsing.html#commit-log-parsing). This is done by [python-semantic-release](https://python-semantic-release.readthedocs.io/en/latest/index.html) via a GitHub action.
 
-[issues page]: https://github.com/browniebroke/deezer-python/issues
-[poetry]: https://python-poetry.org/
-[pre-commit]: https://pre-commit.com/
-[conventional-commits]: https://www.conventionalcommits.org
-[commitlint]: https://github.com/marketplace/actions/commit-linter
-[deezer-developers-myapps]: https://developers.deezer.com/myapps
-[commit-log]: https://python-semantic-release.readthedocs.io/en/latest/commit-log-parsing.html#commit-log-parsing
-[python-semantic-release]: https://python-semantic-release.readthedocs.io/en/latest/index.html
+[gh-issues]: https://github.com/browniebroke/deezer-python/issues
