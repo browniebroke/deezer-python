@@ -41,43 +41,49 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 
 2. Clone your fork locally:
 
-   ```bash
+   ```shell
    $ git clone git@github.com:your_name_here/deezer-python.git
    ```
 
 3. Install the dependencies with [Poetry]
 
-   ```bash
+   ```shell
    $ poetry install -E docs
    ```
 
 4. Create a branch for local development:
 
-   ```bash
+   ```shell
    $ git checkout -b name-of-your-bugfix-or-feature
    ```
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass our tests and that the doc builds. The easiest way to do that is by running [tox] environments:
+5. When you're done making changes, check that your changes pass our tests:
 
-   ```bash
-   $ poetry run tox -e lint,docs,py38
+   ```shell
+   $ poetry run pytest
    ```
 
-   It will run our linters ([flake8] and [black]), build the docs and run the tests
+6. Linting is done through [pre-commit][pre-commit]. Provided you have the tool installed globally, you can run:
 
-6. Commit your changes, quoting GitHub issue in the commit message, if applicable, and push your branch to GitHub:
+   ```shell
+   $ pre-commit run -a
+   ```
 
-   ```bash
+   This would be done automatically each time you commit if you install the hooks: `pre-commit install`
+
+7. Commit your changes, quoting GitHub issue in the commit message, if applicable, and push your branch to GitHub:
+
+   ```shell
    $ git add .
    $ git commit -m "feat(something): your detailed description of your changes"
    $ git push origin name-of-your-bugfix-or-feature
    ```
 
-   Note: the commit message should follow [the conventional commits][conventional-commits] specs, this is to enable the automation of releases. We run [`commitlint` on CI][commitlint] which will validate the commit messages.
+   Note: the commit message should follow [the conventional commits][conventional-commits] specs, this is to enable the automation of releases. We run [`commitlint` on CI][commitlint] which will validate the commit messages. If you've installed pre-commit hooks at the previous step, the message will be checked at commit time.
 
-7. Submit a pull request on GitHub.
+8. Submit a pull request on GitHub.
 
 ## Obtain an API token
 
@@ -85,7 +91,7 @@ If you want to work on a feature that requires authentication, you'll need to ob
 
 You'll need to have a dedicated app in the [Deezer developer portal][deezer-developers-myapps], create one with the following redirect URL after authentication: `http://localhost:8080/oauth/return`. Once created, grab the application ID and the secret key and call the CLI tool with them:
 
-```bash
+```shell
 $ deezer-oauth APP_ID SECRET_KEY
 ```
 
@@ -105,9 +111,7 @@ The deployment should be automated and can be triggered from the Semantic Releas
 
 [issues page]: https://github.com/browniebroke/deezer-python/issues
 [poetry]: https://python-poetry.org/
-[tox]: http://tox.readthedocs.io/en/stable/index.html
-[flake8]: http://flake8.pycqa.org/en/latest/
-[black]: https://github.com/ambv/black
+[pre-commit]: https://pre-commit.com/
 [conventional-commits]: https://www.conventionalcommits.org
 [commitlint]: https://github.com/marketplace/actions/commit-linter
 [deezer-developers-myapps]: https://developers.deezer.com/myapps
