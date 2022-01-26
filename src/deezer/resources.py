@@ -240,7 +240,7 @@ class Genre(Resource):
         Get all radios for a genre.
 
         :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Radio <deezer.resources.Track>` instances
+                  of :class:`Radio <deezer.resources.Radio>` instances
         """
         return self.get_paginated_list("radios", **kwargs)
 
