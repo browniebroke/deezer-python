@@ -245,7 +245,7 @@ class Client:
         """
         Get top podcasts.
 
-        :return: a list of :class:`~deezer.resources.Podcasts` instances.
+        :return: a list of :class:`~deezer.resources.Podcast` instances.
         """
         return self.request("GET", "chart/0/podcasts")
 
