@@ -32,11 +32,11 @@
   <img src="https://img.shields.io/pypi/pyversions/deezer-python.svg?style=flat-square" alt="pyversions">
   <img src="https://img.shields.io/pypi/l/deezer-python.svg?style=flat-square" alt="license">
   <a href="https://github.com/browniebroke/deezer-python">
-    <img src="https://tokei.rs/b1/github/browniebroke/deezer-python/" alt="LoC">
+    <img src="https://tokei.rs/b1/github/browniebroke/deezer-python" alt="LoC">
   </a>
 </p>
 
-A friendly Python wrapper around the [Deezer API](http://developers.deezer.com/api).
+A friendly Python wrapper around the [Deezer API](https://developers.deezer.com/api).
 
 ## Installation
 
