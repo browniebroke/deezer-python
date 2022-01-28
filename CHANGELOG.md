@@ -2,6 +2,19 @@
 
 <!--next-version-placeholder-->
 
+## v5.0.1 (2022-01-28)
+### Fix
+* `Genre` methods return a list ([`2c15056`](https://github.com/browniebroke/deezer-python/commit/2c15056c22226ef68a9c694363a3b6e915e7cff5))
+
+### Documentation
+* Fix type hints and add documentation ([`beeacc4`](https://github.com/browniebroke/deezer-python/commit/beeacc46b6fc3ad4c99d791bfce832cdf22af167))
+* Fix a few urls in README.md ([`c12120b`](https://github.com/browniebroke/deezer-python/commit/c12120bee9b45da5aa6c6fa2bf9e111cce5ae141))
+* Add prndrbr as a contributor for doc ([#442](https://github.com/browniebroke/deezer-python/issues/442)) ([`4387822`](https://github.com/browniebroke/deezer-python/commit/4387822f6317a8fb92f4f055173a8c9cb7c0b59a))
+* Fix a few typos ([`69755f2`](https://github.com/browniebroke/deezer-python/commit/69755f2ff1382694cb93eab89d1daf7321129441))
+* Update contributing guide ([`a673690`](https://github.com/browniebroke/deezer-python/commit/a673690ee781ab9af7c46001d7ac9f087cc2f406))
+* Update contributing guide ([`ca60f3c`](https://github.com/browniebroke/deezer-python/commit/ca60f3cbc5a1e654e5c0e288ac55c850145f2e99))
+* Fix outdated installation instruction ([`1129210`](https://github.com/browniebroke/deezer-python/commit/1129210ae60685385484fdb2ffeba51f11f1bd54))
+
 ## v5.0.0 (2022-01-17)
 ### Feature
 * Add `PaginationList` to improve how we deal with pagination ([#425](https://github.com/browniebroke/deezer-python/issues/425)) ([`6a4ccf2`](https://github.com/browniebroke/deezer-python/commit/6a4ccf2f3c2a50109a6aaded2510b16d64e354ac))
