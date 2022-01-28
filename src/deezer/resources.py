@@ -229,23 +229,21 @@ class Genre(Resource):
     picture_big: str
     picture_xl: str
 
-    def get_artists(self, **kwargs) -> PaginatedList[Artist]:
+    def get_artists(self, **kwargs) -> list[Artist]:
         """
         Get all artists for a genre.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Artist <deezer.resources.Artist>` instances.
+        :returns: list of :class:`Artist <deezer.resources.Artist>` instances
         """
-        return self.get_paginated_list("artists", **kwargs)
+        return self.get_relation("artists", **kwargs)
 
-    def get_radios(self, **kwargs) -> PaginatedList[Radio]:
+    def get_radios(self, **kwargs) -> list[Radio]:
         """
         Get all radios for a genre.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Radio <deezer.resources.Radio>` instances
+        :returns: list of :class:`Radio <deezer.resources.Radio>` instances
         """
-        return self.get_paginated_list("radios", **kwargs)
+        return self.get_relation("radios", **kwargs)
 
 
 class Track(Resource):
