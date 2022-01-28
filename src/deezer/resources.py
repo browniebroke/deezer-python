@@ -121,6 +121,7 @@ class Album(Resource):
     contributors: list[Artist]
 
     artist: Artist
+    tracks: list[Track]
 
     _parse_release_date = staticmethod(parse_date)
 
@@ -194,8 +195,10 @@ class Artist(Resource):
         """
         return self.get_paginated_list("related", **kwargs)
 
-    def get_radio(self, **kwargs) -> PaginatedList[Radio]:
+    def get_radio(self, **kwargs) -> list[Track]:
         """
+        Get a list of tracks.
+
         :returns: list of :class:`Track <deezer.resources.Track>` instances
         """
         return self.get_relation("radio", **kwargs)
@@ -295,6 +298,8 @@ class Track(Resource):
 
     def get_album(self) -> Album:
         """
+        Get the album of the Track.
+
         :returns: the :class:`Album <deezer.resources.Album>` instance
         """
         return self.client.get_album(self.album.id)
@@ -397,6 +402,7 @@ class Playlist(Resource):
     picture_xl: str
     checksum: str
     creator: User
+    tracks: list[Track]
 
     def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
