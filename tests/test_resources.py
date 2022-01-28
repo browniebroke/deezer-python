@@ -154,14 +154,14 @@ class TestGenre:
 
     def test_get_artists(self, electro):
         artists = electro.get_artists()
-        assert isinstance(artists, deezer.pagination.PaginatedList)
+        assert isinstance(artists, list)
         artist = artists[0]
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Major Lazer>"
 
     def test_get_radios(self, electro):
         radios = electro.get_radios()
-        assert isinstance(radios, deezer.pagination.PaginatedList)
+        assert isinstance(radios, list)
         radio = radios[0]
         assert isinstance(radio, deezer.resources.Radio)
         assert repr(radio) == "<Radio: Electro Swing>"
