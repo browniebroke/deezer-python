@@ -1,0 +1,98 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/editorial/106
+  response:
+    body:
+      string: '{"id":106,"name":"Electro","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/1000x1000-000000-80-0-0.jpg","type":"editorial"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Content-Length:
+      - '671'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding,Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-25
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr6b52eb72801d783dcc5bb4cd3d71c9bfaf4226
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/editorial/106/selection
+  response:
+    body:
+      string: '{"data":[{"id":274760572,"title":"Terre Promise","cover":"https:\/\/api.deezer.com\/album\/274760572\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/34998929a20874b9dde27cbcc731e7a6\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/34998929a20874b9dde27cbcc731e7a6\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/34998929a20874b9dde27cbcc731e7a6\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/34998929a20874b9dde27cbcc731e7a6\/1000x1000-000000-80-0-0.jpg","md5_image":"34998929a20874b9dde27cbcc731e7a6","genre_id":106,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/274760572\/tracks","explicit_lyrics":false,"artist":{"id":2799791,"name":"Blutch","link":"https:\/\/www.deezer.com\/artist\/2799791","tracklist":"https:\/\/api.deezer.com\/artist\/2799791\/top?limit=50","type":"artist"},"type":"album"},{"id":286473712,"title":"CAPRISONGS","cover":"https:\/\/api.deezer.com\/album\/286473712\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d68c5560e7e839491a10cfcb1a01925c\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d68c5560e7e839491a10cfcb1a01925c\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d68c5560e7e839491a10cfcb1a01925c\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d68c5560e7e839491a10cfcb1a01925c\/1000x1000-000000-80-0-0.jpg","md5_image":"d68c5560e7e839491a10cfcb1a01925c","genre_id":106,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/286473712\/tracks","explicit_lyrics":true,"artist":{"id":5039338,"name":"FKA
+        twigs","link":"https:\/\/www.deezer.com\/artist\/5039338","tracklist":"https:\/\/api.deezer.com\/artist\/5039338\/top?limit=50","type":"artist"},"type":"album"},{"id":256452632,"title":"RISE","cover":"https:\/\/api.deezer.com\/album\/256452632\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cae40e9d9e0f87b8ceb6e835c34f270a\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cae40e9d9e0f87b8ceb6e835c34f270a\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cae40e9d9e0f87b8ceb6e835c34f270a\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cae40e9d9e0f87b8ceb6e835c34f270a\/1000x1000-000000-80-0-0.jpg","md5_image":"cae40e9d9e0f87b8ceb6e835c34f270a","genre_id":106,"record_type":"single","tracklist":"https:\/\/api.deezer.com\/album\/256452632\/tracks","explicit_lyrics":false,"artist":{"id":12049,"name":"Darius","link":"https:\/\/www.deezer.com\/artist\/12049","tracklist":"https:\/\/api.deezer.com\/artist\/12049\/top?limit=50","type":"artist"},"type":"album"},{"id":11975940,"title":"Initial
+        Command","cover":"https:\/\/api.deezer.com\/album\/11975940\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cf1915c1d0338b33c8e7d3cba45f29c3\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cf1915c1d0338b33c8e7d3cba45f29c3\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cf1915c1d0338b33c8e7d3cba45f29c3\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cf1915c1d0338b33c8e7d3cba45f29c3\/1000x1000-000000-80-0-0.jpg","md5_image":"cf1915c1d0338b33c8e7d3cba45f29c3","genre_id":106,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/11975940\/tracks","explicit_lyrics":false,"artist":{"id":8085,"name":"Front
+        Line Assembly","link":"https:\/\/www.deezer.com\/artist\/8085","tracklist":"https:\/\/api.deezer.com\/artist\/8085\/top?limit=50","type":"artist"},"type":"album"},{"id":6675975,"title":"Actio
+        Reactio","cover":"https:\/\/api.deezer.com\/album\/6675975\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/5c4939c3c090399ab8422ea42456212e\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/5c4939c3c090399ab8422ea42456212e\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/5c4939c3c090399ab8422ea42456212e\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/5c4939c3c090399ab8422ea42456212e\/1000x1000-000000-80-0-0.jpg","md5_image":"5c4939c3c090399ab8422ea42456212e","genre_id":106,"record_type":"ep","tracklist":"https:\/\/api.deezer.com\/album\/6675975\/tracks","explicit_lyrics":false,"artist":{"id":4874789,"name":"Helena
+        Hauff","link":"https:\/\/www.deezer.com\/artist\/4874789","tracklist":"https:\/\/api.deezer.com\/artist\/4874789\/top?limit=50","type":"artist"},"type":"album"},{"id":65212332,"title":"OIL
+        OF EVERY PEARL''S UN-INSIDES","cover":"https:\/\/api.deezer.com\/album\/65212332\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9ab8a5aba57f9ae3e3e7ba92b2a9b1a1\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9ab8a5aba57f9ae3e3e7ba92b2a9b1a1\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9ab8a5aba57f9ae3e3e7ba92b2a9b1a1\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9ab8a5aba57f9ae3e3e7ba92b2a9b1a1\/1000x1000-000000-80-0-0.jpg","md5_image":"9ab8a5aba57f9ae3e3e7ba92b2a9b1a1","genre_id":106,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/65212332\/tracks","explicit_lyrics":false,"artist":{"id":6478881,"name":"SOPHIE","link":"https:\/\/www.deezer.com\/artist\/6478881","tracklist":"https:\/\/api.deezer.com\/artist\/6478881\/top?limit=50","type":"artist"},"type":"album"},{"id":179208502,"title":"Aura","cover":"https:\/\/api.deezer.com\/album\/179208502\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d1e9093a7f5d2975e403c31c1e1106a2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d1e9093a7f5d2975e403c31c1e1106a2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d1e9093a7f5d2975e403c31c1e1106a2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d1e9093a7f5d2975e403c31c1e1106a2\/1000x1000-000000-80-0-0.jpg","md5_image":"d1e9093a7f5d2975e403c31c1e1106a2","genre_id":106,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/179208502\/tracks","explicit_lyrics":false,"artist":{"id":4460463,"name":"Ambient
+        Jazz Ensemble","link":"https:\/\/www.deezer.com\/artist\/4460463","tracklist":"https:\/\/api.deezer.com\/artist\/4460463\/top?limit=50","type":"artist"},"type":"album"},{"id":167123452,"title":"Kiss
+        Me","cover":"https:\/\/api.deezer.com\/album\/167123452\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c08d1a48d6240b617b1f9813683ad4d3\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c08d1a48d6240b617b1f9813683ad4d3\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c08d1a48d6240b617b1f9813683ad4d3\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c08d1a48d6240b617b1f9813683ad4d3\/1000x1000-000000-80-0-0.jpg","md5_image":"c08d1a48d6240b617b1f9813683ad4d3","genre_id":106,"record_type":"single","tracklist":"https:\/\/api.deezer.com\/album\/167123452\/tracks","explicit_lyrics":false,"artist":{"id":6461519,"name":"Fellini
+        F\u00e9lin","link":"https:\/\/www.deezer.com\/artist\/6461519","tracklist":"https:\/\/api.deezer.com\/artist\/6461519\/top?limit=50","type":"artist"},"type":"album"},{"id":138242642,"title":"Empty","cover":"https:\/\/api.deezer.com\/album\/138242642\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/708a046a00e4f93bc502f7c83089b837\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/708a046a00e4f93bc502f7c83089b837\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/708a046a00e4f93bc502f7c83089b837\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/708a046a00e4f93bc502f7c83089b837\/1000x1000-000000-80-0-0.jpg","md5_image":"708a046a00e4f93bc502f7c83089b837","genre_id":106,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/138242642\/tracks","explicit_lyrics":false,"artist":{"id":332318,"name":"Nils
+        Frahm","link":"https:\/\/www.deezer.com\/artist\/332318","tracklist":"https:\/\/api.deezer.com\/artist\/332318\/top?limit=50","type":"artist"},"type":"album"},{"id":129148142,"title":"Honeymoon","cover":"https:\/\/api.deezer.com\/album\/129148142\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/81be23bde336ce3cd9edaef944e85995\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/81be23bde336ce3cd9edaef944e85995\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/81be23bde336ce3cd9edaef944e85995\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/81be23bde336ce3cd9edaef944e85995\/1000x1000-000000-80-0-0.jpg","md5_image":"81be23bde336ce3cd9edaef944e85995","genre_id":106,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/129148142\/tracks","explicit_lyrics":false,"artist":{"id":9017672,"name":"Ohslo","link":"https:\/\/www.deezer.com\/artist\/9017672","tracklist":"https:\/\/api.deezer.com\/artist\/9017672\/top?limit=50","type":"artist"},"type":"album"}]}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding,Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-159
+    status:
+      code: 200
+      message: OK
+version: 1

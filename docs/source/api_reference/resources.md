@@ -10,6 +10,7 @@ This module model the various type of content that is being returned by the Deez
 resources/album
 resources/artist
 resources/chart
+resources/editorial
 resources/episode
 resources/genre
 resources/playlist
