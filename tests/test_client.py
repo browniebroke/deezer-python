@@ -88,6 +88,22 @@ class TestClient:
         assert result[0].title == "Rob Beckett and Josh Widdicombe's Parenting Hell"
         assert isinstance(result[0], deezer.resources.Podcast)
 
+    def test_get_editorial(self, client):
+        """Test methods to get an editorial"""
+        editorial = client.get_editorial(0)
+        assert isinstance(editorial, deezer.resources.Editorial)
+
+    def test_no_editorial_raise(self, client):
+        """Test method get_editorial for invalid value"""
+        with pytest.raises(DeezerErrorResponse):
+            client.get_editorial(-1)
+
+    def test_list_editorials(self, client):
+        """Test methods to list editorials"""
+        editorials = client.list_editorials()
+        assert isinstance(editorials, deezer.pagination.PaginatedList)
+        assert isinstance(editorials[0], deezer.resources.Editorial)
+
     def test_get_episode(self, client):
         """Test methods to get an episode"""
         episode = client.get_episode(238455362)
@@ -354,6 +370,7 @@ class TestClient:
             ({"name": "Unknown", "type": "unknown-type"}, deezer.resources.Resource),
             ({"title": "Album", "type": "album"}, deezer.resources.Album),
             ({"name": "Artist", "type": "artist"}, deezer.resources.Artist),
+            ({"name": "Editorial", "type": "editorial"}, deezer.resources.Editorial),
             ({"title": "Episode", "type": "episode"}, deezer.resources.Episode),
             ({"name": "Genre", "type": "genre"}, deezer.resources.Genre),
             ({"title": "Playlist", "type": "playlist"}, deezer.resources.Playlist),
@@ -367,6 +384,7 @@ class TestClient:
             "album",
             "artist",
             # chart not tested here as isn't returned with "type":"chart"
+            "editorial",
             "episode",
             "genre",
             "playlist",

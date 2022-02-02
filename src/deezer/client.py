@@ -18,6 +18,7 @@ from deezer.resources import (
     Album,
     Artist,
     Chart,
+    Editorial,
     Episode,
     Genre,
     Playlist,
@@ -58,7 +59,7 @@ class Client:
         "album": Album,
         "artist": Artist,
         "chart": Chart,
-        "editorial": None,
+        "editorial": Editorial,
         "episode": Episode,
         # 'folder': None, # need identification
         "genre": Genre,
@@ -248,6 +249,23 @@ class Client:
         :return: a list of :class:`~deezer.resources.Podcast` instances.
         """
         return self.request("GET", "chart/0/podcasts")
+
+    def get_editorial(self, editorial_id: int) -> Editorial:
+        """
+        Get the editorial with the given ID.
+
+        :returns: a :class:`~deezer.resources.Editorial` object.
+        """
+        return self.request("GET", f"editorial/{editorial_id}")
+
+    def list_editorials(self) -> PaginatedList[Editorial]:
+        """
+        List editorials.
+
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.resources.Editorial` objects.
+        """
+        return self._get_paginated_list("editorial")
 
     def get_episode(self, episode_id: int) -> Episode:
         """

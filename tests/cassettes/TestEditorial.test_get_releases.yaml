@@ -1,0 +1,114 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/editorial/106
+  response:
+    body:
+      string: '{"id":106,"name":"Electro","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/1000x1000-000000-80-0-0.jpg","type":"editorial"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Content-Length:
+      - '671'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding,Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-123
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_free5bb0d4492d4b54c0336c3215e75b4d1e58c8
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/editorial/106/releases
+  response:
+    body:
+      string: '{"data":[{"id":290696112,"title":"Girls","cover":"https:\/\/api.deezer.com\/album\/290696112\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/12898a960aca1850e688eb1d2a651c7a\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/12898a960aca1850e688eb1d2a651c7a\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/12898a960aca1850e688eb1d2a651c7a\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/12898a960aca1850e688eb1d2a651c7a\/1000x1000-000000-80-0-0.jpg","md5_image":"12898a960aca1850e688eb1d2a651c7a","release_date":"2022-01-31","tracklist":"https:\/\/api.deezer.com\/album\/290696112\/tracks","artist":{"id":158678802,"name":"Burg
+        (FR)","tracklist":"https:\/\/api.deezer.com\/artist\/158678802\/top?limit=50","type":"artist"},"type":"album"},{"id":291978162,"title":"Tabasse
+        vol.1","cover":"https:\/\/api.deezer.com\/album\/291978162\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/979f73ffd4ec0dd19b06d3b344974a7b\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/979f73ffd4ec0dd19b06d3b344974a7b\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/979f73ffd4ec0dd19b06d3b344974a7b\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/979f73ffd4ec0dd19b06d3b344974a7b\/1000x1000-000000-80-0-0.jpg","md5_image":"979f73ffd4ec0dd19b06d3b344974a7b","release_date":"2022-01-31","tracklist":"https:\/\/api.deezer.com\/album\/291978162\/tracks","artist":{"id":159180232,"name":"Lou
+        Vallognes","tracklist":"https:\/\/api.deezer.com\/artist\/159180232\/top?limit=50","type":"artist"},"type":"album"},{"id":291654112,"title":"Potentate","cover":"https:\/\/api.deezer.com\/album\/291654112\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a45c7eb8b12a18719cde4bc65eb93729\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a45c7eb8b12a18719cde4bc65eb93729\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a45c7eb8b12a18719cde4bc65eb93729\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a45c7eb8b12a18719cde4bc65eb93729\/1000x1000-000000-80-0-0.jpg","md5_image":"a45c7eb8b12a18719cde4bc65eb93729","release_date":"2022-01-30","tracklist":"https:\/\/api.deezer.com\/album\/291654112\/tracks","artist":{"id":159224012,"name":"Rotimi","tracklist":"https:\/\/api.deezer.com\/artist\/159224012\/top?limit=50","type":"artist"},"type":"album"},{"id":287847522,"title":"BarCaf\u00e9
+        Lounge Volume 1","cover":"https:\/\/api.deezer.com\/album\/287847522\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/6a20e31ef440eb23dd51753ccaac49e0\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/6a20e31ef440eb23dd51753ccaac49e0\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/6a20e31ef440eb23dd51753ccaac49e0\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/6a20e31ef440eb23dd51753ccaac49e0\/1000x1000-000000-80-0-0.jpg","md5_image":"6a20e31ef440eb23dd51753ccaac49e0","release_date":"2022-01-29","tracklist":"https:\/\/api.deezer.com\/album\/287847522\/tracks","artist":{"id":157510782,"name":"Beelion
+        Record","tracklist":"https:\/\/api.deezer.com\/artist\/157510782\/top?limit=50","type":"artist"},"type":"album"},{"id":274760572,"title":"Terre
+        Promise","cover":"https:\/\/api.deezer.com\/album\/274760572\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/34998929a20874b9dde27cbcc731e7a6\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/34998929a20874b9dde27cbcc731e7a6\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/34998929a20874b9dde27cbcc731e7a6\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/34998929a20874b9dde27cbcc731e7a6\/1000x1000-000000-80-0-0.jpg","md5_image":"34998929a20874b9dde27cbcc731e7a6","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/274760572\/tracks","artist":{"id":2799791,"name":"Blutch","tracklist":"https:\/\/api.deezer.com\/artist\/2799791\/top?limit=50","type":"artist"},"type":"album"},{"id":288203152,"title":"Don''t
+        Follow Me Because I''m Lost Too!!","cover":"https:\/\/api.deezer.com\/album\/288203152\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/4358b9e28aac9359e872730e633a7ce9\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/4358b9e28aac9359e872730e633a7ce9\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/4358b9e28aac9359e872730e633a7ce9\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/4358b9e28aac9359e872730e633a7ce9\/1000x1000-000000-80-0-0.jpg","md5_image":"4358b9e28aac9359e872730e633a7ce9","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/288203152\/tracks","artist":{"id":10671895,"name":"Vegyn","tracklist":"https:\/\/api.deezer.com\/artist\/10671895\/top?limit=50","type":"artist"},"type":"album"},{"id":275227682,"title":"Projections","cover":"https:\/\/api.deezer.com\/album\/275227682\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9933cdce9623f598a68c08c585db2d6f\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9933cdce9623f598a68c08c585db2d6f\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9933cdce9623f598a68c08c585db2d6f\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9933cdce9623f598a68c08c585db2d6f\/1000x1000-000000-80-0-0.jpg","md5_image":"9933cdce9623f598a68c08c585db2d6f","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/275227682\/tracks","artist":{"id":57745602,"name":"VTSS","tracklist":"https:\/\/api.deezer.com\/artist\/57745602\/top?limit=50","type":"artist"},"type":"album"},{"id":285222652,"title":"Signal
+        EP","cover":"https:\/\/api.deezer.com\/album\/285222652\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c9b5078a1eee9d1372f1c951cf0173dc\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c9b5078a1eee9d1372f1c951cf0173dc\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c9b5078a1eee9d1372f1c951cf0173dc\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c9b5078a1eee9d1372f1c951cf0173dc\/1000x1000-000000-80-0-0.jpg","md5_image":"c9b5078a1eee9d1372f1c951cf0173dc","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/285222652\/tracks","artist":{"id":401120,"name":"Pete
+        Tong","tracklist":"https:\/\/api.deezer.com\/artist\/401120\/top?limit=50","type":"artist"},"type":"album"},{"id":275020232,"title":"V\u0100RUA","cover":"https:\/\/api.deezer.com\/album\/275020232\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/3801d9f7f60901a7674d5dffd6e83cb2\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/3801d9f7f60901a7674d5dffd6e83cb2\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/3801d9f7f60901a7674d5dffd6e83cb2\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/3801d9f7f60901a7674d5dffd6e83cb2\/1000x1000-000000-80-0-0.jpg","md5_image":"3801d9f7f60901a7674d5dffd6e83cb2","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/275020232\/tracks","artist":{"id":52934892,"name":"QuinzeQuinze","tracklist":"https:\/\/api.deezer.com\/artist\/52934892\/top?limit=50","type":"artist"},"type":"album"},{"id":276138682,"title":"Tropical
+        Gypsy","cover":"https:\/\/api.deezer.com\/album\/276138682\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cd27c4d0deb4364bec08f7656bd0ae74\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cd27c4d0deb4364bec08f7656bd0ae74\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cd27c4d0deb4364bec08f7656bd0ae74\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cd27c4d0deb4364bec08f7656bd0ae74\/1000x1000-000000-80-0-0.jpg","md5_image":"cd27c4d0deb4364bec08f7656bd0ae74","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/276138682\/tracks","artist":{"id":1660,"name":"DJ
+        Cam","tracklist":"https:\/\/api.deezer.com\/artist\/1660\/top?limit=50","type":"artist"},"type":"album"},{"id":288693382,"title":"Music
+        For Doing","cover":"https:\/\/api.deezer.com\/album\/288693382\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/bdea5919937d1794c39bd9beb5a4ed35\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/bdea5919937d1794c39bd9beb5a4ed35\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/bdea5919937d1794c39bd9beb5a4ed35\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/bdea5919937d1794c39bd9beb5a4ed35\/1000x1000-000000-80-0-0.jpg","md5_image":"bdea5919937d1794c39bd9beb5a4ed35","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/288693382\/tracks","artist":{"id":391331,"name":"Mark
+        Guiliana","tracklist":"https:\/\/api.deezer.com\/artist\/391331\/top?limit=50","type":"artist"},"type":"album"},{"id":265297292,"title":"Olympia
+        (Winter Games)","cover":"https:\/\/api.deezer.com\/album\/265297292\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fea76be141c692f8e484d5c3fe82fd70\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fea76be141c692f8e484d5c3fe82fd70\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fea76be141c692f8e484d5c3fe82fd70\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fea76be141c692f8e484d5c3fe82fd70\/1000x1000-000000-80-0-0.jpg","md5_image":"fea76be141c692f8e484d5c3fe82fd70","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/265297292\/tracks","artist":{"id":1607450,"name":"The
+        Micronaut","tracklist":"https:\/\/api.deezer.com\/artist\/1607450\/top?limit=50","type":"artist"},"type":"album"},{"id":290871792,"title":"Valeur
+        Ajout\u00e9e","cover":"https:\/\/api.deezer.com\/album\/290871792\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cbce76364814fa96af0f57d4f988919f\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cbce76364814fa96af0f57d4f988919f\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cbce76364814fa96af0f57d4f988919f\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cbce76364814fa96af0f57d4f988919f\/1000x1000-000000-80-0-0.jpg","md5_image":"cbce76364814fa96af0f57d4f988919f","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/290871792\/tracks","artist":{"id":158751632,"name":"Valeur
+        Ajout\u00e9e","tracklist":"https:\/\/api.deezer.com\/artist\/158751632\/top?limit=50","type":"artist"},"type":"album"},{"id":231058152,"title":"In
+        Free Fall","cover":"https:\/\/api.deezer.com\/album\/231058152\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/106397a355abdef2b1235057ca7214cb\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/106397a355abdef2b1235057ca7214cb\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/106397a355abdef2b1235057ca7214cb\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/106397a355abdef2b1235057ca7214cb\/1000x1000-000000-80-0-0.jpg","md5_image":"106397a355abdef2b1235057ca7214cb","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/231058152\/tracks","artist":{"id":13154693,"name":"Maya
+        Shenfeld","tracklist":"https:\/\/api.deezer.com\/artist\/13154693\/top?limit=50","type":"artist"},"type":"album"},{"id":289338132,"title":"Vivaldi","cover":"https:\/\/api.deezer.com\/album\/289338132\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/46b2d57f8b954063c88c4d95ac0cf81c\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/46b2d57f8b954063c88c4d95ac0cf81c\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/46b2d57f8b954063c88c4d95ac0cf81c\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/46b2d57f8b954063c88c4d95ac0cf81c\/1000x1000-000000-80-0-0.jpg","md5_image":"46b2d57f8b954063c88c4d95ac0cf81c","release_date":"2022-01-28","tracklist":"https:\/\/api.deezer.com\/album\/289338132\/tracks","artist":{"id":661247,"name":"Timmy
+        Trumpet","tracklist":"https:\/\/api.deezer.com\/artist\/661247\/top?limit=50","type":"artist"},"type":"album"},{"id":279523242,"title":"Life
+        Is a Song","cover":"https:\/\/api.deezer.com\/album\/279523242\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2fb3466e14ab27860f0c3a7f6f532159\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2fb3466e14ab27860f0c3a7f6f532159\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2fb3466e14ab27860f0c3a7f6f532159\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/2fb3466e14ab27860f0c3a7f6f532159\/1000x1000-000000-80-0-0.jpg","md5_image":"2fb3466e14ab27860f0c3a7f6f532159","release_date":"2022-01-27","tracklist":"https:\/\/api.deezer.com\/album\/279523242\/tracks","artist":{"id":11600,"name":"David
+        Morales","tracklist":"https:\/\/api.deezer.com\/artist\/11600\/top?limit=50","type":"artist"},"type":"album"},{"id":291069732,"title":"Friday
+        Wishes","cover":"https:\/\/api.deezer.com\/album\/291069732\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/5994e90a68edaabd910a159c2f825079\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/5994e90a68edaabd910a159c2f825079\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/5994e90a68edaabd910a159c2f825079\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/5994e90a68edaabd910a159c2f825079\/1000x1000-000000-80-0-0.jpg","md5_image":"5994e90a68edaabd910a159c2f825079","release_date":"2022-01-27","tracklist":"https:\/\/api.deezer.com\/album\/291069732\/tracks","artist":{"id":158830502,"name":"Dame
+        Kaiser","tracklist":"https:\/\/api.deezer.com\/artist\/158830502\/top?limit=50","type":"artist"},"type":"album"},{"id":263710672,"title":"The
+        Runner (Original Soundtrack)","cover":"https:\/\/api.deezer.com\/album\/263710672\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9ccb41c74569f2d6aab7ea878017e424\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9ccb41c74569f2d6aab7ea878017e424\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9ccb41c74569f2d6aab7ea878017e424\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9ccb41c74569f2d6aab7ea878017e424\/1000x1000-000000-80-0-0.jpg","md5_image":"9ccb41c74569f2d6aab7ea878017e424","release_date":"2022-01-21","tracklist":"https:\/\/api.deezer.com\/album\/263710672\/tracks","artist":{"id":8512914,"name":"Boy
+        Harsher","tracklist":"https:\/\/api.deezer.com\/artist\/8512914\/top?limit=50","type":"artist"},"type":"album"},{"id":280372652,"title":"BOLD","cover":"https:\/\/api.deezer.com\/album\/280372652\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/04c77fe9c463891f18d9d636453e2858\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/04c77fe9c463891f18d9d636453e2858\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/04c77fe9c463891f18d9d636453e2858\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/04c77fe9c463891f18d9d636453e2858\/1000x1000-000000-80-0-0.jpg","md5_image":"04c77fe9c463891f18d9d636453e2858","release_date":"2022-01-21","tracklist":"https:\/\/api.deezer.com\/album\/280372652\/tracks","artist":{"id":137537962,"name":"Bold","tracklist":"https:\/\/api.deezer.com\/artist\/137537962\/top?limit=50","type":"artist"},"type":"album"}],"total":199,"next":"https:\/\/api.deezer.com\/editorial\/106\/releases?index=20"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding,Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-09
+    status:
+      code: 200
+      message: OK
+version: 1

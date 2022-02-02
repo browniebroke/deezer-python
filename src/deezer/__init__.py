@@ -3,6 +3,7 @@ from deezer.pagination import PaginatedList
 from deezer.resources import (
     Album,
     Artist,
+    Editorial,
     Genre,
     Playlist,
     Radio,
@@ -18,6 +19,7 @@ __all__ = [
     "Resource",
     "Album",
     "Artist",
+    "Editorial",
     "Genre",
     "Playlist",
     "Track",
