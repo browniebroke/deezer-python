@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v5.1.0 (2022-02-02)
+### Feature
+* Add `Editorial` resource ([`b98888e`](https://github.com/browniebroke/deezer-python/commit/b98888ec131f015f5e3ba14d3be45f52fdb60e11))
+
+### Documentation
+* Update contributions for prndrbr ([`eae4bfb`](https://github.com/browniebroke/deezer-python/commit/eae4bfb6599f52f17238f5f86595a6c41af55377))
+
 ## v5.0.1 (2022-01-28)
 ### Fix
 * `Genre` methods return a list ([`2c15056`](https://github.com/browniebroke/deezer-python/commit/2c15056c22226ef68a9c694363a3b6e915e7cff5))
