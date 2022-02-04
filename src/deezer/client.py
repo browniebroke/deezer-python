@@ -283,14 +283,13 @@ class Client:
         """
         return self.request("GET", f"genre/{genre_id}")
 
-    def list_genres(self) -> PaginatedList[Genre]:
+    def list_genres(self) -> list[Genre]:
         """
         List musical genres.
 
-        :returns: a :class:`~deezer.pagination.PaginatedList`
-                  of :class:`~deezer.resources.Genre` objects.
+        :return: a list of :class:`~deezer.resources.Genre` instances
         """
-        return self._get_paginated_list("genre")
+        return self.request("GET", "genre")
 
     def get_playlist(self, playlist_id: int) -> Playlist:
         """
