@@ -133,7 +133,7 @@ class TestClient:
     def test_list_genres(self, client):
         """Test methods to list several genres"""
         genres = client.list_genres()
-        assert isinstance(genres, deezer.pagination.PaginatedList)
+        assert isinstance(genres, list)
         assert len(genres) == 23
         assert isinstance(genres[0], deezer.resources.Genre)
 
