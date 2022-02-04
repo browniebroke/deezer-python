@@ -351,7 +351,7 @@ class Client:
         user_id_str = str(user_id) if user_id else "me"
         return self.request("GET", f"user/{user_id_str}")
 
-    def get_user_albums(self, user_id: int | None = None) -> PaginatedList:
+    def get_user_albums(self, user_id: int | None = None) -> PaginatedList[Album]:
         """
         Get the favourites albums for the given user_id if provided or current user if not.
 
