@@ -315,14 +315,13 @@ class Client:
         """
         return self.request("GET", f"radio/{radio_id}")
 
-    def list_radios(self) -> PaginatedList[Radio]:
+    def list_radios(self) -> list[Radio]:
         """
         List radios.
 
-        :returns: a :class:`~deezer.pagination.PaginatedList`
-                  of :class:`~deezer.resources.Radio` objects.
+        :return: a list of :class:`~deezer.resources.Radio` instances
         """
-        return self._get_paginated_list("radio")
+        return self.request("GET", "radio")
 
     def get_radios_top(self) -> PaginatedList[Radio]:
         """
