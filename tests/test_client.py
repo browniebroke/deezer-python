@@ -170,7 +170,7 @@ class TestClient:
     def test_list_radios(self, client):
         """Test methods to list radios"""
         radios = client.list_radios()
-        assert isinstance(radios, deezer.pagination.PaginatedList)
+        assert isinstance(radios, list)
         assert len(radios) == 115
         assert isinstance(radios[0], deezer.resources.Radio)
 
