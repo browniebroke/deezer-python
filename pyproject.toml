@@ -56,7 +56,6 @@ pyupgrade = "^2.7"
 tox = "^3.20"
 vcrpy = "^4.1"
 deezer-oauth-cli = "^0.1"
-pytest-srcpaths = "^1.2"
 
 [tool.semantic_release]
 version_toml = "pyproject.toml:tool.poetry.version"
