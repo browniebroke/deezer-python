@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v5.1.1 (2022-02-07)
+### Fix
+* Make `Client.list_radios` return a `list` ([`cfb3f98`](https://github.com/browniebroke/deezer-python/commit/cfb3f983d3753904c6f7668faab6348cf15c6331))
+* Make `Client.list_genres` return a `list` ([`ca83963`](https://github.com/browniebroke/deezer-python/commit/ca839632ef178001398e786652de59e4bbbeb09e))
+
+### Documentation
+* Complete `Client.get_user_albums` return type ([`46846dc`](https://github.com/browniebroke/deezer-python/commit/46846dc6b7b801846c528798f0fdd88e0a57d5d0))
+
 ## v5.1.0 (2022-02-02)
 ### Feature
 * Add `Editorial` resource ([`b98888e`](https://github.com/browniebroke/deezer-python/commit/b98888ec131f015f5e3ba14d3be45f52fdb60e11))
