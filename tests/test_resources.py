@@ -174,6 +174,15 @@ class TestGenre:
         assert isinstance(artist, deezer.resources.Artist)
         assert repr(artist) == "<Artist: Major Lazer>"
 
+    def test_get_podcasts(self, client):
+        technology = client.get_genre(232)
+        podcasts = technology.get_podcasts()
+        assert isinstance(podcasts, deezer.pagination.PaginatedList)
+        podcast = podcasts[0]
+        assert isinstance(podcast, deezer.resources.Podcast)
+        assert repr(podcast) == "<Podcast: Le rendez-vous Tech>"
+        assert len(podcasts) == 15
+
     def test_get_radios(self, electro):
         radios = electro.get_radios()
         assert isinstance(radios, list)
