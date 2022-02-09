@@ -229,6 +229,14 @@ class TestChart:
         assert repr(playlist) == "<Playlist: Brand New UK>"
         assert len(playlists) == 10
 
+    def test_get_podcasts(self, chart):
+        podcasts = chart.get_podcasts()
+        assert isinstance(podcasts, deezer.pagination.PaginatedList)
+        podcast = podcasts[0]
+        assert isinstance(podcast, deezer.resources.Podcast)
+        assert repr(podcast) == "<Podcast: Les Grosses Têtes>"
+        assert len(podcasts) == 10
+
 
 class TestUser:
     @pytest.fixture
