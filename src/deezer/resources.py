@@ -212,6 +212,15 @@ class Artist(Resource):
         """
         return self.get_paginated_list("albums", **kwargs)
 
+    def get_playlists(self, **kwargs) -> PaginatedList[Playlist]:
+        """
+        Get a list of artist's playlists.
+
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Playlist <deezer.resources.Playlist>` instances
+        """
+        return self.get_paginated_list("playlists", **kwargs)
+
 
 class Genre(Resource):
     """
