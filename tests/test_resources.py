@@ -100,6 +100,14 @@ class TestArtist:
         assert repr(related_artist) == "<Artist: Justice>"
         assert len(related_artists) == 39
 
+    def test_get_playlists(self, daft_punk):
+        playlists = daft_punk.get_playlists()
+        assert isinstance(playlists, deezer.pagination.PaginatedList)
+        playlist = playlists[0]
+        assert isinstance(playlist, deezer.resources.Playlist)
+        assert repr(playlist) == "<Playlist: En mode 90>"
+        assert len(playlists) == 100
+
 
 class TestTrack:
     def test_track_attributes(self, client):
