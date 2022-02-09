@@ -515,6 +515,13 @@ class Chart(Resource):
         """
         return self.get_paginated_list("playlists", **kwargs)
 
+    def get_podcasts(self, **kwargs) -> PaginatedList[Podcast]:
+        """
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Podcast <deezer.resources.Podcast>` instances
+        """
+        return self.get_paginated_list("podcasts", **kwargs)
+
 
 class Podcast(Resource):
     """
