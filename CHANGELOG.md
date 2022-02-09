@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v5.2.0 (2022-02-09)
+### Feature
+* Get the top podcasts ([`f8f3438`](https://github.com/browniebroke/deezer-python/commit/f8f3438f38ce3ecb380bffd122b299880560d654))
+* Get all podcasts for a genre ([`8f220fd`](https://github.com/browniebroke/deezer-python/commit/8f220fd7b4351766b57dbe38876855b73f62aab7))
+* Get a list of artist's playlists ([`bd0f5ee`](https://github.com/browniebroke/deezer-python/commit/bd0f5eedbd610c0cf4da9fdabbbd9560a2669bf1))
+
 ## v5.1.1 (2022-02-07)
 ### Fix
 * Make `Client.list_radios` return a `list` ([`cfb3f98`](https://github.com/browniebroke/deezer-python/commit/cfb3f983d3753904c6f7668faab6348cf15c6331))
