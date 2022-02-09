@@ -246,6 +246,15 @@ class Genre(Resource):
         """
         return self.get_relation("artists", **kwargs)
 
+    def get_podcasts(self, **kwargs) -> PaginatedList[Podcast]:
+        """
+        Get all podcasts for a genre.
+
+        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
+                  of :class:`Podcast <deezer.resources.Podcast>` instances
+        """
+        return self.get_paginated_list("podcasts", **kwargs)
+
     def get_radios(self, **kwargs) -> list[Radio]:
         """
         Get all radios for a genre.
