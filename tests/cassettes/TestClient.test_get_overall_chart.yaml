@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.26.0
     method: GET
-    uri: https://api.deezer.com/chart
+    uri: https://api.deezer.com/chart/0
   response:
     body:
       string: '{"tracks":{"data":[{"id":1409072752,"title":"Bad Habits","title_short":"Bad

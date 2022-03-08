@@ -49,7 +49,7 @@ class TestClient:
         artist = client.get_artist(27)
         assert isinstance(artist, deezer.resources.Artist)
 
-    def test_chart(self, client):
+    def test_get_overall_chart(self, client):
         result = client.get_chart()
         assert isinstance(result, deezer.resources.Chart)
 
@@ -58,35 +58,35 @@ class TestClient:
         assert isinstance(result.artists[0], deezer.resources.Artist)
         assert isinstance(result.playlists[0], deezer.resources.Playlist)
 
-    def test_tracks_chart(self, client):
+    def test_get_overall_tracks_chart(self, client):
         result = client.get_tracks_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Khapta"
         assert isinstance(result[0], deezer.resources.Track)
 
-    def test_albums_chart(self, client):
+    def test_get_overall_albums_chart(self, client):
         result = client.get_albums_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Lacrim"
         assert isinstance(result[0], deezer.resources.Album)
 
-    def test_artists_chart(self, client):
+    def test_get_overall_artists_chart(self, client):
         result = client.get_artists_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].name == "Lacrim"
         assert isinstance(result[0], deezer.resources.Artist)
 
-    def test_playlists_chart(self, client):
+    def test_get_overall_playlists_chart(self, client):
         result = client.get_playlists_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Les titres du moment"
         assert isinstance(result[0], deezer.resources.Playlist)
 
-    def test_podcasts_chart(self, client):
+    def test_get_overall_podcasts_chart(self, client):
         result = client.get_podcasts_chart()
         assert isinstance(result, list)
         assert len(result) == 10
