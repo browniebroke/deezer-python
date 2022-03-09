@@ -1,0 +1,83 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/chart/210/podcasts
+  response:
+    body:
+      string: '{"data":[{"id":58021,"title":"Les Grosses T\u00eates","description":"Du
+        lundi au vendredi de 15h30 \u00e0 18h, retrouvez Laurent Ruquier, chef d''orchestre
+        de l''\u00e9mission. Entour\u00e9 de ses fid\u00e8les Grosses T\u00eates,
+        il imprime sa marque \u00e0 ce programme culte de la radio tout en restant
+        fid\u00e8le \u00e0 ses fondamentaux.","available":true,"fans":25734,"link":"https:\/\/www.deezer.com\/show\/58021","share":"https:\/\/www.deezer.com\/show\/58021?utm_source=deezer&utm_content=show-58021&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/610ee80af98678bfbc7b0edacc30971a\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/610ee80af98678bfbc7b0edacc30971a\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/610ee80af98678bfbc7b0edacc30971a\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/610ee80af98678bfbc7b0edacc30971a\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/610ee80af98678bfbc7b0edacc30971a\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":48461,"title":"Le
+        moment Meurice","description":"Micro en main, il escarmouche, il coupe, il
+        feinte... et \u00e0 la fin de l''envoi, il touche ! Rendez-vous sur l''application
+        Radio France pour d\u00e9couvrir tous les autres \u00e9pisodes.","available":true,"fans":53986,"link":"https:\/\/www.deezer.com\/show\/48461","share":"https:\/\/www.deezer.com\/show\/48461?utm_source=deezer&utm_content=show-48461&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/cadf9781b8dc86bb34824e9597f6bb76\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/cadf9781b8dc86bb34824e9597f6bb76\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/cadf9781b8dc86bb34824e9597f6bb76\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/cadf9781b8dc86bb34824e9597f6bb76\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/cadf9781b8dc86bb34824e9597f6bb76\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":58027,"title":"Laurent
+        Gerra","description":"Laurent Gerra pastiche avec malice les d\u00e9clarations
+        chocs et les tics des c\u00e9l\u00e9brit\u00e9s. Avec sa complice, Mademoiselle
+        Jade, les s\u00e9ances de travail ne sont jamais tristes.","available":true,"fans":8424,"link":"https:\/\/www.deezer.com\/show\/58027","share":"https:\/\/www.deezer.com\/show\/58027?utm_source=deezer&utm_content=show-58027&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/95f5e864833afcaae09dc1f5b3e655c1\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/95f5e864833afcaae09dc1f5b3e655c1\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/95f5e864833afcaae09dc1f5b3e655c1\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/95f5e864833afcaae09dc1f5b3e655c1\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/95f5e864833afcaae09dc1f5b3e655c1\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":48193,"title":"L''humour
+        d''Inter","description":"Le rire est le propre de France Inter Rendez-vous
+        sur l''application Radio France pour d\u00e9couvrir tous les autres \u00e9pisodes.","available":true,"fans":12821,"link":"https:\/\/www.deezer.com\/show\/48193","share":"https:\/\/www.deezer.com\/show\/48193?utm_source=deezer&utm_content=show-48193&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/89f4df95121314616521afee19a6650c\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/89f4df95121314616521afee19a6650c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/89f4df95121314616521afee19a6650c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/89f4df95121314616521afee19a6650c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/89f4df95121314616521afee19a6650c\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":2192132,"title":"Les
+        30 Glorieuses","description":"Emission de d\u00e9rision de l''actualit\u00e9.","available":true,"fans":2840,"link":"https:\/\/www.deezer.com\/show\/2192132","share":"https:\/\/www.deezer.com\/show\/2192132?utm_source=deezer&utm_content=show-2192132&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/04a754627ad92ab6f7d1a2d1aaf86a19\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/04a754627ad92ab6f7d1a2d1aaf86a19\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/04a754627ad92ab6f7d1a2d1aaf86a19\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/04a754627ad92ab6f7d1a2d1aaf86a19\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/04a754627ad92ab6f7d1a2d1aaf86a19\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":376492,"title":"FloodCast","description":"Floodcast,
+        c''est le podcast pr\u00e9sent\u00e9 par Florent Bernard avec la complicit\u00e9
+        d''Adrien M\u00e9nielle dans lequel ils invitent des artistes pour discuter
+        de pleins de choses. Ce qui se passe dans chaque \u00e9mission n''engage que
+        nous et le pr\u00e9sident des Etats-Unis. Voir Acast.com\/privacy pour les
+        informations sur la vie priv\u00e9e et l''opt-out.","available":true,"fans":12773,"link":"https:\/\/www.deezer.com\/show\/376492","share":"https:\/\/www.deezer.com\/show\/376492?utm_source=deezer&utm_content=show-376492&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4791506cd9e366a6fd3b459d6069daed\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4791506cd9e366a6fd3b459d6069daed\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4791506cd9e366a6fd3b459d6069daed\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4791506cd9e366a6fd3b459d6069daed\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/4791506cd9e366a6fd3b459d6069daed\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":338532,"title":"L''appel
+        trop con","description":"Martin fait un nouveau canular t\u00e9l\u00e9phonique
+        chaque jour","available":true,"fans":6580,"link":"https:\/\/www.deezer.com\/show\/338532","share":"https:\/\/www.deezer.com\/show\/338532?utm_source=deezer&utm_content=show-338532&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/3c1d16af122a6cb63b057bdc25497ead\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/3c1d16af122a6cb63b057bdc25497ead\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/3c1d16af122a6cb63b057bdc25497ead\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/3c1d16af122a6cb63b057bdc25497ead\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/3c1d16af122a6cb63b057bdc25497ead\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":54779,"title":"Tanguy
+        Pastureau maltraite l''info","description":"Tanguy Pastureau maltraite l''info
+        Rendez-vous sur l''application Radio France pour d\u00e9couvrir tous les autres
+        \u00e9pisodes.","available":true,"fans":13065,"link":"https:\/\/www.deezer.com\/show\/54779","share":"https:\/\/www.deezer.com\/show\/54779?utm_source=deezer&utm_content=show-54779&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8d747d74ef1a1c891c35d0148f0bb726\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8d747d74ef1a1c891c35d0148f0bb726\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8d747d74ef1a1c891c35d0148f0bb726\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8d747d74ef1a1c891c35d0148f0bb726\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8d747d74ef1a1c891c35d0148f0bb726\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":2608302,"title":"Best
+        Story Ever avec Marina Rollman","description":"Il y a des pages Wikip\u00e9dia
+        tellement incroyables qu\u2019on a envie de les raconter \u00e0 tout le monde.
+        Et c\u2019est exactement ce que Marina Rollman fait dans Best Story Ever,
+        en pr\u00eatant sa voix aux mille personnages qui font vivre ses histoires
+        vraies pr\u00e9f\u00e9r\u00e9es : cascadeuse sexag\u00e9naire, moineau destructeur,
+        bouffon sans limite, ranger maudit... Un podcast Deezer Originals, produit
+        par Konbini.","available":true,"fans":17115,"link":"https:\/\/www.deezer.com\/show\/2608302","share":"https:\/\/www.deezer.com\/show\/2608302?utm_source=deezer&utm_content=show-2608302&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9533a4393a01b2f02c9398e276412ede\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9533a4393a01b2f02c9398e276412ede\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9533a4393a01b2f02c9398e276412ede\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9533a4393a01b2f02c9398e276412ede\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/9533a4393a01b2f02c9398e276412ede\/1000x1000-000000-80-0-0.jpg","type":"podcast"},{"id":54751,"title":"Par
+        Jupiter !","description":"Par Jupiter ! Les irr\u00e9ductibles de l''\u00e9quipe
+        \u00ab Si tu \u00e9coutes, j''annule tout \u00bb n''annulent rien et reprennent
+        du service pour secouer de l''info. L''actualit\u00e9 n''a qu''\u00e0 bien
+        se tenir ! Rendez-vous sur l''application Radio France pour d\u00e9couvrir
+        tous les autres \u00e9pisodes.","available":true,"fans":18384,"link":"https:\/\/www.deezer.com\/show\/54751","share":"https:\/\/www.deezer.com\/show\/54751?utm_source=deezer&utm_content=show-54751&utm_term=0_1646695606&utm_medium=web","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8b56016b673f297edf7f16665b367fb4\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8b56016b673f297edf7f16665b367fb4\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8b56016b673f297edf7f16665b367fb4\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8b56016b673f297edf7f16665b367fb4\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/talk\/8b56016b673f297edf7f16665b367fb4\/1000x1000-000000-80-0-0.jpg","type":"podcast"}],"total":10}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11218'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-107
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

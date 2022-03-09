@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/chart/106/artists
+  response:
+    body:
+      string: '{"data":[{"id":5400149,"name":"Polo & Pan","link":"https:\/\/www.deezer.com\/artist\/5400149","picture":"https:\/\/api.deezer.com\/artist\/5400149\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/9f2450de82d23bd7d860f4670f3450df\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/9f2450de82d23bd7d860f4670f3450df\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/9f2450de82d23bd7d860f4670f3450df\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/9f2450de82d23bd7d860f4670f3450df\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/5400149\/top?limit=50","position":1,"type":"artist"},{"id":5992092,"name":"Kungs","link":"https:\/\/www.deezer.com\/artist\/5992092","picture":"https:\/\/api.deezer.com\/artist\/5992092\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/eb2c688228e2702844904ac7a23e9a60\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/eb2c688228e2702844904ac7a23e9a60\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/eb2c688228e2702844904ac7a23e9a60\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/eb2c688228e2702844904ac7a23e9a60\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/5992092\/top?limit=50","position":2,"type":"artist"},{"id":6032634,"name":"Ofenbach","link":"https:\/\/www.deezer.com\/artist\/6032634","picture":"https:\/\/api.deezer.com\/artist\/6032634\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/59aae1e19eb91814107e3b34c00f41fc\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/59aae1e19eb91814107e3b34c00f41fc\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/59aae1e19eb91814107e3b34c00f41fc\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/59aae1e19eb91814107e3b34c00f41fc\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/6032634\/top?limit=50","position":3,"type":"artist"},{"id":282118,"name":"Major
+        Lazer","link":"https:\/\/www.deezer.com\/artist\/282118","picture":"https:\/\/api.deezer.com\/artist\/282118\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/847e0144bf03cd9240e01a16f3baed73\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/847e0144bf03cd9240e01a16f3baed73\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/847e0144bf03cd9240e01a16f3baed73\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/847e0144bf03cd9240e01a16f3baed73\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/282118\/top?limit=50","position":4,"type":"artist"},{"id":5767206,"name":"Shouse","link":"https:\/\/www.deezer.com\/artist\/5767206","picture":"https:\/\/api.deezer.com\/artist\/5767206\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/29bb2c78ae91b84e95e676ae15c76ce4\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/29bb2c78ae91b84e95e676ae15c76ce4\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/29bb2c78ae91b84e95e676ae15c76ce4\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/29bb2c78ae91b84e95e676ae15c76ce4\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/5767206\/top?limit=50","position":5,"type":"artist"},{"id":73101792,"name":"Imanbek","link":"https:\/\/www.deezer.com\/artist\/73101792","picture":"https:\/\/api.deezer.com\/artist\/73101792\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/4669a1bea5b9faab6cb677d878190e23\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/4669a1bea5b9faab6cb677d878190e23\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/4669a1bea5b9faab6cb677d878190e23\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/4669a1bea5b9faab6cb677d878190e23\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/73101792\/top?limit=50","position":6,"type":"artist"},{"id":5283366,"name":"The
+        Avener","link":"https:\/\/www.deezer.com\/artist\/5283366","picture":"https:\/\/api.deezer.com\/artist\/5283366\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/df7a27a11c2d43b2253b14392723727e\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/df7a27a11c2d43b2253b14392723727e\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/df7a27a11c2d43b2253b14392723727e\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/df7a27a11c2d43b2253b14392723727e\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/5283366\/top?limit=50","position":7,"type":"artist"},{"id":88,"name":"Sean
+        Paul","link":"https:\/\/www.deezer.com\/artist\/88","picture":"https:\/\/api.deezer.com\/artist\/88\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/043332be51a1a67cb0a363ea88475a41\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/043332be51a1a67cb0a363ea88475a41\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/043332be51a1a67cb0a363ea88475a41\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/043332be51a1a67cb0a363ea88475a41\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/88\/top?limit=50","position":8,"type":"artist"},{"id":4606399,"name":"Sof\u00eda
+        Reyes","link":"https:\/\/www.deezer.com\/artist\/4606399","picture":"https:\/\/api.deezer.com\/artist\/4606399\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/8bff9f00546093d89714ad58712421e1\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/8bff9f00546093d89714ad58712421e1\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/8bff9f00546093d89714ad58712421e1\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/8bff9f00546093d89714ad58712421e1\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/4606399\/top?limit=50","position":9,"type":"artist"},{"id":7912872,"name":"Petit
+        Biscuit","link":"https:\/\/www.deezer.com\/artist\/7912872","picture":"https:\/\/api.deezer.com\/artist\/7912872\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/adf04ca79f4832e61880899604b2bc86\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/adf04ca79f4832e61880899604b2bc86\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/adf04ca79f4832e61880899604b2bc86\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/adf04ca79f4832e61880899604b2bc86\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/7912872\/top?limit=50","position":10,"type":"artist"}],"total":10}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7707'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-81
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

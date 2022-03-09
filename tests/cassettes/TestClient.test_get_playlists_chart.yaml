@@ -1,0 +1,75 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/chart/106/playlists
+  response:
+    body:
+      string: '{"data":[{"id":1561798251,"title":"Chill tranquille","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/1561798251","picture":"https:\/\/api.deezer.com\/playlist\/1561798251\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/73b087bea582833c185ce03962d78c02\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/73b087bea582833c185ce03962d78c02\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/73b087bea582833c185ce03962d78c02\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/73b087bea582833c185ce03962d78c02\/1000x1000-000000-80-0-0.jpg","checksum":"f38d0c386daf4db5cfef425277c26f19","tracklist":"https:\/\/api.deezer.com\/playlist\/1561798251\/tracks","creation_date":"2016-01-12
+        11:49:01","md5_image":"73b087bea582833c185ce03962d78c02","picture_type":"playlist","user":{"id":335481371,"name":"Gil
+        - Deezer Editeur France","tracklist":"https:\/\/api.deezer.com\/user\/335481371\/flow","type":"user"},"type":"playlist"},{"id":2055454184,"title":"House
+        Motivation","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/2055454184","picture":"https:\/\/api.deezer.com\/playlist\/2055454184\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2c55ad0aa9ea63210f3da86d0126bda0\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2c55ad0aa9ea63210f3da86d0126bda0\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2c55ad0aa9ea63210f3da86d0126bda0\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2c55ad0aa9ea63210f3da86d0126bda0\/1000x1000-000000-80-0-0.jpg","checksum":"0924a907b9545cbdd7b32d865267e3d7","tracklist":"https:\/\/api.deezer.com\/playlist\/2055454184\/tracks","creation_date":"2016-07-22
+        16:34:14","md5_image":"2c55ad0aa9ea63210f3da86d0126bda0","picture_type":"playlist","user":{"id":752926945,"name":"Antoine
+        - Deezer Electronic Editor","tracklist":"https:\/\/api.deezer.com\/user\/752926945\/flow","type":"user"},"type":"playlist"},{"id":733113466,"title":"Sleep","public":true,"nb_tracks":61,"link":"https:\/\/www.deezer.com\/playlist\/733113466","picture":"https:\/\/api.deezer.com\/playlist\/733113466\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e58609e1102dcd66c15a08101ae0d1c4\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e58609e1102dcd66c15a08101ae0d1c4\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e58609e1102dcd66c15a08101ae0d1c4\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e58609e1102dcd66c15a08101ae0d1c4\/1000x1000-000000-80-0-0.jpg","checksum":"eea9a5959adbe3f835aba4fa55a167d6","tracklist":"https:\/\/api.deezer.com\/playlist\/733113466\/tracks","creation_date":"2014-01-02
+        14:53:18","md5_image":"e58609e1102dcd66c15a08101ae0d1c4","picture_type":"playlist","user":{"id":846571671,"name":"Alice
+        - Deezer Moods Editor","tracklist":"https:\/\/api.deezer.com\/user\/846571671\/flow","type":"user"},"type":"playlist"},{"id":1281590615,"title":"Chilled
+        edm","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/1281590615","picture":"https:\/\/api.deezer.com\/playlist\/1281590615\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/7609abf850993ae088baa9cfb5d9886f\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/7609abf850993ae088baa9cfb5d9886f\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/7609abf850993ae088baa9cfb5d9886f\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/7609abf850993ae088baa9cfb5d9886f\/1000x1000-000000-80-0-0.jpg","checksum":"42bbb85e2e1ba3c698e115fec45c6267","tracklist":"https:\/\/api.deezer.com\/playlist\/1281590615\/tracks","creation_date":"2015-06-24
+        22:03:37","md5_image":"7609abf850993ae088baa9cfb5d9886f","picture_type":"playlist","user":{"id":2834392844,"name":"Antoine
+        - Deezer Dance & EDM Editor","tracklist":"https:\/\/api.deezer.com\/user\/2834392844\/flow","type":"user"},"type":"playlist"},{"id":2349326262,"title":"Disco","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/2349326262","picture":"https:\/\/api.deezer.com\/playlist\/2349326262\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/dadf9197cf397bd440fb0813b2efa314\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/dadf9197cf397bd440fb0813b2efa314\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/dadf9197cf397bd440fb0813b2efa314\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/dadf9197cf397bd440fb0813b2efa314\/1000x1000-000000-80-0-0.jpg","checksum":"51cc081f6b8c974ba6c9a856c70673a8","tracklist":"https:\/\/api.deezer.com\/playlist\/2349326262\/tracks","creation_date":"2016-10-20
+        14:38:18","md5_image":"dadf9197cf397bd440fb0813b2efa314","picture_type":"playlist","user":{"id":752926945,"name":"Antoine
+        - Deezer Electronic Editor","tracklist":"https:\/\/api.deezer.com\/user\/752926945\/flow","type":"user"},"type":"playlist"},{"id":1392949485,"title":"Electro
+        Swing (Parov Stelar, Dirty Honkers ...)","public":true,"nb_tracks":79,"link":"https:\/\/www.deezer.com\/playlist\/1392949485","picture":"https:\/\/api.deezer.com\/playlist\/1392949485\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/5fd53ab8aa2c3d87f1e0f65d03099ed0\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/5fd53ab8aa2c3d87f1e0f65d03099ed0\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/5fd53ab8aa2c3d87f1e0f65d03099ed0\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/5fd53ab8aa2c3d87f1e0f65d03099ed0\/1000x1000-000000-80-0-0.jpg","checksum":"2d1e2ef47b1add2b894b180d43a5e819","tracklist":"https:\/\/api.deezer.com\/playlist\/1392949485\/tracks","creation_date":"2015-09-28
+        18:12:06","md5_image":"5fd53ab8aa2c3d87f1e0f65d03099ed0","picture_type":"playlist","user":{"id":70274041,"name":"Jazz
+        & Blues Experience","tracklist":"https:\/\/api.deezer.com\/user\/70274041\/flow","type":"user"},"type":"playlist"},{"id":1265545381,"title":"Chill
+        Beats","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/1265545381","picture":"https:\/\/api.deezer.com\/playlist\/1265545381\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/775c3abc989771991047fafe0b2d9efa\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/775c3abc989771991047fafe0b2d9efa\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/775c3abc989771991047fafe0b2d9efa\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/775c3abc989771991047fafe0b2d9efa\/1000x1000-000000-80-0-0.jpg","checksum":"9d73e0a63ad228efae9b0f367a60a2e6","tracklist":"https:\/\/api.deezer.com\/playlist\/1265545381\/tracks","creation_date":"2015-06-10
+        13:53:34","md5_image":"775c3abc989771991047fafe0b2d9efa","picture_type":"playlist","user":{"id":752926945,"name":"Antoine
+        - Deezer Electronic Editor","tracklist":"https:\/\/api.deezer.com\/user\/752926945\/flow","type":"user"},"type":"playlist"},{"id":1103656501,"title":"Best
+        of Hits 2015","public":true,"nb_tracks":100,"link":"https:\/\/www.deezer.com\/playlist\/1103656501","picture":"https:\/\/api.deezer.com\/playlist\/1103656501\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/cc5caec498b78e36b46882cf0540615a\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/cc5caec498b78e36b46882cf0540615a\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/cc5caec498b78e36b46882cf0540615a\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/cc5caec498b78e36b46882cf0540615a\/1000x1000-000000-80-0-0.jpg","checksum":"105e7b4e9140279d4899cef1b5693ee3","tracklist":"https:\/\/api.deezer.com\/playlist\/1103656501\/tracks","creation_date":"2015-01-02
+        18:49:05","md5_image":"cc5caec498b78e36b46882cf0540615a","picture_type":"playlist","user":{"id":1141175982,"name":"Deezer
+        Editeurs France","tracklist":"https:\/\/api.deezer.com\/user\/1141175982\/flow","type":"user"},"type":"playlist"},{"id":834285741,"title":"Electropolis
+        90","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/834285741","picture":"https:\/\/api.deezer.com\/playlist\/834285741\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/5987f895ed3eace66c0f2369c83a57d1\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/5987f895ed3eace66c0f2369c83a57d1\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/5987f895ed3eace66c0f2369c83a57d1\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/5987f895ed3eace66c0f2369c83a57d1\/1000x1000-000000-80-0-0.jpg","checksum":"a4d386af989598ccf117b4d1dafef972","tracklist":"https:\/\/api.deezer.com\/playlist\/834285741\/tracks","creation_date":"2014-04-09
+        10:16:16","md5_image":"5987f895ed3eace66c0f2369c83a57d1","picture_type":"playlist","user":{"id":1141175982,"name":"Deezer
+        Editeurs France","tracklist":"https:\/\/api.deezer.com\/user\/1141175982\/flow","type":"user"},"type":"playlist"},{"id":943229685,"title":"Electropolis
+        2000","public":true,"nb_tracks":50,"link":"https:\/\/www.deezer.com\/playlist\/943229685","picture":"https:\/\/api.deezer.com\/playlist\/943229685\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e09c3b005d16e3d380dc38adb5d4876d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e09c3b005d16e3d380dc38adb5d4876d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e09c3b005d16e3d380dc38adb5d4876d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/e09c3b005d16e3d380dc38adb5d4876d\/1000x1000-000000-80-0-0.jpg","checksum":"890a013feda49a6cd8ad32e924c19f60","tracklist":"https:\/\/api.deezer.com\/playlist\/943229685\/tracks","creation_date":"2014-07-29
+        23:30:15","md5_image":"e09c3b005d16e3d380dc38adb5d4876d","picture_type":"playlist","user":{"id":1141175982,"name":"Deezer
+        Editeurs France","tracklist":"https:\/\/api.deezer.com\/user\/1141175982\/flow","type":"user"},"type":"playlist"}],"total":10}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '10996'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-14
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

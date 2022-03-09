@@ -195,14 +195,14 @@ class TestGenre:
 class TestChart:
     @pytest.fixture()
     def chart(self, client):
-        return deezer.resources.Chart(client, {})
+        return client.get_chart(0)
 
     def test_get_tracks(self, chart):
         tracks = chart.get_tracks()
         assert isinstance(tracks, deezer.pagination.PaginatedList)
         track = tracks[0]
         assert isinstance(track, deezer.resources.Track)
-        assert repr(track) == "<Track: Bad Habits>"
+        assert repr(track) == "<Track: LA FAMA>"
         assert len(tracks) == 10
 
     def test_get_artists(self, chart):
@@ -210,7 +210,7 @@ class TestChart:
         assert isinstance(artists, deezer.pagination.PaginatedList)
         artist = artists[0]
         assert isinstance(artist, deezer.resources.Artist)
-        assert repr(artist) == "<Artist: Kanye West>"
+        assert repr(artist) == "<Artist: Jul>"
         assert len(artists) == 10
 
     def test_get_albums(self, chart):
@@ -218,7 +218,7 @@ class TestChart:
         assert isinstance(albums, deezer.pagination.PaginatedList)
         album = albums[0]
         assert isinstance(album, deezer.resources.Album)
-        assert repr(album) == "<Album: Music Of The Spheres>"
+        assert repr(album) == "<Album: Multitude>"
         assert len(albums) == 10
 
     def test_get_playlists(self, chart):
@@ -226,7 +226,7 @@ class TestChart:
         assert isinstance(playlists, deezer.pagination.PaginatedList)
         playlist = playlists[0]
         assert isinstance(playlist, deezer.resources.Playlist)
-        assert repr(playlist) == "<Playlist: Brand New UK>"
+        assert repr(playlist) == "<Playlist: Les titres du moment>"
         assert len(playlists) == 10
 
     def test_get_podcasts(self, chart):
