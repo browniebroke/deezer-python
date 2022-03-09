@@ -88,6 +88,7 @@ class Client:
         item: dict[str, Any],
         parent: Resource | None = None,
         resource_type: type[Resource] | None = None,
+        resource_id: int | None = None,
         paginate_list=False,
     ):
         """
@@ -97,6 +98,7 @@ class Client:
         :param item: the JSON response as dict.
         :param parent: A reference to the parent resource, to avoid fetching again.
         :param resource_type: The resource class to use as top level.
+        :param resource_id: The resource id to use as top level.
         :param paginate_list: Whether to wrap list into a pagination object.
         :returns: instance of :class:`~deezer.resources.Resource`
         """
@@ -117,6 +119,9 @@ class Client:
         if parent is not None:
             result[parent.type] = parent
 
+        if "id" not in result and resource_id is not None:
+            result["id"] = resource_id
+
         if "type" in result:
             if result["type"] in self.objects_types:
                 object_class = self.objects_types[result["type"]]
@@ -135,6 +140,7 @@ class Client:
         path: str,
         parent: Resource | None = None,
         resource_type: type[Resource] | None = None,
+        resource_id: int | None = None,
         paginate_list=False,
         **params,
     ):
@@ -145,6 +151,7 @@ class Client:
         :param path: The path to make the API call to (e.g. 'artist/1234').
         :param parent: A reference to the parent resource, to avoid fetching again.
         :param resource_type: The resource class to use as top level.
+        :param resource_id: The resource id to use as top level.
         :param paginate_list: Whether to wrap list into a pagination object.
         :param params: Query parameters to add to the request
         """
@@ -168,6 +175,7 @@ class Client:
             json_data,
             parent=parent,
             resource_type=resource_type,
+            resource_id=resource_id,
             paginate_list=paginate_list,
         )
 
@@ -200,55 +208,63 @@ class Client:
         """
         return self.request("GET", f"artist/{artist_id}")
 
-    def get_chart(self) -> Chart:
+    def get_chart(self, genre_id: int = 0) -> Chart:
         """
-        Get overall charts for tracks, albums, artists and playlists.
+        Get overall charts for tracks, albums, artists and playlists for the given genre ID.
 
         Combine charts of several resources in one endpoint.
 
+        :param genre_id: the genre ID, default to `All` genre (genre_id = 0).
         :returns: a :class:`~deezer.resources.Chart` instance.
         """
-        return self.request("GET", "chart", resource_type=Chart)
+        return self.request(
+            "GET", f"chart/{genre_id}", resource_type=Chart, resource_id=genre_id
+        )
 
-    def get_tracks_chart(self) -> list[Track]:
+    def get_tracks_chart(self, genre_id: int = 0) -> list[Track]:
         """
-        Get top tracks.
+        Get top tracks for the given genre ID.
 
+        :param genre_id: the genre ID, default to `All` genre (genre_id = 0).
         :return: a list of :class:`~deezer.resources.Track` instances.
         """
-        return self.request("GET", "chart/0/tracks")
+        return self.request("GET", f"chart/{genre_id}/tracks")
 
-    def get_albums_chart(self) -> list[Album]:
+    def get_albums_chart(self, genre_id: int = 0) -> list[Album]:
         """
-        Get top albums.
+        Get top albums for the given genre ID.
 
+        :param genre_id: the genre ID, default to `All` genre (genre_id = 0).
         :return: a list of :class:`~deezer.resources.Album` instances.
         """
-        return self.request("GET", "chart/0/albums")
+        return self.request("GET", f"chart/{genre_id}/albums")
 
-    def get_artists_chart(self) -> list[Artist]:
+    def get_artists_chart(self, genre_id: int = 0) -> list[Artist]:
         """
-        Get top artists.
+        Get top artists for the given genre ID.
 
+        :param genre_id: the genre ID, default to `All` genre (genre_id = 0).
         :return: a list of :class:`~deezer.resources.Artist` instances.
         """
-        return self.request("GET", "chart/0/artists")
+        return self.request("GET", f"chart/{genre_id}/artists")
 
-    def get_playlists_chart(self) -> list[Playlist]:
+    def get_playlists_chart(self, genre_id: int = 0) -> list[Playlist]:
         """
-        Get top playlists.
+        Get top playlists for the given genre ID.
 
+        :param genre_id: the genre ID, default to `All` genre (genre_id = 0).
         :return: a list of :class:`~deezer.resources.Playlist` instances.
         """
-        return self.request("GET", "chart/0/playlists")
+        return self.request("GET", f"chart/{genre_id}/playlists")
 
-    def get_podcasts_chart(self) -> list[Podcast]:
+    def get_podcasts_chart(self, genre_id: int = 0) -> list[Podcast]:
         """
-        Get top podcasts.
+        Get top podcasts for the given genre ID.
 
+        :param genre_id: the genre ID, default to `All` genre (genre_id = 0).
         :return: a list of :class:`~deezer.resources.Podcast` instances.
         """
-        return self.request("GET", "chart/0/podcasts")
+        return self.request("GET", f"chart/{genre_id}/podcasts")
 
     def get_editorial(self, editorial_id: int) -> Editorial:
         """

@@ -480,7 +480,7 @@ class Chart(Resource):
 
     type = "chart"
 
-    id = 0
+    id: int
     tracks: list[Track]
     albums: list[Album]
     artists: list[Artist]
