@@ -476,9 +476,12 @@ class Client:
         query_parts = []
         if query:
             query_parts.append(query)
-        for param_name, param_value in advanced_params.items():
-            if param_value:
-                query_parts.append(f'{param_name}:"{param_value}"')
+        query_parts.extend(
+            f'{param_name}:"{param_value}"'
+            for param_name, param_value in advanced_params.items()
+            if param_value
+        )
+
         return self._get_paginated_list(
             path=f"search/{path}" if path else "search",
             q=" ".join(query_parts),
