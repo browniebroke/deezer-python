@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.3.0 (2022-04-23)
+### Feature
+* Get charts for a specified genre ID ([`dad1d94`](https://github.com/browniebroke/deezer-python/commit/dad1d94f6a5f6c52d107aab855509cdc382d38c7))
+
 ## v5.2.0 (2022-02-09)
 ### Feature
 * Get the top podcasts ([`f8f3438`](https://github.com/browniebroke/deezer-python/commit/f8f3438f38ce3ecb380bffd122b299880560d654))
