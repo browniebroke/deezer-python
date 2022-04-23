@@ -1,6 +1,6 @@
 Album
 -----
 
-.. autoclass:: deezer.resources.Album
+.. autoclass:: deezer.Album
     :members:
     :undoc-members:

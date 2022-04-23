@@ -1,7 +1,7 @@
 .. _pagination-reference:
 
-Pagination module
------------------
+Pagination
+----------
 
-.. autoclass:: deezer.pagination.PaginatedList
+.. autoclass:: deezer.PaginatedList
     :members:

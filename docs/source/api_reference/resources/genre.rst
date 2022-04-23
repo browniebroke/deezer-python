@@ -1,6 +1,6 @@
 Genre
 -----
 
-.. autoclass:: deezer.resources.Genre
+.. autoclass:: deezer.Genre
     :members:
     :undoc-members:

@@ -1,8 +1,8 @@
 (resources-reference)=
 
-# Resources module
+# Resources
 
-This module model the various type of content that is being returned by the Deezer API into Python objects.
+A collection of Python classes modelling each type of content that is returned by the Deezer API.
 
 ```{toctree}
 :maxdepth: 1
