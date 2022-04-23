@@ -37,7 +37,7 @@ class TestClient:
     def test_get_album(self, client):
         """Test method to retrieve an album"""
         album = client.get_album(302127)
-        assert isinstance(album, deezer.resources.Album)
+        assert isinstance(album, deezer.Album)
 
     def test_no_album_raise(self, client):
         """Test method get_album for invalid value"""
@@ -47,102 +47,102 @@ class TestClient:
     def test_get_artist(self, client):
         """Test methods to get an artist"""
         artist = client.get_artist(27)
-        assert isinstance(artist, deezer.resources.Artist)
+        assert isinstance(artist, deezer.Artist)
 
     def test_get_overall_chart(self, client):
         result = client.get_chart()
-        assert isinstance(result, deezer.resources.Chart)
+        assert isinstance(result, deezer.Chart)
         assert result.id == 0
 
-        assert isinstance(result.tracks[0], deezer.resources.Track)
-        assert isinstance(result.albums[0], deezer.resources.Album)
-        assert isinstance(result.artists[0], deezer.resources.Artist)
-        assert isinstance(result.playlists[0], deezer.resources.Playlist)
+        assert isinstance(result.tracks[0], deezer.Track)
+        assert isinstance(result.albums[0], deezer.Album)
+        assert isinstance(result.artists[0], deezer.Artist)
+        assert isinstance(result.playlists[0], deezer.Playlist)
 
     def test_get_chart(self, client):
         result = client.get_chart(106)
-        assert isinstance(result, deezer.resources.Chart)
+        assert isinstance(result, deezer.Chart)
         assert result.id == 106
 
-        assert isinstance(result.tracks[0], deezer.resources.Track)
-        assert isinstance(result.albums[0], deezer.resources.Album)
-        assert isinstance(result.artists[0], deezer.resources.Artist)
-        assert isinstance(result.playlists[0], deezer.resources.Playlist)
+        assert isinstance(result.tracks[0], deezer.Track)
+        assert isinstance(result.albums[0], deezer.Album)
+        assert isinstance(result.artists[0], deezer.Artist)
+        assert isinstance(result.playlists[0], deezer.Playlist)
 
     def test_get_overall_tracks_chart(self, client):
         result = client.get_tracks_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Khapta"
-        assert isinstance(result[0], deezer.resources.Track)
+        assert isinstance(result[0], deezer.Track)
 
     def test_get_tracks_chart(self, client):
         result = client.get_tracks_chart(106)
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Where Are You Now"
-        assert isinstance(result[0], deezer.resources.Track)
+        assert isinstance(result[0], deezer.Track)
 
     def test_get_overall_albums_chart(self, client):
         result = client.get_albums_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Lacrim"
-        assert isinstance(result[0], deezer.resources.Album)
+        assert isinstance(result[0], deezer.Album)
 
     def test_get_albums_chart(self, client):
         result = client.get_albums_chart(106)
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Dissidænce Episode 2"
-        assert isinstance(result[0], deezer.resources.Album)
+        assert isinstance(result[0], deezer.Album)
 
     def test_get_overall_artists_chart(self, client):
         result = client.get_artists_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].name == "Lacrim"
-        assert isinstance(result[0], deezer.resources.Artist)
+        assert isinstance(result[0], deezer.Artist)
 
     def test_get_artists_chart(self, client):
         result = client.get_artists_chart(106)
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].name == "Polo & Pan"
-        assert isinstance(result[0], deezer.resources.Artist)
+        assert isinstance(result[0], deezer.Artist)
 
     def test_get_overall_playlists_chart(self, client):
         result = client.get_playlists_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Les titres du moment"
-        assert isinstance(result[0], deezer.resources.Playlist)
+        assert isinstance(result[0], deezer.Playlist)
 
     def test_get_playlists_chart(self, client):
         result = client.get_playlists_chart(106)
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Chill tranquille"
-        assert isinstance(result[0], deezer.resources.Playlist)
+        assert isinstance(result[0], deezer.Playlist)
 
     def test_get_overall_podcasts_chart(self, client):
         result = client.get_podcasts_chart()
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Rob Beckett and Josh Widdicombe's Parenting Hell"
-        assert isinstance(result[0], deezer.resources.Podcast)
+        assert isinstance(result[0], deezer.Podcast)
 
     def test_get_podcasts_chart(self, client):
         result = client.get_podcasts_chart(210)
         assert isinstance(result, list)
         assert len(result) == 10
         assert result[0].title == "Les Grosses Têtes"
-        assert isinstance(result[0], deezer.resources.Podcast)
+        assert isinstance(result[0], deezer.Podcast)
 
     def test_get_editorial(self, client):
         """Test methods to get an editorial"""
         editorial = client.get_editorial(0)
-        assert isinstance(editorial, deezer.resources.Editorial)
+        assert isinstance(editorial, deezer.Editorial)
 
     def test_no_editorial_raise(self, client):
         """Test method get_editorial for invalid value"""
@@ -152,14 +152,14 @@ class TestClient:
     def test_list_editorials(self, client):
         """Test methods to list editorials"""
         editorials = client.list_editorials()
-        assert isinstance(editorials, deezer.pagination.PaginatedList)
-        assert isinstance(editorials[0], deezer.resources.Editorial)
+        assert isinstance(editorials, deezer.PaginatedList)
+        assert isinstance(editorials[0], deezer.Editorial)
         assert len(editorials) == 26
 
     def test_get_episode(self, client):
         """Test methods to get an episode"""
         episode = client.get_episode(238455362)
-        assert isinstance(episode, deezer.resources.Episode)
+        assert isinstance(episode, deezer.Episode)
 
     def test_no_episode_raise(self, client):
         """Test method get_episode for invalid value"""
@@ -169,7 +169,7 @@ class TestClient:
     def test_get_genre(self, client):
         """Test methods to get a genre"""
         genre = client.get_genre(106)
-        assert isinstance(genre, deezer.resources.Genre)
+        assert isinstance(genre, deezer.Genre)
 
     def test_no_genre_raise(self, client):
         """Test method get_genre for invalid value"""
@@ -181,12 +181,12 @@ class TestClient:
         genres = client.list_genres()
         assert isinstance(genres, list)
         assert len(genres) == 23
-        assert isinstance(genres[0], deezer.resources.Genre)
+        assert isinstance(genres[0], deezer.Genre)
 
     def test_get_playlist(self, client):
         """Test methods to get a playlist"""
         playlist = client.get_playlist(908622995)
-        assert isinstance(playlist, deezer.resources.Playlist)
+        assert isinstance(playlist, deezer.Playlist)
 
     def test_no_playlist_raise(self, client):
         """Test method get_playlist for invalid value"""
@@ -196,7 +196,7 @@ class TestClient:
     def test_get_podcast(self, client):
         """Test methods to get a podcast"""
         podcast = client.get_podcast(699612)
-        assert isinstance(podcast, deezer.resources.Podcast)
+        assert isinstance(podcast, deezer.Podcast)
 
     def test_no_podcast_raise(self, client):
         """Test method get_podcast for invalid value"""
@@ -206,7 +206,7 @@ class TestClient:
     def test_get_radio(self, client):
         """Test methods to get a radio"""
         radio = client.get_radio(23261)
-        assert isinstance(radio, deezer.resources.Radio)
+        assert isinstance(radio, deezer.Radio)
 
     def test_no_radio_raise(self, client):
         """Test method get_radio for invalid value"""
@@ -218,18 +218,18 @@ class TestClient:
         radios = client.list_radios()
         assert isinstance(radios, list)
         assert len(radios) == 115
-        assert isinstance(radios[0], deezer.resources.Radio)
+        assert isinstance(radios[0], deezer.Radio)
 
     def test_get_radios_top(self, client):
         radios = client.get_radios_top()
-        assert isinstance(radios, deezer.pagination.PaginatedList)
-        assert isinstance(radios[0], deezer.resources.Radio)
+        assert isinstance(radios, deezer.PaginatedList)
+        assert isinstance(radios[0], deezer.Radio)
         assert len(radios) == 78
 
     def test_get_track(self, client):
         """Test methods to get a track"""
         track = client.get_track(3135556)
-        assert isinstance(track, deezer.resources.Track)
+        assert isinstance(track, deezer.Track)
 
     def test_no_track_raise(self, client):
         """Test method get_track for invalid value"""
@@ -239,12 +239,12 @@ class TestClient:
     def test_get_user(self, client):
         """Test methods to get a user"""
         user = client.get_user(359622)
-        assert isinstance(user, deezer.resources.User)
+        assert isinstance(user, deezer.User)
 
     def test_get_current_user(self, client_token):
         """Test methods to get the current user"""
         user = client_token.get_user()
-        assert isinstance(user, deezer.resources.User)
+        assert isinstance(user, deezer.User)
 
     def test_no_user_raise(self, client):
         """Test method get_user for invalid value"""
@@ -260,8 +260,8 @@ class TestClient:
     )
     def test_get_user_albums(self, client_token, args):
         user_albums = client_token.get_user_albums(*args)
-        assert isinstance(user_albums, deezer.pagination.PaginatedList)
-        assert all(isinstance(a, deezer.resources.Album) for a in user_albums)
+        assert isinstance(user_albums, deezer.PaginatedList)
+        assert all(isinstance(a, deezer.Album) for a in user_albums)
         assert len(user_albums) == 2
         assert user_albums[0].title == "OK Cowboy"
         assert user_albums[1].title == "Tank (Remastered)"
@@ -283,8 +283,8 @@ class TestClient:
     )
     def test_get_user_artists(self, client_token, args):
         user_artists = client_token.get_user_artists(*args)
-        assert isinstance(user_artists, deezer.pagination.PaginatedList)
-        assert all(isinstance(a, deezer.resources.Artist) for a in user_artists)
+        assert isinstance(user_artists, deezer.PaginatedList)
+        assert all(isinstance(a, deezer.Artist) for a in user_artists)
         assert len(user_artists) == 4
         assert [a.name for a in user_artists] == [
             "Wax Tailor",
@@ -303,8 +303,8 @@ class TestClient:
 
     def test_get_user_history(self, client_token):
         user_history = client_token.get_user_history()
-        assert isinstance(user_history, deezer.pagination.PaginatedList)
-        assert all(isinstance(t, deezer.resources.Track) for t in user_history)
+        assert isinstance(user_history, deezer.PaginatedList)
+        assert all(isinstance(t, deezer.Track) for t in user_history)
         assert len(user_history) == 3
         assert [t.title for t in user_history] == [
             "Loverini",
@@ -321,8 +321,8 @@ class TestClient:
     )
     def test_get_user_tracks(self, client_token, args):
         user_tracks = client_token.get_user_tracks(*args)
-        assert isinstance(user_tracks, deezer.pagination.PaginatedList)
-        assert all(isinstance(a, deezer.resources.Track) for a in user_tracks)
+        assert isinstance(user_tracks, deezer.PaginatedList)
+        assert all(isinstance(a, deezer.Track) for a in user_tracks)
         assert len(user_tracks) == 3
         assert [t.title for t in user_tracks] == [
             "Flyover",
@@ -398,7 +398,7 @@ class TestClient:
         result = client.search_albums("Daft Punk")
         assert isinstance(result, deezer.PaginatedList)
         first = result[0]
-        assert isinstance(first, deezer.resources.Album)
+        assert isinstance(first, deezer.Album)
         assert first.title == "Discovery"
         assert len(result) == 295
 
@@ -407,7 +407,7 @@ class TestClient:
         result = client.search_artists("Daft Punk")
         assert isinstance(result, deezer.PaginatedList)
         first = result[0]
-        assert isinstance(first, deezer.resources.Artist)
+        assert isinstance(first, deezer.Artist)
         assert first.name == "Daft Punk"
         assert len(result) == 5
 
@@ -423,23 +423,23 @@ class TestClient:
         """Get localised content with Accept-Language header."""
         client_fr = deezer.Client(headers={"Accept-Language": header_value})
         genre = client_fr.get_genre(52)
-        assert isinstance(genre, deezer.resources.Genre)
+        assert isinstance(genre, deezer.Genre)
         assert genre.name == expected_name
 
     @pytest.mark.parametrize(
         ("json", "expected_type"),
         [
-            ({"name": "Unknown", "type": "unknown-type"}, deezer.resources.Resource),
-            ({"title": "Album", "type": "album"}, deezer.resources.Album),
-            ({"name": "Artist", "type": "artist"}, deezer.resources.Artist),
-            ({"name": "Editorial", "type": "editorial"}, deezer.resources.Editorial),
-            ({"title": "Episode", "type": "episode"}, deezer.resources.Episode),
-            ({"name": "Genre", "type": "genre"}, deezer.resources.Genre),
-            ({"title": "Playlist", "type": "playlist"}, deezer.resources.Playlist),
-            ({"title": "Podcast", "type": "podcast"}, deezer.resources.Podcast),
-            ({"title": "Radio", "type": "radio"}, deezer.resources.Radio),
-            ({"title": "Track", "type": "track"}, deezer.resources.Track),
-            ({"name": "User", "type": "user"}, deezer.resources.User),
+            ({"name": "Unknown", "type": "unknown-type"}, deezer.Resource),
+            ({"title": "Album", "type": "album"}, deezer.Album),
+            ({"name": "Artist", "type": "artist"}, deezer.Artist),
+            ({"name": "Editorial", "type": "editorial"}, deezer.Editorial),
+            ({"title": "Episode", "type": "episode"}, deezer.Episode),
+            ({"name": "Genre", "type": "genre"}, deezer.Genre),
+            ({"title": "Playlist", "type": "playlist"}, deezer.Playlist),
+            ({"title": "Podcast", "type": "podcast"}, deezer.Podcast),
+            ({"title": "Radio", "type": "radio"}, deezer.Radio),
+            ({"title": "Track", "type": "track"}, deezer.Track),
+            ({"name": "User", "type": "user"}, deezer.User),
         ],
         ids=[
             "unknown",

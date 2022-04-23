@@ -23,7 +23,7 @@ class TestAlbum:
         assert repr(album) == "<Album: Discovery>"
 
         artist = album.get_artist()
-        assert isinstance(artist, deezer.resources.Artist)
+        assert isinstance(artist, deezer.Artist)
         assert repr(artist) == "<Artist: Daft Punk>"
 
     def test_get_tracks(self, client):
@@ -31,9 +31,9 @@ class TestAlbum:
 
         # tests pagination
         tracks = album.get_tracks()
-        assert isinstance(tracks, deezer.pagination.PaginatedList)
+        assert isinstance(tracks, deezer.PaginatedList)
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
+        assert isinstance(track, deezer.Track)
         assert repr(track) == "<Track: One More Time>"
         assert len(tracks) == 14
 
@@ -43,7 +43,7 @@ class TestAlbum:
         contributors = album.contributors
         assert isinstance(contributors, list)
         assert len(contributors) == 2
-        assert all(isinstance(c, deezer.resources.Artist) for c in contributors)
+        assert all(isinstance(c, deezer.Artist) for c in contributors)
         assert [c.id for c in contributors] == [123021, 6159602]
 
     def test_as_dict(self, client):
@@ -53,7 +53,7 @@ class TestAlbum:
         assert album_dict["release_date"] == "2001-03-07"
 
     def test_rate(self, client_token):
-        album = deezer.resources.Album(client_token, {"id": 302127})
+        album = deezer.Album(client_token, {"id": 302127})
         result = album.rate(3)
         assert result is True
 
@@ -65,22 +65,22 @@ class TestArtist:
 
     def test_attributes(self, daft_punk):
         assert hasattr(daft_punk, "name")
-        assert isinstance(daft_punk, deezer.resources.Artist)
+        assert isinstance(daft_punk, deezer.Artist)
         assert repr(daft_punk) == "<Artist: Daft Punk>"
 
     def test_get_albums(self, daft_punk):
         albums = daft_punk.get_albums()
-        assert isinstance(albums, deezer.pagination.PaginatedList)
+        assert isinstance(albums, deezer.PaginatedList)
         album = albums[0]
-        assert isinstance(album, deezer.resources.Album)
+        assert isinstance(album, deezer.Album)
         assert repr(album) == "<Album: Random Access Memories>"
         assert len(albums) == 32
 
     def test_get_top(self, daft_punk):
         tracks = daft_punk.get_top()
-        assert isinstance(tracks, deezer.pagination.PaginatedList)
+        assert isinstance(tracks, deezer.PaginatedList)
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
+        assert isinstance(track, deezer.Track)
         assert repr(track) == "<Track: Instant Crush>"
         assert len(tracks) == 100
 
@@ -89,22 +89,22 @@ class TestArtist:
         assert isinstance(tracks, list)
         assert len(tracks) == 25
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
+        assert isinstance(track, deezer.Track)
         assert repr(track) == "<Track: One More Time>"
 
     def test_get_related(self, daft_punk):
         related_artists = daft_punk.get_related()
-        assert isinstance(related_artists, deezer.pagination.PaginatedList)
+        assert isinstance(related_artists, deezer.PaginatedList)
         related_artist = related_artists[0]
-        assert isinstance(related_artist, deezer.resources.Artist)
+        assert isinstance(related_artist, deezer.Artist)
         assert repr(related_artist) == "<Artist: Justice>"
         assert len(related_artists) == 39
 
     def test_get_playlists(self, daft_punk):
         playlists = daft_punk.get_playlists()
-        assert isinstance(playlists, deezer.pagination.PaginatedList)
+        assert isinstance(playlists, deezer.PaginatedList)
         playlist = playlists[0]
-        assert isinstance(playlist, deezer.resources.Playlist)
+        assert isinstance(playlist, deezer.Playlist)
         assert repr(playlist) == "<Playlist: En mode 90>"
         assert len(playlists) == 100
 
@@ -118,9 +118,9 @@ class TestTrack:
         artist = track.get_artist()
         album = track.get_album()
         assert hasattr(track, "title")
-        assert isinstance(track, deezer.resources.Track)
-        assert isinstance(artist, deezer.resources.Artist)
-        assert isinstance(album, deezer.resources.Album)
+        assert isinstance(track, deezer.Track)
+        assert isinstance(artist, deezer.Artist)
+        assert isinstance(album, deezer.Album)
         assert repr(track) == "<Track: Harder Better Faster Stronger>"
         assert repr(artist) == "<Artist: Daft Punk>"
         assert repr(album) == "<Album: Discovery>"
@@ -130,7 +130,7 @@ class TestTrack:
         contributors = track.contributors
         assert isinstance(contributors, list)
         assert len(contributors) == 2
-        assert all(isinstance(c, deezer.resources.Artist) for c in contributors)
+        assert all(isinstance(c, deezer.Artist) for c in contributors)
         assert [c.id for c in contributors] == [51204222, 288166]
 
 
@@ -141,7 +141,7 @@ class TestRadio:
 
     def test_attributes(self, radio):
         assert hasattr(radio, "title")
-        assert isinstance(radio, deezer.resources.Radio)
+        assert isinstance(radio, deezer.Radio)
         assert repr(radio) == "<Radio: Telegraph Classical>"
 
     def test_get_tracks(self, radio):
@@ -149,7 +149,7 @@ class TestRadio:
         assert isinstance(tracks, list)
         assert len(tracks) == 25
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
+        assert isinstance(track, deezer.Track)
         assert (
             repr(track)
             == '<Track: Mozart: Piano Concerto No. 9 in E-Flat Major, K. 271 "Jeunehomme": I. Allegro>'
@@ -163,7 +163,7 @@ class TestGenre:
 
     def test_attributes(self, electro):
         assert hasattr(electro, "name")
-        assert isinstance(electro, deezer.resources.Genre)
+        assert isinstance(electro, deezer.Genre)
         assert repr(electro) == "<Genre: Electro>"
 
     def test_get_artists(self, electro):
@@ -171,15 +171,15 @@ class TestGenre:
         assert isinstance(artists, list)
         assert len(artists) == 48
         artist = artists[0]
-        assert isinstance(artist, deezer.resources.Artist)
+        assert isinstance(artist, deezer.Artist)
         assert repr(artist) == "<Artist: Major Lazer>"
 
     def test_get_podcasts(self, client):
         technology = client.get_genre(232)
         podcasts = technology.get_podcasts()
-        assert isinstance(podcasts, deezer.pagination.PaginatedList)
+        assert isinstance(podcasts, deezer.PaginatedList)
         podcast = podcasts[0]
-        assert isinstance(podcast, deezer.resources.Podcast)
+        assert isinstance(podcast, deezer.Podcast)
         assert repr(podcast) == "<Podcast: Le rendez-vous Tech>"
         assert len(podcasts) == 15
 
@@ -188,7 +188,7 @@ class TestGenre:
         assert isinstance(radios, list)
         assert len(radios) == 32
         radio = radios[0]
-        assert isinstance(radio, deezer.resources.Radio)
+        assert isinstance(radio, deezer.Radio)
         assert repr(radio) == "<Radio: Electro Swing>"
 
 
@@ -199,41 +199,41 @@ class TestChart:
 
     def test_get_tracks(self, chart):
         tracks = chart.get_tracks()
-        assert isinstance(tracks, deezer.pagination.PaginatedList)
+        assert isinstance(tracks, deezer.PaginatedList)
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
+        assert isinstance(track, deezer.Track)
         assert repr(track) == "<Track: LA FAMA>"
         assert len(tracks) == 10
 
     def test_get_artists(self, chart):
         artists = chart.get_artists()
-        assert isinstance(artists, deezer.pagination.PaginatedList)
+        assert isinstance(artists, deezer.PaginatedList)
         artist = artists[0]
-        assert isinstance(artist, deezer.resources.Artist)
+        assert isinstance(artist, deezer.Artist)
         assert repr(artist) == "<Artist: Jul>"
         assert len(artists) == 10
 
     def test_get_albums(self, chart):
         albums = chart.get_albums()
-        assert isinstance(albums, deezer.pagination.PaginatedList)
+        assert isinstance(albums, deezer.PaginatedList)
         album = albums[0]
-        assert isinstance(album, deezer.resources.Album)
+        assert isinstance(album, deezer.Album)
         assert repr(album) == "<Album: Multitude>"
         assert len(albums) == 10
 
     def test_get_playlists(self, chart):
         playlists = chart.get_playlists()
-        assert isinstance(playlists, deezer.pagination.PaginatedList)
+        assert isinstance(playlists, deezer.PaginatedList)
         playlist = playlists[0]
-        assert isinstance(playlist, deezer.resources.Playlist)
+        assert isinstance(playlist, deezer.Playlist)
         assert repr(playlist) == "<Playlist: Les titres du moment>"
         assert len(playlists) == 10
 
     def test_get_podcasts(self, chart):
         podcasts = chart.get_podcasts()
-        assert isinstance(podcasts, deezer.pagination.PaginatedList)
+        assert isinstance(podcasts, deezer.PaginatedList)
         podcast = podcasts[0]
-        assert isinstance(podcast, deezer.resources.Podcast)
+        assert isinstance(podcast, deezer.Podcast)
         assert repr(podcast) == "<Podcast: Les Grosses Têtes>"
         assert len(podcasts) == 10
 
@@ -245,33 +245,33 @@ class TestUser:
 
     def test_get_albums(self, user):
         albums = user.get_albums()
-        assert isinstance(albums, deezer.pagination.PaginatedList)
+        assert isinstance(albums, deezer.PaginatedList)
         album = albums[0]
-        assert isinstance(album, deezer.resources.Album)
+        assert isinstance(album, deezer.Album)
         assert repr(album) == "<Album: A Century Of Movie Soundtracks Vol. 2>"
         assert len(albums) == 7
 
     def test_get_artists(self, user):
         artists = user.get_artists()
-        assert isinstance(artists, deezer.pagination.PaginatedList)
+        assert isinstance(artists, deezer.PaginatedList)
         artist = artists[0]
-        assert isinstance(artist, deezer.resources.Artist)
+        assert isinstance(artist, deezer.Artist)
         assert repr(artist) == "<Artist: Wax Tailor>"
         assert len(artists) == 7
 
     def test_get_playlists(self, user):
         playlists = user.get_playlists()
-        assert isinstance(playlists, deezer.pagination.PaginatedList)
+        assert isinstance(playlists, deezer.PaginatedList)
         playlist = playlists[0]
-        assert isinstance(playlist, deezer.resources.Playlist)
+        assert isinstance(playlist, deezer.Playlist)
         assert repr(playlist) == "<Playlist: AC/DC>"
         assert len(playlists) == 25
 
     def test_get_tracks(self, user):
         tracks = user.get_tracks()
-        assert isinstance(tracks, deezer.pagination.PaginatedList)
+        assert isinstance(tracks, deezer.PaginatedList)
         track = tracks[0]
-        assert isinstance(track, deezer.resources.Track)
+        assert isinstance(track, deezer.Track)
         assert repr(track) == "<Track: Poney Pt. I>"
         assert len(tracks) == 3
 
@@ -286,17 +286,17 @@ class TestPlaylist:
 
     def test_get_tracks(self, playlist):
         tracks = playlist.get_tracks()
-        assert isinstance(tracks, deezer.pagination.PaginatedList)
+        assert isinstance(tracks, deezer.PaginatedList)
         first_track = tracks[0]
-        assert isinstance(first_track, deezer.resources.Track)
+        assert isinstance(first_track, deezer.Track)
         assert first_track.title == "Otherwise"
         assert len(tracks) == 102
 
     def test_get_fans(self, playlist):
         fans = playlist.get_fans()
-        assert isinstance(fans, deezer.pagination.PaginatedList)
+        assert isinstance(fans, deezer.PaginatedList)
         first_fan = fans[0]
-        assert isinstance(first_fan, deezer.resources.User)
+        assert isinstance(first_fan, deezer.User)
         assert first_fan.name == "Fay22"
         assert len(fans) == 100
 
@@ -306,9 +306,9 @@ class TestPodcast:
         podcast = client.get_podcast(699612)
 
         episodes = podcast.get_episodes()
-        assert isinstance(episodes, deezer.pagination.PaginatedList)
+        assert isinstance(episodes, deezer.PaginatedList)
         episode = episodes[0]
-        assert isinstance(episode, deezer.resources.Episode)
+        assert isinstance(episode, deezer.Episode)
         assert episode.title == "Episode 9: Follow the money"
         assert len(episodes) == 12
 
@@ -316,7 +316,7 @@ class TestPodcast:
 class TestEpisode:
     def test_get_episode(self, client):
         episode = client.get_episode(343457312)
-        assert isinstance(episode, deezer.resources.Episode)
+        assert isinstance(episode, deezer.Episode)
         assert episode.title == "Stuart Hogg and the GOAT"
 
     def test_as_dict(self, client):
@@ -334,7 +334,7 @@ class TestEditorial:
 
     def test_attributes(self, editorial):
         assert hasattr(editorial, "name")
-        assert isinstance(editorial, deezer.resources.Editorial)
+        assert isinstance(editorial, deezer.Editorial)
         assert repr(editorial) == "<Editorial: Electro>"
 
     def test_get_selection(self, editorial):
@@ -342,22 +342,22 @@ class TestEditorial:
         assert isinstance(albums, list)
         assert len(albums) == 10
         album = albums[0]
-        assert isinstance(album, deezer.resources.Album)
+        assert isinstance(album, deezer.Album)
         assert album.title == "Terre Promise"
 
     def test_get_chart(self, editorial):
         charts = editorial.get_chart()
-        assert isinstance(charts, deezer.resources.Chart)
+        assert isinstance(charts, deezer.Chart)
 
-        assert isinstance(charts.tracks[0], deezer.resources.Track)
-        assert isinstance(charts.albums[0], deezer.resources.Album)
-        assert isinstance(charts.artists[0], deezer.resources.Artist)
-        assert isinstance(charts.playlists[0], deezer.resources.Playlist)
+        assert isinstance(charts.tracks[0], deezer.Track)
+        assert isinstance(charts.albums[0], deezer.Album)
+        assert isinstance(charts.artists[0], deezer.Artist)
+        assert isinstance(charts.playlists[0], deezer.Playlist)
 
     def test_get_releases(self, editorial):
         albums = editorial.get_releases()
-        assert isinstance(albums, deezer.pagination.PaginatedList)
+        assert isinstance(albums, deezer.PaginatedList)
         album = albums[0]
-        assert isinstance(album, deezer.resources.Album)
+        assert isinstance(album, deezer.Album)
         assert repr(album) == "<Album: Girls>"
         assert len(albums) == 199
