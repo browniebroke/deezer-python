@@ -1,7 +1,3 @@
-"""
-Implements a client class to query the
-`Deezer API <https://developers.deezer.com/api>`_
-"""
 from __future__ import annotations
 
 from typing import Any

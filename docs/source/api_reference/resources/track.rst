@@ -1,6 +1,6 @@
 Track
 -----
 
-.. autoclass:: deezer.resources.Track
+.. autoclass:: deezer.Track
     :members:
     :undoc-members:

@@ -1,6 +1,6 @@
 Editorial
 -------
 
-.. autoclass:: deezer.resources.Editorial
+.. autoclass:: deezer.Editorial
     :members:
     :undoc-members:

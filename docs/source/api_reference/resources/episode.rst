@@ -1,6 +1,6 @@
 Episode
 -------
 
-.. autoclass:: deezer.resources.Episode
+.. autoclass:: deezer.Episode
     :members:
     :undoc-members:

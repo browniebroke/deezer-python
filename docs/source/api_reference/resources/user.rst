@@ -1,6 +1,6 @@
 User
 ----
 
-.. autoclass:: deezer.resources.User
+.. autoclass:: deezer.User
     :members:
     :undoc-members:
