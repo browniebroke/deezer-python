@@ -23,7 +23,15 @@ def client_token(client):
     return client
 
 
-def clean_response(response):
+@pytest.fixture(scope="module", autouse=True)
+def vcr_config():
+    return {
+        "filter_query_parameters": [("access_token", "dummy")],
+        "before_record_response": _clean_response,
+    }
+
+
+def _clean_response(response):
     """Remove some info from the response before writing cassettes."""
     remove_headers = {"Set-Cookie", "Date", "P3P"}
     if isinstance(response["headers"], dict):
@@ -38,11 +46,3 @@ def clean_response(response):
             if name not in remove_headers
         ]
     return response
-
-
-@pytest.fixture(scope="module", autouse=True)
-def vcr_config():
-    return {
-        "filter_query_parameters": [("access_token", "dummy")],
-        "before_record_response": clean_response,
-    }
