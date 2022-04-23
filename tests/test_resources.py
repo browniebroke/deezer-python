@@ -245,7 +245,7 @@ class TestUser:
 
     def test_get_albums(self, user):
         albums = user.get_albums()
-        assert isinstance(albums, deezer.resources.PaginatedList)
+        assert isinstance(albums, deezer.pagination.PaginatedList)
         album = albums[0]
         assert isinstance(album, deezer.resources.Album)
         assert repr(album) == "<Album: A Century Of Movie Soundtracks Vol. 2>"
