@@ -76,6 +76,8 @@ ignore_errors = true
 exclude_lines = [
     "pragma: no cover",
     "@overload",
+    "if TYPE_CHECKING",
+    "raise NotImplementedError",
 ]
 
 [tool.isort]
