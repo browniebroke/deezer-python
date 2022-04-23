@@ -3,9 +3,12 @@ from deezer.pagination import PaginatedList
 from deezer.resources import (
     Album,
     Artist,
+    Chart,
     Editorial,
+    Episode,
     Genre,
     Playlist,
+    Podcast,
     Radio,
     Resource,
     Track,
@@ -14,17 +17,20 @@ from deezer.resources import (
 
 __version__ = "5.3.0"
 __all__ = [
-    "Client",
-    "PaginatedList",
-    "Resource",
     "Album",
     "Artist",
+    "Chart",
+    "Client",
     "Editorial",
+    "Episode",
     "Genre",
+    "PaginatedList",
     "Playlist",
+    "Podcast",
+    "Radio",
+    "Resource",
     "Track",
     "User",
-    "Radio",
 ]
 
 USER_AGENT = f"Deezer Python API Wrapper v{__version__}"
