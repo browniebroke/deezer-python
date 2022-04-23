@@ -1,0 +1,44 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-requests/2.27.1
+      method: GET
+      uri: https://api.deezer.com/editorial/106
+    response:
+      body:
+        string: '{"id":106,"name":"Electro","picture":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/180x180-000000-80-0-0.jpg","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/misc\/15df4502c1c58137dae5bdd1cc6f0251\/1000x1000-000000-80-0-0.jpg","type":"editorial"}'
+      headers:
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        Access-Control-Allow-Methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        Access-Control-Expose-Headers:
+          - Location
+        Access-Control-Max-Age:
+          - "86400"
+        Content-Length:
+          - "671"
+        Content-Type:
+          - application/json; charset=utf-8
+        Server:
+          - Apache
+        Vary:
+          - Accept-Encoding,Origin
+        X-Content-Type-Options:
+          - nosniff
+        X-Host:
+          - blm-web-137
+      status:
+        code: 200
+        message: OK
+version: 1
