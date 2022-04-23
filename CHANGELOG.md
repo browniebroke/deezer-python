@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v5.3.1 (2022-04-23)
+### Fix
+* Add a few missing classes to top level API ([`98ef1a1`](https://github.com/browniebroke/deezer-python/commit/98ef1a1a0b146f34e80a87308cfb1909d5d0eb7a))
+
+### Documentation
+* Reference each class from the top level ([`042ee17`](https://github.com/browniebroke/deezer-python/commit/042ee17e34a5bb5cbf28225e3634c5e414cc442c))
+
 ## v5.3.0 (2022-04-23)
 ### Feature
 * Get charts for a specified genre ID ([`dad1d94`](https://github.com/browniebroke/deezer-python/commit/dad1d94f6a5f6c52d107aab855509cdc382d38c7))
