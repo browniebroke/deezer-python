@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.3.2 (2022-04-28)
+### Fix
+* Remove rate album methods ([`3000fa7`](https://github.com/browniebroke/deezer-python/commit/3000fa7d34c6d9e5dc90f9c60c54308e2a7e6beb))
+
 ## v5.3.1 (2022-04-23)
 ### Fix
 * Add a few missing classes to top level API ([`98ef1a1`](https://github.com/browniebroke/deezer-python/commit/98ef1a1a0b146f34e80a87308cfb1909d5d0eb7a))
