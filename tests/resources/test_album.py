@@ -43,8 +43,3 @@ class TestAlbum:
         album_dict = album.as_dict()
         assert album_dict["id"] == 302127
         assert album_dict["release_date"] == "2001-03-07"
-
-    def test_rate(self, client_token):
-        album = deezer.Album(client_token, {"id": 302127})
-        result = album.rate(3)
-        assert result is True

@@ -186,16 +186,6 @@ class Client:
         """
         return self.request("GET", f"album/{album_id}")
 
-    def rate_album(self, album_id: int, note: int) -> bool:
-        """
-        Rate the album of the given ID with the given note.
-
-        The note should be and integer between 1 and 5.
-
-        :returns: boolean whether rating was applied
-        """
-        return self.request("POST", f"album/{album_id}", note=note)
-
     def get_artist(self, artist_id: int) -> Artist:
         """
         Get the artist with the given ID.

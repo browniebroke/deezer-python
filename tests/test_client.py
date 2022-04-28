@@ -459,11 +459,3 @@ class TestClient:
     def test_process_json_types(self, client, json, expected_type):
         result = client._process_json(json)
         assert type(result) == expected_type
-
-    def test_rate_album(self, client_token):
-        result = client_token.rate_album(302127, 4)
-        assert result is True
-
-    def test_rate_album_error(self, client):
-        with pytest.raises(DeezerErrorResponse):
-            client.rate_album(302127, 4)
