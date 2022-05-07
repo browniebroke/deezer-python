@@ -1,0 +1,3 @@
+[codespell]
+skip = */cassettes/*
+ignore-words-list = lazer
