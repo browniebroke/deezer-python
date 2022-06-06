@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.3.3 (2022-06-06)
+### Fix
+* **deps:** Revert PSR upgrade ([`f5119fc`](https://github.com/browniebroke/deezer-python/commit/f5119fc3f1c562f3f875adde5810b08e4fa394b3))
+
 ## v5.3.2 (2022-04-28)
 ### Fix
 * Remove rate album methods ([`3000fa7`](https://github.com/browniebroke/deezer-python/commit/3000fa7d34c6d9e5dc90f9c60c54308e2a7e6beb))
