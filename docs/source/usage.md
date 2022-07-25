@@ -117,6 +117,22 @@ As you can see, it doesn't look like we're making API requests, but under the ho
 
 You can tell the difference, though: attributes access are using the data from the resource which was already fetched, while calling a method on the resource does extra API requests.
 
+#### N+1 API calls
+
+When traversing relations, the Deezer API returns a simplified version of the objects. For example, the [album tracks](https://developers.deezer.com/api/album/tracks) have fewer fields returned that when you get [a track](https://developers.deezer.com/api/track) directly and this applies to lot of related resources: podcast episodes, artist albums, ...
+
+To mitigate this problem and make sure the resources being returned have all the documented attributes, the client might make additional API calls to get the full version of the resources. This happens lazily, when you access an attribute of the resource which wasn't returned yet. If you try to access an attribute that doesn't exist on the resource, you'll get a `AttributeError` without extra API calls.
+
+This might cause N+1 API calls if you're doing this in a loop:
+
+```python
+>>> podcast = client.get_podcast(699612)
+... for episode in podcast.get_episodes():
+...     print(episode.link)  # This will make an API call for each episode
+```
+
+This is because the `link` field isn't returned when listing episodes of a podcast.
+
 ### Getting the raw data
 
 At some point, you might want to get the resources exported as Python dictionaries to store them somewhere else or transform them further.
