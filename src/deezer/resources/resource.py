@@ -18,7 +18,9 @@ class Resource:
     id: int
     type: str
 
+    _fields: tuple[str, ...]
     _fields_parsers = {}
+    _fetched: bool
 
     def __init__(self, client, json):
         self.client = client
@@ -79,3 +81,26 @@ class Resource:
             parent=self,
             **kwargs,
         )
+
+    def __getattr__(self, item: str) -> Any:
+        """
+        Called when the default attribute access fails with an AttributeError.
+
+        This is a fallback method, not need to call the parent implementation.
+        If the attribute is found through the normal mechanism, this is NOT called.
+        """
+        class_annotations = self.__class__.__annotations__
+        if item in class_annotations and not getattr(self, "_fetched", False):
+            full_resource = self.get()
+            missing_fields = set(full_resource._fields) - set(self._fields)
+            for field_name in missing_fields:
+                setattr(self, field_name, getattr(full_resource, field_name))
+            return getattr(self, item)
+        raise AttributeError(
+            f"'{self.__class__.__name__}' object has no attribute '{item}'"
+        )
+
+    def get(self):
+        """Get the resource from the API."""
+        self._fetched = True
+        return self.client.request("GET", f"{self.type}/{self.id}")
