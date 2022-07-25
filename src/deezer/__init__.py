@@ -15,7 +15,7 @@ from deezer.resources import (
     User,
 )
 
-__version__ = "5.3.3"
+__version__ = "5.4.0"
 __all__ = [
     "Album",
     "Artist",

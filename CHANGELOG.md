@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.4.0 (2022-07-25)
+### Feature
+* Fetch resource if accessing missing field on simplified instance ([#541](https://github.com/browniebroke/deezer-python/issues/541)) ([`df5e81b`](https://github.com/browniebroke/deezer-python/commit/df5e81bd36e458af6a1bca9e02c8e341bba5b4c5))
+
 ## v5.3.3 (2022-06-06)
 ### Fix
 * **deps:** Revert PSR upgrade ([`f5119fc`](https://github.com/browniebroke/deezer-python/commit/f5119fc3f1c562f3f875adde5810b08e4fa394b3))
