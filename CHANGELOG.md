@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.5.0 (2022-07-26)
+### Feature
+* Infer episode link & share from ID when missing ([#544](https://github.com/browniebroke/deezer-python/issues/544)) ([`f38a038`](https://github.com/browniebroke/deezer-python/commit/f38a03812c73f74eedf8077ffd29a1b2b7a67188))
+
 ## v5.4.0 (2022-07-25)
 ### Feature
 * Fetch resource if accessing missing field on simplified instance ([#541](https://github.com/browniebroke/deezer-python/issues/541)) ([`df5e81b`](https://github.com/browniebroke/deezer-python/commit/df5e81bd36e458af6a1bca9e02c8e341bba5b4c5))
