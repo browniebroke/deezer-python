@@ -14,17 +14,6 @@ class TestResource:
         tracks = album.get_tracks()
         assert tracks[0].album is album
 
-    def test_access_inferable_field_simplified_object(self, client):
-        """Accessing a missing inferable field doesn't do any API calls."""
-        episode = deezer.Episode(
-            client,
-            json={
-                "id": 343457312,
-                "type": "episode",
-            },
-        )
-        assert episode.link == "https://www.deezer.com/episode/343457312"
-
     def test_access_non_inferable_field_simplified_objet(self, client):
         """Fetch the full object when the missing field is not inferable."""
         track = deezer.Track(
@@ -35,6 +24,22 @@ class TestResource:
             },
         )
         assert track.bpm == 123.4
+
+    def test_access_no_infinite_fetch(self, client):
+        track = deezer.Track(
+            client,
+            json={
+                "id": 3135556,
+                "type": "track",
+            },
+        )
+        # Does and API call
+        assert track.title == "Harder, Better, Faster, Stronger"
+
+        # Response cassette has been modified to simulate missing 'bpm' field
+        with pytest.raises(AttributeError) as exc_info:
+            track.bpm
+        assert str(exc_info.value) == "'Track' object has no attribute 'bpm'"
 
     def test_field_not_found(self, client):
         """When field is missing an attribute error is raised without API calls."""
