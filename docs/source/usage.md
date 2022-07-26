@@ -126,12 +126,14 @@ To mitigate this problem and make sure the resources being returned have all the
 This might cause N+1 API calls if you're doing this in a loop:
 
 ```python
->>> podcast = client.get_podcast(699612)
-... for episode in podcast.get_episodes():
-...     print(episode.link)  # This will make an API call for each episode
+>>> album = client.get_album(302127)
+... for track in album.get_tracks():
+...     print(track.bpm)  # This will make an API call for each track
 ```
 
-This is because the `link` field isn't returned when listing episodes of a podcast.
+This is because the `bpm` field isn't returned when listing tracks of an album.
+
+Some fields can be inferred from the resource type and ID (e.g. `Episode.link`), and in this case the client should do its best to avoid API calls. If you found some that could be avoided this way, feel free to open an issue or submit a pull request.
 
 ### Getting the raw data
 

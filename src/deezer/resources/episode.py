@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from ..dates import parse_datetime
 from .resource import Resource
@@ -34,3 +34,10 @@ class Episode(Resource):
     podcast: Podcast
 
     _parse_release_date = staticmethod(parse_datetime)
+
+    def _infer_missing_field(self, item) -> Any:
+        if item == "link":
+            return f"https://www.deezer.com/episode/{self.id}"
+        elif item == "share":
+            return f"{self.link}?utm_source=deezer&utm_content=episode-{self.id}&utm_medium=web"
+        return super()._infer_missing_field(item)

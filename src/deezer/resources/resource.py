@@ -5,6 +5,8 @@ from typing import Any
 
 from ..pagination import PaginatedList
 
+NOT_INFERRED = object()
+
 
 class Resource:
     """
@@ -90,15 +92,30 @@ class Resource:
         If the attribute is found through the normal mechanism, this is NOT called.
         """
         class_annotations = self.__class__.__annotations__
-        if item in class_annotations and not getattr(self, "_fetched", False):
-            full_resource = self.get()
-            missing_fields = set(full_resource._fields) - set(self._fields)
-            for field_name in missing_fields:
-                setattr(self, field_name, getattr(full_resource, field_name))
-            return getattr(self, item)
+        if item in class_annotations:
+            result = self._infer_missing_field(item)
+            if result is not NOT_INFERRED:
+                setattr(self, item, result)
+                self._fields += (item,)
+                return result
+            elif not getattr(self, "_fetched", False):
+                full_resource = self.get()
+                missing_fields = set(full_resource._fields) - set(self._fields)
+                for field_name in missing_fields:
+                    setattr(self, field_name, getattr(full_resource, field_name))
+                    self._fields += (field_name,)
+                return getattr(self, item)
         raise AttributeError(
             f"'{self.__class__.__name__}' object has no attribute '{item}'"
         )
+
+    def _infer_missing_field(self, item: str) -> Any:
+        """
+        Hook to infer missing field values.
+
+        To be implemented in the subclasses for concrete resources.
+        """
+        return NOT_INFERRED
 
     def get(self):
         """Get the resource from the API."""
