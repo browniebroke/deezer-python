@@ -28,7 +28,7 @@ from deezer.resources import (
 
 class Client:
     """
-    A client to retrieve some basic infos about Deezer resourses.
+    A client to retrieve some basic infos about Deezer resources.
 
     Create a client instance with the given options. Options should
     be passed in to the constructor as kwargs.
