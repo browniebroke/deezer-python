@@ -30,7 +30,7 @@ class Editorial(Resource):
         """
         Get a list of albums selected every week by the Deezer Team.
 
-        :returns: a list of :class:`Album <deezer.resources.Album>` instances
+        :returns: a list of :class:`Album <deezer.Album>` instances
         """
         return self.get_relation("selection", **kwargs)
 
@@ -38,7 +38,7 @@ class Editorial(Resource):
         """
         Get top charts for tracks, albums, artists and playlists.
 
-        :returns: a :class:`~deezer.resources.Chart` instance
+        :returns: a :class:`~deezer.Chart` instance
         """
         return self.get_relation("charts", resource_type=Chart, **kwargs)
 
@@ -46,7 +46,7 @@ class Editorial(Resource):
         """
         Get the new releases per genre for the current country.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Album <deezer.resources.Album>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Album <deezer.Album>` instances
         """
         return self.get_paginated_list("releases", **kwargs)

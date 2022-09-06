@@ -51,8 +51,8 @@ class User(Resource):
         """
         Get user's favorite albums.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Album <deezer.resources.Album>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Album <deezer.Album>` instances
         """
         return self.get_paginated_list("albums", **kwargs)
 
@@ -60,8 +60,8 @@ class User(Resource):
         """
         Get user's favorite tracks.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Track <deezer.resources.Track>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Track>` instances
         """
         return self.get_paginated_list("tracks", **kwargs)
 
@@ -69,8 +69,8 @@ class User(Resource):
         """
         Get user's favorite artists.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Artist <deezer.resources.Artist>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Artist <deezer.Artist>` instances
         """
         return self.get_paginated_list("artists", **kwargs)
 
@@ -78,7 +78,7 @@ class User(Resource):
         """
         Get user's public playlists.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Playlist <deezer.resources.Playlist>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Playlist <deezer.Playlist>` instances
         """
         return self.get_paginated_list("playlists", **kwargs)

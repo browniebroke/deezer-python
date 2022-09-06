@@ -55,7 +55,7 @@ class Track(Resource):
         """
         Get the artist of the Track.
 
-        :returns: the :class:`Artist <deezer.resources.Artist>` of the Album
+        :returns: the :class:`Artist <deezer.Artist>` of the Album
         """
         return self.client.get_artist(self.artist.id)
 
@@ -63,6 +63,6 @@ class Track(Resource):
         """
         Get the album of the Track.
 
-        :returns: the :class:`Album <deezer.resources.Album>` instance
+        :returns: the :class:`Album <deezer.Album>` instance
         """
         return self.client.get_album(self.album.id)

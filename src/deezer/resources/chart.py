@@ -32,35 +32,35 @@ class Chart(Resource):
 
     def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Track <deezer.resources.Track>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Track>` instances
         """
         return self.get_paginated_list("tracks", **kwargs)
 
     def get_albums(self, **kwargs) -> PaginatedList[Album]:
         """
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Album <deezer.resources.Album>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Album <deezer.Album>` instances
         """
         return self.get_paginated_list("albums", **kwargs)
 
     def get_artists(self, **kwargs) -> PaginatedList[Artist]:
         """
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Artist <deezer.resources.Artist>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Artist <deezer.Artist>` instances
         """
         return self.get_paginated_list("artists", **kwargs)
 
     def get_playlists(self, **kwargs) -> PaginatedList[Playlist]:
         """
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Playlist <deezer.resources.Playlist>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Playlist <deezer.Playlist>` instances
         """
         return self.get_paginated_list("playlists", **kwargs)
 
     def get_podcasts(self, **kwargs) -> PaginatedList[Podcast]:
         """
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Podcast <deezer.resources.Podcast>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Podcast <deezer.Podcast>` instances
         """
         return self.get_paginated_list("podcasts", **kwargs)

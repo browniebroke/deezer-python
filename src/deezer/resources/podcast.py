@@ -34,7 +34,7 @@ class Podcast(Resource):
         """
         Get episodes from a podcast
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Episode <deezer.resources.Episode>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Episode <deezer.Episode>` instances
         """
         return self.get_paginated_list("episodes", **kwargs)

@@ -43,8 +43,8 @@ class Playlist(Resource):
         """
         Get tracks from a playlist.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Track <deezer.resources.Track>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Track>` instances
         """
         return self.get_paginated_list("tracks", **kwargs)
 
@@ -52,7 +52,7 @@ class Playlist(Resource):
         """
         Get fans from a playlist.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`User <deezer.resources.User>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`User <deezer.User>` instances
         """
         return self.get_paginated_list("fans", **kwargs)

@@ -34,6 +34,6 @@ class Radio(Resource):
 
         Note that this endpoint is NOT paginated.
 
-        :returns: a list of :class:`Track <deezer.resources.Track>` instances.
+        :returns: a list of :class:`Track <deezer.Track>` instances.
         """
         return self.get_relation("tracks")

@@ -31,7 +31,7 @@ class Genre(Resource):
         """
         Get all artists for a genre.
 
-        :returns: list of :class:`Artist <deezer.resources.Artist>` instances
+        :returns: list of :class:`Artist <deezer.Artist>` instances
         """
         return self.get_relation("artists", **kwargs)
 
@@ -39,8 +39,8 @@ class Genre(Resource):
         """
         Get all podcasts for a genre.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Podcast <deezer.resources.Podcast>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Podcast <deezer.Podcast>` instances
         """
         return self.get_paginated_list("podcasts", **kwargs)
 
@@ -48,6 +48,6 @@ class Genre(Resource):
         """
         Get all radios for a genre.
 
-        :returns: list of :class:`Radio <deezer.resources.Radio>` instances
+        :returns: list of :class:`Radio <deezer.Radio>` instances
         """
         return self.get_relation("radios", **kwargs)
