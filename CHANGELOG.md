@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v5.6.0 (2022-09-06)
+### Feature
+* Show a content preview of the paginated list in the CLI ([#568](https://github.com/browniebroke/deezer-python/issues/568)) ([`283d190`](https://github.com/browniebroke/deezer-python/commit/283d190fe42f2272036fe3e17c4f9de11881b0e8))
+
+### Documentation
+* Fix links to resources and pagination classes ([#567](https://github.com/browniebroke/deezer-python/issues/567)) ([`1adce18`](https://github.com/browniebroke/deezer-python/commit/1adce18c671020fc3f4ca3b8b0e0e4d1e2eb4f43))
+* Fix errors in search usage documentation ([#566](https://github.com/browniebroke/deezer-python/issues/566)) ([`d5c2e84`](https://github.com/browniebroke/deezer-python/commit/d5c2e84ed52338fd4e39abf62068942e01f2c553))
+
 ## v5.5.0 (2022-07-26)
 ### Feature
 * Infer episode link & share from ID when missing ([#544](https://github.com/browniebroke/deezer-python/issues/544)) ([`f38a038`](https://github.com/browniebroke/deezer-python/commit/f38a03812c73f74eedf8077ffd29a1b2b7a67188))

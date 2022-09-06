@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "deezer-python"
-version = "5.5.0"
+version = "5.6.0"
 description = "A friendly wrapper library for the Deezer API"
 authors = ["Bruno Alla <alla.brunoo@gmail.com>"]
 license = "MIT"
