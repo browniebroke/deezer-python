@@ -64,7 +64,7 @@ You may have noticed from the above examples, but depending on the endpoint that
 
 ### Getting a field about a resource
 
-When you ge a resource, you have access to all the fields that are in the REST API response. For example, all the fields presented in the documentation for [the track object](https://developers.deezer.com/api/track) are accessible as attribute on the {class}`Track <deezer.resources.Track>` resource:
+When you ge a resource, you have access to all the fields that are in the REST API response. For example, all the fields presented in the documentation for [the track object](https://developers.deezer.com/api/track) are accessible as attribute on the {class}`Track <deezer.Track>` resource:
 
 ```python
 >>> instant_crush
@@ -81,7 +81,7 @@ True
 
 As well as giving access to its own attributes, a resource also gives access to other related resources.
 
-For example, when you get an {class}`Artist <deezer.resources.Artist>`, you may call one of the methods documented to get the artist's albums, then from an {class}`Album <deezer.resources.Album>` get its tracks, and from a {class}`Track <deezer.resources.Track>` you may go back to the {class}`Album <deezer.resources.Album>` or the {class}`Artist <deezer.resources.Artist>`.
+For example, when you get an {class}`Artist <deezer.Artist>`, you may call one of the methods documented to get the artist's albums, then from an {class}`Album <deezer.Album>` get its tracks, and from a {class}`Track <deezer.Track>` you may go back to the {class}`Album <deezer.Album>` or the {class}`Artist <deezer.Artist>`.
 
 Let's try from the initial example:
 
@@ -162,7 +162,7 @@ Deezer Python itself doesn't handle the authentication & authorization, but it a
 
 To integrate the OAuth flow in your application, we recommend looking at other libraries like [Python Social Auth](https://github.com/python-social-auth), which supports Deezer authentication.
 
-Once the OAuth2 flow is complete, Deezer should give you a token which can be passed to the {class}`Client <deezer.client.Client>` class:
+Once the OAuth2 flow is complete, Deezer should give you a token which can be passed to the {class}`Client <deezer.Client>` class:
 
 ```python
 client = deezer.Client(access_token='your-super-secret-token')

@@ -1,6 +1,6 @@
 # Pagination
 
-For endpoints returning a paginated response, the list of items are wrapped in a {class}`PaginatedList <deezer.pagination.PaginatedList>` class which makes working with pagination more Pythonic while doing the necessary API calls transparently.
+For endpoints returning a paginated response, the list of items are wrapped in a {class}`PaginatedList <deezer.PaginatedList>` class which makes working with pagination more Pythonic while doing the necessary API calls transparently.
 
 ## Iterating over elements
 
