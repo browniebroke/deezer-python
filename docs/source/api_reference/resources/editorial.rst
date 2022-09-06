@@ -1,5 +1,5 @@
 Editorial
--------
+---------
 
 .. autoclass:: deezer.Editorial
     :members:
