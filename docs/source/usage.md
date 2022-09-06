@@ -11,48 +11,30 @@ To start calling the API, you first need to instantiate a {class}`Client <deezer
 From there, you can search for some terms:
 
 ```python
->>> results = client.search('Daft Punk')
->>> list(results)
-[<Track: Daft Punk>,
-<Track: Daft Punk>,
-<Track: One More Time>,
-<Track: Around the World>,
-<Track: Harder, Better, Faster, Stronger>,
-<Track: Da Funk>,
-<Track: Veridis Quo>,
-<Track: Aerodynamic>,
-<Track: Something About Us>,
-<Track: Giorgio by Moroder>,
-<Track: Give Life Back to Music>,
-<Track: Within>,
-<Track: Daft Punk>,
-<Track: Digital Love>,
-<Track: Nightvision>,
-<Track: The Game of Love>,
-<Track: Around the World / Harder, Better, Faster, Stronger>,
-<Track: Beyond>,
-<Track: I Feel It Coming>,
-<Track: Contact>,
-<Track: Voyager>,
-<Track: One More Time (Short Radio Edit)>,
-<Track: Starboy>,
-<Track: Face to Face>,
-<Track: Motherboard>]
+>>> client.search('Daft Punk')
+<PaginatedList [
+ <Track: One More Time>,
+ <Track: I Feel It Coming>,
+ <Track: Starboy>,
+ <Track: Around the World>,
+ <Track: Veridis Quo>,
+ '...']>
 ```
 
-The above returned a lot of tracks. If you wanted to search for artists instead, you may use the {meth}`Client.search_artists() <deezer.Client.search_artists>` method:
+The above returned a lot of tracks, wrapped in a {class}`PaginatedList <deezer.PaginatedList>`, which is a list-like object (see the dedicated {ref}`page about pagination <pagination-guide>` for more details).
+
+If you wanted to search for artists instead, you may use the {meth}`Client.search_artists() <deezer.Client.search_artists>` method:
 
 ```python
 >>> client.search_artists('Daft Punk')
-[<Artist: Daft Punk>,
+<PaginatedList [
+ <Artist: Daft Punk>,
  <Artist: Daft Punk - Stardust>,
  <Artist: Tribute to Daft Punk>,
- <Artist: Daft Punk feat. Pharrell Williams and Nile Rodgers>,
- <Artist: Made famous by Daft Punk>,
- <Artist: Daft Punk's Karaoke Band>]
+ <Artist: Daft Punk Experience>,
+ <Artist: Daft Punk's Karaoke Band>,
+ '...']>
 ```
-
-There is also a {meth}`Client.search_albums() <deezer.Client.search_albums>` method.
 
 ## Main concepts
 
