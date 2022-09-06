@@ -11,7 +11,8 @@ To start calling the API, you first need to instantiate a {class}`Client <deezer
 From there, you can search for some terms:
 
 ```python
->>> client.search('Daft Punk')
+>>> results = client.search('Daft Punk')
+>>> list(results)
 [<Track: Daft Punk>,
 <Track: Daft Punk>,
 <Track: One More Time>,
@@ -39,10 +40,10 @@ From there, you can search for some terms:
 <Track: Motherboard>]
 ```
 
-The above returned a lot of tracks. If you wanted to search for artists instead, you may do so by specifying the `relation` argument:
+The above returned a lot of tracks. If you wanted to search for artists instead, you may use the {meth}`Client.search_artists() <deezer.Client.search_artists>` method:
 
 ```python
->>> client.search('Daft Punk', relation='artist')
+>>> client.search_artists('Daft Punk')
 [<Artist: Daft Punk>,
  <Artist: Daft Punk - Stardust>,
  <Artist: Tribute to Daft Punk>,
@@ -51,11 +52,11 @@ The above returned a lot of tracks. If you wanted to search for artists instead,
  <Artist: Daft Punk's Karaoke Band>]
 ```
 
-The `relation` parameter accepts any resource name as value. The name of a resource is a string with the class name in lowercase. This is explained in a following section.
+There is also a {meth}`Client.search_albums() <deezer.Client.search_albums>` method.
 
 ## Main concepts
 
-As we have just seen above, the entry point is the {class}`Client <deezer.client.Client>` class, which gives access to a number of methods. The methods are attempting to map to the REST API endpoints from Deezer.
+As we have just seen above, the entry point is the {class}`Client <deezer.Client>` class, which gives access to a number of methods. The methods are attempting to map to the REST API endpoints from Deezer.
 
 You may have noticed from the above examples, but depending on the endpoint that is being called, the methods will return various type of resources. All the resources are listed in the {ref}`resources reference page <resources-reference>`.
 
@@ -85,12 +86,12 @@ For example, when you get an {class}`Artist <deezer.resources.Artist>`, you may 
 Let's try from the initial example:
 
 ```python
->>> daft_punk = client.search('Daft Punk', relation='artist')[0]
->>> daft_punk.get_albums()
+>>> daft_punk = client.search_artists('Daft Punk')[0]
+>>> daft_punk.get_albums()[:4]
 [<Album: Random Access Memories>,
  <Album: TRON: Legacy Reconfigured>,
  <Album: Alive 2007>,
- <Album: Burnin'>,...]
+ <Album: Burnin'>,]
 >>> random_access_memories = daft_punk.get_albums()[0]
 >>> random_access_memories.get_tracks()
 [<Track: Give Life Back to Music>,
@@ -115,7 +116,7 @@ Let's try from the initial example:
 
 As you can see, it doesn't look like we're making API requests, but under the hood, the client is passed around and makes further API calls as needed.
 
-You can tell the difference, though: attributes access are using the data from the resource which was already fetched, while calling a method on the resource does extra API requests.
+You might have spotted the difference, though: attributes access are using the data from the resource which was already fetched, while calling a method on the resource does extra API requests.
 
 #### N+1 API calls
 
