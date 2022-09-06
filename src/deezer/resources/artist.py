@@ -37,8 +37,8 @@ class Artist(Resource):
         """
         Get the top tracks of an artist.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Track <deezer.resources.Track>` instances.
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Track>` instances.
         """
         return self.get_paginated_list("top", **kwargs)
 
@@ -46,8 +46,8 @@ class Artist(Resource):
         """
         Get a list of related artists.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Artist <deezer.resources.Artist>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Artist <deezer.Artist>` instances
         """
         return self.get_paginated_list("related", **kwargs)
 
@@ -55,7 +55,7 @@ class Artist(Resource):
         """
         Get a list of tracks.
 
-        :returns: list of :class:`Track <deezer.resources.Track>` instances
+        :returns: list of :class:`Track <deezer.Track>` instances
         """
         return self.get_relation("radio", **kwargs)
 
@@ -63,8 +63,8 @@ class Artist(Resource):
         """
         Get a list of artist's albums.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Album <deezer.resources.Album>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Album <deezer.Album>` instances
         """
         return self.get_paginated_list("albums", **kwargs)
 
@@ -72,7 +72,7 @@ class Artist(Resource):
         """
         Get a list of artist's playlists.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Playlist <deezer.resources.Playlist>` instances
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Playlist <deezer.Playlist>` instances
         """
         return self.get_paginated_list("playlists", **kwargs)

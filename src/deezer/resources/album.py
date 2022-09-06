@@ -63,7 +63,7 @@ class Album(Resource):
         """
         Get the artist of the Album.
 
-        :returns: the :class:`Artist <deezer.resources.Artist>` of the Album
+        :returns: the :class:`Artist <deezer.Artist>` of the Album
         """
         return self.client.get_artist(self.artist.id)
 
@@ -71,7 +71,7 @@ class Album(Resource):
         """
         Get a list of album's tracks.
 
-        :returns: a :class:`PaginatedList <deezer.pagination.PaginatedList>`
-                  of :class:`Track <deezer.resources.Track>`.
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Track>`.
         """
         return self.get_paginated_list("tracks", **kwargs)
