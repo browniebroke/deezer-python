@@ -19,6 +19,28 @@ class TestPaginatedList:
             base_path="artist/27/albums",
         )
 
+    def test_repr_many_results(self, daft_punk_albums):
+        assert repr(daft_punk_albums) == (
+            "<PaginatedList ["
+            "<Album: Homework (25th Anniversary Edition)>, "
+            "<Album: Human After All (Remixes)>, "
+            "<Album: Random Access Memories>, "
+            "<Album: TRON: Legacy Reconfigured>, "
+            "<Album: TRON: Legacy - The Complete Edition (Original Motion Picture Soundtrack)>, "
+            "'...'"
+            "]>"
+        )
+
+    def test_repr_little_results(self, client):
+        results = client.search_artists("rouquine")
+        assert repr(results) == (
+            "<PaginatedList [<Artist: Rouquine>, <Artist: Rouquined>]>"
+        )
+
+    def test_repr_empty(self, client):
+        results = client.search_artists("something very complicated without results")
+        assert repr(results) == "<PaginatedList []>"
+
     def test_total(self, daft_punk_albums):
         assert daft_punk_albums.total == 32
         assert len(daft_punk_albums) == 32

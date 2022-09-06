@@ -6,6 +6,7 @@ from urllib.parse import parse_qs, urlparse
 import deezer
 
 ResourceType = TypeVar("ResourceType")
+REPR_OUTPUT_SIZE = 5
 
 
 class PaginatedList(Generic[ResourceType]):
@@ -30,6 +31,13 @@ class PaginatedList(Generic[ResourceType]):
         self.__parent = parent
         self.__total = None
         self.__iter = iter(self)
+
+    def __repr__(self) -> str:
+        repr_size = 5
+        data = list(self[: repr_size + 1])
+        if len(data) > repr_size:
+            data[-1] = "..."
+        return f"<{self.__class__.__name__} {data!r}>"
 
     @overload
     def __getitem__(self, index: int) -> ResourceType:
