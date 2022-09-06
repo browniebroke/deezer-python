@@ -40,7 +40,7 @@ From there, you can search for some terms:
 <Track: Motherboard>]
 ```
 
-The above returned a lot of tracks. If you wanted to search for artists instead, you may use the {meth}`Client.search_artists() <deezer.client.Client.search_artists>` method:
+The above returned a lot of tracks. If you wanted to search for artists instead, you may use the {meth}`Client.search_artists() <deezer.Client.search_artists>` method:
 
 ```python
 >>> client.search_artists('Daft Punk')
@@ -52,11 +52,11 @@ The above returned a lot of tracks. If you wanted to search for artists instead,
  <Artist: Daft Punk's Karaoke Band>]
 ```
 
-There is also a {meth}`Client.search_albums() <deezer.client.Client.search_albums>` method.
+There is also a {meth}`Client.search_albums() <deezer.Client.search_albums>` method.
 
 ## Main concepts
 
-As we have just seen above, the entry point is the {class}`Client <deezer.client.Client>` class, which gives access to a number of methods. The methods are attempting to map to the REST API endpoints from Deezer.
+As we have just seen above, the entry point is the {class}`Client <deezer.Client>` class, which gives access to a number of methods. The methods are attempting to map to the REST API endpoints from Deezer.
 
 You may have noticed from the above examples, but depending on the endpoint that is being called, the methods will return various type of resources. All the resources are listed in the {ref}`resources reference page <resources-reference>`.
 
