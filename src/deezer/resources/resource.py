@@ -21,7 +21,6 @@ class Resource:
     type: str
 
     _fields: tuple[str, ...]
-    _fields_parsers = {}
     _fetched: bool
 
     def __init__(self, client, json):

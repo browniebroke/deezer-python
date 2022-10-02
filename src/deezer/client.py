@@ -128,6 +128,7 @@ class Client:
             object_class = resource_type
         else:
             raise DeezerUnknownResource(f"Unable to find resource type for {result!r}")
+        assert object_class is not None  # nosec B101
         return object_class(self, result)
 
     def request(

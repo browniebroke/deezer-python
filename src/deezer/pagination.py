@@ -26,7 +26,7 @@ class PaginatedList(Generic[ResourceType]):
         self.__client = client
         self.__base_path = base_path
         self.__base_params = params
-        self.__next_path = base_path
+        self.__next_path: str | None = base_path
         self.__next_params = params
         self.__parent = parent
         self.__total = None
@@ -34,7 +34,7 @@ class PaginatedList(Generic[ResourceType]):
 
     def __repr__(self) -> str:
         repr_size = 5
-        data = list(self[: repr_size + 1])
+        data: list[ResourceType | str] = list(self[: repr_size + 1])
         if len(data) > repr_size:
             data[-1] = "..."
         return f"<{self.__class__.__name__} {data!r}>"
@@ -81,6 +81,7 @@ class PaginatedList(Generic[ResourceType]):
         return new_elements
 
     def _fetch_next_page(self) -> list[ResourceType]:
+        assert self.__next_path is not None  # nosec B101
         response_payload = self.__client.request(
             "GET",
             self.__next_path,
@@ -115,4 +116,5 @@ class PaginatedList(Generic[ResourceType]):
                 **params,
             )
             self.__total = response_payload["total"]
+        assert self.__total is not None  # nosec B101
         return self.__total
