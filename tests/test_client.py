@@ -301,6 +301,23 @@ class TestClient:
         result = client_token.remove_user_artist(243)
         assert result is True
 
+    @pytest.mark.parametrize(
+        "args",
+        [
+            (),
+            (359622,),
+        ],
+    )
+    def test_get_user_followers(self, client_token, args):
+        user_followers = client_token.get_user_followers(*args)
+        assert isinstance(user_followers, deezer.PaginatedList)
+        assert all(isinstance(a, deezer.User) for a in user_followers)
+        assert len(user_followers) == 2
+        assert [u.name for u in user_followers] == [
+            "John Doe",
+            "Jane Doe",
+        ]
+
     def test_get_user_history(self, client_token):
         user_history = client_token.get_user_history()
         assert isinstance(user_history, deezer.PaginatedList)

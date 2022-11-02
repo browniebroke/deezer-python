@@ -74,6 +74,15 @@ class User(Resource):
         """
         return self.get_paginated_list("artists", **kwargs)
 
+    def get_followers(self, **kwargs) -> PaginatedList[User]:
+        """
+        Get user's followers.
+
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`User <deezer.User>` instances
+        """
+        return self.get_paginated_list("followers", **kwargs)
+
     def get_playlists(self, **kwargs) -> PaginatedList[Playlist]:
         """
         Get user's public playlists.

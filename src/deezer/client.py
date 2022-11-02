@@ -409,6 +409,17 @@ class Client:
         """
         return self.request("DELETE", "user/me/artists", artist_id=artist_id)
 
+    def get_user_followers(self, user_id: int | None = None) -> PaginatedList[User]:
+        """
+        Get the followers for the given user_id if provided or current user if not.
+
+        :param user_id: the user ID to get followers.
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.User` instances.
+        """
+        user_id_str = str(user_id) if user_id else "me"
+        return self._get_paginated_list(f"user/{user_id_str}/followers")
+
     def get_user_history(self) -> PaginatedList[Track]:
         """
         Returns a list of the recently played tracks for the current user.
