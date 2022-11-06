@@ -36,6 +36,14 @@ class TestUser:
         assert repr(user) == "<User: John Doe>"
         assert len(users) == 2
 
+    def test_get_followings(self, user):
+        users = user.get_followings()
+        assert isinstance(users, deezer.PaginatedList)
+        user = users[0]
+        assert isinstance(user, deezer.User)
+        assert repr(user) == "<User: John Doe>"
+        assert len(users) == 2
+
     def test_get_playlists(self, user):
         playlists = user.get_playlists()
         assert isinstance(playlists, deezer.PaginatedList)
