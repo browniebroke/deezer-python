@@ -357,7 +357,8 @@ class Client:
         Get the favourites albums for the given user_id if provided or current user if not.
 
         :param user_id: the user ID to get favourites albums.
-        :return: a list of :class:`~deezer.Album` instances.
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.Album` objects.
         """
         user_id_str = str(user_id) if user_id else "me"
         return self._get_paginated_list(f"user/{user_id_str}/albums")
