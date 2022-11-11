@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.7.0 (2022-11-11)
+### Feature
+* Manage user's friends ([#610](https://github.com/browniebroke/deezer-python/issues/610)) ([`6e116f5`](https://github.com/browniebroke/deezer-python/commit/6e116f5dfaab8f122a77c2c01d53fa0f7d8cac5e))
+
 ## v5.6.0 (2022-09-06)
 ### Feature
 * Show a content preview of the paginated list in the CLI ([#568](https://github.com/browniebroke/deezer-python/issues/568)) ([`283d190`](https://github.com/browniebroke/deezer-python/commit/283d190fe42f2272036fe3e17c4f9de11881b0e8))
