@@ -357,7 +357,8 @@ class Client:
         Get the favourites albums for the given user_id if provided or current user if not.
 
         :param user_id: the user ID to get favourites albums.
-        :return: a list of :class:`~deezer.Album` instances.
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                  of :class:`~deezer.Album` objects.
         """
         user_id_str = str(user_id) if user_id else "me"
         return self._get_paginated_list(f"user/{user_id_str}/albums")
@@ -408,6 +409,46 @@ class Client:
         :return: boolean whether the operation succeeded.
         """
         return self.request("DELETE", "user/me/artists", artist_id=artist_id)
+
+    def get_user_followers(self, user_id: int | None = None) -> PaginatedList[User]:
+        """
+        Get the followers for the given user_id if provided or current user if not.
+
+        :param user_id: the user ID to get followers.
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.User` instances.
+        """
+        user_id_str = str(user_id) if user_id else "me"
+        return self._get_paginated_list(f"user/{user_id_str}/followers")
+
+    def get_user_followings(self, user_id: int | None = None) -> PaginatedList[User]:
+        """
+        Get the followings for the given user_id if provided or current user if not.
+
+        :param user_id: the user ID to get followings.
+        :returns: a :class:`~deezer.pagination.PaginatedList`
+                 of :class:`~deezer.User` instances.
+        """
+        user_id_str = str(user_id) if user_id else "me"
+        return self._get_paginated_list(f"user/{user_id_str}/followings")
+
+    def add_user_following(self, user_id: int) -> bool:
+        """
+        Follow the given user ID as the currently authenticated user.
+
+        :param user_id: the ID of the user to follow.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("POST", "user/me/followings", user_id=user_id)
+
+    def remove_user_following(self, user_id: int) -> bool:
+        """
+        Stop following the given user ID as the currently authenticated user.
+
+        :param user_id: the ID of the user to stop following.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("DELETE", "user/me/followings", user_id=user_id)
 
     def get_user_history(self) -> PaginatedList[Track]:
         """

@@ -1,0 +1,104 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-requests/2.28.1
+      method: GET
+      uri: https://api.deezer.com/user/359622
+    response:
+      body:
+        string: '{"id":359622,"name":"Bruno Alla","link":"https:\/\/www.deezer.com\/profile\/359622","picture":"https:\/\/api.deezer.com\/user\/359622\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/1000x1000-000000-80-0-0.jpg","country":"GB","tracklist":"https:\/\/api.deezer.com\/user\/359622\/flow","type":"user"}'
+      headers:
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        Access-Control-Allow-Methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        Access-Control-Expose-Headers:
+          - Location
+        Access-Control-Max-Age:
+          - "86400"
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "734"
+        Content-Type:
+          - application/json; charset=utf-8
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000
+        Vary:
+          - Accept-Encoding
+        X-Content-Type-Options:
+          - nosniff
+        X-Host:
+          - blm-web-31
+        x-org:
+          - FR
+      status:
+        code: 200
+        message: OK
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        Cookie:
+          - _abck=92F0B44126E08335BF209FAB29874D28~-1~YAAQvMRNF900MVGEAQAA4pQjVAg+WiQRHB9aAzcZlUdYi75fGzoqQnXEnYxrskqfLVBJIjx+OPM0vSVIUhE0AxerwBynrFCZf++7IQOmbDfpohZVy0aOsF+NaOKYWHWrvCUBWZO8p08TfcqeORdOoApqOM2e3pPr38+yatyG8q0SZ+HNFEXqNzGC2jDnyeRxFPxmIgoY92aDc38uMsI2pQYoahrzIdRaPdJvUtBsNUxxyZObA0CpjBEeJFHzp1gk7yyARSGCSFUc55nhDnwn59hXsRbGevOjjCN3Qdd9fnv36VuIPpmD9CasgYXJcvGG6VnwmHwPfwfS2MnfQqQ4bg4kKpwKwFg5iyyw15h5I8scTRK6lIFVZPA=~-1~-1~-1;
+            bm_sz=D36F49AF9EE838F86F0B325A94A1D684~YAAQvMRNF940MVGEAQAA4pQjVBHlSS3j4GQUyL4kITCNuySR31jcCh77CMBMX9bOa8bP1pJexjKFE47KqsTtsIXfUhuWORdO9h3QGjlCKk1+vPXF2uKOuswyli9bMlc4Oe2reBZbdhkkIP34skpFRJgnZRqkEB0i8QLWXeGoS+T8UZWik7+xOfxmYYpNkncwHAguoq/GjlcZsxgbrg+SrUgGViHeOtUY9BCH/n/g6L4qBa6n5bdvIDsM5Oxp3LMB6JfreCkiPsc2GzYRLO7fBTppnwMSsYlnxFqum70oRVcQRIM=~3425606~3551797;
+            dzr_uniq_id=dzr_uniq_id_frb0cd269a6ca6ec0cc44f1fe8876205d1827c70
+        User-Agent:
+          - python-requests/2.28.1
+      method: GET
+      uri: https://api.deezer.com/user/359622/followings
+    response:
+      body:
+        string:
+          '{"data":[{"id":5100920542,"name":"John Doe","picture":"https:\/\/api.deezer.com\/user\/5100920542\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/user\/5100920542\/flow","type":"user"},{"id":5139545882,"name":"Jane
+          Doe","picture":"https:\/\/api.deezer.com\/user\/5139545882\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/user\/5139545882\/flow","type":"user"}],"total":2}'
+      headers:
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        Access-Control-Allow-Methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        Access-Control-Expose-Headers:
+          - Location
+        Access-Control-Max-Age:
+          - "86400"
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "1122"
+        Content-Type:
+          - application/json; charset=utf-8
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000
+        Vary:
+          - Accept-Encoding
+        X-Content-Type-Options:
+          - nosniff
+        X-Host:
+          - blm-web-37
+        x-org:
+          - FR
+      status:
+        code: 200
+        message: OK
+version: 1
