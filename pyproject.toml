@@ -41,7 +41,7 @@ docs = [
     "sphinx-rtd-theme",
 ]
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 coverage = "^6.0"
 environs = "^9.3"
 pytest = "^7.0"
