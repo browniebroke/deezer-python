@@ -18,6 +18,8 @@ build:
       # Tell poetry to not use a virtual environment
       - $HOME/.local/bin/poetry config virtualenvs.create false
       - $HOME/.local/bin/poetry install --with=docs -v
+      - $HOME/.local/bin/poetry env info
+      - $HOME/.local/bin/poetry debug info
     pre_install:
       # Export project dependencies to requirements.txt
       - $HOME/.local/bin/poetry export --with docs > docs/requirements.txt
