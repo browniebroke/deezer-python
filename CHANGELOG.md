@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.8.0 (2022-11-20)
+### Feature
+* Officially support Python 3.11 ([#617](https://github.com/browniebroke/deezer-python/issues/617)) ([`f737d5b`](https://github.com/browniebroke/deezer-python/commit/f737d5b0011339fefdeacf2fae80834c39ddf293))
+
 ## v5.7.0 (2022-11-11)
 ### Feature
 * Manage user's friends ([#610](https://github.com/browniebroke/deezer-python/issues/610)) ([`6e116f5`](https://github.com/browniebroke/deezer-python/commit/6e116f5dfaab8f122a77c2c01d53fa0f7d8cac5e))
