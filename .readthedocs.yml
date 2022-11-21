@@ -16,6 +16,7 @@ build:
       - pip install poetry
       # Tell poetry to not use a virtual environment
       - poetry config virtualenvs.create false
+    post_install:
       # Install dependencies
       - poetry install --with=docs
 
