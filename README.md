@@ -4,7 +4,7 @@
   <a href="https://github.com/browniebroke/deezer-python/actions?query=workflow%3ACI">
     <img alt="CI Status" src="https://img.shields.io/github/workflow/status/browniebroke/deezer-python/CI?label=CI&logo=github&style=flat-square">
   </a>
-  <a href="https://deezer-python.readthedocs.io">
+  <a href="https://readthedocs.org/projects/deezer-python/builds/">
     <img src="https://img.shields.io/readthedocs/deezer-python.svg?logo=read-the-docs&style=flat-square" alt="Documentation Status">
   </a>
   <a href="https://codecov.io/gh/browniebroke/deezer-python">
@@ -35,6 +35,14 @@
     <img src="https://tokei.rs/b1/github/browniebroke/deezer-python" alt="LoC">
   </a>
 </p>
+
+---
+
+**Documentation**: <a href="https://deezer-python.readthedocs.io" target="_blank">https://deezer-python.readthedocs.io</a>
+
+**Source Code**: <a href="https://github.com/browniebroke/deezer-python" target="_blank">https://github.com/browniebroke/deezer-python </a>
+
+---
 
 A friendly Python wrapper around the [Deezer API](https://developers.deezer.com/api).
 
