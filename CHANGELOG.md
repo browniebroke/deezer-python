@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.8.1 (2022-12-02)
+### Fix
+* Add Twitter and Mastodon links to PyPI ([#631](https://github.com/browniebroke/deezer-python/issues/631)) ([`1a57b64`](https://github.com/browniebroke/deezer-python/commit/1a57b64e2bc0d38dd70e18dd815afbc8376c6d1f))
+
 ## v5.8.0 (2022-11-20)
 ### Feature
 * Officially support Python 3.11 ([#617](https://github.com/browniebroke/deezer-python/issues/617)) ([`f737d5b`](https://github.com/browniebroke/deezer-python/commit/f737d5b0011339fefdeacf2fae80834c39ddf293))
