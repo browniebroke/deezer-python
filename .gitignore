@@ -7,7 +7,7 @@ build
 dist
 
 # Sphinx documentation
-docs/build/
+docs/_build/
 
 #Virtualenvs
 ENV*
