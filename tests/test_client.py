@@ -452,7 +452,14 @@ class TestClient:
         assert isinstance(first, deezer.Artist)
         assert first.name == "Daft Punk"
         assert len(result) == 5
-
+    
+    def test_searc_isrc(self, client):
+        """Test search for isrc"""
+        result = client.search_isrc("ITUM72000710")
+        assert isinstance(result, deezer.Track)
+        assert result.name == "Capo"
+        assert result.id == 1012479032
+        
     @pytest.mark.parametrize(
         ("header_value", "expected_name"),
         [

@@ -584,7 +584,7 @@ class Client:
             strict=strict,
             ordering=ordering,
         )
-
+        
     def search_artists(
         self,
         query: str = "",
@@ -605,3 +605,12 @@ class Client:
             strict=strict,
             ordering=ordering,
         )
+    """"
+    Search track matching the given isrc.
+    :param isrc: the isrc to search for.
+    """
+    def search_isrc(
+        self,
+        isrc: str = ""
+    ) -> Track:
+        return self.request("GET",f"/track/isrc:{isrc}",resource_type=Track)   
