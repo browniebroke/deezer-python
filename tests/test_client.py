@@ -457,7 +457,7 @@ class TestClient:
         """Test search for isrc"""
         result = client.search_isrc("ITUM72000710")
         assert isinstance(result, deezer.Track)
-        assert result.name == "Capo"
+        assert result.title == "Capo"
         assert result.id == 1012479032
         
     @pytest.mark.parametrize(
