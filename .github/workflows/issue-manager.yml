@@ -28,5 +28,8 @@ jobs:
               },
               "waiting": {
                 "message": "Automatically closing. To re-open, please provide the additional information requested."
+              },
+              "wontfix": {
+                "message": "This is considered out of scope or not worth doing."
               }
             }
