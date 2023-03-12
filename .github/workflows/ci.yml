@@ -65,12 +65,12 @@ jobs:
 
       - name: Release
         uses: relekang/python-semantic-release@v7.33.2
-        if: github.ref == 'refs/heads/main'
+        if: github.ref_name == 'main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pypi_token: ${{ secrets.PYPI_TOKEN }}
       - name: Test release
         uses: relekang/python-semantic-release@v7.33.2
-        if: github.ref != 'refs/heads/main'
+        if: github.ref_name != 'main'
         with:
           additional_options: --noop
