@@ -100,3 +100,48 @@ class User(Resource):
                   of :class:`Playlist <deezer.Playlist>` instances
         """
         return self.get_paginated_list("playlists", **kwargs)
+
+    def get_recommendations_track(self, **kwargs) -> PaginatedList[Track]:
+        """
+        Get user's recommended tracks.
+
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Track>` instances
+        """
+        return self.get_paginated_list("recommendations/tracks", **kwargs)
+
+    def get_recommendations_album(self, **kwargs) -> PaginatedList[Album]:
+        """
+        Get user's recommended albums.
+
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Album>` instances
+        """
+        return self.get_paginated_list("recommendations/albums", **kwargs)
+
+    def get_recommendations_artists(self, **kwargs) -> PaginatedList[Artist]:
+        """
+        Get user's recommended artists.
+
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Artist>` instances
+        """
+        return self.get_paginated_list("recommendations/artists", **kwargs)
+
+    def get_recommendations_playlist(self, **kwargs) -> PaginatedList[Playlist]:
+        """
+        Get user's recommended playlist.
+
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Playlist>` instances
+        """
+        return self.get_paginated_list("recommendations/tracks", **kwargs)
+
+    def get_flow(self, **kwargs) -> PaginatedList[Track]:
+        """
+        Get user's flow.
+
+        :returns: a :class:`PaginatedList <deezer.PaginatedList>`
+                  of :class:`Track <deezer.Track>` instances
+        """
+        return self.get_paginated_list("flow", **kwargs)
