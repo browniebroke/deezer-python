@@ -59,3 +59,33 @@ class TestUser:
         assert isinstance(track, deezer.Track)
         assert repr(track) == "<Track: Poney Pt. I>"
         assert len(tracks) == 3
+
+    def test_recommendations_track(self, user):
+        tracks = user.get_recommendations_track()
+        assert isinstance(tracks, deezer.PaginatedList)
+        track = tracks[0]
+        assert isinstance(track, deezer.Track)
+
+    def test_recommendations_album(self, user):
+        albums = user.get_recommendations_album()
+        assert isinstance(albums, deezer.PaginatedList)
+        album = albums[0]
+        assert isinstance(album, deezer.Album)
+
+    def test_recommendations_artist(self, user):
+        artists = user.get_recommendations_artists()
+        assert isinstance(artists, deezer.PaginatedList)
+        artist = artists[0]
+        assert isinstance(artist, deezer.Artist)
+
+    def test_recommendations_playlist(self, user):
+        playlists = user.get_recommendations_playlist()
+        assert isinstance(playlists, deezer.PaginatedList)
+        playlist = playlists[0]
+        assert isinstance(playlist, deezer.Playlist)
+
+    def test_get_flow(self, user):
+        flow = user.get_flow()
+        assert isinstance(flow, deezer.PaginatedList)
+        track = flow[0]
+        assert isinstance(track, deezer.Track)
