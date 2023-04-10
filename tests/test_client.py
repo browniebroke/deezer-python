@@ -453,6 +453,15 @@ class TestClient:
         assert first.name == "Daft Punk"
         assert len(result) == 5
 
+    def test_search_playlists(self, client):
+        """Test search for playlists"""
+        result = client.search_playlists("Daft Punk")
+        assert isinstance(result, deezer.PaginatedList)
+        first = result[0]
+        assert isinstance(first, deezer.Playlist)
+        assert first.name == "100% Daft Punk"
+        assert len(result) == 5
+
     @pytest.mark.parametrize(
         ("header_value", "expected_name"),
         [
