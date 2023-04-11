@@ -359,7 +359,9 @@ class Client:
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Track <deezer.Track>` instances
         """
-        return PaginatedList(client=self, base_path="user/me/recommendations/tracks", **kwargs)
+        return PaginatedList(
+            client=self, base_path="user/me/recommendations/tracks", **kwargs
+        )
 
     def get_user_recommendations_album(self, **kwargs) -> PaginatedList[Album]:
         """
@@ -368,7 +370,9 @@ class Client:
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Track <deezer.Album>` instances
         """
-        return PaginatedList(client=self, base_path="user/me/recommendations/albums", **kwargs)
+        return PaginatedList(
+            client=self, base_path="user/me/recommendations/albums", **kwargs
+        )
 
     def get_user_recommendations_artists(self, **kwargs) -> PaginatedList[Artist]:
         """
@@ -377,7 +381,9 @@ class Client:
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Track <deezer.Artist>` instances
         """
-        return PaginatedList(client=self, base_path="user/me/recommendations/artists", **kwargs)
+        return PaginatedList(
+            client=self, base_path="user/me/recommendations/artists", **kwargs
+        )
 
     def get_user_recommendations_playlist(self, **kwargs) -> PaginatedList[Playlist]:
         """
@@ -386,7 +392,9 @@ class Client:
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Track <deezer.Playlist>` instances
         """
-        return PaginatedList(client=self, base_path="user/me/recommendations/playlists", **kwargs)
+        return PaginatedList(
+            client=self, base_path="user/me/recommendations/playlists", **kwargs
+        )
 
     def get_user_flow(self, **kwargs) -> PaginatedList[Track]:
         """
