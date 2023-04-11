@@ -1,0 +1,95 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://api.deezer.com/user/me/flow?access_token=dummy
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2083'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-123
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1
