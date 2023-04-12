@@ -251,32 +251,32 @@ class TestClient:
         with pytest.raises(DeezerErrorResponse):
             client.get_user(-1)
 
-    def test_get_user_recommendations_track(self, client):
-        tracks = client.get_user_recommendations_track()
+    def test_get_user_recommendations_track(self, client_token):
+        tracks = client_token.get_user_recommendations_track()
         assert isinstance(tracks, deezer.PaginatedList)
         track = tracks[0]
         assert isinstance(track, deezer.Track)
 
-    def test_get_user_recommendations_album(self, client):
-        albums = client.get_user_recommendations_album()
+    def test_get_user_recommendations_album(self, client_token):
+        albums = client_token.get_user_recommendations_album()
         assert isinstance(albums, deezer.PaginatedList)
         album = albums[0]
         assert isinstance(album, deezer.Album)
 
-    def test_get_user_recommendations_artist(self, client):
-        artists = client.get_user_recommendations_artists()
+    def test_get_user_recommendations_artist(self, client_token):
+        artists = client_token.get_user_recommendations_artists()
         assert isinstance(artists, deezer.PaginatedList)
         artist = artists[0]
         assert isinstance(artist, deezer.Artist)
 
-    def test_get_user_recommendations_playlist(self, client):
-        playlists = client.get_user_recommendations_playlist()
+    def test_get_user_recommendations_playlist(self, client_token):
+        playlists = client_token.get_user_recommendations_playlist()
         assert isinstance(playlists, deezer.PaginatedList)
         playlist = playlists[0]
         assert isinstance(playlist, deezer.Playlist)
 
-    def test_get_user_flow(self, client):
-        flow = client.get_user_flow()
+    def test_get_user_flow(self, client_token):
+        flow = client_token.get_user_flow()
         assert isinstance(flow, deezer.PaginatedList)
         track = flow[0]
         assert isinstance(track, deezer.Track)
