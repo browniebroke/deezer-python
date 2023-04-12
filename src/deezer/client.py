@@ -352,7 +352,7 @@ class Client:
         user_id_str = str(user_id) if user_id else "me"
         return self.request("GET", f"user/{user_id_str}")
 
-    def get_user_recommendations_track(self, **kwargs) -> PaginatedList[Track]:
+    def get_user_recommended_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
         Get user's recommended tracks.
 
@@ -363,7 +363,7 @@ class Client:
             client=self, base_path="user/me/recommendations/tracks", **kwargs
         )
 
-    def get_user_recommendations_album(self, **kwargs) -> PaginatedList[Album]:
+    def get_user_recommended_albums(self, **kwargs) -> PaginatedList[Album]:
         """
         Get user's recommended albums.
 
@@ -374,7 +374,7 @@ class Client:
             client=self, base_path="user/me/recommendations/albums", **kwargs
         )
 
-    def get_user_recommendations_artists(self, **kwargs) -> PaginatedList[Artist]:
+    def get_user_recommended_artists(self, **kwargs) -> PaginatedList[Artist]:
         """
         Get user's recommended artists.
 
@@ -385,7 +385,7 @@ class Client:
             client=self, base_path="user/me/recommendations/artists", **kwargs
         )
 
-    def get_user_recommendations_playlist(self, **kwargs) -> PaginatedList[Playlist]:
+    def get_user_recommended_playlists(self, **kwargs) -> PaginatedList[Playlist]:
         """
         Get user's recommended playlist.
 
