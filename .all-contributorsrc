@@ -186,6 +186,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "Un10ck3d",
+      "name": "Jonathan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74015378?v=4",
+      "profile": "https://jonathanbangert.com",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
     }
   ],
   "projectName": "deezer-python",
