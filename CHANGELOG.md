@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v5.9.0 (2023-04-13)
+### Feature
+* **search:** Add search function for playlists ([`318d524`](https://github.com/browniebroke/deezer-python/commit/318d5249bd51de6f007ad5f839b6339069415fc0))
+* **recommendations:** Add flow and recommendation functions ([`a03ac81`](https://github.com/browniebroke/deezer-python/commit/a03ac81f9c3d3b46265746b4be8d980fc93ada28))
+
+### Documentation
+* Add Un10ck3d as a contributor for code, doc, and test ([#693](https://github.com/browniebroke/deezer-python/issues/693)) ([`0371bc4`](https://github.com/browniebroke/deezer-python/commit/0371bc4e95949b85b286ea882eba6f11dc98c715))
+* Move docs in a single folder ([#634](https://github.com/browniebroke/deezer-python/issues/634)) ([`bb7b3d1`](https://github.com/browniebroke/deezer-python/commit/bb7b3d15a37af411a5c66db2bf569e49e8f965ce))
+* Improve links between docs and source code ([#632](https://github.com/browniebroke/deezer-python/issues/632)) ([`7258900`](https://github.com/browniebroke/deezer-python/commit/7258900b6df3c44d3b05eb5a205996c1fe173609))
+
 ## v5.8.1 (2022-12-02)
 ### Fix
 * Add Twitter and Mastodon links to PyPI ([#631](https://github.com/browniebroke/deezer-python/issues/631)) ([`1a57b64`](https://github.com/browniebroke/deezer-python/commit/1a57b64e2bc0d38dd70e18dd815afbc8376c6d1f))
