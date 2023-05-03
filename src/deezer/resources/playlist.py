@@ -56,3 +56,27 @@ class Playlist(Resource):
                   of :class:`User <deezer.User>` instances
         """
         return self.get_paginated_list("fans", **kwargs)
+
+    def add_tracks(self, tracks: list[int], **kwargs) -> bool:
+        """
+        Add tracks to a playlist.
+
+        :param tracks: A list of the track id's to add to the playlist
+        :returns: a boolean that tells if the operation was successful
+        """
+        songs = ",".join(map(str, tracks))
+        return self.client.request(
+            "POST", f"playlist/{self.id}/tracks", songs=songs, **kwargs
+        )
+
+    def delete_tracks(self, tracks: list[int], **kwargs) -> bool:
+        """
+        Delete tracks from a playlist.
+
+        :param tracks: A list of the track id's to delete to the playlist
+        :returns: a boolean that tells if the operation was successful
+        """
+        songs = ",".join(map(str, tracks))
+        return self.client.request(
+            "DELETE", f"playlist/{self.id}/tracks", songs=songs, **kwargs
+        )
