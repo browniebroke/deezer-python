@@ -118,16 +118,13 @@ class Client:
         if "id" not in result and resource_id is not None:
             result["id"] = resource_id
 
-        if "type" in result:
-            if result["type"] in self.objects_types:
-                object_class = self.objects_types[result["type"]]
-            else:
-                # in case any new types are introduced by the API
-                object_class = Resource
+        if "type" in result and result["type"] in self.objects_types:
+            object_class = self.objects_types[result["type"]]
+        elif "type" in result or not resource_type and "id" in result:
+            # in case any new types are introduced by the API
+            object_class = Resource
         elif resource_type:
             object_class = resource_type
-        elif "id" in result:
-            object_class = Resource
         else:
             raise DeezerUnknownResource(f"Unable to find resource type for {result!r}")
         assert object_class is not None  # nosec B101
