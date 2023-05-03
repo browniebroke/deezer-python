@@ -48,3 +48,8 @@ class TestPlaylist:
         # Test that we can delete multiple tracks
         result = playlist.delete_tracks([79875064, 79875044, 142986210])
         assert result is True
+
+    def test_reorder_tracks(self, client_token):
+        playlist = client_token.get_playlist(11336462844)
+        result = playlist.reorder_tracks([79875044, 79875050, 142986210])
+        assert result is True

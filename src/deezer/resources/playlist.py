@@ -80,3 +80,15 @@ class Playlist(Resource):
         return self.client.request(
             "DELETE", f"playlist/{self.id}/tracks", songs=songs, **kwargs
         )
+
+    def reorder_tracks(self, order: list[int], **kwargs) -> bool:
+        """
+        Reorder the tracks of a playlist.
+
+        :param order: A list of the track id's in the wished order
+        :returns: a boolean that tells if the operation was successful
+        """
+        order_string = ",".join(map(str, order))
+        return self.client.request(
+            "POST", f"playlist/{self.id}/tracks", order=order_string, **kwargs
+        )
