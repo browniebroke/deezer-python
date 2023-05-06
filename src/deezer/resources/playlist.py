@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from .resource import Resource
-from .track import Track
 
 if TYPE_CHECKING:
     from ..pagination import PaginatedList
@@ -58,37 +57,38 @@ class Playlist(Resource):
         """
         return self.get_paginated_list("fans", **kwargs)
 
-    def add_tracks(self, tracks: list[int] | list[Track], **kwargs) -> bool:
+    def add_tracks(self, tracks: list, **kwargs) -> bool:
         """
         Add tracks to a playlist.
 
-        :param tracks: A list of the track id's to add to the playlist
+        :param tracks: A list of the track's or track id's to add to the playlist
         :returns: a boolean that tells if the operation was successful
         """
-        tracks_parsed = []
+        tracks_ids = []
         for track in tracks:
             if isinstance(track, int):
-                tracks_parsed += str(track)
+                tracks_ids.append(str(track))
             else:
-                tracks_parsed += str(track.id)
+                tracks_ids.append(str(track.id))
+        tracks_parsed = ",".join(tracks_ids)
         return self.client.request(
             "POST", f"playlist/{self.id}/tracks", songs=tracks_parsed, **kwargs
         )
 
-    def delete_tracks(self, tracks: list[int] | list[Track], **kwargs) -> bool:
+    def delete_tracks(self, tracks: list, **kwargs) -> bool:
         """
         Delete tracks from a playlist.
 
-        :param tracks: A list of the track id's to delete to the playlist
+        :param tracks: A list of the track's or track id's to delete to the playlist
         :returns: a boolean that tells if the operation was successful
         """
-        tracks_parsed = []
+        tracks_ids = []
         for track in tracks:
             if isinstance(track, int):
-                tracks_parsed += str(track)
+                tracks_ids.append(str(track))
             else:
-                tracks_parsed += str(track.id)
-
+                tracks_ids.append(str(track.id))
+        tracks_parsed = ",".join(tracks_ids)
         return self.client.request(
             "DELETE", f"playlist/{self.id}/tracks", songs=tracks_parsed, **kwargs
         )
