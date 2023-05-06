@@ -67,10 +67,7 @@ class Playlist(Resource):
         """
         tracks_parsed = []
         for track in tracks:
-            if isinstance(track, int):
-                tracks_parsed += str(track)
-            else:
-                tracks_parsed += str(track.id)
+            tracks_parsed += str(track) if isinstance(track, int) else str(track.id)
         return self.client.request(
             "POST", f"playlist/{self.id}/tracks", songs=tracks_parsed, **kwargs
         )
@@ -84,11 +81,7 @@ class Playlist(Resource):
         """
         tracks_parsed = []
         for track in tracks:
-            if isinstance(track, int):
-                tracks_parsed += str(track)
-            else:
-                tracks_parsed += str(track.id)
-
+            tracks_parsed += str(track) if isinstance(track, int) else str(track.id)
         return self.client.request(
             "DELETE", f"playlist/{self.id}/tracks", songs=tracks_parsed, **kwargs
         )
