@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.10.0 (2023-05-08)
+### Feature
+* **playlists:** Add functions to create, edit, reorder and delete playlists and edit user library playlists ([#709](https://github.com/browniebroke/deezer-python/issues/709)) ([`5257988`](https://github.com/browniebroke/deezer-python/commit/525798801e341ddbc43bad974aa0b4c58a1e63a8))
+
 ## v5.9.0 (2023-04-13)
 ### Feature
 * **search:** Add search function for playlists ([`318d524`](https://github.com/browniebroke/deezer-python/commit/318d5249bd51de6f007ad5f839b6339069415fc0))
