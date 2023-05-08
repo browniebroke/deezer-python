@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Iterable
 
+from ..utils import gen_ids
 from .resource import Resource
 
 if TYPE_CHECKING:
@@ -57,50 +58,41 @@ class Playlist(Resource):
         """
         return self.get_paginated_list("fans", **kwargs)
 
-    def add_tracks(self, tracks: list, **kwargs) -> bool:
+    def add_tracks(self, tracks: Iterable[int | Track], **kwargs) -> bool:
         """
         Add tracks to a playlist.
 
-        :param tracks: A list of the track's or track id's to add to the playlist
+        :param tracks: An iterable of :class:`Track <deezer.Track>` instances
+                       or their IDs to add to the playlist
         :returns: a boolean that tells if the operation was successful
         """
-        tracks_ids = []
-        for track in tracks:
-            if isinstance(track, int):
-                tracks_ids.append(str(track))
-            else:
-                tracks_ids.append(str(track.id))
-        tracks_parsed = ",".join(tracks_ids)
+        track_ids_str = ",".join(str(tid) for tid in gen_ids(tracks))
         return self.client.request(
-            "POST", f"playlist/{self.id}/tracks", songs=tracks_parsed, **kwargs
+            "POST", f"playlist/{self.id}/tracks", songs=track_ids_str, **kwargs
         )
 
-    def delete_tracks(self, tracks: list, **kwargs) -> bool:
+    def delete_tracks(self, tracks: Iterable[int | Track], **kwargs) -> bool:
         """
         Delete tracks from a playlist.
 
-        :param tracks: A list of the track's or track id's to delete to the playlist
+        :param tracks: An iterable of :class:`Track <deezer.Track>` instances
+                       or their IDs to remove from the playlist.
         :returns: a boolean that tells if the operation was successful
         """
-        tracks_ids = []
-        for track in tracks:
-            if isinstance(track, int):
-                tracks_ids.append(str(track))
-            else:
-                tracks_ids.append(str(track.id))
-        tracks_parsed = ",".join(tracks_ids)
+        track_ids_str = ",".join(map(str, gen_ids(tracks)))
         return self.client.request(
-            "DELETE", f"playlist/{self.id}/tracks", songs=tracks_parsed, **kwargs
+            "DELETE", f"playlist/{self.id}/tracks", songs=track_ids_str, **kwargs
         )
 
-    def reorder_tracks(self, order: list[int], **kwargs) -> bool:
+    def reorder_tracks(self, ordered_tracks: Iterable[int | Track], **kwargs) -> bool:
         """
         Reorder the tracks of a playlist.
 
-        :param order: A list of the track id's in the wished order
+        :param ordered_tracks: An iterable of :class:`Track <deezer.Track>` instances
+                               or their IDs in the wished order.
         :returns: a boolean that tells if the operation was successful
         """
-        order_string = ",".join(map(str, order))
+        order_track_ids_str = ",".join(map(str, gen_ids(ordered_tracks)))
         return self.client.request(
-            "POST", f"playlist/{self.id}/tracks", order=order_string, **kwargs
+            "POST", f"playlist/{self.id}/tracks", order=order_track_ids_str, **kwargs
         )
