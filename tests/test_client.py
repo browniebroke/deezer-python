@@ -410,6 +410,23 @@ class TestClient:
         result = client_token.remove_user_track(1374789602)
         assert result is True
 
+    def test_add_user_playlist(self, client_token):
+        result = client_token.add_user_playlist(8749345882)
+        assert result is True
+
+    def test_remove_user_playlist(self, client_token):
+        result = client_token.remove_user_playlist(8749345882)
+        assert result is True
+
+    def test_create_playlist(self, client_token):
+        result = client_token.create_playlist("CoolPlaylist")
+        print(result)
+        assert result == 11336219744
+
+    def test_delete_playlist(self, client_token):
+        result = client_token.delete_playlist(11336219744)
+        assert result is True
+
     def test_search_simple(self, client):
         """Test search method"""
         result = client.search("Soliloquy")

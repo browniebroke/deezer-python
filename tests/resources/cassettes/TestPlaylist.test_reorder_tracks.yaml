@@ -1,0 +1,123 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-requests/2.29.0
+      method: GET
+      uri: https://api.deezer.com/playlist/11336462844?access_token=dummy
+    response:
+      body:
+        string:
+          '{"id":11336462844,"title":"test","description":"","duration":678,"public":true,"is_loved_track":false,"collaborative":false,"nb_tracks":3,"fans":0,"link":"https:\/\/www.deezer.com\/playlist\/11336462844","share":"https:\/\/www.deezer.com\/playlist\/11336462844?utm_source=deezer&utm_content=playlist-11336462844&utm_term=1705809182_1683127438&utm_medium=web","picture":"https:\/\/api.deezer.com\/playlist\/11336462844\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/1000x1000-000000-80-0-0.jpg","checksum":"04c7ff5a656db191efe1840646cc6b86","tracklist":"https:\/\/api.deezer.com\/playlist\/11336462844\/tracks","creation_date":"2023-05-03
+          17:16:03","md5_image":"b1d763da698c38bde6a526c8220ca0ea","picture_type":"cover","creator":{"id":1705809182,"name":"banjon","tracklist":"https:\/\/api.deezer.com\/user\/1705809182\/flow","type":"user"},"type":"playlist","tracks":{"data":[{"id":79875044,"readable":true,"title":"One","title_short":"One","title_version":"","link":"https:\/\/www.deezer.com\/track\/79875044","duration":252,"rank":649457,"explicit_lyrics":false,"explicit_content_lyrics":6,"explicit_content_cover":0,"preview":"https:\/\/cdns-preview-0.dzcdn.net\/stream\/c-0bdae776146b9ce87530bae1b0af4b9b-4.mp3","md5_image":"b1d763da698c38bde6a526c8220ca0ea","time_add":1683127104,"artist":{"id":384236,"name":"Ed
+          Sheeran","link":"https:\/\/www.deezer.com\/artist\/384236","tracklist":"https:\/\/api.deezer.com\/artist\/384236\/top?limit=50","type":"artist"},"album":{"id":7964062,"title":"x
+          (Deluxe Edition)","cover":"https:\/\/api.deezer.com\/album\/7964062\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/1000x1000-000000-80-0-0.jpg","md5_image":"b1d763da698c38bde6a526c8220ca0ea","tracklist":"https:\/\/api.deezer.com\/album\/7964062\/tracks","type":"album"},"type":"track"},{"id":142986210,"readable":true,"title":"Happier","title_short":"Happier","title_version":"","link":"https:\/\/www.deezer.com\/track\/142986210","duration":207,"rank":850529,"explicit_lyrics":false,"explicit_content_lyrics":6,"explicit_content_cover":0,"preview":"https:\/\/cdns-preview-9.dzcdn.net\/stream\/c-9b8f9599b5c68303edbff64cee211f78-9.mp3","md5_image":"000a9228cecfcc7c2093d9cd7bb66447","time_add":1683127135,"artist":{"id":384236,"name":"Ed
+          Sheeran","link":"https:\/\/www.deezer.com\/artist\/384236","tracklist":"https:\/\/api.deezer.com\/artist\/384236\/top?limit=50","type":"artist"},"album":{"id":15478674,"title":"\u00f7
+          (Deluxe)","cover":"https:\/\/api.deezer.com\/album\/15478674\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/000a9228cecfcc7c2093d9cd7bb66447\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/000a9228cecfcc7c2093d9cd7bb66447\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/000a9228cecfcc7c2093d9cd7bb66447\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/000a9228cecfcc7c2093d9cd7bb66447\/1000x1000-000000-80-0-0.jpg","md5_image":"000a9228cecfcc7c2093d9cd7bb66447","tracklist":"https:\/\/api.deezer.com\/album\/15478674\/tracks","type":"album"},"type":"track"},{"id":79875050,"readable":true,"title":"Don''t","title_short":"Don''t","title_version":"","link":"https:\/\/www.deezer.com\/track\/79875050","duration":219,"rank":719586,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":0,"preview":"https:\/\/cdns-preview-c.dzcdn.net\/stream\/c-c9f2d4d9410bc20344a80cb2e5310ef0-11.mp3","md5_image":"b1d763da698c38bde6a526c8220ca0ea","time_add":1683127151,"artist":{"id":384236,"name":"Ed
+          Sheeran","link":"https:\/\/www.deezer.com\/artist\/384236","tracklist":"https:\/\/api.deezer.com\/artist\/384236\/top?limit=50","type":"artist"},"album":{"id":7964062,"title":"x
+          (Deluxe Edition)","cover":"https:\/\/api.deezer.com\/album\/7964062\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/b1d763da698c38bde6a526c8220ca0ea\/1000x1000-000000-80-0-0.jpg","md5_image":"b1d763da698c38bde6a526c8220ca0ea","tracklist":"https:\/\/api.deezer.com\/album\/7964062\/tracks","type":"album"},"type":"track"}],"checksum":"04c7ff5a656db191efe1840646cc6b86"}}'
+      headers:
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        Access-Control-Allow-Methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        Access-Control-Expose-Headers:
+          - Location
+        Access-Control-Max-Age:
+          - "86400"
+        Cache-Control:
+          - no-store, no-cache, must-revalidate
+        Connection:
+          - keep-alive
+          - Transfer-Encoding
+        Content-Type:
+          - application/json; charset=utf-8
+        Expires:
+          - Thu, 19 Nov 1981 08:52:00 GMT
+        Pragma:
+          - no-cache
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        Transfer-Encoding:
+          - chunked
+        Vary:
+          - Accept-Encoding
+        X-Content-Type-Options:
+          - nosniff
+        X-Host:
+          - blm-web-56
+        x-org:
+          - FR
+      status:
+        code: 200
+        message: OK
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "0"
+        Cookie:
+          - _abck=CFA3BF239B437A173E8C31CC012F1C20~-1~YAAQpa0TAjQiFtaHAQAAu4o24glDMHG4PaEIDepbSLH/55Uz+NppSaEZeGbJQhkbtE9msKl/Nk5mdzL0Qu3to6+IZs0sdMNYdvkDP3gM/85KNhMsmpQjmOseCBEStpRXICosROK2b9B1BwPaAY0ax563VTAlCHt6knJxbCf0VxN7gpvCiTvqGgDSsgsZ5c+LkA0FmuZKaeMorjNVpyy/b3uaKjBgSBXeqayCd+99pkndxaKFV4hij7TrRJzF/mnN+rDbxdI/XjlTYNM5LKWerpMnvT45Eeq5Egxj081GkDYE4OzORDh5LI6TdMuEM79VyRczyD+7lc2KFk32ogUwbc/knEu5LfEEnmU42NJH25Y4RSfV6Ml3PSQ=~-1~-1~-1;
+            bm_sz=11E9AC9FA1A93DD24DDF4E94D2546BD2~YAAQpa0TAjUiFtaHAQAAu4o24hOGQuWWkiwjkdvbfzA8LSezTO3KRkIZjukMWgJeei7d+BBw+ecJhoZy3xwQQDayUVdLq1gg2vetEuX12UelwA/SwyX7brUsxEC1UKey8WaE49Hmikjb4NicJghf1hmJSU46HTEubZcKjcvL1vKU7ny2S5cbwXCeIVqdG35qS7nMaMriQkyayJb2gG8GZbfYAQFUoX+E5IeyDUIB6PyEBQScKvr/WVD7aP49njLR3fKw/bNc+tB6c6vCSazR2sOjlemjmbQysPbLY9BrytIIu50=~4605510~4273218;
+            dzr_uniq_id=dzr_uniq_id_fr34aa8e2432bfad9b22f64b40741346452eb32b
+        User-Agent:
+          - python-requests/2.29.0
+      method: POST
+      uri: https://api.deezer.com/playlist/11336462844/tracks?access_token=dummy&order=79875044%2C79875050%2C142986210
+    response:
+      body:
+        string: "true"
+      headers:
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        Access-Control-Allow-Methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        Access-Control-Expose-Headers:
+          - Location
+        Access-Control-Max-Age:
+          - "86400"
+        Cache-Control:
+          - no-store, no-cache, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "4"
+        Content-Type:
+          - application/json; charset=utf-8
+        Expires:
+          - Thu, 19 Nov 1981 08:52:00 GMT
+        Pragma:
+          - no-cache
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        X-Content-Type-Options:
+          - nosniff
+        X-Host:
+          - blm-web-157
+        x-org:
+          - FR
+      status:
+        code: 200
+        message: OK
+version: 1

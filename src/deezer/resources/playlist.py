@@ -56,3 +56,51 @@ class Playlist(Resource):
                   of :class:`User <deezer.User>` instances
         """
         return self.get_paginated_list("fans", **kwargs)
+
+    def add_tracks(self, tracks: list, **kwargs) -> bool:
+        """
+        Add tracks to a playlist.
+
+        :param tracks: A list of the track's or track id's to add to the playlist
+        :returns: a boolean that tells if the operation was successful
+        """
+        tracks_ids = []
+        for track in tracks:
+            if isinstance(track, int):
+                tracks_ids.append(str(track))
+            else:
+                tracks_ids.append(str(track.id))
+        tracks_parsed = ",".join(tracks_ids)
+        return self.client.request(
+            "POST", f"playlist/{self.id}/tracks", songs=tracks_parsed, **kwargs
+        )
+
+    def delete_tracks(self, tracks: list, **kwargs) -> bool:
+        """
+        Delete tracks from a playlist.
+
+        :param tracks: A list of the track's or track id's to delete to the playlist
+        :returns: a boolean that tells if the operation was successful
+        """
+        tracks_ids = []
+        for track in tracks:
+            if isinstance(track, int):
+                tracks_ids.append(str(track))
+            else:
+                tracks_ids.append(str(track.id))
+        tracks_parsed = ",".join(tracks_ids)
+        return self.client.request(
+            "DELETE", f"playlist/{self.id}/tracks", songs=tracks_parsed, **kwargs
+        )
+
+    def reorder_tracks(self, order: list[int], **kwargs) -> bool:
+        """
+        Reorder the tracks of a playlist.
+
+        :param order: A list of the track id's in the wished order
+        :returns: a boolean that tells if the operation was successful
+        """
+        order_string = ",".join(map(str, order))
+        return self.client.request(
+            "POST", f"playlist/{self.id}/tracks", order=order_string, **kwargs
+        )

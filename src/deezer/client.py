@@ -118,12 +118,11 @@ class Client:
         if "id" not in result and resource_id is not None:
             result["id"] = resource_id
 
-        if "type" in result:
-            if result["type"] in self.objects_types:
-                object_class = self.objects_types[result["type"]]
-            else:
-                # in case any new types are introduced by the API
-                object_class = Resource
+        if "type" in result and result["type"] in self.objects_types:
+            object_class = self.objects_types[result["type"]]
+        elif "type" in result or not resource_type and "id" in result:
+            # in case any new types are introduced by the API
+            object_class = Resource
         elif resource_type:
             object_class = resource_type
         else:
@@ -540,6 +539,42 @@ class Client:
         :return: boolean whether the operation succeeded.
         """
         return self.request("DELETE", "user/me/tracks", track_id=track_id)
+
+    def remove_user_playlist(self, playlist_id: int) -> bool:
+        """
+        Remove a playlist from the user's library
+
+        :param playlist_id: the ID of the playlist to remove.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("DELETE", "user/me/playlists", playlist_id=playlist_id)
+
+    def add_user_playlist(self, playlist_id: int) -> bool:
+        """
+        Add a playlist to the user's library
+
+        :param playlist_id: the ID of the playlist to add.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("POST", "user/me/playlists", playlist_id=playlist_id)
+
+    def create_playlist(self, playlist_name) -> int:
+        """
+        Create a playlist on the user's account
+
+        :param playlist_name: the name of the playlist.
+        :return: ID of the new playlist.
+        """
+        return self.request("POST", "user/me/playlists", title=playlist_name).id
+
+    def delete_playlist(self, playlist_id) -> bool:
+        """
+        Delete a playlist from the user's account
+
+        :param playlist_id: the ID of the playlist to remove.
+        :return: boolean whether the operation succeeded.
+        """
+        return self.request("DELETE", f"playlist/{playlist_id}")
 
     def _search(
         self,
