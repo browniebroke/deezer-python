@@ -44,3 +44,14 @@ class TestEpisode:
             },
         )
         assert episode.duration == 3254
+
+    def test_add_bookmark(self, client_token):
+        episode = deezer.Episode(
+            client_token,
+            json={
+                "id": 343457312,
+                "type": "episode",
+            },
+        )
+        result = episode.add_bookmark(55)
+        assert result is True
