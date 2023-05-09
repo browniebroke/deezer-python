@@ -55,3 +55,14 @@ class TestEpisode:
         )
         result = episode.add_bookmark(55)
         assert result is True
+
+    def test_remove_bookmark(self, client_token):
+        episode = deezer.Episode(
+            client_token,
+            json={
+                "id": 343457312,
+                "type": "episode",
+            },
+        )
+        result = episode.remove_bookmark()
+        assert result is True
