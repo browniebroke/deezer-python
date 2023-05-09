@@ -125,6 +125,8 @@ class Client:
             object_class = Resource
         elif resource_type:
             object_class = resource_type
+        elif item.get("results") is True:
+            return True
         else:
             raise DeezerUnknownResource(f"Unable to find resource type for {result!r}")
         assert object_class is not None  # nosec B101
@@ -165,7 +167,7 @@ class Client:
         json_data = response.json()
         if not isinstance(json_data, dict):
             return json_data
-        if "error" in json_data:
+        if "error" in json_data and json_data["error"]:
             raise DeezerErrorResponse(json_data)
         return self._process_json(
             json_data,
