@@ -61,3 +61,7 @@ class TestPlaylist:
         playlist = client_token.get_playlist(11336462844)
         result = playlist.reorder_tracks([79875044, 79875050, 142986210])
         assert result is True
+
+    def test_mark_seen(self, client_token, playlist):
+        result = playlist.mark_seen()
+        assert result is True

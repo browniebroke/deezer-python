@@ -58,6 +58,14 @@ class Playlist(Resource):
         """
         return self.get_paginated_list("fans", **kwargs)
 
+    def mark_seen(self, **kwargs) -> bool:
+        """
+        Mark the playlist as seen.
+
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.client.request("POST", f"playlist/{self.id}/seen", **kwargs)
+
     def add_tracks(self, tracks: Iterable[int | Track], **kwargs) -> bool:
         """
         Add tracks to a playlist.
