@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v5.11.0 (2023-05-09)
+### Feature
+* Add ability to remove a bookmark on an episode ([`4eb896a`](https://github.com/browniebroke/deezer-python/commit/4eb896a207c36609bf08498e58ecbcf670ec8fbc))
+* Add ability to add a bookmark to an episode ([`6dc32ac`](https://github.com/browniebroke/deezer-python/commit/6dc32ac7f90839483504f6312be799a64f607b6e))
+* Add ability to mark a playlist as seen ([`dac1530`](https://github.com/browniebroke/deezer-python/commit/dac1530d278097b545bdb7f942ab3c4e701ca097))
+
 ## v5.10.0 (2023-05-08)
 ### Feature
 * **playlists:** Add functions to create, edit, reorder and delete playlists and edit user library playlists ([#709](https://github.com/browniebroke/deezer-python/issues/709)) ([`5257988`](https://github.com/browniebroke/deezer-python/commit/525798801e341ddbc43bad974aa0b4c58a1e63a8))
