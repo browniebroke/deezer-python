@@ -55,3 +55,11 @@ class Episode(Resource):
             offset=offset,
             **kwargs,
         )
+
+    def remove_bookmark(self, **kwargs) -> bool:
+        """
+        Removes the bookmark on the episode
+
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.client.request("DELETE", f"episode/{self.id}/bookmark", **kwargs)
