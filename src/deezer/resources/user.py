@@ -120,6 +120,15 @@ class User(Resource):
         """
         return self.post_relation("artists", artist_id=get_id(artist))
 
+    def remove_artist(self, artist: Artist | int):
+        """
+        Remove an artist from user's favorite artists.
+
+        :param artist: an :class:`~deezer.Artist` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.delete_relation("artists", artist_id=get_id(artist))
+
     def get_followers(self, **kwargs) -> PaginatedList[User]:
         """
         Get user's followers.
