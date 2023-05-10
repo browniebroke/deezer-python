@@ -111,3 +111,13 @@ class TestUser:
             json={"id": 27, "type": "artist"},
         )
         assert current_user.add_artist(artist) is True
+
+    def test_remove_artist_id(self, current_user: deezer.User):
+        assert current_user.remove_artist(27) is True
+
+    def test_remove_artist_obj(self, current_user: deezer.User):
+        artist = deezer.Artist(
+            current_user.client,
+            json={"id": 27, "type": "artist"},
+        )
+        assert current_user.remove_artist(artist) is True
