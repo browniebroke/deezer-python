@@ -64,8 +64,7 @@ class User(Resource):
         :param album: an :class:`~deezer.Album` instance or its ID
         :returns: a boolean that tells if the operation was successful
         """
-        album_id = get_id(album)
-        return self.post_relation("albums", album_id=album_id)
+        return self.post_relation("albums", album_id=get_id(album))
 
     def remove_album(self, album: Album | int):
         """
@@ -74,8 +73,7 @@ class User(Resource):
         :param album: an :class:`~deezer.Album` instance or its ID
         :returns: a boolean that tells if the operation was successful
         """
-        album_id = get_id(album)
-        return self.delete_relation("albums", album_id=album_id)
+        return self.delete_relation("albums", album_id=get_id(album))
 
     def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
@@ -85,6 +83,15 @@ class User(Resource):
                   of :class:`Track <deezer.Track>` instances
         """
         return self.get_paginated_list("tracks", **kwargs)
+
+    def add_track(self, track: Track | int):
+        """
+        Add a track to user's favorite tracks.
+
+        :param track: a :class:`~deezer.Track` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.post_relation("tracks", track_id=get_id(track))
 
     def get_artists(self, **kwargs) -> PaginatedList[Artist]:
         """
