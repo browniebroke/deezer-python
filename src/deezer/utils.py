@@ -9,9 +9,13 @@ if TYPE_CHECKING:
 def gen_ids(item_list: Iterable[int | Resource]) -> Generator[int, None, None]:
     """Get IDs for an iterable of `int` or `Resources`."""
     for item in item_list:
-        if isinstance(item, int):
-            yield item
-        elif hasattr(item, "id"):
-            yield item.id
-        else:
-            raise NotImplementedError(f"Unknown type for {item}")
+        yield get_id(item)
+
+
+def get_id(item: int | Resource) -> int:
+    """Get ID for an `int` or `Resource`."""
+    if isinstance(item, int):
+        return item
+    if hasattr(item, "id"):
+        return item.id
+    raise NotImplementedError(f"Unknown type for {item}")

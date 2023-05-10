@@ -4,6 +4,7 @@ import datetime as dt
 from typing import TYPE_CHECKING
 
 from ..dates import parse_date
+from ..utils import get_id
 from .resource import Resource
 
 if TYPE_CHECKING:
@@ -55,6 +56,16 @@ class User(Resource):
                   of :class:`Album <deezer.Album>` instances
         """
         return self.get_paginated_list("albums", **kwargs)
+
+    def add_album(self, album: Album | int):
+        """
+        Add an album to user's favorite albums.
+
+        :param album: an :class:`~deezer.Album` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        album_id = get_id(album)
+        return self.post_relation("albums", album_id=album_id)
 
     def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """

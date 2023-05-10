@@ -1,0 +1,114 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-requests/2.30.0
+      method: GET
+      uri: https://api.deezer.com/user/359622?access_token=dummy
+    response:
+      body:
+        string: '{"id":359622,"name":"Bruno Alla","lastname":"Alla","firstname":"Bruno","email":"alla.brunoo@gmail.com","status":0,"birthday":"0000-00-00","inscription_date":"2007-08-26","gender":"","link":"https:\/\/www.deezer.com\/profile\/359622","picture":"https:\/\/api.deezer.com\/user\/359622\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/user\/d4bb710fd346218d4dbb5e1a08ffde93\/1000x1000-000000-80-0-0.jpg","country":"GB","lang":"fr","is_kid":false,"explicit_content_level":"explicit_display","explicit_content_levels_available":["explicit_display","explicit_no_recommendation","explicit_hide"],"tracklist":"https:\/\/api.deezer.com\/user\/359622\/flow","type":"user"}'
+      headers:
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        Access-Control-Allow-Methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        Access-Control-Expose-Headers:
+          - Location
+        Access-Control-Max-Age:
+          - "86400"
+        Cache-Control:
+          - no-store, no-cache, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "1056"
+        Content-Type:
+          - application/json; charset=utf-8
+        Expires:
+          - Thu, 19 Nov 1981 08:52:00 GMT
+        Pragma:
+          - no-cache
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        Vary:
+          - Accept-Encoding
+        X-Content-Type-Options:
+          - nosniff
+        X-Host:
+          - blm-web-154
+        x-org:
+          - FR
+      status:
+        code: 200
+        message: OK
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "0"
+        Cookie:
+          - _abck=4B47DBB74531EE3931F374030707FD36~-1~YAAQDUMVAl6f6AGIAQAARW1mBwmfKFKoG7J7hjT6s/MPi6fpurmTtdBtgDoje6AgAuV8kLrHt0lmzPA9zXXaKs1a9BMT9YdRP1mp56/DPslXT/uJqCahmxGh9z1qso5zOaz68VJHfckbvApBxCceAxvsLd840LwIGvxG4XSw1gJW7IV5HuFUXxCyNJkzrqxPtDEQHDxTsnMzxSFPuozN9A1Xg53f1i6iuY31q9RkRsIiz24WbhfwgDDmKCM04leEVDw34y5IVBZDwaZwTxdYz7ElQAVg+WzP/kr1ghqvKUb35dKB7EfnQiNsRp+tdp0bzGkEhPXN+PBJ6jea8/drs9O5y9DuWUfBOw+eXQ09NoKqHEFB166wvtA=~-1~-1~-1;
+            bm_sz=3F6ABA9255A3E9D8BB4F9ECF8989608F~YAAQDUMVAl+f6AGIAQAARW1mBxN9/KqBtHSMNtzo35140OymSsY0Ie1jmtzirhLN73Kz6OqY1zYeS97pD67Ex8voJtUkCuVoq3YRvFpuahkJefcc1Tu/7D2syK4/nDzpf+ghQnVvhInucruhgo6vjeQJInh4Zb5ON3x0LkRr8KysM/jj8Tyh3K9taRxWbikC4fQmneNSZ65XbeSojzePlHQz78xefRoOOqR7+0aCJ120324E7m+nKBsczixalxy4xlnDUnndk1hGpkNzrUMXSeWhFeo/cmkHorHQ+peMoXXMJ94=~3355206~3621173;
+            dzr_uniq_id=dzr_uniq_id_fr7080d5d7ba8b10991d0103825191329fd19579
+        User-Agent:
+          - python-requests/2.30.0
+      method: POST
+      uri: https://api.deezer.com/user/359622/albums?access_token=dummy&album_id=302127
+    response:
+      body:
+        string: "true"
+      headers:
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        Access-Control-Allow-Methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        Access-Control-Expose-Headers:
+          - Location
+        Access-Control-Max-Age:
+          - "86400"
+        Cache-Control:
+          - no-store, no-cache, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "4"
+        Content-Type:
+          - application/json; charset=utf-8
+        Expires:
+          - Thu, 19 Nov 1981 08:52:00 GMT
+        Pragma:
+          - no-cache
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        X-Content-Type-Options:
+          - nosniff
+        X-Host:
+          - blm-web-51
+        x-org:
+          - FR
+      status:
+        code: 200
+        message: OK
+version: 1
