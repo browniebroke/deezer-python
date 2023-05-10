@@ -111,6 +111,15 @@ class User(Resource):
         """
         return self.get_paginated_list("artists", **kwargs)
 
+    def add_artist(self, artist: Artist | int):
+        """
+        Add an artist to user's favorite artists.
+
+        :param artist: an :class:`~deezer.Artist` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.post_relation("artists", artist_id=get_id(artist))
+
     def get_followers(self, **kwargs) -> PaginatedList[User]:
         """
         Get user's followers.
