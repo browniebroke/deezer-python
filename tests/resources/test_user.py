@@ -59,3 +59,12 @@ class TestUser:
         assert isinstance(track, deezer.Track)
         assert repr(track) == "<Track: Poney Pt. I>"
         assert len(tracks) == 3
+
+    def test_add_album_by_id(self, client_token, user: deezer.User):
+        user.client = client_token
+        assert user.add_album(302127) is True
+
+    def test_add_album_obj(self, client_token, user: deezer.User):
+        user.client = client_token
+        album = deezer.Album(client_token, json={"id": 302127, "type": "album"})
+        assert user.add_album(album) is True
