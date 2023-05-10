@@ -91,3 +91,13 @@ class TestUser:
             json={"id": 3135556, "type": "track"},
         )
         assert current_user.add_track(track) is True
+
+    def test_remove_track_id(self, current_user: deezer.User):
+        assert current_user.remove_track(3135556) is True
+
+    def test_remove_track_obj(self, current_user: deezer.User):
+        track = deezer.Track(
+            current_user.client,
+            json={"id": 3135556, "type": "track"},
+        )
+        assert current_user.remove_track(track) is True

@@ -93,6 +93,15 @@ class User(Resource):
         """
         return self.post_relation("tracks", track_id=get_id(track))
 
+    def remove_track(self, track: Track | int):
+        """
+        Remove a track from user's favorite tracks.
+
+        :param track: a :class:`~deezer.Track` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.delete_relation("tracks", track_id=get_id(track))
+
     def get_artists(self, **kwargs) -> PaginatedList[Artist]:
         """
         Get user's favorite artists.
