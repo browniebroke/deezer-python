@@ -68,3 +68,12 @@ class TestUser:
         user.client = client_token
         album = deezer.Album(client_token, json={"id": 302127, "type": "album"})
         assert user.add_album(album) is True
+
+    def test_remove_album_by_id(self, client_token, user: deezer.User):
+        user.client = client_token
+        assert user.remove_album(302127) is True
+
+    def test_remove_album_obj(self, client_token, user: deezer.User):
+        user.client = client_token
+        album = deezer.Album(client_token, json={"id": 302127, "type": "album"})
+        assert user.remove_album(album) is True

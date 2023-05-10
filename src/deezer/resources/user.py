@@ -67,6 +67,16 @@ class User(Resource):
         album_id = get_id(album)
         return self.post_relation("albums", album_id=album_id)
 
+    def remove_album(self, album: Album | int):
+        """
+        Remove an album from user's favorite albums.
+
+        :param album: an :class:`~deezer.Album` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        album_id = get_id(album)
+        return self.delete_relation("albums", album_id=album_id)
+
     def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
         Get user's favorite tracks.

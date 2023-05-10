@@ -84,6 +84,19 @@ class Resource:
             **kwargs,
         )
 
+    def delete_relation(self, relation, **kwargs):
+        """
+        Generic method to make a DELETE request to a relation from any resource.
+
+        This is not meant to be used directly by a client, it's more
+        a helper method for the child objects.
+        """
+        return self.client.request(
+            "DELETE",
+            f"{self.type}/{self.id}/{relation}",
+            **kwargs,
+        )
+
     def get_paginated_list(
         self,
         relation: str,
