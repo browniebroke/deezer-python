@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v5.11.1 (2023-05-10)
+### Fix
+* Rename argument for `Playlist.reorder_tracks` back to `order` to match parameter name from REST API ([`ea469e9`](https://github.com/browniebroke/deezer-python/commit/ea469e9f61b78cba741b8a577bf0a80d23e8cab5))
+
 ## v5.11.0 (2023-05-09)
 ### Feature
 * Add ability to remove a bookmark on an episode ([`4eb896a`](https://github.com/browniebroke/deezer-python/commit/4eb896a207c36609bf08498e58ecbcf670ec8fbc))
