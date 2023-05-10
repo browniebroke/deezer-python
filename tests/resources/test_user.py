@@ -12,6 +12,10 @@ class TestUser:
     def user(self, client):
         return client.get_user(359622)
 
+    @pytest.fixture
+    def current_user(self, client_token):
+        return deezer.User(client_token, json={"id": "me", "type": "user"})
+
     def test_get_albums(self, user):
         albums = user.get_albums()
         assert isinstance(albums, deezer.PaginatedList)
@@ -77,3 +81,13 @@ class TestUser:
         user.client = client_token
         album = deezer.Album(client_token, json={"id": 302127, "type": "album"})
         assert user.remove_album(album) is True
+
+    def test_add_track_id(self, current_user: deezer.User):
+        assert current_user.add_track(3135556) is True
+
+    def test_add_track_obj(self, current_user: deezer.User):
+        track = deezer.Track(
+            current_user.client,
+            json={"id": 3135556, "type": "track"},
+        )
+        assert current_user.add_track(track) is True
