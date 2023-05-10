@@ -156,6 +156,15 @@ class User(Resource):
         """
         return self.post_relation("followings", user_id=get_id(user))
 
+    def unfollow(self, user: User | int):
+        """
+        Unfollow a user.
+
+        :param user: a :class:`~deezer.User` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.delete_relation("followings", user_id=get_id(user))
+
     def get_playlists(self, **kwargs) -> PaginatedList[Playlist]:
         """
         Get user's public playlists.

@@ -134,3 +134,13 @@ class TestUser:
             json={"id": 315641, "type": "user"},
         )
         assert current_user.follow(artist) is True
+
+    def test_unfollow_by_id(self, current_user: deezer.User):
+        assert current_user.unfollow(315641) is True
+
+    def test_unfollow_obj(self, current_user: deezer.User):
+        user = deezer.User(
+            current_user.client,
+            json={"id": 315641, "type": "user"},
+        )
+        assert current_user.unfollow(user)
