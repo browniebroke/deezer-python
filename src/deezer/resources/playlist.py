@@ -92,15 +92,15 @@ class Playlist(Resource):
             "DELETE", f"playlist/{self.id}/tracks", songs=track_ids_str, **kwargs
         )
 
-    def reorder_tracks(self, ordered_tracks: Iterable[int | Track], **kwargs) -> bool:
+    def reorder_tracks(self, order: Iterable[int | Track], **kwargs) -> bool:
         """
         Reorder the tracks of a playlist.
 
-        :param ordered_tracks: An iterable of :class:`Track <deezer.Track>` instances
-                               or their IDs in the wished order.
+        :param order: An iterable of :class:`Track <deezer.Track>` instances
+                      or their IDs in the wished order.
         :returns: a boolean that tells if the operation was successful
         """
-        order_track_ids_str = ",".join(map(str, gen_ids(ordered_tracks)))
+        order_track_ids_str = ",".join(map(str, gen_ids(order)))
         return self.client.request(
             "POST", f"playlist/{self.id}/tracks", order=order_track_ids_str, **kwargs
         )
