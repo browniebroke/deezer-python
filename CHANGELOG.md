@@ -2,6 +2,20 @@
 
 <!--next-version-placeholder-->
 
+## v5.12.0 (2023-05-11)
+### Feature
+* Add `User.create_playlist` method ([`c768a8b`](https://github.com/browniebroke/deezer-python/commit/c768a8be4b116c09325a3c0cfb19c941adbd257b))
+* Add `User.remove_playlist` method ([`289f021`](https://github.com/browniebroke/deezer-python/commit/289f0216f485573b484a76b533adfceb2d7a803e))
+* Add `User.add_playlist` method ([`7ec9bc9`](https://github.com/browniebroke/deezer-python/commit/7ec9bc99e3529680561d00c8c5d4d36c5fda176c))
+* Add `User.unfollow` method ([`59b9329`](https://github.com/browniebroke/deezer-python/commit/59b9329b4c41a5d9c6a2906e0575758eb9e93c26))
+* Add `User.follow` method ([`949918a`](https://github.com/browniebroke/deezer-python/commit/949918a39fdf6feff7ab5482d0fb7de6ac44dc59))
+* Add `User.remove_artist` method ([`70825bf`](https://github.com/browniebroke/deezer-python/commit/70825bfc1ed6521df1ca5802661f66a6d7e9eb20))
+* Add `User.add_artist` method ([`3ad512b`](https://github.com/browniebroke/deezer-python/commit/3ad512be6abd3e4dce16ae1a4deb25ef26a1072f))
+* Add `User.remove_Track` method ([`ccc7b76`](https://github.com/browniebroke/deezer-python/commit/ccc7b76bbdb8aebca50511043d87c057f39d07ec))
+* Add `User.add_track` method ([`1d9d3d2`](https://github.com/browniebroke/deezer-python/commit/1d9d3d2e0bfb7a1a9b613608ded879173a646c5b))
+* Add `User.remove_album` method ([`103c58b`](https://github.com/browniebroke/deezer-python/commit/103c58bf69b573d2b1170ebcc60dee97db2f1a06))
+* Add `User.add_album` method ([`013adde`](https://github.com/browniebroke/deezer-python/commit/013addeeebfe70388953c439986e60e15ff8eea9))
+
 ## v5.11.1 (2023-05-10)
 ### Fix
 * Rename argument for `Playlist.reorder_tracks` back to `order` to match parameter name from REST API ([`ea469e9`](https://github.com/browniebroke/deezer-python/commit/ea469e9f61b78cba741b8a577bf0a80d23e8cab5))
