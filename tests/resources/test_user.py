@@ -157,3 +157,13 @@ class TestUser:
             json={"id": 4460913144, "type": "playlist"},
         )
         assert current_user.add_playlist(playlist) is True
+
+    def test_remove_playlist_by_id(self, current_user: deezer.User):
+        assert current_user.remove_playlist(3110421322) is True
+
+    def test_remove_playlist_obj(self, current_user: deezer.User):
+        playlist = deezer.Playlist(
+            current_user.client,
+            json={"id": 4460913144, "type": "playlist"},
+        )
+        assert current_user.remove_playlist(playlist) is True

@@ -182,3 +182,12 @@ class User(Resource):
         :returns: a boolean that tells if the operation was successful
         """
         return self.post_relation("playlists", playlist_id=get_id(playlist))
+
+    def remove_playlist(self, playlist: Playlist | int):
+        """
+        Remove a playlist from user's public playlists.
+
+        :param playlist: a :class:`~deezer.Playlist` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.delete_relation("playlists", playlist_id=get_id(playlist))
