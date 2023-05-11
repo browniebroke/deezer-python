@@ -144,3 +144,16 @@ class TestUser:
             json={"id": 315641, "type": "user"},
         )
         assert current_user.unfollow(user)
+
+    def test_add_playlist_failed(self, current_user: deezer.User):
+        assert current_user.add_playlist(908622995) is False
+
+    def test_add_playlist_by_id(self, current_user: deezer.User):
+        assert current_user.add_playlist(3110421322) is True
+
+    def test_add_playlist_obj(self, current_user: deezer.User):
+        playlist = deezer.Playlist(
+            current_user.client,
+            json={"id": 4460913144, "type": "playlist"},
+        )
+        assert current_user.add_playlist(playlist) is True
