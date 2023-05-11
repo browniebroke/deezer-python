@@ -191,3 +191,15 @@ class User(Resource):
         :returns: a boolean that tells if the operation was successful
         """
         return self.delete_relation("playlists", playlist_id=get_id(playlist))
+
+    def create_playlist(self, title: str) -> int:
+        """
+        Create a playlist.
+
+        :param title: the title of the playlist
+        :returns: the ID of the playlist that was created
+        """
+        result = self.post_relation("playlists", title=title)
+        # Note: the REST API call returns a dict with just the "id" key in it,
+        # so we return that instead of the full Playlist object
+        return result.id

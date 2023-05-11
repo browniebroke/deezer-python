@@ -167,3 +167,10 @@ class TestUser:
             json={"id": 4460913144, "type": "playlist"},
         )
         assert current_user.remove_playlist(playlist) is True
+
+    def test_create_playlist(self, current_user: deezer.User):
+        playlist_id = current_user.create_playlist("My Awesome Playlist")
+        assert isinstance(playlist_id, int)
+        playlist = current_user.client.get_playlist(playlist_id)
+        assert playlist.title == "My Awesome Playlist"
+        assert playlist.creator.id == 359622

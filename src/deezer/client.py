@@ -565,9 +565,12 @@ class Client:
         Create a playlist on the user's account
 
         :param playlist_name: the name of the playlist.
-        :return: ID of the new playlist.
+        :return: the ID of the playlist that was created
         """
-        return self.request("POST", "user/me/playlists", title=playlist_name).id
+        result = self.request("POST", "user/me/playlists", title=playlist_name)
+        # Note: the REST API call returns a dict with just the "id" key in it,
+        # so we return that instead of the full Playlist object
+        return result.id
 
     def delete_playlist(self, playlist_id) -> bool:
         """
