@@ -173,3 +173,12 @@ class User(Resource):
                   of :class:`Playlist <deezer.Playlist>` instances
         """
         return self.get_paginated_list("playlists", **kwargs)
+
+    def add_playlist(self, playlist: Playlist | int):
+        """
+        Add a playlist to user's public playlists.
+
+        :param playlist: a :class:`~deezer.Playlist` instance or its ID
+        :returns: a boolean that tells if the operation was successful
+        """
+        return self.post_relation("playlists", playlist_id=get_id(playlist))
