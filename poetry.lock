@@ -1194,19 +1194,20 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "vcrpy"
-version = "4.3.0"
+version = "4.3.1"
 description = "Automatically mock your HTTP interactions to simplify and speed up testing"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "vcrpy-4.3.0-py2.py3-none-any.whl", hash = "sha256:8fbd4be412e8a7f35f623dd61034e6380a1c8dbd0edf6e87277a3289f6e98093"},
-    {file = "vcrpy-4.3.0.tar.gz", hash = "sha256:49c270ce67e826dba027d83e20d25b67a5885487697e97bca6dbdf53d750a0ac"},
+    {file = "vcrpy-4.3.1-py2.py3-none-any.whl", hash = "sha256:35398f1b373f32340f39d735ea45f40d679ace316f3dddf8cbcbc2f120e6d1d0"},
+    {file = "vcrpy-4.3.1.tar.gz", hash = "sha256:24e2d450bf1c2f9f9b4246ee91beb7d58f862a9f2f030514b14783b83c5146ec"},
 ]
 
 [package.dependencies]
 PyYAML = "*"
 six = ">=1.5"
+urllib3 = {version = "<2", markers = "python_version < \"3.10\""}
 wrapt = "*"
 yarl = "*"
 
