@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v6.0.0 (2023-06-27)
+
+### Feature
+
+* Drop support for Python 3.7 ([#758](https://github.com/browniebroke/deezer-python/issues/758)) ([`d80f1e7`](https://github.com/browniebroke/deezer-python/commit/d80f1e75fc4e979938a3241d8244bc3fbbd31c23))
+
+### Breaking
+
+* Drop support for Python 3.7 as it reached EOL on June 27, 2023. More infos: https://devguide.python.org/versions/ ([`d80f1e7`](https://github.com/browniebroke/deezer-python/commit/d80f1e75fc4e979938a3241d8244bc3fbbd31c23))
+
 ## v5.12.0 (2023-05-11)
 ### Feature
 * Add `User.create_playlist` method ([`c768a8b`](https://github.com/browniebroke/deezer-python/commit/c768a8be4b116c09325a3c0cfb19c941adbd257b))
