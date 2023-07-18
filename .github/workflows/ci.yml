@@ -63,6 +63,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref || github.ref_name }}
+
       - name: Release
         uses: relekang/python-semantic-release@v8.0.1
         if: github.ref_name == 'main'
