@@ -49,7 +49,7 @@ vcrpy = "^5.0.0"
 deezer-oauth-cli = "^1.0.0"
 
 [tool.semantic_release]
-version_toml = "pyproject.toml:tool.poetry.version"
+version_toml = ["pyproject.toml:tool.poetry.version"]
 version_variable = "src/deezer/__init__.py:__version__"
 branch = "main"
 build_command = "pip install poetry && poetry build"
