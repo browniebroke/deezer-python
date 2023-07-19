@@ -83,7 +83,7 @@ toml = ["tomli"]
 
 [[package]]
 name = "deezer-oauth-cli"
-version = "1.0.0"
+version = "1.0.1"
 description = "A small CLI to quickly obtain an API token for Deezer API."
 category = "dev"
 optional = false
@@ -904,8 +904,8 @@ coverage = [
     {file = "coverage-7.2.7.tar.gz", hash = "sha256:924d94291ca674905fe9481f12294eb11f2d3d3fd1adb20314ba89e94f44ed59"},
 ]
 deezer-oauth-cli = [
-    {file = "deezer_oauth_cli-1.0.0-py3-none-any.whl", hash = "sha256:921b6ce9be7f0a4efc3f4b3d1b3d606b1e11391483b458f205f0e05c11fad8d2"},
-    {file = "deezer_oauth_cli-1.0.0.tar.gz", hash = "sha256:4aeb40e85e85f3ca6e3a289a2e8994a93ac0046aae281f9d038d5efd280f989c"},
+    {file = "deezer_oauth_cli-1.0.1-py3-none-any.whl", hash = "sha256:f45cefa3a9e5b63224d260000c27d1e1df085084fc58e369fd970dcec0da4040"},
+    {file = "deezer_oauth_cli-1.0.1.tar.gz", hash = "sha256:f58e237ebdc0d18e466d7945d69b8701e0dec1b33837cd02617c035b4404fae1"},
 ]
 docutils = [
     {file = "docutils-0.18.1-py2.py3-none-any.whl", hash = "sha256:23010f129180089fbcd3bc08cfefccb3b890b0050e1ca00c867036e9d161b98c"},
