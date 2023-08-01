@@ -555,4 +555,4 @@ class TestClient:
     )
     def test_process_json_types(self, client, json, expected_type):
         result = client._process_json(json)
-        assert type(result) == expected_type
+        assert type(result) is expected_type
