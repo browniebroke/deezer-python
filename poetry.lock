@@ -240,13 +240,13 @@ toml = ["tomli"]
 
 [[package]]
 name = "deezer-oauth-cli"
-version = "1.0.1"
+version = "1.1.0"
 description = "A small CLI to quickly obtain an API token for Deezer API."
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "deezer_oauth_cli-1.0.1-py3-none-any.whl", hash = "sha256:f45cefa3a9e5b63224d260000c27d1e1df085084fc58e369fd970dcec0da4040"},
-    {file = "deezer_oauth_cli-1.0.1.tar.gz", hash = "sha256:f58e237ebdc0d18e466d7945d69b8701e0dec1b33837cd02617c035b4404fae1"},
+    {file = "deezer_oauth_cli-1.1.0-py3-none-any.whl", hash = "sha256:a439988a16f6411892a2022fa87c81c4a03f30b8af556e84d8e135b8d4055a61"},
+    {file = "deezer_oauth_cli-1.1.0.tar.gz", hash = "sha256:5523bb205962ec4b9db17910a2b3ba83c039d9835934ba9d21d547c2b6440d42"},
 ]
 
 [package.dependencies]
