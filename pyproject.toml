@@ -13,7 +13,8 @@ classifiers = [
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: OS Independent",
-    "Topic :: Software Development :: Libraries :: Python Modules"
+    "Topic :: Software Development :: Libraries",
+    "Programming Language :: Python :: 3.12",
 ]
 packages = [
     { include = "deezer", from = "src" },
