@@ -47,7 +47,7 @@ class TestPaginatedList:
 
     def test_iterate(self, daft_punk_albums):
         iter_count = 0
-        for iter_count, album in enumerate(daft_punk_albums, 1):
+        for iter_count, album in enumerate(daft_punk_albums, 1):  # noqa B007
             assert isinstance(album, Album)
         assert iter_count == 32
         # This shouldn't do another API call
