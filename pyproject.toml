@@ -95,7 +95,8 @@ ignore = [
 select = [
     "B",   # flake8-bugbear
     "D",   # flake8-docstrings
-    "C4",  # flake8-docstrings
+    "C4",  # flake8-comprehensions
+    "S",   # flake8-bandit
     "F",   # pyflake
     "E",   # pycodestyle
     "W",   # pycodestyle
@@ -110,6 +111,7 @@ select = [
     "D102",
     "D103",
     "D104",
+    "S101",
 ]
 "setup.py" = ["D100"]
 "conftest.py" = ["D100"]

@@ -86,7 +86,7 @@ class PaginatedList(Generic[ResourceType]):
         return new_elements
 
     def _fetch_next_page(self) -> list[ResourceType]:
-        assert self.__next_path is not None  # nosec B101
+        assert self.__next_path is not None  # noqa S101
         response_payload = self.__client.request(
             "GET",
             self.__next_path,
@@ -121,5 +121,5 @@ class PaginatedList(Generic[ResourceType]):
                 **params,
             )
             self.__total = response_payload["total"]
-        assert self.__total is not None  # nosec B101
+        assert self.__total is not None  # noqa S101
         return self.__total
