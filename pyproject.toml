@@ -91,6 +91,7 @@ select = [
     "E",
     "F",
     "W",
+    "I001",  # isort
 ]
 
 [tool.ruff.per-file-ignores]
@@ -101,9 +102,8 @@ select = [
     "D103",
 ]
 
-[tool.isort]
-profile = "black"
-known_first_party = "deezer"
+[tool.ruff.isort]
+known-first-party = ["deezer"]
 
 [tool.mypy]
 # suppress errors about unsatisfied imports
