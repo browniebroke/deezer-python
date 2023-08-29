@@ -36,8 +36,8 @@ class Client:
         >>> import deezer
         >>> client = deezer.Client(app_id='foo', app_secret='bar')
 
-    This client provides several method to retrieve the content of most
-    sort of Deezer objects, based on their json structure.
+    This client provides several methods to retrieve the content most
+    kinds of Deezer objects, based on their json structure.
 
     Headers can be forced by using the ``headers`` kwarg.
     For example, use ``Accept-Language`` header to force the output language.
