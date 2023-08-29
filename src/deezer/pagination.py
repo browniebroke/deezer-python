@@ -33,6 +33,7 @@ class PaginatedList(Generic[ResourceType]):
         self.__iter = iter(self)
 
     def __repr__(self) -> str:
+        """Convenient representation giving a preview of the content."""
         repr_size = 5
         data: list[ResourceType | str] = list(self[: repr_size + 1])
         if len(data) > repr_size:
@@ -51,6 +52,7 @@ class PaginatedList(Generic[ResourceType]):
         self,
         index: int | slice,
     ) -> ResourceType | list[ResourceType]:
+        """Get an item or a slice of items from the list."""
         if isinstance(index, int):
             self._fetch_to_index(index)
             return self.__elements[index]
@@ -62,14 +64,17 @@ class PaginatedList(Generic[ResourceType]):
         return self.__elements[index]
 
     def __iter__(self) -> Generator[ResourceType, None, None]:
+        """Iterate over the internal, fetching new pages as needed."""
         yield from self.__elements
         while self._could_grow():
             yield from self._grow()
 
     def __next__(self) -> ResourceType:
+        """Get the next item from the list."""
         return next(self.__iter)
 
     def __len__(self) -> int:
+        """Get the total number of items across all pages."""
         return self.total
 
     def _could_grow(self) -> bool:
@@ -81,7 +86,7 @@ class PaginatedList(Generic[ResourceType]):
         return new_elements
 
     def _fetch_next_page(self) -> list[ResourceType]:
-        assert self.__next_path is not None  # nosec B101
+        assert self.__next_path is not None  # noqa S101
         response_payload = self.__client.request(
             "GET",
             self.__next_path,
@@ -116,5 +121,5 @@ class PaginatedList(Generic[ResourceType]):
                 **params,
             )
             self.__total = response_payload["total"]
-        assert self.__total is not None  # nosec B101
+        assert self.__total is not None  # noqa S101
         return self.__total

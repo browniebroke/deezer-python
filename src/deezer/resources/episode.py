@@ -58,7 +58,7 @@ class Episode(Resource):
 
     def remove_bookmark(self, **kwargs) -> bool:
         """
-        Removes the bookmark on the episode
+        Removes the bookmark on the episode.
 
         :returns: a boolean that tells if the operation was successful
         """

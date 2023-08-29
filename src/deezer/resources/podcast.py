@@ -32,7 +32,7 @@ class Podcast(Resource):
 
     def get_episodes(self, **kwargs) -> PaginatedList[Episode]:
         """
-        Get episodes from a podcast
+        Get episodes from a podcast.
 
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Episode <deezer.Episode>` instances
