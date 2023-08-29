@@ -88,7 +88,6 @@ ignore = ["D203", "D212"]
 select = [
     "B",   # flake8-bugbear
     # "D",   # flake8-docstrings
-    "DJ",  # flake8-django
     "E",
     "F",
     "W",
