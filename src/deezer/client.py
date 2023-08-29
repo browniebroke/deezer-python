@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, ClassVar
 
 import requests
 
@@ -51,7 +51,7 @@ class Client:
     :param headers: a dictionary of headers to be used.
     """
 
-    objects_types = {
+    objects_types: ClassVar[dict[str, type[Resource] | None]] = {
         "album": Album,
         "artist": Artist,
         "chart": Chart,
