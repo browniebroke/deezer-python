@@ -9,9 +9,7 @@ pytestmark = pytest.mark.vcr
 
 class TestTrack:
     def test_track_attributes(self, client):
-        """
-        Test track resource
-        """
+        """Test track resource."""
         track = client.get_track(3135556)
         artist = track.get_artist()
         album = track.get_album()

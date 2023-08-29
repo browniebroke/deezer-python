@@ -84,10 +84,17 @@ exclude_lines = [
 [tool.ruff]
 target-version = "py38"
 line-length = 120
-ignore = ["D203", "D212"]
+ignore = [
+    "D203", #
+    "D212", # multi-line-summary-first-line
+    "D100", # Missing docstring in public module
+    "D104", # Missing docstring in public package
+    "D107", # Missing docstring in `__init__`
+    "D401", # First line of docstring should be in imperative mood
+]
 select = [
     "B",   # flake8-bugbear
-    # "D",   # flake8-docstrings
+    "D",   # flake8-docstrings
     "E",
     "F",
     "W",
@@ -100,7 +107,11 @@ select = [
     "D101",
     "D102",
     "D103",
+    "D104",
 ]
+"setup.py" = ["D100"]
+"conftest.py" = ["D100"]
+"docs/conf.py" = ["D100"]
 
 [tool.ruff.isort]
 known-first-party = ["deezer"]

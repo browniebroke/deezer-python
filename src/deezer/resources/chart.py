@@ -32,35 +32,45 @@ class Chart(Resource):
 
     def get_tracks(self, **kwargs) -> PaginatedList[Track]:
         """
+        Return the chart for tracks.
+
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
-                  of :class:`Track <deezer.Track>` instances
+        of :class:`Track <deezer.Track>` instances
         """
         return self.get_paginated_list("tracks", **kwargs)
 
     def get_albums(self, **kwargs) -> PaginatedList[Album]:
         """
+        Return the chart for albums.
+
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
-                  of :class:`Album <deezer.Album>` instances
+        of :class:`Album <deezer.Album>` instances
         """
         return self.get_paginated_list("albums", **kwargs)
 
     def get_artists(self, **kwargs) -> PaginatedList[Artist]:
         """
+        Return the chart for artists.
+
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
-                  of :class:`Artist <deezer.Artist>` instances
+        of :class:`Artist <deezer.Artist>` instances
         """
         return self.get_paginated_list("artists", **kwargs)
 
     def get_playlists(self, **kwargs) -> PaginatedList[Playlist]:
         """
+        Return the chart for playlists.
+
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
-                  of :class:`Playlist <deezer.Playlist>` instances
+        of :class:`Playlist <deezer.Playlist>` instances
         """
         return self.get_paginated_list("playlists", **kwargs)
 
     def get_podcasts(self, **kwargs) -> PaginatedList[Podcast]:
         """
+        Return the chart for podcasts.
+
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
-                  of :class:`Podcast <deezer.Podcast>` instances
+        of :class:`Podcast <deezer.Podcast>` instances
         """
         return self.get_paginated_list("podcasts", **kwargs)

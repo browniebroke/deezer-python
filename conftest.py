@@ -9,6 +9,7 @@ env.read_env()
 
 @pytest.fixture()
 def client():
+    """Create an unauthenticated client for tests."""
     return deezer.Client(  # nosec
         app_id="foo",
         app_secret="bar",
@@ -19,12 +20,14 @@ def client():
 
 @pytest.fixture()
 def client_token(client):
+    """Create an authenticated client for tests."""
     client.access_token = env("API_TOKEN", "dummy")
     return client
 
 
 @pytest.fixture(scope="module", autouse=True)
 def vcr_config():
+    """Clean up some headers from cassettes."""
     return {
         "filter_query_parameters": [("access_token", "dummy")],
         "before_record_response": _clean_response,

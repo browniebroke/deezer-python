@@ -88,8 +88,7 @@ class Client:
         paginate_list=False,
     ):
         """
-        Recursively convert dictionary
-        to :class:`~deezer.Resource` object
+        Recursively convert dictionary to :class:`~deezer.Resource` object.
 
         :param item: the JSON response as dict.
         :param parent: A reference to the parent resource, to avoid fetching again.
@@ -281,7 +280,7 @@ class Client:
 
     def get_genre(self, genre_id: int) -> Genre:
         """
-        Get the genre with the given ID
+        Get the genre with the given ID.
 
         :returns: a :class:`~deezer.Genre` object
         """
@@ -419,7 +418,7 @@ class Client:
 
     def add_user_album(self, album_id: int) -> bool:
         """
-        Add an album to the user's library
+        Add an album to the user's library.
 
         :param album_id: the ID of the album to add.
         :return: boolean whether the operation succeeded.
@@ -428,7 +427,7 @@ class Client:
 
     def remove_user_album(self, album_id: int) -> bool:
         """
-        Remove an album from the user's library
+        Remove an album from the user's library.
 
         :param album_id: the ID of the album to remove.
         :return: boolean whether the operation succeeded.
@@ -448,7 +447,7 @@ class Client:
 
     def add_user_artist(self, artist_id: int) -> bool:
         """
-        Add an artist to the user's library
+        Add an artist to the user's library.
 
         :param artist_id: the ID of the artist to add.
         :return: boolean whether the operation succeeded.
@@ -457,7 +456,7 @@ class Client:
 
     def remove_user_artist(self, artist_id: int) -> bool:
         """
-        Remove an artist from the user's library
+        Remove an artist from the user's library.
 
         :param artist_id: the ID of the artist to remove.
         :return: boolean whether the operation succeeded.
@@ -526,7 +525,7 @@ class Client:
 
     def add_user_track(self, track_id: int) -> bool:
         """
-        Add a track to the user's library
+        Add a track to the user's library.
 
         :param track_id: the ID of the track to add.
         :return: boolean whether the operation succeeded.
@@ -535,7 +534,7 @@ class Client:
 
     def remove_user_track(self, track_id: int) -> bool:
         """
-        Remove a track from the user's library
+        Remove a track from the user's library.
 
         :param track_id: the ID of the track to remove.
         :return: boolean whether the operation succeeded.
@@ -544,7 +543,7 @@ class Client:
 
     def remove_user_playlist(self, playlist_id: int) -> bool:
         """
-        Remove a playlist from the user's library
+        Remove a playlist from the user's library.
 
         :param playlist_id: the ID of the playlist to remove.
         :return: boolean whether the operation succeeded.
@@ -553,7 +552,7 @@ class Client:
 
     def add_user_playlist(self, playlist_id: int) -> bool:
         """
-        Add a playlist to the user's library
+        Add a playlist to the user's library.
 
         :param playlist_id: the ID of the playlist to add.
         :return: boolean whether the operation succeeded.
@@ -562,7 +561,7 @@ class Client:
 
     def create_playlist(self, playlist_name) -> int:
         """
-        Create a playlist on the user's account
+        Create a playlist on the user's account.
 
         :param playlist_name: the name of the playlist.
         :return: the ID of the playlist that was created
@@ -574,7 +573,7 @@ class Client:
 
     def delete_playlist(self, playlist_id) -> bool:
         """
-        Delete a playlist from the user's account
+        Delete a playlist from the user's account.
 
         :param playlist_id: the ID of the playlist to remove.
         :return: boolean whether the operation succeeded.
