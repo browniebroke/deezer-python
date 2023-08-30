@@ -38,7 +38,7 @@ class TestResource:
 
         # Response cassette has been modified to simulate missing 'bpm' field
         with pytest.raises(AttributeError) as exc_info:
-            track.bpm
+            track.bpm  # noqa  B018
         assert str(exc_info.value) == "'Track' object has no attribute 'bpm'"
 
     def test_field_not_found(self, client):
@@ -51,5 +51,5 @@ class TestResource:
             },
         )
         with pytest.raises(AttributeError) as exc_info:
-            episode.something
+            episode.something  # noqa  B018
         assert str(exc_info.value) == "'Episode' object has no attribute 'something'"

@@ -34,6 +34,7 @@ class Resource:
             setattr(self, key, json[key])
 
     def __repr__(self):
+        """Convenient representation giving a preview of the item."""
         name = getattr(self, "name", None)
         title = getattr(self, "title", None)
         id_ = getattr(self, "id", None)
@@ -101,7 +102,8 @@ class Resource:
         self,
         relation: str,
         **kwargs,
-    ):
+    ) -> PaginatedList:
+        """Build the pagination object based on the relation."""
         return PaginatedList(
             client=self.client,
             base_path=f"{self.type}/{self.id}/{relation}",
