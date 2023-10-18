@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v6.1.1 (2023-10-18)
+
+### Fix
+
+- Potential unset response attribute on httperror ([`82a47be`](https://github.com/browniebroke/deezer-python/commit/82a47be50f5609a80f0f48a53d01971f7dce362d))
+
 ## v6.1.0 (2023-08-07)
 
 ### Feature
