@@ -26,12 +26,13 @@ class DeezerHTTPError(DeezerAPIException):
     @classmethod
     def from_http_error(cls, exc: requests.HTTPError) -> DeezerHTTPError:
         """Initialise the appropriate internal exception from a HTTPError."""
-        if exc.response.status_code in {502, 503, 504}:
-            return DeezerRetryableHTTPError(exc)
-        if exc.response.status_code == 403:
-            return DeezerForbiddenError(exc)
-        if exc.response.status_code == 404:
-            return DeezerNotFoundError(exc)
+        if exc.response is not None:
+            if exc.response.status_code in {502, 503, 504}:
+                return DeezerRetryableHTTPError(exc)
+            if exc.response.status_code == 403:
+                return DeezerForbiddenError(exc)
+            if exc.response.status_code == 404:
+                return DeezerNotFoundError(exc)
         return DeezerHTTPError(exc)
 
 
