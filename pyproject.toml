@@ -54,7 +54,6 @@ version_toml = ["pyproject.toml:tool.poetry.version"]
 version_variables = [
     "src/deezer/__init__.py:__version__",
 ]
-branch = "main"
 build_command = "pip install poetry && poetry build"
 
 [tool.semantic_release.changelog]
@@ -65,6 +64,13 @@ exclude_commit_patterns = [
 
 [tool.semantic_release.changelog.environment]
 keep_trailing_newline = true
+
+[tool.semantic_release.branches.main]
+match = "main"
+
+[tool.semantic_release.branches.noop]
+match = "(?!main$)"
+prerelease = true
 
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=deezer"
