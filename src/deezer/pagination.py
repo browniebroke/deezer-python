@@ -41,12 +41,10 @@ class PaginatedList(Generic[ResourceType]):
         return f"<{self.__class__.__name__} {data!r}>"
 
     @overload
-    def __getitem__(self, index: int) -> ResourceType:
-        ...
+    def __getitem__(self, index: int) -> ResourceType: ...
 
     @overload
-    def __getitem__(self, index: slice) -> list[ResourceType]:
-        ...
+    def __getitem__(self, index: slice) -> list[ResourceType]: ...
 
     def __getitem__(
         self,
