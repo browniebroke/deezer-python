@@ -166,7 +166,7 @@ class Client:
         json_data = response.json()
         if not isinstance(json_data, dict):
             return json_data
-        if "error" in json_data and json_data["error"]:
+        if json_data.get("error"):
             raise DeezerErrorResponse(json_data)
         return self._process_json(
             json_data,
