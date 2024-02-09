@@ -41,7 +41,9 @@ jobs:
         run: poetry run pytest --cov-report=xml
         shell: bash
       - name: Upload coverage report
-        uses: codecov/codecov-action@v3.1.6
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   commitlint:
     runs-on: ubuntu-latest
