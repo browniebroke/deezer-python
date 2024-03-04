@@ -41,7 +41,7 @@ sphinx-autobuild = { version = ">=2024.0.0", python = ">=3.11" }
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.0"
-environs = "^10.0.0"
+environs = "^11.0.0"
 pytest = "^8.0.0"
 pytest-cov = "^4.0"
 pytest-mock = "^3.6"
