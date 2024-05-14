@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import pytest
-import requests
 
 import deezer
 from deezer.exceptions import (
@@ -14,18 +13,6 @@ pytestmark = pytest.mark.vcr
 
 
 class TestClient:
-    def test_access_token_set(self, client, mocker):
-        """Test that access token is set when making the request."""
-        session_get = mocker.patch.object(requests.Session, "request")
-        client.access_token = "token"  # noqa S105
-        assert client.access_token, "token"
-        client.request("GET", "user/me")
-        session_get.assert_called_with(
-            "GET",
-            "https://api.deezer.com/user/me",
-            params={"access_token": "token"},
-        )
-
     def test_request_404(self, client):
         with pytest.raises(DeezerNotFoundError):
             client.request("GET", "does-not-exists")

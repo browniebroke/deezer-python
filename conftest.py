@@ -10,10 +10,11 @@ env.read_env()
 @pytest.fixture()
 def client():
     """Create an unauthenticated client for tests."""
-    return deezer.Client(
+    with deezer.Client(
         # This is to get human-readable response output in VCR cassettes
         headers={"Accept-Encoding": "identity"},
-    )
+    ) as client:
+        yield client
 
 
 @pytest.fixture()
