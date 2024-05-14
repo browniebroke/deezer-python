@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from typing import Any, ClassVar
 
-import requests
+import httpx
+from httpx._types import HeaderTypes
 
 from deezer.exceptions import (
     DeezerErrorResponse,
@@ -26,7 +27,7 @@ from deezer.resources import (
 )
 
 
-class Client:
+class Client(httpx.Client):
     """
     A client to retrieve some basic infos about Deezer resources.
 
@@ -64,14 +65,17 @@ class Client:
         "track": Track,
         "user": User,
     }
-    base_url = "https://api.deezer.com"
 
-    def __init__(self, access_token=None, headers=None, **kwargs):
+    def __init__(
+        self,
+        access_token: str | None = None,
+        headers: HeaderTypes | None = None,
+    ):
         self.access_token = access_token
-        self.session = requests.Session()
-
-        headers = headers or {}
-        self.session.headers.update(headers)
+        super().__init__(
+            base_url="https://api.deezer.com",
+            headers=headers,
+        )
 
     def _process_json(
         self,
@@ -148,14 +152,15 @@ class Client:
         """
         if self.access_token is not None:
             params["access_token"] = str(self.access_token)
-        response = self.session.request(
+
+        response = super().request(
             method,
-            f"{self.base_url}/{path}",
+            path,
             params=params,
         )
         try:
             response.raise_for_status()
-        except requests.HTTPError as exc:
+        except httpx.HTTPError as exc:
             raise DeezerHTTPError.from_http_error(exc) from exc
         json_data = response.json()
         if not isinstance(json_data, dict):

@@ -8,6 +8,15 @@ To start calling the API, you first need to instantiate a {class}`Client <deezer
 >>> client = deezer.Client()
 ```
 
+While this usage is simple and convenient for using in the Python console, it's best to use it as a context manager:
+
+```python
+with deezer.Client() as client:
+    ...
+```
+
+This is [the recommended way to use it by `httpx`](https://www.python-httpx.org/advanced/clients/#usage, which is the library we use under the hood.
+
 From there, you can search for some terms:
 
 ```pycon

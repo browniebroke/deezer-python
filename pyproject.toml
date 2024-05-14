@@ -28,7 +28,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-requests = ">=2.18"
+httpx = ">=0.23.0"
 
 [tool.poetry.group.docs]
 optional = true
