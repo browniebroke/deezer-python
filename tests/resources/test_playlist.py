@@ -10,9 +10,10 @@ pytestmark = pytest.mark.vcr
 class TestPlaylist:
     @pytest.fixture
     def playlist(self, client):
-        return client.get_playlist(9200461)
+        return deezer.Playlist(client, json={"id": 9200461, "type": "playlist"})
 
-    def test_attributes(self, playlist):
+    def test_attributes(self, client):
+        playlist = client.get_playlist(9200461)
         assert playlist.title == "Lounge Soirée"
 
     def test_get_tracks(self, playlist):
@@ -58,10 +59,11 @@ class TestPlaylist:
         assert result is True
 
     def test_reorder_tracks(self, client_token):
-        playlist = client_token.get_playlist(11336462844)
+        playlist = deezer.Playlist(client_token, json={"id": 11336462844})
         result = playlist.reorder_tracks([79875044, 79875050, 142986210])
         assert result is True
 
-    def test_mark_seen(self, client_token, playlist):
+    def test_mark_seen(self, client_token):
+        playlist = deezer.Playlist(client_token, json={"id": 9200461})
         result = playlist.mark_seen()
         assert result is True

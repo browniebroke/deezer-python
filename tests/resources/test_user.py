@@ -10,7 +10,7 @@ pytestmark = pytest.mark.vcr
 class TestUser:
     @pytest.fixture
     def user(self, client):
-        return client.get_user(359622)
+        return deezer.User(client, json={"id": 359622, "type": "user"})
 
     @pytest.fixture
     def current_user(self, client_token):
