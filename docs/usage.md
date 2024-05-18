@@ -4,13 +4,13 @@
 
 To start calling the API, you first need to instantiate a {class}`Client <deezer.client.Client>`:
 
-```python
+```pycon
 >>> client = deezer.Client()
 ```
 
 From there, you can search for some terms:
 
-```python
+```pycon
 >>> client.search('Daft Punk')
 <PaginatedList [
  <Track: One More Time>,
@@ -25,7 +25,7 @@ The above returned a lot of tracks, wrapped in a {class}`PaginatedList <deezer.P
 
 If you wanted to search for artists instead, you may use the {meth}`Client.search_artists() <deezer.Client.search_artists>` method:
 
-```python
+```pycon
 >>> client.search_artists('Daft Punk')
 <PaginatedList [
  <Artist: Daft Punk>,
@@ -48,7 +48,7 @@ You may have noticed from the above examples, but depending on the endpoint that
 
 When you ge a resource, you have access to all the fields that are in the REST API response. For example, all the fields presented in the documentation for [the track object](https://developers.deezer.com/api/track) are accessible as attribute on the {class}`Track <deezer.Track>` resource:
 
-```python
+```pycon
 >>> instant_crush
 <Track: Instant Crush>
 >>> instant_crush.duration
@@ -67,7 +67,7 @@ For example, when you get an {class}`Artist <deezer.Artist>`, you may call one o
 
 Let's try from the initial example:
 
-```python
+```pycon
 >>> daft_punk = client.search_artists('Daft Punk')[0]
 >>> daft_punk.get_albums()[:4]
 [<Album: Random Access Memories>,
