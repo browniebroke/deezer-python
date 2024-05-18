@@ -11,8 +11,6 @@ env.read_env()
 def client():
     """Create an unauthenticated client for tests."""
     return deezer.Client(
-        app_id="foo",
-        app_secret="bar",  # noqa S106
         # This is to get human-readable response output in VCR cassettes
         headers={"Accept-Encoding": "identity"},
     )

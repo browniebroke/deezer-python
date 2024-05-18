@@ -34,7 +34,7 @@ class Client:
     be passed in to the constructor as kwargs.
 
         >>> import deezer
-        >>> client = deezer.Client(app_id='foo', app_secret='bar')
+        >>> client = deezer.Client()
 
     This client provides several methods to retrieve the content most
     kinds of Deezer objects, based on their json structure.
@@ -45,8 +45,6 @@ class Client:
         >>> import deezer
         >>> client = deezer.Client(headers={'Accept-Language': 'fr'})
 
-    :param app_id: application ID.
-    :param app_secret: application secret.
     :param access_token: user access token.
     :param headers: a dictionary of headers to be used.
     """
@@ -68,11 +66,7 @@ class Client:
     }
     base_url = "https://api.deezer.com"
 
-    def __init__(
-        self, app_id=None, app_secret=None, access_token=None, headers=None, **kwargs
-    ):
-        self.app_id = app_id
-        self.app_secret = app_secret
+    def __init__(self, access_token=None, headers=None, **kwargs):
         self.access_token = access_token
         self.session = requests.Session()
 
