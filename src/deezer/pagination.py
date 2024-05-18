@@ -20,14 +20,14 @@ class PaginatedList(Generic[ResourceType]):
         client: deezer.Client,
         base_path: str,
         parent: deezer.Resource | None = None,
-        **params,
+        params: dict | None = None,
     ):
         self.__elements: list[ResourceType] = []
         self.__client = client
         self.__base_path = base_path
-        self.__base_params = params
+        self.__base_params = params or {}
         self.__next_path: str | None = base_path
-        self.__next_params = params
+        self.__next_params = params or {}
         self.__parent = parent
         self.__total = None
         self.__iter = iter(self)
@@ -90,7 +90,7 @@ class PaginatedList(Generic[ResourceType]):
             self.__next_path,
             parent=self.__parent,
             paginate_list=True,
-            **self.__next_params,
+            params=self.__next_params,
         )
         self.__next_path = None
         self.__total = response_payload.get("total")
@@ -116,7 +116,7 @@ class PaginatedList(Generic[ResourceType]):
                 self.__base_path,
                 parent=self.__parent,
                 paginate_list=True,
-                **params,
+                params=params,
             )
             self.__total = response_payload["total"]
         assert self.__total is not None  # noqa S101

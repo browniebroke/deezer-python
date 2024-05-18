@@ -58,15 +58,15 @@ class Playlist(Resource):
         """
         return self.get_paginated_list("fans", **kwargs)
 
-    def mark_seen(self, **kwargs) -> bool:
+    def mark_seen(self) -> bool:
         """
         Mark the playlist as seen.
 
         :returns: a boolean that tells if the operation was successful
         """
-        return self.client.request("POST", f"playlist/{self.id}/seen", **kwargs)
+        return self.client.request("POST", f"playlist/{self.id}/seen")
 
-    def add_tracks(self, tracks: Iterable[int | Track], **kwargs) -> bool:
+    def add_tracks(self, tracks: Iterable[int | Track]) -> bool:
         """
         Add tracks to a playlist.
 
@@ -76,10 +76,10 @@ class Playlist(Resource):
         """
         track_ids_str = ",".join(str(tid) for tid in gen_ids(tracks))
         return self.client.request(
-            "POST", f"playlist/{self.id}/tracks", songs=track_ids_str, **kwargs
+            "POST", f"playlist/{self.id}/tracks", params={"songs": track_ids_str}
         )
 
-    def delete_tracks(self, tracks: Iterable[int | Track], **kwargs) -> bool:
+    def delete_tracks(self, tracks: Iterable[int | Track]) -> bool:
         """
         Delete tracks from a playlist.
 
@@ -89,10 +89,10 @@ class Playlist(Resource):
         """
         track_ids_str = ",".join(map(str, gen_ids(tracks)))
         return self.client.request(
-            "DELETE", f"playlist/{self.id}/tracks", songs=track_ids_str, **kwargs
+            "DELETE", f"playlist/{self.id}/tracks", params={"songs": track_ids_str}
         )
 
-    def reorder_tracks(self, order: Iterable[int | Track], **kwargs) -> bool:
+    def reorder_tracks(self, order: Iterable[int | Track]) -> bool:
         """
         Reorder the tracks of a playlist.
 
@@ -102,5 +102,5 @@ class Playlist(Resource):
         """
         order_track_ids_str = ",".join(map(str, gen_ids(order)))
         return self.client.request(
-            "POST", f"playlist/{self.id}/tracks", order=order_track_ids_str, **kwargs
+            "POST", f"playlist/{self.id}/tracks", params={"order": order_track_ids_str}
         )

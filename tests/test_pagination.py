@@ -121,7 +121,7 @@ class TestPaginatedList:
         user_tracks = PaginatedList(
             client=client_token,
             base_path="user/me/tracks",
-            limit=2,
+            params={"limit": 2},
         )
         assert [t.title for t in user_tracks] == [
             "Poney Pt. I",
