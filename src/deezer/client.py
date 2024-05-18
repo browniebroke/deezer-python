@@ -160,7 +160,7 @@ class Client(httpx.Client):
         )
         try:
             response.raise_for_status()
-        except httpx.HTTPError as exc:
+        except httpx.HTTPStatusError as exc:
             raise DeezerHTTPError.from_http_error(exc) from exc
         json_data = response.json()
         if not isinstance(json_data, dict):

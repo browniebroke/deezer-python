@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+import httpx
 import pytest
-import requests
 
 from deezer.exceptions import (
     DeezerForbiddenError,
@@ -21,9 +21,12 @@ from deezer.exceptions import (
     ],
 )
 def test_deezer_http_error(status_code, expected_exception):
-    response = requests.Response()
-    response.status_code = status_code
-    http_error = requests.HTTPError(response=response)
+    response = httpx.Response(status_code=status_code)
+    http_error = httpx.HTTPStatusError(
+        message="",
+        request=httpx.Request("GET", "https://example.com"),
+        response=response,
+    )
 
     exc = DeezerHTTPError.from_http_error(http_error)
     assert isinstance(exc, expected_exception)
