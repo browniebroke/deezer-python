@@ -58,7 +58,7 @@ The package is published on
 Easily query the Deezer API from you Python code. The data returned by the Deezer
 API is mapped to python resources:
 
-```python
+```pycon
 >>> client = deezer.Client()
 >>> client.get_album(680407).title
 'Monkey Business'
