@@ -26,21 +26,21 @@ class Editorial(Resource):
     picture_big: str
     picture_xl: str
 
-    def get_selection(self, **kwargs) -> list[Album]:
+    def get_selection(self) -> list[Album]:
         """
         Get a list of albums selected every week by the Deezer Team.
 
         :returns: a list of :class:`Album <deezer.Album>` instances
         """
-        return self.get_relation("selection", **kwargs)
+        return self.get_relation("selection")
 
-    def get_chart(self, **kwargs) -> Chart:
+    def get_chart(self) -> Chart:
         """
         Get top charts for tracks, albums, artists and playlists.
 
         :returns: a :class:`~deezer.Chart` instance
         """
-        return self.get_relation("charts", resource_type=Chart, **kwargs)
+        return self.get_relation("charts", resource_type=Chart)
 
     def get_releases(self, **kwargs) -> PaginatedList[Album]:
         """

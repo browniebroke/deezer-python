@@ -176,8 +176,8 @@ class Client(httpx.Client):
             paginate_list=paginate_list,
         )
 
-    def _get_paginated_list(self, path, **params):
-        return PaginatedList(client=self, base_path=path, **params)
+    def _get_paginated_list(self, path: str, params: dict | None = None):
+        return PaginatedList(client=self, base_path=path, params=params)
 
     def get_album(self, album_id: int) -> Album:
         """
@@ -423,7 +423,7 @@ class Client(httpx.Client):
         :param album_id: the ID of the album to add.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("POST", "user/me/albums", album_id=album_id)
+        return self.request("POST", "user/me/albums", params={"album_id": album_id})
 
     def remove_user_album(self, album_id: int) -> bool:
         """
@@ -432,7 +432,7 @@ class Client(httpx.Client):
         :param album_id: the ID of the album to remove.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("DELETE", "user/me/albums", album_id=album_id)
+        return self.request("DELETE", "user/me/albums", params={"album_id": album_id})
 
     def get_user_artists(self, user_id: int | None = None) -> PaginatedList[Artist]:
         """
@@ -452,7 +452,7 @@ class Client(httpx.Client):
         :param artist_id: the ID of the artist to add.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("POST", "user/me/artists", artist_id=artist_id)
+        return self.request("POST", "user/me/artists", params={"artist_id": artist_id})
 
     def remove_user_artist(self, artist_id: int) -> bool:
         """
@@ -461,7 +461,11 @@ class Client(httpx.Client):
         :param artist_id: the ID of the artist to remove.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("DELETE", "user/me/artists", artist_id=artist_id)
+        return self.request(
+            "DELETE",
+            "user/me/artists",
+            params={"artist_id": artist_id},
+        )
 
     def get_user_followers(self, user_id: int | None = None) -> PaginatedList[User]:
         """
@@ -492,7 +496,7 @@ class Client(httpx.Client):
         :param user_id: the ID of the user to follow.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("POST", "user/me/followings", user_id=user_id)
+        return self.request("POST", "user/me/followings", params={"user_id": user_id})
 
     def remove_user_following(self, user_id: int) -> bool:
         """
@@ -501,7 +505,7 @@ class Client(httpx.Client):
         :param user_id: the ID of the user to stop following.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("DELETE", "user/me/followings", user_id=user_id)
+        return self.request("DELETE", "user/me/followings", params={"user_id": user_id})
 
     def get_user_history(self) -> PaginatedList[Track]:
         """
@@ -530,7 +534,7 @@ class Client(httpx.Client):
         :param track_id: the ID of the track to add.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("POST", "user/me/tracks", track_id=track_id)
+        return self.request("POST", "user/me/tracks", params={"track_id": track_id})
 
     def remove_user_track(self, track_id: int) -> bool:
         """
@@ -539,7 +543,7 @@ class Client(httpx.Client):
         :param track_id: the ID of the track to remove.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("DELETE", "user/me/tracks", track_id=track_id)
+        return self.request("DELETE", "user/me/tracks", params={"track_id": track_id})
 
     def remove_user_playlist(self, playlist_id: int) -> bool:
         """
@@ -548,7 +552,9 @@ class Client(httpx.Client):
         :param playlist_id: the ID of the playlist to remove.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("DELETE", "user/me/playlists", playlist_id=playlist_id)
+        return self.request(
+            "DELETE", "user/me/playlists", params={"playlist_id": playlist_id}
+        )
 
     def add_user_playlist(self, playlist_id: int) -> bool:
         """
@@ -557,7 +563,9 @@ class Client(httpx.Client):
         :param playlist_id: the ID of the playlist to add.
         :return: boolean whether the operation succeeded.
         """
-        return self.request("POST", "user/me/playlists", playlist_id=playlist_id)
+        return self.request(
+            "POST", "user/me/playlists", params={"playlist_id": playlist_id}
+        )
 
     def create_playlist(self, playlist_name) -> int:
         """
@@ -566,7 +574,9 @@ class Client(httpx.Client):
         :param playlist_name: the name of the playlist.
         :return: the ID of the playlist that was created
         """
-        result = self.request("POST", "user/me/playlists", title=playlist_name)
+        result = self.request(
+            "POST", "user/me/playlists", params={"title": playlist_name}
+        )
         # Note: the REST API call returns a dict with just the "id" key in it,
         # so we return that instead of the full Playlist object
         return result.id
@@ -604,8 +614,10 @@ class Client(httpx.Client):
 
         return self._get_paginated_list(
             path=f"search/{path}" if path else "search",
-            q=" ".join(query_parts),
-            **optional_params,
+            params={
+                "q": " ".join(query_parts),
+                **optional_params,
+            },
         )
 
     def search(

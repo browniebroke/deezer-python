@@ -56,7 +56,12 @@ class Resource:
             result[key] = value
         return result
 
-    def get_relation(self, relation, **kwargs):
+    def get_relation(
+        self,
+        relation: str,
+        resource_type: type[Resource] | None = None,  # type: ignore[valid-type]
+        params: dict | None = None,
+    ):
         """
         Generic method to load the relation from any resource.
 
@@ -69,10 +74,11 @@ class Resource:
             "GET",
             f"{self.type}/{self.id}/{relation}",
             parent=self,
-            **kwargs,
+            resource_type=resource_type,
+            params=params,
         )
 
-    def post_relation(self, relation, **kwargs):
+    def post_relation(self, relation: str, params: dict):
         """
         Generic method to make a POST request to a relation from any resource.
 
@@ -82,10 +88,10 @@ class Resource:
         return self.client.request(
             "POST",
             f"{self.type}/{self.id}/{relation}",
-            **kwargs,
+            params=params,
         )
 
-    def delete_relation(self, relation, **kwargs):
+    def delete_relation(self, relation: str, params: dict | None = None):
         """
         Generic method to make a DELETE request to a relation from any resource.
 
@@ -95,20 +101,20 @@ class Resource:
         return self.client.request(
             "DELETE",
             f"{self.type}/{self.id}/{relation}",
-            **kwargs,
+            params=params,
         )
 
     def get_paginated_list(
         self,
         relation: str,
-        **kwargs,
+        params: dict | None = None,
     ) -> PaginatedList:
         """Build the pagination object based on the relation."""
         return PaginatedList(
             client=self.client,
             base_path=f"{self.type}/{self.id}/{relation}",
             parent=self,
-            **kwargs,
+            params=params,
         )
 
     def __getattr__(self, item: str) -> Any:
