@@ -5,6 +5,7 @@ from typing import Any, ClassVar
 import httpx
 from httpx._types import HeaderTypes
 
+from deezer.auth import DeezerQueryAuth
 from deezer.exceptions import (
     DeezerErrorResponse,
     DeezerHTTPError,
@@ -71,9 +72,13 @@ class Client(httpx.Client):
         access_token: str | None = None,
         headers: HeaderTypes | None = None,
     ):
-        self.access_token = access_token
+        if access_token:
+            deezer_auth = DeezerQueryAuth(access_token=access_token)
+        else:
+            deezer_auth = None
         super().__init__(
             base_url="https://api.deezer.com",
+            auth=deezer_auth,
             headers=headers,
         )
 
@@ -137,7 +142,7 @@ class Client(httpx.Client):
         resource_type: type[Resource] | None = None,
         resource_id: int | None = None,
         paginate_list=False,
-        **params,
+        **kwargs,
     ):
         """
         Make a request to the API and parse the response.
@@ -148,15 +153,11 @@ class Client(httpx.Client):
         :param resource_type: The resource class to use as top level.
         :param resource_id: The resource id to use as top level.
         :param paginate_list: Whether to wrap list into a pagination object.
-        :param params: Query parameters to add to the request
         """
-        if self.access_token is not None:
-            params["access_token"] = str(self.access_token)
-
         response = super().request(
             method,
             path,
-            params=params,
+            **kwargs,
         )
         try:
             response.raise_for_status()
