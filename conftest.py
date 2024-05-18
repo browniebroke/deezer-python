@@ -18,10 +18,13 @@ def client():
 
 
 @pytest.fixture()
-def client_token(client):
+def client_token():
     """Create an authenticated client for tests."""
-    client.access_token = env("API_TOKEN", "dummy")
-    return client
+    with deezer.Client(
+        access_token=env("API_TOKEN", "dummy"),
+        headers={"Accept-Encoding": "identity"},
+    ) as client:
+        yield client
 
 
 @pytest.fixture(scope="module", autouse=True)
