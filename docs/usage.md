@@ -108,7 +108,7 @@ To mitigate this problem and make sure the resources being returned have all the
 
 This might cause N+1 API calls if you're doing this in a loop:
 
-```python
+```pycon
 >>> album = client.get_album(302127)
 ... for track in album.get_tracks():
 ...     print(track.bpm)  # This will make an API call for each track
@@ -124,7 +124,7 @@ At some point, you might want to get the resources exported as Python dictionari
 
 Each resource has a `as_dict()` method to export its content as dictionary:
 
-```python
+```pycon
 >>> instant_crush.as_dict()
 {'id': 67238732,
  'readable': True,
