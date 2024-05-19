@@ -2,7 +2,7 @@
   "extends": ["github>browniebroke/renovate-configs:python"],
   "packageRules": [
     {
-      "packageNames": ["requests"],
+      "packageNames": ["httpx"],
       "semanticCommitType": "chore"
     }
   ]
