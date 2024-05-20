@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import warnings
 from typing import Any, ClassVar
 
 import requests
@@ -25,6 +26,8 @@ from deezer.resources import (
     User,
 )
 
+_UNSET = object()
+
 
 class Client:
     """
@@ -34,7 +37,7 @@ class Client:
     be passed in to the constructor as kwargs.
 
         >>> import deezer
-        >>> client = deezer.Client(app_id='foo', app_secret='bar')
+        >>> client = deezer.Client()
 
     This client provides several methods to retrieve the content most
     kinds of Deezer objects, based on their json structure.
@@ -45,10 +48,17 @@ class Client:
         >>> import deezer
         >>> client = deezer.Client(headers={'Accept-Language': 'fr'})
 
-    :param app_id: application ID.
-    :param app_secret: application secret.
     :param access_token: user access token.
     :param headers: a dictionary of headers to be used.
+
+    .. deprecated:: 6.2.0
+
+        The following parameters will be removed in the next major version:
+
+            * **app_id**
+            * **app_secret**
+
+        They were never actively used by the package.
     """
 
     objects_types: ClassVar[dict[str, type[Resource] | None]] = {
@@ -69,10 +79,29 @@ class Client:
     base_url = "https://api.deezer.com"
 
     def __init__(
-        self, app_id=None, app_secret=None, access_token=None, headers=None, **kwargs
+        self,
+        app_id=_UNSET,
+        app_secret=_UNSET,
+        access_token=None,
+        headers=None,
+        **kwargs,
     ):
-        self.app_id = app_id
-        self.app_secret = app_secret
+        if app_id is not _UNSET:
+            warnings.warn(
+                "The 'app_id' parameter is not actually used and is deprecated. "
+                "It will be removed in the next major release.",
+                DeprecationWarning,
+                stacklevel=2,
+            )
+            self.app_id = app_id
+        if app_secret is not _UNSET:
+            warnings.warn(
+                "The 'app_secret' parameter is not actually used and is deprecated. "
+                "It will be removed in the next major release.",
+                DeprecationWarning,
+                stacklevel=2,
+            )
+            self.app_secret = app_secret
         self.access_token = access_token
         self.session = requests.Session()
 
