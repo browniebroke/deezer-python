@@ -12,7 +12,7 @@
 
 ### Documentation
 
-- Update language for python repl blocks (#1033) ([`f66dec4`](https://github.com/browniebroke/deezer-python/commit/f66dec45918ff9d0f5e8ef54665e915abca122a0))
+- Update language for python REPL blocks (#1033) ([`f66dec4`](https://github.com/browniebroke/deezer-python/commit/f66dec45918ff9d0f5e8ef54665e915abca122a0))
 
 ## v6.1.1 (2023-10-18)
 
