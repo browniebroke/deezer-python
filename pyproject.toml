@@ -68,6 +68,9 @@ keep_trailing_newline = true
 [tool.semantic_release.branches.main]
 match = "main"
 
+[tool.semantic_release.branches.stable]
+match = "(?!stable/*$)"
+
 [tool.semantic_release.branches.noop]
 match = "(?!main$)"
 prerelease = true
