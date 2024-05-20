@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v6.2.0 (2024-05-20)
+
+### Feature
+
+- Mark client `app_id` and `app_secret` parameters as deprecated (#1047) ([`999ae5f`](https://github.com/browniebroke/deezer-python/commit/999ae5f65903ce5f75f48b0a761b65f3f03e2838))
+
+### Test
+
+- Simplify mocked responses ([`dd4fa25`](https://github.com/browniebroke/deezer-python/commit/dd4fa25bd2b0fac7b12eb80abea0b8a1638d120c))
+
+### Documentation
+
+- Update language for python repl blocks (#1033) ([`f66dec4`](https://github.com/browniebroke/deezer-python/commit/f66dec45918ff9d0f5e8ef54665e915abca122a0))
+
 ## v6.1.1 (2023-10-18)
 
 ### Fix
