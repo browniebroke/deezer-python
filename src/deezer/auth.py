@@ -16,9 +16,7 @@ class DeezerQueryAuth(httpx.Auth):
     def __init__(self, access_token: str):
         self.access_token = access_token
 
-    def auth_flow(
-        self, request: httpx.Request
-    ) -> typing.Generator[httpx.Request, None, None]:
+    def auth_flow(self, request: httpx.Request) -> typing.Generator[httpx.Request, None, None]:
         """
         Add authentication query parameter to the request.
 

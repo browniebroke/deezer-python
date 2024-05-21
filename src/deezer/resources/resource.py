@@ -138,9 +138,7 @@ class Resource:
                     setattr(self, field_name, getattr(full_resource, field_name))
                     self._fields += (field_name,)
                 return getattr(self, item)
-        raise AttributeError(
-            f"'{self.__class__.__name__}' object has no attribute '{item}'"
-        )
+        raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{item}'")
 
     def _infer_missing_field(self, item: str) -> Any:
         """

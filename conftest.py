@@ -45,9 +45,5 @@ def _clean_response(response):
             response["headers"].pop(header_name, None)
     elif isinstance(response["headers"], list):
         # Tornado client stores headers as a list of 2-tuples
-        response["headers"] = [
-            (name, value)
-            for name, value in response["headers"]
-            if name not in remove_headers
-        ]
+        response["headers"] = [(name, value) for name, value in response["headers"] if name not in remove_headers]
     return response

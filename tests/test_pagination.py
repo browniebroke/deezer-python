@@ -33,9 +33,7 @@ class TestPaginatedList:
 
     def test_repr_little_results(self, client):
         results = client.search_artists("rouquine")
-        assert repr(results) == (
-            "<PaginatedList [<Artist: Rouquine>, <Artist: Rouquined>]>"
-        )
+        assert repr(results) == ("<PaginatedList [<Artist: Rouquine>, <Artist: Rouquined>]>")
 
     def test_repr_empty(self, client):
         results = client.search_artists("something very complicated without results")
