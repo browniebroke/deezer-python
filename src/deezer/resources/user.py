@@ -190,9 +190,7 @@ class User(Resource):
         :param playlist: a :class:`~deezer.Playlist` instance or its ID
         :returns: a boolean that tells if the operation was successful
         """
-        return self.delete_relation(
-            "playlists", params={"playlist_id": get_id(playlist)}
-        )
+        return self.delete_relation("playlists", params={"playlist_id": get_id(playlist)})
 
     def create_playlist(self, title: str) -> int:
         """

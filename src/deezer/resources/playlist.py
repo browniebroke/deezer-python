@@ -75,9 +75,7 @@ class Playlist(Resource):
         :returns: a boolean that tells if the operation was successful
         """
         track_ids_str = ",".join(str(tid) for tid in gen_ids(tracks))
-        return self.client.request(
-            "POST", f"playlist/{self.id}/tracks", params={"songs": track_ids_str}
-        )
+        return self.client.request("POST", f"playlist/{self.id}/tracks", params={"songs": track_ids_str})
 
     def delete_tracks(self, tracks: Iterable[int | Track]) -> bool:
         """
@@ -88,9 +86,7 @@ class Playlist(Resource):
         :returns: a boolean that tells if the operation was successful
         """
         track_ids_str = ",".join(map(str, gen_ids(tracks)))
-        return self.client.request(
-            "DELETE", f"playlist/{self.id}/tracks", params={"songs": track_ids_str}
-        )
+        return self.client.request("DELETE", f"playlist/{self.id}/tracks", params={"songs": track_ids_str})
 
     def reorder_tracks(self, order: Iterable[int | Track]) -> bool:
         """
@@ -101,6 +97,4 @@ class Playlist(Resource):
         :returns: a boolean that tells if the operation was successful
         """
         order_track_ids_str = ",".join(map(str, gen_ids(order)))
-        return self.client.request(
-            "POST", f"playlist/{self.id}/tracks", params={"order": order_track_ids_str}
-        )
+        return self.client.request("POST", f"playlist/{self.id}/tracks", params={"order": order_track_ids_str})

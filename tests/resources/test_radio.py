@@ -23,7 +23,4 @@ class TestRadio:
         assert len(tracks) == 25
         track = tracks[0]
         assert isinstance(track, deezer.Track)
-        assert (
-            repr(track)
-            == '<Track: Mozart: Piano Concerto No. 9 in E-Flat Major, K. 271 "Jeunehomme": I. Allegro>'
-        )
+        assert repr(track) == '<Track: Mozart: Piano Concerto No. 9 in E-Flat Major, K. 271 "Jeunehomme": I. Allegro>'

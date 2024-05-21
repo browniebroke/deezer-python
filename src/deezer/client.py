@@ -101,9 +101,7 @@ class Client(httpx.Client):
         :returns: instance of :class:`~deezer.Resource`
         """
         if "data" in item:
-            parsed_data = [
-                self._process_json(i, parent, paginate_list=False) for i in item["data"]
-            ]
+            parsed_data = [self._process_json(i, parent, paginate_list=False) for i in item["data"]]
             if not paginate_list:
                 return parsed_data
             item["data"] = parsed_data
@@ -204,9 +202,7 @@ class Client(httpx.Client):
         :param genre_id: the genre ID, default to `All` genre (genre_id = 0).
         :returns: a :class:`~deezer.Chart` instance.
         """
-        return self.request(
-            "GET", f"chart/{genre_id}", resource_type=Chart, resource_id=genre_id
-        )
+        return self.request("GET", f"chart/{genre_id}", resource_type=Chart, resource_id=genre_id)
 
     def get_tracks_chart(self, genre_id: int = 0) -> list[Track]:
         """
@@ -359,9 +355,7 @@ class Client(httpx.Client):
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Track <deezer.Track>` instances
         """
-        return PaginatedList(
-            client=self, base_path="user/me/recommendations/tracks", **kwargs
-        )
+        return PaginatedList(client=self, base_path="user/me/recommendations/tracks", **kwargs)
 
     def get_user_recommended_albums(self, **kwargs) -> PaginatedList[Album]:
         """
@@ -370,9 +364,7 @@ class Client(httpx.Client):
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Track <deezer.Album>` instances
         """
-        return PaginatedList(
-            client=self, base_path="user/me/recommendations/albums", **kwargs
-        )
+        return PaginatedList(client=self, base_path="user/me/recommendations/albums", **kwargs)
 
     def get_user_recommended_artists(self, **kwargs) -> PaginatedList[Artist]:
         """
@@ -381,9 +373,7 @@ class Client(httpx.Client):
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Track <deezer.Artist>` instances
         """
-        return PaginatedList(
-            client=self, base_path="user/me/recommendations/artists", **kwargs
-        )
+        return PaginatedList(client=self, base_path="user/me/recommendations/artists", **kwargs)
 
     def get_user_recommended_playlists(self, **kwargs) -> PaginatedList[Playlist]:
         """
@@ -392,9 +382,7 @@ class Client(httpx.Client):
         :returns: a :class:`PaginatedList <deezer.PaginatedList>`
                   of :class:`Track <deezer.Playlist>` instances
         """
-        return PaginatedList(
-            client=self, base_path="user/me/recommendations/playlists", **kwargs
-        )
+        return PaginatedList(client=self, base_path="user/me/recommendations/playlists", **kwargs)
 
     def get_user_flow(self, **kwargs) -> PaginatedList[Track]:
         """
@@ -552,9 +540,7 @@ class Client(httpx.Client):
         :param playlist_id: the ID of the playlist to remove.
         :return: boolean whether the operation succeeded.
         """
-        return self.request(
-            "DELETE", "user/me/playlists", params={"playlist_id": playlist_id}
-        )
+        return self.request("DELETE", "user/me/playlists", params={"playlist_id": playlist_id})
 
     def add_user_playlist(self, playlist_id: int) -> bool:
         """
@@ -563,9 +549,7 @@ class Client(httpx.Client):
         :param playlist_id: the ID of the playlist to add.
         :return: boolean whether the operation succeeded.
         """
-        return self.request(
-            "POST", "user/me/playlists", params={"playlist_id": playlist_id}
-        )
+        return self.request("POST", "user/me/playlists", params={"playlist_id": playlist_id})
 
     def create_playlist(self, playlist_name) -> int:
         """
@@ -574,9 +558,7 @@ class Client(httpx.Client):
         :param playlist_name: the name of the playlist.
         :return: the ID of the playlist that was created
         """
-        result = self.request(
-            "POST", "user/me/playlists", params={"title": playlist_name}
-        )
+        result = self.request("POST", "user/me/playlists", params={"title": playlist_name})
         # Note: the REST API call returns a dict with just the "id" key in it,
         # so we return that instead of the full Playlist object
         return result.id
@@ -607,9 +589,7 @@ class Client(httpx.Client):
         if query:
             query_parts.append(query)
         query_parts.extend(
-            f'{param_name}:"{param_value}"'
-            for param_name, param_value in advanced_params.items()
-            if param_value
+            f'{param_name}:"{param_value}"' for param_name, param_value in advanced_params.items() if param_value
         )
 
         return self._get_paginated_list(
