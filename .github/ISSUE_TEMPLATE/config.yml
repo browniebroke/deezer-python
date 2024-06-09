@@ -1,3 +1,6 @@
+# Disabling blank issues to ensure all necessary information is provided
+# Users should use the provided templates for specific issues
+# For general questions, please refer to the contact links section
 blank_issues_enabled: false
 contact_links:
   - name: Questions
