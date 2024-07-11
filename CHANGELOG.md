@@ -1,18 +1,29 @@
 # CHANGELOG
 
-## v6.2.0 (2024-05-20)
+## v7.0.0 (2024-07-11)
+
+### Refactor
+
+- Make query params more explicit ([`553df43`](https://github.com/browniebroke/deezer-python/commit/553df43847ecef875f85fb502a9e5b17eb24701d))
 
 ### Feature
 
-- Mark client `app_id` and `app_secret` parameters as deprecated (#1047) ([`999ae5f`](https://github.com/browniebroke/deezer-python/commit/999ae5f65903ce5f75f48b0a761b65f3f03e2838))
+- Add custom auth class for httpx ([`e8d1955`](https://github.com/browniebroke/deezer-python/commit/e8d19552ee393d24c230f135db81b013482c7b5e))
 
 ### Test
 
-- Simplify mocked responses ([`dd4fa25`](https://github.com/browniebroke/deezer-python/commit/dd4fa25bd2b0fac7b12eb80abea0b8a1638d120c))
+- Separate client fixtures to avoid leaking auth to non-auth ([`81f11bf`](https://github.com/browniebroke/deezer-python/commit/81f11bf22a278f8fb0d60a4ef873c5dec82c691c))
+- Simplify mocked responses (#1039) ([`6df900f`](https://github.com/browniebroke/deezer-python/commit/6df900f281f316bd0ff6c0ac4f536c50352ccda0))
+
+### Breaking
+
+- Migrate from requests to httpx ([`06e20d8`](https://github.com/browniebroke/deezer-python/commit/06e20d826f7298680f36090f10f6af012732f5fc))
+- Remove unused app_id and app_secret client parameters (#1034) ([`c1bbf37`](https://github.com/browniebroke/deezer-python/commit/c1bbf37b3adf4783518fc72b8a12dd8cdf4435f3))
 
 ### Documentation
 
-- Update language for python REPL blocks (#1033) ([`f66dec4`](https://github.com/browniebroke/deezer-python/commit/f66dec45918ff9d0f5e8ef54665e915abca122a0))
+- Update language for python repl blocks ([`09b7c87`](https://github.com/browniebroke/deezer-python/commit/09b7c873389edcae81f3fc67f1ed6329eba36da6))
+- Update language for python repl blocks (#1033) ([`f66dec4`](https://github.com/browniebroke/deezer-python/commit/f66dec45918ff9d0f5e8ef54665e915abca122a0))
 
 ## v6.1.1 (2023-10-18)
 
