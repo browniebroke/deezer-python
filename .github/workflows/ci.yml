@@ -56,7 +56,7 @@ jobs:
         run: pipx install poetry
       - uses: deadsnakes/action@v3.1.0
         with:
-          python-version: "3.13.0b3"
+          python-version: "3.13-dev"
           nogil: true
       - name: Install Dependencies
         run: poetry install --without docs
