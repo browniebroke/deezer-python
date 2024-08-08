@@ -66,6 +66,7 @@ jobs:
     concurrency: release
     permissions:
       id-token: write
+      attestations: write
       contents: write
 
     steps:
@@ -88,6 +89,12 @@ jobs:
         if: ${{ github.ref_name == 'main' || startsWith(github.ref_name, 'stable/') }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Attest build build provenance
+        uses: actions/attest-build-provenance@v1
+        if: steps.release.outputs.released == 'true'
+        with:
+          subject-path: "dist/*"
+
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         if: steps.release.outputs.released == 'true'
