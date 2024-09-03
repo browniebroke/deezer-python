@@ -73,7 +73,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v6.0.1
+      - uses: wagoid/commitlint-github-action@v6.1.1
 
   release:
     needs:
@@ -85,6 +85,7 @@ jobs:
     concurrency: release
     permissions:
       id-token: write
+      attestations: write
       contents: write
 
     steps:
@@ -95,18 +96,25 @@ jobs:
 
       # Do a dry run of PSR
       - name: Test release
-        uses: python-semantic-release/python-semantic-release@v9.8.5
+        uses: python-semantic-release/python-semantic-release@v9.8.8
         if: ${{ github.ref_name != 'main' && !startsWith(github.ref_name, 'stable/') }}
         with:
           root_options: --noop
 
       # On main/stable branch: actual PSR + upload to PyPI & GitHub
       - name: Release
-        uses: python-semantic-release/python-semantic-release@v9.8.5
+        uses: python-semantic-release/python-semantic-release@v9.8.8
         id: release
         if: ${{ github.ref_name == 'main' || startsWith(github.ref_name, 'stable/') }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v1
+        if: steps.release.outputs.released == 'true'
+        with:
+          subject-path: "dist/*"
+
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         if: steps.release.outputs.released == 'true'
