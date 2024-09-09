@@ -1,23 +1,27 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = [ "poetry-core>=1" ]
+
 [tool.poetry]
 name = "deezer-python"
 version = "7.0.0"
 description = "A friendly wrapper library for the Deezer API"
-authors = ["Bruno Alla <alla.brunoo@gmail.com>"]
+authors = [ "Bruno Alla <alla.brunoo@gmail.com>" ]
 license = "MIT"
 readme = "README.md"
-keywords = ["deezer", "sdk", "client", "requests"]
+keywords = [ "deezer", "sdk", "client", "requests" ]
 repository = "https://github.com/browniebroke/deezer-python"
 documentation = "https://deezer-python.readthedocs.io"
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Topic :: Software Development :: Libraries",
-    "Programming Language :: Python :: 3.12",
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries",
+  "Programming Language :: Python :: 3.12",
 ]
 packages = [
-    { include = "deezer", from = "src" },
+  { include = "deezer", from = "src" },
 ]
 
 [tool.poetry.urls]
@@ -49,18 +53,83 @@ pytest-vcr = "^1.0"
 vcrpy = "^6.0.0"
 deezer-oauth-cli = "^1.0.0"
 
+[tool.ruff]
+target-version = "py38"
+line-length = 120
+
+lint.select = [
+  "B",   # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "D",   # flake8-docstrings
+  "E",   # pycodestyle
+  "F",   # pyflake
+  "I",   # isort
+  "RUF", # ruff specific
+  "S",   # flake8-bandit
+  "UP",  # pyupgrade
+  "W",   # pycodestyle
+]
+lint.ignore = [
+  "D100", # Missing docstring in public module
+  "D104", # Missing docstring in public package
+  "D107", # Missing docstring in `__init__`
+  "D203", # 1 blank line required before class docstring
+  "D212", # Multi-line docstring summary should start at the first line
+  "D401", # First line of docstring should be in imperative mood
+]
+lint.per-file-ignores."conftest.py" = [ "D100" ]
+lint.per-file-ignores."docs/conf.py" = [ "D100" ]
+lint.per-file-ignores."setup.py" = [ "D100" ]
+lint.per-file-ignores."tests/**/*" = [
+  "D100",
+  "D101",
+  "D102",
+  "D103",
+  "D104",
+  "S101",
+]
+lint.isort.known-first-party = [ "deezer" ]
+
+[tool.pytest.ini_options]
+addopts = "-v -Wdefault --cov=deezer"
+pythonpath = [ "src" ]
+
+[tool.coverage.run]
+branch = true
+source = [ "deezer" ]
+
+[tool.coverage.report]
+ignore_errors = true
+exclude_lines = [
+  "pragma: no cover",
+  "@overload",
+  "if TYPE_CHECKING",
+  "raise NotImplementedError",
+]
+
+[tool.mypy]
+# suppress errors about unsatisfied imports
+ignore_missing_imports = true
+
+no_implicit_optional = true
+
+# ensure all execution paths are returning
+warn_no_return = true
+
+show_error_codes = true
+
 [tool.semantic_release]
-version_toml = ["pyproject.toml:tool.poetry.version"]
+version_toml = [ "pyproject.toml:tool.poetry.version" ]
 version_variables = [
-    "src/deezer/__init__.py:__version__",
+  "src/deezer/__init__.py:__version__",
 ]
 build_command = "pip install poetry && poetry build"
 
 [tool.semantic_release.changelog]
 exclude_commit_patterns = [
-    "chore.*",
-    "ci.*",
-    "Merge pull request .*",
+  "chore.*",
+  "ci.*",
+  "Merge pull request .*",
 ]
 
 [tool.semantic_release.changelog.environment]
@@ -75,77 +144,3 @@ match = "(?!stable/*$)"
 [tool.semantic_release.branches.noop]
 match = "(?!main$)"
 prerelease = true
-
-[tool.pytest.ini_options]
-addopts = "-v -Wdefault --cov=deezer"
-pythonpath = ["src"]
-
-[tool.coverage.run]
-branch = true
-source = ["deezer"]
-
-[tool.coverage.report]
-ignore_errors = true
-exclude_lines = [
-    "pragma: no cover",
-    "@overload",
-    "if TYPE_CHECKING",
-    "raise NotImplementedError",
-]
-
-[tool.ruff]
-target-version = "py38"
-line-length = 120
-
-[tool.ruff.lint]
-ignore = [
-    "D203", # 1 blank line required before class docstring
-    "D212", # Multi-line docstring summary should start at the first line
-    "D100", # Missing docstring in public module
-    "D104", # Missing docstring in public package
-    "D107", # Missing docstring in `__init__`
-    "D401", # First line of docstring should be in imperative mood
-]
-select = [
-    "B",   # flake8-bugbear
-    "D",   # flake8-docstrings
-    "C4",  # flake8-comprehensions
-    "S",   # flake8-bandit
-    "F",   # pyflake
-    "E",   # pycodestyle
-    "W",   # pycodestyle
-    "UP",  # pyupgrade
-    "I",   # isort
-    "RUF", # ruff specific
-]
-
-[tool.ruff.lint.per-file-ignores]
-"tests/**/*" = [
-    "D100",
-    "D101",
-    "D102",
-    "D103",
-    "D104",
-    "S101",
-]
-"setup.py" = ["D100"]
-"conftest.py" = ["D100"]
-"docs/conf.py" = ["D100"]
-
-[tool.ruff.lint.isort]
-known-first-party = ["deezer"]
-
-[tool.mypy]
-# suppress errors about unsatisfied imports
-ignore_missing_imports = true
-
-no_implicit_optional = true
-
-# ensure all execution paths are returning
-warn_no_return = true
-
-show_error_codes = true
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
