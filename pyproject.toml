@@ -31,7 +31,7 @@ packages = [
 "Mastodon" = "https://fosstodon.org/@browniebroke"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 httpx = ">=0.23.0"
 
 [tool.poetry.group.docs]
@@ -54,7 +54,7 @@ vcrpy = "^6.0.0"
 deezer-oauth-cli = "^1.0.0"
 
 [tool.ruff]
-target-version = "py38"
+target-version = "py39"
 line-length = 120
 
 lint.select = [
