@@ -13,6 +13,11 @@
 import os
 import sys
 from datetime import date
+from pathlib import Path
+from typing import Any
+
+from sphinx.application import Sphinx
+from sphinx.ext import apidoc
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -30,13 +35,16 @@ import deezer  # E402 isort:skip
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "myst_parser",
+    "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
+    "sphinx.ext.viewcode",
     "sphinx.ext.coverage",
     "sphinx.ext.doctest",
     "sphinx.ext.extlinks",
     "sphinx.ext.todo",
-    "myst_parser",
 ]
+napoleon_google_docstring = False
 
 # The suffix of source filenames.
 source_suffix = [".rst", ".md"]
@@ -199,3 +207,27 @@ extlinks = {
 autodoc_member_order = "bysource"
 
 autodoc_typehints = "description"
+
+
+# -- Automatically run sphinx-apidoc -----------------------------------------
+
+
+def run_apidoc(_: Any) -> None:
+    """Run sphinx-apidoc."""
+    docs_path = Path(__file__).parent
+    module_path = docs_path.parent / "src" / "deezer"
+
+    apidoc.main(
+        [
+            "--force",
+            "--module-first",
+            "-o",
+            docs_path.as_posix(),
+            module_path.as_posix(),
+        ]
+    )
+
+
+def setup(app: Sphinx) -> None:
+    """Setup sphinx."""
+    app.connect("builder-inited", run_apidoc)

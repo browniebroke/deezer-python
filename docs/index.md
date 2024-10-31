@@ -31,3 +31,10 @@ api_reference/toc
 changelog
 contributing
 ```
+
+```{toctree}
+:caption: Generated API Reference
+:maxdepth: 2
+
+deezer
+```
