@@ -1,16 +1,22 @@
 # CHANGELOG
 
+## v7.1.0 (2024-10-31)
+
+### Features
+
+- Drop support for python 3.8 (#1171) ([`ee076f0`](https://github.com/browniebroke/deezer-python/commit/ee076f020cf18506772603d3f9afef04e3d693a3))
+
 ## v7.0.0 (2024-07-11)
 
-### Refactor
+### Refactoring
 
 - Make query params more explicit ([`553df43`](https://github.com/browniebroke/deezer-python/commit/553df43847ecef875f85fb502a9e5b17eb24701d))
 
-### Feature
+### Features
 
 - Add custom auth class for httpx ([`e8d1955`](https://github.com/browniebroke/deezer-python/commit/e8d19552ee393d24c230f135db81b013482c7b5e))
 
-### Test
+### Testing
 
 - Separate client fixtures to avoid leaking auth to non-auth ([`81f11bf`](https://github.com/browniebroke/deezer-python/commit/81f11bf22a278f8fb0d60a4ef873c5dec82c691c))
 - Simplify mocked responses (#1039) ([`6df900f`](https://github.com/browniebroke/deezer-python/commit/6df900f281f316bd0ff6c0ac4f536c50352ccda0))
@@ -27,13 +33,13 @@
 
 ## v6.1.1 (2023-10-18)
 
-### Fix
+### Bug fixes
 
 - Potential unset response attribute on httperror ([`82a47be`](https://github.com/browniebroke/deezer-python/commit/82a47be50f5609a80f0f48a53d01971f7dce362d))
 
 ## v6.1.0 (2023-08-07)
 
-### Feature
+### Features
 
 - Add official support for python 3.12 (#791) ([`2eead31`](https://github.com/browniebroke/deezer-python/commit/2eead316d78128c85d365b664c2e3a926c65913a))
 
