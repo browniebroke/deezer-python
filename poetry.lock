@@ -324,13 +324,13 @@ files = [
 
 [[package]]
 name = "environs"
-version = "11.0.0"
+version = "11.1.0"
 description = "simplified environment variable parsing"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "environs-11.0.0-py3-none-any.whl", hash = "sha256:e0bcfd41c718c07a7db422f9109e490746450da38793fe4ee197f397b9343435"},
-    {file = "environs-11.0.0.tar.gz", hash = "sha256:069727a8f73d8ba8d033d3cd95c0da231d44f38f1da773bf076cef168d312ee8"},
+    {file = "environs-11.1.0-py3-none-any.whl", hash = "sha256:64a95eb490370ea042c761203ff3b8c4b432f799dc20d623de9b00fae21efa16"},
+    {file = "environs-11.1.0.tar.gz", hash = "sha256:8035fe255de3a095156ba79a1b76ff576ce60367817fe20c20bbe67869c8c7b2"},
 ]
 
 [package.dependencies]
@@ -338,7 +338,7 @@ marshmallow = ">=3.13.0"
 python-dotenv = "*"
 
 [package.extras]
-dev = ["environs[tests]", "pre-commit (>=3.5,<4.0)", "tox"]
+dev = ["environs[tests]", "pre-commit (>=3.5,<5.0)", "tox"]
 django = ["dj-database-url", "dj-email-url", "django-cache-url"]
 tests = ["environs[django]", "pytest"]
 
