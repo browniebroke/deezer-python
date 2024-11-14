@@ -324,13 +324,13 @@ files = [
 
 [[package]]
 name = "environs"
-version = "11.1.0"
+version = "11.2.0"
 description = "simplified environment variable parsing"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "environs-11.1.0-py3-none-any.whl", hash = "sha256:64a95eb490370ea042c761203ff3b8c4b432f799dc20d623de9b00fae21efa16"},
-    {file = "environs-11.1.0.tar.gz", hash = "sha256:8035fe255de3a095156ba79a1b76ff576ce60367817fe20c20bbe67869c8c7b2"},
+    {file = "environs-11.2.0-py3-none-any.whl", hash = "sha256:536fc3572fb32b67896bdf4a9fb77eceeeca85f873123268e3a035804fbff0e3"},
+    {file = "environs-11.2.0.tar.gz", hash = "sha256:87c5759dad117ebd36d8d10a24caf13ec1056b6cd42343a758b08ac6b9195be0"},
 ]
 
 [package.dependencies]
