@@ -120,7 +120,7 @@ class Client(httpx.Client):
 
         if "type" in result and result["type"] in self.objects_types:
             object_class = self.objects_types[result["type"]]
-        elif "type" in result or not resource_type and "id" in result:
+        elif "type" in result or (not resource_type and "id" in result):
             # in case any new types are introduced by the API
             object_class = Resource
         elif resource_type:
