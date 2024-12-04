@@ -40,6 +40,7 @@ class TestArtist:
         track = tracks[0]
         assert isinstance(track, deezer.Track)
         assert repr(track) == "<Track: One More Time>"
+        assert any(track_.artist.name != daft_punk.name for track_ in tracks)
 
     def test_get_related(self, daft_punk):
         related_artists = daft_punk.get_related()

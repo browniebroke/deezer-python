@@ -57,7 +57,8 @@ class Artist(Resource):
 
         :returns: list of :class:`Track <deezer.Track>` instances
         """
-        return self.get_relation("radio", **kwargs)
+        # radio returns tracks from different artists -> no fwd parent
+        return self.get_relation("radio", fwd_parent=False, **kwargs)
 
     def get_albums(self, **kwargs) -> PaginatedList[Album]:
         """
