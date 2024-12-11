@@ -61,6 +61,7 @@ class Resource:
         relation: str,
         resource_type: type[Resource] | None = None,  # type: ignore[valid-type]
         params: dict | None = None,
+        fwd_parent: bool = True,
     ):
         """
         Generic method to load the relation from any resource.
@@ -73,7 +74,7 @@ class Resource:
         return self.client.request(
             "GET",
             f"{self.type}/{self.id}/{relation}",
-            parent=self,
+            parent=self if fwd_parent else None,
             resource_type=resource_type,
             params=params,
         )
