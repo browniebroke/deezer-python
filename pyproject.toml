@@ -1,7 +1,7 @@
 [build-system]
-build-backend = "pdm.backend"
+build-backend = "setuptools.build_meta"
 
-requires = [ "pdm-backend" ]
+requires = [ "setuptools" ]
 
 [project]
 name = "deezer-python"
