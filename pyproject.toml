@@ -1,57 +1,66 @@
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = [ "poetry-core>=1" ]
+build-backend = "setuptools.build_meta"
 
-[tool.poetry]
+requires = [ "setuptools" ]
+
+[project]
 name = "deezer-python"
 version = "7.1.0"
 description = "A friendly wrapper library for the Deezer API"
-authors = [ "Bruno Alla <alla.brunoo@gmail.com>" ]
-license = "MIT"
 readme = "README.md"
-keywords = [ "deezer", "sdk", "client", "requests" ]
-repository = "https://github.com/browniebroke/deezer-python"
-documentation = "https://deezer-python.readthedocs.io"
+keywords = [
+  "client",
+  "deezer",
+  "requests",
+  "sdk",
+]
+license = { text = "MIT" }
+authors = [
+  { name = "Bruno Alla", email = "alla.brunoo@gmail.com" },
+]
+requires-python = ">=3.9"
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
   "Natural Language :: English",
   "Operating System :: OS Independent",
-  "Topic :: Software Development :: Libraries",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries",
 ]
-packages = [
-  { include = "deezer", from = "src" },
+
+dependencies = [
+  "httpx>=0.23",
+]
+urls."Bug Tracker" = "https://github.com/browniebroke/deezer-python/issues"
+urls.Changelog = "https://deezer-python.readthedocs.io/en/latest/changelog.html"
+urls.documentation = "https://deezer-python.readthedocs.io"
+urls.Mastodon = "https://fosstodon.org/@browniebroke"
+urls.repository = "https://github.com/browniebroke/deezer-python"
+urls.Twitter = "https://twitter.com/_BrunoAlla"
+
+[dependency-groups]
+dev = [
+  "coverage>=7,<8",
+  "deezer-oauth-cli>=1,<2",
+  "environs>=11,<12",
+  "pytest>=8,<9",
+  "pytest-cov>=6,<7",
+  "pytest-mock>=3.6,<4",
+  "pytest-vcr>=1,<2",
+  "vcrpy>=6,<7",
 ]
 
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/browniebroke/deezer-python/issues"
-"Changelog" = "https://deezer-python.readthedocs.io/en/latest/changelog.html"
-"Twitter" = "https://twitter.com/_BrunoAlla"
-"Mastodon" = "https://fosstodon.org/@browniebroke"
-
-[tool.poetry.dependencies]
-python = "^3.9"
-httpx = ">=0.23.0"
-
-[tool.poetry.group.docs]
-optional = true
-
-[tool.poetry.group.docs.dependencies]
-myst-parser = { version = ">=0.16", python = ">=3.11" }
-sphinx = { version = ">=4.0", python = ">=3.11" }
-furo = { version = ">=2023.5.20", python = ">=3.11" }
-sphinx-autobuild = { version = ">=2024.0.0", python = ">=3.11" }
-
-[tool.poetry.group.dev.dependencies]
-coverage = "^7.0"
-environs = "^11.0.0"
-pytest = "^8.0.0"
-pytest-cov = "^6.0.0"
-pytest-mock = "^3.6"
-pytest-vcr = "^1.0"
-vcrpy = "^6.0.0"
-deezer-oauth-cli = "^1.0.0"
+docs = [
+  "furo>=2023.5.20; python_version>='3.11'",
+  "myst-parser>=0.16; python_version>='3.11'",
+  "sphinx>=4; python_version>='3.11'",
+  "sphinx-autobuild>=2024; python_version>='3.11'",
+]
 
 [tool.ruff]
 target-version = "py39"
@@ -119,11 +128,16 @@ warn_no_return = true
 show_error_codes = true
 
 [tool.semantic_release]
-version_toml = [ "pyproject.toml:tool.poetry.version" ]
+version_toml = [ "pyproject.toml:project.version" ]
 version_variables = [
   "src/deezer/__init__.py:__version__",
 ]
-build_command = "pip install poetry && poetry build"
+build_command = """
+pip install uv
+uv lock
+git add uv.lock
+uv build
+"""
 
 [tool.semantic_release.changelog]
 exclude_commit_patterns = [
