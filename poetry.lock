@@ -297,19 +297,19 @@ toml = ["tomli"]
 
 [[package]]
 name = "deezer-oauth-cli"
-version = "1.5.0"
+version = "1.4.0"
 description = "A small CLI to quickly obtain an API token for Deezer API."
 optional = false
-python-versions = ">=3.9"
+python-versions = "<4.0,>=3.9"
 files = [
-    {file = "deezer_oauth_cli-1.5.0-py3-none-any.whl", hash = "sha256:4fc9cd503d7d9f7308079bf4e736bc91f2df5f058747581919147d7bd4f23577"},
-    {file = "deezer_oauth_cli-1.5.0.tar.gz", hash = "sha256:285953c6d22f81a587f5bf63370d1135f2f5d5f8bd149921665f210fc6bba23a"},
+    {file = "deezer_oauth_cli-1.4.0-py3-none-any.whl", hash = "sha256:122cb57a98373d60400bc50928c6798ab0f1a637e9f0ea7077b2b05fef6c88e6"},
+    {file = "deezer_oauth_cli-1.4.0.tar.gz", hash = "sha256:af75391508e25822bb30f5a8816fcb5dc05e81dcba45681bac27cf17e48b63a7"},
 ]
 
 [package.dependencies]
-httpx = ">=0.27,<0.28"
+httpx = ">=0.27.0"
 rich = ">=10"
-typer = {version = ">=0.12", extras = ["all"]}
+typer = {version = ">=0.12.0", extras = ["all"]}
 
 [[package]]
 name = "docutils"
@@ -407,13 +407,13 @@ trio = ["trio (>=0.22.0,<1.0)"]
 
 [[package]]
 name = "httpx"
-version = "0.27.2"
+version = "0.28.1"
 description = "The next generation HTTP client."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "httpx-0.27.2-py3-none-any.whl", hash = "sha256:7bb2708e112d8fdd7829cd4243970f0c223274051cb35ee80c03301ee29a3df0"},
-    {file = "httpx-0.27.2.tar.gz", hash = "sha256:f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"},
+    {file = "httpx-0.28.1-py3-none-any.whl", hash = "sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"},
+    {file = "httpx-0.28.1.tar.gz", hash = "sha256:75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"},
 ]
 
 [package.dependencies]
@@ -421,7 +421,6 @@ anyio = "*"
 certifi = "*"
 httpcore = "==1.*"
 idna = "*"
-sniffio = "*"
 
 [package.extras]
 brotli = ["brotli", "brotlicffi"]
