@@ -45,10 +45,10 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
    $ git clone git@github.com:your_name_here/deezer-python.git
    ```
 
-3. Install the dependencies with [Poetry](https://python-poetry.org)
+3. Install the dependencies with [uv](https://docs.astral.sh/uv/)
 
    ```shell
-   $ poetry install -E docs
+   $ uv sync -E docs
    ```
 
 4. Create a branch for local development:
@@ -62,7 +62,7 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 5. When you're done making changes, check that your changes pass our tests:
 
    ```shell
-   $ poetry run pytest
+   $ uv run pytest
    ```
 
 6. Linting is done through [pre-commit](https://pre-commit.com). Provided you have the tool installed globally, you can run them all as one-off:
@@ -91,7 +91,7 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 
 ## Obtain an API token
 
-If you want to work on a feature that requires authentication, you'll need to obtain an API token to perform authenticated requests. You can do so using the [`deezer-oauth-cli`](https://pypi.org/project/deezer-oauth-cli/) package. It's a development dependency, so if you ran `poetry install`, you should already have it.
+If you want to work on a feature that requires authentication, you'll need to obtain an API token to perform authenticated requests. You can do so using the [`deezer-oauth-cli`](https://pypi.org/project/deezer-oauth-cli/) package. It's a development dependency, so if you ran `uv sync`, you should already have it.
 
 You'll need to have a dedicated app in the [Deezer developer portal](https://developers.deezer.com/myapps), create one with the following redirect URL after authentication: `http://localhost:8080/oauth/return`. Once created, grab the application ID and the secret key and call the CLI tool with them:
 
