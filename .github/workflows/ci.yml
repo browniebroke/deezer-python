@@ -33,8 +33,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: "true"
       - run: uv sync --no-python-downloads
         shell: bash
       - run: uv run pytest --cov-report=xml
