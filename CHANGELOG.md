@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v7.1.1 (2024-12-20)
+
+### Documentation
+
+- Add tdambrin as a contributor for bug (#1232) ([`125ff85`](https://github.com/browniebroke/deezer-python/commit/125ff859c649a89a96045a4bc0661afde89fd88f))
+
+### Bug fixes
+
+- No forward parent when getting artist radio (#1211) ([`6807997`](https://github.com/browniebroke/deezer-python/commit/6807997aa8848a0aeffba23cdac70e11fcf0eef7))
+
 ## v7.1.0 (2024-10-31)
 
 ### Features
@@ -11,20 +21,17 @@
 ### Refactoring
 
 - Make query params more explicit ([`553df43`](https://github.com/browniebroke/deezer-python/commit/553df43847ecef875f85fb502a9e5b17eb24701d))
+- Remove unused app_id and app_secret client parameters (#1034) ([`c1bbf37`](https://github.com/browniebroke/deezer-python/commit/c1bbf37b3adf4783518fc72b8a12dd8cdf4435f3))
 
 ### Features
 
 - Add custom auth class for httpx ([`e8d1955`](https://github.com/browniebroke/deezer-python/commit/e8d19552ee393d24c230f135db81b013482c7b5e))
+- Migrate from requests to httpx ([`06e20d8`](https://github.com/browniebroke/deezer-python/commit/06e20d826f7298680f36090f10f6af012732f5fc))
 
 ### Testing
 
 - Separate client fixtures to avoid leaking auth to non-auth ([`81f11bf`](https://github.com/browniebroke/deezer-python/commit/81f11bf22a278f8fb0d60a4ef873c5dec82c691c))
 - Simplify mocked responses (#1039) ([`6df900f`](https://github.com/browniebroke/deezer-python/commit/6df900f281f316bd0ff6c0ac4f536c50352ccda0))
-
-### Breaking
-
-- Migrate from requests to httpx ([`06e20d8`](https://github.com/browniebroke/deezer-python/commit/06e20d826f7298680f36090f10f6af012732f5fc))
-- Remove unused app_id and app_secret client parameters (#1034) ([`c1bbf37`](https://github.com/browniebroke/deezer-python/commit/c1bbf37b3adf4783518fc72b8a12dd8cdf4435f3))
 
 ### Documentation
 
