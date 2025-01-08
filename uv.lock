@@ -289,7 +289,7 @@ requires-dist = [{ name = "httpx", specifier = ">=0.23" }]
 dev = [
     { name = "coverage", specifier = ">=7,<8" },
     { name = "deezer-oauth-cli", specifier = ">=1,<2" },
-    { name = "environs", specifier = ">=12,<13" },
+    { name = "environs", specifier = ">=14,<15" },
     { name = "pytest", specifier = ">=8,<9" },
     { name = "pytest-cov", specifier = ">=6,<7" },
     { name = "pytest-mock", specifier = ">=3.6,<4" },
@@ -314,15 +314,16 @@ wheels = [
 
 [[package]]
 name = "environs"
-version = "12.0.0"
+version = "14.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "marshmallow" },
     { name = "python-dotenv" },
+    { name = "typing-extensions", marker = "python_full_version < '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/52/97/d711048c5f277de3a45077fc35764c7d78ebb6670d8d8714ccc7c475e24b/environs-12.0.0.tar.gz", hash = "sha256:6150ddeb05562a80cc789b308c650d33b98a5f9c3f4c63d9ed465c433f1cb9e2", size = 28245 }
+sdist = { url = "https://files.pythonhosted.org/packages/e3/f7/274da454859d81460a0fc17251926084f7a020b26425d9bab3bdb54d16cd/environs-14.0.0.tar.gz", hash = "sha256:02c50088c459a2b21d6530cacd173c7528c38a723aae2791a863266ca41d9eeb", size = 30291 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3f/16/23e5b8fe9d3b8de33713d0b3ad478d0eafd3912051fad358a5f5f697cbb9/environs-12.0.0-py3-none-any.whl", hash = "sha256:152068ba62185b99d87df5f6d6044c0e533261777119037e718c1397fc7d697f", size = 13148 },
+    { url = "https://files.pythonhosted.org/packages/4b/34/babb396d0907c894ab8c451b87c55d042caa6c17f8a1e236c9b8db251264/environs-14.0.0-py3-none-any.whl", hash = "sha256:7b19816c2766b683a40946dc030fdee97eb108751ea1789a0850e93ee4aa1d6f", size = 15180 },
 ]
 
 [[package]]
