@@ -31,7 +31,7 @@ class TestEpisode:
         )
         assert episode.link == "https://www.deezer.com/episode/343457312"
         assert episode.share == (
-            "https://www.deezer.com/episode/343457312?utm_source=deezer" "&utm_content=episode-343457312&utm_medium=web"
+            "https://www.deezer.com/episode/343457312?utm_source=deezer&utm_content=episode-343457312&utm_medium=web"
         )
 
     def test_access_non_inferable_field(self, client):
