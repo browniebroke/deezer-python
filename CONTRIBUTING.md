@@ -95,11 +95,11 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 >
 > To obtain an **API token**, you first need to register your application at the [Deezer Developer Portal](https://developers.deezer.com/myapps). Unfortunately, **at the moment, it is not possible to register a new application via the Deezer Developer Portal.**
 >
-> The portal currently displays the message:  
+> The portal currently displays the message:
 > **"We're not accepting new application creation at this time. Please check again later."**
 >
 > It is not possible to obtain a token unless you have already registered your application and have both **APP_ID** and **APP_SECRET**.
- 
+
 If you want to work on a feature that requires authentication, you'll need to obtain an API token to perform authenticated requests. You can do so using the [`deezer-oauth-cli`](https://pypi.org/project/deezer-oauth-cli/) package. It's a development dependency, so if you ran `uv sync`, you should already have it.
 
 You'll need to have a dedicated app in the [Deezer developer portal](https://developers.deezer.com/myapps), create one with the following redirect URL after authentication: `http://localhost:8080/oauth/return`. Once created, grab the application ID and the secret key and call the CLI tool with them:
