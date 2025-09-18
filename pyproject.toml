@@ -97,6 +97,9 @@ lint.per-file-ignores."tests/**/*" = [
 ]
 lint.isort.known-first-party = [ "deezer" ]
 
+[tool.pyproject-fmt]
+max_supported_python = "3.14"
+
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=deezer"
 pythonpath = [ "src" ]
