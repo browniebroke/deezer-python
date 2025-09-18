@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v7.2.0 (2025-09-18)
+
+### Features
+
+- Add support for python 3.14 ([`81adb2e`](https://github.com/browniebroke/deezer-python/commit/81adb2ebe81cbfe7344ebf415572e48f14b69ae0))
+- Drop support for python 3.9 ([`cd837d2`](https://github.com/browniebroke/deezer-python/commit/cd837d2ce61a51d34c49b86db0dc84f205e742b2))
+
 ## v7.1.2 (2025-08-25)
 
 ### Bug fixes
