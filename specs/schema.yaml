@@ -13,24 +13,13 @@ paths:
       parameters:
         - name: user_id
           in: path
-          required: false
+          required: true
           schema:
             type: integer
           description: If omitted or 'me' used with OAuth, returns the current authenticated user
       security:
-        - deezer_oauth: [basic_access]
-      responses:
-        "200":
-          description: User object
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/User"
-  /user/me:
-    get:
-      summary: Get current user information
-      security:
-        - deezer_oauth: [basic_access]
+        - deezer_oauth:
+            - basic_access
       responses:
         "200":
           description: User object
