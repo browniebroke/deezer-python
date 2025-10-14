@@ -1,0 +1,120 @@
+openapi: 3.1.0
+info:
+  title: Deezer API
+  description: |
+    Best-effort OpenAPI 3.0 specification derived from the deezer-python client
+    (https://deezer-python.readthedocs.io and https://github.com/browniebroke/deezer-python).
+    Validate against live API and official docs for production use.
+  version: "1.0.0"
+servers:
+  - url: https://api.deezer.com
+    description: Deezer public API base URL
+paths:
+  /user/{user_id}:
+    get:
+      summary: Get user information
+      parameters:
+        - name: user_id
+          in: path
+          required: false
+          schema:
+            type: integer
+          description: If omitted or 'me' used with OAuth, returns the current authenticated user
+      security:
+        - deezer_oauth: [basic_access]
+      responses:
+        "200":
+          description: User object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+  /user/me:
+    get:
+      summary: Get current user information
+      security:
+        - deezer_oauth: [basic_access]
+      responses:
+        "200":
+          description: User object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+components:
+  securitySchemes:
+    deezer_oauth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://connect.deezer.com/oauth/auth.php
+          tokenUrl: https://connect.deezer.com/oauth/access_token.php
+          scopes:
+            basic_access: "Access users basic information"
+            email: "Get the user's email"
+            offline_access: "Access user data any time"
+            manage_library: "Modify user's library (favorites)"
+            manage_community: "Manage users' friends"
+            delete_library: "Delete library items"
+            listening_history: "Allow the application to access the user's listening history"
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The user's Deezer ID
+        name:
+          type: string
+          description: The user's Deezer nickname
+        lastname:
+          type: string
+        firstname:
+          type: string
+        email:
+          type: string
+        status:
+          type: integer
+        birthday:
+          type: string
+          format: date
+        inscription_date:
+          type: string
+          format: date
+        gender:
+          type: string
+          enum:
+            - "F"
+            - "M"
+        link:
+          type: string
+          format: uri
+          readOnly: true
+        picture:
+          type: string
+          format: uri
+          readOnly: true
+        picture_small:
+          type: string
+          format: uri
+          readOnly: true
+        picture_medium:
+          type: string
+          format: uri
+          readOnly: true
+        picture_big:
+          type: string
+          format: uri
+          readOnly: true
+        picture_xl:
+          type: string
+          format: uri
+          readOnly: true
+        country:
+          type: string
+        lang:
+          type: string
+        is_kid:
+          type: boolean
+        explicit_content_level:
+          type: string
