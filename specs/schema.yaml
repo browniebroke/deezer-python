@@ -1,10 +1,7 @@
 openapi: 3.1.0
 info:
   title: Deezer API
-  description: |
-    Best-effort OpenAPI 3.0 specification derived from the deezer-python client
-    (https://deezer-python.readthedocs.io and https://github.com/browniebroke/deezer-python).
-    Validate against live API and official docs for production use.
+  description: OpenAPI 3.0 specification for the Deezer API
   version: "1.0.0"
 servers:
   - url: https://api.deezer.com
