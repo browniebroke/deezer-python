@@ -52,6 +52,7 @@ dev = [
   "pytest-cov>=7,<8",
   "pytest-mock>=3.6,<4",
   "pytest-vcr>=1,<2",
+  "ty>=0.0.6",
   "vcrpy>=8,<9",
 ]
 
@@ -117,17 +118,6 @@ exclude_lines = [
   "if TYPE_CHECKING",
   "raise NotImplementedError",
 ]
-
-[tool.mypy]
-# suppress errors about unsatisfied imports
-ignore_missing_imports = true
-
-no_implicit_optional = true
-
-# ensure all execution paths are returning
-warn_no_return = true
-
-show_error_codes = true
 
 [tool.semantic_release]
 version_toml = [ "pyproject.toml:project.version" ]
