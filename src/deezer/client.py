@@ -132,7 +132,7 @@ class Client(httpx.Client):
         assert object_class is not None  # noqa S101
         return object_class(self, result)
 
-    def request(
+    def request(  # ty: ignore[invalid-method-override]
         self,
         method: str,
         path: str,
