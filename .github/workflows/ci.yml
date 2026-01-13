@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ty:
+  type-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -60,7 +60,7 @@ jobs:
 
   release:
     needs:
-      - ty
+      - type-check
       - test
       - commitlint
 
