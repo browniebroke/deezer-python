@@ -106,10 +106,6 @@ max_supported_python = "3.14"
 addopts = "-v -Wdefault --cov=deezer"
 pythonpath = [ "src" ]
 
-[tool.coverage.run]
-branch = true
-source = [ "deezer" ]
-
 [tool.coverage.report]
 ignore_errors = true
 exclude_lines = [
@@ -118,6 +114,10 @@ exclude_lines = [
   "if TYPE_CHECKING",
   "raise NotImplementedError",
 ]
+
+[tool.coverage.run]
+branch = true
+source = [ "deezer" ]
 
 [tool.semantic_release]
 version_toml = [ "pyproject.toml:project.version" ]
@@ -131,6 +131,15 @@ git add uv.lock
 uv build
 """
 
+[tool.semantic_release.branches.main]
+match = "main"
+
+[tool.semantic_release.branches.noop]
+match = "(?!main$)"
+prerelease = true
+[tool.semantic_release.branches.stable]
+match = "(?!stable/*$)"
+
 [tool.semantic_release.changelog]
 exclude_commit_patterns = [
   "chore.*",
@@ -140,13 +149,3 @@ exclude_commit_patterns = [
 
 [tool.semantic_release.changelog.environment]
 keep_trailing_newline = true
-
-[tool.semantic_release.branches.main]
-match = "main"
-
-[tool.semantic_release.branches.stable]
-match = "(?!stable/*$)"
-
-[tool.semantic_release.branches.noop]
-match = "(?!main$)"
-prerelease = true
