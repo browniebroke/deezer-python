@@ -103,15 +103,15 @@ ini_options.addopts = "-v -Wdefault --cov=deezer"
 ini_options.pythonpath = [ "src" ]
 
 [tool.coverage]
-report.ignore_errors = true
-report.exclude_lines = [
-  "pragma: no cover",
-  "@overload",
-  "if TYPE_CHECKING",
-  "raise NotImplementedError",
-]
 run.branch = true
 run.source = [ "deezer" ]
+report.exclude_lines = [
+  "@overload",
+  "if TYPE_CHECKING",
+  "pragma: no cover",
+  "raise NotImplementedError",
+]
+report.ignore_errors = true
 
 [tool.semantic_release]
 version_toml = [ "pyproject.toml:project.version" ]
