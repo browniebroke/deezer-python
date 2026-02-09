@@ -1,6 +1,5 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-
 requires = [ "setuptools>=77.0.3" ]
 
 [project]
@@ -32,7 +31,6 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Topic :: Software Development :: Libraries",
 ]
-
 dependencies = [
   "httpx>=0.23",
 ]
@@ -55,7 +53,6 @@ dev = [
   "ty>=0.0.6,<0.1",
   "vcrpy>=8,<9",
 ]
-
 docs = [
   "furo>=2023.5.20; python_version>='3.11'",
   "myst-parser>=0.16; python_version>='3.11'",
@@ -65,7 +62,6 @@ docs = [
 
 [tool.ruff]
 line-length = 120
-
 lint.select = [
   "B",   # flake8-bugbear
   "C4",  # flake8-comprehensions
@@ -102,22 +98,20 @@ lint.isort.known-first-party = [ "deezer" ]
 [tool.pyproject-fmt]
 max_supported_python = "3.14"
 
-[tool.pytest.ini_options]
-addopts = "-v -Wdefault --cov=deezer"
-pythonpath = [ "src" ]
+[tool.pytest]
+ini_options.addopts = "-v -Wdefault --cov=deezer"
+ini_options.pythonpath = [ "src" ]
 
-[tool.coverage.report]
-ignore_errors = true
-exclude_lines = [
+[tool.coverage]
+report.ignore_errors = true
+report.exclude_lines = [
   "pragma: no cover",
   "@overload",
   "if TYPE_CHECKING",
   "raise NotImplementedError",
 ]
-
-[tool.coverage.run]
-branch = true
-source = [ "deezer" ]
+run.branch = true
+run.source = [ "deezer" ]
 
 [tool.semantic_release]
 version_toml = [ "pyproject.toml:project.version" ]
@@ -130,22 +124,13 @@ uv lock
 git add uv.lock
 uv build
 """
-
-[tool.semantic_release.branches.main]
-match = "main"
-
-[tool.semantic_release.branches.noop]
-match = "(?!main$)"
-prerelease = true
-[tool.semantic_release.branches.stable]
-match = "(?!stable/*$)"
-
-[tool.semantic_release.changelog]
-exclude_commit_patterns = [
+branches.main.match = "main"
+branches.noop.match = "(?!main$)"
+branches.noop.prerelease = true
+branches.stable.match = "(?!stable/*$)"
+changelog.exclude_commit_patterns = [
   "chore.*",
   "ci.*",
   "Merge pull request .*",
 ]
-
-[tool.semantic_release.changelog.environment]
-keep_trailing_newline = true
+changelog.environment.keep_trailing_newline = true
