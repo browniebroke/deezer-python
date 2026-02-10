@@ -226,7 +226,7 @@ class AsyncClient(httpx.AsyncClient):
         user_id_str = str(user_id) if user_id else "me"
         return await self.request("GET", f"user/{user_id_str}")
 
-    def get_user_recommended_tracks(self, **kwargs) -> "AsyncPaginatedList[Track]":
+    def get_user_recommended_tracks(self, **kwargs) -> AsyncPaginatedList[Track]:
         from .pagination import AsyncPaginatedList  # Import here to avoid circular import
 
         return AsyncPaginatedList(
@@ -235,7 +235,7 @@ class AsyncClient(httpx.AsyncClient):
             params=kwargs or None,
         )
 
-    def get_user_recommended_albums(self, **kwargs) -> "AsyncPaginatedList[Album]":
+    def get_user_recommended_albums(self, **kwargs) -> AsyncPaginatedList[Album]:
         from .pagination import AsyncPaginatedList  # Import here to avoid circular import
 
         return AsyncPaginatedList(
@@ -244,7 +244,7 @@ class AsyncClient(httpx.AsyncClient):
             params=kwargs or None,
         )
 
-    def get_user_recommended_artists(self, **kwargs) -> "AsyncPaginatedList[Artist]":
+    def get_user_recommended_artists(self, **kwargs) -> AsyncPaginatedList[Artist]:
         from .pagination import AsyncPaginatedList  # Import here to avoid circular import
 
         return AsyncPaginatedList(
@@ -253,7 +253,7 @@ class AsyncClient(httpx.AsyncClient):
             params=kwargs or None,
         )
 
-    def get_user_recommended_playlists(self, **kwargs) -> "AsyncPaginatedList[Playlist]":
+    def get_user_recommended_playlists(self, **kwargs) -> AsyncPaginatedList[Playlist]:
         from .pagination import AsyncPaginatedList  # Import here to avoid circular import
 
         return AsyncPaginatedList(
@@ -262,7 +262,7 @@ class AsyncClient(httpx.AsyncClient):
             params=kwargs or None,
         )
 
-    def get_user_flow(self, **kwargs) -> "AsyncPaginatedList[Track]":
+    def get_user_flow(self, **kwargs) -> AsyncPaginatedList[Track]:
         from .pagination import AsyncPaginatedList  # Import here to avoid circular import
 
         return AsyncPaginatedList(
