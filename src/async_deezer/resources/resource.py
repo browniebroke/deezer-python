@@ -4,6 +4,7 @@ import datetime as dt
 from typing import Any
 
 from async_deezer.pagination import AsyncPaginatedList
+from deezer.resources import Resource as SyncResource
 
 
 class Resource:
@@ -107,6 +108,19 @@ class Resource:
             parent=self,
             params=params,
         )
+
+    def _infer_missing_field(self, item: str) -> Any:
+        """
+        Hook to infer missing field values, delegating to the sync base class
+        to keep behavior consistent (e.g. inferred ``link`` / ``share``).
+        """
+        return SyncResource._infer_missing_field(self, item)
+
+    def __getattr__(self, item: str) -> Any:
+        """
+        Fallback attribute access mirroring the synchronous Resource behavior.
+        """
+        return SyncResource.__getattr__(self, item)
 
     async def get(self):
         """Get the resource from the API."""

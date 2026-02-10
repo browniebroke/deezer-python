@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from collections.abc import AsyncGenerator
-from typing import Generic, TypeVar
+from typing import TYPE_CHECKING, Generic, TypeVar
 from urllib.parse import parse_qs, urlparse
 
-from async_deezer.client import AsyncClient
-from deezer.resources import Resource
+if TYPE_CHECKING:  # pragma: no cover - import used for typing only
+    from async_deezer.client import AsyncClient
+    from async_deezer.resources import Resource
 
 ResourceType = TypeVar("ResourceType")
 REPR_OUTPUT_SIZE = 5
@@ -21,9 +22,9 @@ class AsyncPaginatedList(Generic[ResourceType]):
 
     def __init__(
         self,
-        client: AsyncClient,
+        client: "AsyncClient",
         base_path: str,
-        parent: Resource | None = None,
+        parent: "Resource | None" = None,
         params: dict | None = None,
     ):
         self._elements: list[ResourceType] = []

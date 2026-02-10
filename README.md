@@ -55,7 +55,7 @@ The package is published on
 
 ## Basic Use (synchronous)
 
-Easily query the Deezer API from you Python code. The data returned by the Deezer
+Easily query the Deezer API from your Python code. The data returned by the Deezer
 API is mapped to python resources:
 
 ```pycon
@@ -104,7 +104,7 @@ Notes:
   project so it does not change the public API of `deezer-python`.
 
 Ready for more? Look at our whole [documentation](http://deezer-python.readthedocs.io/)
-on Read The Docs or have a play in pre-populated Jupyter notebook
+on Read The Docs or have a play in a pre-populated Jupyter notebook
 [on Binder](https://mybinder.org/v2/gh/browniebroke/deezer-python/main?filepath=demo.ipynb).
 
 ## Contributors

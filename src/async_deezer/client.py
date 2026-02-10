@@ -43,12 +43,10 @@ class AsyncClient(httpx.AsyncClient):
         "chart": Chart,
         "editorial": Editorial,
         "episode": Episode,
-        # 'folder': None, # need identification
         "genre": Genre,
         "playlist": Playlist,
         "podcast": Podcast,
         "radio": Radio,
-        "search": None,
         "track": Track,
         "user": User,
     }
@@ -385,7 +383,7 @@ class AsyncClient(httpx.AsyncClient):
         query_parts.extend(
             f'{param_name}:"{param_value}"'
             for param_name, param_value in advanced_params.items()
-            if param_value
+            if param_value is not None
         )
 
         return self._get_paginated_list(

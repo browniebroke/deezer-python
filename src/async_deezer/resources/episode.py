@@ -38,7 +38,7 @@ class Episode(Resource):
             return f"https://www.deezer.com/episode/{self.id}"
         elif item == "share":
             return f"{self.link}?utm_source=deezer&utm_content=episode-{self.id}&utm_medium=web"
-        return super()._infer_missing_field(item)  # type: ignore[no-any-return]
+        return super()._infer_missing_field(item)  # delegated to sync Resource via async base
 
     async def add_bookmark(self, offset: int) -> bool:
         """
