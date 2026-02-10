@@ -11,6 +11,7 @@ from deezer.exceptions import (
     DeezerHTTPError,
     DeezerUnknownResource,
 )
+
 from .pagination import AsyncPaginatedList
 from .resources import (
     Album,

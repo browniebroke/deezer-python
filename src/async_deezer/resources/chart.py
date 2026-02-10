@@ -6,6 +6,7 @@ from .resource import Resource
 
 if TYPE_CHECKING:
     from async_deezer.pagination import AsyncPaginatedList
+
     from .album import Album
     from .artist import Artist
     from .playlist import Playlist
@@ -21,23 +22,23 @@ class Chart(Resource):
     type = "chart"
 
     id: int
-    tracks: list["Track"]
-    albums: list["Album"]
-    artists: list["Artist"]
-    playlists: list["Playlist"]
-    podcasts: list["Podcast"]
+    tracks: list[Track]
+    albums: list[Album]
+    artists: list[Artist]
+    playlists: list[Playlist]
+    podcasts: list[Podcast]
 
-    def get_tracks(self, **kwargs) -> "AsyncPaginatedList[Track]":
+    def get_tracks(self, **kwargs) -> AsyncPaginatedList[Track]:
         return self.get_paginated_list("tracks", params=kwargs or None)
 
-    def get_albums(self, **kwargs) -> "AsyncPaginatedList[Album]":
+    def get_albums(self, **kwargs) -> AsyncPaginatedList[Album]:
         return self.get_paginated_list("albums", params=kwargs or None)
 
-    def get_artists(self, **kwargs) -> "AsyncPaginatedList[Artist]":
+    def get_artists(self, **kwargs) -> AsyncPaginatedList[Artist]:
         return self.get_paginated_list("artists", params=kwargs or None)
 
-    def get_playlists(self, **kwargs) -> "AsyncPaginatedList[Playlist]":
+    def get_playlists(self, **kwargs) -> AsyncPaginatedList[Playlist]:
         return self.get_paginated_list("playlists", params=kwargs or None)
 
-    def get_podcasts(self, **kwargs) -> "AsyncPaginatedList[Podcast]":
+    def get_podcasts(self, **kwargs) -> AsyncPaginatedList[Podcast]:
         return self.get_paginated_list("podcasts", params=kwargs or None)

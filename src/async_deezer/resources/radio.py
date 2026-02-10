@@ -25,7 +25,7 @@ class Radio(Resource):
     tracklist: str
     md5_image: str
 
-    async def get_tracks(self) -> list["Track"]:
+    async def get_tracks(self) -> list[Track]:
         """
         Get first 40 tracks in the radio. This endpoint is not paginated.
         """
