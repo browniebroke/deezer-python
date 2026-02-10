@@ -22,9 +22,9 @@ class AsyncPaginatedList(Generic[ResourceType]):
 
     def __init__(
         self,
-        client: "AsyncClient",
+        client: AsyncClient,
         base_path: str,
-        parent: "Resource | None" = None,
+        parent: Resource | None = None,
         params: dict | None = None,
     ):
         self._elements: list[ResourceType] = []
