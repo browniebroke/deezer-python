@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, ClassVar
+from typing import Any, ClassVar
 
 import httpx
 from httpx._types import HeaderTypes
@@ -12,6 +12,7 @@ from deezer.exceptions import (
     DeezerUnknownResource,
 )
 
+from .pagination import AsyncPaginatedList
 from .resources import (
     Album,
     Artist,
@@ -26,9 +27,6 @@ from .resources import (
     Track,
     User,
 )
-
-if TYPE_CHECKING:  # pragma: no cover - import used for typing only
-    from .pagination import AsyncPaginatedList
 
 
 class AsyncClient(httpx.AsyncClient):
@@ -152,7 +150,7 @@ class AsyncClient(httpx.AsyncClient):
 
     # High level methods – mirror deezer.Client but return awaitables.
 
-    def _get_paginated_list(self, path: str, params: dict | None = None) -> "AsyncPaginatedList":
+    def _get_paginated_list(self, path: str, params: dict | None = None) -> AsyncPaginatedList:
         """
         Build an :class:`AsyncPaginatedList` bound to this client.
 
@@ -160,8 +158,6 @@ class AsyncClient(httpx.AsyncClient):
         any network I/O; actual page fetching happens when you iterate over
         it with ``async for`` or use its async helpers.
         """
-        from .pagination import AsyncPaginatedList  # Import here to avoid circular import
-
         return AsyncPaginatedList(client=self, base_path=path, params=params)
 
     async def get_album(self, album_id: int) -> Album:
@@ -196,7 +192,7 @@ class AsyncClient(httpx.AsyncClient):
     async def get_editorial(self, editorial_id: int) -> Editorial:
         return await self.request("GET", f"editorial/{editorial_id}")
 
-    def list_editorials(self) -> "AsyncPaginatedList[Editorial]":
+    def list_editorials(self) -> AsyncPaginatedList[Editorial]:
         return self._get_paginated_list("editorial")
 
     async def get_episode(self, episode_id: int) -> Episode:
@@ -220,7 +216,7 @@ class AsyncClient(httpx.AsyncClient):
     async def list_radios(self) -> list[Radio]:
         return await self.request("GET", "radio")
 
-    def get_radios_top(self) -> "AsyncPaginatedList[Radio]":
+    def get_radios_top(self) -> AsyncPaginatedList[Radio]:
         return self._get_paginated_list("radio/top")
 
     async def get_track(self, track_id: int) -> Track:
@@ -230,52 +226,42 @@ class AsyncClient(httpx.AsyncClient):
         user_id_str = str(user_id) if user_id else "me"
         return await self.request("GET", f"user/{user_id_str}")
 
-    def get_user_recommended_tracks(self, **kwargs) -> "AsyncPaginatedList[Track]":
-        from .pagination import AsyncPaginatedList  # Import here to avoid circular import
-
+    def get_user_recommended_tracks(self, **kwargs) -> AsyncPaginatedList[Track]:
         return AsyncPaginatedList(
             client=self,
             base_path="user/me/recommendations/tracks",
             params=kwargs or None,
         )
 
-    def get_user_recommended_albums(self, **kwargs) -> "AsyncPaginatedList[Album]":
-        from .pagination import AsyncPaginatedList  # Import here to avoid circular import
-
+    def get_user_recommended_albums(self, **kwargs) -> AsyncPaginatedList[Album]:
         return AsyncPaginatedList(
             client=self,
             base_path="user/me/recommendations/albums",
             params=kwargs or None,
         )
 
-    def get_user_recommended_artists(self, **kwargs) -> "AsyncPaginatedList[Artist]":
-        from .pagination import AsyncPaginatedList  # Import here to avoid circular import
-
+    def get_user_recommended_artists(self, **kwargs) -> AsyncPaginatedList[Artist]:
         return AsyncPaginatedList(
             client=self,
             base_path="user/me/recommendations/artists",
             params=kwargs or None,
         )
 
-    def get_user_recommended_playlists(self, **kwargs) -> "AsyncPaginatedList[Playlist]":
-        from .pagination import AsyncPaginatedList  # Import here to avoid circular import
-
+    def get_user_recommended_playlists(self, **kwargs) -> AsyncPaginatedList[Playlist]:
         return AsyncPaginatedList(
             client=self,
             base_path="user/me/recommendations/playlists",
             params=kwargs or None,
         )
 
-    def get_user_flow(self, **kwargs) -> "AsyncPaginatedList[Track]":
-        from .pagination import AsyncPaginatedList  # Import here to avoid circular import
-
+    def get_user_flow(self, **kwargs) -> AsyncPaginatedList[Track]:
         return AsyncPaginatedList(
             client=self,
             base_path="user/me/flow",
             params=kwargs or None,
         )
 
-    def get_user_albums(self, user_id: int | None = None) -> "AsyncPaginatedList[Album]":
+    def get_user_albums(self, user_id: int | None = None) -> AsyncPaginatedList[Album]:
         user_id_str = str(user_id) if user_id else "me"
         return self._get_paginated_list(f"user/{user_id_str}/albums")
 
@@ -293,7 +279,7 @@ class AsyncClient(httpx.AsyncClient):
             params={"album_id": album_id},
         )
 
-    def get_user_artists(self, user_id: int | None = None) -> "AsyncPaginatedList[Artist]":
+    def get_user_artists(self, user_id: int | None = None) -> AsyncPaginatedList[Artist]:
         user_id_str = str(user_id) if user_id else "me"
         return self._get_paginated_list(f"user/{user_id_str}/artists")
 
@@ -311,11 +297,11 @@ class AsyncClient(httpx.AsyncClient):
             params={"artist_id": artist_id},
         )
 
-    def get_user_followers(self, user_id: int | None = None) -> "AsyncPaginatedList[User]":
+    def get_user_followers(self, user_id: int | None = None) -> AsyncPaginatedList[User]:
         user_id_str = str(user_id) if user_id else "me"
         return self._get_paginated_list(f"user/{user_id_str}/followers")
 
-    def get_user_followings(self, user_id: int | None = None) -> "AsyncPaginatedList[User]":
+    def get_user_followings(self, user_id: int | None = None) -> AsyncPaginatedList[User]:
         user_id_str = str(user_id) if user_id else "me"
         return self._get_paginated_list(f"user/{user_id_str}/followings")
 
@@ -333,10 +319,10 @@ class AsyncClient(httpx.AsyncClient):
             params={"user_id": user_id},
         )
 
-    def get_user_history(self) -> "AsyncPaginatedList[Track]":
+    def get_user_history(self) -> AsyncPaginatedList[Track]:
         return self._get_paginated_list("user/me/history")
 
-    def get_user_tracks(self, user_id: int | None = None) -> "AsyncPaginatedList[Track]":
+    def get_user_tracks(self, user_id: int | None = None) -> AsyncPaginatedList[Track]:
         user_id_str = str(user_id) if user_id else "me"
         return self._get_paginated_list(f"user/{user_id_str}/tracks")
 
@@ -422,7 +408,7 @@ class AsyncClient(httpx.AsyncClient):
         dur_max: int | None = None,
         bpm_min: int | None = None,
         bpm_max: int | None = None,
-    ) -> "AsyncPaginatedList[Track]":
+    ) -> AsyncPaginatedList[Track]:
         return self._search(
             "",
             query=query,
@@ -443,7 +429,7 @@ class AsyncClient(httpx.AsyncClient):
         query: str = "",
         strict: bool | None = None,
         ordering: str | None = None,
-    ) -> "AsyncPaginatedList[Album]":
+    ) -> AsyncPaginatedList[Album]:
         return self._search(
             path="album",
             query=query,
@@ -456,7 +442,7 @@ class AsyncClient(httpx.AsyncClient):
         query: str = "",
         strict: bool | None = None,
         ordering: str | None = None,
-    ) -> "AsyncPaginatedList[Artist]":
+    ) -> AsyncPaginatedList[Artist]:
         return self._search(
             path="artist",
             query=query,
@@ -469,7 +455,7 @@ class AsyncClient(httpx.AsyncClient):
         query: str = "",
         strict: bool | None = None,
         ordering: str | None = None,
-    ) -> "AsyncPaginatedList[Playlist]":
+    ) -> AsyncPaginatedList[Playlist]:
         return self._search(
             path="playlist",
             query=query,
