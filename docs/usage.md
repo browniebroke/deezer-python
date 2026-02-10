@@ -54,7 +54,7 @@ context manager ensures that network resources are cleaned up properly.
 Endpoints that return multiple items, such as `get_user_tracks()` or the
 various `search*` methods, return an {class}`AsyncPaginatedList
 <async_deezer.pagination.AsyncPaginatedList>` when using the async client.
-You can iterate over it with ``async for``:
+You can iterate over it with `async for`:
 
 ```python
 from async_deezer import AsyncClient
@@ -68,7 +68,7 @@ async def main() -> None:
 ```
 
 For random access into the list, use the explicit async helpers instead of
-``__getitem__``:
+`__getitem__`:
 
 ```python
 track = await tracks.aget(0)

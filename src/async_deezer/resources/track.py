@@ -38,7 +38,7 @@ class Track(Resource):
     bpm: float
     gain: float
     available_countries: list[str]
-    alternative: "Track"
+    alternative: Track
     contributors: list[Artist]
     md5_image: str
     artist: Artist

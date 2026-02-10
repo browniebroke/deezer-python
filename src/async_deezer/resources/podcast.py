@@ -6,6 +6,7 @@ from .resource import Resource
 
 if TYPE_CHECKING:
     from async_deezer.pagination import AsyncPaginatedList
+
     from .episode import Episode
 
 
@@ -27,6 +28,6 @@ class Podcast(Resource):
     picture_big: str
     picture_xl: str
 
-    def get_episodes(self, **kwargs) -> "AsyncPaginatedList[Episode]":
+    def get_episodes(self, **kwargs) -> AsyncPaginatedList[Episode]:
         """Get episodes from a podcast."""
         return self.get_paginated_list("episodes", params=kwargs or None)

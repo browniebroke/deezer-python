@@ -9,9 +9,10 @@ from .artist import Artist
 from .resource import Resource
 
 if TYPE_CHECKING:
+    from async_deezer.pagination import AsyncPaginatedList
+
     from .genre import Genre
     from .track import Track
-    from async_deezer.pagination import AsyncPaginatedList
 
 
 class Album(Resource):
@@ -41,7 +42,7 @@ class Album(Resource):
     record_type: str
     available: bool
 
-    alternative: "Album"
+    alternative: Album
     tracklist: str
     explicit_lyrics: bool
 
@@ -63,7 +64,7 @@ class Album(Resource):
         """
         return await self.client.get_artist(self.artist.id)
 
-    def get_tracks(self, **kwargs) -> "AsyncPaginatedList[Track]":
+    def get_tracks(self, **kwargs) -> AsyncPaginatedList[Track]:
         """
         Get a paginated list of album's tracks.
         """

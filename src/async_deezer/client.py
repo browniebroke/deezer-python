@@ -11,6 +11,7 @@ from deezer.exceptions import (
     DeezerHTTPError,
     DeezerUnknownResource,
 )
+
 from .pagination import AsyncPaginatedList
 from .resources import (
     Album,
@@ -383,9 +384,7 @@ class AsyncClient(httpx.AsyncClient):
         if query:
             query_parts.append(query)
         query_parts.extend(
-            f'{param_name}:"{param_value}"'
-            for param_name, param_value in advanced_params.items()
-            if param_value
+            f'{param_name}:"{param_value}"' for param_name, param_value in advanced_params.items() if param_value
         )
 
         return self._get_paginated_list(

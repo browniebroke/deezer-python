@@ -55,7 +55,7 @@ class Resource:
     async def get_relation(
         self,
         relation: str,
-        resource_type: type["Resource"] | None = None,  # type: ignore[valid-type]
+        resource_type: type[Resource] | None = None,  # type: ignore[valid-type]
         params: dict | None = None,
         fwd_parent: bool = True,
     ):
