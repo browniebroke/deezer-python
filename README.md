@@ -72,7 +72,6 @@ calls must be awaited and the client must be used in an async context.
 
 ```python
 import asyncio
-
 from async_deezer import AsyncClient
 
 
