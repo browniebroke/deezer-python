@@ -99,7 +99,8 @@ lint.isort.known-first-party = [ "deezer" ]
 max_supported_python = "3.14"
 
 [tool.pytest]
-addopts = "-v -Wdefault --cov=deezer"
+minversion = "9.0"
+addopts = ["-v", "-Wdefault", "--cov=deezer"]
 pythonpath = [ "src" ]
 
 [tool.coverage]
