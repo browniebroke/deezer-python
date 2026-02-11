@@ -100,7 +100,7 @@ max_supported_python = "3.14"
 
 [tool.pytest]
 minversion = "9.0"
-addopts = ["-v", "-Wdefault", "--cov=deezer"]
+addopts = [ "-v", "-Wdefault", "--cov=deezer" ]
 pythonpath = [ "src" ]
 
 [tool.coverage]
