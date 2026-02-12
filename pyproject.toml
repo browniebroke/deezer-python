@@ -99,8 +99,9 @@ lint.isort.known-first-party = [ "deezer" ]
 max_supported_python = "3.14"
 
 [tool.pytest]
-ini_options.addopts = "-v -Wdefault --cov=deezer"
-ini_options.pythonpath = [ "src" ]
+minversion = "9.0"
+addopts = [ "-v", "-Wdefault", "--cov=deezer" ]
+pythonpath = [ "src" ]
 
 [tool.coverage]
 run.branch = true
