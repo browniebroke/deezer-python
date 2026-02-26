@@ -53,9 +53,9 @@ The package is published on
 
     pip install deezer-python
 
-## Basic Use
+## Basic Use (synchronous)
 
-Easily query the Deezer API from you Python code. The data returned by the Deezer
+Easily query the Deezer API from your Python code. The data returned by the Deezer
 API is mapped to python resources:
 
 ```pycon
@@ -64,8 +64,46 @@ API is mapped to python resources:
 'Monkey Business'
 ```
 
+## Async usage
+
+An asynchronous client is also available, built on top of `httpx.AsyncClient`.
+It mirrors the public API of the synchronous `deezer.Client`, but all network
+calls must be awaited and the client must be used in an async context.
+
+```python
+import asyncio
+from async_deezer import AsyncClient
+
+
+async def main() -> None:
+    async with AsyncClient() as client:
+        album = await client.get_album(680407)
+        print(album.title)
+
+
+asyncio.run(main())
+```
+
+You can work with paginated endpoints using `AsyncPaginatedList` and `async for`:
+
+```python
+from async_deezer import AsyncClient
+
+
+async def main() -> None:
+    async with AsyncClient() as client:
+        tracks = client.get_user_tracks()  # AsyncPaginatedList
+        async for track in tracks:
+            print(track.title)
+```
+
+Notes:
+
+- The async client lives in the separate `async_deezer` package inside this
+  project so it does not change the public API of `deezer-python`.
+
 Ready for more? Look at our whole [documentation](http://deezer-python.readthedocs.io/)
-on Read The Docs or have a play in pre-populated Jupyter notebook
+on Read The Docs or have a play in a pre-populated Jupyter notebook
 [on Binder](https://mybinder.org/v2/gh/browniebroke/deezer-python/main?filepath=demo.ipynb).
 
 ## Contributors

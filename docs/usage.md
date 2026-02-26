@@ -15,7 +15,66 @@ with deezer.Client() as client:
     ...
 ```
 
-This is [the recommended way to use it by `httpx`](https://www.python-httpx.org/advanced/clients/#usage, which is the library we use under the hood.
+This is [the recommended way to use it by `httpx`](https://www.python-httpx.org/advanced/clients/#usage), which is the library we use under the hood.
+
+## Async client
+
+If you are writing an asynchronous application, you can use the async client
+provided by the `async_deezer` package. It closely mirrors the public API of
+{class}`Client <deezer.client.Client>`, but:
+
+- it is built on top of {class}`httpx.AsyncClient`, and
+- methods that perform network I/O are declared as `async` and must be awaited.
+
+### First steps with the async client
+
+Instantiate and use the async client inside an async function and context
+manager:
+
+```python
+import asyncio
+
+from async_deezer import AsyncClient
+
+
+async def main() -> None:
+    async with AsyncClient() as client:
+        album = await client.get_album(680407)
+        print(album.title)
+
+
+asyncio.run(main())
+```
+
+The same recommendations from the synchronous client apply: using it as a
+context manager ensures that network resources are cleaned up properly.
+
+### Async pagination
+
+Endpoints that return multiple items, such as `get_user_tracks()` or the
+various `search*` methods, return an {class}`AsyncPaginatedList
+<async_deezer.pagination.AsyncPaginatedList>` when using the async client.
+You can iterate over it with `async for`:
+
+```python
+from async_deezer import AsyncClient
+
+
+async def main() -> None:
+    async with AsyncClient() as client:
+        tracks = client.get_user_tracks()
+        async for track in tracks:
+            print(track.title)
+```
+
+For random access into the list, use the explicit async helpers instead of
+`__getitem__`:
+
+```python
+track = await tracks.aget(0)
+first_five = await tracks.aslice(0, 5)
+total = await tracks.get_total()
+```
 
 From there, you can search for some terms:
 
