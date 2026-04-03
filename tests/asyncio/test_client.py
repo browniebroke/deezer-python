@@ -8,7 +8,7 @@ from deezer.asyncio import AsyncClient
 from deezer.exceptions import DeezerErrorResponse, DeezerNotFoundError
 
 my_vcr = vcr.VCR(
-    cassette_library_dir="tests/cassettes",
+    cassette_library_dir="tests/asyncio/cassettes",
     filter_query_parameters=[("access_token", "dummy")],
     match_on=["method", "scheme", "host", "port", "path"],
 )
