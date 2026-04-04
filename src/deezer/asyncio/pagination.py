@@ -11,7 +11,8 @@ ResourceType = TypeVar("ResourceType")
 
 
 class AsyncPaginatedList(Generic[ResourceType]):
-    """Async paginated response from the API, supporting async iteration.
+    """
+    Async paginated response from the API, supporting async iteration.
 
     Instances should be created via the :meth:`create` classmethod,
     which fetches the first page of results eagerly.
