@@ -64,7 +64,7 @@ class TestAsyncClient:
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_access_token(self):
         async with AsyncClient(
-            access_token="dummy",
+            access_token="dummy",  # noqa: S106
             headers={"Accept-Encoding": "identity"},
         ) as client:
             album = await client.get_album(302127)
