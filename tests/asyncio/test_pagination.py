@@ -115,3 +115,6 @@ class TestAsyncPaginatedList:
         results = async_client.search_artists("something very complicated without results")
         with pytest.raises(StopAsyncIteration):
             await results.__anext__()
+        # Second call: _could_grow() is now False, hitting the other branch
+        with pytest.raises(StopAsyncIteration):
+            await results.__anext__()

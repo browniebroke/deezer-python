@@ -308,3 +308,10 @@ class TestAsyncClient:
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert first.title == "Soliloquy"
+
+    @pytest.mark.asyncio
+    async def test_search_advanced(self, async_client):
+        result = async_client.search(artist="Lou Doillon")
+        assert isinstance(result, AsyncPaginatedList)
+        first = await result.get(0)
+        assert hasattr(first, "title")
