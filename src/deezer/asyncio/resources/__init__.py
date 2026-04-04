@@ -6,6 +6,7 @@ from .chart import AsyncChart
 from .editorial import AsyncEditorial
 from .genre import AsyncGenre
 from .episode import AsyncEpisode
+from .playlist import AsyncPlaylist
 from .podcast import AsyncPodcast
 from .radio import AsyncRadio
 from .resource import AsyncResource
@@ -18,6 +19,7 @@ __all__ = [
     "AsyncEditorial",
     "AsyncEpisode",
     "AsyncGenre",
+    "AsyncPlaylist",
     "AsyncPodcast",
     "AsyncRadio",
     "AsyncResource",

@@ -8,6 +8,7 @@ from .resources import (
     AsyncEditorial,
     AsyncEpisode,
     AsyncGenre,
+    AsyncPlaylist,
     AsyncPodcast,
     AsyncRadio,
     AsyncResource,
