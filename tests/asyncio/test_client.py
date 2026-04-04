@@ -8,7 +8,7 @@ from deezer.asyncio import (
     AsyncClient,
     AsyncPaginatedList,
 )
-from deezer.exceptions import DeezerNotFoundError
+from deezer.exceptions import DeezerErrorResponse, DeezerNotFoundError
 
 pytestmark = pytest.mark.vcr
 
@@ -243,3 +243,68 @@ class TestAsyncClient:
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert hasattr(first, "title")
+
+    @pytest.mark.asyncio
+    async def test_error_response(self, async_client):
+        with pytest.raises(DeezerErrorResponse):
+            await async_client.get_album(-1)
+
+    @pytest.mark.asyncio
+    @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
+    async def test_get_current_user(self, async_client_token):
+        user = await async_client_token.get_user()
+        assert hasattr(user, "name")
+
+    @pytest.mark.asyncio
+    @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
+    async def test_get_user_albums(self, async_client_token):
+        user_albums = async_client_token.get_user_albums()
+        assert isinstance(user_albums, AsyncPaginatedList)
+        first = await user_albums.get(0)
+        assert hasattr(first, "title")
+
+    @pytest.mark.asyncio
+    @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
+    async def test_get_user_artists(self, async_client_token):
+        user_artists = async_client_token.get_user_artists()
+        assert isinstance(user_artists, AsyncPaginatedList)
+        first = await user_artists.get(0)
+        assert hasattr(first, "name")
+
+    @pytest.mark.asyncio
+    @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
+    async def test_get_user_followers(self, async_client_token):
+        user_followers = async_client_token.get_user_followers()
+        assert isinstance(user_followers, AsyncPaginatedList)
+        first = await user_followers.get(0)
+        assert hasattr(first, "name")
+
+    @pytest.mark.asyncio
+    @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
+    async def test_get_user_followings(self, async_client_token):
+        user_followings = async_client_token.get_user_followings()
+        assert isinstance(user_followings, AsyncPaginatedList)
+        first = await user_followings.get(0)
+        assert hasattr(first, "name")
+
+    @pytest.mark.asyncio
+    @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
+    async def test_get_user_tracks(self, async_client_token):
+        user_tracks = async_client_token.get_user_tracks()
+        assert isinstance(user_tracks, AsyncPaginatedList)
+        first = await user_tracks.get(0)
+        assert hasattr(first, "title")
+
+    @pytest.mark.asyncio
+    async def test_search_strict(self, async_client):
+        result = async_client.search("Soliloquy", strict=True)
+        assert isinstance(result, AsyncPaginatedList)
+        first = await result.get(0)
+        assert first.title == "Soliloquy"
+
+    @pytest.mark.asyncio
+    async def test_search_ordering(self, async_client):
+        result = async_client.search("Soliloquy", ordering="RANKING")
+        assert isinstance(result, AsyncPaginatedList)
+        first = await result.get(0)
+        assert first.title == "Soliloquy"

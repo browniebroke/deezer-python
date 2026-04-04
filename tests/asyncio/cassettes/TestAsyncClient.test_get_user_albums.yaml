@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/user/me/albums?access_token=dummy
+  response:
+    body:
+      string: '{"data":[{"id":357404,"title":"OK Cowboy","link":"https:\/\/www.deezer.com\/album\/357404","cover":"https:\/\/api.deezer.com\/album\/357404\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/c35a9579e79da78be284094d5cca571b\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/c35a9579e79da78be284094d5cca571b\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/c35a9579e79da78be284094d5cca571b\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/c35a9579e79da78be284094d5cca571b\/1000x1000-000000-80-0-0.jpg","md5_image":"c35a9579e79da78be284094d5cca571b","nb_tracks":13,"release_date":"2005-04-04","record_type":"album","available":true,"tracklist":"https:\/\/api.deezer.com\/album\/357404\/tracks","explicit_lyrics":false,"time_add":1338501600,"artist":{"id":641,"name":"Vitalic","picture":"https:\/\/api.deezer.com\/artist\/641\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5e970ce2f5c52fe2b036f088eb4a7bef\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5e970ce2f5c52fe2b036f088eb4a7bef\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5e970ce2f5c52fe2b036f088eb4a7bef\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/5e970ce2f5c52fe2b036f088eb4a7bef\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/641\/top?limit=50","type":"artist"},"type":"album"},{"id":230721992,"title":"Tank
+        (Remastered)","link":"https:\/\/www.deezer.com\/album\/230721992","cover":"https:\/\/api.deezer.com\/album\/230721992\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/0a52a069f4596c26c6f5b1527c8814c1\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/0a52a069f4596c26c6f5b1527c8814c1\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/0a52a069f4596c26c6f5b1527c8814c1\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/0a52a069f4596c26c6f5b1527c8814c1\/1000x1000-000000-80-0-0.jpg","md5_image":"0a52a069f4596c26c6f5b1527c8814c1","nb_tracks":14,"release_date":"2005-02-28","record_type":"album","available":true,"tracklist":"https:\/\/api.deezer.com\/album\/230721992\/tracks","explicit_lyrics":false,"time_add":1633799308,"artist":{"id":1422,"name":"Asian
+        Dub Foundation","picture":"https:\/\/api.deezer.com\/artist\/1422\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/8c4fda02331e9e658877b28b0b7a3115\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/8c4fda02331e9e658877b28b0b7a3115\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/8c4fda02331e9e658877b28b0b7a3115\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/8c4fda02331e9e658877b28b0b7a3115\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1422\/top?limit=50","type":"artist"},"type":"album"}],"checksum":"2c515a429cac2d4b5da8b37d75a093ba","total":2}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3230'
+      Content-Type:
+      - application/json; charset=utf-8
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-27
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1
