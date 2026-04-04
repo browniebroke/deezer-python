@@ -13,7 +13,15 @@ from deezer.exceptions import (
 )
 from deezer.resources import Resource
 
-from .resources import AsyncAlbum, AsyncArtist, AsyncGenre, AsyncRadio, AsyncResource, AsyncTrack
+from .resources import (
+    AsyncAlbum,
+    AsyncArtist,
+    AsyncGenre,
+    AsyncPodcast,
+    AsyncRadio,
+    AsyncResource,
+    AsyncTrack,
+)
 
 
 class AsyncClient(DeezerMixin, httpx.AsyncClient):
@@ -45,6 +53,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         "album": AsyncAlbum,
         "artist": AsyncArtist,
         "genre": AsyncGenre,
+        "podcast": AsyncPodcast,
         "radio": AsyncRadio,
         "track": AsyncTrack,
     }
@@ -145,3 +154,11 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         :returns: an :class:`~deezer.asyncio.AsyncRadio` object
         """
         return await self.request("GET", f"radio/{radio_id}")
+
+    async def get_podcast(self, podcast_id: int) -> AsyncPodcast:
+        """
+        Get the podcast with the given ID.
+
+        :returns: an :class:`~deezer.asyncio.AsyncPodcast` object
+        """
+        return await self.request("GET", f"podcast/{podcast_id}")
