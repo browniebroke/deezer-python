@@ -1,15 +1,11 @@
 from __future__ import annotations
 
 import datetime as dt
-from typing import TYPE_CHECKING
 
 from deezer.dates import parse_date
 
 from .artist import AsyncArtist
 from .resource import AsyncResource
-
-if TYPE_CHECKING:
-    pass
 
 
 class AsyncAlbum(AsyncResource):

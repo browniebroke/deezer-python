@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from .chart import AsyncChart
 from .resource import AsyncResource
 
 
@@ -20,8 +21,6 @@ class AsyncEditorial(AsyncResource):
 
     async def get_chart(self):
         """Get top charts for tracks, albums, artists and playlists."""
-        from .chart import AsyncChart
-
         return await self.get_relation("charts", resource_type=AsyncChart)
 
     async def get_releases(self, **kwargs) -> list:
