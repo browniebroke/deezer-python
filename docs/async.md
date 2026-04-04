@@ -53,39 +53,37 @@ async with AsyncClient() as client:
     radio = await artist.get_radio()
 ```
 
-Methods that return paginated responses return an {class}`~deezer.asyncio.AsyncPaginatedList` **synchronously** (no `await` needed), as the actual API calls are deferred until you iterate or access elements:
+Methods that return paginated responses also need to be awaited. The first page of results is fetched eagerly, making the returned {class}`~deezer.asyncio.AsyncPaginatedList` immediately usable:
 
 ```python
 async with AsyncClient() as client:
     artist = await client.get_artist(27)
 
-    # No await here - returns AsyncPaginatedList immediately
-    albums = artist.get_albums()
+    # Await to get the paginated list (first page is fetched)
+    albums = await artist.get_albums()
 ```
-
-See the next section for how to work with paginated results.
 
 ## Async Pagination
 
-For endpoints returning paginated responses, items are wrapped in an {class}`~deezer.asyncio.AsyncPaginatedList`. This works similarly to the synchronous {class}`~deezer.PaginatedList` described in the {ref}`pagination guide <pagination-guide>`, but uses async iteration.
+For endpoints returning paginated responses, items are wrapped in an {class}`~deezer.asyncio.AsyncPaginatedList`. This works similarly to the synchronous {class}`~deezer.PaginatedList` described in the {ref}`pagination guide <pagination-guide>`, but uses async iteration and awaitable methods.
 
 ### Iterating over elements
 
 Use `async for` to iterate over all elements, transparently fetching additional pages as needed:
 
 ```python
-artist_albums = artist.get_albums()
+albums = await artist.get_albums()
 
-async for album in artist_albums:
+async for album in albums:
     print(album.title)
 ```
 
 ### Total number
 
-The total number of items is fetched from the API asynchronously:
+The total number of items is available via the {meth}`~deezer.asyncio.AsyncPaginatedList.total` method. Since the first page is fetched eagerly, the total is usually already cached and no extra API call is needed:
 
 ```python
-total = await artist_albums.total()
+total = await albums.total()
 ```
 
 ### Accessing elements by index
@@ -93,8 +91,8 @@ total = await artist_albums.total()
 Use the {meth}`~deezer.asyncio.AsyncPaginatedList.get` method to access an element by index:
 
 ```python
-first_album = await artist_albums.get(0)
-fifth_album = await artist_albums.get(4)
+first_album = await albums.get(0)
+fifth_album = await albums.get(4)
 ```
 
 As with the sync version, accessing a large index may trigger extra API calls to fetch preceding pages.
@@ -104,16 +102,16 @@ As with the sync version, accessing a large index may trigger extra API calls to
 To fetch all pages and get a plain list, use {meth}`~deezer.asyncio.AsyncPaginatedList.collect`:
 
 ```python
-all_albums = await artist_albums.collect()
+all_albums = await albums.collect()
 ```
 
 ### Search
 
-Search methods also return {class}`~deezer.asyncio.AsyncPaginatedList`:
+Search methods also return {class}`~deezer.asyncio.AsyncPaginatedList` and need to be awaited:
 
 ```python
 async with AsyncClient() as client:
-    results = client.search("Daft Punk")
+    results = await client.search("Daft Punk")
 
     async for track in results:
         print(track.title)

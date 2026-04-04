@@ -44,8 +44,7 @@ class AsyncPaginatedList(Generic[ResourceType]):
     ) -> AsyncPaginatedList[ResourceType]:
         """Create an AsyncPaginatedList and fetch the first page."""
         instance = cls(client=client, base_path=base_path, parent=parent, params=params)
-        if instance._could_grow():
-            await instance._grow()
+        await instance._grow()
         return instance
 
     def __repr__(self) -> str:
@@ -88,17 +87,7 @@ class AsyncPaginatedList(Generic[ResourceType]):
 
     async def total(self) -> int:
         """The total number of items in the list, mirroring what Deezer returns."""
-        if self._total is None:
-            params = self._base_params.copy()
-            params["limit"] = 1
-            response_payload = await self._client.request(
-                "GET",
-                self._base_path,
-                parent=self._parent,
-                paginate_list=True,
-                params=params,
-            )
-            self._total = response_payload["total"]
+        assert self._total is not None  # noqa S101
         return self._total
 
     async def length(self) -> int:

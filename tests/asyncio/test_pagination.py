@@ -47,6 +47,13 @@ class TestAsyncPaginatedList:
         assert a3.title == "TRON: Legacy Reconfigured"
 
     @pytest.mark.asyncio
+    async def test_iterator_cross_page(self, daft_punk_albums):
+        """Test __anext__ fetches the next page when the first is exhausted."""
+        for _ in range(26):
+            await daft_punk_albums.__anext__()
+        # We successfully got element 26 (from the second page)
+
+    @pytest.mark.asyncio
     @pytest.mark.parametrize(
         ("index", "title"),
         [
