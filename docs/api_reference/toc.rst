@@ -12,3 +12,6 @@ This is the auto-generated documentation for all the main modules in the library
     client
     pagination
     resources
+    async_client
+    async_pagination
+    async_resources
