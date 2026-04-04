@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 import pytest_asyncio
 
-from deezer.asyncio import AsyncPlaylist
+from deezer.asyncio import AsyncPaginatedList, AsyncPlaylist
 
 pytestmark = pytest.mark.vcr
 
@@ -24,15 +24,17 @@ class TestAsyncPlaylist:
 
     @pytest.mark.asyncio
     async def test_get_tracks(self, playlist):
-        tracks = await playlist.get_tracks()
-        assert isinstance(tracks, list)
-        assert len(tracks) > 0
+        tracks = playlist.get_tracks()
+        assert isinstance(tracks, AsyncPaginatedList)
+        first = await tracks.get(0)
+        assert hasattr(first, "title")
 
     @pytest.mark.asyncio
     async def test_get_fans(self, playlist):
-        fans = await playlist.get_fans()
-        assert isinstance(fans, list)
-        assert len(fans) > 0
+        fans = playlist.get_fans()
+        assert isinstance(fans, AsyncPaginatedList)
+        first = await fans.get(0)
+        assert hasattr(first, "name")
 
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])

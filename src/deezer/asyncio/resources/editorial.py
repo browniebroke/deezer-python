@@ -1,7 +1,12 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from .chart import AsyncChart
 from .resource import AsyncResource
+
+if TYPE_CHECKING:
+    from deezer.asyncio.pagination import AsyncPaginatedList
 
 
 class AsyncEditorial(AsyncResource):
@@ -23,6 +28,6 @@ class AsyncEditorial(AsyncResource):
         """Get top charts for tracks, albums, artists and playlists."""
         return await self.get_relation("charts", resource_type=AsyncChart)
 
-    async def get_releases(self, **kwargs) -> list:
+    def get_releases(self, **kwargs) -> AsyncPaginatedList:
         """Get the new releases per genre for the current country."""
-        return await self.get_relation("releases", **kwargs)
+        return self.get_paginated_list("releases", **kwargs)

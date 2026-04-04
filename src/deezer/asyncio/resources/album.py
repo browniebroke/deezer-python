@@ -1,11 +1,15 @@
 from __future__ import annotations
 
 import datetime as dt
+from typing import TYPE_CHECKING
 
 from deezer.dates import parse_date
 
 from .artist import AsyncArtist
 from .resource import AsyncResource
+
+if TYPE_CHECKING:
+    from deezer.asyncio.pagination import AsyncPaginatedList
 
 
 class AsyncAlbum(AsyncResource):
@@ -59,10 +63,10 @@ class AsyncAlbum(AsyncResource):
         """
         return await self.client.request("GET", f"artist/{self.artist.id}")
 
-    async def get_tracks(self, **kwargs) -> list:
+    def get_tracks(self, **kwargs) -> AsyncPaginatedList:
         """
         Get a list of album's tracks.
 
-        :returns: a list of track resources.
+        :returns: an :class:`AsyncPaginatedList` of track resources.
         """
-        return await self.get_relation("tracks", **kwargs)
+        return self.get_paginated_list("tracks", **kwargs)

@@ -5,6 +5,8 @@ from typing import TYPE_CHECKING
 from .resource import AsyncResource
 
 if TYPE_CHECKING:
+    from deezer.asyncio.pagination import AsyncPaginatedList
+
     from .album import AsyncAlbum
 
 
@@ -25,22 +27,22 @@ class AsyncArtist(AsyncResource):
     radio: bool
     tracklist: str
 
-    async def get_top(self, **kwargs) -> list:
+    def get_top(self, **kwargs) -> AsyncPaginatedList:
         """Get the top tracks of an artist."""
-        return await self.get_relation("top", **kwargs)
+        return self.get_paginated_list("top", **kwargs)
 
-    async def get_related(self, **kwargs) -> list[AsyncArtist]:
+    def get_related(self, **kwargs) -> AsyncPaginatedList[AsyncArtist]:
         """Get a list of related artists."""
-        return await self.get_relation("related", **kwargs)
+        return self.get_paginated_list("related", **kwargs)
 
     async def get_radio(self, **kwargs) -> list:
         """Get a list of tracks."""
         return await self.get_relation("radio", fwd_parent=False, **kwargs)
 
-    async def get_albums(self, **kwargs) -> list[AsyncAlbum]:
+    def get_albums(self, **kwargs) -> AsyncPaginatedList[AsyncAlbum]:
         """Get a list of artist's albums."""
-        return await self.get_relation("albums", **kwargs)
+        return self.get_paginated_list("albums", **kwargs)
 
-    async def get_playlists(self, **kwargs) -> list:
+    def get_playlists(self, **kwargs) -> AsyncPaginatedList:
         """Get a list of artist's playlists."""
-        return await self.get_relation("playlists", **kwargs)
+        return self.get_paginated_list("playlists", **kwargs)

@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 import pytest_asyncio
 
-from deezer.asyncio import AsyncUser
+from deezer.asyncio import AsyncPaginatedList, AsyncUser
 
 pytestmark = pytest.mark.vcr
 
@@ -25,39 +25,45 @@ class TestAsyncUser:
 
     @pytest.mark.asyncio
     async def test_get_albums(self, user):
-        albums = await user.get_albums()
-        assert isinstance(albums, list)
-        assert len(albums) > 0
+        albums = user.get_albums()
+        assert isinstance(albums, AsyncPaginatedList)
+        albums_list = await albums.collect()
+        assert len(albums_list) > 0
 
     @pytest.mark.asyncio
     async def test_get_artists(self, user):
-        artists = await user.get_artists()
-        assert isinstance(artists, list)
-        assert len(artists) > 0
+        artists = user.get_artists()
+        assert isinstance(artists, AsyncPaginatedList)
+        artists_list = await artists.collect()
+        assert len(artists_list) > 0
 
     @pytest.mark.asyncio
     async def test_get_tracks(self, user):
-        tracks = await user.get_tracks()
-        assert isinstance(tracks, list)
-        assert len(tracks) > 0
+        tracks = user.get_tracks()
+        assert isinstance(tracks, AsyncPaginatedList)
+        tracks_list = await tracks.collect()
+        assert len(tracks_list) > 0
 
     @pytest.mark.asyncio
     async def test_get_followers(self, user):
-        followers = await user.get_followers()
-        assert isinstance(followers, list)
-        assert len(followers) > 0
+        followers = user.get_followers()
+        assert isinstance(followers, AsyncPaginatedList)
+        followers_list = await followers.collect()
+        assert len(followers_list) > 0
 
     @pytest.mark.asyncio
     async def test_get_followings(self, user):
-        followings = await user.get_followings()
-        assert isinstance(followings, list)
-        assert len(followings) > 0
+        followings = user.get_followings()
+        assert isinstance(followings, AsyncPaginatedList)
+        followings_list = await followings.collect()
+        assert len(followings_list) > 0
 
     @pytest.mark.asyncio
     async def test_get_playlists(self, user):
-        playlists = await user.get_playlists()
-        assert isinstance(playlists, list)
-        assert len(playlists) > 0
+        playlists = user.get_playlists()
+        assert isinstance(playlists, AsyncPaginatedList)
+        playlists_list = await playlists.collect()
+        assert len(playlists_list) > 0
 
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])

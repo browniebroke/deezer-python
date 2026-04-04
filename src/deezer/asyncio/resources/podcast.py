@@ -1,6 +1,11 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from .resource import AsyncResource
+
+if TYPE_CHECKING:
+    from deezer.asyncio.pagination import AsyncPaginatedList
 
 
 class AsyncPodcast(AsyncResource):
@@ -19,6 +24,6 @@ class AsyncPodcast(AsyncResource):
     picture_big: str
     picture_xl: str
 
-    async def get_episodes(self, **kwargs) -> list:
+    def get_episodes(self, **kwargs) -> AsyncPaginatedList:
         """Get episodes from a podcast."""
-        return await self.get_relation("episodes", **kwargs)
+        return self.get_paginated_list("episodes", **kwargs)

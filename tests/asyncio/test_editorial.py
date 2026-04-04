@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 import pytest_asyncio
 
-from deezer.asyncio import AsyncEditorial
+from deezer.asyncio import AsyncEditorial, AsyncPaginatedList
 
 pytestmark = pytest.mark.vcr
 
@@ -26,6 +26,7 @@ class TestAsyncEditorial:
 
     @pytest.mark.asyncio
     async def test_get_releases(self, editorial):
-        releases = await editorial.get_releases()
-        assert isinstance(releases, list)
-        assert len(releases) > 0
+        releases = editorial.get_releases()
+        assert isinstance(releases, AsyncPaginatedList)
+        first = await releases.get(0)
+        assert hasattr(first, "title")

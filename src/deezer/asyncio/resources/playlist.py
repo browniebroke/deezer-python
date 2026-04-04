@@ -1,10 +1,14 @@
 from __future__ import annotations
 
 from collections.abc import Iterable
+from typing import TYPE_CHECKING
 
 from deezer.utils import gen_ids
 
 from .resource import AsyncResource
+
+if TYPE_CHECKING:
+    from deezer.asyncio.pagination import AsyncPaginatedList
 
 
 class AsyncPlaylist(AsyncResource):
@@ -29,13 +33,13 @@ class AsyncPlaylist(AsyncResource):
     picture_xl: str
     checksum: str
 
-    async def get_tracks(self, **kwargs) -> list:
+    def get_tracks(self, **kwargs) -> AsyncPaginatedList:
         """Get tracks from a playlist."""
-        return await self.get_relation("tracks", **kwargs)
+        return self.get_paginated_list("tracks", **kwargs)
 
-    async def get_fans(self, **kwargs) -> list:
+    def get_fans(self, **kwargs) -> AsyncPaginatedList:
         """Get fans from a playlist."""
-        return await self.get_relation("fans", **kwargs)
+        return self.get_paginated_list("fans", **kwargs)
 
     async def mark_seen(self) -> bool:
         """Mark the playlist as seen."""
