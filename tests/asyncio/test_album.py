@@ -22,7 +22,7 @@ class TestAsyncAlbum:
     @pytest.mark.asyncio
     async def test_get_tracks(self, async_client):
         album = await async_client.get_album(302127)
-        tracks = album.get_tracks()
+        tracks = await album.get_tracks()
         assert isinstance(tracks, AsyncPaginatedList)
         tracks_list = await tracks.collect()
         assert len(tracks_list) == 14

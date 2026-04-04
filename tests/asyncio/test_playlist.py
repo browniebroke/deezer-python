@@ -24,14 +24,14 @@ class TestAsyncPlaylist:
 
     @pytest.mark.asyncio
     async def test_get_tracks(self, playlist):
-        tracks = playlist.get_tracks()
+        tracks = await playlist.get_tracks()
         assert isinstance(tracks, AsyncPaginatedList)
         first = await tracks.get(0)
         assert hasattr(first, "title")
 
     @pytest.mark.asyncio
     async def test_get_fans(self, playlist):
-        fans = playlist.get_fans()
+        fans = await playlist.get_fans()
         assert isinstance(fans, AsyncPaginatedList)
         first = await fans.get(0)
         assert hasattr(first, "name")

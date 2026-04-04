@@ -31,7 +31,7 @@ class TestAsyncEditorial:
 
     @pytest.mark.asyncio
     async def test_get_releases(self, editorial):
-        releases = editorial.get_releases()
+        releases = await editorial.get_releases()
         assert isinstance(releases, AsyncPaginatedList)
         first = await releases.get(0)
         assert hasattr(first, "title")

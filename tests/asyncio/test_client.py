@@ -72,7 +72,7 @@ class TestAsyncClient:
 
     @pytest.mark.asyncio
     async def test_list_editorials(self, async_client):
-        editorials = async_client.list_editorials()
+        editorials = await async_client.list_editorials()
         assert isinstance(editorials, AsyncPaginatedList)
         first = await editorials.get(0)
         assert hasattr(first, "name")
@@ -91,7 +91,7 @@ class TestAsyncClient:
 
     @pytest.mark.asyncio
     async def test_get_radios_top(self, async_client):
-        radios = async_client.get_radios_top()
+        radios = await async_client.get_radios_top()
         assert isinstance(radios, AsyncPaginatedList)
         first = await radios.get(0)
         assert hasattr(first, "title")
@@ -99,7 +99,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_recommended_tracks(self, async_client_token):
-        tracks = async_client_token.get_user_recommended_tracks()
+        tracks = await async_client_token.get_user_recommended_tracks()
         assert isinstance(tracks, AsyncPaginatedList)
         first = await tracks.get(0)
         assert hasattr(first, "title")
@@ -107,7 +107,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_recommended_albums(self, async_client_token):
-        albums = async_client_token.get_user_recommended_albums()
+        albums = await async_client_token.get_user_recommended_albums()
         assert isinstance(albums, AsyncPaginatedList)
         first = await albums.get(0)
         assert hasattr(first, "title")
@@ -115,7 +115,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_recommended_artists(self, async_client_token):
-        artists = async_client_token.get_user_recommended_artists()
+        artists = await async_client_token.get_user_recommended_artists()
         assert isinstance(artists, AsyncPaginatedList)
         first = await artists.get(0)
         assert hasattr(first, "name")
@@ -123,7 +123,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_recommended_playlists(self, async_client_token):
-        playlists = async_client_token.get_user_recommended_playlists()
+        playlists = await async_client_token.get_user_recommended_playlists()
         assert isinstance(playlists, AsyncPaginatedList)
         first = await playlists.get(0)
         assert hasattr(first, "title")
@@ -131,7 +131,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_flow(self, async_client_token):
-        flow = async_client_token.get_user_flow()
+        flow = await async_client_token.get_user_flow()
         assert isinstance(flow, AsyncPaginatedList)
         first = await flow.get(0)
         assert hasattr(first, "title")
@@ -139,7 +139,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_history(self, async_client_token):
-        history = async_client_token.get_user_history()
+        history = await async_client_token.get_user_history()
         assert isinstance(history, AsyncPaginatedList)
         first = await history.get(0)
         assert hasattr(first, "title")
@@ -218,28 +218,28 @@ class TestAsyncClient:
 
     @pytest.mark.asyncio
     async def test_search_simple(self, async_client):
-        result = async_client.search("Soliloquy")
+        result = await async_client.search("Soliloquy")
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert hasattr(first, "title")
 
     @pytest.mark.asyncio
     async def test_search_albums(self, async_client):
-        result = async_client.search_albums("Daft Punk")
+        result = await async_client.search_albums("Daft Punk")
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert hasattr(first, "title")
 
     @pytest.mark.asyncio
     async def test_search_artists(self, async_client):
-        result = async_client.search_artists("Daft Punk")
+        result = await async_client.search_artists("Daft Punk")
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert hasattr(first, "name")
 
     @pytest.mark.asyncio
     async def test_search_playlists(self, async_client):
-        result = async_client.search_playlists("Daft Punk")
+        result = await async_client.search_playlists("Daft Punk")
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert hasattr(first, "title")
@@ -258,7 +258,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_albums(self, async_client_token):
-        user_albums = async_client_token.get_user_albums()
+        user_albums = await async_client_token.get_user_albums()
         assert isinstance(user_albums, AsyncPaginatedList)
         first = await user_albums.get(0)
         assert hasattr(first, "title")
@@ -266,7 +266,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_artists(self, async_client_token):
-        user_artists = async_client_token.get_user_artists()
+        user_artists = await async_client_token.get_user_artists()
         assert isinstance(user_artists, AsyncPaginatedList)
         first = await user_artists.get(0)
         assert hasattr(first, "name")
@@ -274,7 +274,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_followers(self, async_client_token):
-        user_followers = async_client_token.get_user_followers()
+        user_followers = await async_client_token.get_user_followers()
         assert isinstance(user_followers, AsyncPaginatedList)
         first = await user_followers.get(0)
         assert hasattr(first, "name")
@@ -282,7 +282,7 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_followings(self, async_client_token):
-        user_followings = async_client_token.get_user_followings()
+        user_followings = await async_client_token.get_user_followings()
         assert isinstance(user_followings, AsyncPaginatedList)
         first = await user_followings.get(0)
         assert hasattr(first, "name")
@@ -290,28 +290,28 @@ class TestAsyncClient:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_get_user_tracks(self, async_client_token):
-        user_tracks = async_client_token.get_user_tracks()
+        user_tracks = await async_client_token.get_user_tracks()
         assert isinstance(user_tracks, AsyncPaginatedList)
         first = await user_tracks.get(0)
         assert hasattr(first, "title")
 
     @pytest.mark.asyncio
     async def test_search_strict(self, async_client):
-        result = async_client.search("Soliloquy", strict=True)
+        result = await async_client.search("Soliloquy", strict=True)
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert first.title == "Soliloquy"
 
     @pytest.mark.asyncio
     async def test_search_ordering(self, async_client):
-        result = async_client.search("Soliloquy", ordering="RANKING")
+        result = await async_client.search("Soliloquy", ordering="RANKING")
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert first.title == "Soliloquy"
 
     @pytest.mark.asyncio
     async def test_search_advanced(self, async_client):
-        result = async_client.search(artist="Lou Doillon")
+        result = await async_client.search(artist="Lou Doillon")
         assert isinstance(result, AsyncPaginatedList)
         first = await result.get(0)
         assert hasattr(first, "title")

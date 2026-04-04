@@ -21,14 +21,14 @@ class TestAsyncArtist:
 
     @pytest.mark.asyncio
     async def test_get_albums(self, daft_punk):
-        albums = daft_punk.get_albums()
+        albums = await daft_punk.get_albums()
         assert isinstance(albums, AsyncPaginatedList)
         first = await albums.get(0)
         assert isinstance(first, AsyncAlbum)
 
     @pytest.mark.asyncio
     async def test_get_top(self, daft_punk):
-        tracks = daft_punk.get_top()
+        tracks = await daft_punk.get_top()
         assert isinstance(tracks, AsyncPaginatedList)
         first = await tracks.get(0)
         assert hasattr(first, "title")
@@ -41,14 +41,14 @@ class TestAsyncArtist:
 
     @pytest.mark.asyncio
     async def test_get_related(self, daft_punk):
-        related = daft_punk.get_related()
+        related = await daft_punk.get_related()
         assert isinstance(related, AsyncPaginatedList)
         first = await related.get(0)
         assert isinstance(first, AsyncArtist)
 
     @pytest.mark.asyncio
     async def test_get_playlists(self, daft_punk):
-        playlists = daft_punk.get_playlists()
+        playlists = await daft_punk.get_playlists()
         assert isinstance(playlists, AsyncPaginatedList)
         first = await playlists.get(0)
         assert hasattr(first, "title")

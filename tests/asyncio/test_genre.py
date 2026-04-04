@@ -29,7 +29,7 @@ class TestAsyncGenre:
     @pytest.mark.asyncio
     async def test_get_podcasts(self, async_client):
         technology = await async_client.get_genre(232)
-        podcasts = technology.get_podcasts()
+        podcasts = await technology.get_podcasts()
         assert isinstance(podcasts, AsyncPaginatedList)
         first = await podcasts.get(0)
         assert hasattr(first, "title")

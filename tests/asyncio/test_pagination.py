@@ -14,7 +14,7 @@ class TestAsyncPaginatedList:
     @pytest_asyncio.fixture()
     async def daft_punk_albums(self, async_client):
         parent = AsyncArtist(async_client, {"id": 27, "type": "artist"})
-        return AsyncPaginatedList(
+        return await AsyncPaginatedList.create(
             client=async_client,
             parent=parent,
             base_path="artist/27/albums",
@@ -78,7 +78,7 @@ class TestAsyncPaginatedList:
     @pytest.mark.asyncio
     @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
     async def test_authenticated_requests(self, async_client_token):
-        paginated = AsyncPaginatedList(
+        paginated = await AsyncPaginatedList.create(
             client=async_client_token,
             base_path="user/me/tracks",
             params={"limit": 2},
@@ -92,29 +92,24 @@ class TestAsyncPaginatedList:
 
     @pytest.mark.asyncio
     async def test_repr_many_results(self, daft_punk_albums):
-        await daft_punk_albums.get(0)
         r = repr(daft_punk_albums)
         assert r.startswith("<AsyncPaginatedList [<AsyncAlbum:")
         assert "'...'" in r
 
     @pytest.mark.asyncio
     async def test_repr_little_results(self, async_client):
-        results = async_client.search_artists("rouquine")
-        await results.collect()
+        results = await async_client.search_artists("rouquine")
         r = repr(results)
         assert "<AsyncArtist: Rouquine>" in r
         assert "..." not in r
 
     @pytest.mark.asyncio
     async def test_repr_empty(self, async_client):
-        results = async_client.search_artists("something very complicated without results")
+        results = await async_client.search_artists("something very complicated without results")
         assert repr(results) == "<AsyncPaginatedList []>"
 
     @pytest.mark.asyncio
     async def test_anext_stop_iteration(self, async_client):
-        results = async_client.search_artists("something very complicated without results")
-        with pytest.raises(StopAsyncIteration):
-            await results.__anext__()
-        # Second call: _could_grow() is now False, hitting the other branch
+        results = await async_client.search_artists("something very complicated without results")
         with pytest.raises(StopAsyncIteration):
             await results.__anext__()
