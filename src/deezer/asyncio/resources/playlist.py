@@ -48,20 +48,14 @@ class AsyncPlaylist(AsyncResource):
     async def add_tracks(self, tracks: Iterable[int]) -> bool:
         """Add tracks to a playlist."""
         track_ids_str = ",".join(str(tid) for tid in gen_ids(tracks))
-        return await self.client.request(
-            "POST", f"playlist/{self.id}/tracks", params={"songs": track_ids_str}
-        )
+        return await self.client.request("POST", f"playlist/{self.id}/tracks", params={"songs": track_ids_str})
 
     async def delete_tracks(self, tracks: Iterable[int]) -> bool:
         """Delete tracks from a playlist."""
         track_ids_str = ",".join(map(str, gen_ids(tracks)))
-        return await self.client.request(
-            "DELETE", f"playlist/{self.id}/tracks", params={"songs": track_ids_str}
-        )
+        return await self.client.request("DELETE", f"playlist/{self.id}/tracks", params={"songs": track_ids_str})
 
     async def reorder_tracks(self, order: Iterable[int]) -> bool:
         """Reorder the tracks of a playlist."""
         order_track_ids_str = ",".join(map(str, gen_ids(order)))
-        return await self.client.request(
-            "POST", f"playlist/{self.id}/tracks", params={"order": order_track_ids_str}
-        )
+        return await self.client.request("POST", f"playlist/{self.id}/tracks", params={"order": order_track_ids_str})

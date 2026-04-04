@@ -14,7 +14,6 @@ from deezer.exceptions import (
 from deezer.resources import Resource
 
 from .pagination import AsyncPaginatedList
-
 from .resources import (
     AsyncAlbum,
     AsyncArtist,
@@ -217,9 +216,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
 
         :returns: an :class:`~deezer.asyncio.AsyncChart` object
         """
-        return await self.request(
-            "GET", f"chart/{genre_id}", resource_type=AsyncChart, resource_id=genre_id
-        )
+        return await self.request("GET", f"chart/{genre_id}", resource_type=AsyncChart, resource_id=genre_id)
 
     def list_editorials(self) -> AsyncPaginatedList:
         """

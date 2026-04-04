@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 import pytest_asyncio
 
-from deezer.asyncio import AsyncChart, AsyncPaginatedList
+from deezer.asyncio import AsyncPaginatedList
 
 pytestmark = pytest.mark.vcr
 

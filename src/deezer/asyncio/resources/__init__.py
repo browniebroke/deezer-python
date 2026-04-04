@@ -4,8 +4,8 @@ from .album import AsyncAlbum
 from .artist import AsyncArtist
 from .chart import AsyncChart
 from .editorial import AsyncEditorial
-from .genre import AsyncGenre
 from .episode import AsyncEpisode
+from .genre import AsyncGenre
 from .playlist import AsyncPlaylist
 from .podcast import AsyncPodcast
 from .radio import AsyncRadio

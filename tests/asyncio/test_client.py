@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import pytest
 
-import deezer
 from deezer.asyncio import (
     AsyncAlbum,
     AsyncArtist,
