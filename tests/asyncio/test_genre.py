@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 import pytest_asyncio
 
-from deezer.asyncio import AsyncArtist, AsyncGenre
+from deezer.asyncio import AsyncArtist, AsyncGenre, AsyncPaginatedList
 
 pytestmark = pytest.mark.vcr
 
@@ -25,6 +25,14 @@ class TestAsyncGenre:
         assert isinstance(artists, list)
         assert len(artists) > 0
         assert isinstance(artists[0], AsyncArtist)
+
+    @pytest.mark.asyncio
+    async def test_get_podcasts(self, async_client):
+        technology = await async_client.get_genre(232)
+        podcasts = technology.get_podcasts()
+        assert isinstance(podcasts, AsyncPaginatedList)
+        first = await podcasts.get(0)
+        assert hasattr(first, "title")
 
     @pytest.mark.asyncio
     async def test_get_radios(self, electro):

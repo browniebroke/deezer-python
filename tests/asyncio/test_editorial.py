@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 import pytest_asyncio
 
-from deezer.asyncio import AsyncEditorial, AsyncPaginatedList
+from deezer.asyncio import AsyncChart, AsyncEditorial, AsyncPaginatedList
 
 pytestmark = pytest.mark.vcr
 
@@ -23,6 +23,11 @@ class TestAsyncEditorial:
         selection = await editorial.get_selection()
         assert isinstance(selection, list)
         assert len(selection) > 0
+
+    @pytest.mark.asyncio
+    async def test_get_chart(self, editorial):
+        charts = await editorial.get_chart()
+        assert isinstance(charts, AsyncChart)
 
     @pytest.mark.asyncio
     async def test_get_releases(self, editorial):

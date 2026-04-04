@@ -65,3 +65,13 @@ class TestAsyncPlaylist:
         )
         result = await playlist.mark_seen()
         assert result is True
+
+    @pytest.mark.asyncio
+    @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
+    async def test_reorder_tracks(self, async_client):
+        playlist = AsyncPlaylist(
+            async_client,
+            json={"id": 11336462844, "type": "playlist"},
+        )
+        result = await playlist.reorder_tracks([79875044, 79875050, 142986210])
+        assert result is True
