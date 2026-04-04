@@ -33,13 +33,13 @@ class AsyncPlaylist(AsyncResource):
     picture_xl: str
     checksum: str
 
-    def get_tracks(self, **kwargs) -> AsyncPaginatedList:
+    async def get_tracks(self, **kwargs) -> AsyncPaginatedList:
         """Get tracks from a playlist."""
-        return self.get_paginated_list("tracks", **kwargs)
+        return await self.get_paginated_list("tracks", **kwargs)
 
-    def get_fans(self, **kwargs) -> AsyncPaginatedList:
+    async def get_fans(self, **kwargs) -> AsyncPaginatedList:
         """Get fans from a playlist."""
-        return self.get_paginated_list("fans", **kwargs)
+        return await self.get_paginated_list("fans", **kwargs)
 
     async def mark_seen(self) -> bool:
         """Mark the playlist as seen."""

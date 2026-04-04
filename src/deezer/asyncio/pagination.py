@@ -11,7 +11,11 @@ ResourceType = TypeVar("ResourceType")
 
 
 class AsyncPaginatedList(Generic[ResourceType]):
-    """Async paginated response from the API, supporting async iteration."""
+    """Async paginated response from the API, supporting async iteration.
+
+    Instances should be created via the :meth:`create` classmethod,
+    which fetches the first page of results eagerly.
+    """
 
     def __init__(
         self,
@@ -29,6 +33,20 @@ class AsyncPaginatedList(Generic[ResourceType]):
         self._parent = parent
         self._total: int | None = None
         self._iter_index = 0
+
+    @classmethod
+    async def create(
+        cls,
+        client: AsyncClient,
+        base_path: str,
+        parent: AsyncResource | None = None,
+        params: dict | None = None,
+    ) -> AsyncPaginatedList[ResourceType]:
+        """Create an AsyncPaginatedList and fetch the first page."""
+        instance = cls(client=client, base_path=base_path, parent=parent, params=params)
+        if instance._could_grow():
+            await instance._grow()
+        return instance
 
     def __repr__(self) -> str:
         """Convenient representation giving a preview of the content."""

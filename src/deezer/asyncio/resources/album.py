@@ -63,10 +63,10 @@ class AsyncAlbum(AsyncResource):
         """
         return await self.client.request("GET", f"artist/{self.artist.id}")
 
-    def get_tracks(self, **kwargs) -> AsyncPaginatedList:
+    async def get_tracks(self, **kwargs) -> AsyncPaginatedList:
         """
         Get a list of album's tracks.
 
         :returns: an :class:`AsyncPaginatedList` of track resources.
         """
-        return self.get_paginated_list("tracks", **kwargs)
+        return await self.get_paginated_list("tracks", **kwargs)

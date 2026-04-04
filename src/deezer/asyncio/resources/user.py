@@ -40,9 +40,9 @@ class AsyncUser(AsyncResource):
     _parse_birthday = staticmethod(parse_date)
     _parse_inscription_date = staticmethod(parse_date)
 
-    def get_albums(self, **kwargs) -> AsyncPaginatedList:
+    async def get_albums(self, **kwargs) -> AsyncPaginatedList:
         """Get user's favorite albums."""
-        return self.get_paginated_list("albums", **kwargs)
+        return await self.get_paginated_list("albums", **kwargs)
 
     async def add_album(self, album) -> bool:
         """Add an album to user's favorite albums."""
@@ -52,9 +52,9 @@ class AsyncUser(AsyncResource):
         """Remove an album from user's favorite albums."""
         return await self.delete_relation("albums", params={"album_id": get_id(album)})
 
-    def get_tracks(self, **kwargs) -> AsyncPaginatedList:
+    async def get_tracks(self, **kwargs) -> AsyncPaginatedList:
         """Get user's favorite tracks."""
-        return self.get_paginated_list("tracks", **kwargs)
+        return await self.get_paginated_list("tracks", **kwargs)
 
     async def add_track(self, track) -> bool:
         """Add a track to user's favorite tracks."""
@@ -64,9 +64,9 @@ class AsyncUser(AsyncResource):
         """Remove a track from user's favorite tracks."""
         return await self.delete_relation("tracks", params={"track_id": get_id(track)})
 
-    def get_artists(self, **kwargs) -> AsyncPaginatedList:
+    async def get_artists(self, **kwargs) -> AsyncPaginatedList:
         """Get user's favorite artists."""
-        return self.get_paginated_list("artists", **kwargs)
+        return await self.get_paginated_list("artists", **kwargs)
 
     async def add_artist(self, artist) -> bool:
         """Add an artist to user's favorite artists."""
@@ -76,13 +76,13 @@ class AsyncUser(AsyncResource):
         """Remove an artist from user's favorite artists."""
         return await self.delete_relation("artists", params={"artist_id": get_id(artist)})
 
-    def get_followers(self, **kwargs) -> AsyncPaginatedList:
+    async def get_followers(self, **kwargs) -> AsyncPaginatedList:
         """Get user's followers."""
-        return self.get_paginated_list("followers", **kwargs)
+        return await self.get_paginated_list("followers", **kwargs)
 
-    def get_followings(self, **kwargs) -> AsyncPaginatedList:
+    async def get_followings(self, **kwargs) -> AsyncPaginatedList:
         """Get user's followings."""
-        return self.get_paginated_list("followings", **kwargs)
+        return await self.get_paginated_list("followings", **kwargs)
 
     async def follow(self, user) -> bool:
         """Follow a user."""
@@ -92,9 +92,9 @@ class AsyncUser(AsyncResource):
         """Unfollow a user."""
         return await self.delete_relation("followings", params={"user_id": get_id(user)})
 
-    def get_playlists(self, **kwargs) -> AsyncPaginatedList:
+    async def get_playlists(self, **kwargs) -> AsyncPaginatedList:
         """Get user's public playlists."""
-        return self.get_paginated_list("playlists", **kwargs)
+        return await self.get_paginated_list("playlists", **kwargs)
 
     async def add_playlist(self, playlist) -> bool:
         """Add a playlist to user's public playlists."""

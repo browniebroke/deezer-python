@@ -27,22 +27,22 @@ class AsyncArtist(AsyncResource):
     radio: bool
     tracklist: str
 
-    def get_top(self, **kwargs) -> AsyncPaginatedList:
+    async def get_top(self, **kwargs) -> AsyncPaginatedList:
         """Get the top tracks of an artist."""
-        return self.get_paginated_list("top", **kwargs)
+        return await self.get_paginated_list("top", **kwargs)
 
-    def get_related(self, **kwargs) -> AsyncPaginatedList[AsyncArtist]:
+    async def get_related(self, **kwargs) -> AsyncPaginatedList[AsyncArtist]:
         """Get a list of related artists."""
-        return self.get_paginated_list("related", **kwargs)
+        return await self.get_paginated_list("related", **kwargs)
 
     async def get_radio(self, **kwargs) -> list:
         """Get a list of tracks."""
         return await self.get_relation("radio", fwd_parent=False, **kwargs)
 
-    def get_albums(self, **kwargs) -> AsyncPaginatedList[AsyncAlbum]:
+    async def get_albums(self, **kwargs) -> AsyncPaginatedList[AsyncAlbum]:
         """Get a list of artist's albums."""
-        return self.get_paginated_list("albums", **kwargs)
+        return await self.get_paginated_list("albums", **kwargs)
 
-    def get_playlists(self, **kwargs) -> AsyncPaginatedList:
+    async def get_playlists(self, **kwargs) -> AsyncPaginatedList:
         """Get a list of artist's playlists."""
-        return self.get_paginated_list("playlists", **kwargs)
+        return await self.get_paginated_list("playlists", **kwargs)

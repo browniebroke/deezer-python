@@ -126,8 +126,8 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
             paginate_list=paginate_list,
         )
 
-    def _get_paginated_list(self, path: str, params: dict | None = None):
-        return AsyncPaginatedList(client=self, base_path=path, params=params)
+    async def _get_paginated_list(self, path: str, params: dict | None = None):
+        return await AsyncPaginatedList.create(client=self, base_path=path, params=params)
 
     async def get_artist(self, artist_id: int) -> AsyncArtist:
         """
@@ -218,13 +218,13 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         """
         return await self.request("GET", f"chart/{genre_id}", resource_type=AsyncChart, resource_id=genre_id)
 
-    def list_editorials(self) -> AsyncPaginatedList:
+    async def list_editorials(self) -> AsyncPaginatedList:
         """
         List editorials.
 
         :returns: an :class:`AsyncPaginatedList` of :class:`AsyncEditorial` objects.
         """
-        return self._get_paginated_list("editorial")
+        return await self._get_paginated_list("editorial")
 
     async def list_genres(self) -> list[AsyncGenre]:
         """
@@ -242,38 +242,38 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         """
         return await self.request("GET", "radio")
 
-    def get_radios_top(self) -> AsyncPaginatedList:
+    async def get_radios_top(self) -> AsyncPaginatedList:
         """
         Get the top radios.
 
         :returns: an :class:`AsyncPaginatedList` of :class:`AsyncRadio` objects.
         """
-        return self._get_paginated_list("radio/top")
+        return await self._get_paginated_list("radio/top")
 
-    def get_user_recommended_tracks(self, **kwargs) -> AsyncPaginatedList:
+    async def get_user_recommended_tracks(self, **kwargs) -> AsyncPaginatedList:
         """Get user's recommended tracks."""
-        return AsyncPaginatedList(client=self, base_path="user/me/recommendations/tracks", **kwargs)
+        return await AsyncPaginatedList.create(client=self, base_path="user/me/recommendations/tracks", **kwargs)
 
-    def get_user_recommended_albums(self, **kwargs) -> AsyncPaginatedList:
+    async def get_user_recommended_albums(self, **kwargs) -> AsyncPaginatedList:
         """Get user's recommended albums."""
-        return AsyncPaginatedList(client=self, base_path="user/me/recommendations/albums", **kwargs)
+        return await AsyncPaginatedList.create(client=self, base_path="user/me/recommendations/albums", **kwargs)
 
-    def get_user_recommended_artists(self, **kwargs) -> AsyncPaginatedList:
+    async def get_user_recommended_artists(self, **kwargs) -> AsyncPaginatedList:
         """Get user's recommended artists."""
-        return AsyncPaginatedList(client=self, base_path="user/me/recommendations/artists", **kwargs)
+        return await AsyncPaginatedList.create(client=self, base_path="user/me/recommendations/artists", **kwargs)
 
-    def get_user_recommended_playlists(self, **kwargs) -> AsyncPaginatedList:
+    async def get_user_recommended_playlists(self, **kwargs) -> AsyncPaginatedList:
         """Get user's recommended playlists."""
-        return AsyncPaginatedList(client=self, base_path="user/me/recommendations/playlists", **kwargs)
+        return await AsyncPaginatedList.create(client=self, base_path="user/me/recommendations/playlists", **kwargs)
 
-    def get_user_flow(self, **kwargs) -> AsyncPaginatedList:
+    async def get_user_flow(self, **kwargs) -> AsyncPaginatedList:
         """Get user's flow."""
-        return AsyncPaginatedList(client=self, base_path="user/me/flow", **kwargs)
+        return await AsyncPaginatedList.create(client=self, base_path="user/me/flow", **kwargs)
 
-    def get_user_albums(self, user_id: int | None = None) -> AsyncPaginatedList:
+    async def get_user_albums(self, user_id: int | None = None) -> AsyncPaginatedList:
         """Get the favourites albums for the given user_id or current user."""
         user_id_str = str(user_id) if user_id else "me"
-        return self._get_paginated_list(f"user/{user_id_str}/albums")
+        return await self._get_paginated_list(f"user/{user_id_str}/albums")
 
     async def add_user_album(self, album_id: int) -> bool:
         """Add an album to the user's library."""
@@ -283,10 +283,10 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         """Remove an album from the user's library."""
         return await self.request("DELETE", "user/me/albums", params={"album_id": album_id})
 
-    def get_user_artists(self, user_id: int | None = None) -> AsyncPaginatedList:
+    async def get_user_artists(self, user_id: int | None = None) -> AsyncPaginatedList:
         """Get the favourites artists for the given user_id or current user."""
         user_id_str = str(user_id) if user_id else "me"
-        return self._get_paginated_list(f"user/{user_id_str}/artists")
+        return await self._get_paginated_list(f"user/{user_id_str}/artists")
 
     async def add_user_artist(self, artist_id: int) -> bool:
         """Add an artist to the user's library."""
@@ -296,15 +296,15 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         """Remove an artist from the user's library."""
         return await self.request("DELETE", "user/me/artists", params={"artist_id": artist_id})
 
-    def get_user_followers(self, user_id: int | None = None) -> AsyncPaginatedList:
+    async def get_user_followers(self, user_id: int | None = None) -> AsyncPaginatedList:
         """Get the followers for the given user_id or current user."""
         user_id_str = str(user_id) if user_id else "me"
-        return self._get_paginated_list(f"user/{user_id_str}/followers")
+        return await self._get_paginated_list(f"user/{user_id_str}/followers")
 
-    def get_user_followings(self, user_id: int | None = None) -> AsyncPaginatedList:
+    async def get_user_followings(self, user_id: int | None = None) -> AsyncPaginatedList:
         """Get the followings for the given user_id or current user."""
         user_id_str = str(user_id) if user_id else "me"
-        return self._get_paginated_list(f"user/{user_id_str}/followings")
+        return await self._get_paginated_list(f"user/{user_id_str}/followings")
 
     async def add_user_following(self, user_id: int) -> bool:
         """Follow the given user ID as the currently authenticated user."""
@@ -314,14 +314,14 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         """Stop following the given user ID as the currently authenticated user."""
         return await self.request("DELETE", "user/me/followings", params={"user_id": user_id})
 
-    def get_user_history(self) -> AsyncPaginatedList:
+    async def get_user_history(self) -> AsyncPaginatedList:
         """Get the recently played tracks for the current user."""
-        return self._get_paginated_list("user/me/history")
+        return await self._get_paginated_list("user/me/history")
 
-    def get_user_tracks(self, user_id: int | None = None) -> AsyncPaginatedList:
+    async def get_user_tracks(self, user_id: int | None = None) -> AsyncPaginatedList:
         """Get the favourites tracks for the given user_id or current user."""
         user_id_str = str(user_id) if user_id else "me"
-        return self._get_paginated_list(f"user/{user_id_str}/tracks")
+        return await self._get_paginated_list(f"user/{user_id_str}/tracks")
 
     async def add_user_track(self, track_id: int) -> bool:
         """Add a track to the user's library."""
@@ -352,7 +352,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         """Delete a playlist from the user's account."""
         return await self.request("DELETE", f"playlist/{playlist_id}")
 
-    def _search(
+    async def _search(
         self,
         path: str,
         query: str = "",
@@ -372,7 +372,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
             f'{param_name}:"{param_value}"' for param_name, param_value in advanced_params.items() if param_value
         )
 
-        return self._get_paginated_list(
+        return await self._get_paginated_list(
             path=f"search/{path}" if path else "search",
             params={
                 "q": " ".join(query_parts),
@@ -380,7 +380,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
             },
         )
 
-    def search(
+    async def search(
         self,
         query: str = "",
         strict: bool | None = None,
@@ -400,7 +400,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         Advanced search is available by either formatting the query yourself or
         by using the dedicated keywords arguments.
         """
-        return self._search(
+        return await self._search(
             "",
             query=query,
             strict=strict,
@@ -415,29 +415,29 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
             bpm_max=bpm_max,
         )
 
-    def search_albums(
+    async def search_albums(
         self,
         query: str = "",
         strict: bool | None = None,
         ordering: str | None = None,
     ) -> AsyncPaginatedList:
         """Search albums matching the given query."""
-        return self._search(path="album", query=query, strict=strict, ordering=ordering)
+        return await self._search(path="album", query=query, strict=strict, ordering=ordering)
 
-    def search_artists(
+    async def search_artists(
         self,
         query: str = "",
         strict: bool | None = None,
         ordering: str | None = None,
     ) -> AsyncPaginatedList:
         """Search artists matching the given query."""
-        return self._search(path="artist", query=query, strict=strict, ordering=ordering)
+        return await self._search(path="artist", query=query, strict=strict, ordering=ordering)
 
-    def search_playlists(
+    async def search_playlists(
         self,
         query: str = "",
         strict: bool | None = None,
         ordering: str | None = None,
     ) -> AsyncPaginatedList:
         """Search playlists matching the given query."""
-        return self._search(path="playlist", query=query, strict=strict, ordering=ordering)
+        return await self._search(path="playlist", query=query, strict=strict, ordering=ordering)

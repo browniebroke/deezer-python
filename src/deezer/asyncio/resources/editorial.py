@@ -28,6 +28,6 @@ class AsyncEditorial(AsyncResource):
         """Get top charts for tracks, albums, artists and playlists."""
         return await self.get_relation("charts", resource_type=AsyncChart)
 
-    def get_releases(self, **kwargs) -> AsyncPaginatedList:
+    async def get_releases(self, **kwargs) -> AsyncPaginatedList:
         """Get the new releases per genre for the current country."""
-        return self.get_paginated_list("releases", **kwargs)
+        return await self.get_paginated_list("releases", **kwargs)

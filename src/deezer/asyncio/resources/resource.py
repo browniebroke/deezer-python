@@ -89,13 +89,13 @@ class AsyncResource:
             params=params,
         )
 
-    def get_paginated_list(
+    async def get_paginated_list(
         self,
         relation: str,
         params: dict | None = None,
     ) -> AsyncPaginatedList:
         """Build the pagination object based on the relation."""
-        return AsyncPaginatedList(
+        return await AsyncPaginatedList.create(
             client=self.client,
             base_path=f"{self.type}/{self.id}/{relation}",
             parent=self,

@@ -24,6 +24,6 @@ class AsyncPodcast(AsyncResource):
     picture_big: str
     picture_xl: str
 
-    def get_episodes(self, **kwargs) -> AsyncPaginatedList:
+    async def get_episodes(self, **kwargs) -> AsyncPaginatedList:
         """Get episodes from a podcast."""
-        return self.get_paginated_list("episodes", **kwargs)
+        return await self.get_paginated_list("episodes", **kwargs)

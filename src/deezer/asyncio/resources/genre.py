@@ -23,9 +23,9 @@ class AsyncGenre(AsyncResource):
         """Get all artists for a genre."""
         return await self.get_relation("artists", **kwargs)
 
-    def get_podcasts(self, **kwargs) -> AsyncPaginatedList:
+    async def get_podcasts(self, **kwargs) -> AsyncPaginatedList:
         """Get all podcasts for a genre."""
-        return self.get_paginated_list("podcasts", **kwargs)
+        return await self.get_paginated_list("podcasts", **kwargs)
 
     async def get_radios(self, **kwargs) -> list:
         """Get all radios for a genre."""
