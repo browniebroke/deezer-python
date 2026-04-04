@@ -1,0 +1,91 @@
+from __future__ import annotations
+
+import pytest
+import pytest_asyncio
+
+from deezer.asyncio import AsyncAlbum, AsyncArtist, AsyncPaginatedList
+
+pytestmark = pytest.mark.vcr
+
+
+class TestAsyncPaginatedList:
+    """Tests for the AsyncPaginatedList class."""
+
+    @pytest_asyncio.fixture()
+    async def daft_punk_albums(self, async_client):
+        parent = AsyncArtist(async_client, {"id": 27, "type": "artist"})
+        return AsyncPaginatedList(
+            client=async_client,
+            parent=parent,
+            base_path="artist/27/albums",
+        )
+
+    @pytest.mark.asyncio
+    async def test_total(self, daft_punk_albums):
+        total = await daft_punk_albums.total()
+        assert total == 32
+        assert await daft_punk_albums.length() == 32
+
+    @pytest.mark.asyncio
+    async def test_iterate(self, daft_punk_albums):
+        iter_count = 0
+        async for album in daft_punk_albums:
+            assert isinstance(album, AsyncAlbum)
+            iter_count += 1
+        assert iter_count == 32
+        # This shouldn't do another API call
+        assert await daft_punk_albums.total() == 32
+
+    @pytest.mark.asyncio
+    async def test_iterator(self, daft_punk_albums):
+        a1 = await daft_punk_albums.__anext__()
+        a2 = await daft_punk_albums.__anext__()
+        a3 = await daft_punk_albums.__anext__()
+
+        assert a1.title == "Human After All (Remixes)"
+        assert a2.title == "Random Access Memories"
+        assert a3.title == "TRON: Legacy Reconfigured"
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize(
+        ("index", "title"),
+        [
+            (4, "Alive 2007"),
+            (30, "One More Time"),
+        ],
+    )
+    async def test_get_element(self, daft_punk_albums, index, title):
+        album = await daft_punk_albums.get(index)
+        assert isinstance(album, AsyncAlbum)
+        assert album.title == title
+
+    @pytest.mark.asyncio
+    async def test_get_element_index_error(self, daft_punk_albums):
+        with pytest.raises(IndexError):
+            await daft_punk_albums.get(40)
+
+    @pytest.mark.asyncio
+    async def test_get_element_negative_value(self, daft_punk_albums):
+        with pytest.raises(IndexError):
+            await daft_punk_albums.get(-1)
+
+    @pytest.mark.asyncio
+    async def test_collect(self, daft_punk_albums):
+        all_albums = await daft_punk_albums.collect()
+        assert len(all_albums) == 32
+        assert all(isinstance(a, AsyncAlbum) for a in all_albums)
+
+    @pytest.mark.asyncio
+    @pytest.mark.vcr(match_on=["method", "scheme", "host", "port", "path"])
+    async def test_authenticated_requests(self, async_client_token):
+        paginated = AsyncPaginatedList(
+            client=async_client_token,
+            base_path="user/me/tracks",
+            params={"limit": 2},
+        )
+        titles = [t.title async for t in paginated]
+        assert titles == [
+            "Poney Pt. I",
+            "Young Blood",
+            "Flyover",
+        ]

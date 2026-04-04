@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://api.deezer.com/search/artist?q=rouquine
+  response:
+    body:
+      string: '{"data":[{"id":96110972,"name":"Rouquine","link":"https:\/\/www.deezer.com\/artist\/96110972","picture":"https:\/\/api.deezer.com\/artist\/96110972\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/7d0fc155b30dcb43c6c5085afaf45d6d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/7d0fc155b30dcb43c6c5085afaf45d6d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/7d0fc155b30dcb43c6c5085afaf45d6d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/7d0fc155b30dcb43c6c5085afaf45d6d\/1000x1000-000000-80-0-0.jpg","nb_album":8,"nb_fan":3107,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/96110972\/top?limit=50","type":"artist"},{"id":174941387,"name":"Rouquined","link":"https:\/\/www.deezer.com\/artist\/174941387","picture":"https:\/\/api.deezer.com\/artist\/174941387\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3ba24d95905d77ea43ecd27385121c7c\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3ba24d95905d77ea43ecd27385121c7c\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3ba24d95905d77ea43ecd27385121c7c\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/3ba24d95905d77ea43ecd27385121c7c\/1000x1000-000000-80-0-0.jpg","nb_album":1,"nb_fan":2,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/174941387\/top?limit=50","type":"artist"}],"total":2}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1596'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-03
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

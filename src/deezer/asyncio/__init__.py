@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from .client import AsyncClient
+from .pagination import AsyncPaginatedList
 from .resources import (
     AsyncAlbum,
     AsyncArtist,
@@ -21,6 +22,7 @@ __all__ = [
     "AsyncArtist",
     "AsyncChart",
     "AsyncClient",
+    "AsyncPaginatedList",
     "AsyncEditorial",
     "AsyncEpisode",
     "AsyncGenre",
