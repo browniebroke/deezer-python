@@ -84,12 +84,12 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
             headers=headers,
         )
 
-    async def request(  # type: ignore[override]
+    async def request(  # ty: ignore[invalid-method-override]
         self,
         method: str,
         path: str,
-        parent: Resource | None = None,
-        resource_type: type[Resource] | None = None,
+        parent: AsyncResource | Resource | None = None,
+        resource_type: type[AsyncResource] | type[Resource] | None = None,
         resource_id: int | None = None,
         paginate_list=False,
         **kwargs,

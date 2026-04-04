@@ -42,8 +42,8 @@ class DeezerMixin:
     def _process_json(
         self,
         item: dict[str, Any],
-        parent: Resource | None = None,
-        resource_type: type[Resource] | None = None,
+        parent: Any = None,
+        resource_type: type[Any] | None = None,
         resource_id: int | None = None,
         paginate_list=False,
     ):
