@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://api.deezer.com/user/me/history?access_token=dummy
+  response:
+    body:
+      string: '{"data":[{"id":1385588422,"readable":true,"title":"Loverini","title_short":"Loverini","title_version":"","link":"https:\/\/www.deezer.com\/track\/1385588422","duration":202,"rank":669569,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-f.dzcdn.net\/stream\/c-fb1eb137f4c2c617c32b1eace04cab62-3.mp3","md5_image":"aaeaf4de4ba9e60e30b8bc52d138ac06","timestamp":1634332679,"artist":{"id":326180,"name":"Myd","link":"https:\/\/www.deezer.com\/artist\/326180","tracklist":"https:\/\/api.deezer.com\/artist\/326180\/top?limit=50","type":"artist"},"album":{"id":233306092,"title":"Loverini","link":"https:\/\/www.deezer.com\/album\/233306092","cover":"https:\/\/api.deezer.com\/album\/233306092\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/aaeaf4de4ba9e60e30b8bc52d138ac06\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/aaeaf4de4ba9e60e30b8bc52d138ac06\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/aaeaf4de4ba9e60e30b8bc52d138ac06\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/aaeaf4de4ba9e60e30b8bc52d138ac06\/1000x1000-000000-80-0-0.jpg","md5_image":"aaeaf4de4ba9e60e30b8bc52d138ac06","tracklist":"https:\/\/api.deezer.com\/album\/233306092\/tracks","type":"album"},"type":"track"},{"id":586961162,"readable":true,"title":"Superch\u00e9rie","title_short":"Superch\u00e9rie","title_version":"","link":"https:\/\/www.deezer.com\/track\/586961162","duration":223,"rank":631269,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-8.dzcdn.net\/stream\/c-8e35b570d3733bf27c82efef3e832930-5.mp3","md5_image":"f8fabe824e5e055c511940e4d725e34b","timestamp":1634332611,"artist":{"id":867,"name":"M","link":"https:\/\/www.deezer.com\/artist\/867","tracklist":"https:\/\/api.deezer.com\/artist\/867\/top?limit=50","type":"artist"},"album":{"id":78874142,"title":"Lettre
+        infinie","link":"https:\/\/www.deezer.com\/album\/78874142","cover":"https:\/\/api.deezer.com\/album\/78874142\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f8fabe824e5e055c511940e4d725e34b\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f8fabe824e5e055c511940e4d725e34b\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f8fabe824e5e055c511940e4d725e34b\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f8fabe824e5e055c511940e4d725e34b\/1000x1000-000000-80-0-0.jpg","md5_image":"f8fabe824e5e055c511940e4d725e34b","tracklist":"https:\/\/api.deezer.com\/album\/78874142\/tracks","type":"album"},"type":"track"},{"id":13761221,"readable":true,"title":"Run
+        Away","title_short":"Run Away","title_version":"","link":"https:\/\/www.deezer.com\/track\/13761221","duration":453,"rank":6914,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-2.dzcdn.net\/stream\/c-2b6e3344f859933264778f343481e5e3-3.mp3","md5_image":"189bf8e09524dda40826c27f3a93a98c","timestamp":1634332545,"artist":{"id":354682,"name":"The
+        Next Buddha","link":"https:\/\/www.deezer.com\/artist\/354682","tracklist":"https:\/\/api.deezer.com\/artist\/354682\/top?limit=50","type":"artist"},"album":{"id":1259273,"title":"Relapse","link":"https:\/\/www.deezer.com\/album\/1259273","cover":"https:\/\/api.deezer.com\/album\/1259273\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/189bf8e09524dda40826c27f3a93a98c\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/189bf8e09524dda40826c27f3a93a98c\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/189bf8e09524dda40826c27f3a93a98c\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/189bf8e09524dda40826c27f3a93a98c\/1000x1000-000000-80-0-0.jpg","md5_image":"189bf8e09524dda40826c27f3a93a98c","tracklist":"https:\/\/api.deezer.com\/album\/1259273\/tracks","type":"album"},"type":"track"}],"total":3}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4204'
+      Content-Type:
+      - application/json; charset=utf-8
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-75
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1

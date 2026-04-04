@@ -220,3 +220,227 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         return await self.request(
             "GET", f"chart/{genre_id}", resource_type=AsyncChart, resource_id=genre_id
         )
+
+    def list_editorials(self) -> AsyncPaginatedList:
+        """
+        List editorials.
+
+        :returns: an :class:`AsyncPaginatedList` of :class:`AsyncEditorial` objects.
+        """
+        return self._get_paginated_list("editorial")
+
+    async def list_genres(self) -> list[AsyncGenre]:
+        """
+        List musical genres.
+
+        :returns: a list of :class:`AsyncGenre` instances
+        """
+        return await self.request("GET", "genre")
+
+    async def list_radios(self) -> list[AsyncRadio]:
+        """
+        List radios.
+
+        :returns: a list of :class:`AsyncRadio` instances
+        """
+        return await self.request("GET", "radio")
+
+    def get_radios_top(self) -> AsyncPaginatedList:
+        """
+        Get the top radios.
+
+        :returns: an :class:`AsyncPaginatedList` of :class:`AsyncRadio` objects.
+        """
+        return self._get_paginated_list("radio/top")
+
+    def get_user_recommended_tracks(self, **kwargs) -> AsyncPaginatedList:
+        """Get user's recommended tracks."""
+        return AsyncPaginatedList(client=self, base_path="user/me/recommendations/tracks", **kwargs)
+
+    def get_user_recommended_albums(self, **kwargs) -> AsyncPaginatedList:
+        """Get user's recommended albums."""
+        return AsyncPaginatedList(client=self, base_path="user/me/recommendations/albums", **kwargs)
+
+    def get_user_recommended_artists(self, **kwargs) -> AsyncPaginatedList:
+        """Get user's recommended artists."""
+        return AsyncPaginatedList(client=self, base_path="user/me/recommendations/artists", **kwargs)
+
+    def get_user_recommended_playlists(self, **kwargs) -> AsyncPaginatedList:
+        """Get user's recommended playlists."""
+        return AsyncPaginatedList(client=self, base_path="user/me/recommendations/playlists", **kwargs)
+
+    def get_user_flow(self, **kwargs) -> AsyncPaginatedList:
+        """Get user's flow."""
+        return AsyncPaginatedList(client=self, base_path="user/me/flow", **kwargs)
+
+    def get_user_albums(self, user_id: int | None = None) -> AsyncPaginatedList:
+        """Get the favourites albums for the given user_id or current user."""
+        user_id_str = str(user_id) if user_id else "me"
+        return self._get_paginated_list(f"user/{user_id_str}/albums")
+
+    async def add_user_album(self, album_id: int) -> bool:
+        """Add an album to the user's library."""
+        return await self.request("POST", "user/me/albums", params={"album_id": album_id})
+
+    async def remove_user_album(self, album_id: int) -> bool:
+        """Remove an album from the user's library."""
+        return await self.request("DELETE", "user/me/albums", params={"album_id": album_id})
+
+    def get_user_artists(self, user_id: int | None = None) -> AsyncPaginatedList:
+        """Get the favourites artists for the given user_id or current user."""
+        user_id_str = str(user_id) if user_id else "me"
+        return self._get_paginated_list(f"user/{user_id_str}/artists")
+
+    async def add_user_artist(self, artist_id: int) -> bool:
+        """Add an artist to the user's library."""
+        return await self.request("POST", "user/me/artists", params={"artist_id": artist_id})
+
+    async def remove_user_artist(self, artist_id: int) -> bool:
+        """Remove an artist from the user's library."""
+        return await self.request("DELETE", "user/me/artists", params={"artist_id": artist_id})
+
+    def get_user_followers(self, user_id: int | None = None) -> AsyncPaginatedList:
+        """Get the followers for the given user_id or current user."""
+        user_id_str = str(user_id) if user_id else "me"
+        return self._get_paginated_list(f"user/{user_id_str}/followers")
+
+    def get_user_followings(self, user_id: int | None = None) -> AsyncPaginatedList:
+        """Get the followings for the given user_id or current user."""
+        user_id_str = str(user_id) if user_id else "me"
+        return self._get_paginated_list(f"user/{user_id_str}/followings")
+
+    async def add_user_following(self, user_id: int) -> bool:
+        """Follow the given user ID as the currently authenticated user."""
+        return await self.request("POST", "user/me/followings", params={"user_id": user_id})
+
+    async def remove_user_following(self, user_id: int) -> bool:
+        """Stop following the given user ID as the currently authenticated user."""
+        return await self.request("DELETE", "user/me/followings", params={"user_id": user_id})
+
+    def get_user_history(self) -> AsyncPaginatedList:
+        """Get the recently played tracks for the current user."""
+        return self._get_paginated_list("user/me/history")
+
+    def get_user_tracks(self, user_id: int | None = None) -> AsyncPaginatedList:
+        """Get the favourites tracks for the given user_id or current user."""
+        user_id_str = str(user_id) if user_id else "me"
+        return self._get_paginated_list(f"user/{user_id_str}/tracks")
+
+    async def add_user_track(self, track_id: int) -> bool:
+        """Add a track to the user's library."""
+        return await self.request("POST", "user/me/tracks", params={"track_id": track_id})
+
+    async def remove_user_track(self, track_id: int) -> bool:
+        """Remove a track from the user's library."""
+        return await self.request("DELETE", "user/me/tracks", params={"track_id": track_id})
+
+    async def add_user_playlist(self, playlist_id: int) -> bool:
+        """Add a playlist to the user's library."""
+        return await self.request("POST", "user/me/playlists", params={"playlist_id": playlist_id})
+
+    async def remove_user_playlist(self, playlist_id: int) -> bool:
+        """Remove a playlist from the user's library."""
+        return await self.request("DELETE", "user/me/playlists", params={"playlist_id": playlist_id})
+
+    async def create_playlist(self, playlist_name: str) -> int:
+        """
+        Create a playlist on the user's account.
+
+        :returns: the ID of the playlist that was created
+        """
+        result = await self.request("POST", "user/me/playlists", params={"title": playlist_name})
+        return result.id
+
+    async def delete_playlist(self, playlist_id: int) -> bool:
+        """Delete a playlist from the user's account."""
+        return await self.request("DELETE", f"playlist/{playlist_id}")
+
+    def _search(
+        self,
+        path: str,
+        query: str = "",
+        strict: bool | None = None,
+        ordering: str | None = None,
+        **advanced_params: str | int | None,
+    ):
+        optional_params = {}
+        if strict is True:
+            optional_params["strict"] = "on"
+        if ordering:
+            optional_params["ordering"] = ordering
+        query_parts = []
+        if query:
+            query_parts.append(query)
+        query_parts.extend(
+            f'{param_name}:"{param_value}"' for param_name, param_value in advanced_params.items() if param_value
+        )
+
+        return self._get_paginated_list(
+            path=f"search/{path}" if path else "search",
+            params={
+                "q": " ".join(query_parts),
+                **optional_params,
+            },
+        )
+
+    def search(
+        self,
+        query: str = "",
+        strict: bool | None = None,
+        ordering: str | None = None,
+        artist: str | None = None,
+        album: str | None = None,
+        track: str | None = None,
+        label: str | None = None,
+        dur_min: int | None = None,
+        dur_max: int | None = None,
+        bpm_min: int | None = None,
+        bpm_max: int | None = None,
+    ) -> AsyncPaginatedList:
+        """
+        Search tracks.
+
+        Advanced search is available by either formatting the query yourself or
+        by using the dedicated keywords arguments.
+        """
+        return self._search(
+            "",
+            query=query,
+            strict=strict,
+            ordering=ordering,
+            artist=artist,
+            album=album,
+            track=track,
+            label=label,
+            dur_min=dur_min,
+            dur_max=dur_max,
+            bpm_min=bpm_min,
+            bpm_max=bpm_max,
+        )
+
+    def search_albums(
+        self,
+        query: str = "",
+        strict: bool | None = None,
+        ordering: str | None = None,
+    ) -> AsyncPaginatedList:
+        """Search albums matching the given query."""
+        return self._search(path="album", query=query, strict=strict, ordering=ordering)
+
+    def search_artists(
+        self,
+        query: str = "",
+        strict: bool | None = None,
+        ordering: str | None = None,
+    ) -> AsyncPaginatedList:
+        """Search artists matching the given query."""
+        return self._search(path="artist", query=query, strict=strict, ordering=ordering)
+
+    def search_playlists(
+        self,
+        query: str = "",
+        strict: bool | None = None,
+        ordering: str | None = None,
+    ) -> AsyncPaginatedList:
+        """Search playlists matching the given query."""
+        return self._search(path="playlist", query=query, strict=strict, ordering=ordering)

@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-requests/2.26.0
+    method: POST
+    uri: https://api.deezer.com/user/me/artists?artist_id=243&access_token=dummy
+  response:
+    body:
+      string: 'true'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 09 Oct 2021 17:43:02 GMT
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      P3P:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_frb734f69afd1d53c8c9deb697d7f2c51fc622ce; expires=Thu,
+        07-Apr-2022 17:43:02 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-156
+      x-org:
+      - FR
+    status:
+      code: 200
+      message: OK
+version: 1
