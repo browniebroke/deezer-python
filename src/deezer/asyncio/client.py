@@ -16,6 +16,7 @@ from deezer.resources import Resource
 from .resources import (
     AsyncAlbum,
     AsyncArtist,
+    AsyncEpisode,
     AsyncGenre,
     AsyncPodcast,
     AsyncRadio,
@@ -52,6 +53,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
     objects_types: ClassVar[dict[str, type[AsyncResource] | None]] = {
         "album": AsyncAlbum,
         "artist": AsyncArtist,
+        "episode": AsyncEpisode,
         "genre": AsyncGenre,
         "podcast": AsyncPodcast,
         "radio": AsyncRadio,
@@ -162,3 +164,11 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         :returns: an :class:`~deezer.asyncio.AsyncPodcast` object
         """
         return await self.request("GET", f"podcast/{podcast_id}")
+
+    async def get_episode(self, episode_id: int) -> AsyncEpisode:
+        """
+        Get the episode with the given ID.
+
+        :returns: an :class:`~deezer.asyncio.AsyncEpisode` object
+        """
+        return await self.request("GET", f"episode/{episode_id}")
