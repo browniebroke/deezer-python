@@ -1,63 +1,63 @@
 interactions:
-- request:
-    body: ''
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - identity
-      Connection:
-      - keep-alive
-      Host:
-      - api.deezer.com
-      User-Agent:
-      - python-httpx/0.28.1
-    method: GET
-    uri: https://api.deezer.com/search/artist?q=something+very+complicated+without+results
-  response:
-    body:
-      string: '{"data":[],"total":0}'
-    headers:
-      access-control-allow-credentials:
-      - 'true'
-      access-control-allow-headers:
-      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
-      access-control-allow-methods:
-      - POST, GET, OPTIONS, DELETE, PUT
-      access-control-expose-headers:
-      - Location
-      access-control-max-age:
-      - '86400'
-      content-length:
-      - '21'
-      content-type:
-      - application/json; charset=utf-8
-      date:
-      - Sat, 04 Apr 2026 15:58:25 GMT
-      p3p:
-      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
-      server:
-      - Apache
-      set-cookie:
-      - dzr_uniq_id=dzr_uniq_id_frf28329076e1225b36fc8ef4a6dc94390dc350b; expires=Thu,
-        01 Oct 2026 15:58:25 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
-        SameSite=None
-      - _abck=886F8C243624C0A284C65B1CFB0C1837~-1~YAAQH3syF+5Ge/WcAQAAHYo3WQ8cL++lj3P6rYeWIK3APi9SA17s/uzvOAqNOUkBQDb4fID9mT+LJNij/yZF+1TWCn0VWgGwxmFyOajZOWKMHowbU79ULWhMz5Yog6a/Ymw6EIXvoXNZeOExrLhvBa+iag1zkRQy7EGfYR6PEL3xvOqz7ShheFyPZhAkf8IErVF0gWXhO4NqqvPqmAu5mzNWMpqmdM1nTFg2EMJbNwxs4+UXMI5CcNyQM6wUGqTSzmlnTJ/KtlExJPW0JEYmMJZmjpq3VoTVQET73QcqiicbUjkX5rmibmJf+jhdz8t37G07unxAMT6LWbRNi6nJ9fgtFjTp2nvqgXutEIiUr2RioggqlE1oYekHkvvCTVtwbYmWstZaf/1Lhmn9gfJb2Q0dTPKqP8vCcCeQ0WPhNi6T0yfHfzLVi/01joiliR+Sqnyy7yY=~-1~-1~-1~-1~-1;
-        Domain=.deezer.com; Path=/; Expires=Sun, 04 Apr 2027 15:58:25 GMT; Max-Age=31536000;
-        Secure
-      - bm_sz=4C6AA7DDF57928CF257B68E036C0715B~YAAQH3syF+9Ge/WcAQAAHYo3WR+ST12T0NkoU9vRPIvlIjC6OLQoiK+zGSgaQU2+iCc19YGcMsneFE3RRzK0znz6ZHb88tTWkpW6qjSkHX6ad1eeFwvmvbqYy19eObHwQGtFOv1NrjZGZfDHjqPNDsEfEpRvGMkO/T8rsoivzYUTQaxE8Skt1KL7xC6yrFE50FdR5iFzTbq6T4OerDWq4a3nYj/N3mJRDHewhjdeCOQGeuDDCrH7Bdg7MJ+30Q3Iy2oApbZWqwW/ks4iqe0Su7/h/rzueHF2LiHA5jOJZdvIzUPCfaFAekIijZn1lilixYqxizh1GXMKB3g/lAS3bxRt+GRJycqlDyxKz/LwO/VpaHLigQ==~3424818~3224880;
-        Domain=.deezer.com; Path=/; Expires=Sat, 04 Apr 2026 19:58:25 GMT; Max-Age=14400
-      strict-transport-security:
-      - max-age=31536000; includeSubDomains
-      x-content-type-options:
-      - nosniff
-      x-envoy-upstream-service-time:
-      - '301'
-      x-host:
-      - blm-web-138
-      x-org:
-      - FR
-    status:
-      code: 200
-      message: OK
+  - request:
+      body: ""
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        Host:
+          - api.deezer.com
+        User-Agent:
+          - python-httpx/0.28.1
+      method: GET
+      uri: https://api.deezer.com/search/artist?q=something+very+complicated+without+results
+    response:
+      body:
+        string: '{"data":[],"total":0}'
+      headers:
+        access-control-allow-credentials:
+          - "true"
+        access-control-allow-headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        access-control-allow-methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        access-control-expose-headers:
+          - Location
+        access-control-max-age:
+          - "86400"
+        content-length:
+          - "21"
+        content-type:
+          - application/json; charset=utf-8
+        date:
+          - Sat, 04 Apr 2026 15:58:25 GMT
+        p3p:
+          - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+        server:
+          - Apache
+        set-cookie:
+          - dzr_uniq_id=dzr_uniq_id_frf28329076e1225b36fc8ef4a6dc94390dc350b; expires=Thu,
+            01 Oct 2026 15:58:25 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+            SameSite=None
+          - _abck=886F8C243624C0A284C65B1CFB0C1837~-1~YAAQH3syF+5Ge/WcAQAAHYo3WQ8cL++lj3P6rYeWIK3APi9SA17s/uzvOAqNOUkBQDb4fID9mT+LJNij/yZF+1TWCn0VWgGwxmFyOajZOWKMHowbU79ULWhMz5Yog6a/Ymw6EIXvoXNZeOExrLhvBa+iag1zkRQy7EGfYR6PEL3xvOqz7ShheFyPZhAkf8IErVF0gWXhO4NqqvPqmAu5mzNWMpqmdM1nTFg2EMJbNwxs4+UXMI5CcNyQM6wUGqTSzmlnTJ/KtlExJPW0JEYmMJZmjpq3VoTVQET73QcqiicbUjkX5rmibmJf+jhdz8t37G07unxAMT6LWbRNi6nJ9fgtFjTp2nvqgXutEIiUr2RioggqlE1oYekHkvvCTVtwbYmWstZaf/1Lhmn9gfJb2Q0dTPKqP8vCcCeQ0WPhNi6T0yfHfzLVi/01joiliR+Sqnyy7yY=~-1~-1~-1~-1~-1;
+            Domain=.deezer.com; Path=/; Expires=Sun, 04 Apr 2027 15:58:25 GMT; Max-Age=31536000;
+            Secure
+          - bm_sz=4C6AA7DDF57928CF257B68E036C0715B~YAAQH3syF+9Ge/WcAQAAHYo3WR+ST12T0NkoU9vRPIvlIjC6OLQoiK+zGSgaQU2+iCc19YGcMsneFE3RRzK0znz6ZHb88tTWkpW6qjSkHX6ad1eeFwvmvbqYy19eObHwQGtFOv1NrjZGZfDHjqPNDsEfEpRvGMkO/T8rsoivzYUTQaxE8Skt1KL7xC6yrFE50FdR5iFzTbq6T4OerDWq4a3nYj/N3mJRDHewhjdeCOQGeuDDCrH7Bdg7MJ+30Q3Iy2oApbZWqwW/ks4iqe0Su7/h/rzueHF2LiHA5jOJZdvIzUPCfaFAekIijZn1lilixYqxizh1GXMKB3g/lAS3bxRt+GRJycqlDyxKz/LwO/VpaHLigQ==~3424818~3224880;
+            Domain=.deezer.com; Path=/; Expires=Sat, 04 Apr 2026 19:58:25 GMT; Max-Age=14400
+        strict-transport-security:
+          - max-age=31536000; includeSubDomains
+        x-content-type-options:
+          - nosniff
+        x-envoy-upstream-service-time:
+          - "301"
+        x-host:
+          - blm-web-138
+        x-org:
+          - FR
+      status:
+        code: 200
+        message: OK
 version: 1
