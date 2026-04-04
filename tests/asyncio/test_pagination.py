@@ -89,3 +89,29 @@ class TestAsyncPaginatedList:
             "Young Blood",
             "Flyover",
         ]
+
+    @pytest.mark.asyncio
+    async def test_repr_many_results(self, daft_punk_albums):
+        await daft_punk_albums.get(0)
+        r = repr(daft_punk_albums)
+        assert r.startswith("<AsyncPaginatedList [<AsyncAlbum:")
+        assert "'...'" in r
+
+    @pytest.mark.asyncio
+    async def test_repr_little_results(self, async_client):
+        results = async_client.search_artists("rouquine")
+        await results.collect()
+        r = repr(results)
+        assert "<AsyncArtist: Rouquine>" in r
+        assert "..." not in r
+
+    @pytest.mark.asyncio
+    async def test_repr_empty(self, async_client):
+        results = async_client.search_artists("something very complicated without results")
+        assert repr(results) == "<AsyncPaginatedList []>"
+
+    @pytest.mark.asyncio
+    async def test_anext_stop_iteration(self, async_client):
+        results = async_client.search_artists("something very complicated without results")
+        with pytest.raises(StopAsyncIteration):
+            await results.__anext__()
