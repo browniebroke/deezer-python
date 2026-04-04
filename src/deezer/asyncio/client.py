@@ -13,7 +13,7 @@ from deezer.exceptions import (
 )
 from deezer.resources import Resource
 
-from .resources import AsyncAlbum, AsyncArtist, AsyncResource
+from .resources import AsyncAlbum, AsyncArtist, AsyncResource, AsyncTrack
 
 
 class AsyncClient(DeezerMixin, httpx.AsyncClient):
@@ -44,6 +44,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
     objects_types: ClassVar[dict[str, type[AsyncResource] | None]] = {
         "album": AsyncAlbum,
         "artist": AsyncArtist,
+        "track": AsyncTrack,
     }
 
     def __init__(
@@ -118,3 +119,11 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         :returns: an :class:`~deezer.asyncio.AsyncAlbum` object
         """
         return await self.request("GET", f"album/{album_id}")
+
+    async def get_track(self, track_id: int) -> AsyncTrack:
+        """
+        Get the track with the given ID.
+
+        :returns: an :class:`~deezer.asyncio.AsyncTrack` object
+        """
+        return await self.request("GET", f"track/{track_id}")
