@@ -103,6 +103,14 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
             paginate_list=paginate_list,
         )
 
+    async def get_artist(self, artist_id: int) -> AsyncArtist:
+        """
+        Get the artist with the given ID.
+
+        :returns: an :class:`~deezer.asyncio.AsyncArtist` object
+        """
+        return await self.request("GET", f"artist/{artist_id}")
+
     async def get_album(self, album_id: int) -> AsyncAlbum:
         """
         Get the album with the given ID.

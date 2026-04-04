@@ -1,0 +1,120 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/artist/27
+  response:
+    body:
+      string: '{"id":27,"name":"Daft Punk","link":"https:\/\/www.deezer.com\/artist\/27","share":"https:\/\/www.deezer.com\/artist\/27?utm_source=deezer&utm_content=artist-27&utm_term=0_1644414611&utm_medium=web","picture":"https:\/\/api.deezer.com\/artist\/27\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f2bc007e9133c946ac3c3907ddc5d2ea\/1000x1000-000000-80-0-0.jpg","nb_album":32,"nb_fan":4195107,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/27\/top?limit=50","type":"artist"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Content-Length:
+      - '891'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding,Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-150
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr01fd6a71efc3a0e9cacbd514ce793b127e43d4
+      User-Agent:
+      - python-requests/2.27.1
+    method: GET
+    uri: https://api.deezer.com/artist/27/playlists
+  response:
+    body:
+      string: '{"data":[{"id":1251125011,"title":"En mode 90","public":true,"link":"https:\/\/www.deezer.com\/playlist\/1251125011","picture":"https:\/\/api.deezer.com\/playlist\/1251125011\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/c6e520e06be1d02742c0b3e81aa3943f\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/c6e520e06be1d02742c0b3e81aa3943f\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/c6e520e06be1d02742c0b3e81aa3943f\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/c6e520e06be1d02742c0b3e81aa3943f\/1000x1000-000000-80-0-0.jpg","checksum":"ba97ba5d9030ae50fa21d35fd79e248a","tracklist":"https:\/\/api.deezer.com\/playlist\/1251125011\/tracks","creation_date":"2015-05-28
+        13:14:12","md5_image":"c6e520e06be1d02742c0b3e81aa3943f","picture_type":"playlist","user":{"id":1687950,"name":"Alexandre
+        -Deezer Editeur France","tracklist":"https:\/\/api.deezer.com\/user\/1687950\/flow","type":"user"},"type":"playlist"},{"id":914651125,"title":"Chill
+        & Relax \ud83c\udf34 Summer Electro chill music | Mix \u00e9t\u00e9 2021 |
+        Lounge songs 2021 | Deep house summer songs | sons \u00e9t\u00e9 chill | Chillout
+        ap\u00e9ro pos\u00e9 | Playlist piscine, plage, beach...","public":true,"link":"https:\/\/www.deezer.com\/playlist\/914651125","picture":"https:\/\/api.deezer.com\/playlist\/914651125\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/6484189cac2fbeef79dd327f434d4410\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/6484189cac2fbeef79dd327f434d4410\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/6484189cac2fbeef79dd327f434d4410\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/6484189cac2fbeef79dd327f434d4410\/1000x1000-000000-80-0-0.jpg","checksum":"0aaa68d98c704e92669d1dcaf6907f16","tracklist":"https:\/\/api.deezer.com\/playlist\/914651125\/tracks","creation_date":"2014-06-30
+        12:10:41","md5_image":"6484189cac2fbeef79dd327f434d4410","picture_type":"playlist","user":{"id":16867197,"name":"Filtr
+        France","tracklist":"https:\/\/api.deezer.com\/user\/16867197\/flow","type":"user"},"type":"playlist"},{"id":1386208615,"title":"Pop
+        Party","public":true,"link":"https:\/\/www.deezer.com\/playlist\/1386208615","picture":"https:\/\/api.deezer.com\/playlist\/1386208615\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/55d82c713abc31fb68290efd353ba68e\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/55d82c713abc31fb68290efd353ba68e\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/55d82c713abc31fb68290efd353ba68e\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/55d82c713abc31fb68290efd353ba68e\/1000x1000-000000-80-0-0.jpg","checksum":"c841d5a558d9b75f3929349f6e110ace","tracklist":"https:\/\/api.deezer.com\/playlist\/1386208615\/tracks","creation_date":"2015-09-23
+        11:08:49","md5_image":"55d82c713abc31fb68290efd353ba68e","picture_type":"playlist","user":{"id":753546365,"name":"F\u00e1bio
+        - Deezer Pop Editor","tracklist":"https:\/\/api.deezer.com\/user\/753546365\/flow","type":"user"},"type":"playlist"},{"id":8873748882,"title":"00s
+        Happy Hits","public":true,"link":"https:\/\/www.deezer.com\/playlist\/8873748882","picture":"https:\/\/api.deezer.com\/playlist\/8873748882\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2774d12ddf50f8eb663cd92bdb3ad315\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2774d12ddf50f8eb663cd92bdb3ad315\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2774d12ddf50f8eb663cd92bdb3ad315\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2774d12ddf50f8eb663cd92bdb3ad315\/1000x1000-000000-80-0-0.jpg","checksum":"4f815e8ff5659cf91d2b96022255a1a5","tracklist":"https:\/\/api.deezer.com\/playlist\/8873748882\/tracks","creation_date":"2021-03-24
+        11:39:56","md5_image":"2774d12ddf50f8eb663cd92bdb3ad315","picture_type":"playlist","user":{"id":846571671,"name":"Alice
+        - Deezer Moods Editor","tracklist":"https:\/\/api.deezer.com\/user\/846571671\/flow","type":"user"},"type":"playlist"},{"id":7456464544,"title":"Feel
+        Good Classics","public":true,"link":"https:\/\/www.deezer.com\/playlist\/7456464544","picture":"https:\/\/api.deezer.com\/playlist\/7456464544\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2808364139b255844fe7b5a27120a916\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2808364139b255844fe7b5a27120a916\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2808364139b255844fe7b5a27120a916\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/2808364139b255844fe7b5a27120a916\/1000x1000-000000-80-0-0.jpg","checksum":"3ad58b3e8a8bf35229df863af73db11b","tracklist":"https:\/\/api.deezer.com\/playlist\/7456464544\/tracks","creation_date":"2020-03-31
+        12:52:38","md5_image":"2808364139b255844fe7b5a27120a916","picture_type":"playlist","user":{"id":846571671,"name":"Alice
+        - Deezer Moods Editor","tracklist":"https:\/\/api.deezer.com\/user\/846571671\/flow","type":"user"},"type":"playlist"},{"id":4135818362,"title":"00s
+        Dance","public":true,"link":"https:\/\/www.deezer.com\/playlist\/4135818362","picture":"https:\/\/api.deezer.com\/playlist\/4135818362\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/0c7f1c7cf4dbe452f08829c81680c476\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/0c7f1c7cf4dbe452f08829c81680c476\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/0c7f1c7cf4dbe452f08829c81680c476\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/0c7f1c7cf4dbe452f08829c81680c476\/1000x1000-000000-80-0-0.jpg","checksum":"9ab195f1ecc118799c7dc288d0588fb8","tracklist":"https:\/\/api.deezer.com\/playlist\/4135818362\/tracks","creation_date":"2018-02-12
+        17:31:10","md5_image":"0c7f1c7cf4dbe452f08829c81680c476","picture_type":"playlist","user":{"id":2834392844,"name":"Antoine
+        - Deezer Dance & EDM Editor","tracklist":"https:\/\/api.deezer.com\/user\/2834392844\/flow","type":"user"},"type":"playlist"},{"id":790532911,"title":"NRJ
+        HIT MUSIC ONLY 2022","public":true,"link":"https:\/\/www.deezer.com\/playlist\/790532911","picture":"https:\/\/api.deezer.com\/playlist\/790532911\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/95946fe4eb7ac4f0f91389b352b2ada7\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/95946fe4eb7ac4f0f91389b352b2ada7\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/95946fe4eb7ac4f0f91389b352b2ada7\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/95946fe4eb7ac4f0f91389b352b2ada7\/1000x1000-000000-80-0-0.jpg","checksum":"4855a9e561f80f1ab693323a1b010794","tracklist":"https:\/\/api.deezer.com\/playlist\/790532911\/tracks","creation_date":"2014-02-20
+        11:45:34","md5_image":"95946fe4eb7ac4f0f91389b352b2ada7","picture_type":"playlist","user":{"id":17936068,"name":"Topsify
+        France","tracklist":"https:\/\/api.deezer.com\/user\/17936068\/flow","type":"user"},"type":"playlist"},{"id":8282573142,"title":"2010s
+        Pop","public":true,"link":"https:\/\/www.deezer.com\/playlist\/8282573142","picture":"https:\/\/api.deezer.com\/playlist\/8282573142\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/f3b9e7e710dd6c440c8fb2431ad15218\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/f3b9e7e710dd6c440c8fb2431ad15218\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/f3b9e7e710dd6c440c8fb2431ad15218\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/f3b9e7e710dd6c440c8fb2431ad15218\/1000x1000-000000-80-0-0.jpg","checksum":"488222db8f95b91638d13ce02edf9bc0","tracklist":"https:\/\/api.deezer.com\/playlist\/8282573142\/tracks","creation_date":"2020-10-26
+        17:23:40","md5_image":"f3b9e7e710dd6c440c8fb2431ad15218","picture_type":"playlist","user":{"id":753546365,"name":"F\u00e1bio
+        - Deezer Pop Editor","tracklist":"https:\/\/api.deezer.com\/user\/753546365\/flow","type":"user"},"type":"playlist"},{"id":652116225,"title":"Dormir
+        profond\u00e9ment \ud83c\udf19 Playlist de musique douce pour dormir au calme
+        | Sleeping songs playlist","public":true,"link":"https:\/\/www.deezer.com\/playlist\/652116225","picture":"https:\/\/api.deezer.com\/playlist\/652116225\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/246ded2b20cd5339cca6041da8eb135d\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/246ded2b20cd5339cca6041da8eb135d\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/246ded2b20cd5339cca6041da8eb135d\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/246ded2b20cd5339cca6041da8eb135d\/1000x1000-000000-80-0-0.jpg","checksum":"3957f4df1f5835f0f44cd3fbdc58dcc7","tracklist":"https:\/\/api.deezer.com\/playlist\/652116225\/tracks","creation_date":"2013-11-25
+        14:54:28","md5_image":"246ded2b20cd5339cca6041da8eb135d","picture_type":"playlist","user":{"id":16867197,"name":"Filtr
+        France","tracklist":"https:\/\/api.deezer.com\/user\/16867197\/flow","type":"user"},"type":"playlist"},{"id":1977689462,"title":"2000s
+        Party Hits","public":true,"link":"https:\/\/www.deezer.com\/playlist\/1977689462","picture":"https:\/\/api.deezer.com\/playlist\/1977689462\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/17ff71870946f301c35ce612b8b175a7\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/17ff71870946f301c35ce612b8b175a7\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/17ff71870946f301c35ce612b8b175a7\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/playlist\/17ff71870946f301c35ce612b8b175a7\/1000x1000-000000-80-0-0.jpg","checksum":"a656fe974181e3ed232a92b874e8c4ab","tracklist":"https:\/\/api.deezer.com\/playlist\/1977689462\/tracks","creation_date":"2016-06-29
+        19:53:23","md5_image":"17ff71870946f301c35ce612b8b175a7","picture_type":"playlist","user":{"id":846571671,"name":"Alice
+        - Deezer Moods Editor","tracklist":"https:\/\/api.deezer.com\/user\/846571671\/flow","type":"user"},"type":"playlist"}],"total":100,"next":"https:\/\/api.deezer.com\/artist\/27\/playlists?index=10"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding,Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Host:
+      - blm-web-03
+    status:
+      code: 200
+      message: OK
+version: 1

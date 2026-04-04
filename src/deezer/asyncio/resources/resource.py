@@ -70,3 +70,19 @@ class AsyncResource:
             resource_type=resource_type,
             params=params,
         )
+
+    async def post_relation(self, relation: str, params: dict):
+        """Generic async method to make a POST request to a relation."""
+        return await self.client.request(
+            "POST",
+            f"{self.type}/{self.id}/{relation}",
+            params=params,
+        )
+
+    async def delete_relation(self, relation: str, params: dict | None = None):
+        """Generic async method to make a DELETE request to a relation."""
+        return await self.client.request(
+            "DELETE",
+            f"{self.type}/{self.id}/{relation}",
+            params=params,
+        )
