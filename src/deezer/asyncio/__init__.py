@@ -1,5 +1,11 @@
 from __future__ import annotations
 
 from .client import AsyncClient
+from .resources import AsyncAlbum, AsyncArtist, AsyncResource
 
-__all__ = ["AsyncClient"]
+__all__ = [
+    "AsyncAlbum",
+    "AsyncArtist",
+    "AsyncClient",
+    "AsyncResource",
+]

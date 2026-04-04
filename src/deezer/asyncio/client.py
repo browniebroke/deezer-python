@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import ClassVar
+
 import httpx
 from httpx._types import HeaderTypes
 
@@ -9,7 +11,9 @@ from deezer.exceptions import (
     DeezerErrorResponse,
     DeezerHTTPError,
 )
-from deezer.resources import Album, Resource
+from deezer.resources import Resource
+
+from .resources import AsyncAlbum, AsyncArtist, AsyncResource
 
 
 class AsyncClient(DeezerMixin, httpx.AsyncClient):
@@ -34,6 +38,13 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
     :param access_token: user access token.
     :param headers: a dictionary of headers to be used.
     """
+
+    _resource_base_class: ClassVar[type[AsyncResource]] = AsyncResource
+
+    objects_types: ClassVar[dict[str, type[AsyncResource] | None]] = {
+        "album": AsyncAlbum,
+        "artist": AsyncArtist,
+    }
 
     def __init__(
         self,
@@ -92,10 +103,10 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
             paginate_list=paginate_list,
         )
 
-    async def get_album(self, album_id: int) -> Album:
+    async def get_album(self, album_id: int) -> AsyncAlbum:
         """
         Get the album with the given ID.
 
-        :returns: an :class:`~deezer.Album` object
+        :returns: an :class:`~deezer.asyncio.AsyncAlbum` object
         """
         return await self.request("GET", f"album/{album_id}")

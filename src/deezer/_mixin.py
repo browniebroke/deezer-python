@@ -22,6 +22,8 @@ from deezer.resources import (
 class DeezerMixin:
     """Mixin providing shared logic for both sync and async Deezer clients."""
 
+    _resource_base_class: ClassVar[type[Resource]] = Resource
+
     objects_types: ClassVar[dict[str, type[Resource] | None]] = {
         "album": Album,
         "artist": Artist,
@@ -76,7 +78,7 @@ class DeezerMixin:
         if "type" in result and result["type"] in self.objects_types:
             object_class = self.objects_types[result["type"]]
         elif "type" in result or (not resource_type and "id" in result):
-            object_class = Resource
+            object_class = self._resource_base_class
         elif resource_type:
             object_class = resource_type
         elif item.get("results") is True:
