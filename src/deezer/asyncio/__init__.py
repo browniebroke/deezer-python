@@ -4,6 +4,7 @@ from .client import AsyncClient
 from .resources import (
     AsyncAlbum,
     AsyncArtist,
+    AsyncChart,
     AsyncEditorial,
     AsyncEpisode,
     AsyncGenre,
@@ -16,6 +17,7 @@ from .resources import (
 __all__ = [
     "AsyncAlbum",
     "AsyncArtist",
+    "AsyncChart",
     "AsyncClient",
     "AsyncEditorial",
     "AsyncEpisode",
