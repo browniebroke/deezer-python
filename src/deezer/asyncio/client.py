@@ -13,6 +13,8 @@ from deezer.exceptions import (
 )
 from deezer.resources import Resource
 
+from .pagination import AsyncPaginatedList
+
 from .resources import (
     AsyncAlbum,
     AsyncArtist,
@@ -124,6 +126,9 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
             resource_id=resource_id,
             paginate_list=paginate_list,
         )
+
+    def _get_paginated_list(self, path: str, params: dict | None = None):
+        return AsyncPaginatedList(client=self, base_path=path, params=params)
 
     async def get_artist(self, artist_id: int) -> AsyncArtist:
         """

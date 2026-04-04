@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import datetime as dt
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from deezer.asyncio.pagination import AsyncPaginatedList
 
 
 class AsyncResource:
@@ -84,5 +87,20 @@ class AsyncResource:
         return await self.client.request(
             "DELETE",
             f"{self.type}/{self.id}/{relation}",
+            params=params,
+        )
+
+    def get_paginated_list(
+        self,
+        relation: str,
+        params: dict | None = None,
+    ) -> AsyncPaginatedList:
+        """Build the pagination object based on the relation."""
+        from deezer.asyncio.pagination import AsyncPaginatedList as APL
+
+        return APL(
+            client=self.client,
+            base_path=f"{self.type}/{self.id}/{relation}",
+            parent=self,
             params=params,
         )
