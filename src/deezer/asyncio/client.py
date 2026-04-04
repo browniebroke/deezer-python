@@ -25,6 +25,7 @@ from .resources import (
     AsyncRadio,
     AsyncResource,
     AsyncTrack,
+    AsyncUser,
 )
 
 
@@ -64,6 +65,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         "podcast": AsyncPodcast,
         "radio": AsyncRadio,
         "track": AsyncTrack,
+        "user": AsyncUser,
     }
 
     def __init__(
@@ -194,6 +196,15 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         :returns: an :class:`~deezer.asyncio.AsyncPlaylist` object
         """
         return await self.request("GET", f"playlist/{playlist_id}")
+
+    async def get_user(self, user_id: int | None = None) -> AsyncUser:
+        """
+        Get the user with the given ID.
+
+        :returns: an :class:`~deezer.asyncio.AsyncUser` object
+        """
+        user_id_str = str(user_id) if user_id else "me"
+        return await self.request("GET", f"user/{user_id_str}")
 
     async def get_chart(self, genre_id: int = 0) -> AsyncChart:
         """

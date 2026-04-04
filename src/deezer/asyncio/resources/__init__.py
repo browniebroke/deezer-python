@@ -11,6 +11,7 @@ from .podcast import AsyncPodcast
 from .radio import AsyncRadio
 from .resource import AsyncResource
 from .track import AsyncTrack
+from .user import AsyncUser
 
 __all__ = [
     "AsyncAlbum",
@@ -24,4 +25,5 @@ __all__ = [
     "AsyncRadio",
     "AsyncResource",
     "AsyncTrack",
+    "AsyncUser",
 ]

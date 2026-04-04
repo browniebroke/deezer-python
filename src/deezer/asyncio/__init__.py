@@ -13,6 +13,7 @@ from .resources import (
     AsyncRadio,
     AsyncResource,
     AsyncTrack,
+    AsyncUser,
 )
 
 __all__ = [
@@ -23,8 +24,10 @@ __all__ = [
     "AsyncEditorial",
     "AsyncEpisode",
     "AsyncGenre",
+    "AsyncPlaylist",
     "AsyncPodcast",
     "AsyncRadio",
     "AsyncResource",
     "AsyncTrack",
+    "AsyncUser",
 ]
