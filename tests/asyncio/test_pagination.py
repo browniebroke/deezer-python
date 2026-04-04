@@ -116,6 +116,21 @@ class TestAsyncPaginatedList:
         assert repr(results) == "<AsyncPaginatedList []>"
 
     @pytest.mark.asyncio
+    async def test_grow_returns_empty(self, async_client):
+        """Test __anext__ raises StopAsyncIteration when _grow returns empty."""
+        parent = AsyncArtist(async_client, {"id": 27, "type": "artist"})
+        paginated = await AsyncPaginatedList.create(
+            client=async_client,
+            parent=parent,
+            base_path="artist/27/albums",
+        )
+        # Consume the single item from the first page
+        await paginated.__anext__()
+        # Next call should try to grow but get empty data, then raise
+        with pytest.raises(StopAsyncIteration):
+            await paginated.__anext__()
+
+    @pytest.mark.asyncio
     async def test_anext_stop_iteration(self, async_client):
         results = await async_client.search_artists("something very complicated without results")
         with pytest.raises(StopAsyncIteration):
