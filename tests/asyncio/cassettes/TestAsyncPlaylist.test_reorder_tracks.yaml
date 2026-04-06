@@ -1,0 +1,60 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "0"
+        Cookie:
+          - _abck=CFA3BF239B437A173E8C31CC012F1C20~-1~YAAQpa0TAjQiFtaHAQAAu4o24glDMHG4PaEIDepbSLH/55Uz+NppSaEZeGbJQhkbtE9msKl/Nk5mdzL0Qu3to6+IZs0sdMNYdvkDP3gM/85KNhMsmpQjmOseCBEStpRXICosROK2b9B1BwPaAY0ax563VTAlCHt6knJxbCf0VxN7gpvCiTvqGgDSsgsZ5c+LkA0FmuZKaeMorjNVpyy/b3uaKjBgSBXeqayCd+99pkndxaKFV4hij7TrRJzF/mnN+rDbxdI/XjlTYNM5LKWerpMnvT45Eeq5Egxj081GkDYE4OzORDh5LI6TdMuEM79VyRczyD+7lc2KFk32ogUwbc/knEu5LfEEnmU42NJH25Y4RSfV6Ml3PSQ=~-1~-1~-1;
+            bm_sz=11E9AC9FA1A93DD24DDF4E94D2546BD2~YAAQpa0TAjUiFtaHAQAAu4o24hOGQuWWkiwjkdvbfzA8LSezTO3KRkIZjukMWgJeei7d+BBw+ecJhoZy3xwQQDayUVdLq1gg2vetEuX12UelwA/SwyX7brUsxEC1UKey8WaE49Hmikjb4NicJghf1hmJSU46HTEubZcKjcvL1vKU7ny2S5cbwXCeIVqdG35qS7nMaMriQkyayJb2gG8GZbfYAQFUoX+E5IeyDUIB6PyEBQScKvr/WVD7aP49njLR3fKw/bNc+tB6c6vCSazR2sOjlemjmbQysPbLY9BrytIIu50=~4605510~4273218;
+            dzr_uniq_id=dzr_uniq_id_fr34aa8e2432bfad9b22f64b40741346452eb32b
+        User-Agent:
+          - python-requests/2.29.0
+      method: POST
+      uri: https://api.deezer.com/playlist/11336462844/tracks?access_token=dummy&order=79875044%2C79875050%2C142986210
+    response:
+      body:
+        string: "true"
+      headers:
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Headers:
+          - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+        Access-Control-Allow-Methods:
+          - POST, GET, OPTIONS, DELETE, PUT
+        Access-Control-Expose-Headers:
+          - Location
+        Access-Control-Max-Age:
+          - "86400"
+        Cache-Control:
+          - no-store, no-cache, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "4"
+        Content-Type:
+          - application/json; charset=utf-8
+        Expires:
+          - Thu, 19 Nov 1981 08:52:00 GMT
+        Pragma:
+          - no-cache
+        Server:
+          - Apache
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubDomains
+        X-Content-Type-Options:
+          - nosniff
+        X-Host:
+          - blm-web-157
+        x-org:
+          - FR
+      status:
+        code: 200
+        message: OK
+version: 1

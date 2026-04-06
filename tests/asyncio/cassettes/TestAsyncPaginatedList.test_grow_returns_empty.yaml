@@ -1,0 +1,46 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-httpx/0.28.1
+      method: GET
+      uri: https://api.deezer.com/artist/27/albums
+    response:
+      body:
+        string: '{"data":[{"id":8244118,"title":"Human After All (Remixes)","link":"https:\/\/www.deezer.com\/album\/8244118","cover":"https:\/\/api.deezer.com\/album\/8244118\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f6a4dbf47cb8828c281ed4e63364f99e\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f6a4dbf47cb8828c281ed4e63364f99e\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f6a4dbf47cb8828c281ed4e63364f99e\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f6a4dbf47cb8828c281ed4e63364f99e\/1000x1000-000000-80-0-0.jpg","md5_image":"f6a4dbf47cb8828c281ed4e63364f99e","genre_id":113,"fans":29723,"release_date":"2005-03-20","record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/8244118\/tracks","explicit_lyrics":false,"type":"album"}],"total":1,"next":"https:\/\/api.deezer.com\/artist\/27\/albums?index=25"}'
+      headers:
+        Content-Type:
+          - application/json; charset=utf-8
+      status:
+        code: 200
+        message: OK
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - identity
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-httpx/0.28.1
+      method: GET
+      uri: https://api.deezer.com/artist/27/albums?index=25
+    response:
+      body:
+        string: '{"data":[],"total":1}'
+      headers:
+        Content-Type:
+          - application/json; charset=utf-8
+      status:
+        code: 200
+        message: OK
+version: 1
