@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v7.3.0 (2026-04-06)
+
+### Features
+
+- Add async deezer client and resources in `deezer.asyncio` ([`cf30c7c`](https://github.com/browniebroke/deezer-python/commit/cf30c7cf7f9d58d0815456d49fd9095d1d364154))
+
 ## v7.2.0 (2025-09-18)
 
 ### Features

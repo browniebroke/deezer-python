@@ -4,7 +4,7 @@ requires = [ "setuptools>=77.0.3" ]
 
 [project]
 name = "deezer-python"
-version = "7.2.0"
+version = "7.3.0"
 description = "A friendly wrapper library for the Deezer API"
 readme = "README.md"
 keywords = [
