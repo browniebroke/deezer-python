@@ -86,14 +86,15 @@ class AsyncPaginatedList(Generic[ResourceType]):
                 return item
         raise StopAsyncIteration
 
-    async def total(self) -> int:
+    @property
+    def total(self) -> int:
         """The total number of items in the list, mirroring what Deezer returns."""
         assert self._total is not None  # noqa S101
         return self._total
 
-    async def length(self) -> int:
+    def __len__(self) -> int:
         """Get the total number of items across all pages."""
-        return await self.total()
+        return self.total
 
     async def get(self, index: int) -> ResourceType:
         """Get an item by index."""

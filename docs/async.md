@@ -80,10 +80,12 @@ async for album in albums:
 
 ### Total number
 
-The total number of items is available via the {meth}`~deezer.asyncio.AsyncPaginatedList.total` method. Since the first page is fetched eagerly, the total is usually already cached and no extra API call is needed:
+The total number of items is available via the {attr}`~deezer.asyncio.AsyncPaginatedList.total` property. Since the first page is fetched eagerly, the total is already available without any extra API call:
 
 ```python
-total = await albums.total()
+total = albums.total
+# Or using len():
+total = len(albums)
 ```
 
 ### Accessing elements by index

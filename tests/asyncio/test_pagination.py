@@ -22,9 +22,8 @@ class TestAsyncPaginatedList:
 
     @pytest.mark.asyncio
     async def test_total(self, daft_punk_albums):
-        total = await daft_punk_albums.total()
-        assert total == 32
-        assert await daft_punk_albums.length() == 32
+        assert daft_punk_albums.total == 32
+        assert len(daft_punk_albums) == 32
 
     @pytest.mark.asyncio
     async def test_iterate(self, daft_punk_albums):
@@ -34,7 +33,7 @@ class TestAsyncPaginatedList:
             iter_count += 1
         assert iter_count == 32
         # This shouldn't do another API call
-        assert await daft_punk_albums.total() == 32
+        assert daft_punk_albums.total == 32
 
     @pytest.mark.asyncio
     async def test_iterator(self, daft_punk_albums):
