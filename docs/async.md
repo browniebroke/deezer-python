@@ -99,6 +99,10 @@ fifth_album = await albums.get(4)
 
 As with the sync version, accessing a large index may trigger extra API calls to fetch preceding pages.
 
+:::{note}
+Unlike the synchronous {class}`~deezer.PaginatedList`, the async version does not support the `[]` syntax for indexing or slicing. Use the {meth}`~deezer.asyncio.AsyncPaginatedList.get` method for index-based access, or {meth}`~deezer.asyncio.AsyncPaginatedList.collect` to get a plain list that supports regular slicing.
+:::
+
 ### Collecting all elements
 
 To fetch all pages and get a plain list, use {meth}`~deezer.asyncio.AsyncPaginatedList.collect`:
