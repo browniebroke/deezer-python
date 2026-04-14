@@ -65,25 +65,19 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
    $ uv run pytest
    ```
 
-6. Type checking is done with [ty](https://docs.astral.sh/ty/), and is run with:
+6. Linting is done through [prek](https://prek.j178.dev/). Provided you have the tool installed globally, you can run them all as one-off:
 
    ```shell
-   uv run ty check
-   ```
-
-7. Linting is done through [pre-commit](https://pre-commit.com). Provided you have the tool installed globally, you can run them all as one-off:
-
-   ```shell
-   $ pre-commit run -a
+   $ prek run -a
    ```
 
    Or better, install the hooks once and have them run automatically each time you commit:
 
    ```shell
-   $ pre-commit install
+   $ prek install -f
    ```
 
-8. Commit your changes, quoting GitHub issue in the commit message, if applicable, and push your branch to GitHub:
+7. Commit your changes, quoting GitHub issue in the commit message, if applicable, and push your branch to GitHub:
 
    ```shell
    $ git add .
@@ -93,7 +87,7 @@ Ready to contribute? Here's how to set up `deezer-python` for local development.
 
    Note: the commit message should follow [the conventional commits](https://www.conventionalcommits.org). We run [`commitlint` on CI](https://github.com/marketplace/actions/commit-linter) to validate it, and if you've installed pre-commit hooks at the previous step, the message will be checked at commit time.
 
-9. Submit a pull request on GitHub.
+8. Submit a pull request on GitHub.
 
 ## Obtain an API token
 
