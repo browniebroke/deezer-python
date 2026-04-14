@@ -50,3 +50,11 @@ repos:
     hooks:
       - id: commitizen
         stages: [commit-msg]
+  - repo: local
+    hooks:
+      - id: local-ty
+        name: ty check
+        entry: uv run ty check
+        require_serial: true
+        language: system
+        pass_filenames: false
