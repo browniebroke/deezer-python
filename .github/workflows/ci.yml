@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.2
-      - uses: astral-sh/setup-uv@v8.1.0
+      - uses: astral-sh/setup-uv@v8.0.0
       - uses: j178/prek-action@v2
       - uses: pre-commit-ci/lite-action@v1.1.0
         if: always()
@@ -43,7 +43,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: true
-      - uses: astral-sh/setup-uv@v8.1.0
+      - uses: astral-sh/setup-uv@v8.0.0
       - run: uv sync --no-python-downloads
         shell: bash
       - run: uv run pytest --cov-report=xml
