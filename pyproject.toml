@@ -51,7 +51,7 @@ dev = [
   "pytest-cov>=7,<8",
   "pytest-mock>=3.6,<4",
   "pytest-vcr>=1,<2",
-  "ty==0.0.34",
+  "ty==0.0.35",
   "vcrpy>=8,<9",
 ]
 docs = [
