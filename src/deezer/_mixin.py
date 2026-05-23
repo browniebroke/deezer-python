@@ -75,8 +75,9 @@ class DeezerMixin:
         if "id" not in result and resource_id is not None:
             result["id"] = resource_id
 
-        if "type" in result and result["type"] in self.objects_types:
-            object_class = self.objects_types[result["type"]]
+        resource_type_name = result.get("type")
+        if isinstance(resource_type_name, str) and resource_type_name in self.objects_types:
+            object_class = self.objects_types[resource_type_name]
         elif "type" in result or (not resource_type and "id" in result):
             object_class = self._resource_base_class
         elif resource_type:
