@@ -100,8 +100,8 @@ lint.isort.known-first-party = [ "deezer" ]
 max_supported_python = "3.14"
 
 [tool.pytest]
-minversion = "9.0"
 addopts = [ "-v", "-Wdefault", "--cov=deezer" ]
+minversion = "9.0"
 pythonpath = [ "src" ]
 
 [tool.coverage]
@@ -116,10 +116,10 @@ report.exclude_lines = [
 report.ignore_errors = true
 
 [tool.semantic_release]
-version_toml = [ "pyproject.toml:project.version" ]
 version_variables = [
   "src/deezer/__init__.py:__version__",
 ]
+version_toml = [ "pyproject.toml:project.version" ]
 build_command = """
 pip install uv
 uv lock
@@ -130,9 +130,9 @@ branches.main.match = "main"
 branches.noop.match = "(?!main$)"
 branches.noop.prerelease = true
 branches.stable.match = "(?!stable/*$)"
+changelog.environment.keep_trailing_newline = true
 changelog.exclude_commit_patterns = [
   "chore.*",
   "ci.*",
   "Merge pull request .*",
 ]
-changelog.environment.keep_trailing_newline = true
