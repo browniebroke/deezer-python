@@ -4,11 +4,6 @@
     {
       "matchPackageNames": ["httpx"],
       "semanticCommitType": "chore"
-    },
-    {
-      "matchManagers": ["pre-commit"],
-      "groupName": "pre-commit hooks",
-      "schedule": ["before 9am on thursday"]
     }
   ]
 }
