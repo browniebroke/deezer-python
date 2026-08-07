@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v7.4.0 (2026-08-07)
+
+### Features
+
+- Add support for python 3.15 ([`5de06d6`](https://github.com/browniebroke/deezer-python/commit/5de06d645a7b5fa92bdcb6c53687b8d2f7ea0f55))
+
 ## v7.3.0 (2026-04-06)
 
 ### Features
