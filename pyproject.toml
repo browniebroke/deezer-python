@@ -106,8 +106,8 @@ minversion = "9.0"
 pythonpath = [ "src" ]
 
 [tool.coverage]
-run.branch = true
 run.source = [ "deezer" ]
+run.branch = true
 report.exclude_lines = [
   "@overload",
   "if TYPE_CHECKING",
