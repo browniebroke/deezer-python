@@ -20,7 +20,7 @@ This is [the recommended way to use it by `httpx`](https://www.python-httpx.org/
 From there, you can search for some terms:
 
 ```pycon
->>> client.search('Daft Punk')
+>>> client.search("Daft Punk")
 <PaginatedList [
  <Track: One More Time>,
  <Track: I Feel It Coming>,
@@ -35,7 +35,7 @@ The above returned a lot of tracks, wrapped in a {class}`PaginatedList <deezer.P
 If you wanted to search for artists instead, you may use the {meth}`Client.search_artists() <deezer.Client.search_artists>` method:
 
 ```pycon
->>> client.search_artists('Daft Punk')
+>>> client.search_artists("Daft Punk")
 <PaginatedList [
  <Artist: Daft Punk>,
  <Artist: Daft Punk - Stardust>,
@@ -77,7 +77,7 @@ For example, when you get an {class}`Artist <deezer.Artist>`, you may call one o
 Let's try from the initial example:
 
 ```pycon
->>> daft_punk = client.search_artists('Daft Punk')[0]
+>>> daft_punk = client.search_artists("Daft Punk")[0]
 >>> daft_punk.get_albums()[:4]
 [<Album: Random Access Memories>,
  <Album: TRON: Legacy Reconfigured>,
@@ -156,7 +156,7 @@ To integrate the OAuth flow in your application, we recommend looking at other l
 Once the OAuth2 flow is complete, Deezer should give you a token which can be passed to the {class}`Client <deezer.Client>` class:
 
 ```python
-client = deezer.Client(access_token='your-super-secret-token')
+client = deezer.Client(access_token="your-super-secret-token")
 ```
 
 From there, you should be able to perform authenticated requests.
