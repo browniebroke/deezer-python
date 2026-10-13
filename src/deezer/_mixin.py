@@ -22,9 +22,9 @@ from deezer.resources import (
 class DeezerMixin:
     """Mixin providing shared logic for both sync and async Deezer clients."""
 
-    _resource_base_class: ClassVar[type[Resource]] = Resource
+    _resource_base_class: ClassVar[type[Any]] = Resource
 
-    objects_types: ClassVar[dict[str, type[Resource] | None]] = {
+    objects_types: ClassVar[dict[str, type[Any] | None]] = {
         "album": Album,
         "artist": Artist,
         "chart": Chart,
