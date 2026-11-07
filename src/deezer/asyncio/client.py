@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import ClassVar
 
-import httpx
-from httpx._types import HeaderTypes
+import httpx2
+from httpx2._types import HeaderTypes
 
 from deezer._mixin import DeezerMixin
 from deezer.auth import DeezerQueryAuth
@@ -30,7 +30,7 @@ from .resources import (
 )
 
 
-class AsyncClient(DeezerMixin, httpx.AsyncClient):
+class AsyncClient(DeezerMixin, httpx2.AsyncClient):
     """
     An async client to retrieve some basic infos about Deezer resources.
 
@@ -111,7 +111,7 @@ class AsyncClient(DeezerMixin, httpx.AsyncClient):
         )
         try:
             response.raise_for_status()
-        except httpx.HTTPStatusError as exc:
+        except httpx2.HTTPStatusError as exc:
             raise DeezerHTTPError.from_http_error(exc) from exc
         json_data = response.json()
         if not isinstance(json_data, dict):

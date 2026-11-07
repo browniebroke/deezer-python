@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import httpx
+import httpx2
 import pytest
 
 from deezer.exceptions import (
@@ -21,10 +21,10 @@ from deezer.exceptions import (
     ],
 )
 def test_deezer_http_error(status_code, expected_exception):
-    response = httpx.Response(status_code=status_code)
-    http_error = httpx.HTTPStatusError(
+    response = httpx2.Response(status_code=status_code)
+    http_error = httpx2.HTTPStatusError(
         message="",
-        request=httpx.Request("GET", "https://example.com"),
+        request=httpx2.Request("GET", "https://example.com"),
         response=response,
     )
 

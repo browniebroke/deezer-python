@@ -15,7 +15,7 @@ with deezer.Client() as client:
     ...
 ```
 
-This is [the recommended way to use it by `httpx`](https://www.python-httpx.org/advanced/clients/#usage, which is the library we use under the hood.
+This is [the recommended way to use it by `httpx2`](https://pydantic.dev/docs/httpx2/advanced/clients/#usage), which is the library we use under the hood.
 
 From there, you can search for some terms:
 

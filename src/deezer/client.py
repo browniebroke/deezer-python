@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import httpx
-from httpx._types import HeaderTypes
+import httpx2
+from httpx2._types import HeaderTypes
 
 from deezer._mixin import DeezerMixin
 from deezer.auth import DeezerQueryAuth
@@ -26,7 +26,7 @@ from deezer.resources import (
 )
 
 
-class Client(DeezerMixin, httpx.Client):
+class Client(DeezerMixin, httpx2.Client):
     """
     A client to retrieve some basic infos about Deezer resources.
 
@@ -91,7 +91,7 @@ class Client(DeezerMixin, httpx.Client):
         )
         try:
             response.raise_for_status()
-        except httpx.HTTPStatusError as exc:
+        except httpx2.HTTPStatusError as exc:
             raise DeezerHTTPError.from_http_error(exc) from exc
         json_data = response.json()
         if not isinstance(json_data, dict):
