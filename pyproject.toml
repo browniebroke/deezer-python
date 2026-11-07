@@ -32,7 +32,7 @@ classifiers = [
   "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
-  "httpx>=0.23",
+  "httpx2>=2",
 ]
 urls."Bug Tracker" = "https://github.com/browniebroke/deezer-python/issues"
 urls.Changelog = "https://deezer-python.readthedocs.io/en/latest/changelog.html"
