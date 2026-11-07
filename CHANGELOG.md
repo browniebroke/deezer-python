@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v8.0.0 (2026-11-07)
+
+### Features
+
+- Migrate from httpx to httpx2 ([`685382b`](https://github.com/browniebroke/deezer-python/commit/685382bafb4c53f821af9360ba0d6265d9ada82b))
+- Drop support for python 3.10 ([`d32a37b`](https://github.com/browniebroke/deezer-python/commit/d32a37b459c6f7605a78a25721b82a6d05c95fc7))
+
 ## v7.4.0 (2026-08-07)
 
 ### Features
