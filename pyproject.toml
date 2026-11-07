@@ -44,7 +44,7 @@ urls.Twitter = "https://twitter.com/_BrunoAlla"
 [dependency-groups]
 dev = [
   "coverage>=7,<8",
-  "deezer-oauth-cli>=1,<2",
+  "deezer-oauth-cli>=2,<3",
   "environs>=15,<16",
   "pytest>=9,<10",
   "pytest-asyncio",
