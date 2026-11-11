@@ -84,7 +84,7 @@ class AsyncClient(DeezerMixin, httpx2.AsyncClient):
             headers=headers,
         )
 
-    async def request(  # ty: ignore[invalid-method-override]
+    async def request(  # ty: ignore[incompatible-method-override]
         self,
         method: str,
         path: str,
