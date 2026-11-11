@@ -64,7 +64,7 @@ class Client(DeezerMixin, httpx2.Client):
             headers=headers,
         )
 
-    def request(  # ty: ignore[invalid-method-override]
+    def request(  # ty: ignore[incompatible-method-override]
         self,
         method: str,
         path: str,
