@@ -55,10 +55,10 @@ dev = [
   "vcrpy>=9,<10",
 ]
 docs = [
-  "furo>=2023.5.20; python_version>='3.11'",
-  "myst-parser>=0.16; python_version>='3.11'",
-  "sphinx>=4; python_version>='3.11'",
-  "sphinx-autobuild>=2024; python_version>='3.11'",
+  "furo>=2023.5.20; python_version>='3.14'",
+  "myst-parser>=0.16; python_version>='3.14'",
+  "sphinx>=4; python_version>='3.14'",
+  "sphinx-autobuild>=2024; python_version>='3.14'",
 ]
 
 [tool.ruff]
